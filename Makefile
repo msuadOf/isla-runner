@@ -8,9 +8,15 @@ image:
 	docker build --no-cache --tag $(IMAGE):latest .
 
 #===========
-# sail-riscv/README.md repo-sail-riscv:
-# 	git clone https://github.com/riscv/sail-riscv.git
-# REPO_DEP+=repo-sail-riscv
+export PATH:=$(abspath isla/isla-sail):$(PATH)
+$(info export PATH=$(PATH))
+sail-riscv/README.md download-repo-sail-riscv:
+	-git clone https://github.com/riscv/sail-riscv.git
+repo-sail-riscv:download-repo-sail-riscv repo-isla
+	-git apply --directory sail-riscv/model sail-riscv.patch
+	(cd sail-riscv && cmake -B build -S . -DCMAKE_BUILD_TYPE=Release && time cmake --build build --target generated_isla_rv32d)
+
+REPO_DEP+=repo-sail-riscv
 
 sail/README.md repo-sail:
 	-git clone https://github.com/rems-project/sail.git
@@ -27,7 +33,7 @@ REPO_DEP+=repo-isla
 repos: $(REPO_DEP)
 
 distclean:
-	-rm -rf sail isla
+	-rm -rf sail isla sail-riscv
 clean:
 	-$(MAKE) -C sail clean
 	-$(MAKE) -C isla/isla-sail clean
