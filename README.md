@@ -15,3 +15,6 @@ use Docker:
 ```
 NOT USEABLE YET
 ```
+
+## Time
+一个ir大约需要花8-10分钟来产生

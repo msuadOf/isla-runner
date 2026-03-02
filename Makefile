@@ -15,6 +15,7 @@ sail-riscv/README.md download-repo-sail-riscv:
 repo-sail-riscv:download-repo-sail-riscv repo-isla
 	-git apply --directory sail-riscv/model sail-riscv.patch
 	(cd sail-riscv && cmake -B build -S . -DCMAKE_BUILD_TYPE=Release && time cmake --build build --target generated_isla_rv32d)
+	@echo " - rv32d.ir: You will see file in $(abspath sail-riscv/build/model/rv32d.ir)"
 
 REPO_DEP+=repo-sail-riscv
 
