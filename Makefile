@@ -8,10 +8,14 @@ image:
 	docker build --no-cache --tag $(IMAGE):latest .
 
 #===========
+GITHUB_URL_SSH=git@github.com:
+GITHUB_URL_HTTP=https://github.com/
+GITHUB_URL=$(GITHUB_URL_HTTP)
+
 export PATH:=$(abspath isla/isla-sail):$(PATH)
 $(info export PATH=$(PATH))
 sail-riscv/README.md download-repo-sail-riscv:
-	-git clone https://github.com/riscv/sail-riscv.git
+	-git clone $(GITHUB_URL)riscv/sail-riscv.git
 repo-sail-riscv:download-repo-sail-riscv repo-isla
 	-git apply --directory sail-riscv/model sail-riscv.patch
 	(cd sail-riscv && cmake -B build -S . -DCMAKE_BUILD_TYPE=Release && time cmake --build build --target generated_isla_rv32d)
@@ -20,13 +24,13 @@ repo-sail-riscv:download-repo-sail-riscv repo-isla
 REPO_DEP+=repo-sail-riscv
 
 sail/README.md repo-sail:
-	-git clone https://github.com/rems-project/sail.git
+	-git clone $(GITHUB_URL)rems-project/sail.git
 	cd sail && git checkout 446fb477c508853595ccc937ed60765aa685ae31
 	cd sail && opam install . --deps-only -y && $(MAKE) install
 REPO_DEP+=repo-sail
 
 isla/README.md download-repo-isla:
-	-git clone https://github.com/rems-project/isla.git
+	-git clone $(GITHUB_URL)ariscv/isla.git
 repo-isla: download-repo-isla repo-sail
 	cd isla/isla-sail && $(MAKE)
 REPO_DEP+=repo-isla
