@@ -13,12 +13,13 @@ GITHUB_URL_HTTP=https://github.com/
 GITHUB_URL=$(GITHUB_URL_HTTP)
 
 export PATH:=$(abspath isla/isla-sail):$(PATH)
+#export PATH=/home/baiyifan/workplace-local/isla-runner/isla/isla-sail:$PATH
 $(info export PATH=$(PATH))
 sail-riscv/README.md download-repo-sail-riscv:
 	-git clone $(GITHUB_URL)riscv/sail-riscv.git
 repo-sail-riscv:download-repo-sail-riscv repo-isla
 	-git apply --directory sail-riscv/model sail-riscv.patch
-	(cd sail-riscv && cmake -B build -S . -DCMAKE_BUILD_TYPE=Release && time cmake --build build --target generated_isla_rv32d)
+	(cd sail-riscv && cmake -B build -S . -DCMAKE_BUILD_TYPE=Release && time cmake --build build --target generated_isla_rv32d generated_isla_rv64d)
 	@echo " - rv32d.ir: You will see file in $(abspath sail-riscv/build/model/rv32d.ir)"
 
 REPO_DEP+=repo-sail-riscv

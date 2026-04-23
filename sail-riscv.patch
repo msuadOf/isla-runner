@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -560,4 +560,30 @@
+@@ -560,4 +560,34 @@
              "${CMAKE_BINARY_DIR}/isabelle/${arch}/ROOT"
      )
      add_custom_target(generated_isabelle_${arch} DEPENDS "${CMAKE_BINARY_DIR}/isabelle/${arch}/${arch_thy}.thy")
@@ -20,6 +20,10 @@
 +        COMMAND
 +            isla-sail
 +            ${sail_common}
++            --isla-preserve encdec_compressed_forwards
++            --isla-preserve encdec_compressed_forwards_matches
++            --isla-preserve encdec_compressed_backwards
++            --isla-preserve encdec_compressed_backwards_matches
 +            --isla-output-dir ${CMAKE_CURRENT_BINARY_DIR}
 +            # The prefix of the output files.
 +            -o "${arch}"
