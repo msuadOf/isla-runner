@@ -2,16 +2,19 @@
 
 ## `__isla_vector_gpr` 与寄存器枚举
 
-- 在当前 RISC-V 配置里，`__isla_vector_gpr` 默认开启：
-  - `isla/configs/riscv64.toml:62`
-  - `isla/configs/riscv32.toml:51`
-- 当它开启时，Sail 中的 `get_X/get_X_bits/set_X/set_X_bits` 会走 GPR 向量化路径，而不是直接沿着 `x0..x31` 做显式寄存器分支匹配；相关定义见：
-  - `sail-riscv/model/core/regs.sail:273-317`
-  - `sail-riscv/model/core/regs.sail:229-233`
-- 编译到 IR 后，对应表现为 `zget_X_bits` / `zset_X_bits` 先检查 `z__isla_vector_gpr`：
-  - `isla/rv64d.ir:17700-17717`
-  - `isla/rv64d.ir:17753-17770`
-- 在执行器里，向量化寄存器访问最终会落到 `read_register_from_vector` / `write_register_from_vector`。当寄存器索引是符号值时，这里构造的是 SMT 的 ITE 选择链，而不是额外的控制流 fork：
-  - `isla/isla-lib/src/executor.rs:187-266`
-  - `isla/isla-lib/src/executor.rs:270-349`
+- 在当前 RISC-V 配置里，`__isla_vector_gpr` 默认开启，配置项分别位于 [riscv64.toml](../isla/configs/riscv64.toml#L62) 和 [riscv32.toml](../isla/configs/riscv32.toml#L51)。
+- Sail 中与该开关直接相关的寄存器函数是 [regs.sail::get_X](../sail-riscv/model/core/regs.sail#L281)、[regs.sail::get_X_bits](../sail-riscv/model/core/regs.sail#L286)、[regs.sail::set_X](../sail-riscv/model/core/regs.sail#L294) 和 [regs.sail::set_X_bits](../sail-riscv/model/core/regs.sail#L301)；它们在 `__isla_vector_gpr` 为真时会走 [regs.sail::rX_from_vector](../sail-riscv/model/core/regs.sail#L275) / [regs.sail::wX_from_vector](../sail-riscv/model/core/regs.sail#L288)，而不是直接沿着 `x0..x31` 做显式寄存器匹配。
+- 编译到 IR 后，对应检查点出现在 [rv64d.ir::z__isla_vector_gpr](../isla/rv64d.ir#L17663)、[rv64d.ir::zget_X_bits](../isla/rv64d.ir#L17700) 和 [rv64d.ir::zset_X_bits](../isla/rv64d.ir#L17753)；这两个 IR 函数里都会先判断 `z__isla_vector_gpr` 再决定是否走向量化寄存器访问。
+- 在执行器里，向量化寄存器访问最终会落到 [executor.rs::read_register_from_vector](../isla/isla-lib/src/executor.rs#L187) 和 [executor.rs::write_register_from_vector](../isla/isla-lib/src/executor.rs#L270)。当寄存器索引是符号值时，这里构造的是 SMT 的 ITE 选择链，而不是额外的控制流 fork。
 
+## `zSTORE` 路径爆炸与 `pmpRangeMatch`
+
+- `STORE` 顶层语义位于 [base_insts.sail::execute STORE](../sail-riscv/model/extensions/I/base_insts.sail#L316)，真正发起访存的是其中的 [base_insts.sail::vmem_write 调用点](../sail-riscv/model/extensions/I/base_insts.sail#L323)。因此 `zSTORE` 的大部分 fork 不在顶层 `STORE` clause，而是在 `vmem_write -> vmem_write_addr -> pmaCheck/pmpCheck -> pmpRangeMatch` 这条访存检查链上。
+- PMP 地址匹配的关键函数是 [pmp_control.sail::pmpRangeMatch](../sail-riscv/model/pmp/pmp_control.sail#L44)。它返回的枚举类型定义在 [pmp_control.sail::pmpAddrMatch](../sail-riscv/model/pmp/pmp_control.sail#L39)，成员分别在 [PMP_NoMatch](../sail-riscv/model/pmp/pmp_control.sail#L51)、[PMP_Match](../sail-riscv/model/pmp/pmp_control.sail#L53) 和 [PMP_PartialMatch](../sail-riscv/model/pmp/pmp_control.sail#L54)。
+- 编译到 IR 后，`pmpRangeMatch` 对应 [rv64d.ir::zpmpRangeMatch](../isla/rv64d.ir#L25341)。这个 IR 函数内部的分叉点可以直接看到：[第一处 `jump zz41`](../isla/rv64d.ir#L25348)、[第二处 `jump zz40`](../isla/rv64d.ir#L25353)、[第三处 `jump zz45`](../isla/rv64d.ir#L25358) 和 [第四处返回前判断 `jump zz44`](../isla/rv64d.ir#L25365)。这就是符号地址进入 `pmpRangeMatch` 后会直接放大 executor 级别 fork 的原因。
+- `pmpRangeMatch` 不是孤立出现的。调用链的上一层是 [pmp_control.sail::pmpMatchAddr](../sail-riscv/model/pmp/pmp_control.sail#L56)，再上一层是 [pmp_control.sail::pmpCheck](../sail-riscv/model/pmp/pmp_control.sail#L99)。其中真正放大路径数的是 [pmpCheck 里的 `foreach (i from 0 to sys_pmp_count - 1)`](../sail-riscv/model/pmp/pmp_control.sail#L118) 和 [对 `pmpMatchAddr` 结果的 `match`](../sail-riscv/model/pmp/pmp_control.sail#L122)。
+- 当前配置文件里虽然在 [riscv64_difftest.toml::sys_pmp_count](../isla/configs/riscv64_difftest.toml#L86) 和 [riscv64_difftest.toml::plat_enable_pmp](../isla/configs/riscv64_difftest.toml#L87) 试图关闭 PMP，但现有 IR 在 [rv64d.ir::zsys_pmp_count](../isla/rv64d.ir#L24031) 中把值固化了，而常量 `16` 就出现在 [rv64d.ir:24034](../isla/rv64d.ir#L24034)。因此当前执行时并没有真正关掉 PMP。
+- 对 `zSTORE` 做 45 秒定点采样时，基线结果写在 [zstore_fork_profile_baseline.json](../isla/agents/zstore_fork_profile_baseline.json#L1)。关键统计分别是 [completed_paths = 3](../isla/agents/zstore_fork_profile_baseline.json#L3)、[total_fork_events = 214](../isla/agents/zstore_fork_profile_baseline.json#L4)、[max_fork_events_in_path = 74](../isla/agents/zstore_fork_profile_baseline.json#L5)，按函数聚合后的热点是 [pmpRangeMatch](../isla/agents/zstore_fork_profile_baseline.json#L130) 和 [pmaCheck](../isla/agents/zstore_fork_profile_baseline.json#L134)。
+- 为了验证这类热点是否适合下沉成 Isla 内置逻辑，实验性 builtin 开关加在 [executor.rs::pmp_range_match_builtin_enabled](../isla/isla-lib/src/executor.rs#L833)，函数名判断在 [executor.rs::is_pmp_range_match_function](../isla/isla-lib/src/executor.rs#L842)，SMT 版实现本体在 [executor.rs::run_pmp_range_match_builtin](../isla/isla-lib/src/executor.rs#L869)。这个 builtin 既会在 [run_special_primop](../isla/isla-lib/src/executor.rs#L916) 入口拦截，也会在 [Instr::Call 分派点](../isla/isla-lib/src/executor.rs#L1319) 优先接管 `pmpRangeMatch` 调用。
+- 同样 45 秒的 builtin 采样写在 [zstore_fork_profile_builtin.json](../isla/agents/zstore_fork_profile_builtin.json#L1)。关键统计分别是 [completed_paths = 10](../isla/agents/zstore_fork_profile_builtin.json#L3)、[total_fork_events = 156](../isla/agents/zstore_fork_profile_builtin.json#L4)、[max_fork_events_in_path = 18](../isla/agents/zstore_fork_profile_builtin.json#L5)。builtin 后的热点前移到了 [pmpCheckRWX](../isla/agents/zstore_fork_profile_builtin.json#L154)、[vmem_write_addr](../isla/agents/zstore_fork_profile_builtin.json#L162) 和 [misaligned_order](../isla/agents/zstore_fork_profile_builtin.json#L174)。
+- 因此，`pmpRangeMatch` 这类“纯函数、返回小枚举、内部主要由符号条件选择构成”的逻辑适合 builtin 化，把控制流复杂度从 executor 转移到 SMT；而如果还要继续压缩 `zSTORE` 的路径数，下一批优先排查对象应是 [pmp_control.sail::pmpCheckRWX](../sail-riscv/model/pmp/pmp_control.sail#L12) 以及 builtin 采样里暴露出的 `range_subset` / `vmem_write_addr` / `misaligned_order` 一类剩余热点。
