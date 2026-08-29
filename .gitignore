@@ -1,2 +1,21 @@
 isla/
 sail/
+sail-riscv/
+assembly-gen/
+difftest/
+difftest-xiangshan/
+
+# Generated RISC-V IR
+rv32d.ir
+rv64d.ir
+
+# Local agent and tool state
+.codex
+.claude/settings.local.json
+.claude/worktrees/
+.serena/
+.worktrees/
+
+# Generated build state and reports
+/out/
+/report/passed-intr-report.md
