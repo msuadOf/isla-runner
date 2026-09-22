@@ -1,5 +1,32 @@
 # Findings
 
+## 2026-09-23 submodule 初始化边界
+
+- 根仓库以 `160000` gitlink 固定 Isla/Sail-RISC-V。`init.sh` 缺失时按 gitlink 初始化；已存在时只验证 remote、对象与 HEAD，HEAD 匹配时保留 dirty 工作树，HEAD 不同则 fail-closed，不 checkout/reset/pull。
+- Makefile 的两个下载入口统一调用 `init.sh --submodules-only`，不再 clone 移动分支或自动应用 `sail-riscv.patch`；`distclean` 不再删除子模块源码目录。
+- `sail`、`assembly-gen`、`difftest` 和内层 XiangShan 仍按既有独立仓库规则管理，不因两个 submodule 的引入改变。
+
+## 2026-09-23 整理说明与 Ara harness 检查
+
+- 本文件保留按日期积累的历史判断，包括后续已纠正的结论；早期 mask tail、vsetvli 特例判断应结合 2026-09-17 复验及 `ara_poc_batch/bugs.md` 的修订阅读。本轮仅整理，不重跑历史实验或重新核验上游 issue 状态。
+- Ara 工具提供 prepare/build/run/diff/golden，默认 VLEN=128 且 emulator 为 build-v128，不能视为官方合法配置；合法 2_lanes 复验应显式使用匹配的 2048 配置。`build --mode check` 必须提供 golden-dir，run 会覆写目标结果，重跑需独立输出目录。
+- Ara 与 XiangShan 三项 Issue 的成套材料已复制到根 archives 的 2026-09-23 批次。仅冻结证据原路径被忽略，维护文档留 agents；原文件未删除。XiangShan Issue 1 有限时超时日志不能证明永久挂死或完整提交轨迹。
+
+## 2026-09-21 difftest-xiangshan 的版本控制边界
+
+- 整理验证发现，`tests/test_pipeline.py` 的四个 run_case 测试仍 mock `subprocess.run`，而 `pipeline.py::run_case` 已调用 `subprocess.Popen`，因此原有测试尝试执行不存在的 `emu` 并报错。本批次未修改代码，14 项测试中 10 项通过、4 项报错；不能宣称测试全通过。
+- 外层 harness 归 isla-runner；内层 `xiangshan/` 保持独立 checkout。外层 `.gitignore` 仅屏蔽上游 checkout、批次 inputs/work、模拟器、PoC ELF 和 Python 缓存。
+- `tests/fake_diff.so` 与 `tests/tools/*-so` 实际为文本 fixture，随测试保留；`poc-final/*.S` 为复现源码，原有 ELF 单独冻结存档。本批次不修改执行逻辑或默认路径。
+- 根 `archives/xiangshan/2026-09-21-harness/` 保存当前整理批次的可提交证据；`archives/_raw/` 中的大档案是本地副本而非远端备份，原始运行数据保留。
+
+## 2026-09-19 XiangShan V 扩展 Issue 草稿复现的本地基线
+
+- `difftest-xiangshan/xiangshan/` 当前 detached HEAD 与本地 `origin/kunminghu-v3` 都是 `c8d7b3a5c1abf3f42c954e61abba20dd27e02a21`；可复用的 `build/verilator-compile/emu` 修改时间为 2026-09-19 04:35:16 +0800。
+- 实时远端核验曾一次因 TLS EOF 失败；后续 `git ls-remote origin refs/heads/kunminghu-v3` 成功返回同一 `c8d7b3a5c1abf3f42c954e61abba20dd27e02a21`，因此该 emulator 对应远端当前 `kunminghu-v3` 提交。
+- 该 XiangShan 工作树有未跟踪的用户内容 `mill.dMWuA8`、`src/test/scala/xiangshan/backend/fu/vector/ByteMaskTailGenParameterizedTest.scala` 和 `tests/`；复现脚本与产物必须放在独立目录，不能读取或改动这些内容。
+- 只以草稿内嵌源码从零编译的三项复现中：`vsm.v` testcase 触发 `mcause=0x7` 后出现 `mtval` REF `0x2000000` 与 DUT `0x1fffffe` 的 difftest abort；全 32 vreg load testcase 出现 v2 REF 初始样式与 DUT `0x55` 模式不一致的 difftest abort。`vid.v` testcase 在 `--no-diff --dump-commit-trace` 下两次各运行 40 秒均未达 GOODTRAP；补跑时 timeout 导致 emu 输出 `double free or corruption (!prev)`，且两次均未生成新的 commit trace，因此只能证明挂起，不能从本轮输出验证其前一条 commit。
+- XiangShan 的 `--dump-commit-trace` 输出来自 DiffTest 的 `DiffState::push_back_trace`，应以带 `--diff` 的运行保存；`--no-diff` 用于确认纯 RTL 挂死，不能代替 itrace。挂死复现还必须以 `EMU_TRACE=1` 构建 emulator，并以 `--dump-wave-full --wave-path` 保存覆盖同一窗口的 VCD；itrace 与 VCD 都是必需证据。`difftest-xiangshan` README 与 hang PoC 已明确该流程。
+
 ## 2026-08-29 根工作区依赖初始化边界
 
 - 根 `Makefile` 现有初始化逻辑只覆盖 `isla`、`sail`、`sail-riscv`，且 `git clone` 前的 `-` 会吞掉 clone 失败；`assembly-gen`、`difftest` 和 XiangShan 不在该入口内。
@@ -1043,3 +1070,146 @@ vtype.zbits[63]=vill=0, [5:3]=vsew=010(SEW=32), [2:0]=vlmul=000(LMUL=1)
 - `difftest-xiangshan/` 本身是未跟踪的 harness 目录；其中 `difftest-xiangshan/xiangshan` 才是独立的 XiangShan Git 工作树（`7bf51a88`）且也有未跟踪内容。因此它不能被不加判断地视为单个可替换的 submodule。
 - 本地状态与构建产物占用较大空间：`isla/target` 约 75 GiB，根 `isla/` 约 106 GiB；`.worktrees/` 约 4.7 GiB，且包含未提交实验；`sail-riscv/build`、`sail/_build`、`.serena/`、`out/`、`report/` 也均为本地生成或工具状态。清理必须先确认保留策略，不能直接删除。
 - Codex 仓库级 Skill 的标准发现路径是 `.agents/skills/<name>/SKILL.md`；Claude Code 的对应路径是 `.claude/skills/<name>/SKILL.md`。两者都支持指向同一 Skill 目录的符号链接，因此可用 `.agents/skills` 作为唯一内容源，并以 `.claude/skills` 链接兼容，避免重复维护。
+
+## 2026-09-16 Ara RTL 批量 PoC 链路（isla solve → Ara emu）
+
+详细工作记录见 [ara_poc_batch/](ara_poc_batch/status.md)，harness 主体为 [ara/pipeline.py](../ara/pipeline.py)。
+
+### 环境与构建
+
+- Ara clone 在 `ara/ara`（commit `34bd3bc1`）。测试套件主体是 `apps/riscv-tests`（含 `isa/rv64uv` 向量测试，C 宏 `INIT_CHECK/EXIT_CHECK/VSET/VLOAD`）；`apps/rvv-bench` 子模块后已补齐初始化（a1d7b31，注意其 .gitmodules 标了 update=none，需 `git submodule update --init --checkout` 显式拉取）。
+- Ara 退出机制：裸机程序写 CTRL 外设 `0xD0000000`（`apps/common/arch.link.ld` 的 `eoc_address_reg`），`ctrl_registers.sv:108` 输出 `exit_o = {exit[30:0], 写脉冲}`（32 位截断拼接），tb `ara_tb_verilator.sv:44-56` 检测脉冲后 `$finish(exit_o>>1)`，**进程退出码 = 写入值本身（bit31 丢失）**，a0=0 打印 SUCCESS。
+- 二进制约定：ELF 由 `-l ram,<file>,elf` 装载，镜像最低 p_paddr 必须等于 0x80000000（tb "ram" 区域 1MiB 窗口，无 bootrom，CVA6 直接从 0x80000000 取指）。段需对齐 4×NrLanes 字节。
+- **emu 参数顺序陷阱**：`VerilatorSimCtrl` 先以 `":c:th"` 解析并 GNU-permute argv，memutil 再从头重解析；`-l` 在前时其值被 permute 挪走，导致 `-c` 被当作 `-l` 的参数报 `meminit must be in format name,file[,type]`。必须写成 `-c N -l ram,FILE,elf`。
+- 系统 Verilator 5.038 在 Ara `--hierarchical` 流程下报 `Cannot find include file: 'common_cells/assertions.svh'`（hier 子任务 include 解析问题），不可用；按仓库 pin commit `06263ec7`（≈v5.046+）源码编译安装到 `ara/ara/install/verilator` 后 `make verilate config=2_lanes` 成功。bender 0.31.0 用 `gh release download` 装到 `hardware/bender`（本机代理对 crates.io/pulp-pages 的 TLS 间歇失败，git/gh 走得通）。
+- VLEN：Ara 架构 VLEN = NrLanes×1024，最小 `config=2_lanes` 为 2048，ELEN=64（`config/*.mk`、`ara_pkg.sv`）。isla 当前 output 为 128-bit vreg → PoC 采用**高位零扩展装载**：vl/vstart/vtype/vcsr 全部精确重建，body（<vl）元素语义不变，差异只在 tail 段与 VLMAX 上界（vl 取自 isla 初态，min(avl,VLMAX)=avl 恒成立）。
+- 向量指令无需软件调度：CVA6 取指级 first-pass decoder（`cva6_accel_first_pass_decoder.sv`）把 OP-V/向量访存/向量 CSR 都标 ACCEL 走加速口给 Ara；`mstatus.VS/FS` 必须置 Dirty 否则判 illegal。Ara 只实现 RVV 1.0 base，无 Zvbb/Zvbc/Zvk*。
+
+### harness 设计（ara/pipeline.py）
+
+- `prepare/build/run` 三段，同 `difftest-xiangshan/pipeline.py` 风格。19908/19908 条 isla 输出全部可生成（含 FPR 状态的 VFMERGE/VFMVSF 108 条用 `fld` 装载支持）。
+- PoC 汇编骨架：`mtvec=init_trap` → mstatus(state 值+VS|FS=0x6600) → `vsetvli x0,t1(avl=vl),zimm`（vill 态用 zimm=0x400，vl 强制 0）→ 32×`vl1re8.v` whole-register 装载（128-bit 零扩展到 2048）→ `csrw vstart/vxrm/vxsat` → `mtvec=test_trap` → 标量 `li`（GPR 初值，sp 缺省指 _stack_top）→ `.4byte` 测试指令 → 退出序列。trap handler 读 mcause 分类（=2 illegal）。
+- 退出码表（写入 0xD0000000 的值）：0=期望成功且退休；2=期望非法却退休；4=期望非法且确实 mcause=2；6/8=期望成功却 trap(illegal/其他)；10=期望非法但 trap mcause≠2；12/14=Memory_Exception 期望的 trap/退休；32=初始化阶段 trap。
+- 已知保真度折衷（V1）：统一 M-mode 执行（向量指令无特权语义差异，省 PMP/mret，islA 的 cur_privilege 未重建）；MRET 类用例因未设 mepc 跳转到 0 产生 fetch fault（3 条 fail_trap_other + 1 条 mismatch），属 PoC 设计限制非 Ara bug；FPR 数据块只覆盖出现的 f* 键对应的整组 32 装载。
+
+### 批量结果（全量 19908 条，jobs=64 约 5 分钟；`ara/work-all/`）
+
+总体：pass_success 8984（45%）、pass_illegal_confirmed 5234（26%）、fail_trap_illegal_expected_success 1812、mismatch_retired_expected_illegal 3790、mismatch_retired_expected_memexc 64、emu_assert_crash 16、timeout 4、fail_trap_other/mismatch_trap_other 各 3/1（旧 ELF 的 4 条 MRET，mepc 修复后重跑为 3 pass + 1 mismatch，见 `ara/work-mret/`）。
+
+- **Ara RTL 断言崩溃（真实 bug，已定性）**：`vnclip/vnclipu` 全部 `.wi/.wv/.wx` 变体共 16 条（vtype=0x18 SEW=64/m1，vl≥1）触发 `simd_alu.sv:444` VNCLIP `unique case` 只有 EW8/EW16/EW32 无 EW64 分支，报 `none matched for '3'h3'`（EW64=3）→ `$stop`。根因与完整链路见下方"vnclip/vnclipu SEW64 崩溃链"条目（dispatcher 漏 SEW 检查 + ALU 缺分支）。复现：`ara/work-all/elf`（results.json 搜 emu_assert_crash）。
+- **vill 保留位被忽略（conformance bug 候选）**：`ara_dispatcher.sv:636` 用 `vtype_xlen(zimm11)` 解码 vsetvli（`ara_dispatcher.sv:96-102`），只取 zimm[7:0] 与 vill 位（bit63，zimm 下永假），**不检查 vtypei[10:8] 保留位**；随后合法性检查（dispatcher.sv:641-646）也只查 SEW≤ELEN、LMUL≠RSVD、LMUL≥SEW/ELEN。因此 zimm=0x400（bit10 保留位，spec 要求置 vill，spike 的 `newType>>8!=0` 即判 vill）被 Ara 当作合法 e8/m1。全量批中 50 条 vill 态用例因此"退休"。
+- **vstart≥vl 分歧（2747 条）精确定性**（依据 RVV 1.0 spec 原文，/tmp/vspec.adoc）：
+  - spec §vstart：vstart≥vl 时无 body 元素、正常退休；vstart 大于当前 vtype 最大元素索引是 **reserved**（建议 trap）；且 spec 明确一组指令 **vstart≠0 必须 illegal**：vector reductions（spec L3907）、`vcpop.m`（L4196）、`vfirst.m`（L4218）、`vmsbf/vmsif/vmsof.m`（L4259/4295/4332）、`viota.m`（L4383）、`vcompress.vm`（L4797）。
+  - Sail 侧对应实现：`vext_utils_insts.sail:36` 的 `assert_vstart(0)`（调用点 vredmin `vext_red_insts.sail:105`、vwredsum `:32`、viota `vext_mask_insts.sail:318`、mask 逻辑 `:98,137,178,223,268`）和 `get_start_element()` 越界 Err（`vext_utils_insts.sail:274-285`，注释自认 TODO bound 可能不对，引 sail PR #755）。
+  - **49 条命中强制名单（vcompress.vm 为主）被 Ara 退休 → 真 conformance bug**（Ara 缺这组指令的 vstart≠0 illegal 检查）。
+  - 2548 条为 vstart 超出 VLEN=128 上下文的最大元素索引（spec reserved；island trap 是 spec 推荐行为，Ara 在 VLEN=2048 下界内退休也可接受）——**平台/VLEN 差异，非 bug**。
+  - 其余 ~150 条 vl=0、vstart=0 的 illegal 归因与 993 条 other 一并在 triage。
+- **操作数重叠约束（spec 标注 reserved 编码）**：masked 指令 vd 组不得与 v0 重叠（除非 vd 写掩码/归约标量，spec L1040）；vmsbf/vmsif/vmsof/viota（vd≠vs2，masked 时 vd≠v0，L4261/4297/4334/4386）；vslideup（L4575）；vrgather 全变体（L4755）；vcompress（vd≠源组与掩码，L4792）。**mismatch "other" 993 条**（vslide1up/vrgather/vslideup 各 57、viota.m 43、vwmacc.vv 42、vid.v 36、vrgatherei16 30、vcompress 25、vrgather.vv 22、vfmv.v.f 18、vnclip* 48 等）样例即呈此特征（如 `vmerge.vim v0, v30, 0xd, v0`）。定性倾向：island 把 reserved 编码判 Illegal 是保守正确；Ara 直接执行属宽松处理（spec 未强制 illegal，但按 RISC-V 惯例 reserved 应报 illegal——低严重度 conformance 疑点）。triage 确认中。
+- **扩展指令 trap illegal（1812 条主体，符合预期）**：Zvbb（vandn/vbrev*/vclz/vcpop/vctz/vrev8/vrol/vror/vwsll/vabs）、Zvbc（vclmul*）、Zvk*（vaes*/vsm4*/vsm3*/vsha2*/vghsh/vgmul）Ara 未实现，illegal 是正确行为。base RVV 剩余 284 条已全部定性（见下方 vmadc/vmsbc 与 viota/vcompress 两条）。
+- **Memory_Exception 64 条全部"退休"**：VMTYPE `vlm.v/vsm.v` 的地址落在 Ara 已映射 DRAM/L2 窗口内正常完成（isla 平台认为该地址触发异常）——两平台内存映射差异，非 bug；timeout 4 条为访未映射地址挂死。
+
+### 2026-09-16 定向 triage：base RVV fail_trap 的精确根因（dispatcher 行号 + 单变量实验）
+
+实验目录 `/tmp/ara_probe3`（14+6 个最小变体 ELF，单变量对照），全部结果与假设 20/20 吻合。
+
+- **vmadc/vmsbc 全变体（work-all 236 条 fail_trap）＝ Ara 专属 vd↔源 overlap 检查**：`ara_dispatcher.sv` OPIVV 749-765（rs1/rs2 双查）、OPIVX 1017-1028、OPIVI 1259-1270（仅查 rs2）；LMUL_1 时 `rs2==rd` 即 illegal。RVV 1.0 spec 对 vmadc/vmsbc 无 overlap 限制，Sail 侧 `vext_vm_insts.sail` 也只查 `illegal_vd_*`+`valid_reg_group`、无 `valid_reg_overlap`（与 spec 一致）。实验：e01 `vmadc.vi v0,v0,0`(SEW64/m1,vl=2,vstart=1) trap=6 复现 case-0911；e02 仅改 vd=v1 → 0；e03 仅改 vs2=v1 → 0。**定性：Ara 合法编码被 trap，过度限制（RTL 实现限制，FUNCTIONALITIES.md 未声明）**。
+- **viota.m/vcompress.vm/vmsbf/vmsif/vmsof（work-all 48 条 fail_trap）＝ OPMVV 分支末尾公共 vs1/vs2 LMUL 对齐检查**：`ara_dispatcher.sv:1899-1910`（`lmul_vs2/lmul_vs1` 默认=csr vlmul，行 382-383）；而该分支默认 `ara_req.emul=LMUL_1`（行 1448），故 vd 的对齐检查（1893-1898）被跳过。Sail 侧 viota 只查 `valid_reg_group(vd)`（`vext_mask_insts.sail:319`）、vcompress 只查 vs2/vd（`vext_arith_insts.sail:2162-2163`）——**均不查 vs1/vs2 组对齐**，故 isla 退休。spec §3.2.2：未对齐 LMUL>1 寄存器组是 **reserved encoding**，trap 合法。实验：e04 `viota.m v0,v31`(SEW8/m2,vl=0) trap=6 复现 case-0973，e05 改 vs2=v30 → 0；e06/e08 vmsbf/vmsif trap 复现，e07/e09 改 vs2 对齐 → 0；e10 `vcompress.vm v0,v8,v31`(SEW32/m8) trap 复现 case-0134，e11 改 vs1=v24 → 0，e12 vd=v1（奇数）→ 0（证实 vd 检查被 emul=LMUL_1 绕过，case-1038 vd=v31 m4 pass 同理）；e14 SEW8/m1 vs2=v31 → 0。**定性：非 Ara bug（reserved 编码 trap 允许）；isla/Sail 的对齐检查不完整（vs1/vs2 未查）+ 用例踩 reserved 编码**。
+- **vcompress vtype 澄清**：work-full/work-all 的 fail 用例 vtype 实为 0x53=SEW32/LMUL8/vta=1（合法），非 0x35；0x35=SEW512/LMUL1/8 在 ELEN=64 下必 vill——实验 e13（vsetvli zimm=0x35 后 vadd.vv）Ara 端 villa → trap=6，且 isla 模型为 `rv64d_v256_e64`（VLEN=256/ELEN=64，`sail-riscv/model/CMakeLists.txt:225`）同样不可能接受。vl=0 的 viota fail（case-0973/0979）与 vl 无关，均为 vs2 未对齐。
+- **vnclip/vnclipu SEW64 崩溃链**：OPIVI 分支 `ara_dispatcher.sv:1409-1416`（VNCLIPU/VNCLIP）**缺同分支 VNSRA/VNSRL 在 1398 行的 `SEW>EW32 → illegal` 检查**，`eew_vs2=vsew.next()=EW128` 直发 simd_alu → `simd_alu.sv:444/461` unique case 无 EW128 → $stop。实验：c01 `vnclip.wi v10,v8,0xb`(SEW64/m1) 崩溃（与官方 case-02256 同断言）；c02 vnclipu 同崩；c03 `vnsrl.wi` SEW64 → trap=6（对照证明 vnclip 只是漏检）；c04 SEW32/m2 vnclip → 0（功能正常）。isla 侧判 Illegal 的原因：Sail narrowing 子句 decode 守卫 `when (Zve32x & SEW<=16)|(Zve64x & SEW<=32)`（`vext_arith_insts.sail` L316/774/1235/241 等）SEW64 无匹配 → 恒 Illegal、无 Zvl128b 豁免；与 vl/vstart/操作数无关。**定性：Ara RTL bug（该判 illegal 的没判，漏进 simd_alu 后被 unique case 断言兜底成仿真崩溃）。注意：本条早先把 vnsrl/vnsra 的 SEW≤32 拦截判为"过度保守"、认为 SEW64 narrowing 在 ELEN=64 下合法——该判断是错的，narrowing 的 vtype SEW 指目的宽度（源 EEW=2×SEW），SEW=64 即源 128>ELEN 本应 illegal；以下"vnclip SEW64 崩溃定向复核"小节有完整纠正与证据**。
+- **vstart≠0 slide 实验**：c05 `vslideup.vi v1,v2,1` vstart=2 → 退休（tohost=0），c06 vslidedown 同。spec 要求 vslideup 类 vstart≠0 trap（vslidedown 例外）——补充证实上节"49 条强制名单 conformance bug"。
+- **mismatch_retired_expected_illegal 重分类（全量 3790）**：villa(isla 态 bit63) 50、vstart≥vl 2589、vd_src_overlap（widening/narrowing/slide/vrgather/masked-vd0）942、SEW8 narrowing（dest SEW=4，reserved）36、unknown 173（主体=vnclip/vnsra SEW64 decode 守卫 + vl=0 的 vid/vfmv/viota/vfmerge 组）。overlap 类 Sail 行号：widening `vext_arith_insts.sail:1979-1982`（WMVVTYPE）等、narrowing L329-332/1248-1250、vslide1up L2237-2245、vslideup.vi L1327-1336、vrgather.vv L63-74/vi L1327/vx L866、masked vd=v0 `vext_utils_insts.sail:45-47`+`illegal_normal` L161-163。spec 对这些 overlap 多为 reserved（trap 合法、执行亦常见）→ 分歧为"Sail 保守 vs Ara 宽松"，低严重度。
+
+
+### 2026-09-16(下午) vnclip SEW64 崩溃定向复核：vew_i 语义、触发面、合法性判定与功能面扫描
+
+实验目录 `/tmp/ara-vnclip-test`（t1-t8 矩阵、d 系列 harness 校准、f/g 系列 shift 扫描，全部经 emu VLEN=2048/2 lanes 实跑）。本节修正上一节"vnclip/vnclipu SEW64 崩溃链"中对 spec 语义的一处误判。
+
+- **vew_i 语义（Q1 闭环）**：`valu.sv:392` 把 simd_alu 的 `vew_i` 接到 `vinsn_issue_q.vtype.vsew`；lane 侧不换算（`lane_sequencer.sv:344` 直接透传 `pe_req.vtype`）；dispatcher 侧 `ara_req.vtype` 默认 = `csr_vtype_q`（`ara_dispatcher.sv:439`），VNCLIP/VNCLIPU 三处解码（OPIVV 901-908、OPIVX 1170-1177、OPIVI 1409-1416）只设 `eew_vs2 = vsew.next()`，不改 `vtype.vsew`。simd_alu narrowing 分支（`simd_alu.sv:388-403,444-477`）的 case 标签 = **目的 SEW**（如 EW32 分支读 `opb.w64` 写 `res.w32[2*b+narrowing_select_i]`），与 `eew_vs2=2×SEW` 的取数宽度配对自洽。因此 vtype SEW=64 的 vnclip 以 `vew_i=EW64(3'h3)` 进入 `simd_alu.sv:444` 的 VNCLIP unique case（只有 EW8/16/32）→ 断言杀仿真。
+- **spec 语义定论（纠正上节误判）**：RVV 1.0 对 narrowing 指令的规定是"**source operand EEW=2\*SEW、EMUL=2\*LMUL；vd 为 SEW/LMUL**"（官方 v-spec 原文；助记符 `vnclip.wi` 的 `.w` 后缀即标记 2×SEW 宽源）。Sail `vext_arith_insts.sil:321-346`（NVTYPE）与之一致：`vd_val` 按 `SEW`、`vs2_val` 按 `SEW*2` 读取，且 `illegal_variable_width(..., SEW*2, ...)` + `assert(SEW_widen<=64)`。所以 **vtype SEW=64 的 vnclip = 源 EEW 128 > ELEN=64，是 illegal 指令**（case-0258 的 `ret_val: Illegal_Instruction` 正确）；"源 64/目的 32"的旧理解方向反了。Ara 自身 datapath 也是这个约定（vnsrl.wi SEW=32 读 64 位源算出正确结果，实验 e1）。Sail decode 守卫 `Zve64x & SEW<=32` 不是保守，恰是 `2×SEW ≤ 64=ELEN` 的边界。
+- **触发面（实验矩阵）**：vnclip/vnclipu × {.wv,.wx,.wi} × SEW=64 全部崩溃（t1/t2/t3 + case-0258，断言行 simd_alu.sv:444/461）；vnsrl/vnsra SEW=64 → dispatcher 三处 `vsew>EW32→illegal_insn`（872/890、1141/1159、1380/1398）正确拦截 → trap（t4/t5，exit=4）；vnclip SEW∈{8,16,32} 退休（t6-t8，exit=2）。FP narrowing（vfncvt.\*）走 vmfpu，其 eew 检查已有修复 commit `c148d4bd`；vwredsum 显式 `vtype.vsew=vsew.next()`（913-924）处理正确。
+- **定性（Q3/Q5）**：FUNCTIONALITIES.md:95 声明支持 vnclip/vnclipu（对合法域 SEW≤32 属实）。SEW=64 是 illegal 指令，dispatcher 本应像 VNSRL 一样判 illegal 却漏判 → **dispatcher RTL bug**（三处 VNCLIP/VNCLIPU 分支缺 `if (int'(csr_vtype_q.vsew) > int'(EW32)) illegal_insn = 1'b1;`，且同样漏了 `lmul_vs2 = next_lmul(...)` 与 rs2 EMUL 对齐检查——1899-1903 的公共检查会按未加宽的 EMUL 校验 rs2）。simd_alu 的 unique case 断言只是兜底把漏网请求暴露成仿真崩溃。
+- **上游状态（Q4）**：clone 在 34bd3bc1 = origin/main = main（最新）；全历史 `git log --all` 无任何给 VNCLIP/VNCLIPU 补 SEW 检查的 commit。相关但不是修复的：`1bd89b60`（2023，把 VNCLIP/VNCLIPU 补进 valu 的 `narrowing()` 函数）、`f4b97c33`（2024，LMUL 检查条件化）。**上游未修复**。
+
+### 2026-09-16 Ara 疑点原创性核查（GitHub issue/PR/commit 全量比对）
+
+- **发现 1（vnclip SEW=64 崩溃）：原创**。无任何 SEW64/EW128 narrowing 崩溃报告；最接近的 #250（随机指令 fuzz 死机）作者注明"尚未测试 narrowing 指令"；#163 只覆盖 SEW≤32 功能失败。VNCLIP 分支历史上仅 fe51bfb9 添加、d7a770a2 参数化、1bd89b60 打包修复，VNSRL/VNSRA 有检查而 VNCLIP 三处均无的不对称无人指出。
+- **发现 2（合法域 vnclip 无饱和钳位等）：现象已有 issue #163**（OPEN，2022-11，"Test failures in Vector Fixed-point Arithmetic Instructions"，列 vnclip/vnclipu 全部 54 项失败，无根因分析）；PR #230（MERGED 2023-06）只修了 valu 打包。simd_alu 的 VNCLIP 饱和逻辑与 fixed_p_rounding.sv 自创建零修改。我们的根因定位（无钳位/舍入错位/.wi-.wx 分歧）可作 #163 的补充分析。
+- **发现 3（vstart≠0 未按 spec trap）：原创**。vstart 相关 commit（1f71ae3f/980f4c83/e66c4056/5b003f8c、draft PR #270）全部是操作数抓取/reshuffle/CSR 清零的功能性处理；issue #237（vstart>vl 元素行为）、#458（masked store）、#370（vmsbf 功能错，PR #376 修复）、#446/#450 均非 trap 语义。main dispatcher 无任何 vstart→illegal 检查（grep 验证）。
+- **发现 4（zimm 保留位不置 vill）：已有 PR #486**（OPEN 未合并，2026-08-22，"Check all vtype bits in vsetvl"，`vill: xlen[XLEN-1] | (|xlen[XLEN-2:8])`，与 zimm 路径同根同修法）。无独立 issue。
+- **发现 5（vmadc/vmsbc overlap 过度限制）：已有 issue #120**（2021-11 开、2024-08 关闭，抱怨同段检查 LMUL_2 奇偶误判）；"修复" e99e7b6 在未合并 DRAFT PR #353 中，且明确保留 `(rs1==rd)||(rs2==rd)→illegal`（即我们的 LMUL_1 精确重叠 case 仍被判非法）。可定位为对 #120 的新论证：该保留检查本身违反 spec（spec 以 `vnsrl.wi v0, v0, 3` 为例允许）。另 issue #162（OPEN）列 vmadc/vmsbc 全组合失败未分析。
+- **附带功能面发现（合法域内 vnclip 结果错误，f/g 扫描，src=0x00000000FFFFFFFF, SEW=32/LMUL=1, vl=1, vxrm=rne）**：vnclip.wi sh=0→0x0（应为 0xFFFFFFFF）、sh=16→0x1（应 0x10000）、sh=31→0x1（应 2）；vnclip.wx sh=31→0x2 正确但 .wi 同位移得 0x1（.wi/.wx 分歧）；且 `simd_alu.sv:444-477` 的 VNCLIP/VNCLIPU 分支只做 `(shifted)+rm` 截断、**无饱和钳位**（clip 语义缺失）；`fixed_p_rounding.sv:51-153` 用 `vew_i`=目的 SEW 的视图在 2×宽源上索引舍入位（元素索引、`j=0` 时 `[j-1]` 越界均不对）。Ara 自带 riscv-tests（`apps/riscv-tests/isa/rv64uv/vnclip.c`）用例数值（800>>7 等）不触发饱和/舍入边界，测不出该缺陷。另注：`vmv.x.s` 编码为 OPMVV funct6=010000（不是 OPIVX；OPIVX 010000+vm=1 是 vadc 保留编码，dispatcher:1250 判 illegal）。
+- 最小复现与命令：`/tmp/ara-vnclip-test/t2_vnclip_wv_sew64.S`（或 case-0258 目录），运行 `cd /tmp && <emu> -c 2000000 -l ram,<elf>,elf`。
+
+### 2026-09-16 spike differential：配置对齐与 golden 校准（阶段一）
+
+- **配置对齐落地**：isla IR `vlen_exp=7` → VLEN=128、ELEN=64。Ara 侧 `make verilate config=2_lanes vlen=128 buildpath=build-v128` 构建成功（config/*.mk 的 "VLEN > 128" 注释过保守，VLEN=128 可 elaborate），emu 在 `ara/ara/hardware/build-v128/verilator/Vara_tb_verilator`。spike 侧照抄 Ara `runtime.mk` 的 `RISCV_SIM_OPT=--isa=rv64gcv_zfh_zvfh_zvl$(vlen_spike)b`（vlen_spike=min(vlen,4096)=128），三方 VLEN/ELEN 完全一致，isla `make solve` 结果直接复用、128-bit vreg 精确装载（零扩展折衷不再需要）。
+- **pin 版 spike 构建**：`toolchain/riscv-isa-sim`（204b88de，含 rvv crypto fix）用系统 gcc + `LDFLAGS=-static-libstdc++` + 系统 dtc 编译安装到 `install/riscv-isa-sim`（`riscv_tests_spike` 同款 golden；0003 patch 的 MOD 版与 outcome 级对拍无关，未构建）。
+- **spike backend 变体**：`pipeline.py --backend spike`——退出走 HTIF tohost（写 `(code<<1)|1`，进程退出码=code；code=0 写 1），链接脚本镜像 `riscv-tests/benchmarks/common/test.ld`（`.tohost` 页对齐）；指令 payload 与 emu 变体逐字节相同。
+- **golden 校准探针（p1-p7，/tmp/spike-probe）**：vadd SEW64 退休（'V' 使能正常）；vsmul SEW64 退休；vsaddu 源=v0+掩码退休（masked 源重叠 v0 不非法）；**vadd/vsaddu 任意 vstart≠0（含 vstart<vl）→ spike 一律 illegal**，根因是 spike `decode_macros.h:169-173` 的 `if (alu && !P.VU.vstart_alu) require(vstart==0)`——这是 RVV 1.0 spec 明文的"实现许可"条款（实现可对 vstart≠0 的向量算术抛 illegal），NEMU 同款选择（与 2026-08-21 XiangShan 记录一致）。
+- **定性修正（vstart 大类）**：spike-vs-Ara 在 vstart≠0 算术上的分歧是"许可 vs 支持"的双合法分歧，非 bug；只有 spec **强制名单**（reductions/vcpop/vfirst/vmsbf/vmsif/vmsof/viota/vcompress）+ vstart≠0 时 Ara 退休才是真 conformance bug（约 49 条，维持原判）。
+- **样本级（26 条）differential 已确认**：vill 态（zimm 0x400）用例 spike 判 illegal、Ara 退休（golden 实锤 bug #4）；`vrgatherei16.vv v31, v31, v0, v0.t`（vs1=v0 且 v0.t）isla+spike 双双 illegal、Ara 退休（reserved 编码宽松执行，坐实）。
+
+### 2026-09-16 spike differential 全量结果（VLEN=128 三方对齐，outcome 级）
+
+产物：`ara/work-diff/`（elf-spike/elf-emu 各 19908 个 ELF + results.json + matrix.json）。isla/spike/Ara 三方 VLEN=128、ELEN=64 完全一致，`make solve` 结果直接复用。矩阵（`pipeline.py diff`）：
+
+- **一致 16633/19908（83.5%）**：retired 9837 + illegal 6796。
+- **BUG 类（golden 实锤）**：
+  - `BUG_vill_reserved_bit_ara_retires` 51：vill 态用例 spike 判 illegal、Ara 退休（对应上游 PR #486）。
+  - `BUG_vstart_mandatory_list_ara_retires` 49：spec 强制名单（reductions/vcpop/vfirst/vmsbf/vmsif/vmsof/viota/vcompress）+vstart≠0，spike 判 illegal、Ara 退休。
+  - `BUG_ara_assert_crash` 16：vnclip/vnclipu SEW=64，spike 判 illegal、Ara 断言崩溃。
+  - `CANDIDATE_ara_over_trap` 250：spike 退休、Ara 判 illegal——其中 vmadc/vmsbc 家族 ~176 条（vd↔vs2 overlap 过度限制被 golden 坐实，spike 的 vsaddu 源=v0+掩码探针 p6 也证明源重叠 v0 合法）；vcompress 24 + viota 14 为 LMUL 未对齐 reserved 编码（Ara trap 合法、spike 宽松，非 bug）；vmsltu/vmseq/vmsleu 各 3 条待查。
+- **双合法分歧类**：`allowance_vstart_arith_spike_stricter` 1787——spike 行使 spec 实现许可（decode_macros.h:169-173 `alu && !vstart_alu → require(vstart==0)`）对 vstart≠0 算术一律 illegal，Ara 支持带 vstart 重启执行；两者均合法，与 isla（退休）对照看 Ara 行为更符合"精确重放"需求。
+- **reserved 编码宽松执行**：`spike_illegal_ara_retired_other` 1081——viota.m 64、vslide1up/vrgather.vi/vslideup.vi 各 57、vid.v 46、vwmacc* ~150、vrgatherei16 30、vcompress 26、vnclipu.wi/wx 20+20 等，全是操作数重叠/越界类 reserved 编码（spike 与 sail 一致判 illegal，Ara 直接执行）；低严重度 conformance 分歧，维持原判。
+- **平台映射差异**：vsm.v 37 条 emu 退休、spike access fault（DRAM 映射窗口不同）；timeout 4 条（emu 侧 vlm/vsm 未映射挂死，spike 侧 fault）。
+- **spec 勘误（内部记录）**：vslide1up/vslideup 无 vstart≠0 强制 illegal 规则（spec 只对 vslide1up 定 overlap-reserved；此前 agent c05 的"vslideup vstart≠0 必须 trap"结论有误，vstart 相关强制名单以 L3907/4196/4218/4259/4295/4332/4383/4797 八处为准）。
+
+### 2026-09-16 值级 differential（spike golden 签名 vs emu 自检，VLEN=128）
+
+- **机制**：check 模式 PoC 在测试指令后导出 792B 签名（word0-29=x1..x30、word30=vl、31=vtype、32=vstart、33=vcsr、word34-97=v0..v31 每寄存器 2 字小端；注意 dump 的 `sd t6,240(t6)` x31 槽被随后 vl 覆盖——x31 实际未捕获，布局以此为准）→ MOD spike（0003 补丁使交互命令从 stdin 读；`until pc 0 <sig_done>` + 99×`mem <addr>`，结果走 stderr 行尾 16-hex）提取 golden → check ELF 内嵌 golden 逐字比对，退出码=首个不匹配字（0=一致）。两种 backend 统一链接脚本 + 等长退出序列保证 ELF 布局逐字节同构（消除 x2/x31 等地址寄存器伪差异）；init 前清零全部 GPR（消除 spike bootrom 写 a1/t0 的环境差异）。冒烟 spike 自洽 5/5。
+- **全量（spike 退休子集 10087 条，golden 10087/10087 提取成功）**：值一致 9286（92.1%）；值不匹配 ~360；emu-illegal 250（已知 over-trap 类）；超时 167（-c 2M 不够，20M 复跑中，非死锁）；init trap 6。
+- **值不匹配归因（修正布局映射后）**：
+  - **vcsr 162**：全部定点饱和类（vssrl.vi/vssra.vv/vaadd/vaaddu/vasub/vsmul/vnclip）→ vxsat/vxrm 标志差异，与 simd_alu 无饱和钳位、fixed_p_rounding 错位同族；方向验证中。
+  - **v0 129**：比较类（vmseq/vmsltu/vmsne/vmsleu/vmadc/vfmv.v.f）mask 低字差异——疑 tail 位（vl<VLMAX）tail-agnostic 分歧或真比较错，逐例验证中。
+  - **vid.v 14**（v1 低字）、**vl 8**（vsetivli/vsetvl/vsetvli 的 vl 回写）、其余 ~50 条散布 vreg word0 差异（vmadc/vssra/vdivu/viota/vmseq 单点）。
+- 已知链路结论：值级比对本身经 spike 自洽与 5/5 冒烟验证；golden 不变量抽查最初"全错"是分析侧 word→区域映射偏移（见上布局注记），比对与提取无恙。
+
+## 2026-09-16 Ara(VLEN=128,2 lanes emu) vs spike 值级差异四家族定性
+
+对拍产物 `ara/work-diff/elf-check-emu/results.json`（class=unexpected_exit_N 表第 N-1 个 8 字节字不同）；golden=`ara/work-diff/elf-x/<case>/golden.bin`。探针法：以 check program.S 的 head（init+测试指令）为基，替换 after_test 块为"csrr→andi a0→sd 到 0xD0000000 退出"（emu 退出码=写入值，tb 用 ara_tb.sv:219 $finish(exit>>1)），必须用 elf-check-emu/ara.ld 链接（默认链接脚本会把 .stack/.tohost 放 0 地址导致挂死）。向量寄存器值用 vs1r.v→ld→逐字节 8 次探针提取（/tmp/probe/{probe.py,getbyte.py}）。
+
+1. **vcsr 家族(162)**：golden vcsr 分布与 isa-state 初态完全一致（4:28/6:39/2:93），即 160 例 spike 只是保留 init vxrm、未置 vxsat；仅 2 例(vnclipu.wi/vnclip.wx) golden vxsat=1。探针：Ara 在 `csrw vxrm,2` 后读 vcsr/vxrm/vxsat 全 0（删测试指令亦然）→ 写被丢。根因 `ara_dispatcher.sv:3396-3407`(csrrw) 与 3434-3445(csrrs)：`vxrm_t'(rs1[16:15])`、`vxsat_e'(rs1[15])`、`rs1[17:16]/rs1[15]`，把旧版"rs1 字段在 instr[19:15]"的约定当成了寄存器值位；同文件 csrrc(3472-3483)、csrrwi(3496-3509) 已用正确的 rs1[1:0]/[0]/[2:1]。2 例 vnclip 值对但 vxsat 不置位：simd_alu.sv:444-478 计算了 vxsat 但恒写 `vxsat.w8[b]` 字段（EW16/32 错字段）且 res 只 `shifted+rm` 不钳位，聚合在 valu.sv:744 `|(alu_vxsat_q & be)`、dispatcher:459。定性：Ara bug（vcsr CSR 读写位切片错+VNCLIP 标志丢失）。
+2. **v0 家族(129)**：128/129 vta=0(tu)。抽 03952/03945（两侧都加载向量初态）：body 位完全一致，差异全在 tail 位（≥vl）——Ara 写全 1，spike 按 tu 保留初态（如 03952 golden v0=0x…0001 vs Ara 0xfffffffffffffffd）→ Ara 对 mask 目的寄存器未实现 tu，bug（中低严重度）。另 8 例 vstart≥vl（如 00104）：Ara 保留 vstart=128(读回 128)按 no-op 执行；golden 全写——实验证明本 spike 构建对 vstart CSR 写死锁丢值（--log-commits 显示 csrw vstart 无 commit，需后续 CSR 指令解锁后按 vstart=0 执行）→ golden 伪差异（spike 特性），Ara 符合 spec。6 例 vfmv.v.f：FP 寄存器复位态差异（spike f2=0x7ff8…qNaN，Ara=0），环境伪差异。
+3. **vl 家族(8)**：根因 `ara_dispatcher.sv:668-679`：(a) vsetivli 分支 `csr_vl_d=uimm5` 不按 VLMAX 钳位（03179: avl=7,e32m1 应 4，Ara=7；03182/86/87 同型 avl=31）；(b) rs1=x0 特例表反了——Ara 实现 rd=x0→vl 不变、rd≠x0→VLMAX，spec 相反（03213 Ara=9 不变 vs spike=0；03190 Ara=VLMAX=16）；(c) vsetvl 只取 `rs2[7:0]` 判 vill，x1/x31=0x4000…/0x8000… 保留位丢失不置 vill（03190 Ara vtype=0x0）。Ara bug；spike 侧对 rs1=x0 亦按 avl=0 处理（spec 特例表本构建未生效，两方实现选择不同）。
+4. **vid.v 家族(14)**：全部 LMUL≥2、SEW≥16。组内第一寄存器元素正确（02135 SEW64: v0={0,1} ✓），第二寄存器起元素按字节紧缩落位（02135 v1.lo=0x302 应为 2；02136 SEW32 v1.lo=0x07060504 应为 0x0000000500000004，即索引 4..7 以单字节连续写入）。定位 masku.sv:745-810 VIOTA/VID 数据通路：NrLanes=2 时 ViotaParallelism=2，`alu_result_vm_m[out_valid_cnt_q[切片] * ViotaParallelism*SEW + i*SEW]` 在 EW32/64 时步进超出 128b 结果总线（beat≥1 的部分选择越界）+ 872-881 shuffle。Ara bug。
+
+## 2026-09-17 Ara 合法配置（2_lanes/VLEN=2048）bug 家族复验与 issue 起草
+
+产物：`/tmp/legal2048/`（verdict.md、20+ 个最小用例 .S/.elf/.log、issue-a1/a3/b10 三个草稿）；生成脚本 gen.sh/gen2.sh/gen3.sh。emu=`ara/ara/hardware/build/verilator/Vara_tb_verilator`（commit 34bd3bc1，config=2_lanes），命令 `-c 2000000 -l ram,<elf>,elf`（-c 必须在 -l 前）。**emu 超时上限的进程退出码也是 0**，必须看日志 `Simulation timeout of ... cycles reached` / `tohost = N` 行区分挂起与正常退出。汇编直接用 riscv64-unknown-elf-gcc 14.2 的 RVV 1.0 助记符（含 vsetivli/vs1r.v/vfmv.v.f），无需 .4byte。
+
+- **B6 复现成立**：`csrw vxrm,2`→读 0；`csrw vxsat,1`→读 0（合法配置与 v128 一致；上游 PR #487-489 同根）。
+- **B8a 判"合法配置不可达"**：spec（/tmp/vspec.adoc L323-327）规定 SEW 超出 [SEW_MIN, LMUL×ELEN] → vill，故 e64/mf8（VLMAX=4）构造非法（Ara vl=0 正确）；VLEN=2048 合法 vtype 最小 VLMAX=32 > uimm5 上限 31 → dispatcher:670 `csr_vl_d=uimm5` 无钳位的缺陷在全部已发布 config（2/4/8/16 lanes）不可触发，仅 VLEN≤1024 可达。
+- **B8b 判非 bug**：`vsetvli x0,x0`（前值 9）→9 ✓、`vsetvli x31,x0`→64 ✓，与 dispatcher:672-677 及 spec 一致；v128 的"互换"是 spike 侧 rs1=x0 按 avl=0 处理的伪差异。
+- **B9 复现成立但表象不同**：e32/m2/vl=128 与 e64/m2/vl=64 下 vid.v 组内第 1 寄存器正确、**第 2 寄存器（v5）完全未写**（各字节全 0；v128 时是字节紧缩错值）。同族 masku VID 通路缺陷，维持 issue #255 补充定位。
+- **B10 复现成立且大幅收窄**：用户指定探针（vstart=4+vadd+32×vs1r）不挂（1249 周期退出）；但原始 167 超时例抽 5 个（vcompress/vnclip/vnclipu/vmadc/vslideup，vstart 全 0）在 2048 emu 5/5 复跑仍挂。最小复现：`vcompress.vm v31,v0,v0`(e16/m1,vl=1,vstart=0)+**单条** `vs1r.v v31` 挂起；`vs1r v0/v30`（非 vd）不挂、`vse16.v v31`（读 vd）挂、无 store 不挂。挂起条件=读 vcompress 类指令目的寄存器的向量 store（疑 use_vd_op 操作队列残留；vid.v+vs1r 不挂）。
+- **B7 子项判非 bug，新发现 B11**：vfmv.v.f e64 完全正确（body=0xA5、tail tu 保留 0xFF→不写 1）；但 **e8 直接 illegal trap（mepc 定位）、e16/e32 退休且 body 恒写 0**（预填 0xFF/给 v0 预填 0x0F/换 f5 均不影响——不读 FPR 也不读 GPR）；dispatcher OPMVV 010111 只解 VCOMPRESS、全仓无 VFMVVF（只有 VFMVFS/VFMVSF），与 FUNCTIONALITIES.md L60 "vfmv" 声明矛盾。v0 家族 6 例"FP 复位态差异"应重新归因为 B11。
+- **A1/A3 合法配置复验通过**：a1 vnclip SEW64 → simd_alu.sv:444 unique case 断言崩溃（$stop）；a3 vcompress vstart=1 正常退休（应 illegal）。
+- **Issue 模板情况**：pulp-platform/ara 无 .github/ISSUE_TEMPLATE（本地 clone 与 gh api 双确认，仅 pull_request_template.md），三个 issue 草稿按通用 bug 报告结构写于 /tmp/legal2048/issue-{a1-vnclip-sew64-crash, a3-vstart-nonzero-mandatory-illegal, b10-vs1r-hang}.md，均含最小 .S 全文、构建/运行命令（-c 在 -l 前）、commit 34bd3bc1、config=2_lanes；未调用 gh 提交。
+
+## 2026-09-18 isla solve case 与 XiangShan V扩展 issue PoC 差异归因
+
+- 批量回放事实（`isla/agents/validation/Vext-test-9-16-difftest-xiangshan/验证报告.md`）：101 个 solve JSON 共 19,908 状态，只有 10,799 条 `Retire_Success` 生成 ELF 跑 DiffTest；**9,045 条 `Illegal_Instruction` 与 ~64 条 `Memory_Exception` 全部未回放**。89 条失败 = 80 条 vstart!=0（NEMU trap vs XiangShan 执行，RVV 允许）+ 9 条 #6039 vsetvl rd=x0 hang；0 新 bug。
+- solve 输出中**已存在**多个 issue PoC 的逐字段等价形态但被"只跑成功退休"过滤掉：`vmv.x.s x10, v2` + vtype=vill（#5809，zVMVXS.json 第 3 条）；vmv8r.v v4/vmv4r.v v6 等寄存器组未对齐（#5772，zVMVRTYPE.json 7 条）；masked `vmerge.vvm v0,...`（#5865，zMASKTYPEV.json 22 条）——三者 ret_val 均为 Illegal_Instruction。
+- `difftest-xiangshan/pipeline.py` 的 PoC 形态：mstatus 置 VS=Dirty(0x600) → `vsetvli zero,t1,vtypei` 重建 vl/vtype → csrw vstart/vxrm/vxsat → vr* 用 vl1re8.v 灌数（仅当 isa-state 含 vr*）→ PMP 全开+mret 降特权 → li x*（仅当含 x*）→ **单条** test-ins → GOODTRAP(0x6b)。无 trap handler、无观察指令、isla 的 ret_val 不进 oracle（比较只有 NEMU vs RTL）。
+- solve JSON 只有 2,194/19,908（11%）状态带 vr* 初值、523（2.6%）带 x* 初值；zVMVXS 全部 9 条无数据 → DUT 上 vreg 为复位零，数据依赖类 bug（#5829 符号扩展、#5840/#5928/#6152 ext 类）不可见。操作数取值平凡化：rd/vd 基本只落 {0,31}，vl 大量为 0。
+- 覆盖缺口：`isla/scripts/run.mk` 的 MEMORY 组默认排除全部向量访存 clause（VLRETYPE/VLSEG*/VLSSEG/VLXSEG/VMTYPE/VSRETYPE/VSSEG/VSSSEG/VSXSEG），FD_FLOAT 组也默认不跑；28 个已确认 RTL bug 约 2/3 涉及访存指令（FOF/segment/异常链/mtval/store 队列），isla 侧根本生成不出。
+- 序列/环境缺口：#5739 需 vsetvli(rd≠x0)→csrr vl 回读（solve 有 rd=x31 的 vsetvli 但 ELF 无后续观察指令，且 v3 已修）；#6561 需 VS=Clean 前提（harness 反而固定置 Dirty）+ vl=0 store（访存被排除）；FOF 类需 PMP deny 区（harness 只会开全权限 pmpcfg0=0x1f）；#6467 需 store 队列压力长序列；#6399/#6482/#6540 需 fault→mret→fault + handler 查 mtval；#4190 是性能 oracle，difftest 原理不适用。
+- DUT 为 kunminghu-v3 分支 MinimalConfig(VLEN=128) + NEMU 参考：v2 专属 bug 在 v3 可能不存在/未开发（#6576 维护者原话），2026-03/04 已修 bug（#5739/#5809）所用构建可能已含修复；NEMU 自身与 XiangShan 同源的系统性偏差（vstart!=0 trap、#5426 类 NEMU bug）difftest 盲区，isla/Sail 黄金模型未参与断言是半条根因。
+
+## 2026-09-20 V 扩展 SYMBOLIC 重复实现收敛
+
+- MASKTYPEI 的符号分支使用普通 Sail helper，可与非符号构建共用；MOVETYPEV 的后端差异仅在掩码向量选择，已抽到 vector_select_masked。
+- read_vreg/write_vreg、init_masked_result（含 carry/cmp）、vrev8 的 default 实现已移到宏外共用。Isla 原语和 __isla_use_extra_ops 选择行为保留。
+- Sail 条件编译指令必须位于定义之间，不能嵌入函数表达式；因此入口保留宏两侧的短 function 定义，共用 val 签名和 default 函数。验证结果见 v_symbolic_dedup/status.md。
+
+- V 扩展 SYMBOLIC 收敛后完整 CMake 构建成功，重新生成 RV64 IR 成功；RV32/RV64 向量寄存器组、定点舍入及 masked vxsat 共六项回归测试全部通过。详见 v_symbolic_dedup/status.md。

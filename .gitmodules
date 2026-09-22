@@ -1,0 +1,7 @@
+[submodule "isla"]
+	path = isla
+	url = https://github.com/ariscv/isla.git
+
+[submodule "sail-riscv"]
+	path = sail-riscv
+	url = https://github.com/msuadOf/sail-riscv.git

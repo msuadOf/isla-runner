@@ -1,0 +1,13 @@
+# Upstream checkout, managed independently from this harness
+/xiangshan/
+
+# Mutable inputs and outputs; frozen copies live in ../archives/
+/inputs/
+/work/
+/emu-baseline-*
+/poc-final/*.elf
+
+# Python caches; test-only .so placeholders remain versioned
+__pycache__/
+*.py[cod]
+.pytest_cache/

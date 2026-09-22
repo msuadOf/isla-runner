@@ -1,0 +1,180 @@
+{
+  "gen": [
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x0, 0x4",
+      "test-ins-encdec": "32'hc040_7fd7",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x0, 0x0, 0x4",
+      "test-ins-encdec": "32'hc040_7057",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x0, 0x23",
+      "test-ins-encdec": "32'hc230_7fd7",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x0, 0x0, 0x23",
+      "test-ins-encdec": "32'hc230_7057",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x0, e64, mf4, tu, mu",
+      "test-ins-encdec": "32'hc1e0_7fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x0, 0x0, e64, mf4, tu, mu",
+      "test-ins-encdec": "32'hc1e0_7057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x0, e8, m1, tu, mu",
+      "test-ins-encdec": "32'hc000_7fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x0, 0x1, e8, m2, tu, mu",
+      "test-ins-encdec": "32'hc010_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x1f, e8, mf4, tu, mu",
+      "test-ins-encdec": "32'hc06f_ffd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x3, e8, mf8, tu, mu",
+      "test-ins-encdec": "32'hc051_ffd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x0, 0x1c, e8, mf8, tu, mu",
+      "test-ins-encdec": "32'hc05e_7057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x0, 0x1f, e8, m1, tu, mu",
+      "test-ins-encdec": "32'hc00f_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    }
+  ]
+}

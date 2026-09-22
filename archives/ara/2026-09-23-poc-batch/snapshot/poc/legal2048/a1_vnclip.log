@@ -1,0 +1,11 @@
+Program header number 0 in `a1_vnclip.elf' low is 80000000
+Program header number 0 in `a1_vnclip.elf' high is 80002097
+Set `ram TOP.ara_tb_verilator.dut.i_ara_soc.i_dram 8 0x80000000 0x100000 write with offset: 0x0 write with size: 0x2098
+Simulation of Ara
+=================
+
+
+Simulation running, end by pressing CTRL-c.
+[322] %Error: simd_alu.sv:444: Assertion failed in TOP.ara_tb_verilator.dut.i_ara_soc.i_system.i_ara.gen_lanes[0].i_lane.i_vfus.i_valu.i_simd_alu.p_alu: unique case, but none matched for '3'h3'
+%Error: /home/baiyifan/workplace-local/isla-runner/ara/ara/hardware/src/lane/simd_alu.sv:444: Verilog $stop
+Aborting...

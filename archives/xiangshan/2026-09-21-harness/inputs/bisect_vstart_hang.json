@@ -1,0 +1,56 @@
+{
+ "metadata": {
+  "purpose": "B类挂死触发条件二分",
+  "vlen_bits": 128
+ },
+ "gen": [
+  {
+   "test-ins": "vaadd.vv v31, v8, v12, v0.t  [orig masked e16m2]",
+   "test-ins-encdec": "32'h2486_2fd7",
+   "isa-state": {
+    "vcsr": "3'h0",
+    "vstart": "64'h0000_0000_0000_0040",
+    "vtype": "64'h0000_0000_0000_000e",
+    "vl": "64'h0000_0000_0000_0001",
+    "cur_privilege": "User"
+   },
+   "ret_val": "Illegal_Instruction(())"
+  },
+  {
+   "test-ins": "vaadd.vv v31, v8, v12  [unmasked e16m2]",
+   "test-ins-encdec": "32'h2686_2fd7",
+   "isa-state": {
+    "vcsr": "3'h0",
+    "vstart": "64'h0000_0000_0000_0040",
+    "vtype": "64'h0000_0000_0000_000e",
+    "vl": "64'h0000_0000_0000_0001",
+    "cur_privilege": "User"
+   },
+   "ret_val": "Illegal_Instruction(())"
+  },
+  {
+   "test-ins": "vaadd.vv v31, v8, v12, v0.t  [masked e8m1]",
+   "test-ins-encdec": "32'h2486_2fd7",
+   "isa-state": {
+    "vcsr": "3'h0",
+    "vstart": "64'h0000_0000_0000_0040",
+    "vtype": "64'h0000_0000_0000_0000",
+    "vl": "64'h0000_0000_0000_0010",
+    "cur_privilege": "User"
+   },
+   "ret_val": "Illegal_Instruction(())"
+  },
+  {
+   "test-ins": "vaadd.vv v31, v8, v12  [unmasked e8m1]",
+   "test-ins-encdec": "32'h2686_2fd7",
+   "isa-state": {
+    "vcsr": "3'h0",
+    "vstart": "64'h0000_0000_0000_0040",
+    "vtype": "64'h0000_0000_0000_0000",
+    "vl": "64'h0000_0000_0000_0010",
+    "cur_privilege": "User"
+   },
+   "ret_val": "Illegal_Instruction(())"
+  }
+ ]
+}

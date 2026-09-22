@@ -1,0 +1,17 @@
+Program header number 0 in `b9_vid_v4_sanity.elf' low is 80000000
+Program header number 0 in `b9_vid_v4_sanity.elf' high is 800020a7
+Set `ram TOP.ara_tb_verilator.dut.i_ara_soc.i_dram 8 0x80000000 0x100000 write with offset: 0x0 write with size: 0x20a8
+Simulation of Ara
+=================
+
+
+Simulation running, end by pressing CTRL-c.
+[546] %Warning: ara_tb_verilator.sv:47: TOP.ara_tb_verilator: Core Test *** FAILED *** (tohost = 1)
+- /home/baiyifan/workplace-local/isla-runner/ara/ara/hardware/tb/ara_tb_verilator.sv:54: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  111
+Wallclock time:   0.026 s
+Simulation speed: 10500 cycles/s (10.5 kHz)

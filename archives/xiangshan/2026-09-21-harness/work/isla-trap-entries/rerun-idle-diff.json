@@ -1,0 +1,2768 @@
+[
+ {
+  "id": "case-441",
+  "instruction": "vmacc.vv v4, v0, v4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-447",
+  "instruction": "vmadd.vv v1, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-437",
+  "instruction": "vnmsac.vv v8, v0, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-528",
+  "instruction": "vnmsac.vv v0, v0, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-557",
+  "instruction": "vdivu.vv v1, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-564",
+  "instruction": "vrem.vv v31, v1, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-581",
+  "instruction": "vdivu.vv v0, v19, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-592",
+  "instruction": "vmul.vv v31, v22, v31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-613",
+  "instruction": "vaaddu.vv v31, v25, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-632",
+  "instruction": "vremu.vv v26, v0, v15",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-637",
+  "instruction": "vremu.vv v0, v23, v30, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-622",
+  "instruction": "vaadd.vv v31, v8, v12, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-645",
+  "instruction": "vremu.vv v0, v19, v3, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-669",
+  "instruction": "vnmsac.vx v1, x10, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-691",
+  "instruction": "vmacc.vx v0, x26, v28, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-706",
+  "instruction": "vnmsub.vx v0, x20, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-703",
+  "instruction": "vnmsub.vx v1, x7, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-715",
+  "instruction": "vnmsac.vx v0, x0, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-733",
+  "instruction": "vnmsub.vx v0, x30, v8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-735",
+  "instruction": "vnmsac.vx v0, x0, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-724",
+  "instruction": "vmacc.vx v2, x8, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-747",
+  "instruction": "vmadd.vx v1, x31, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-750",
+  "instruction": "vmadd.vx v31, x0, v10, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-752",
+  "instruction": "vnmsub.vx v0, x0, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-758",
+  "instruction": "vnmsac.vx v24, x0, v17",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-754",
+  "instruction": "vnmsub.vx v31, x0, v15, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-810",
+  "instruction": "vnmsub.vx v8, x31, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-835",
+  "instruction": "vslide1up.vx v0, v19, x23, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-836",
+  "instruction": "vslide1up.vx v1, v0, x19",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-864",
+  "instruction": "vasub.vx v1, v0, x6, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-900",
+  "instruction": "vasub.vx v4, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-912",
+  "instruction": "vslide1up.vx v1, v0, x30",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-927",
+  "instruction": "vslide1up.vx v1, v0, x19, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-955",
+  "instruction": "vmulh.vx v0, v2, x31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-974",
+  "instruction": "vmulhsu.vx v1, v0, x11",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-968",
+  "instruction": "vasubu.vx v0, v18, x3, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-983",
+  "instruction": "vslide1up.vx v1, v0, x16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-984",
+  "instruction": "vaaddu.vx v22, v13, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-998",
+  "instruction": "vmulhsu.vx v0, v0, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-993",
+  "instruction": "vslide1up.vx v0, v4, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-997",
+  "instruction": "vslide1up.vx v31, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1029",
+  "instruction": "vslide1up.vx v1, v0, x5",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1044",
+  "instruction": "vdiv.vx v27, v23, x3, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1065",
+  "instruction": "vmulhsu.vx v1, v0, x8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1071",
+  "instruction": "vslide1up.vx v0, v0, x27",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1072",
+  "instruction": "vslide1up.vx v0, v31, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1094",
+  "instruction": "vdivu.vx v8, v0, x31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1089",
+  "instruction": "vasub.vx v1, v0, x10, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1098",
+  "instruction": "vslide1up.vx v4, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1101",
+  "instruction": "vslide1down.vx v5, v17, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1130",
+  "instruction": "vslide1up.vx v31, v31, x27, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1140",
+  "instruction": "vmulhsu.vx v11, v1, x30",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1146",
+  "instruction": "vslide1up.vx v8, v8, x2, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1158",
+  "instruction": "vslide1up.vx v1, v0, x3",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1181",
+  "instruction": "vdiv.vx v1, v0, x16",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1170",
+  "instruction": "vslide1up.vx v0, v31, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1224",
+  "instruction": "vnsra.wi v0, v1, 0x14, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1227",
+  "instruction": "vnsra.wi v10, v8, 0xb",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1219",
+  "instruction": "vnsrl.wi v31, v30, 0xe, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1285",
+  "instruction": "vnsrl.wi v31, v1, 0x10, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1373",
+  "instruction": "vnclipu.wi v0, v30, 0xd, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1386",
+  "instruction": "vnclipu.wi v0, v19, 0x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1392",
+  "instruction": "vnclipu.wi v31, v6, 0x1a",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1412",
+  "instruction": "vnclip.wi v20, v16, 0x1f",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1430",
+  "instruction": "vnclipu.wi v31, v1, 0x10, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1435",
+  "instruction": "vnclip.wi v24, v8, 0x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1462",
+  "instruction": "vnclip.wi v31, v1, 0x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1461",
+  "instruction": "vnclip.wi v29, v28, 0x4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1501",
+  "instruction": "vnsrl.wv v0, v28, v26, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1507",
+  "instruction": "vnsra.wv v8, v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1522",
+  "instruction": "vnsra.wv v0, v1, v20, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1532",
+  "instruction": "vnsrl.wv v4, v0, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1535",
+  "instruction": "vnsrl.wv v2, v0, v19",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1556",
+  "instruction": "vnsrl.wv v2, v28, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1585",
+  "instruction": "vnsra.wv v16, v0, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1591",
+  "instruction": "vnsrl.wv v31, v1, v16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1596",
+  "instruction": "vnsra.wv v24, v8, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1609",
+  "instruction": "vnsrl.wv v31, v30, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1587",
+  "instruction": "vnsrl.wv v31, v29, v23, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1602",
+  "instruction": "vnsra.wv v1, v0, v21, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1606",
+  "instruction": "vnsrl.wv v24, v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1625",
+  "instruction": "vnsra.wv v29, v28, v4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1647",
+  "instruction": "vnsra.wv v26, v24, v11",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1634",
+  "instruction": "vnsra.wv v1, v0, v8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1636",
+  "instruction": "vnsra.wv v31, v31, v31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1662",
+  "instruction": "vnclipu.wv v0, v13, v24, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1682",
+  "instruction": "vnclip.wv v24, v16, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1719",
+  "instruction": "vnclipu.wv v1, v0, v3, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1726",
+  "instruction": "vnclipu.wv v31, v8, v6, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1739",
+  "instruction": "vnclip.wv v22, v7, v18",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1752",
+  "instruction": "vnclipu.wv v1, v0, v10",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1756",
+  "instruction": "vnclipu.wv v31, v29, v23, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1771",
+  "instruction": "vnclip.wv v1, v0, v21, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1787",
+  "instruction": "vnclip.wv v20, v16, v21, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1812",
+  "instruction": "vnclip.wv v16, v8, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1807",
+  "instruction": "vnclip.wv v1, v0, v5",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1820",
+  "instruction": "vnsra.wx v1, v0, x10",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1851",
+  "instruction": "vnsra.wx v31, v31, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-1867",
+  "instruction": "vnsra.wx v5, v2, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1882",
+  "instruction": "vnsra.wx v20, v16, x12, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1910",
+  "instruction": "vnsrl.wx v7, v1, x14",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1908",
+  "instruction": "vnsrl.wx v0, v0, x11, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-1912",
+  "instruction": "vnsrl.wx v0, v0, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2015",
+  "instruction": "vnsra.wx v25, v22, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2065",
+  "instruction": "vnclip.wx v31, v31, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2087",
+  "instruction": "vnclip.wx v20, v16, x12, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2094",
+  "instruction": "vnclip.wx v13, v4, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2113",
+  "instruction": "vnclipu.wx v0, v0, x11, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2118",
+  "instruction": "vnclip.wx v18, v16, x18, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2108",
+  "instruction": "vnclip.wx v31, v1, x19, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2128",
+  "instruction": "vnclip.wx v20, v16, x31",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2135",
+  "instruction": "vnclipu.wx v1, v0, x13",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2140",
+  "instruction": "vnclip.wx v18, v16, x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2127",
+  "instruction": "vnclip.wx v22, v7, x18",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2141",
+  "instruction": "vnclipu.wx v31, v31, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2161",
+  "instruction": "vnclip.wx v1, v0, x21, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2179",
+  "instruction": "vnclipu.wx v24, v24, x4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2168",
+  "instruction": "vnclipu.wx v28, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2178",
+  "instruction": "vnclip.wx v20, v16, x25",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2197",
+  "instruction": "vnclip.wx v31, v1, x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2201",
+  "instruction": "vnclip.wx v9, v1, x14",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2589",
+  "instruction": "vandn.vx v0, v0, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2617",
+  "instruction": "vandn.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2631",
+  "instruction": "vandn.vx v1, v0, x27",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2637",
+  "instruction": "vandn.vx v2, v0, x9",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2625",
+  "instruction": "vandn.vx v26, v10, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2629",
+  "instruction": "vandn.vx v3, v31, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-2712",
+  "instruction": "vbrev8.v v8, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2725",
+  "instruction": "vbrev8.v v1, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2738",
+  "instruction": "vbrev8.v v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2755",
+  "instruction": "vbrev8.v v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2780",
+  "instruction": "vbrev.v v8, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2784",
+  "instruction": "vbrev.v v9, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2833",
+  "instruction": "vclmulh.vv v30, v17, v21, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2840",
+  "instruction": "vclmulh.vv v24, v24, v24",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2858",
+  "instruction": "vclmulh.vv v0, v0, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2861",
+  "instruction": "vclmulh.vv v16, v21, v20, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2859",
+  "instruction": "vclmulh.vv v0, v25, v12",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2866",
+  "instruction": "vclmulh.vv v2, v13, v17",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-2877",
+  "instruction": "vclmulh.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3303",
+  "instruction": "vctz.v v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3294",
+  "instruction": "vctz.v v1, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3332",
+  "instruction": "vzext.vf8 v0, v21, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3344",
+  "instruction": "vzext.vf8 v0, v30, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3470",
+  "instruction": "vfmerge.vfm v0, v5, f1, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3535",
+  "instruction": "vfmerge.vfm v31, v11, f25, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3631",
+  "instruction": "vfmv.v.f v0, f26",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3656",
+  "instruction": "vfmv.v.f v9, f21",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3671",
+  "instruction": "vfmv.s.f v5, f0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3772",
+  "instruction": "vmsne.vi v16, v0, -0xc",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-3802",
+  "instruction": "vid.v v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-3804",
+  "instruction": "vid.v v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-3811",
+  "instruction": "vid.v v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3828",
+  "instruction": "vid.v v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3829",
+  "instruction": "vid.v v7",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-3873",
+  "instruction": "vid.v v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3874",
+  "instruction": "vid.v v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3882",
+  "instruction": "vid.v v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3895",
+  "instruction": "vmadc.vi v5, v4, 0x7",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3896",
+  "instruction": "vmadc.vi v13, v4, 0xe",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3903",
+  "instruction": "vmadc.vi v29, v4, 0xe",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3942",
+  "instruction": "vadc.vim v31, v1, -0x4, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3956",
+  "instruction": "vadc.vim v1, v0, 0x4, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3964",
+  "instruction": "vadc.vim v0, v0, -0x8, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3974",
+  "instruction": "vadc.vim v31, v2, 0x5, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3968",
+  "instruction": "vadc.vim v31, v5, -0x6, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-3972",
+  "instruction": "vadc.vim v1, v0, 0x7, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-3985",
+  "instruction": "vadc.vim v31, v2, 0xc, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4026",
+  "instruction": "vmadc.vim v28, v20, -0x10, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-4029",
+  "instruction": "vmadc.vim v30, v3, 0x3, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-4046",
+  "instruction": "viota.m v12, v3",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4039",
+  "instruction": "viota.m v16, v25",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4050",
+  "instruction": "viota.m v0, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4051",
+  "instruction": "viota.m v8, v8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4058",
+  "instruction": "viota.m v31, v15, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4066",
+  "instruction": "viota.m v1, v5, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4064",
+  "instruction": "viota.m v31, v31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4056",
+  "instruction": "viota.m v2, v27, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4067",
+  "instruction": "viota.m v31, v25",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4287",
+  "instruction": "vslidedown.vi v16, v1, 0x4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4293",
+  "instruction": "vrgather.vi v16, v1, -0xd",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4318",
+  "instruction": "vslideup.vi v1, v0, -0x7",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4335",
+  "instruction": "vrgather.vi v0, v28, 0x4, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4358",
+  "instruction": "vrgather.vi v31, v31, -0x9, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4395",
+  "instruction": "vslidedown.vi v2, v0, 0xd, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4391",
+  "instruction": "vrgather.vi v2, v2, 0x1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4474",
+  "instruction": "vslideup.vi v8, v8, -0xa, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4483",
+  "instruction": "vrgather.vi v3, v1, -0xd",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4552",
+  "instruction": "vslideup.vi v31, v0, -0x10",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4562",
+  "instruction": "vslideup.vi v31, v0, 0x3",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4571",
+  "instruction": "vslidedown.vi v1, v0, 0x4, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4594",
+  "instruction": "vrgather.vi v31, v0, -0x4",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4595",
+  "instruction": "vrgather.vi v1, v0, 0xd, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4642",
+  "instruction": "vadd.vi v4, v0, 0x4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4650",
+  "instruction": "vsrl.vi v31, v1, -0x9, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4675",
+  "instruction": "vsra.vi v1, v0, -0x3, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4859",
+  "instruction": "vrev8.v v1, v14",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-4874",
+  "instruction": "vrev8.v v17, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4881",
+  "instruction": "vrev8.v v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4915",
+  "instruction": "vrol.vv v1, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4982",
+  "instruction": "vrol.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-4998",
+  "instruction": "vrol.vx v16, v4, x6",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5016",
+  "instruction": "vrol.vx v4, v0, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5031",
+  "instruction": "vrol.vx v0, v0, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5042",
+  "instruction": "vrol.vx v0, v0, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5065",
+  "instruction": "vrol.vx v25, v1, x17",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5063",
+  "instruction": "vrol.vx v28, v1, x23, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5074",
+  "instruction": "vrol.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5075",
+  "instruction": "vrol.vx v0, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5071",
+  "instruction": "vrol.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5088",
+  "instruction": "vror.vi v18, v1, 0x2, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5087",
+  "instruction": "vror.vi v0, v0, 0x24",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5097",
+  "instruction": "vror.vi v13, v28, 0x1e, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5109",
+  "instruction": "vror.vi v4, v0, 0x0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5121",
+  "instruction": "vror.vi v1, v0, 0x2b, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5113",
+  "instruction": "vror.vi v8, v1, 0x2d",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5139",
+  "instruction": "vror.vi v0, v0, 0x26, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5136",
+  "instruction": "vror.vi v0, v0, 0x10",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5144",
+  "instruction": "vror.vv v0, v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5157",
+  "instruction": "vror.vv v19, v17, v26, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5176",
+  "instruction": "vror.vv v16, v6, v4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5191",
+  "instruction": "vror.vv v8, v13, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5182",
+  "instruction": "vror.vv v8, v2, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5197",
+  "instruction": "vror.vv v19, v22, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5210",
+  "instruction": "vror.vv v25, v2, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5208",
+  "instruction": "vror.vv v0, v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5219",
+  "instruction": "vror.vv v23, v1, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5228",
+  "instruction": "vror.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5240",
+  "instruction": "vror.vx v1, v0, x28",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5246",
+  "instruction": "vror.vx v0, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5257",
+  "instruction": "vror.vx v0, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5279",
+  "instruction": "vror.vx v8, v1, x13",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5298",
+  "instruction": "vror.vx v0, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5306",
+  "instruction": "vror.vx v27, v22, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5313",
+  "instruction": "vror.vx v1, v0, x28, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5316",
+  "instruction": "vror.vx v2, v0, x25, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5323",
+  "instruction": "vror.vx v28, v1, x23, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5321",
+  "instruction": "vror.vx v3, v20, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5338",
+  "instruction": "vsha2ms.vv v28, v19, v2",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5329",
+  "instruction": "vror.vx v0, v0, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5352",
+  "instruction": "vsha2ms.vv v1, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5373",
+  "instruction": "vsm3c.vi v28, v1, 0x13",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5374",
+  "instruction": "vsm3c.vi v4, v0, 0x15",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5460",
+  "instruction": "vmsltu.vv v11, v30, v13, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5468",
+  "instruction": "vmseq.vv v15, v17, v11, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5480",
+  "instruction": "vmsle.vv v29, v18, v27",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5501",
+  "instruction": "vmsltu.vv v11, v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5548",
+  "instruction": "vmadc.vv v28, v23, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5536",
+  "instruction": "vmsbc.vv v9, v1, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5567",
+  "instruction": "vadc.vvm v0, v28, v5, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5559",
+  "instruction": "vadc.vvm v1, v0, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5593",
+  "instruction": "vsbc.vvm v31, v8, v1, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5596",
+  "instruction": "vsbc.vvm v31, v1, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5608",
+  "instruction": "vadc.vvm v0, v22, v19, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5641",
+  "instruction": "vmadc.vvm v4, v2, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5659",
+  "instruction": "vmadc.vvm v0, v4, v0, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5688",
+  "instruction": "vrgatherei16.vv v8, v8, v7",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5690",
+  "instruction": "vrgather.vv v31, v0, v0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5715",
+  "instruction": "vrgather.vv v8, v0, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5722",
+  "instruction": "vrgatherei16.vv v17, v17, v20, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5725",
+  "instruction": "vrgather.vv v0, v19, v31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5727",
+  "instruction": "vsub.vv v0, v19, v13, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5733",
+  "instruction": "vsmul.vv v1, v24, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5745",
+  "instruction": "vrgather.vv v0, v9, v31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5740",
+  "instruction": "vrgatherei16.vv v30, v2, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5743",
+  "instruction": "vrgatherei16.vv v0, v4, v31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5814",
+  "instruction": "vrgatherei16.vv v2, v29, v30, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5885",
+  "instruction": "vrgather.vv v31, v31, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5922",
+  "instruction": "vwsll.vi v31, v27, 0xa, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5968",
+  "instruction": "vwsll.vi v28, v6, 0x17, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-5986",
+  "instruction": "vwsll.vi v11, v17, 0xe",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-5984",
+  "instruction": "vwsll.vi v0, v0, 0x11, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6004",
+  "instruction": "vwsll.vi v1, v0, 0x7",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6057",
+  "instruction": "vwsll.vi v0, v26, 0x11, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6075",
+  "instruction": "vwsll.vi v0, v2, 0x8",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6076",
+  "instruction": "vwsll.vi v4, v31, 0x14",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6088",
+  "instruction": "vwsll.vv v1, v22, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6109",
+  "instruction": "vwsll.vv v8, v4, v8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6102",
+  "instruction": "vwsll.vv v1, v13, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6114",
+  "instruction": "vwsll.vv v8, v31, v8",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6153",
+  "instruction": "vwsll.vv v28, v1, v2, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6141",
+  "instruction": "vwsll.vv v2, v26, v3, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6165",
+  "instruction": "vwsll.vv v16, v20, v16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6175",
+  "instruction": "vwsll.vv v31, v16, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6173",
+  "instruction": "vwsll.vv v31, v14, v31",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6180",
+  "instruction": "vwsll.vv v31, v28, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6182",
+  "instruction": "vwsll.vv v6, v23, v6, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6186",
+  "instruction": "vwsll.vv v0, v9, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6191",
+  "instruction": "vwsll.vv v0, v1, v2",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6201",
+  "instruction": "vwsll.vv v0, v23, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6225",
+  "instruction": "vwsll.vv v26, v7, v30, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6257",
+  "instruction": "vwsll.vv v16, v18, v16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6261",
+  "instruction": "vwsll.vv v0, v20, v23, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6267",
+  "instruction": "vwsll.vv v1, v15, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6262",
+  "instruction": "vwsll.vv v7, v13, v7",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6274",
+  "instruction": "vwsll.vv v28, v1, v2",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6285",
+  "instruction": "vwsll.vx v1, v0, x22",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6295",
+  "instruction": "vwsll.vx v8, v9, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6320",
+  "instruction": "vwsll.vx v0, v26, x17, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6339",
+  "instruction": "vwsll.vx v16, v16, x31, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6381",
+  "instruction": "vwsll.vx v0, v0, x4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6380",
+  "instruction": "vwsll.vx v0, v0, x17, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6390",
+  "instruction": "vwsll.vx v31, v1, x28, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6383",
+  "instruction": "vwsll.vx v0, v29, x8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6401",
+  "instruction": "vwsll.vx v4, v31, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6420",
+  "instruction": "vwsll.vx v8, v10, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6424",
+  "instruction": "vwsll.vx v24, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6461",
+  "instruction": "vwsll.vx v4, v30, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6527",
+  "instruction": "vwsll.vx v24, v4, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6530",
+  "instruction": "vwsll.vx v24, v4, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6531",
+  "instruction": "vwsll.vx v8, v28, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6532",
+  "instruction": "vwsll.vx v4, v28, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6535",
+  "instruction": "vwsll.vx v4, v31, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6540",
+  "instruction": "vmseq.vx v6, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6545",
+  "instruction": "vmsgt.vx v25, v4, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6552",
+  "instruction": "vmsgt.vx v15, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6560",
+  "instruction": "vmsne.vx v18, v0, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6571",
+  "instruction": "vmslt.vx v20, v1, x16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6589",
+  "instruction": "vmslt.vx v21, v1, x8",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6596",
+  "instruction": "vmsgt.vx v7, v24, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6591",
+  "instruction": "vmsgtu.vx v10, v21, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6608",
+  "instruction": "vmsleu.vx v22, v0, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6619",
+  "instruction": "vmsgtu.vx v28, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6638",
+  "instruction": "vmsbc.vx v23, v0, x0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6645",
+  "instruction": "vmsbc.vx v30, v31, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6677",
+  "instruction": "vmsbc.vx v3, v0, x31",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6724",
+  "instruction": "vsbc.vxm v0, v8, x11, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6719",
+  "instruction": "vsbc.vxm v0, v9, x18, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6730",
+  "instruction": "vsbc.vxm v2, v0, x31, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6738",
+  "instruction": "vsbc.vxm v1, v0, x19, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6746",
+  "instruction": "vsbc.vxm v0, v13, x8, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6801",
+  "instruction": "vmsbc.vxm v11, v1, x8, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6827",
+  "instruction": "vmsbc.vxm v14, v8, x31, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6836",
+  "instruction": "vmsbc.vxm v0, v0, x0, v0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6848",
+  "instruction": "vrgather.vx v31, v0, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6857",
+  "instruction": "vslideup.vx v0, v2, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6858",
+  "instruction": "vslideup.vx v0, v4, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6865",
+  "instruction": "vslidedown.vx v31, v23, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6863",
+  "instruction": "vslidedown.vx v8, v0, x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6869",
+  "instruction": "vslidedown.vx v2, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6885",
+  "instruction": "vslideup.vx v2, v0, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6894",
+  "instruction": "vslidedown.vx v5, v17, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6888",
+  "instruction": "vslidedown.vx v17, v7, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6887",
+  "instruction": "vslidedown.vx v8, v11, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-6900",
+  "instruction": "vslidedown.vx v30, v4, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6928",
+  "instruction": "vslideup.vx v30, v1, x23",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6924",
+  "instruction": "vslidedown.vx v0, v0, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6941",
+  "instruction": "vslidedown.vx v31, v14, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6938",
+  "instruction": "vrgather.vx v1, v0, x7, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6954",
+  "instruction": "vslideup.vx v2, v0, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6955",
+  "instruction": "vslidedown.vx v31, v13, x5",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6965",
+  "instruction": "vrgather.vx v0, v8, x0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6972",
+  "instruction": "vrgather.vx v31, v0, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6974",
+  "instruction": "vrgather.vx v8, v0, x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6989",
+  "instruction": "vssra.vx v14, v1, x28",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7002",
+  "instruction": "vminu.vx v1, v0, x7, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6995",
+  "instruction": "vsaddu.vx v0, v17, x19, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-6992",
+  "instruction": "vsll.vx v0, v4, x20, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7007",
+  "instruction": "vssubu.vx v0, v30, x13, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7004",
+  "instruction": "vssra.vx v1, v0, x19, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7015",
+  "instruction": "vssubu.vx v1, v0, x4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7141",
+  "instruction": "vwmacc.vv v31, v1, v26, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7175",
+  "instruction": "vwmaccu.vv v0, v2, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7181",
+  "instruction": "vwmaccu.vv v4, v30, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7206",
+  "instruction": "vwmacc.vv v30, v31, v30, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7223",
+  "instruction": "vwmaccsu.vv v16, v20, v8",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7287",
+  "instruction": "vwmaccu.vv v31, v1, v23",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7313",
+  "instruction": "vwmacc.vv v4, v8, v6, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7302",
+  "instruction": "vwmacc.vv v16, v20, v12, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7315",
+  "instruction": "vwmacc.vv v16, v14, v14, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-7334",
+  "instruction": "vwmaccsu.vv v1, v14, v16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7380",
+  "instruction": "vwmaccsu.vv v8, v24, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7396",
+  "instruction": "vwmaccsu.vv v0, v23, v28, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7401",
+  "instruction": "vwmaccsu.vv v4, v6, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7430",
+  "instruction": "vwmaccsu.vv v12, v29, v28, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7423",
+  "instruction": "vwmaccsu.vv v0, v8, v17, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7416",
+  "instruction": "vwmacc.vv v0, v4, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7418",
+  "instruction": "vwmacc.vv v8, v16, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7443",
+  "instruction": "vwmaccu.vv v15, v7, v15, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7475",
+  "instruction": "vwmaccu.vv v28, v6, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7495",
+  "instruction": "vwmacc.vv v2, v1, v2",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7485",
+  "instruction": "vwmacc.vv v30, v31, v30, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7503",
+  "instruction": "vwmaccu.vx v1, x23, v19, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7500",
+  "instruction": "vwmacc.vx v8, x14, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7518",
+  "instruction": "vwmacc.vx v1, x17, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7554",
+  "instruction": "vwmaccus.vx v0, x29, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7558",
+  "instruction": "vwmaccsu.vx v24, x31, v16",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-7584",
+  "instruction": "vwmaccu.vx v4, x8, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7618",
+  "instruction": "vwmaccsu.vx v15, x0, v25",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7646",
+  "instruction": "vwmaccsu.vx v4, x31, v14, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7740",
+  "instruction": "vwmaccsu.vx v1, x24, v0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7760",
+  "instruction": "vwsubu.wv v8, v0, v4",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7771",
+  "instruction": "vwaddu.wv v31, v10, v22, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7772",
+  "instruction": "vwsub.wv v20, v1, v16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7788",
+  "instruction": "vwaddu.wv v0, v19, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7777",
+  "instruction": "vwaddu.wv v0, v13, v24, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7796",
+  "instruction": "vwaddu.wv v22, v2, v18",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7832",
+  "instruction": "vwaddu.wv v31, v19, v11, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7860",
+  "instruction": "vwadd.wv v28, v0, v8, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-7918",
+  "instruction": "vwaddu.wv v1, v25, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7937",
+  "instruction": "vwaddu.wv v0, v1, v4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7932",
+  "instruction": "vwsubu.wv v31, v0, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7944",
+  "instruction": "vwaddu.wv v0, v1, v4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7946",
+  "instruction": "vwsubu.wv v31, v0, v1, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7952",
+  "instruction": "vwsub.wv v8, v0, v12, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7949",
+  "instruction": "vwaddu.wv v0, v29, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7955",
+  "instruction": "vwsub.wv v15, v30, v15",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7954",
+  "instruction": "vwsubu.wv v0, v23, v26, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7960",
+  "instruction": "vwsubu.wv v24, v1, v22",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7976",
+  "instruction": "vwsubu.wv v16, v0, v8",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7988",
+  "instruction": "vwadd.vv v24, v1, v4, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7997",
+  "instruction": "vwaddu.vv v4, v1, v6, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-7995",
+  "instruction": "vwadd.vv v20, v30, v14",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8011",
+  "instruction": "vwsubu.vv v24, v1, v22, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8031",
+  "instruction": "vwmulu.vv v16, v14, v18",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8034",
+  "instruction": "vwmulu.vv v0, v16, v8",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8057",
+  "instruction": "vwsubu.vv v4, v4, v16, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8062",
+  "instruction": "vwmulsu.vv v8, v0, v4",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8101",
+  "instruction": "vwmul.vv v0, v30, v13, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8153",
+  "instruction": "vwmulu.vv v2, v4, v3",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8162",
+  "instruction": "vwmul.vv v8, v10, v6",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8219",
+  "instruction": "vwmulu.vv v14, v30, v15, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8236",
+  "instruction": "vwsub.vv v0, v2, v16",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8231",
+  "instruction": "vwmul.vv v4, v28, v4, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8261",
+  "instruction": "vwadd.vv v8, v8, v28, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8266",
+  "instruction": "vwsub.vv v16, v14, v20, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8275",
+  "instruction": "vwmulu.vv v24, v14, v22",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8284",
+  "instruction": "vwmulu.vv v1, v0, v15",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8285",
+  "instruction": "vwadd.vv v1, v25, v0",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8298",
+  "instruction": "vwmulu.vv v12, v1, v8",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8319",
+  "instruction": "vwmul.vv v0, v1, v4",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8422",
+  "instruction": "vwmulsu.vx v0, v13, x24, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8427",
+  "instruction": "vwsub.vx v14, v1, x28",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8441",
+  "instruction": "vwmulu.vx v8, v12, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8453",
+  "instruction": "vwsubu.vx v7, v17, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8464",
+  "instruction": "vwsubu.vx v0, v1, x20, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8479",
+  "instruction": "vwmulu.vx v31, v19, x11, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8487",
+  "instruction": "vwaddu.vx v1, v0, x8",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8486",
+  "instruction": "vwmulsu.vx v8, v7, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8490",
+  "instruction": "vwsub.vx v30, v30, x29, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8501",
+  "instruction": "vwaddu.vx v0, v0, x3",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8503",
+  "instruction": "vwaddu.vx v0, v8, x30, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8509",
+  "instruction": "vwmulu.vx v0, v1, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8527",
+  "instruction": "vwmul.vx v1, v7, x4, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8590",
+  "instruction": "vwmulu.vx v16, v6, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8596",
+  "instruction": "vwsubu.vx v8, v16, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8587",
+  "instruction": "vwaddu.vx v16, v15, x31",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-8595",
+  "instruction": "vwmulu.vx v1, v0, x15",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8599",
+  "instruction": "vwaddu.vx v8, v7, x0, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8622",
+  "instruction": "vwsub.vx v0, v17, x8, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8624",
+  "instruction": "vwaddu.vx v31, v1, x0, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8625",
+  "instruction": "vwmul.vx v16, v8, x0",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": false
+ },
+ {
+  "id": "case-8645",
+  "instruction": "vwmul.vx v4, v8, x31, v0.t",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8666",
+  "instruction": "vwsub.wx v1, v0, x17, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8676",
+  "instruction": "vwaddu.wx v0, v17, x19, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8733",
+  "instruction": "vwaddu.wx v17, v1, x18",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8827",
+  "instruction": "vabd.vv v0, v27, v30, v0.t",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8834",
+  "instruction": "vabdu.vv v29, v18, v27",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8845",
+  "instruction": "vabd.vv v9, v2, v24",
+  "vstart_over_vlmax": true,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8863",
+  "instruction": "vsha2ch.vv v18, v2, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ },
+ {
+  "id": "case-8884",
+  "instruction": "vsha2cl.vv v23, v16, v1",
+  "vstart_over_vlmax": false,
+  "idle_diff_goodtrap": true
+ }
+]

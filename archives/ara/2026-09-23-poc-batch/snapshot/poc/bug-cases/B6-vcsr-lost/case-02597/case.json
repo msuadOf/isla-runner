@@ -1,0 +1,19 @@
+{
+  "id": "case-02597",
+  "backend": "emu",
+  "mode": "check",
+  "vlen_bits": 128,
+  "clause": "VITYPE",
+  "instruction": "vssrl.vi v4, v0, 0x2, v0.t",
+  "encoding": "32'ha801_3257",
+  "ret_val": "Retire_Success",
+  "isa-state": {
+    "cur_privilege": "User",
+    "vcsr": "3'h4",
+    "vl": "64'h0000_0000_0000_001f",
+    "vstart": "64'h0000_0000_0000_0000",
+    "vtype": "64'h0000_0000_0000_0002"
+  },
+  "elf": "/home/baiyifan/workplace-local/isla-runner/ara/work-diff/elf-check-emu/case-02597/program.elf",
+  "sha256": "813230107d4c822fc27f98ae1e7295396b67257761b0345010076d44c77e4017"
+}

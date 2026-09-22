@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "purpose": "Isla VLEN=128 的 XiangShan RVV 最小 smoke 样本",
+    "source_json": [
+      "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-v128/solve/output/rv64_zVSETIVLI.json"
+    ],
+    "vlen_bits": 128,
+    "isla_clause": "zVSETIVLI",
+    "isla_timeout_seconds": 60,
+    "vector_state": "from-isla-json",
+    "selection_count": 1
+  },
+  "gen": [
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetivli x31, 0x0, 0x4",
+      "test-ins-encdec": "32'hc040_7fd7",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    }
+  ]
+}

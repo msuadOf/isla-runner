@@ -1,0 +1,229 @@
+{
+  "snapshot_date": "2026-09-23",
+  "source": "agents/vext_issue_draft_reproduction",
+  "note": "Frozen copy, originals retained; historical claims not revalidated.",
+  "files": [
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.commit-window.exit",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.commit-window.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.commit-window.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.commit-window.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.commit-window.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.commit-window.stdout",
+      "bytes": 594,
+      "sha256": "37e4f55a996303583741ec89eb2f86dab3f897ee2095400949e87218ce0329b3"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.exit",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.exit",
+      "bytes": 13,
+      "sha256": "28b3a51297a5964a24a3c846de35d11a2520c49e4d04cdf10e15cb1fe6342190"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.stdout",
+      "bytes": 84,
+      "sha256": "1a6d3eb37a41af8909d7a9d2735e626372330be02513def2a346364c0bf8b9e4"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.trace-window.exit",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.trace-window.exit",
+      "bytes": 4,
+      "sha256": "e726b440cc164001999e718b51780d80314709efe06e7857282377be9111127b"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.trace-window.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.trace-window.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.trace-window.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.trace-window.stdout",
+      "bytes": 84,
+      "sha256": "1a6d3eb37a41af8909d7a9d2735e626372330be02513def2a346364c0bf8b9e4"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.xiangshan-cwd.exit",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.xiangshan-cwd.exit",
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.xiangshan-cwd.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.xiangshan-cwd.stderr",
+      "bytes": 34,
+      "sha256": "2a013c75c84a321944a7075cb45cc80b22f041fb386e0f4084a144c289246d56"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/emu.xiangshan-cwd.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/emu.xiangshan-cwd.stdout",
+      "bytes": 84,
+      "sha256": "1a6d3eb37a41af8909d7a9d2735e626372330be02513def2a346364c0bf8b9e4"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/gcc.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/gcc.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/gcc.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/gcc.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/link.ld",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/link.ld",
+      "bytes": 326,
+      "sha256": "11266f7901df2441274fe2743efe826b1b55d537c9487eb80dbed8b32a68a7e0"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/poc.S",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/poc.S",
+      "bytes": 596,
+      "sha256": "6a8708652565db75a58117737ff681b4f2404d5048a8dbbb75c6c573401aec83"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/poc.elf",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/poc.elf",
+      "bytes": 4848,
+      "sha256": "edc1f3feec1b2dcedf5f6e177f648b4ac23a31a9df51ddbbbb3e6b1275155c65"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue1/poc.elf.sha256",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue1/poc.elf.sha256",
+      "bytes": 74,
+      "sha256": "4a2736b7c0ad4392ec884555b30cbcc14936bf2338b66398ef85ab096fc903a5"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/emu.exitcode",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/emu.exitcode",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/emu.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/emu.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/emu.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/emu.stdout",
+      "bytes": 13270,
+      "sha256": "9026890e5dcb1bb13f02641b1b7e1e3beb6f8e2c4abb1a7abd8231819a2bf3d5"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/gcc.exitcode",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/gcc.exitcode",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/gcc.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/gcc.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/gcc.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/gcc.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/link.ld",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/link.ld",
+      "bytes": 326,
+      "sha256": "11266f7901df2441274fe2743efe826b1b55d537c9487eb80dbed8b32a68a7e0"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/poc.S",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/poc.S",
+      "bytes": 1231,
+      "sha256": "14c1f5e63b234a158bd214c635b8e094ba78aeb298091435bf0eb64ceebdb70f"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/poc.elf",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/poc.elf",
+      "bytes": 5272,
+      "sha256": "c26bc31f66f8df423e63d32f0473783f226e014a6b49e95a92f06aa5d12ef04f"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue2/poc.elf.sha256",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue2/poc.elf.sha256",
+      "bytes": 74,
+      "sha256": "ed350f7a6ceabd190556d399c901f995c349144c50620bda04032277a916a8b9"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/compile.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/compile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/compile.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/compile.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/emu.stderr",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/emu.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/emu.stdout",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/emu.stdout",
+      "bytes": 14591,
+      "sha256": "8148f2b6dfa4f7c49cec921323d279942de82681b34bd3a8fd0c7efed7450c12"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/link.ld",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/link.ld",
+      "bytes": 326,
+      "sha256": "11266f7901df2441274fe2743efe826b1b55d537c9487eb80dbed8b32a68a7e0"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/poc.S",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/poc.S",
+      "bytes": 2890,
+      "sha256": "77ea81453e30cf981e54dd4347de5aca25f044707a1eb86eb4fcfe91ff88b356"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/issue3/poc.elf",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/issue3/poc.elf",
+      "bytes": 9600,
+      "sha256": "af07a56b94c9f7e06c5d923d95fc4b5b63a06ab34ef307f90277189f65f0730a"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/plan.md",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/plan.md",
+      "bytes": 1389,
+      "sha256": "9b30e344d8e56a325f193a4bdfe49fc8eed442344b1f548f4d1b5cb6a6574d81"
+    },
+    {
+      "source": "agents/vext_issue_draft_reproduction/status.md",
+      "archive": "archives/xiangshan/2026-09-23-issue-reproduction/status.md",
+      "bytes": 2354,
+      "sha256": "d55695c443c41e073574d1f110ec45a32605da321bb5edd9ee35db816195cabf"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Program header number 0 in `b10h_vslideup.elf' low is 80000000
+Program header number 0 in `b10h_vslideup.elf' high is 8000218f
+Set `ram TOP.ara_tb_verilator.dut.i_ara_soc.i_dram 8 0x80000000 0x100000 write with offset: 0x0 write with size: 0x2190
+Simulation of Ara
+=================
+
+
+Simulation running, end by pressing CTRL-c.
+Simulation timeout of 1e8480 cycles reached, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1e8480
+Wallclock time:   253.497 s
+Simulation speed: 7889.64 cycles/s (7.88964 kHz)

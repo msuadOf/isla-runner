@@ -1,9 +1,6 @@
-isla/
 sail/
-sail-riscv/
 assembly-gen/
 difftest/
-difftest-xiangshan/
 
 # Generated RISC-V IR
 rv32d.ir
@@ -19,3 +16,31 @@ rv64d.ir
 # Generated build state and reports
 /out/
 /report/passed-intr-report.md
+
+# Large local experiment archives (manifests are tracked separately)
+/archives/_raw/
+
+# Machine-specific editor configuration (absolute local CMake path)
+/.vscode/settings.json
+
+# Regenerable Python caches, not source or persistent agent documents
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Live simulator trace; preserve any selected evidence under archives/
+/trace_hart_*.dasm
+
+# Ara harness: independent upstream checkout and mutable runtime outputs
+# Keep ara/pipeline.py and future harness documentation visible.
+/ara/ara/
+/ara/work/
+/ara/work-*/
+/ara/trace_hart_*.dasm
+
+# Verified frozen evidence now tracked in archives/ (original local copies retained)
+/agents/ara_poc_batch/snapshot/
+/agents/vext_issue_draft_reproduction/issue1/
+/agents/vext_issue_draft_reproduction/issue2/
+/agents/vext_issue_draft_reproduction/issue3/

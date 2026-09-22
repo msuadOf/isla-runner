@@ -1,0 +1,1890 @@
+{
+  "metadata": {
+    "purpose": "完整标量与向量上下文重放后的 DiffTest 候选复核",
+    "vlen_bits": 128,
+    "selection": "首轮失败的 89 条 PoC"
+  },
+  "gen": [
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0046"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v8, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v2, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0051"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v16, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3857",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0040"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v4, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0042"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v2, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0041"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v8, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_000b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v2, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0049"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0045"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v8, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0007"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v4, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0002"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0008"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v8, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0043"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v31, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004f"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v16, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3857",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0012"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vim v8, v0, 0x0, v0",
+      "test-ins-encdec": "32'h5c00_3457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0001"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0017"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v8, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v2, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0051"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v2, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0049"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004f"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004e"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v4, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0050"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v4, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0012"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v8, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_000b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0040"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0005"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v8, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0043"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v2, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0011"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v2, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0059"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v8, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0013"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v4, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_005a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v2, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0001"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v31, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0007"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vvm v4, v0, v0, v0",
+      "test-ins-encdec": "32'h5c00_0257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0052"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_000e"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_000f"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_cfd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004f"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0007"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0046"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v16, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4857",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_001a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0045"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0005"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_cfd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004e"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0012"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0053"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0042"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v2, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0001"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_cfd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0048"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0043"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v2, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0011"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_cfd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v2, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0041"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0052"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_005b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0048"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_cfd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0040"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v2, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0019"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0017"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v4, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4257",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0052"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v2, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c157",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0051"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4fd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0001",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v31, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_cfd7",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0047"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0003"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x31, v0",
+      "test-ins-encdec": "32'h5c0f_c457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0002",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_000a"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmerge.vxm v8, v0, x0, v0",
+      "test-ins-encdec": "32'h5c00_4457",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_004b"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmv8r.v v0, v0",
+      "test-ins-encdec": "32'h9e03_b057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0024",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0003"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmv4r.v v0, v0",
+      "test-ins-encdec": "32'h9e01_b057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0011"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmv4r.v v0, v0",
+      "test-ins-encdec": "32'h9e01_b057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0018"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmv8r.v v0, v0",
+      "test-ins-encdec": "32'h9e03_b057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0011"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmv.s.x v0, x31",
+      "test-ins-encdec": "32'h420f_e057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_000f",
+        "vstart": "64'h0000_0000_0000_0001",
+        "vtype": "64'h0000_0000_0000_0052"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vmv.s.x v0, x0",
+      "test-ins-encdec": "32'h4200_6057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_001f",
+        "vstart": "64'h0000_0000_0000_0004",
+        "vtype": "64'h0000_0000_0000_0041"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x31, x0",
+      "test-ins-encdec": "32'h800f_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h8000_0000_0000_0000",
+        "x1": "64'h8000_0000_0000_0000",
+        "x10": "64'h8000_0000_0000_0000",
+        "x11": "64'h8000_0000_0000_0000",
+        "x12": "64'h8000_0000_0000_0000",
+        "x13": "64'h8000_0000_0000_0000",
+        "x14": "64'h8000_0000_0000_0000",
+        "x15": "64'h8000_0000_0000_0000",
+        "x16": "64'h8000_0000_0000_0000",
+        "x17": "64'h8000_0000_0000_0000",
+        "x18": "64'h8000_0000_0000_0000",
+        "x19": "64'h8000_0000_0000_0000",
+        "x2": "64'h8000_0000_0000_0000",
+        "x20": "64'h8000_0000_0000_0000",
+        "x21": "64'h8000_0000_0000_0000",
+        "x22": "64'h8000_0000_0000_0000",
+        "x23": "64'h8000_0000_0000_0000",
+        "x24": "64'h8000_0000_0000_0000",
+        "x25": "64'h8000_0000_0000_0000",
+        "x26": "64'h8000_0000_0000_0000",
+        "x27": "64'h8000_0000_0000_0000",
+        "x28": "64'h8000_0000_0000_0000",
+        "x29": "64'h8000_0000_0000_0000",
+        "x3": "64'h8000_0000_0000_0000",
+        "x30": "64'h8000_0000_0000_0000",
+        "x31": "64'h8000_0000_0000_0000",
+        "x4": "64'h8000_0000_0000_0000",
+        "x5": "64'h8000_0000_0000_0000",
+        "x6": "64'h8000_0000_0000_0000",
+        "x7": "64'h8000_0000_0000_0000",
+        "x8": "64'h8000_0000_0000_0000",
+        "x9": "64'h8000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x26, x1",
+      "test-ins-encdec": "32'h801d_7057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0010",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h0000_0000_0000_0040",
+        "x1": "64'h0000_0000_0000_0007",
+        "x10": "64'h0000_0000_0000_0004",
+        "x11": "64'h0000_0000_0000_0004",
+        "x12": "64'h0000_0000_0000_0004",
+        "x13": "64'h0000_0000_0000_0004",
+        "x14": "64'h0000_0000_0000_0004",
+        "x15": "64'h0000_0000_0000_0004",
+        "x16": "64'h0000_0000_0000_0004",
+        "x17": "64'h0000_0000_0000_0004",
+        "x18": "64'h0000_0000_0000_0004",
+        "x19": "64'h0000_0000_0000_0004",
+        "x2": "64'h0000_0000_0000_0004",
+        "x20": "64'h0000_0000_0000_0004",
+        "x21": "64'h0000_0000_0000_0004",
+        "x22": "64'h0000_0000_0000_0004",
+        "x23": "64'h0000_0000_0000_0004",
+        "x24": "64'h0000_0000_0000_0004",
+        "x25": "64'h0000_0000_0000_0004",
+        "x26": "64'h8000_0000_0000_000c",
+        "x27": "64'h0000_0000_0000_0004",
+        "x28": "64'h0000_0000_0000_0004",
+        "x29": "64'h0000_0000_0000_0004",
+        "x3": "64'h0000_0000_0000_0004",
+        "x30": "64'h0000_0000_0000_0004",
+        "x31": "64'h0000_0000_0000_0004",
+        "x4": "64'h0000_0000_0000_0004",
+        "x5": "64'h0000_0000_0000_0004",
+        "x6": "64'h0000_0000_0000_0004",
+        "x7": "64'h0000_0000_0000_0004",
+        "x8": "64'h0000_0000_0000_0004",
+        "x9": "64'h0000_0000_0000_0004"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x31, x31",
+      "test-ins-encdec": "32'h81ff_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h8000_0000_0000_0000",
+        "x1": "64'h0000_0000_0000_0004",
+        "x10": "64'h0000_0000_0000_0004",
+        "x11": "64'h0000_0000_0000_0004",
+        "x12": "64'h0000_0000_0000_0004",
+        "x13": "64'h0000_0000_0000_0004",
+        "x14": "64'h0000_0000_0000_0004",
+        "x15": "64'h0000_0000_0000_0004",
+        "x16": "64'h0000_0000_0000_0004",
+        "x17": "64'h0000_0000_0000_0004",
+        "x18": "64'h0000_0000_0000_0004",
+        "x19": "64'h0000_0000_0000_0004",
+        "x2": "64'h0000_0000_0000_0004",
+        "x20": "64'h0000_0000_0000_0004",
+        "x21": "64'h0000_0000_0000_0004",
+        "x22": "64'h0000_0000_0000_0004",
+        "x23": "64'h0000_0000_0000_0004",
+        "x24": "64'h0000_0000_0000_0004",
+        "x25": "64'h0000_0000_0000_0004",
+        "x26": "64'h0000_0000_0000_0004",
+        "x27": "64'h0000_0000_0000_0004",
+        "x28": "64'h0000_0000_0000_0004",
+        "x29": "64'h0000_0000_0000_0004",
+        "x3": "64'h0000_0000_0000_0004",
+        "x30": "64'h0000_0000_0000_0004",
+        "x31": "64'h0000_0000_0000_0004",
+        "x4": "64'h0000_0000_0000_0004",
+        "x5": "64'h0000_0000_0000_0004",
+        "x6": "64'h0000_0000_0000_0004",
+        "x7": "64'h0000_0000_0000_0004",
+        "x8": "64'h0000_0000_0000_0004",
+        "x9": "64'h0000_0000_0000_0004"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x8, x1",
+      "test-ins-encdec": "32'h8014_7057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h8000_0000_0000_0000",
+        "x1": "64'h0000_0000_0000_004f",
+        "x10": "64'h0000_0000_0000_0004",
+        "x11": "64'h0000_0000_0000_0004",
+        "x12": "64'h0000_0000_0000_0004",
+        "x13": "64'h0000_0000_0000_0004",
+        "x14": "64'h0000_0000_0000_0004",
+        "x15": "64'h0000_0000_0000_0004",
+        "x16": "64'h0000_0000_0000_0004",
+        "x17": "64'h0000_0000_0000_0004",
+        "x18": "64'h0000_0000_0000_0004",
+        "x19": "64'h0000_0000_0000_0004",
+        "x2": "64'h0000_0000_0000_0004",
+        "x20": "64'h0000_0000_0000_0004",
+        "x21": "64'h0000_0000_0000_0004",
+        "x22": "64'h0000_0000_0000_0004",
+        "x23": "64'h0000_0000_0000_0004",
+        "x24": "64'h0000_0000_0000_0004",
+        "x25": "64'h0000_0000_0000_0004",
+        "x26": "64'h0000_0000_0000_0004",
+        "x27": "64'h0000_0000_0000_0004",
+        "x28": "64'h0000_0000_0000_0004",
+        "x29": "64'h0000_0000_0000_0004",
+        "x3": "64'h0000_0000_0000_0004",
+        "x30": "64'h0000_0000_0000_0004",
+        "x31": "64'h0000_0000_0000_0004",
+        "x4": "64'h0000_0000_0000_0004",
+        "x5": "64'h0000_0000_0000_0004",
+        "x6": "64'h0000_0000_0000_0004",
+        "x7": "64'h0000_0000_0000_0004",
+        "x8": "64'h0000_0000_0000_0006",
+        "x9": "64'h0000_0000_0000_0004"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x2, x1",
+      "test-ins-encdec": "32'h8011_7057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h8000_0000_0000_0000",
+        "x1": "64'h0000_0000_0000_0006",
+        "x10": "64'h0000_0000_0000_0004",
+        "x11": "64'h0000_0000_0000_0004",
+        "x12": "64'h0000_0000_0000_0004",
+        "x13": "64'h0000_0000_0000_0004",
+        "x14": "64'h0000_0000_0000_0004",
+        "x15": "64'h0000_0000_0000_0004",
+        "x16": "64'h0000_0000_0000_0004",
+        "x17": "64'h0000_0000_0000_0004",
+        "x18": "64'h0000_0000_0000_0004",
+        "x19": "64'h0000_0000_0000_0004",
+        "x2": "64'h0000_0000_0000_0004",
+        "x20": "64'h0000_0000_0000_0004",
+        "x21": "64'h0000_0000_0000_0004",
+        "x22": "64'h0000_0000_0000_0004",
+        "x23": "64'h0000_0000_0000_0004",
+        "x24": "64'h0000_0000_0000_0004",
+        "x25": "64'h0000_0000_0000_0004",
+        "x26": "64'h0000_0000_0000_0004",
+        "x27": "64'h0000_0000_0000_0004",
+        "x28": "64'h0000_0000_0000_0004",
+        "x29": "64'h0000_0000_0000_0004",
+        "x3": "64'h0000_0000_0000_0004",
+        "x30": "64'h0000_0000_0000_0004",
+        "x31": "64'h0000_0000_0000_0004",
+        "x4": "64'h0000_0000_0000_0004",
+        "x5": "64'h0000_0000_0000_0004",
+        "x6": "64'h0000_0000_0000_0004",
+        "x7": "64'h0000_0000_0000_0004",
+        "x8": "64'h0000_0000_0000_0004",
+        "x9": "64'h0000_0000_0000_0004"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x31, x0",
+      "test-ins-encdec": "32'h800f_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0003",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h0000_0000_0000_0010",
+        "x1": "64'h0000_0000_0000_0014",
+        "x10": "64'h0000_0000_0000_0014",
+        "x11": "64'h0000_0000_0000_0014",
+        "x12": "64'h0000_0000_0000_0014",
+        "x13": "64'h0000_0000_0000_0014",
+        "x14": "64'h0000_0000_0000_0014",
+        "x15": "64'h0000_0000_0000_0014",
+        "x16": "64'h0000_0000_0000_0014",
+        "x17": "64'h0000_0000_0000_0014",
+        "x18": "64'h0000_0000_0000_0014",
+        "x19": "64'h0000_0000_0000_0014",
+        "x2": "64'h0000_0000_0000_0014",
+        "x20": "64'h0000_0000_0000_0014",
+        "x21": "64'h0000_0000_0000_0014",
+        "x22": "64'h0000_0000_0000_0014",
+        "x23": "64'h0000_0000_0000_0014",
+        "x24": "64'h0000_0000_0000_0014",
+        "x25": "64'h0000_0000_0000_0014",
+        "x26": "64'h0000_0000_0000_0014",
+        "x27": "64'h0000_0000_0000_0014",
+        "x28": "64'h0000_0000_0000_0014",
+        "x29": "64'h0000_0000_0000_0014",
+        "x3": "64'h0000_0000_0000_0014",
+        "x30": "64'h0000_0000_0000_0014",
+        "x31": "64'h0000_0000_0000_0014",
+        "x4": "64'h0000_0000_0000_0014",
+        "x5": "64'h0000_0000_0000_0014",
+        "x6": "64'h0000_0000_0000_0014",
+        "x7": "64'h0000_0000_0000_0014",
+        "x8": "64'h0000_0000_0000_0014",
+        "x9": "64'h0000_0000_0000_0014"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x31, x31",
+      "test-ins-encdec": "32'h81ff_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h8000_0000_0000_0000",
+        "x1": "64'h0000_0000_0000_0004",
+        "x10": "64'h0000_0000_0000_0004",
+        "x11": "64'h0000_0000_0000_0004",
+        "x12": "64'h0000_0000_0000_0004",
+        "x13": "64'h0000_0000_0000_0004",
+        "x14": "64'h0000_0000_0000_0004",
+        "x15": "64'h0000_0000_0000_0004",
+        "x16": "64'h0000_0000_0000_0004",
+        "x17": "64'h0000_0000_0000_0004",
+        "x18": "64'h0000_0000_0000_0004",
+        "x19": "64'h0000_0000_0000_0004",
+        "x2": "64'h0000_0000_0000_0004",
+        "x20": "64'h0000_0000_0000_0004",
+        "x21": "64'h0000_0000_0000_0004",
+        "x22": "64'h0000_0000_0000_0004",
+        "x23": "64'h0000_0000_0000_0004",
+        "x24": "64'h0000_0000_0000_0004",
+        "x25": "64'h0000_0000_0000_0004",
+        "x26": "64'h0000_0000_0000_0004",
+        "x27": "64'h0000_0000_0000_0004",
+        "x28": "64'h0000_0000_0000_0004",
+        "x29": "64'h0000_0000_0000_0004",
+        "x3": "64'h0000_0000_0000_0004",
+        "x30": "64'h0000_0000_0000_0004",
+        "x31": "64'h0000_0000_0000_0020",
+        "x4": "64'h0000_0000_0000_0004",
+        "x5": "64'h0000_0000_0000_0004",
+        "x6": "64'h0000_0000_0000_0004",
+        "x7": "64'h0000_0000_0000_0004",
+        "x8": "64'h0000_0000_0000_0004",
+        "x9": "64'h0000_0000_0000_0004"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x31, x0",
+      "test-ins-encdec": "32'h800f_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h8000_0000_0000_0000",
+        "x1": "64'h0000_0000_0000_0000",
+        "x10": "64'h0000_0000_0000_0000",
+        "x11": "64'h0000_0000_0000_0000",
+        "x12": "64'h0000_0000_0000_0000",
+        "x13": "64'h0000_0000_0000_0000",
+        "x14": "64'h0000_0000_0000_0000",
+        "x15": "64'h0000_0000_0000_0000",
+        "x16": "64'h0000_0000_0000_0000",
+        "x17": "64'h0000_0000_0000_0000",
+        "x18": "64'h0000_0000_0000_0000",
+        "x19": "64'h0000_0000_0000_0000",
+        "x2": "64'h0000_0000_0000_0000",
+        "x20": "64'h0000_0000_0000_0000",
+        "x21": "64'h0000_0000_0000_0000",
+        "x22": "64'h0000_0000_0000_0000",
+        "x23": "64'h0000_0000_0000_0000",
+        "x24": "64'h0000_0000_0000_0000",
+        "x25": "64'h0000_0000_0000_0000",
+        "x26": "64'h0000_0000_0000_0000",
+        "x27": "64'h0000_0000_0000_0000",
+        "x28": "64'h0000_0000_0000_0000",
+        "x29": "64'h0000_0000_0000_0000",
+        "x3": "64'h0000_0000_0000_0000",
+        "x30": "64'h0000_0000_0000_0000",
+        "x31": "64'h0000_0000_0000_0000",
+        "x4": "64'h0000_0000_0000_0000",
+        "x5": "64'h0000_0000_0000_0000",
+        "x6": "64'h0000_0000_0000_0000",
+        "x7": "64'h0000_0000_0000_0000",
+        "x8": "64'h0000_0000_0000_0000",
+        "x9": "64'h0000_0000_0000_0000"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vsetvl x0, x31, x31",
+      "test-ins-encdec": "32'h81ff_f057",
+      "isa-state": {
+        "cur_privilege": "User",
+        "vcsr": "3'h0",
+        "vl": "64'h0000_0000_0000_0000",
+        "vstart": "64'h0000_0000_0000_0000",
+        "vtype": "64'h0000_0000_0000_0018",
+        "x1": "64'h0000_0000_0000_0004",
+        "x10": "64'h0000_0000_0000_0004",
+        "x11": "64'h0000_0000_0000_0004",
+        "x12": "64'h0000_0000_0000_0004",
+        "x13": "64'h0000_0000_0000_0004",
+        "x14": "64'h0000_0000_0000_0004",
+        "x15": "64'h0000_0000_0000_0004",
+        "x16": "64'h0000_0000_0000_0004",
+        "x17": "64'h0000_0000_0000_0004",
+        "x18": "64'h0000_0000_0000_0004",
+        "x19": "64'h0000_0000_0000_0004",
+        "x2": "64'h0000_0000_0000_0004",
+        "x20": "64'h0000_0000_0000_0004",
+        "x21": "64'h0000_0000_0000_0004",
+        "x22": "64'h0000_0000_0000_0004",
+        "x23": "64'h0000_0000_0000_0004",
+        "x24": "64'h0000_0000_0000_0004",
+        "x25": "64'h0000_0000_0000_0004",
+        "x26": "64'h0000_0000_0000_0004",
+        "x27": "64'h0000_0000_0000_0004",
+        "x28": "64'h0000_0000_0000_0004",
+        "x29": "64'h0000_0000_0000_0004",
+        "x3": "64'h0000_0000_0000_0004",
+        "x30": "64'h0000_0000_0000_0004",
+        "x31": "64'h0000_0000_0000_0016",
+        "x4": "64'h0000_0000_0000_0004",
+        "x5": "64'h0000_0000_0000_0004",
+        "x6": "64'h0000_0000_0000_0004",
+        "x7": "64'h0000_0000_0000_0004",
+        "x8": "64'h0000_0000_0000_0004",
+        "x9": "64'h0000_0000_0000_0004"
+      },
+      "ret_val": "Retire_Success(())"
+    }
+  ]
+}

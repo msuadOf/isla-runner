@@ -1,0 +1,496 @@
+{
+  "snapshot_utc": "2026-09-21T13:13:24.235026+00:00",
+  "note": "Snapshot date is not execution date. Original data retained. Raw tar is local only.",
+  "selection": "All inputs and poc-final files; work JSON/NDJSON/Markdown outside case-* directories; latest monitor.log.",
+  "consistency": "Non-atomic collection. tar --compare exit 1: only work/rerun-c8d7b3a/shards/monitor.log changed size/mtime after packing. All other members compared equal. A separately hashed newer monitor.log is included in curated work/. No writer was stopped.",
+  "checkout_heads_not_proof_of_historical_builds": {
+    "isla": "97390b0a5f05896a3255af72939e314eb5feaab5",
+    "sail-riscv": "5f1a0de0d8219537f27680d325b7adcac5db3478",
+    "xiangshan": "c8d7b3a5c1abf3f42c954e61abba20dd27e02a21"
+  },
+  "files": [
+    {
+      "source": "difftest-xiangshan/inputs/bisect_vstart_hang.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/bisect_vstart_hang.json",
+      "bytes": 1453,
+      "sha256": "33cf864cdc920be0ae3dd5b72bc60e47436e6e4500c634e1c71ed0077a59baa4",
+      "source_mtime_ns": 1789737497606041156
+    },
+    {
+      "source": "difftest-xiangshan/inputs/isla-solve-success-all-resume-6550.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/isla-solve-success-all-resume-6550.json",
+      "bytes": 2085994,
+      "sha256": "22d98266ecefc956e7dec58142a492d37d059e6b3be20654b9a31632f68e2994",
+      "source_mtime_ns": 1789477353781134535
+    },
+    {
+      "source": "difftest-xiangshan/inputs/isla-solve-success-all.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/isla-solve-success-all.json",
+      "bytes": 7997293,
+      "sha256": "4c72e01b1150c518db13b05c44cc5baed5f84e3b0d622af7e819a2d4e6fe83f0",
+      "source_mtime_ns": 1789469383133527039
+    },
+    {
+      "source": "difftest-xiangshan/inputs/isla-solve-success-candidates-replay.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/isla-solve-success-candidates-replay.json",
+      "bytes": 54752,
+      "sha256": "00a9e59e6175f0110c6dc13a50176a599e0cad82b3edd762feb6fdcfbb1ad8af",
+      "source_mtime_ns": 1789484422180596777
+    },
+    {
+      "source": "difftest-xiangshan/inputs/isla-solve-success-one-per-opcode.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/isla-solve-success-one-per-opcode.json",
+      "bytes": 212483,
+      "sha256": "961f00d742f2d92095aa32b76fe8681b27baa6a2c07a559ae1753b5085956a9b",
+      "source_mtime_ns": 1789469025070956773
+    },
+    {
+      "source": "difftest-xiangshan/inputs/isla-solve-success-scalar-contexts.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/isla-solve-success-scalar-contexts.json",
+      "bytes": 1229093,
+      "sha256": "2ac879682136a5069aac8e2606cb78e950919cacfbdc51642e2c14d33a5cebcf",
+      "source_mtime_ns": 1789484804138621668
+    },
+    {
+      "source": "difftest-xiangshan/inputs/isla-solve-success-smoke20.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/isla-solve-success-smoke20.json",
+      "bytes": 9961,
+      "sha256": "c09904a801e44b4c6b7bcba1f397c76a8eebcb759b122a060b75413805abd7f6",
+      "source_mtime_ns": 1789467669400194177
+    },
+    {
+      "source": "difftest-xiangshan/inputs/rv64_trap_entries.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/rv64_trap_entries.json",
+      "bytes": 4951118,
+      "sha256": "d8989cc27496ac82522b60702ff7ed347e9886cdb837277ee213c2016fd1bf07",
+      "source_mtime_ns": 1789724182594041890
+    },
+    {
+      "source": "difftest-xiangshan/inputs/rv64_zVVTYPE.isla.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/rv64_zVVTYPE.isla.json",
+      "bytes": 917132,
+      "sha256": "21c173a972a7fad12d8770ee66398350ce5afdb5653d20517ec9adc7e9e9b7a6",
+      "source_mtime_ns": 1787267680290614028
+    },
+    {
+      "source": "difftest-xiangshan/inputs/rv64_zVVTYPE.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/rv64_zVVTYPE.json",
+      "bytes": 917425,
+      "sha256": "4e681d14b0d3bdac47f2464387a7e5bc423057250bda7a87472584b3fd634e58",
+      "source_mtime_ns": 1787258635255172569
+    },
+    {
+      "source": "difftest-xiangshan/inputs/smoke_trap.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/inputs/smoke_trap.json",
+      "bytes": 8771,
+      "sha256": "cc572d167ae6c2995fdade53ad274e33e07c0591bac3fd3edd420412b609c28b",
+      "source_mtime_ns": 1789724246314792007
+    },
+    {
+      "source": "difftest-xiangshan/poc-final/poc1_vector_hang.S",
+      "archive": "archives/xiangshan/2026-09-21-harness/poc-final/poc1_vector_hang.S",
+      "bytes": 1684,
+      "sha256": "fee096601f42ff1a0da5b7f203ad27ad41331261c8f8cfe8c9bcac8227a94068",
+      "source_mtime_ns": 1789824092131267220
+    },
+    {
+      "source": "difftest-xiangshan/poc-final/poc1_vector_hang.elf",
+      "archive": "archives/xiangshan/2026-09-21-harness/poc-final/poc1_vector_hang.elf",
+      "bytes": 4848,
+      "sha256": "c4e078ca5d44579755e07c7c14e69e7991f001e76eaf29d66d7dcd6a618eb181",
+      "source_mtime_ns": 1789811138104219230
+    },
+    {
+      "source": "difftest-xiangshan/poc-final/poc4_vsm_mtval.S",
+      "archive": "archives/xiangshan/2026-09-21-harness/poc-final/poc4_vsm_mtval.S",
+      "bytes": 1091,
+      "sha256": "02eb6e4a97bde20252a4a84ce1023fed95dfbb9f7fa4fa520bb00cc95b29a302",
+      "source_mtime_ns": 1789813548063544876
+    },
+    {
+      "source": "difftest-xiangshan/poc-final/poc4_vsm_mtval.elf",
+      "archive": "archives/xiangshan/2026-09-21-harness/poc-final/poc4_vsm_mtval.elf",
+      "bytes": 9312,
+      "sha256": "eb5fa83ccdfc0c8c92917128206d3797eb87645267cb0b4d4bbf9621846fb24c",
+      "source_mtime_ns": 1789813548106852439
+    },
+    {
+      "source": "difftest-xiangshan/poc-final/poc5_vreg_sync.S",
+      "archive": "archives/xiangshan/2026-09-21-harness/poc-final/poc5_vreg_sync.S",
+      "bytes": 2890,
+      "sha256": "77ea81453e30cf981e54dd4347de5aca25f044707a1eb86eb4fcfe91ff88b356",
+      "source_mtime_ns": 1789813632887695357
+    },
+    {
+      "source": "difftest-xiangshan/poc-final/poc5_vreg_sync.elf",
+      "archive": "archives/xiangshan/2026-09-21-harness/poc-final/poc5_vreg_sync.elf",
+      "bytes": 9512,
+      "sha256": "0f61e0cf6ba1927e589b95d09b853a6509c72d076392f7003680ad22d5b9b17a",
+      "source_mtime_ns": 1789813632934099923
+    },
+    {
+      "source": "difftest-xiangshan/work/bisect-hang/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/bisect-hang/elf/manifest.json",
+      "bytes": 2490,
+      "sha256": "905446eef53c3e26ef9bd6097e70ca45fc954c3b2a0fd542a1e3bc167cb09997",
+      "source_mtime_ns": 1789737497730325414
+    },
+    {
+      "source": "difftest-xiangshan/work/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/elf/manifest.json",
+      "bytes": 266,
+      "sha256": "18aaa7fb032b3fe40736378e5c12d8bd9968af0685c76de5a378fdf7c95d5d43",
+      "source_mtime_ns": 1784214215897568966
+    },
+    {
+      "source": "difftest-xiangshan/work/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/elf/results.json",
+      "bytes": 421,
+      "sha256": "60d018861ffe82e314c0adb1e46dcd401a4f1c59d876c4c0e1d93dc71639db1f",
+      "source_mtime_ns": 1784214218683647782
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-all/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-all/elf/manifest.json",
+      "bytes": 8361321,
+      "sha256": "aa7e092adfe1047f5ff519f07485dcfa00fe3b94ad2d39207b66ff1c9f2b904a",
+      "source_mtime_ns": 1789469559132712287
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-all-resume-6550/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-all-resume-6550/elf/manifest.json",
+      "bytes": 2316236,
+      "sha256": "31143dbc3bfba8658ee86ad8b3318fad382a9ddbb9f1561d913178d7fa45f6aa",
+      "source_mtime_ns": 1789477448677119918
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-all-resume-6550/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-all-resume-6550/elf/results.json",
+      "bytes": 3126795,
+      "sha256": "c573da6e4b6ebb1b4a412f9af4e55a7d6f1a4dce85fa4bdfc4262a3f14873d35",
+      "source_mtime_ns": 1789481073038850439
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-candidates-replay/elf/manifest.json",
+      "bytes": 58902,
+      "sha256": "86e61d271bfb223d0f9f4b09c6fc7e6a2de947dd6f747dd8e0f0bf962ffa7bae",
+      "source_mtime_ns": 1789484423806642984
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-one-per-opcode/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-one-per-opcode/elf/manifest.json",
+      "bytes": 221530,
+      "sha256": "b53511120c30f447a8364d99636d6f714593c565cefae7289d5fe493a11e2e0e",
+      "source_mtime_ns": 1789469028530770348
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-one-per-opcode/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-one-per-opcode/elf/results.json",
+      "bytes": 267268,
+      "sha256": "fbd08e7fd7de5243d571ce9408abb74b4f342f8f1e1316215f8cd9f6d1793cb1",
+      "source_mtime_ns": 1789469327181877450
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-scalar-contexts/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-scalar-contexts/elf/manifest.json",
+      "bytes": 1212141,
+      "sha256": "f0b2116d599fd7bf4045009ad43804acfc71cb127a0fb696bf6f8bfdb1f65c64",
+      "source_mtime_ns": 1789484810997822095
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-scalar-contexts/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-scalar-contexts/elf/results.json",
+      "bytes": 1300898,
+      "sha256": "c62e784c774fefa859a50c3fe0de8cf6fd74ccace598910efd38e9b2577d7f1f",
+      "source_mtime_ns": 1789485552682747203
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-smoke20/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-smoke20/elf/manifest.json",
+      "bytes": 10595,
+      "sha256": "4e54a182b68615945622f6d6537a681514900ea61dcdfa0beedeb86b297c41b4",
+      "source_mtime_ns": 1789467669857949127
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-solve-success-smoke20/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-solve-success-smoke20/elf/results.json",
+      "bytes": 14235,
+      "sha256": "5cd5d26e8ef4de435ceb19d7b759aa1088de7f6a2ac950b1bcea317cc8162b36",
+      "source_mtime_ns": 1789467817891348422
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-success-new/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-success-new/elf/manifest.json",
+      "bytes": 9246839,
+      "sha256": "e097e27d90cc54eddfd3dabb96b41cd75425ea055573743f909e220c8c0cf886",
+      "source_mtime_ns": 1789748896773529270
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-success-new/elf/results.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-success-new/elf/results.ndjson",
+      "bytes": 6569247,
+      "sha256": "e48c508aca4554069693d64daf27a1592f51ed6a2f488124fe5d586fb2ddd21c",
+      "source_mtime_ns": 1789761361058842623
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/all461_ids.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/all461_ids.json",
+      "bytes": 75440,
+      "sha256": "ec1334b464fe1fb4832af2bd8d0690db0603d4464941b003e6165b7875900bc7",
+      "source_mtime_ns": 1789738289887643252
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/b_case_ids.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/b_case_ids.json",
+      "bytes": 26190,
+      "sha256": "28f32d6c9ee2c52b288ff73cface2d901df49c1bd6bfbd548b9aad551feb1bb2",
+      "source_mtime_ns": 1789737751251668185
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/classified.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/classified.json",
+      "bytes": 8080773,
+      "sha256": "38b7ddfeb93aead8c8c9fc6ddce6412f14e95ad96bcd61d39cbb1501dbb33411",
+      "source_mtime_ns": 1789732048220856101
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/elf/manifest.json",
+      "bytes": 5827816,
+      "sha256": "0aed8b330a1a92a29c1232c7c95c77e4ded371ecb2d031a7cec65b79214fadcf",
+      "source_mtime_ns": 1789724763111439371
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/elf/results-baseline-7bf51a8.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/elf/results-baseline-7bf51a8.json",
+      "bytes": 7628538,
+      "sha256": "77f038129e7e13d84540c7f4db110c706efdcd4fe0232f871902d843340dc92e",
+      "source_mtime_ns": 1789731187791859376
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/elf/results-baseline-7bf51a8.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/elf/results-baseline-7bf51a8.ndjson",
+      "bytes": 6747388,
+      "sha256": "05f62f11759a4e842edfa63a52796cceaffdc1743c6f5e66c82e8742441a1b6a",
+      "source_mtime_ns": 1789731187724992124
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/elf/results.json",
+      "bytes": 7615433,
+      "sha256": "1cd8d66c05ebf3331c0dc74fa2b7ab34819418fd01ef868f952a106647bdaa18",
+      "source_mtime_ns": 1789754479257881415
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/elf/results.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/elf/results.ndjson",
+      "bytes": 6734283,
+      "sha256": "d401749acc89a4b3caba494ac4adb7850745d3b0158d52c1a49a8f206f9c0c67",
+      "source_mtime_ns": 1789754479194019610
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/rerun-b/no_diff_results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/rerun-b/no_diff_results.json",
+      "bytes": 16750,
+      "sha256": "6ee407fd250a397c3ba75ed6def9b3c2a6de6f614bcf456093ad3457572715ed",
+      "source_mtime_ns": 1789738221029016516
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-trap-entries/rerun-idle-diff.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-trap-entries/rerun-idle-diff.json",
+      "bytes": 60793,
+      "sha256": "0c6a9f173d5fdabd012cdcd26e9e7be8bc233e1ab996b02ea4532b178e307783",
+      "source_mtime_ns": 1789739023286168393
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-v128/solve/output/rv64_zVSETIVLI.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-v128/solve/output/rv64_zVSETIVLI.json",
+      "bytes": 4375,
+      "sha256": "fe726851014c1e69f5c614b6ac680503f28ac000b3dd7eedd98af872b4e68f58",
+      "source_mtime_ns": 1784213991666187900
+    },
+    {
+      "source": "difftest-xiangshan/work/isla-vvtype-small.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/isla-vvtype-small.json",
+      "bytes": 1626,
+      "sha256": "802cb5e7b03ab7022b7408e83b3058e4dcb8e3d25fa9832c4ac90525f32fd5b3",
+      "source_mtime_ns": 1784212185934635978
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/candidates.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/candidates.json",
+      "bytes": 421584,
+      "sha256": "b1eff4b1dea08c16ffb6b853f97f9cc8a35e44046527cc4ce0302cb679e1c80a",
+      "source_mtime_ns": 1789797355342095518
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/full-rerun-timeouts.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/full-rerun-timeouts.json",
+      "bytes": 123060,
+      "sha256": "30d5bfc48972a675a847259f171077897e5b0ae3c70488a955481d337f168657",
+      "source_mtime_ns": 1789836092359370060
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/idle-sample-verification.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/idle-sample-verification.json",
+      "bytes": 89,
+      "sha256": "8e057da1652c819ff95f163c05e54ff5c7d1a8ac7dce88f89a644bea6b876edb",
+      "source_mtime_ns": 1789822989910506781
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/idle-verification.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/idle-verification.json",
+      "bytes": 8699,
+      "sha256": "b2d8d48ef041f31f7cae76b2bdb953e995e7858768332ee7761c3e00bdf0ffe7",
+      "source_mtime_ns": 1789819787337181469
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/monitor.log",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/monitor.log",
+      "bytes": 137875,
+      "sha256": "cf9f7d299024e026ecc58c1c84b1a63e6529f3387baee84d1742839af4f4e3db",
+      "source_mtime_ns": 1789996387271237516
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/success-shard0.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/success-shard0.ndjson",
+      "bytes": 2579521,
+      "sha256": "ede875cd4fa5dae95a9bd26c8e20e1d93585186ee84f6d90c82f7debbf630c94",
+      "source_mtime_ns": 1789798579971029179
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/success-shard0.summary.md",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/success-shard0.summary.md",
+      "bytes": 1962,
+      "sha256": "2fa012154881619ff03a881ea23164f39e377cdc19a7a4db025169e8d5fa0918",
+      "source_mtime_ns": 1789798630161476403
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/success-shard1.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/success-shard1.ndjson",
+      "bytes": 2584724,
+      "sha256": "55db7918fdbdf41130ff4b1f4a546c994f85c692b195ae71cfccb36b65a3bbe8",
+      "source_mtime_ns": 1789798182852510097
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/success-shard1.summary.md",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/success-shard1.summary.md",
+      "bytes": 2177,
+      "sha256": "420d2cd237ac33db6f5720460976ba6df45f4cf2250b28afc12e4cff12a37a06",
+      "source_mtime_ns": 1789798415598298966
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/success-shard2.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/success-shard2.ndjson",
+      "bytes": 2614439,
+      "sha256": "ab1ccf4bd09b2c7cb00d707533a38f4a7513319ca26c3ac7df2f7e8fd963f1d8",
+      "source_mtime_ns": 1789797822542445765
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/success-shard3.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/success-shard3.ndjson",
+      "bytes": 2585156,
+      "sha256": "22de7420b08ee8328940c17a94ae26ca16a6c488cdbe7947888c3f06f4ec294a",
+      "source_mtime_ns": 1789797844879428162
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/trap-shard0.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/trap-shard0.ndjson",
+      "bytes": 1796138,
+      "sha256": "46f89ddaa774e89575a123ea1321225ab9d70f6ca00a2bdec9e9ea3f1dd7ca35",
+      "source_mtime_ns": 1789789533674664566
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/trap-shard0.summary.md",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/trap-shard0.summary.md",
+      "bytes": 1430,
+      "sha256": "27ed0fa8a1ea66deb4051f1941cf769f05aa1975eff62a583f26eb197800ee9c",
+      "source_mtime_ns": 1789789608099860061
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/trap-shard1.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/trap-shard1.ndjson",
+      "bytes": 1803282,
+      "sha256": "f5bb886d529a9163003e537667ccfdc4eac9deef43c9e23ffb26415c6207e7d4",
+      "source_mtime_ns": 1789788917172763529
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/trap-shard1.summary.md",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/trap-shard1.summary.md",
+      "bytes": 906,
+      "sha256": "c56853efef3a07f4370554dcabe37ffb31672d8b2a3ac58bc4c812ca901415db",
+      "source_mtime_ns": 1789789046794066134
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/trap-shard2.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/trap-shard2.ndjson",
+      "bytes": 1785780,
+      "sha256": "44155b67bd40ba8a559c18cd11eebb8e2984f0845ba50883da07ad11b9d93575",
+      "source_mtime_ns": 1789789416206037805
+    },
+    {
+      "source": "difftest-xiangshan/work/rerun-c8d7b3a/shards/trap-shard3.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/rerun-c8d7b3a/shards/trap-shard3.ndjson",
+      "bytes": 1801285,
+      "sha256": "90f4b8e53bd9b53cc4b6b90bd144d4cb347252af1a358c50cdc6532b0aa0702d",
+      "source_mtime_ns": 1789789462782440787
+    },
+    {
+      "source": "difftest-xiangshan/work/smoke-trap/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/smoke-trap/elf/manifest.json",
+      "bytes": 10847,
+      "sha256": "c0f104cbb8b84437464b5a0b5e402b7c44198c79c045a0c628a6b3bdb06ee094",
+      "source_mtime_ns": 1789724609019668536
+    },
+    {
+      "source": "difftest-xiangshan/work/smoke-trap/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/smoke-trap/elf/results.json",
+      "bytes": 13311,
+      "sha256": "d6ef958022066bd043acc82f1ebb1f831145ec0ad8a1eb63c0839153063d35dc",
+      "source_mtime_ns": 1789724639157360473
+    },
+    {
+      "source": "difftest-xiangshan/work/smoke-trap/elf/results.ndjson",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/smoke-trap/elf/results.ndjson",
+      "bytes": 11689,
+      "sha256": "399c0c571fd7e44439274a480bd4ca5cd46a899b94c71b0743b8b0cfe10468a5",
+      "source_mtime_ns": 1789724639155059077
+    },
+    {
+      "source": "difftest-xiangshan/work/v128-smoke/isla-v128-vsetivli.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/v128-smoke/isla-v128-vsetivli.json",
+      "bytes": 4084,
+      "sha256": "91a77ae4e71120df83b2b34f04f05dc7c6f9bdea5c9b16c60d61fa89a09f45b8",
+      "source_mtime_ns": 1784214044604701929
+    },
+    {
+      "source": "difftest-xiangshan/work/vvtype-vcontext/elf/manifest.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/vvtype-vcontext/elf/manifest.json",
+      "bytes": 939740,
+      "sha256": "6356f633d4a24960e56dae7f27f23685fb8da65c7a4072ceec7d83a7c9d93eec",
+      "source_mtime_ns": 1787258902714330228
+    },
+    {
+      "source": "difftest-xiangshan/work/vvtype-vcontext/elf/results.json",
+      "archive": "archives/xiangshan/2026-09-21-harness/work/vvtype-vcontext/elf/results.json",
+      "bytes": 1122608,
+      "sha256": "13e2d4047adf49810489b5959fd16aabd49b0ab7b3054c9025dedd917903c359",
+      "source_mtime_ns": 1787267597118200331
+    }
+  ],
+  "local_raw": {
+    "path": "archives/_raw/xiangshan/2026-09-21-harness/work-and-baseline.tar",
+    "bytes": 959979520,
+    "sha256": "afa59863a32d1ad2581351e5f1c49e683fc3ba366a1b04f010dad57fcac32600",
+    "sources": [
+      "difftest-xiangshan/work",
+      "difftest-xiangshan/emu-baseline-7bf51a8"
+    ]
+  },
+  "baseline_emulator": {
+    "bytes": 241307984,
+    "sha256": "677098185fe2d880e97c94deda36afa60258b669f8ad3e99ebfb9b67cfbe8415",
+    "build_recipe": "Not established; filename identifies 7bf51a8 only."
+  }
+}

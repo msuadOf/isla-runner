@@ -1,0 +1,70 @@
+[
+  {
+    "id": "case-000",
+    "instruction": "vaadd.vv v31, v8, v12, v0.t  [orig masked e16m2]",
+    "encoding": "32'h2486_2fd7",
+    "isa-state": {
+      "vcsr": "3'h0",
+      "vstart": "64'h0000_0000_0000_0040",
+      "vtype": "64'h0000_0000_0000_000e",
+      "vl": "64'h0000_0000_0000_0001",
+      "cur_privilege": "User"
+    },
+    "ret_val": "Illegal_Instruction(())",
+    "expect_trap": true,
+    "source_file": null,
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/bisect-hang/elf/case-000/program.elf",
+    "sha256": "d2305649d37374a4c6d181b40c9b2070166c236811bbdcf9f0bfa4dbc98f92ba"
+  },
+  {
+    "id": "case-001",
+    "instruction": "vaadd.vv v31, v8, v12  [unmasked e16m2]",
+    "encoding": "32'h2686_2fd7",
+    "isa-state": {
+      "vcsr": "3'h0",
+      "vstart": "64'h0000_0000_0000_0040",
+      "vtype": "64'h0000_0000_0000_000e",
+      "vl": "64'h0000_0000_0000_0001",
+      "cur_privilege": "User"
+    },
+    "ret_val": "Illegal_Instruction(())",
+    "expect_trap": true,
+    "source_file": null,
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/bisect-hang/elf/case-001/program.elf",
+    "sha256": "daca3861dc3b0d00b8be166b096ba3019b0e5f42b8a787cd71f7591a22837cbd"
+  },
+  {
+    "id": "case-002",
+    "instruction": "vaadd.vv v31, v8, v12, v0.t  [masked e8m1]",
+    "encoding": "32'h2486_2fd7",
+    "isa-state": {
+      "vcsr": "3'h0",
+      "vstart": "64'h0000_0000_0000_0040",
+      "vtype": "64'h0000_0000_0000_0000",
+      "vl": "64'h0000_0000_0000_0010",
+      "cur_privilege": "User"
+    },
+    "ret_val": "Illegal_Instruction(())",
+    "expect_trap": true,
+    "source_file": null,
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/bisect-hang/elf/case-002/program.elf",
+    "sha256": "0b2ac440bb3f7ad72a89fab016e2e7ac6c07b4898c4e6f4afda39fb983d7612e"
+  },
+  {
+    "id": "case-003",
+    "instruction": "vaadd.vv v31, v8, v12  [unmasked e8m1]",
+    "encoding": "32'h2686_2fd7",
+    "isa-state": {
+      "vcsr": "3'h0",
+      "vstart": "64'h0000_0000_0000_0040",
+      "vtype": "64'h0000_0000_0000_0000",
+      "vl": "64'h0000_0000_0000_0010",
+      "cur_privilege": "User"
+    },
+    "ret_val": "Illegal_Instruction(())",
+    "expect_trap": true,
+    "source_file": null,
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/bisect-hang/elf/case-003/program.elf",
+    "sha256": "f9e69165b381c4ed6c45baed217dd7ca500dcdf4acbbf70bbb5ee7df18fa3b42"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "case-000",
+    "instruction": "vsetivli x31, 0x0, 0x4",
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/elf/case-000/program.elf",
+    "sha256": "e156a984e3e3dd9fc905543040f9db224ce3c04fd5c9cc27f691a77fa62d0cbd",
+    "returncode": 0,
+    "category": "success",
+    "log": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/elf/case-000/difftest.log"
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "case-000",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_000f"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-000/program.elf",
+    "sha256": "1c3d15221f12a43e2590d03d5fa17876df833dbdc85b712f26995238802544a6"
+  },
+  {
+    "id": "case-001",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0046"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-001/program.elf",
+    "sha256": "532614c4f0fc11a8e7623f4b1f59df3c1d0ed8ebe408e48d647b659919d49fec"
+  },
+  {
+    "id": "case-002",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-002/program.elf",
+    "sha256": "da4b59efe9e586f6e06349f859f8d351f96133f6b0f00ccc65df374d0c6d3579"
+  },
+  {
+    "id": "case-003",
+    "instruction": "vmerge.vim v2, v0, 0x0, v0",
+    "encoding": "32'h5c00_3157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0051"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-003/program.elf",
+    "sha256": "d9f126ca3a56b191e775753660e78573f2b4ab8d07dcfce3ccd3166ad997698a"
+  },
+  {
+    "id": "case-004",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0006"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-004/program.elf",
+    "sha256": "5ba300a6609342e18f603118d6344450ba80f6167cafffc60c4a3742088d6b9b"
+  },
+  {
+    "id": "case-005",
+    "instruction": "vmerge.vim v16, v0, 0x0, v0",
+    "encoding": "32'h5c00_3857",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-005/program.elf",
+    "sha256": "fa56fde1810e541fec060e9d48bc59c14b1d475afef9f0719ec6dbfc0cea7bd1"
+  },
+  {
+    "id": "case-006",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0040"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-006/program.elf",
+    "sha256": "7c6a6c0f3a0c51987fd6e164a87056a3e507359695e0b7b042e2ffddf0c48b22"
+  },
+  {
+    "id": "case-007",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0000"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-007/program.elf",
+    "sha256": "c86c0350621c969f634d134a90aa4a415e0f21d805334e4ab2c42513207f4074"
+  },
+  {
+    "id": "case-008",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_004e"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-008/program.elf",
+    "sha256": "51f32c5705ec3468eb21567c15c5dd1a3f9ace08999904a2a304b15df7f64868"
+  },
+  {
+    "id": "case-009",
+    "instruction": "vmerge.vim v4, v0, 0x0, v0",
+    "encoding": "32'h5c00_3257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0042"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-009/program.elf",
+    "sha256": "d14aad1b78a9b6d6f4c48af1db4a95a2ced55ff92dd56d7ed32cd85b5cd26970"
+  },
+  {
+    "id": "case-010",
+    "instruction": "vmerge.vim v2, v0, 0x0, v0",
+    "encoding": "32'h5c00_3157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0041"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-010/program.elf",
+    "sha256": "cc05a9b2954b4cd7529e2f6fe75dd03081387b5b7b720ad53c036188bc54f95c"
+  },
+  {
+    "id": "case-011",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_000b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-011/program.elf",
+    "sha256": "3b1851e404d40f378087ec18cb18142deaaeb13b7d3f13fad5ed8250352a75c9"
+  },
+  {
+    "id": "case-012",
+    "instruction": "vmerge.vim v2, v0, 0x0, v0",
+    "encoding": "32'h5c00_3157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0049"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-012/program.elf",
+    "sha256": "13a84257043802abcfafcbe5cd660d77eef173c13ca988cc781ee52d618b1cb8"
+  },
+  {
+    "id": "case-013",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0019"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-013/program.elf",
+    "sha256": "f5f07a3e8d154d0deafe2e63fc8b95db089b43faf461db7d2fa259ca9dc19815"
+  },
+  {
+    "id": "case-014",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0018"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-014/program.elf",
+    "sha256": "4ae175385899223310852731b59d2a510ecec76e00eb2997e38406e63e9f439e"
+  },
+  {
+    "id": "case-015",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0050"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-015/program.elf",
+    "sha256": "dbe4056d5d6de122fd69e7ab16f522a547e19afa54a734f21a18660680fd5487"
+  },
+  {
+    "id": "case-016",
+    "instruction": "vmerge.vim v4, v0, 0x0, v0",
+    "encoding": "32'h5c00_3257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_000a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-016/program.elf",
+    "sha256": "e4f5d36f71f9c783a1db6ceba57450f13528c266abde897ac57d2e95834e22f3"
+  },
+  {
+    "id": "case-017",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0045"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-017/program.elf",
+    "sha256": "6438929d8c74c9f7bd460fb55c73317c324801ad4245f0f66ad5cf2087c04e6c"
+  },
+  {
+    "id": "case-018",
+    "instruction": "vmerge.vim v16, v0, 0x0, v0",
+    "encoding": "32'h5c00_3857",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0053"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-018/program.elf",
+    "sha256": "50c2cbec1e6de7cf0c9ca44e1ad630a767180d4260644fbaf9d1b575750f0e94"
+  },
+  {
+    "id": "case-019",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0010"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-smoke20/elf/case-019/program.elf",
+    "sha256": "97b7dcdc667706b31640cf0ef71432915cbda3a355a47e198b4a960685d2c007"
+  }
+]

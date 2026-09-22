@@ -1,0 +1,13 @@
+emu compiled at Sep 19 2026, 04:21:58
+[INFO] init for constantin: loaded from init.
+Using simulated 1048576B flash
+Core  0's Commit SHA is: c8d7b3a5c1, dirty: 0
+Using simulated 8386560MB RAM
+The image is poc.elf
+ELF file detected and loading image from extracted elf file
+Loading 32 bytes at address 0x80000000 at offset 0x0
+Core 0: [33mEXCEEDING CYCLE/INSTR LIMIT at pc = 0x328ebd3885e9
+[0m[35mCore-0 instrCnt = 6, cycleCnt = 2,000, IPC = 0.003000
+[0m[34mSeed=0 Guest cycle spent: 2,006 (this will be different from cycleCnt if emu loads a snapshot)
+[0m[34mHost time spent: 1,775ms
+[0m

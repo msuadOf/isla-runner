@@ -1,0 +1,1527 @@
+[
+  {
+    "id": "case-000",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0046"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-000/program.elf",
+    "sha256": "744eec9f0617523bfdaf002cb84c14d84fcf98118abf339ef15878c21b3ad359"
+  },
+  {
+    "id": "case-001",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-001/program.elf",
+    "sha256": "2fcaf62e4442d2b8964cd54ae0ef94bc142404fa4ce1b675a2672d496accda38"
+  },
+  {
+    "id": "case-002",
+    "instruction": "vmerge.vim v2, v0, 0x0, v0",
+    "encoding": "32'h5c00_3157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0051"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-002/program.elf",
+    "sha256": "0b7417708ea46118d412bdf94263cf338b3ee7e024b5546fcc5535062e7759e6"
+  },
+  {
+    "id": "case-003",
+    "instruction": "vmerge.vim v16, v0, 0x0, v0",
+    "encoding": "32'h5c00_3857",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-003/program.elf",
+    "sha256": "2f004141bdd9faa79ec74e375ca8a230e5156d8686ebe180f3b08833dcf545b6"
+  },
+  {
+    "id": "case-004",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0040"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-004/program.elf",
+    "sha256": "8303f1096f20a9b4cfed50ec398c84485494443f4374a29b6932a4552050f997"
+  },
+  {
+    "id": "case-005",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0000"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-005/program.elf",
+    "sha256": "4dddbba3d7d71e2738da7f38c47c36a5a68304d81a08df618b94b7c8c44b6456"
+  },
+  {
+    "id": "case-006",
+    "instruction": "vmerge.vim v4, v0, 0x0, v0",
+    "encoding": "32'h5c00_3257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0042"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-006/program.elf",
+    "sha256": "79eba8dec577a7b396f417291a4f18b79ca36df2b7b2f8add20afc8f0d870190"
+  },
+  {
+    "id": "case-007",
+    "instruction": "vmerge.vim v2, v0, 0x0, v0",
+    "encoding": "32'h5c00_3157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0041"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-007/program.elf",
+    "sha256": "8ba306d8f858aac11586f712ea9b431f4a23fb4181136c9e066a1d4e04f1b833"
+  },
+  {
+    "id": "case-008",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_000b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-008/program.elf",
+    "sha256": "27eba424a4bca366dc9a3d44670d23bc6dffccc93261e1cf4d931879bcfe73ae"
+  },
+  {
+    "id": "case-009",
+    "instruction": "vmerge.vim v2, v0, 0x0, v0",
+    "encoding": "32'h5c00_3157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0049"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-009/program.elf",
+    "sha256": "3a612bb1b5a84e0631b04665d8514a283bb2e8037b9982d3f766793560f74613"
+  },
+  {
+    "id": "case-010",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0045"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-010/program.elf",
+    "sha256": "034f984a99a660bfe07c607892ec7836141c6942aa4c8f904e94217d90e10613"
+  },
+  {
+    "id": "case-011",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-011/program.elf",
+    "sha256": "2a364a4fcb20473e2d82508689e65e6d627aaa1a2df977803115ec3fdf18ec3f"
+  },
+  {
+    "id": "case-012",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0007"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-012/program.elf",
+    "sha256": "fc0948771ef456fe412e7fea0c40cef8db385f6aa361b2480574594f62da2dbe"
+  },
+  {
+    "id": "case-013",
+    "instruction": "vmerge.vim v4, v0, 0x0, v0",
+    "encoding": "32'h5c00_3257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0002"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-013/program.elf",
+    "sha256": "0b296253af045872b9a5e928200723ae1ebe76764995e34f1727d92d198c8304"
+  },
+  {
+    "id": "case-014",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0008"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-014/program.elf",
+    "sha256": "0f20591fe59192504269fc522cb7acdf1dd8afa6cfd48a8a082f09e63956e412"
+  },
+  {
+    "id": "case-015",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0043"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-015/program.elf",
+    "sha256": "36cfe5b8afbb0d66c1b8a4813fe1335890559938d177a71b4e3482332b93c6e0"
+  },
+  {
+    "id": "case-016",
+    "instruction": "vmerge.vim v31, v0, 0x0, v0",
+    "encoding": "32'h5c00_3fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004f"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-016/program.elf",
+    "sha256": "890f6c86ae26775f91d67c526593957b53ce9e5fe98629bb8629906d3121d392"
+  },
+  {
+    "id": "case-017",
+    "instruction": "vmerge.vim v16, v0, 0x0, v0",
+    "encoding": "32'h5c00_3857",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0012"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-017/program.elf",
+    "sha256": "b8d1974706f5c1f97b2bc60903cd3a596325058fc15fc8a94cb8f25e517baeaf"
+  },
+  {
+    "id": "case-018",
+    "instruction": "vmerge.vim v8, v0, 0x0, v0",
+    "encoding": "32'h5c00_3457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0001"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-018/program.elf",
+    "sha256": "5955a5b24c32cc420811161e38f5df6dae88c9bcc0b7dbd61e032e7aa60b89f4"
+  },
+  {
+    "id": "case-019",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0017"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-019/program.elf",
+    "sha256": "4aad32f58afeafdaba1b28fb111ce6a3fbe0d358704734b7c8acc65fbfd07051"
+  },
+  {
+    "id": "case-020",
+    "instruction": "vmerge.vvm v8, v0, v0, v0",
+    "encoding": "32'h5c00_0457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-020/program.elf",
+    "sha256": "190e8cbcecad661403f56536c4730df45e7a33d518f5cfa259faaea9186114cc"
+  },
+  {
+    "id": "case-021",
+    "instruction": "vmerge.vvm v2, v0, v0, v0",
+    "encoding": "32'h5c00_0157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0051"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-021/program.elf",
+    "sha256": "c046122f02fc794a6a06f7978ffdb784a5301c71750f2929c35431374227d7b6"
+  },
+  {
+    "id": "case-022",
+    "instruction": "vmerge.vvm v2, v0, v0, v0",
+    "encoding": "32'h5c00_0157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0049"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-022/program.elf",
+    "sha256": "1a0f3727edbfddd8c02d02b371fb89dc909bfc4e6c04685c1bab80cc83971e17"
+  },
+  {
+    "id": "case-023",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004f"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-023/program.elf",
+    "sha256": "272ba8de63d4e7dc2911ad8a702b492b1310c483861ee4a1a7efc53cdb4d1cc7"
+  },
+  {
+    "id": "case-024",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004e"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-024/program.elf",
+    "sha256": "de11540e2dd34185d590ed10ac430d6e433ba2f12e68808b761fbc2213786312"
+  },
+  {
+    "id": "case-025",
+    "instruction": "vmerge.vvm v4, v0, v0, v0",
+    "encoding": "32'h5c00_0257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-025/program.elf",
+    "sha256": "79f0080898af433b24084b82932f2b78f8397b213896a32d06752426d141b40f"
+  },
+  {
+    "id": "case-026",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0050"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-026/program.elf",
+    "sha256": "6161c497adb3f480bae4b8733d584d206502ccfcd0792f1bf3b1e9e5252134f8"
+  },
+  {
+    "id": "case-027",
+    "instruction": "vmerge.vvm v4, v0, v0, v0",
+    "encoding": "32'h5c00_0257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0012"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-027/program.elf",
+    "sha256": "cb72320a59dc13d776d02f189d01f4d802571c515a42acf2fb6b16554baf334a"
+  },
+  {
+    "id": "case-028",
+    "instruction": "vmerge.vvm v8, v0, v0, v0",
+    "encoding": "32'h5c00_0457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_000b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-028/program.elf",
+    "sha256": "b37f75834454ed98b3f156ec51e19057dd667f4fe341574ec48665a4ef8cf6f7"
+  },
+  {
+    "id": "case-029",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0040"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-029/program.elf",
+    "sha256": "ecd19ff40652c649350470d07696a3b01dd40c2d3455151b2f76b5232dd42603"
+  },
+  {
+    "id": "case-030",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0005"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-030/program.elf",
+    "sha256": "930d1e4e0c8d104cb9e6f39757ebfa84c5a5d31e0d8b7a85b85c69729d7c2731"
+  },
+  {
+    "id": "case-031",
+    "instruction": "vmerge.vvm v8, v0, v0, v0",
+    "encoding": "32'h5c00_0457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0043"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-031/program.elf",
+    "sha256": "228f04342b094889ac886ac075a031b269325bb863bb674e06995dc617d773d6"
+  },
+  {
+    "id": "case-032",
+    "instruction": "vmerge.vvm v2, v0, v0, v0",
+    "encoding": "32'h5c00_0157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0011"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-032/program.elf",
+    "sha256": "a829a2711775f2445e96fe4937180b60a651119b336e4caa52123d4314c0aaeb"
+  },
+  {
+    "id": "case-033",
+    "instruction": "vmerge.vvm v2, v0, v0, v0",
+    "encoding": "32'h5c00_0157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0059"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-033/program.elf",
+    "sha256": "51b2612b5f47f10c7b96cea54a719b44bcb550fc02a0de25a8655dbb0c56f579"
+  },
+  {
+    "id": "case-034",
+    "instruction": "vmerge.vvm v8, v0, v0, v0",
+    "encoding": "32'h5c00_0457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0013"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-034/program.elf",
+    "sha256": "4d4a0ef3f3172e2bef2b343aaab09174bcb422bc05adaa4fdc2509743aac8478"
+  },
+  {
+    "id": "case-035",
+    "instruction": "vmerge.vvm v4, v0, v0, v0",
+    "encoding": "32'h5c00_0257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_005a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-035/program.elf",
+    "sha256": "bb75631aee62cc227ff54fd22efadbb598186eb49a6eb6b5530d71b92d13661b"
+  },
+  {
+    "id": "case-036",
+    "instruction": "vmerge.vvm v2, v0, v0, v0",
+    "encoding": "32'h5c00_0157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0001"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-036/program.elf",
+    "sha256": "9132978d77da91d56ce0ee6acb1118b8d0df26c6c3151877710b2f491820bac9"
+  },
+  {
+    "id": "case-037",
+    "instruction": "vmerge.vvm v31, v0, v0, v0",
+    "encoding": "32'h5c00_0fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0007"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-037/program.elf",
+    "sha256": "7d729a4d573c3f19d8a856997a0a3481d7940c9cfe55b99032055e161363c5fc"
+  },
+  {
+    "id": "case-038",
+    "instruction": "vmerge.vvm v4, v0, v0, v0",
+    "encoding": "32'h5c00_0257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0052"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-038/program.elf",
+    "sha256": "243bf92e589539fd04468b1597017accaf9fc1ae6ca4869f7114170ad0e5a61a"
+  },
+  {
+    "id": "case-039",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_000e"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-039/program.elf",
+    "sha256": "fe30fb41ad32a3833631092425f575a2ec994e7ce05f659e80b735e47effef6e"
+  },
+  {
+    "id": "case-040",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_000f"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-040/program.elf",
+    "sha256": "6fd284152a36bf4ca0d84cd05cc73001523cf528c017ba474c4cd3bdd00af2f8"
+  },
+  {
+    "id": "case-041",
+    "instruction": "vmerge.vxm v31, v0, x31, v0",
+    "encoding": "32'h5c0f_cfd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004f"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-041/program.elf",
+    "sha256": "d4d5b43e500896dbb0538047e7eff0d1c88b90d0bc59e9d4e629d267cbbcf5c2"
+  },
+  {
+    "id": "case-042",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0007"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-042/program.elf",
+    "sha256": "7a2b9a8e65f49b8de67161ca04e1b7bf5065781b7c9aa1ce76d6a896b9dee4fa"
+  },
+  {
+    "id": "case-043",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0046"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-043/program.elf",
+    "sha256": "fe99331c70ff2cce23b19d5efafbfc3e50bbadfdeca7cb552f4fa2c899ca16ed"
+  },
+  {
+    "id": "case-044",
+    "instruction": "vmerge.vxm v16, v0, x0, v0",
+    "encoding": "32'h5c00_4857",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-044/program.elf",
+    "sha256": "fb5895825394f00f88c6fcaecee8a19f155908ff54db7a18fb188f3e38394eaf"
+  },
+  {
+    "id": "case-045",
+    "instruction": "vmerge.vxm v4, v0, x31, v0",
+    "encoding": "32'h5c0f_c257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-045/program.elf",
+    "sha256": "e8e999ebeef41e59a1cae8f13eba77a14c52475eb27e42c053b62361e13ffe89"
+  },
+  {
+    "id": "case-046",
+    "instruction": "vmerge.vxm v8, v0, x0, v0",
+    "encoding": "32'h5c00_4457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_001a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-046/program.elf",
+    "sha256": "162453500475247c279dc9b238cf7171bf7025879cae8409da9a23664869cf66"
+  },
+  {
+    "id": "case-047",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0045"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-047/program.elf",
+    "sha256": "37eeb6384d021cde74843729ad92c862b05f122849d324c65b43f8ff192f786a"
+  },
+  {
+    "id": "case-048",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0005"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-048/program.elf",
+    "sha256": "a02caea58dc4a5101f83c532ebac6bbc1d78a2f82ec42ef0cbbfe452899ef7a1"
+  },
+  {
+    "id": "case-049",
+    "instruction": "vmerge.vxm v31, v0, x31, v0",
+    "encoding": "32'h5c0f_cfd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004e"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-049/program.elf",
+    "sha256": "9d3a86f9d82fa0ee6216f1e630a9fb5de80b3478317bc5a0d652443168320063"
+  },
+  {
+    "id": "case-050",
+    "instruction": "vmerge.vxm v4, v0, x0, v0",
+    "encoding": "32'h5c00_4257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0012"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-050/program.elf",
+    "sha256": "3dec4708feeb2247a950497d858754063bb06987ddc0f0231482b520d1207c23"
+  },
+  {
+    "id": "case-051",
+    "instruction": "vmerge.vxm v4, v0, x31, v0",
+    "encoding": "32'h5c0f_c257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-051/program.elf",
+    "sha256": "9b4838a821c5ce868d031918c132849e59e195977e1a74feed9748bcd0cea45d"
+  },
+  {
+    "id": "case-052",
+    "instruction": "vmerge.vxm v8, v0, x0, v0",
+    "encoding": "32'h5c00_4457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0053"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-052/program.elf",
+    "sha256": "09efae9da8086e2214b824360db036a376e8e245d3984c0eb870eab699ca515d"
+  },
+  {
+    "id": "case-053",
+    "instruction": "vmerge.vxm v4, v0, x0, v0",
+    "encoding": "32'h5c00_4257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0042"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-053/program.elf",
+    "sha256": "ec603e09b830b930331b27389c97256de458be40886bdacaf4d3ca6ee17b16c7"
+  },
+  {
+    "id": "case-054",
+    "instruction": "vmerge.vxm v2, v0, x31, v0",
+    "encoding": "32'h5c0f_c157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0001"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-054/program.elf",
+    "sha256": "647027aa14fe53f6e7c83b9f1a7d916cf3494f6c4b338d4a9c6f0a78233a48c6"
+  },
+  {
+    "id": "case-055",
+    "instruction": "vmerge.vxm v31, v0, x31, v0",
+    "encoding": "32'h5c0f_cfd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0048"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-055/program.elf",
+    "sha256": "9559bef6a7bf4c8f6b2cf015900ee700cb04cc1a19672dc31b8d648d5baf9496"
+  },
+  {
+    "id": "case-056",
+    "instruction": "vmerge.vxm v8, v0, x0, v0",
+    "encoding": "32'h5c00_4457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0043"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-056/program.elf",
+    "sha256": "026c8123676e92ba4527132af896d4327e5ecaf2d6937a9f2df45c1b6d0f54b2"
+  },
+  {
+    "id": "case-057",
+    "instruction": "vmerge.vxm v2, v0, x0, v0",
+    "encoding": "32'h5c00_4157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0011"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-057/program.elf",
+    "sha256": "acee93c2eb2d4d7ccdffaf31a6046a861da8ad1ca82f363701fecf5d4150098c"
+  },
+  {
+    "id": "case-058",
+    "instruction": "vmerge.vxm v31, v0, x31, v0",
+    "encoding": "32'h5c0f_cfd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0000"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-058/program.elf",
+    "sha256": "1075b0591e44d42ec8c2d2cce8bbf2538adbfbf49b2cbeeac3f706b4cbb8a9c7"
+  },
+  {
+    "id": "case-059",
+    "instruction": "vmerge.vxm v4, v0, x0, v0",
+    "encoding": "32'h5c00_4257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-059/program.elf",
+    "sha256": "19f18b195512abbdb72371eefebdf8670098cbdd1be038e89a08bf01e5c34c70"
+  },
+  {
+    "id": "case-060",
+    "instruction": "vmerge.vxm v2, v0, x31, v0",
+    "encoding": "32'h5c0f_c157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0041"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-060/program.elf",
+    "sha256": "74d45843e7bc7b359dae43ec8772950d02c7ffcb153843009b7d0312605ca5fa"
+  },
+  {
+    "id": "case-061",
+    "instruction": "vmerge.vxm v4, v0, x31, v0",
+    "encoding": "32'h5c0f_c257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0052"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-061/program.elf",
+    "sha256": "6b87f7c2e5a0d3eb836ca91d3fc264a826d23f826b65adbe3e845b36765e971f"
+  },
+  {
+    "id": "case-062",
+    "instruction": "vmerge.vxm v8, v0, x0, v0",
+    "encoding": "32'h5c00_4457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_005b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-062/program.elf",
+    "sha256": "95cccb6a95e322a0b2d384659b957f5e72b5df612f6761b56c7a07d9da8fdeb2"
+  },
+  {
+    "id": "case-063",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0048"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-063/program.elf",
+    "sha256": "3bcbcc4dded32804d60385c02797c3818cc4be44b2db3e319cc0e4df818b007b"
+  },
+  {
+    "id": "case-064",
+    "instruction": "vmerge.vxm v31, v0, x31, v0",
+    "encoding": "32'h5c0f_cfd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0040"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-064/program.elf",
+    "sha256": "2d26a1266df5a23093f793a03c4b74f6f18ad95b63cd2ff22623871befcac1d0"
+  },
+  {
+    "id": "case-065",
+    "instruction": "vmerge.vxm v2, v0, x31, v0",
+    "encoding": "32'h5c0f_c157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0019"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-065/program.elf",
+    "sha256": "21d55a0baf742a9df6023c03c5474c9e1b3598c94c1bcd0a75e57072c7e7abc8"
+  },
+  {
+    "id": "case-066",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0017"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-066/program.elf",
+    "sha256": "e12c5917b61ba6ae39723c2ef1fad064b2209595e2c00f4e2ccfa95b882ee997"
+  },
+  {
+    "id": "case-067",
+    "instruction": "vmerge.vxm v4, v0, x0, v0",
+    "encoding": "32'h5c00_4257",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0052"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-067/program.elf",
+    "sha256": "21a518004026e9fa04c7614f9ef1fe93cf8a8a55c99fe81ee3bf3aa122d2ec69"
+  },
+  {
+    "id": "case-068",
+    "instruction": "vmerge.vxm v2, v0, x31, v0",
+    "encoding": "32'h5c0f_c157",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0051"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-068/program.elf",
+    "sha256": "ecd4311ea4d7427dcd175dfe62b542a357289be0b2d17055763067059b2c76f4"
+  },
+  {
+    "id": "case-069",
+    "instruction": "vmerge.vxm v31, v0, x0, v0",
+    "encoding": "32'h5c00_4fd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0001",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0000"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-069/program.elf",
+    "sha256": "33cf6b6fb867741bc9d4aedc90ecca1164c371000823ff9184b6e2e174db415a"
+  },
+  {
+    "id": "case-070",
+    "instruction": "vmerge.vxm v31, v0, x31, v0",
+    "encoding": "32'h5c0f_cfd7",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0047"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-070/program.elf",
+    "sha256": "e1cd7ab3f86bbde8396e928bc6b32c8831e2a5ac32c177e7c1f49e3bd40ad188"
+  },
+  {
+    "id": "case-071",
+    "instruction": "vmerge.vxm v8, v0, x0, v0",
+    "encoding": "32'h5c00_4457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0003"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-071/program.elf",
+    "sha256": "1279f7a78bc550f7dea639a18993a71c242f79e446906b938992cc956651ccbd"
+  },
+  {
+    "id": "case-072",
+    "instruction": "vmerge.vxm v8, v0, x31, v0",
+    "encoding": "32'h5c0f_c457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0002",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_000a"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-072/program.elf",
+    "sha256": "4cc866959c77e523936ce1c5968cd468ec44590d35731ad10d24da020cf897cf"
+  },
+  {
+    "id": "case-073",
+    "instruction": "vmerge.vxm v8, v0, x0, v0",
+    "encoding": "32'h5c00_4457",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_004b"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-073/program.elf",
+    "sha256": "29a138869c55ecd3acd4080fe7a0e41e1b36c8ef6b40c165d0680e2c0409398c"
+  },
+  {
+    "id": "case-074",
+    "instruction": "vmv8r.v v0, v0",
+    "encoding": "32'h9e03_b057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0024",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0003"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-074/program.elf",
+    "sha256": "1181af0ef88e259b1b53c136e463430950771d4eb3080f3b299aa787b9de2c9b"
+  },
+  {
+    "id": "case-075",
+    "instruction": "vmv4r.v v0, v0",
+    "encoding": "32'h9e01_b057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0011"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-075/program.elf",
+    "sha256": "2ba1be2d7de8abd41ff168e8d5863637fa921a6ec6dfa417bf32c902862f72a7"
+  },
+  {
+    "id": "case-076",
+    "instruction": "vmv4r.v v0, v0",
+    "encoding": "32'h9e01_b057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0018"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-076/program.elf",
+    "sha256": "59f8c783dfa2190116586c422f8361fc8eab367ecb1957d9dd14ad33866bab37"
+  },
+  {
+    "id": "case-077",
+    "instruction": "vmv8r.v v0, v0",
+    "encoding": "32'h9e03_b057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0011"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-077/program.elf",
+    "sha256": "70d4ba595b8efe197478bb6c6f7ab65ad96a11f7b558918308acb8c2e7aa9cb9"
+  },
+  {
+    "id": "case-078",
+    "instruction": "vmv.s.x v0, x31",
+    "encoding": "32'h420f_e057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_000f",
+      "vstart": "64'h0000_0000_0000_0001",
+      "vtype": "64'h0000_0000_0000_0052"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-078/program.elf",
+    "sha256": "d2b3813e3111018937631c29b29c73238066a1f6b701c1e5c51bf09b65bca448"
+  },
+  {
+    "id": "case-079",
+    "instruction": "vmv.s.x v0, x0",
+    "encoding": "32'h4200_6057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_001f",
+      "vstart": "64'h0000_0000_0000_0004",
+      "vtype": "64'h0000_0000_0000_0041"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-079/program.elf",
+    "sha256": "8bf6133b2f84091648a8f51d0a0ff858cef54f19bf20332da2e7d4eaf92c8cd5"
+  },
+  {
+    "id": "case-080",
+    "instruction": "vsetvl x0, x31, x0",
+    "encoding": "32'h800f_f057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h8000_0000_0000_0000",
+      "x1": "64'h8000_0000_0000_0000",
+      "x10": "64'h8000_0000_0000_0000",
+      "x11": "64'h8000_0000_0000_0000",
+      "x12": "64'h8000_0000_0000_0000",
+      "x13": "64'h8000_0000_0000_0000",
+      "x14": "64'h8000_0000_0000_0000",
+      "x15": "64'h8000_0000_0000_0000",
+      "x16": "64'h8000_0000_0000_0000",
+      "x17": "64'h8000_0000_0000_0000",
+      "x18": "64'h8000_0000_0000_0000",
+      "x19": "64'h8000_0000_0000_0000",
+      "x2": "64'h8000_0000_0000_0000",
+      "x20": "64'h8000_0000_0000_0000",
+      "x21": "64'h8000_0000_0000_0000",
+      "x22": "64'h8000_0000_0000_0000",
+      "x23": "64'h8000_0000_0000_0000",
+      "x24": "64'h8000_0000_0000_0000",
+      "x25": "64'h8000_0000_0000_0000",
+      "x26": "64'h8000_0000_0000_0000",
+      "x27": "64'h8000_0000_0000_0000",
+      "x28": "64'h8000_0000_0000_0000",
+      "x29": "64'h8000_0000_0000_0000",
+      "x3": "64'h8000_0000_0000_0000",
+      "x30": "64'h8000_0000_0000_0000",
+      "x31": "64'h8000_0000_0000_0000",
+      "x4": "64'h8000_0000_0000_0000",
+      "x5": "64'h8000_0000_0000_0000",
+      "x6": "64'h8000_0000_0000_0000",
+      "x7": "64'h8000_0000_0000_0000",
+      "x8": "64'h8000_0000_0000_0000",
+      "x9": "64'h8000_0000_0000_0000"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-080/program.elf",
+    "sha256": "a4e67ea9550d3b67e87dc0ce005ac10300fbc9305536849b6a818d37d65c16b0"
+  },
+  {
+    "id": "case-081",
+    "instruction": "vsetvl x0, x26, x1",
+    "encoding": "32'h801d_7057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0010",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0040",
+      "x1": "64'h0000_0000_0000_0007",
+      "x10": "64'h0000_0000_0000_0004",
+      "x11": "64'h0000_0000_0000_0004",
+      "x12": "64'h0000_0000_0000_0004",
+      "x13": "64'h0000_0000_0000_0004",
+      "x14": "64'h0000_0000_0000_0004",
+      "x15": "64'h0000_0000_0000_0004",
+      "x16": "64'h0000_0000_0000_0004",
+      "x17": "64'h0000_0000_0000_0004",
+      "x18": "64'h0000_0000_0000_0004",
+      "x19": "64'h0000_0000_0000_0004",
+      "x2": "64'h0000_0000_0000_0004",
+      "x20": "64'h0000_0000_0000_0004",
+      "x21": "64'h0000_0000_0000_0004",
+      "x22": "64'h0000_0000_0000_0004",
+      "x23": "64'h0000_0000_0000_0004",
+      "x24": "64'h0000_0000_0000_0004",
+      "x25": "64'h0000_0000_0000_0004",
+      "x26": "64'h8000_0000_0000_000c",
+      "x27": "64'h0000_0000_0000_0004",
+      "x28": "64'h0000_0000_0000_0004",
+      "x29": "64'h0000_0000_0000_0004",
+      "x3": "64'h0000_0000_0000_0004",
+      "x30": "64'h0000_0000_0000_0004",
+      "x31": "64'h0000_0000_0000_0004",
+      "x4": "64'h0000_0000_0000_0004",
+      "x5": "64'h0000_0000_0000_0004",
+      "x6": "64'h0000_0000_0000_0004",
+      "x7": "64'h0000_0000_0000_0004",
+      "x8": "64'h0000_0000_0000_0004",
+      "x9": "64'h0000_0000_0000_0004"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-081/program.elf",
+    "sha256": "eda68a075e8582cc646e3da3e04e3cd094f2b53de5020a6af9d8a7f73c3d7599"
+  },
+  {
+    "id": "case-082",
+    "instruction": "vsetvl x0, x31, x31",
+    "encoding": "32'h81ff_f057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h8000_0000_0000_0000",
+      "x1": "64'h0000_0000_0000_0004",
+      "x10": "64'h0000_0000_0000_0004",
+      "x11": "64'h0000_0000_0000_0004",
+      "x12": "64'h0000_0000_0000_0004",
+      "x13": "64'h0000_0000_0000_0004",
+      "x14": "64'h0000_0000_0000_0004",
+      "x15": "64'h0000_0000_0000_0004",
+      "x16": "64'h0000_0000_0000_0004",
+      "x17": "64'h0000_0000_0000_0004",
+      "x18": "64'h0000_0000_0000_0004",
+      "x19": "64'h0000_0000_0000_0004",
+      "x2": "64'h0000_0000_0000_0004",
+      "x20": "64'h0000_0000_0000_0004",
+      "x21": "64'h0000_0000_0000_0004",
+      "x22": "64'h0000_0000_0000_0004",
+      "x23": "64'h0000_0000_0000_0004",
+      "x24": "64'h0000_0000_0000_0004",
+      "x25": "64'h0000_0000_0000_0004",
+      "x26": "64'h0000_0000_0000_0004",
+      "x27": "64'h0000_0000_0000_0004",
+      "x28": "64'h0000_0000_0000_0004",
+      "x29": "64'h0000_0000_0000_0004",
+      "x3": "64'h0000_0000_0000_0004",
+      "x30": "64'h0000_0000_0000_0004",
+      "x31": "64'h0000_0000_0000_0004",
+      "x4": "64'h0000_0000_0000_0004",
+      "x5": "64'h0000_0000_0000_0004",
+      "x6": "64'h0000_0000_0000_0004",
+      "x7": "64'h0000_0000_0000_0004",
+      "x8": "64'h0000_0000_0000_0004",
+      "x9": "64'h0000_0000_0000_0004"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-082/program.elf",
+    "sha256": "04122a828bfda008b1adce529a84affb1b4e093caf7430d0d94401de0ccd67e7"
+  },
+  {
+    "id": "case-083",
+    "instruction": "vsetvl x0, x8, x1",
+    "encoding": "32'h8014_7057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h8000_0000_0000_0000",
+      "x1": "64'h0000_0000_0000_004f",
+      "x10": "64'h0000_0000_0000_0004",
+      "x11": "64'h0000_0000_0000_0004",
+      "x12": "64'h0000_0000_0000_0004",
+      "x13": "64'h0000_0000_0000_0004",
+      "x14": "64'h0000_0000_0000_0004",
+      "x15": "64'h0000_0000_0000_0004",
+      "x16": "64'h0000_0000_0000_0004",
+      "x17": "64'h0000_0000_0000_0004",
+      "x18": "64'h0000_0000_0000_0004",
+      "x19": "64'h0000_0000_0000_0004",
+      "x2": "64'h0000_0000_0000_0004",
+      "x20": "64'h0000_0000_0000_0004",
+      "x21": "64'h0000_0000_0000_0004",
+      "x22": "64'h0000_0000_0000_0004",
+      "x23": "64'h0000_0000_0000_0004",
+      "x24": "64'h0000_0000_0000_0004",
+      "x25": "64'h0000_0000_0000_0004",
+      "x26": "64'h0000_0000_0000_0004",
+      "x27": "64'h0000_0000_0000_0004",
+      "x28": "64'h0000_0000_0000_0004",
+      "x29": "64'h0000_0000_0000_0004",
+      "x3": "64'h0000_0000_0000_0004",
+      "x30": "64'h0000_0000_0000_0004",
+      "x31": "64'h0000_0000_0000_0004",
+      "x4": "64'h0000_0000_0000_0004",
+      "x5": "64'h0000_0000_0000_0004",
+      "x6": "64'h0000_0000_0000_0004",
+      "x7": "64'h0000_0000_0000_0004",
+      "x8": "64'h0000_0000_0000_0006",
+      "x9": "64'h0000_0000_0000_0004"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-083/program.elf",
+    "sha256": "533dfa7b772d82d3deba4e1d04f9053938b9f0813a894f4b74cffc4e07431033"
+  },
+  {
+    "id": "case-084",
+    "instruction": "vsetvl x0, x2, x1",
+    "encoding": "32'h8011_7057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h8000_0000_0000_0000",
+      "x1": "64'h0000_0000_0000_0006",
+      "x10": "64'h0000_0000_0000_0004",
+      "x11": "64'h0000_0000_0000_0004",
+      "x12": "64'h0000_0000_0000_0004",
+      "x13": "64'h0000_0000_0000_0004",
+      "x14": "64'h0000_0000_0000_0004",
+      "x15": "64'h0000_0000_0000_0004",
+      "x16": "64'h0000_0000_0000_0004",
+      "x17": "64'h0000_0000_0000_0004",
+      "x18": "64'h0000_0000_0000_0004",
+      "x19": "64'h0000_0000_0000_0004",
+      "x2": "64'h0000_0000_0000_0004",
+      "x20": "64'h0000_0000_0000_0004",
+      "x21": "64'h0000_0000_0000_0004",
+      "x22": "64'h0000_0000_0000_0004",
+      "x23": "64'h0000_0000_0000_0004",
+      "x24": "64'h0000_0000_0000_0004",
+      "x25": "64'h0000_0000_0000_0004",
+      "x26": "64'h0000_0000_0000_0004",
+      "x27": "64'h0000_0000_0000_0004",
+      "x28": "64'h0000_0000_0000_0004",
+      "x29": "64'h0000_0000_0000_0004",
+      "x3": "64'h0000_0000_0000_0004",
+      "x30": "64'h0000_0000_0000_0004",
+      "x31": "64'h0000_0000_0000_0004",
+      "x4": "64'h0000_0000_0000_0004",
+      "x5": "64'h0000_0000_0000_0004",
+      "x6": "64'h0000_0000_0000_0004",
+      "x7": "64'h0000_0000_0000_0004",
+      "x8": "64'h0000_0000_0000_0004",
+      "x9": "64'h0000_0000_0000_0004"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-084/program.elf",
+    "sha256": "55157de0087a720928384c955ddb6b656ca765a9f8dfdee4c14581650366f028"
+  },
+  {
+    "id": "case-085",
+    "instruction": "vsetvl x0, x31, x0",
+    "encoding": "32'h800f_f057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0003",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0010",
+      "x1": "64'h0000_0000_0000_0014",
+      "x10": "64'h0000_0000_0000_0014",
+      "x11": "64'h0000_0000_0000_0014",
+      "x12": "64'h0000_0000_0000_0014",
+      "x13": "64'h0000_0000_0000_0014",
+      "x14": "64'h0000_0000_0000_0014",
+      "x15": "64'h0000_0000_0000_0014",
+      "x16": "64'h0000_0000_0000_0014",
+      "x17": "64'h0000_0000_0000_0014",
+      "x18": "64'h0000_0000_0000_0014",
+      "x19": "64'h0000_0000_0000_0014",
+      "x2": "64'h0000_0000_0000_0014",
+      "x20": "64'h0000_0000_0000_0014",
+      "x21": "64'h0000_0000_0000_0014",
+      "x22": "64'h0000_0000_0000_0014",
+      "x23": "64'h0000_0000_0000_0014",
+      "x24": "64'h0000_0000_0000_0014",
+      "x25": "64'h0000_0000_0000_0014",
+      "x26": "64'h0000_0000_0000_0014",
+      "x27": "64'h0000_0000_0000_0014",
+      "x28": "64'h0000_0000_0000_0014",
+      "x29": "64'h0000_0000_0000_0014",
+      "x3": "64'h0000_0000_0000_0014",
+      "x30": "64'h0000_0000_0000_0014",
+      "x31": "64'h0000_0000_0000_0014",
+      "x4": "64'h0000_0000_0000_0014",
+      "x5": "64'h0000_0000_0000_0014",
+      "x6": "64'h0000_0000_0000_0014",
+      "x7": "64'h0000_0000_0000_0014",
+      "x8": "64'h0000_0000_0000_0014",
+      "x9": "64'h0000_0000_0000_0014"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-085/program.elf",
+    "sha256": "4a452c4f0edb46032ddf68c78adff0cd42dc1e04424a84ad542e815cb7e631d2"
+  },
+  {
+    "id": "case-086",
+    "instruction": "vsetvl x0, x31, x31",
+    "encoding": "32'h81ff_f057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h8000_0000_0000_0000",
+      "x1": "64'h0000_0000_0000_0004",
+      "x10": "64'h0000_0000_0000_0004",
+      "x11": "64'h0000_0000_0000_0004",
+      "x12": "64'h0000_0000_0000_0004",
+      "x13": "64'h0000_0000_0000_0004",
+      "x14": "64'h0000_0000_0000_0004",
+      "x15": "64'h0000_0000_0000_0004",
+      "x16": "64'h0000_0000_0000_0004",
+      "x17": "64'h0000_0000_0000_0004",
+      "x18": "64'h0000_0000_0000_0004",
+      "x19": "64'h0000_0000_0000_0004",
+      "x2": "64'h0000_0000_0000_0004",
+      "x20": "64'h0000_0000_0000_0004",
+      "x21": "64'h0000_0000_0000_0004",
+      "x22": "64'h0000_0000_0000_0004",
+      "x23": "64'h0000_0000_0000_0004",
+      "x24": "64'h0000_0000_0000_0004",
+      "x25": "64'h0000_0000_0000_0004",
+      "x26": "64'h0000_0000_0000_0004",
+      "x27": "64'h0000_0000_0000_0004",
+      "x28": "64'h0000_0000_0000_0004",
+      "x29": "64'h0000_0000_0000_0004",
+      "x3": "64'h0000_0000_0000_0004",
+      "x30": "64'h0000_0000_0000_0004",
+      "x31": "64'h0000_0000_0000_0020",
+      "x4": "64'h0000_0000_0000_0004",
+      "x5": "64'h0000_0000_0000_0004",
+      "x6": "64'h0000_0000_0000_0004",
+      "x7": "64'h0000_0000_0000_0004",
+      "x8": "64'h0000_0000_0000_0004",
+      "x9": "64'h0000_0000_0000_0004"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-086/program.elf",
+    "sha256": "f249aa7c2aa83391eeff40176a46a783c5f7f1b10d807eb0b831a8495f0d3f4e"
+  },
+  {
+    "id": "case-087",
+    "instruction": "vsetvl x0, x31, x0",
+    "encoding": "32'h800f_f057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h8000_0000_0000_0000",
+      "x1": "64'h0000_0000_0000_0000",
+      "x10": "64'h0000_0000_0000_0000",
+      "x11": "64'h0000_0000_0000_0000",
+      "x12": "64'h0000_0000_0000_0000",
+      "x13": "64'h0000_0000_0000_0000",
+      "x14": "64'h0000_0000_0000_0000",
+      "x15": "64'h0000_0000_0000_0000",
+      "x16": "64'h0000_0000_0000_0000",
+      "x17": "64'h0000_0000_0000_0000",
+      "x18": "64'h0000_0000_0000_0000",
+      "x19": "64'h0000_0000_0000_0000",
+      "x2": "64'h0000_0000_0000_0000",
+      "x20": "64'h0000_0000_0000_0000",
+      "x21": "64'h0000_0000_0000_0000",
+      "x22": "64'h0000_0000_0000_0000",
+      "x23": "64'h0000_0000_0000_0000",
+      "x24": "64'h0000_0000_0000_0000",
+      "x25": "64'h0000_0000_0000_0000",
+      "x26": "64'h0000_0000_0000_0000",
+      "x27": "64'h0000_0000_0000_0000",
+      "x28": "64'h0000_0000_0000_0000",
+      "x29": "64'h0000_0000_0000_0000",
+      "x3": "64'h0000_0000_0000_0000",
+      "x30": "64'h0000_0000_0000_0000",
+      "x31": "64'h0000_0000_0000_0000",
+      "x4": "64'h0000_0000_0000_0000",
+      "x5": "64'h0000_0000_0000_0000",
+      "x6": "64'h0000_0000_0000_0000",
+      "x7": "64'h0000_0000_0000_0000",
+      "x8": "64'h0000_0000_0000_0000",
+      "x9": "64'h0000_0000_0000_0000"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-087/program.elf",
+    "sha256": "c43b26aa6cb294e653df8bac842023ba2e6a482b69ec837541dc16deabe2e3fd"
+  },
+  {
+    "id": "case-088",
+    "instruction": "vsetvl x0, x31, x31",
+    "encoding": "32'h81ff_f057",
+    "isa-state": {
+      "cur_privilege": "User",
+      "vcsr": "3'h0",
+      "vl": "64'h0000_0000_0000_0000",
+      "vstart": "64'h0000_0000_0000_0000",
+      "vtype": "64'h0000_0000_0000_0018",
+      "x1": "64'h0000_0000_0000_0004",
+      "x10": "64'h0000_0000_0000_0004",
+      "x11": "64'h0000_0000_0000_0004",
+      "x12": "64'h0000_0000_0000_0004",
+      "x13": "64'h0000_0000_0000_0004",
+      "x14": "64'h0000_0000_0000_0004",
+      "x15": "64'h0000_0000_0000_0004",
+      "x16": "64'h0000_0000_0000_0004",
+      "x17": "64'h0000_0000_0000_0004",
+      "x18": "64'h0000_0000_0000_0004",
+      "x19": "64'h0000_0000_0000_0004",
+      "x2": "64'h0000_0000_0000_0004",
+      "x20": "64'h0000_0000_0000_0004",
+      "x21": "64'h0000_0000_0000_0004",
+      "x22": "64'h0000_0000_0000_0004",
+      "x23": "64'h0000_0000_0000_0004",
+      "x24": "64'h0000_0000_0000_0004",
+      "x25": "64'h0000_0000_0000_0004",
+      "x26": "64'h0000_0000_0000_0004",
+      "x27": "64'h0000_0000_0000_0004",
+      "x28": "64'h0000_0000_0000_0004",
+      "x29": "64'h0000_0000_0000_0004",
+      "x3": "64'h0000_0000_0000_0004",
+      "x30": "64'h0000_0000_0000_0004",
+      "x31": "64'h0000_0000_0000_0016",
+      "x4": "64'h0000_0000_0000_0004",
+      "x5": "64'h0000_0000_0000_0004",
+      "x6": "64'h0000_0000_0000_0004",
+      "x7": "64'h0000_0000_0000_0004",
+      "x8": "64'h0000_0000_0000_0004",
+      "x9": "64'h0000_0000_0000_0004"
+    },
+    "elf": "/home/baiyifan/workplace-local/isla-runner/difftest-xiangshan/work/isla-solve-success-candidates-replay/elf/case-088/program.elf",
+    "sha256": "8db8181120255553042b54a7267b42bbb17ea96f400923e6d050f9195315a03f"
+  }
+]

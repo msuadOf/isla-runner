@@ -1,0 +1,10 @@
+{
+ "trap": {
+  "hang": 37,
+  "pass": 63
+ },
+ "success": {
+  "hang": 88,
+  "pass": 12
+ }
+}

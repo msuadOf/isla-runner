@@ -1,0 +1,651 @@
+{
+ "results": {
+  "trap": {
+   "hang": 39,
+   "pass": 61
+  },
+  "success": {
+   "hang": 88,
+   "pass": 12
+  }
+ },
+ "hang_details": [
+  [
+   "case-3814",
+   "vid.v v3",
+   "trap"
+  ],
+  [
+   "case-8037",
+   "vwsub.vv v16, v12, v12",
+   "trap"
+  ],
+  [
+   "case-8772",
+   "vwsubu.wx v0, v0, x31",
+   "trap"
+  ],
+  [
+   "case-8750",
+   "vwadd.wx v13, v27, x31",
+   "trap"
+  ],
+  [
+   "case-6586",
+   "vmseq.vx v8, v3, x0",
+   "trap"
+  ],
+  [
+   "case-181",
+   "vmv.v.i v6, 0x0",
+   "trap"
+  ],
+  [
+   "case-5591",
+   "vadc.vvm v31, v17, v11, v0",
+   "trap"
+  ],
+  [
+   "case-6684",
+   "vmadc.vx v26, v0, x31",
+   "trap"
+  ],
+  [
+   "case-277",
+   "vmv.v.x v0, x31",
+   "trap"
+  ],
+  [
+   "case-1014",
+   "vslide1up.vx v0, v2, x0",
+   "trap"
+  ],
+  [
+   "case-6953",
+   "vslideup.vx v4, v0, x0, v0.t",
+   "trap"
+  ],
+  [
+   "case-6892",
+   "vslideup.vx v0, v8, x0",
+   "trap"
+  ],
+  [
+   "case-1984",
+   "vnsrl.wx v28, v0, x31, v0.t",
+   "trap"
+  ],
+  [
+   "case-1988",
+   "vnsra.wx v31, v31, x31, v0.t",
+   "trap"
+  ],
+  [
+   "case-7972",
+   "vwsubu.wv v13, v3, v29, v0.t",
+   "trap"
+  ],
+  [
+   "case-8688",
+   "vwadd.wx v2, v0, x0, v0.t",
+   "trap"
+  ],
+  [
+   "case-4837",
+   "vrev8.v v30, v28, v0.t",
+   "trap"
+  ],
+  [
+   "case-3921",
+   "vmadc.vi v15, v15, 0xa",
+   "trap"
+  ],
+  [
+   "case-8257",
+   "vwaddu.vv v0, v8, v4",
+   "trap"
+  ],
+  [
+   "case-4773",
+   "vsm.v v0, (x31)",
+   "trap"
+  ],
+  [
+   "case-8843",
+   "vabd.vv v0, v23, v30, v0.t",
+   "trap"
+  ],
+  [
+   "case-5570",
+   "vadc.vvm v31, v17, v19, v0",
+   "trap"
+  ],
+  [
+   "case-1315",
+   "vnsra.wi v29, v12, 0xe",
+   "trap"
+  ],
+  [
+   "case-4869",
+   "vrev8.v v2, v8",
+   "trap"
+  ],
+  [
+   "case-3844",
+   "vid.v v10",
+   "trap"
+  ],
+  [
+   "case-777",
+   "vnmsac.vx v31, x31, v29, v0.t",
+   "trap"
+  ],
+  [
+   "case-1957",
+   "vnsrl.wx v0, v0, x31",
+   "trap"
+  ],
+  [
+   "case-8250",
+   "vwaddu.vv v8, v4, v24",
+   "trap"
+  ],
+  [
+   "case-3927",
+   "vadc.vim v2, v0, -0x7, v0",
+   "trap"
+  ],
+  [
+   "case-7802",
+   "vwadd.wv v28, v0, v2",
+   "trap"
+  ],
+  [
+   "case-8647",
+   "vwsub.vx v8, v4, x0, v0.t",
+   "trap"
+  ],
+  [
+   "case-8664",
+   "vwsub.wx v4, v0, x31, v0.t",
+   "trap"
+  ],
+  [
+   "case-183",
+   "vmv.v.i v0, -0xd",
+   "trap"
+  ],
+  [
+   "case-4780",
+   "vsm.v v0, (x0)",
+   "trap"
+  ],
+  [
+   "case-3887",
+   "vid.v v4, v0.t",
+   "trap"
+  ],
+  [
+   "case-6903",
+   "vslidedown.vx v31, v31, x31, v0.t",
+   "trap"
+  ],
+  [
+   "case-1119",
+   "vrem.vx v4, v0, x31, v0.t",
+   "trap"
+  ],
+  [
+   "case-1292",
+   "vnsra.wi v31, v31, 0x1d, v0.t",
+   "trap"
+  ],
+  [
+   "case-4506",
+   "vslideup.vi v31, v0, 0x1, v0.t",
+   "trap"
+  ],
+  [
+   "case-5434",
+   "vslidedown.vx v31, v0, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-6056",
+   "vsll.vx v4, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-2525",
+   "vmadc.vim v0, v0, 0x1, v0",
+   "success"
+  ],
+  [
+   "case-9649",
+   "vwmulsu.vx v16, v12, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-5952",
+   "vmax.vx v31, v0, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-3985",
+   "vrgatherei16.vv v8, v23, v31, v0.t",
+   "success"
+  ],
+  [
+   "case-2385",
+   "vmsne.vi v0, v31, 0x0, v0.t",
+   "success"
+  ],
+  [
+   "case-5750",
+   "vsaddu.vx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-2307",
+   "vghsh.vv v0, v0, v0",
+   "success"
+  ],
+  [
+   "case-9440",
+   "vwsubu.vx v16, v8, x0",
+   "success"
+  ],
+  [
+   "case-5980",
+   "vadd.vx v31, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-5626",
+   "vsll.vx v31, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-10006",
+   "vwadd.vx v12, v10, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-10366",
+   "vwsub.vx v4, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-2496",
+   "vadc.vim v16, v0, 0x0, v0",
+   "success"
+  ],
+  [
+   "case-5547",
+   "vor.vx v31, v0, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-4770",
+   "vwsll.vx v3, v31, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-3519",
+   "vrol.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-7535",
+   "vwmaccsu.vx v8, x0, v24, v0.t",
+   "success"
+  ],
+  [
+   "case-5345",
+   "vrgather.vx v0, v2, x31",
+   "success"
+  ],
+  [
+   "case-2553",
+   "vmadc.vim v0, v0, -0x3, v0",
+   "success"
+  ],
+  [
+   "case-1946",
+   "vclmul.vv v0, v0, v0",
+   "success"
+  ],
+  [
+   "case-5152",
+   "vmsbc.vx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-5885",
+   "vsadd.vx v31, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-1761",
+   "vbrev.v v0, v0, v0.t",
+   "success"
+  ],
+  [
+   "case-5387",
+   "vrgather.vx v31, v0, x0",
+   "success"
+  ],
+  [
+   "case-1966",
+   "vclmul.vv v0, v0, v0",
+   "success"
+  ],
+  [
+   "case-10023",
+   "vwsub.vx v28, v30, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-1522",
+   "vaeskf1.vi v0, v0, 0xc",
+   "success"
+  ],
+  [
+   "case-314",
+   "vcompress.vm v0, v4, v31",
+   "success"
+  ],
+  [
+   "case-7149",
+   "vwmaccus.vx v12, x0, v10",
+   "success"
+  ],
+  [
+   "case-5741",
+   "vsub.vx v8, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-9519",
+   "vwmulsu.vx v0, v1, x31",
+   "success"
+  ],
+  [
+   "case-1667",
+   "vandn.vx v0, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-10289",
+   "vwmulu.vx v16, v14, x0",
+   "success"
+  ],
+  [
+   "case-10301",
+   "vwaddu.vx v4, v6, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-5730",
+   "vsmul.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-10096",
+   "vwsubu.vx v16, v14, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-768",
+   "vslide1up.vx v31, v0, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-5089",
+   "vmseq.vx v0, v30, x0",
+   "success"
+  ],
+  [
+   "case-3524",
+   "vror.vi v0, v0, 0x0, v0.t",
+   "success"
+  ],
+  [
+   "case-9976",
+   "vwadd.vx v8, v24, x0",
+   "success"
+  ],
+  [
+   "case-2097",
+   "vclz.v v0, v0",
+   "success"
+  ],
+  [
+   "case-5995",
+   "vsub.vx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-1177",
+   "vnsrl.wx v1, v0, x31",
+   "success"
+  ],
+  [
+   "case-4658",
+   "vwsll.vi v30, v7, 0x0",
+   "success"
+  ],
+  [
+   "case-3599",
+   "vror.vv v0, v0, v0",
+   "success"
+  ],
+  [
+   "case-5498",
+   "vslideup.vx v31, v0, x0",
+   "success"
+  ],
+  [
+   "case-1445",
+   "vredsum.vs v0, v0, v0, v0.t",
+   "success"
+  ],
+  [
+   "case-5199",
+   "vsbc.vxm v2, v0, x0, v0",
+   "success"
+  ],
+  [
+   "case-4732",
+   "vwsll.vv v16, v24, v4",
+   "success"
+  ],
+  [
+   "case-4199",
+   "vsmul.vv v31, v0, v0, v0.t",
+   "success"
+  ],
+  [
+   "case-9919",
+   "vwmulu.vx v14, v30, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-4820",
+   "vwsll.vx v6, v30, x0",
+   "success"
+  ],
+  [
+   "case-5315",
+   "vslidedown.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-9639",
+   "vwmul.vx v24, v22, x0",
+   "success"
+  ],
+  [
+   "case-9921",
+   "vwaddu.vx v24, v22, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-1877",
+   "vclmulh.vx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-4830",
+   "vwsll.vx v3, v31, x0",
+   "success"
+  ],
+  [
+   "case-1970",
+   "vclmul.vx v0, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-5020",
+   "vmsne.vx v0, v30, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-569",
+   "vnmsub.vx v0, x31, v0",
+   "success"
+  ],
+  [
+   "case-3448",
+   "vrol.vx v0, v0, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-3689",
+   "vror.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-1987",
+   "vclmul.vx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-7434",
+   "vwmacc.vx v24, x0, v28",
+   "success"
+  ],
+  [
+   "case-10208",
+   "vwaddu.vx v16, v14, x31, v0.t",
+   "success"
+  ],
+  [
+   "case-2579",
+   "viota.m v9, v29, v0.t",
+   "success"
+  ],
+  [
+   "case-7509",
+   "vwmaccus.vx v20, x31, v18, v0.t",
+   "success"
+  ],
+  [
+   "case-5155",
+   "vmsbc.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-1896",
+   "vclmulh.vx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-9783",
+   "vwmulu.vx v14, v13, x0",
+   "success"
+  ],
+  [
+   "case-5638",
+   "vadd.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-1283",
+   "vnclip.wx v16, v0, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-10694",
+   "vabdu.vv v4, v20, v24",
+   "success"
+  ],
+  [
+   "case-4942",
+   "vmseq.vx v0, v0, x31",
+   "success"
+  ],
+  [
+   "case-10528",
+   "vwaddu.wx v0, v0, x0",
+   "success"
+  ],
+  [
+   "case-4543",
+   "vssubu.vv v0, v30, v28",
+   "success"
+  ],
+  [
+   "case-1486",
+   "vabs.v v30, v30",
+   "success"
+  ],
+  [
+   "case-9415",
+   "vwmulu.vx v8, v7, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-2029",
+   "vclmul.vx v0, v0, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-10093",
+   "vwmul.vx v8, v24, x0, v0.t",
+   "success"
+  ],
+  [
+   "case-3302",
+   "vmv4r.v v0, v0",
+   "success"
+  ],
+  [
+   "case-172",
+   "vmerge.vxm v2, v0, x31, v0",
+   "success"
+  ],
+  [
+   "case-7573",
+   "vwmacc.vx v16, x0, v14",
+   "success"
+  ],
+  [
+   "case-3350",
+   "vrev8.v v0, v0, v0.t",
+   "success"
+  ],
+  [
+   "case-7559",
+   "vwmaccus.vx v0, x31, v2",
+   "success"
+  ],
+  [
+   "case-7313",
+   "vwmaccu.vx v0, x31, v4",
+   "success"
+  ]
+ ],
+ "total_timeout": 11447,
+ "estimated_true_stall": 7268
+}

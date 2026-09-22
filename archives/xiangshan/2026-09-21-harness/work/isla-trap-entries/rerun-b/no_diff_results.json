@@ -1,0 +1,837 @@
+[
+ {
+  "id": "case-528",
+  "instruction": "vnmsac.vv v0, v0, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-592",
+  "instruction": "vmul.vv v31, v22, v31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-632",
+  "instruction": "vremu.vv v26, v0, v15",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-622",
+  "instruction": "vaadd.vv v31, v8, v12, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-715",
+  "instruction": "vnmsac.vx v0, x0, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-735",
+  "instruction": "vnmsac.vx v0, x0, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-750",
+  "instruction": "vmadd.vx v31, x0, v10, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-752",
+  "instruction": "vnmsub.vx v0, x0, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-758",
+  "instruction": "vnmsac.vx v24, x0, v17",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-754",
+  "instruction": "vnmsub.vx v31, x0, v15, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-900",
+  "instruction": "vasub.vx v4, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-984",
+  "instruction": "vaaddu.vx v22, v13, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-998",
+  "instruction": "vmulhsu.vx v0, v0, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-993",
+  "instruction": "vslide1up.vx v0, v4, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-997",
+  "instruction": "vslide1up.vx v31, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1072",
+  "instruction": "vslide1up.vx v0, v31, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1098",
+  "instruction": "vslide1up.vx v4, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1101",
+  "instruction": "vslide1down.vx v5, v17, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1170",
+  "instruction": "vslide1up.vx v0, v31, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1219",
+  "instruction": "vnsrl.wi v31, v30, 0xe, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1392",
+  "instruction": "vnclipu.wi v31, v6, 0x1a",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1435",
+  "instruction": "vnclip.wi v24, v8, 0x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1507",
+  "instruction": "vnsra.wv v8, v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1556",
+  "instruction": "vnsrl.wv v2, v28, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1606",
+  "instruction": "vnsrl.wv v24, v0, v0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1636",
+  "instruction": "vnsra.wv v31, v31, v31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1682",
+  "instruction": "vnclip.wv v24, v16, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1851",
+  "instruction": "vnsra.wx v31, v31, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-1867",
+  "instruction": "vnsra.wx v5, v2, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-1912",
+  "instruction": "vnsrl.wx v0, v0, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2015",
+  "instruction": "vnsra.wx v25, v22, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2065",
+  "instruction": "vnclip.wx v31, v31, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2094",
+  "instruction": "vnclip.wx v13, v4, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2141",
+  "instruction": "vnclipu.wx v31, v31, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2168",
+  "instruction": "vnclipu.wx v28, v0, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2589",
+  "instruction": "vandn.vx v0, v0, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2617",
+  "instruction": "vandn.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2625",
+  "instruction": "vandn.vx v26, v10, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2629",
+  "instruction": "vandn.vx v3, v31, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-2738",
+  "instruction": "vbrev8.v v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2755",
+  "instruction": "vbrev8.v v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2840",
+  "instruction": "vclmulh.vv v24, v24, v24",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2858",
+  "instruction": "vclmulh.vv v0, v0, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2861",
+  "instruction": "vclmulh.vv v16, v21, v20, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2859",
+  "instruction": "vclmulh.vv v0, v25, v12",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2866",
+  "instruction": "vclmulh.vv v2, v13, v17",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-2877",
+  "instruction": "vclmulh.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-3303",
+  "instruction": "vctz.v v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-3671",
+  "instruction": "vfmv.s.f v5, f0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-3772",
+  "instruction": "vmsne.vi v16, v0, -0xc",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-3802",
+  "instruction": "vid.v v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-3804",
+  "instruction": "vid.v v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-3829",
+  "instruction": "vid.v v7",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-3968",
+  "instruction": "vadc.vim v31, v5, -0x6, v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-4026",
+  "instruction": "vmadc.vim v28, v20, -0x10, v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-4029",
+  "instruction": "vmadc.vim v30, v3, 0x3, v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-4046",
+  "instruction": "viota.m v12, v3",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4039",
+  "instruction": "viota.m v16, v25",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4058",
+  "instruction": "viota.m v31, v15, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4067",
+  "instruction": "viota.m v31, v25",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4395",
+  "instruction": "vslidedown.vi v2, v0, 0xd, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4552",
+  "instruction": "vslideup.vi v31, v0, -0x10",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4562",
+  "instruction": "vslideup.vi v31, v0, 0x3",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4594",
+  "instruction": "vrgather.vi v31, v0, -0x4",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4859",
+  "instruction": "vrev8.v v1, v14",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-4881",
+  "instruction": "vrev8.v v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-4982",
+  "instruction": "vrol.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5016",
+  "instruction": "vrol.vx v4, v0, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5031",
+  "instruction": "vrol.vx v0, v0, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5042",
+  "instruction": "vrol.vx v0, v0, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5074",
+  "instruction": "vrol.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5075",
+  "instruction": "vrol.vx v0, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5071",
+  "instruction": "vrol.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5087",
+  "instruction": "vror.vi v0, v0, 0x24",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5097",
+  "instruction": "vror.vi v13, v28, 0x1e, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5139",
+  "instruction": "vror.vi v0, v0, 0x26, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5136",
+  "instruction": "vror.vi v0, v0, 0x10",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5144",
+  "instruction": "vror.vv v0, v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5157",
+  "instruction": "vror.vv v19, v17, v26, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5208",
+  "instruction": "vror.vv v0, v0, v0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5228",
+  "instruction": "vror.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5246",
+  "instruction": "vror.vx v0, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5257",
+  "instruction": "vror.vx v0, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5298",
+  "instruction": "vror.vx v0, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5306",
+  "instruction": "vror.vx v27, v22, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5321",
+  "instruction": "vror.vx v3, v20, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5329",
+  "instruction": "vror.vx v0, v0, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5460",
+  "instruction": "vmsltu.vv v11, v30, v13, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5468",
+  "instruction": "vmseq.vv v15, v17, v11, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5480",
+  "instruction": "vmsle.vv v29, v18, v27",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5501",
+  "instruction": "vmsltu.vv v11, v0, v0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5690",
+  "instruction": "vrgather.vv v31, v0, v0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-5814",
+  "instruction": "vrgatherei16.vv v2, v29, v30, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-5968",
+  "instruction": "vwsll.vi v28, v6, 0x17, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6075",
+  "instruction": "vwsll.vi v0, v2, 0x8",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6076",
+  "instruction": "vwsll.vi v4, v31, 0x14",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6141",
+  "instruction": "vwsll.vv v2, v26, v3, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6225",
+  "instruction": "vwsll.vv v26, v7, v30, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6295",
+  "instruction": "vwsll.vx v8, v9, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6401",
+  "instruction": "vwsll.vx v4, v31, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6420",
+  "instruction": "vwsll.vx v8, v10, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6424",
+  "instruction": "vwsll.vx v24, v0, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6461",
+  "instruction": "vwsll.vx v4, v30, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6527",
+  "instruction": "vwsll.vx v24, v4, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6530",
+  "instruction": "vwsll.vx v24, v4, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6531",
+  "instruction": "vwsll.vx v8, v28, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6532",
+  "instruction": "vwsll.vx v4, v28, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6535",
+  "instruction": "vwsll.vx v4, v31, x0, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6540",
+  "instruction": "vmseq.vx v6, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6545",
+  "instruction": "vmsgt.vx v25, v4, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6552",
+  "instruction": "vmsgt.vx v15, v0, x31, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6560",
+  "instruction": "vmsne.vx v18, v0, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6596",
+  "instruction": "vmsgt.vx v7, v24, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6591",
+  "instruction": "vmsgtu.vx v10, v21, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6608",
+  "instruction": "vmsleu.vx v22, v0, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6619",
+  "instruction": "vmsgtu.vx v28, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6645",
+  "instruction": "vmsbc.vx v30, v31, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6730",
+  "instruction": "vsbc.vxm v2, v0, x31, v0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6827",
+  "instruction": "vmsbc.vxm v14, v8, x31, v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6836",
+  "instruction": "vmsbc.vxm v0, v0, x0, v0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6848",
+  "instruction": "vrgather.vx v31, v0, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6857",
+  "instruction": "vslideup.vx v0, v2, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6858",
+  "instruction": "vslideup.vx v0, v4, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6865",
+  "instruction": "vslidedown.vx v31, v23, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6869",
+  "instruction": "vslidedown.vx v2, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6885",
+  "instruction": "vslideup.vx v2, v0, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6894",
+  "instruction": "vslidedown.vx v5, v17, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6888",
+  "instruction": "vslidedown.vx v17, v7, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6887",
+  "instruction": "vslidedown.vx v8, v11, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-6900",
+  "instruction": "vslidedown.vx v30, v4, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6924",
+  "instruction": "vslidedown.vx v0, v0, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6941",
+  "instruction": "vslidedown.vx v31, v14, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6954",
+  "instruction": "vslideup.vx v2, v0, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-6972",
+  "instruction": "vrgather.vx v31, v0, x0",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7223",
+  "instruction": "vwmaccsu.vv v16, v20, v8",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7313",
+  "instruction": "vwmacc.vv v4, v8, v6, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7302",
+  "instruction": "vwmacc.vv v16, v20, v12, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7315",
+  "instruction": "vwmacc.vv v16, v14, v14, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-7430",
+  "instruction": "vwmaccsu.vv v12, v29, v28, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7558",
+  "instruction": "vwmaccsu.vx v24, x31, v16",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-7618",
+  "instruction": "vwmaccsu.vx v15, x0, v25",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7646",
+  "instruction": "vwmaccsu.vx v4, x31, v14, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7760",
+  "instruction": "vwsubu.wv v8, v0, v4",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7860",
+  "instruction": "vwadd.wv v28, v0, v8, v0.t",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-7952",
+  "instruction": "vwsub.wv v8, v0, v12, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-7976",
+  "instruction": "vwsubu.wv v16, v0, v8",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8031",
+  "instruction": "vwmulu.vv v16, v14, v18",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8034",
+  "instruction": "vwmulu.vv v0, v16, v8",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8062",
+  "instruction": "vwmulsu.vv v8, v0, v4",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8153",
+  "instruction": "vwmulu.vv v2, v4, v3",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8162",
+  "instruction": "vwmul.vv v8, v10, v6",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8219",
+  "instruction": "vwmulu.vv v14, v30, v15, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8236",
+  "instruction": "vwsub.vv v0, v2, v16",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8266",
+  "instruction": "vwsub.vv v16, v14, v20, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8275",
+  "instruction": "vwmulu.vv v24, v14, v22",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8441",
+  "instruction": "vwmulu.vx v8, v12, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8453",
+  "instruction": "vwsubu.vx v7, v17, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8486",
+  "instruction": "vwmulsu.vx v8, v7, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8509",
+  "instruction": "vwmulu.vx v0, v1, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8590",
+  "instruction": "vwmulu.vx v16, v6, x31",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8596",
+  "instruction": "vwsubu.vx v8, v16, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8587",
+  "instruction": "vwaddu.vx v16, v15, x31",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-8599",
+  "instruction": "vwaddu.vx v8, v7, x0, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8625",
+  "instruction": "vwmul.vx v16, v8, x0",
+  "no_diff_goodtrap": false
+ },
+ {
+  "id": "case-8645",
+  "instruction": "vwmul.vx v4, v8, x31, v0.t",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8834",
+  "instruction": "vabdu.vv v29, v18, v27",
+  "no_diff_goodtrap": true
+ },
+ {
+  "id": "case-8845",
+  "instruction": "vabd.vv v9, v2, v24",
+  "no_diff_goodtrap": true
+ }
+]

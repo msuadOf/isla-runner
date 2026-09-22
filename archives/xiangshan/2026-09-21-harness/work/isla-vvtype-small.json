@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "purpose": "从现有 Isla V JSON 选取的 XiangShan RVV 小样本",
+    "source_json": [
+      "/home/baiyifan/workplace-local/isla-runner/isla/output.VVTYPE.5.5m/rv64_zVVTYPE.json"
+    ],
+    "vlen_bits": 128,
+    "vector_state": "reset-zero",
+    "selection_count": 4
+  },
+  "gen": [
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vrgather.vv v0, v31, v31",
+      "test-ins-encdec": "32'h33ff_8057",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vrgather.vv v0, v31, v1",
+      "test-ins-encdec": "32'h33f0_8057",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vrgather.vv v0, v31, v26",
+      "test-ins-encdec": "32'h33fd_0057",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "arch": {
+        "ext": "IMACFD",
+        "name": "riscv",
+        "pretty-name": "rv64",
+        "xlen": "64"
+      },
+      "test-ins": "vrgather.vv v0, v31, v19",
+      "test-ins-encdec": "32'h33f9_8057",
+      "isa-state": {
+        "cur_privilege": "User"
+      },
+      "ret_val": "Retire_Success(())"
+    }
+  ]
+}
