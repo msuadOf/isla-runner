@@ -8,6 +8,7 @@ rv64d.ir
 
 # Local agent and tool state
 .codex
+.tmp/
 .claude/settings.local.json
 .claude/worktrees/
 .serena/

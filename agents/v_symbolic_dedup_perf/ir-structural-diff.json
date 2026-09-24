@@ -1,0 +1,10 @@
+{
+  "base_functions": 1902,
+  "new_functions": 1903,
+  "added": [
+    "zvector_select_masked"
+  ],
+  "changed_ignoring_source_locations_and_assert_messages": [
+    "zexecute"
+  ]
+}

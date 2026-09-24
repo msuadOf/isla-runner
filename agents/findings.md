@@ -1,5 +1,11 @@
 # Findings
 
+## 2026-09-25 V 扩展新 IR、严格配置与性能测试快照
+
+- `sail-riscv` `f8ce8490` 配合 `rv64d_v128_e64.json` 重新生成的 RV64 IR SHA-256 为 `6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c`，与先前性能测试 `new` IR 逐字节一致。`isla/rv64d.ir` 现使用该产物。
+- `isla/configs/workarounds/` 的 79 份严格配置全部绑定 IR 哈希；其中 21 份、67 个 region 指向本次移动行号的三个 V 扩展 Sail 文件。旧、新源码中这些 region 的起止行文本完全相同，迁移只需更新行号，列号和限制策略保留。`agents/v_symbolic_ir_workarounds/verify.py` 可核对哈希、区域有效性和注释锚点。
+- 历史性能测试的 `base/new/history/direct` IR 已保存在 `agents/v_symbolic_dedup_perf/snapshots/`，配置模板在 `fixtures/`。`prepare.py` 展开后按原始 SHA-256 验证，`bench.py` 和 `helper-bench.py` 运行前自动准备输入；`history` 不能再直接复制当前 `isla/rv64d.ir`，因为正式 IR 已更新。
+
 ## 2026-09-23 submodule 初始化边界
 
 - 根仓库以 `160000` gitlink 固定 Isla/Sail-RISC-V。`init.sh` 缺失时按 gitlink 初始化；已存在时只验证 remote、对象与 HEAD，HEAD 匹配时保留 dirty 工作树，HEAD 不同则 fail-closed，不 checkout/reset/pull。
@@ -1213,3 +1219,16 @@ vtype.zbits[63]=vill=0, [5:3]=vsew=010(SEW=32), [2:0]=vlmul=000(LMUL=1)
 - Sail 条件编译指令必须位于定义之间，不能嵌入函数表达式；因此入口保留宏两侧的短 function 定义，共用 val 签名和 default 函数。验证结果见 v_symbolic_dedup/status.md。
 
 - V 扩展 SYMBOLIC 收敛后完整 CMake 构建成功，重新生成 RV64 IR 成功；RV32/RV64 向量寄存器组、定点舍入及 masked vxsat 共六项回归测试全部通过。详见 v_symbolic_dedup/status.md。
+
+## 2026-09-23 V SYMBOLIC 去重性能审查
+
+- 独立 subagent 与生成IR结构对比确认：HEAD 5f1a0de0→未提交去重仅新增 MOVETYPEV 的 vector_select_masked 包装调用；其他函数剔除源位置/断言位置后相同。历史 rv64d.ir→HEAD 除源位置外全IR一致。
+- 同一release binary、VLEN128/ELEN64、qfaufbv、8线程、60秒预算，三轮交替A/B：MOVETYPEV 5.015→5.115s（69路径），MASKTYPEI 217→216完成路径/60秒，VREV8_V 133→134/60秒，VIMCTYPE 57.146→57.348s（121路径）。未见明显性能退化；限时组不能视为完整完成。
+- 同一新IR仅将MOVETYPEV调用改回原语的隔离测试：直接调用5.113s、helper5.114s，均69路径；未测出可分辨的端到端调用开销。
+- 历史IR在当前环境MASKTYPEI也超时且完成218路径，与旧台账92路径差异不应归于去重。正式workaround仍绑定旧hash/行号；临时测试仅迁移MASKTYPEI region 1448:4–1458:5→1367:4–1377:5并更新hash。ControlFlowScope哈希包含源码位置/函数ID/PC，源移动会改变受限分支采样。详见 v_symbolic_dedup_perf/report.md。
+
+## 2026-09-24 V 扩展去重后 IR 与 workaround 绑定调查
+
+- `isla/scripts/run.mk` 默认 `IR_FILE=./rv64d.ir`；`isla/rv64d.ir` 被 Git 跟踪，现有 SHA-256 为 `7c626989a03056c43c67c81de8f40f611cef4c43ed1069a81526b37856d7e37b`。`isla/configs/workarounds/` 中 79 份配置均设 `strict=true` 并绑定该旧哈希；执行器 `ExecutionLimitsConfig::validate_ir_sha256` 会在哈希不一致时返回错误。
+- 这 79 份配置中有 21 份的 67 个 region 指向本次修改的 `vext_arith_insts.sail`、`vext_control.sail`、`vext_utils_insts.sail`。同步新 IR 时，除全量哈希外还需逐个核对这些 region 的源码位置；其余文件的 region 不应因全局哈希替换而盲目移动。
+- 当前三份修改的 Sail 文件与 `/tmp/sail-dedup-perf-00rgqu2_/new-src/` 中对应快照逐字节相同；该次 VLEN=128 新 IR 哈希为 `6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c`。此为调查参考值，正式同步须从当前源码重新生成并校验。

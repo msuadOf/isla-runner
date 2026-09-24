@@ -1,0 +1,26 @@
+{
+  "MOVETYPEV": {
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "mtime": 1788978482.9927435
+  },
+  "MASKTYPEI": {
+    "paths": 92,
+    "success": 44,
+    "fork_max": 12,
+    "mtime": 1788977788.7896318
+  },
+  "VREV8_V": {
+    "paths": 112,
+    "success": 44,
+    "fork_max": 13,
+    "mtime": 1788918187.513627
+  },
+  "VIMCTYPE": {
+    "paths": 79,
+    "success": 44,
+    "fork_max": 10,
+    "mtime": 1788901344.5046935
+  }
+}

@@ -1,0 +1,484 @@
+[
+  {
+    "kind": "base",
+    "clause": "MOVETYPEV",
+    "rep": 0,
+    "exit": 0,
+    "wall": 5.015,
+    "time": "5.01 23.64 4.91 1510280",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-0-base/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MOVETYPEV",
+    "rep": 0,
+    "exit": 0,
+    "wall": 5.112,
+    "time": "5.11 23.58 5.00 1473584",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-0-new/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MOVETYPEV",
+    "rep": 1,
+    "exit": 0,
+    "wall": 5.214,
+    "time": "5.21 24.37 5.08 1502892",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-1-new/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "MOVETYPEV",
+    "rep": 1,
+    "exit": 0,
+    "wall": 5.011,
+    "time": "5.00 23.57 4.52 1472436",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-1-base/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "MOVETYPEV",
+    "rep": 2,
+    "exit": 0,
+    "wall": 5.113,
+    "time": "5.11 23.38 4.55 1505784",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-2-base/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MOVETYPEV",
+    "rep": 2,
+    "exit": 0,
+    "wall": 5.115,
+    "time": "5.11 23.61 4.62 1512812",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-2-new/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "history",
+    "clause": "MOVETYPEV",
+    "rep": 0,
+    "exit": 0,
+    "wall": 5.114,
+    "time": "5.11 23.56 4.82 1488876",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-0-history/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "MASKTYPEI",
+    "rep": 0,
+    "exit": 124,
+    "wall": 60.252,
+    "time": "Command exited with non-zero status 124\n60.25 424.02 38.50 1580432",
+    "paths": 217,
+    "success": 169,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MASKTYPEI",
+    "rep": 0,
+    "exit": 124,
+    "wall": 60.254,
+    "time": "Command exited with non-zero status 124\n60.25 423.16 38.66 1498248",
+    "paths": 216,
+    "success": 168,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MASKTYPEI",
+    "rep": 1,
+    "exit": 124,
+    "wall": 60.251,
+    "time": "Command exited with non-zero status 124\n60.24 424.72 40.06 1409084",
+    "paths": 216,
+    "success": 168,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "MASKTYPEI",
+    "rep": 1,
+    "exit": 124,
+    "wall": 60.252,
+    "time": "Command exited with non-zero status 124\n60.24 425.16 39.41 1530456",
+    "paths": 217,
+    "success": 169,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "MASKTYPEI",
+    "rep": 2,
+    "exit": 124,
+    "wall": 60.251,
+    "time": "Command exited with non-zero status 124\n60.24 422.31 39.04 1487616",
+    "paths": 218,
+    "success": 170,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MASKTYPEI",
+    "rep": 2,
+    "exit": 124,
+    "wall": 60.253,
+    "time": "Command exited with non-zero status 124\n60.25 420.87 40.54 1441760",
+    "paths": 216,
+    "success": 168,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "history",
+    "clause": "MASKTYPEI",
+    "rep": 0,
+    "exit": 124,
+    "wall": 60.253,
+    "time": "Command exited with non-zero status 124\n60.25 426.76 36.95 1586448",
+    "paths": 218,
+    "success": 170,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "VREV8_V",
+    "rep": 0,
+    "exit": 124,
+    "wall": 60.252,
+    "time": "Command exited with non-zero status 124\n60.25 424.97 44.11 1499784",
+    "paths": 132,
+    "success": 64,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "VREV8_V",
+    "rep": 0,
+    "exit": 124,
+    "wall": 60.249,
+    "time": "Command exited with non-zero status 124\n60.24 425.32 44.20 1558580",
+    "paths": 133,
+    "success": 65,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "VREV8_V",
+    "rep": 1,
+    "exit": 124,
+    "wall": 60.248,
+    "time": "Command exited with non-zero status 124\n60.24 425.94 43.13 1514688",
+    "paths": 134,
+    "success": 66,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "VREV8_V",
+    "rep": 1,
+    "exit": 124,
+    "wall": 60.26,
+    "time": "Command exited with non-zero status 124\n60.25 426.46 42.16 1541660",
+    "paths": 133,
+    "success": 65,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "VREV8_V",
+    "rep": 2,
+    "exit": 124,
+    "wall": 60.352,
+    "time": "Command exited with non-zero status 124\n60.34 425.58 43.32 1573752",
+    "paths": 133,
+    "success": 65,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "VREV8_V",
+    "rep": 2,
+    "exit": 124,
+    "wall": 60.351,
+    "time": "Command exited with non-zero status 124\n60.34 423.11 46.12 1642528",
+    "paths": 135,
+    "success": 67,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "history",
+    "clause": "VREV8_V",
+    "rep": 0,
+    "exit": 124,
+    "wall": 60.35,
+    "time": "Command exited with non-zero status 124\n60.34 425.54 43.84 1638844",
+    "paths": 132,
+    "success": 64,
+    "fork_max": 14,
+    "json_files": [],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "VIMCTYPE",
+    "rep": 0,
+    "exit": 0,
+    "wall": 58.351,
+    "time": "58.34 295.00 45.70 1538436",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-0-base/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "VIMCTYPE",
+    "rep": 0,
+    "exit": 0,
+    "wall": 57.348,
+    "time": "57.34 287.03 43.13 1496532",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-0-new/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "VIMCTYPE",
+    "rep": 1,
+    "exit": 0,
+    "wall": 58.149,
+    "time": "58.14 304.34 45.13 1585620",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-1-new/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "VIMCTYPE",
+    "rep": 1,
+    "exit": 0,
+    "wall": 57.047,
+    "time": "57.04 296.05 49.04 1709188",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-1-base/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "base",
+    "clause": "VIMCTYPE",
+    "rep": 2,
+    "exit": 0,
+    "wall": 57.146,
+    "time": "57.14 299.71 46.50 1599636",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-2-base/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "VIMCTYPE",
+    "rep": 2,
+    "exit": 0,
+    "wall": 56.747,
+    "time": "56.74 291.15 46.53 1511480",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-2-new/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "history",
+    "clause": "VIMCTYPE",
+    "rep": 0,
+    "exit": 0,
+    "wall": 55.648,
+    "time": "55.64 286.90 45.14 1481732",
+    "paths": 121,
+    "success": 86,
+    "fork_max": 11,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/VIMCTYPE-0-history/output/rv64_zVIMCTYPE.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "direct",
+    "clause": "MOVETYPEV",
+    "rep": 10,
+    "exit": 0,
+    "wall": 5.11,
+    "time": "5.10 24.68 4.62 1500188",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-10-direct/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MOVETYPEV",
+    "rep": 10,
+    "exit": 0,
+    "wall": 4.813,
+    "time": "4.81 23.84 4.86 1496864",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-10-new/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MOVETYPEV",
+    "rep": 11,
+    "exit": 0,
+    "wall": 5.114,
+    "time": "5.11 24.17 4.68 1504576",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-11-new/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "direct",
+    "clause": "MOVETYPEV",
+    "rep": 11,
+    "exit": 0,
+    "wall": 5.113,
+    "time": "5.11 24.03 4.65 1478136",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-11-direct/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "direct",
+    "clause": "MOVETYPEV",
+    "rep": 12,
+    "exit": 0,
+    "wall": 5.115,
+    "time": "5.11 23.92 4.23 1469880",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-12-direct/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  },
+  {
+    "kind": "new",
+    "clause": "MOVETYPEV",
+    "rep": 12,
+    "exit": 0,
+    "wall": 5.413,
+    "time": "5.41 25.29 5.06 1491352",
+    "paths": 69,
+    "success": 22,
+    "fork_max": 12,
+    "json_files": [
+      "/tmp/sail-dedup-perf-00rgqu2_/runs/MOVETYPEV-12-new/output/rv64_zMOVETYPEV.json"
+    ],
+    "errors": 0
+  }
+]
