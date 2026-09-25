@@ -7,3 +7,4 @@
 - Ara 历史 PoC 分析见 [ara_poc_batch/status.md](ara_poc_batch/status.md)，证据入口见 [根档案索引](../archives/README.md)。
 - XiangShan 草稿复现见 [vext_issue_draft_reproduction/status.md](vext_issue_draft_reproduction/status.md)；V 扩展收敛见 [v_symbolic_dedup/status.md](v_symbolic_dedup/status.md)。
 - 新议题应在 `agents/<议题名>/` 下维护 `plan.md` 和 `status.md`，并把可复用的代码理解同步回 [findings.md](findings.md)。
+- Isla 浮点分支静态审查见 [float_support_review/status.md](float_support_review/status.md)。

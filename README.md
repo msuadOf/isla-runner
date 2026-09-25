@@ -1,49 +1,37 @@
 # isla-runner
 
-isla is part of the project `sail`. But it often has impatible version with `isla`.
+本仓库把兼容版本的 Sail、RISC-V Sail 模型和 Isla 组织到一个工作区，用于生成与分析 RISC-V 模型 IR。目标和验收边界见 [specs/GOAL.md](specs/GOAL.md)；当前议题状态见 [specs/TODOs.md](specs/TODOs.md)。
 
-The project is meant to gether the versions of `sail`/`sail-riscv`/`isla` all together.
+## 初始化
 
-And yes, this repo focus riscv only.
+新 clone 可使用：
 
-## Initialize
-
-Clone with the two version-linked repositories in one step:
-
-```
+```sh
 git clone --recurse-submodules <isla-runner-url>
 ```
 
-For an existing clone, initialize or validate the workspace:
+已有工作区运行：
 
-```
+```sh
 ./init.sh
 ```
 
-Use SSH clone URLs when your GitHub credentials require them:
+仅初始化或验证父仓库固定的 Isla、Sail-RISC-V 子模块：
 
-```
-./init.sh --ssh
-```
-
-Isla and Sail-RISC-V are submodules. Their exact commits come from the parent repository's gitlinks, not from a moving branch. `init.sh` initializes a missing submodule, but an existing checkout is only validated: a matching dirty checkout is preserved, while a different HEAD stops with an error. Use `./init.sh --submodules-only` when the other independent repositories are not needed.
-
-Sail, assembly-gen, difftest, and the XiangShan upstream checkout remain independently branch-managed. For those repositories, the script refuses to modify local changes. It does not install dependencies, build Sail/Isla, generate IR, or apply `sail-riscv.patch` automatically. The patch remains a historical/manual recipe.
-
-Submodules normally initialize at detached HEAD. Create or switch to a development branch inside a submodule before making commits there. Do not run `git submodule update` over a dirty submodule unless you have first preserved its work.
-
-## Run
-
-Without Docker, initialize the repositories and compile `sail`/`sail-riscv`/`isla`. You can use `isla/isla-sail/isla-sail` to generate IR.
-
-```
-./init.sh
-make -j`nproc` repos
-```
-use Docker:
-```
-NOT USEABLE YET
+```sh
+./init.sh --submodules-only
 ```
 
-## Time
-一个ir大约需要花8-10分钟来产生
+`./init.sh --ssh` 使用 SSH clone URL。脚本保留与 gitlink 匹配的脏子模块；HEAD 不匹配时停止，不自动 reset、checkout 或清理。Sail 与其他独立仓库由脚本按其分支和兼容版本处理，已有本地修改不会被覆盖。具体目录边界见 [specs/project-structure.md](specs/project-structure.md)。
+
+## 构建
+
+```sh
+make repos
+```
+
+该目标构建 Sail、Sail-RISC-V 和 Isla 所需组件；使用前请检查当前工作树、工具链与可用资源。`Makefile` 中的 `repo-sail-riscv` 目标会生成 RV32/RV64 Isla IR，并打印生成位置。`init.sh` 本身不构建、不生成 IR，也不自动应用历史 `sail-riscv.patch`。Docker 构建入口当前未作为已验证的使用路径。
+
+## 结果与分析
+
+逐次验证摘要见 [docs/RESULTS.md](docs/RESULTS.md)，专题调查与历史记录见 [agents/](agents/)。这些记录可能对应不同源码、IR、配置和模拟器版本；复用结论前先核对其 provenance。

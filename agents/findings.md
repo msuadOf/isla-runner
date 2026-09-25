@@ -1,5 +1,14 @@
 # Findings
 
+## 2026-09-25 Isla `origin/feat/float-support` 静态审查
+
+- 分支头 `1a1910e` 基于 `0008fae`，增加五个提交。当前 `isla/rv64d.ir` 有 79 个 `zriscv_*` val，其中 12 个在 IR 内另有函数体，67 个无函数体；分支 `softfloat_dispatch` 的名称集合覆盖这 67 个无函数体 helper。执行器在普通函数查找失败后通过 helper 名分发，返回 `(fflags, result)` 结构体；SMT 层增补 `ToIEEE`，FD 配置开启扩展与 FS=Dirty，`make solve-fd-float` 按 clause 运行。
+- 分支文档的精确度矩阵自认：除法/FMA 的 NX 只用 OF|UF 近似；UF 用非零次正规结果近似，定向舍入饱和到最大有限数时 OF 漏报。不能把该分支当作 SoftFloat 的位级等价替代。
+- `float.rs:745-758` 的符号 rm 选择链 `.fold(RNE, |acc,c| ite(c,acc,RNE))` 两臂恒为 RNE，因此任何符号 rm 都按 RNE 计算结果；具体 rm 分支正常映射五种模式。现有单测只传具体 rm，没有覆盖此路径。
+- `float.rs:1162` 对 `SfOp::Cmp` 的 `Eq` 走 `quiet=false`，qNaN 也置 NV；但 Sail C 包装 `softfloat_f32eq` 调用 Berkeley SoftFloat `f32_eq`，其 qNaN 只返回 false，只有 sNaN 置 invalid。f16/f64 同类需要修正/验证。
+- `float.rs:1116-1124` 的 FMA 无效判定只覆盖 sNaN 与 `0*inf`，遗漏无 NaN 输入时 `(+inf)*1+(-inf)`；Z3 结果为 NaN，但 NV 不置且结果未强制规范 NaN。
+- 此轮只做静态对照，没有在该远端分支上重新构建或运行单测/`make solve`；分支文档报告 21 个 helper 单测及 FLEQ_S 冒烟通过。详情见 `agents/float_support_review/status.md`。
+
 ## 2026-09-25 V 扩展新 IR、严格配置与性能测试快照
 
 - `sail-riscv` `f8ce8490` 配合 `rv64d_v128_e64.json` 重新生成的 RV64 IR SHA-256 为 `6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c`，与先前性能测试 `new` IR 逐字节一致。`isla/rv64d.ir` 现使用该产物。
