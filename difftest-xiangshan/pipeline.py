@@ -10,6 +10,7 @@ import json
 import os
 import re
 import signal
+import struct
 import subprocess
 import sys
 import time
@@ -34,11 +35,84 @@ T0 = 5
 T1 = 6
 TRAP_RET_VAL_RE = re.compile(r"^(Illegal_Instruction|Memory_Exception)")
 RESULTS_NDJSON = "results.ndjson"
+PRE_MEMORY_FILL = 0xA5  # pre-memory value=null 的自由字节填充模式（非零、确定性）
+SHF_ALLOC = 0x2
+SAMPLE_MODES = ("all", "first-per-encoding")
+SKIP_POST_ALL_NULL = "post-all-null"
+SKIP_CODE_OVERLAP = "code-overlap"
+# W13 对账预分类：低位错位 fault 是 emu/NEMU 的 mcause 真分歧（emu 报 access
+# fault mcause7、NEMU 报 store misaligned mcause6，difftest 直接 ABORT），两侧
+# 都 fault、Isla 判 fault 正确，跳过重放并计数。
+SKIP_MCAUSE_DIVERGENCE = "lowaddr-misaligned-mcause-divergence"
+# W13 对账预分类标注位：图内对齐 fault（Isla 历史上因 PMP 符号化产出假 fault，
+# 全量 107/2479；isla 侧钉死 PMP 后应消失）。不跳过，出现即提示上游回归。
+PRECLASS_INMAP_ALIGNED_FAULT = "in-map-aligned-fault"
+# emu 实际有效 RAM（W13 探针+源码：SoC.scala:335 memRange、Parameters.scala:568
+# SimMemSize=8190GB），[0x80000000,0x80000000000) 8TB；difftest csrc 的 256MB
+# DRAM 宏对该 emu 不适用。
+EMU_RAM_BASE = 0x80000000
+EMU_RAM_LIMIT = 0x80000000000
+STORE_EFFECT_RE = re.compile(
+    r"^(s[bhwd])\s+\S+,\s*(-?0[xX][0-9a-fA-F]+|-?\d+)\((x(?:[0-9]|[12][0-9]|3[01]))\)$"
+)
+STORE_ACCESS_SIZE = {"sb": 1, "sh": 2, "sw": 4, "sd": 8}
+BUILD_SUMMARY = "build-summary.json"
 
 
 def expects_trap(entry: dict) -> bool:
     """Isla 预期该条目 payload 触发 trap（非法指令或访存异常）。"""
     return bool(TRAP_RET_VAL_RE.match(str(entry.get("ret_val", ""))))
+
+
+def store_effective_address(entry: dict) -> tuple[int, int] | None:
+    """解析 zSTORE 条目的 (有效地址, 访存宽度)；基址寄存器缺失或不可解析返回 None。"""
+    match = STORE_EFFECT_RE.match(str(entry.get("test-ins", "")).strip())
+    if match is None:
+        return None
+    size = STORE_ACCESS_SIZE[match.group(1)]
+    try:
+        offset = int(match.group(2), 0)
+    except ValueError:
+        return None
+    base = match.group(3)
+    if base == "x0":
+        base_value = 0
+    else:
+        raw = (entry.get("isa-state") or {}).get(base)
+        if raw is None:
+            return None
+        try:
+            base_value = parse_bits(str(raw), base)
+        except ValueError:
+            return None
+    return (base_value + offset) % (1 << 64), size
+
+
+def classify_fault_preclass(entry: dict) -> tuple[str | None, str | None]:
+    """W13 对账的 fault 条目预分类，返回 (skip 原因, 预分类标注)。
+
+    (i) 有效地址低于 emu RAM 基界且错位：emu/NEMU mcause 分歧（7 vs 6），
+    difftest 必 ABORT，跳过重放并计数。只限低位：高位回绕地址（如 -1 →
+    0xffffffffffffffff）NEMU 按物理地址位宽截断后可对齐，两侧一致 fault
+    （W12 case-010/017 实测 GOODTRAP），不属此类；
+    (ii) 有效地址图内且对齐：Isla 假 fault 历史类（PMP 符号化），isla 修复后
+    应消失，不跳过、仅标注计数；
+    图内错位（emu 支持错位退休 vs Isla plat_enable_misaligned_access=false，
+    W13 ⑤）当前用例集未触发，不在此处理。ok 类条目不参与预分类。
+    """
+    if not expects_trap(entry):
+        return None, None
+    resolved = store_effective_address(entry)
+    if resolved is None:
+        return None, None
+    address, size = resolved
+    misaligned = address % size != 0
+    in_map = EMU_RAM_BASE <= address < EMU_RAM_LIMIT
+    if address < EMU_RAM_BASE and misaligned:
+        return SKIP_MCAUSE_DIVERGENCE, SKIP_MCAUSE_DIVERGENCE
+    if in_map and not misaligned:
+        return None, PRECLASS_INMAP_ALIGNED_FAULT
+    return None, None
 
 
 def read_json(path: Path) -> dict:
@@ -123,6 +197,158 @@ def parse_bits(value: str, name: str, maximum_width: int = 64) -> int:
     if value >= 1 << width:
         raise ValueError(f"{name} 的值超出声明位宽")
     return value
+
+
+def parse_memory_address(segment: dict, name: str) -> int | None:
+    """解析内存段地址位向量；地址为 null 时返回 None（该段跳过）。"""
+    value = segment.get("address")
+    if value is None:
+        return None
+    return parse_bits(str(value), name, maximum_width=64)
+
+
+def segment_size(segment: dict, name: str) -> int:
+    size = segment.get("bytes")
+    if not isinstance(size, int) or size < 1 or size > 2048:
+        raise ValueError(f"{name}.bytes 必须是 1..2048 的整数，得到 {size!r}")
+    return size
+
+
+def segment_byte_values(segment: dict, size: int, fill: int, name: str) -> list[int]:
+    """内存段 value → 小端逐字节序列；value 为 null 或超出声明位宽的字节用 fill 填充。"""
+    value = segment.get("value")
+    if value is None:
+        return [fill] * size
+    match = BITS_RE.fullmatch(str(value).strip())
+    if match is None:
+        raise ValueError(f"{name}.value 不是无掩码十六进制位向量: {value!r}")
+    width = int(match.group(1))
+    number = int(match.group(2).replace("_", ""), 16)
+    return [(number >> (8 * index)) & 0xFF if 8 * index < width else fill for index in range(size)]
+
+
+def memory_plan(entry: dict) -> dict:
+    """解析 pre-memory/post-memory/memory-events，生成发射计划与 skip 计数。
+
+    pre：地址 null 的段跳过并计数；value null（首触自由字节）按 0xA5 填充。
+    post：地址或 value 为 null 的检查段跳过并计数；全部段皆 null 时整条跳过。
+    """
+    pre_raw = entry.get("pre-memory") or []
+    post_raw = entry.get("post-memory") or []
+    events = entry.get("memory-events") or []
+    if not all(isinstance(item, list) for item in (pre_raw, post_raw, events)):
+        raise ValueError("pre-memory/post-memory/memory-events 必须是数组")
+
+    pre: list[dict] = []
+    pre_fill_bytes = 0
+    for index, segment in enumerate(pre_raw):
+        address = parse_memory_address(segment, f"pre-memory[{index}]")
+        if address is None:
+            continue
+        size = segment_size(segment, f"pre-memory[{index}]")
+        values = segment_byte_values(segment, size, PRE_MEMORY_FILL, f"pre-memory[{index}]")
+        if segment.get("value") is None:
+            pre_fill_bytes += size
+        pre.append({"address": address, "bytes": size, "values": values})
+
+    post: list[dict] = []
+    post_null = 0
+    for index, segment in enumerate(post_raw):
+        address = parse_memory_address(segment, f"post-memory[{index}]")
+        if address is None or segment.get("value") is None:
+            post_null += 1
+            continue
+        size = segment_size(segment, f"post-memory[{index}]")
+        values = segment_byte_values(segment, size, PRE_MEMORY_FILL, f"post-memory[{index}]")
+        post.append({"address": address, "bytes": size, "values": values})
+
+    return {
+        "pre": pre,
+        "post": post,
+        "events": events,
+        "counts": {
+            "pre_segments": len(pre_raw),
+            "pre_emitted": len(pre),
+            "pre_null_address": len(pre_raw) - len(pre),
+            "pre_fill_bytes": pre_fill_bytes,
+            "post_segments": len(post_raw),
+            "post_emitted": len(post),
+            "post_null": post_null,
+        },
+        "skip_entry": SKIP_POST_ALL_NULL if post_raw and not post else None,
+        "raw": {
+            "pre-memory": pre_raw,
+            "post-memory": post_raw,
+            "memory-events": events,
+        },
+    }
+
+
+def pre_memory_stores(plan: dict) -> list[str]:
+    """按 JSON 给定序（重放序）逐段逐字节 sb 恢复初始内存，仅用 t0/t1。"""
+    lines: list[str] = []
+    for index, segment in enumerate(plan["pre"]):
+        lines.append(
+            f"    # Isla pre-memory[{index}] 0x{segment['address']:x} len={segment['bytes']}"
+            "（value null 按 0xa5 填充）"
+        )
+        lines.append(f"    li t0, 0x{segment['address']:x}")
+        for offset, value in enumerate(segment["values"]):
+            lines.append(f"    li t1, 0x{value:02x}")
+            lines.append(f"    sb t1, {offset}(t0)")
+    return lines
+
+
+def post_memory_checks(plan: dict) -> tuple[list[str], list[str]]:
+    """逐段逐字节 lbu 比对最终内存；失配跳该段专属 park 标号（死循环，超时判败）。"""
+    lines: list[str] = []
+    parks: list[str] = []
+    for index, segment in enumerate(plan["post"]):
+        park = f"post_park_{index}"
+        lines.append(
+            f"    # Isla post-memory[{index}] 0x{segment['address']:x} len={segment['bytes']}"
+            f"：失配跳 {park}"
+        )
+        lines.append(f"    li t0, 0x{segment['address']:x}")
+        for offset, value in enumerate(segment["values"]):
+            lines.append(f"    li t1, 0x{value:02x}")
+            lines.append(f"    lbu t2, {offset}(t0)")
+            lines.append(f"    bne t2, t1, {park}")
+        parks.extend([f"{park}:", f"    j {park}"])
+    return lines, parks
+
+
+def elf_alloc_ranges(elf: Path) -> list[tuple[int, int]]:
+    """读取 ELF64 小端镜像中所有 ALLOC section 的 [起始, 结束) 区间（含 .bss）。"""
+    data = elf.read_bytes()
+    if len(data) < 64 or data[:4] != b"\x7fELF" or data[4] != 2 or data[5] != 1:
+        raise ValueError(f"{elf} 不是 ELF64 小端文件")
+    e_shoff = struct.unpack_from("<Q", data, 0x28)[0]
+    e_shentsize = struct.unpack_from("<H", data, 0x3A)[0]
+    e_shnum = struct.unpack_from("<H", data, 0x3C)[0]
+    ranges: list[tuple[int, int]] = []
+    for index in range(e_shnum):
+        header = e_shoff + index * e_shentsize
+        _, _, sh_flags, sh_addr, _, sh_size = struct.unpack_from("<IIQQQQ", data, header)
+        if not sh_flags & SHF_ALLOC or sh_addr == 0 or sh_size == 0:
+            continue
+        ranges.append((sh_addr, sh_addr + sh_size))
+    return ranges
+
+
+def memory_overlaps_ranges(plan: dict, ranges: list[tuple[int, int]]) -> bool:
+    """pre/post 段及 memory-events 触碰地址是否与给定代码区间（部分）重叠。"""
+
+    def hits(address: int, size: int) -> bool:
+        return any(address < end and start < address + size for start, end in ranges)
+
+    segments = [(seg["address"], seg["bytes"]) for seg in plan["pre"] + plan["post"]]
+    for index, event in enumerate(plan["events"]):
+        address = parse_memory_address(event, f"memory-events[{index}]")
+        size = event.get("bytes")
+        if address is not None and isinstance(size, int) and size > 0:
+            segments.append((address, size))
+    return any(hits(address, size) for address, size in segments)
 
 
 def parse_vector(value: str, vlen_bits: int) -> tuple[int, int]:
@@ -297,7 +523,7 @@ def privilege_setup(state: dict) -> list[str]:
     ]
 
 
-def make_assembly(entry: dict, vlen_bits: int) -> str:
+def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
     instruction = str(entry["test-ins"])
     encoding = parse_encoding(str(entry["test-ins-encdec"]))
     state = entry.get("isa-state", {})
@@ -307,6 +533,16 @@ def make_assembly(entry: dict, vlen_bits: int) -> str:
     loads, words = vector_setup(state, vlen_bits)
     scalar_loads = scalar_setup(state)
     expect_trap = expects_trap(entry)
+    if plan is None:
+        plan = memory_plan(entry)
+    # 装配序固定：[特权/向量上下文] → [pre store] → [标量 li] → payload → [post 检查] → GOODTRAP/park；
+    # pre store 只用 t0/t1，必须先于标量装载，避免破坏 JSON 标量值
+    pre_lines = pre_memory_stores(plan)
+    if expect_trap:
+        # fault 路径维持既有哨兵+handler 机制（mepc==payload_ins 判 GOODTRAP），不做 post 检查
+        post_lines, park_lines = [], []
+    else:
+        post_lines, park_lines = post_memory_checks(plan)
     init = [
         "    csrr t0, mstatus",
         "    li t1, 0x600",
@@ -317,7 +553,7 @@ def make_assembly(entry: dict, vlen_bits: int) -> str:
         "    # 任何 trap 进入 M-mode trap_handler，由 mepc 是否等于 payload 区分 trap 位置",
         "    la t0, trap_handler",
         "    csrw mtvec, t0",
-    ] + context_before_loads + loads + context_after_loads + privilege_setup(state) + scalar_loads
+    ] + context_before_loads + loads + context_after_loads + privilege_setup(state) + pre_lines + scalar_loads
     if expect_trap:
         payload_tail = [
             "    # Isla 预期该指令 trap：payload 未 trap 时，哨兵全零非法指令必然触发，",
@@ -335,7 +571,7 @@ def make_assembly(entry: dict, vlen_bits: int) -> str:
             "2:  j 2b",
         ]
     else:
-        payload_tail = [
+        payload_tail = post_lines + [
             "    # XiangShan DiffTest STATE_GOODTRAP custom instruction.",
             "    .4byte 0x0000006b",
         ]
@@ -352,6 +588,7 @@ def make_assembly(entry: dict, vlen_bits: int) -> str:
         f"    # Isla: {instruction}", f"    .4byte 0x{encoding:08x}",
         *payload_tail,
         "1:  j 1b",
+        *park_lines,
         *trap_handler,
         ".section .data", ".align 3",
         "vector_initial_state:", data, "",
@@ -373,13 +610,7 @@ SECTIONS {
 
 def compile_case(index: int, entry: dict, output: Path, linker: Path, compiler: str, vlen_bits: int) -> dict:
     case_dir = output / f"case-{index:03d}"
-    case_dir.mkdir(exist_ok=True)
-    assembly = case_dir / "program.S"
-    elf = case_dir / "program.elf"
-    assembly.write_text(make_assembly(entry, vlen_bits), encoding="utf-8")
-    command = [compiler, "-nostdlib", "-nostartfiles", "-static", "-fno-pic", "-march=rv64gc", "-mabi=lp64d", "-Wl,-T," + str(linker), "-Wl,-e,_start", "-o", str(elf), str(assembly)]
-    subprocess.run(command, check=True)
-    digest = hashlib.sha256(elf.read_bytes()).hexdigest()
+    plan = memory_plan(entry)
     case = {
         "id": case_dir.name,
         "instruction": entry["test-ins"],
@@ -387,12 +618,56 @@ def compile_case(index: int, entry: dict, output: Path, linker: Path, compiler: 
         "isa-state": entry.get("isa-state", {}),
         "ret_val": entry.get("ret_val"),
         "expect_trap": expects_trap(entry),
+        "path_class": "fault" if expects_trap(entry) else "ok",
         "source_file": entry.get("source_file"),
-        "elf": str(elf),
-        "sha256": digest,
+        "memory": {**plan["counts"], **plan["raw"]},
+        "skipped_reason": None,
+        "preclass": None,
     }
+    if case["expect_trap"]:
+        preclass_skip, preclass_tag = classify_fault_preclass(entry)
+        case["preclass"] = preclass_tag
+        if preclass_skip:
+            case["skipped_reason"] = preclass_skip
+            return case
+    if plan["skip_entry"]:
+        case["skipped_reason"] = plan["skip_entry"]
+        return case
+    case_dir.mkdir(exist_ok=True)
+    assembly = case_dir / "program.S"
+    elf = case_dir / "program.elf"
+    assembly.write_text(make_assembly(entry, vlen_bits, plan), encoding="utf-8")
+    command = [compiler, "-nostdlib", "-nostartfiles", "-static", "-fno-pic", "-march=rv64gc", "-mabi=lp64d", "-Wl,-T," + str(linker), "-Wl,-e,_start", "-o", str(elf), str(assembly)]
+    # 两遍构建：第一遍链接后读 section 实际占用范围，内存地址与代码重叠的条目精确跳过
+    subprocess.run(command, check=True)
+    if memory_overlaps_ranges(plan, elf_alloc_ranges(elf)):
+        elf.unlink()
+        case["skipped_reason"] = SKIP_CODE_OVERLAP
+        return case
+    # 第二遍：重新生成最终 ELF（多一次链接换取不牺牲可重放条目）
+    subprocess.run(command, check=True)
+    digest = hashlib.sha256(elf.read_bytes()).hexdigest()
+    case["elf"] = str(elf)
+    case["sha256"] = digest
     (case_dir / "case.json").write_text(json.dumps(case, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return case
+
+
+def sample_entries(entries: list[dict], mode: str) -> tuple[list[dict], int]:
+    """按采样模式过滤条目；返回 (保留列表, 采样丢弃数)。默认全量。"""
+    if mode == "all":
+        return list(entries), 0
+    if mode == "first-per-encoding":
+        kept: list[dict] = []
+        seen: set[str] = set()
+        for entry in entries:
+            key = str(entry.get("test-ins-encdec", ""))
+            if key in seen:
+                continue
+            seen.add(key)
+            kept.append(entry)
+        return kept, len(entries) - len(kept)
+    raise ValueError(f"未知 --sample-mode: {mode!r}，可选 {SAMPLE_MODES}")
 
 
 def build(args: argparse.Namespace) -> None:
@@ -401,6 +676,7 @@ def build(args: argparse.Namespace) -> None:
     source_vlen = metadata.get("vlen_bits")
     if source_vlen is not None and source_vlen != args.vlen_bits:
         raise ValueError(f"样本声明 VLEN={source_vlen}，但构建参数是 {args.vlen_bits}")
+    entries, sampled_out = sample_entries(source["gen"], args.sample_mode)
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     linker = output / "xiangshan.ld"
@@ -411,11 +687,33 @@ def build(args: argparse.Namespace) -> None:
         manifest = list(
             executor.map(
                 lambda pair: compile_case(pair[0], pair[1], output, linker, args.compiler, args.vlen_bits),
-                enumerate(source["gen"]),
+                enumerate(entries),
             )
         )
     (output / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"已生成 {len(manifest)} 个 ELF：{output}")
+    skipped: dict[str, int] = {}
+    preclass: dict[str, int] = {}
+    for case in manifest:
+        if case.get("skipped_reason"):
+            skipped[case["skipped_reason"]] = skipped.get(case["skipped_reason"], 0) + 1
+        if case.get("preclass"):
+            preclass[case["preclass"]] = preclass.get(case["preclass"], 0) + 1
+    summary = {
+        "sample_mode": args.sample_mode,
+        "total_entries": len(source["gen"]),
+        "sampled_out": sampled_out,
+        "built": sum(1 for case in manifest if case.get("elf")),
+        "skipped": skipped,
+        "preclass": preclass,
+        "path_class": {
+            "ok": sum(1 for case in manifest if case["path_class"] == "ok"),
+            "fault": sum(1 for case in manifest if case["path_class"] == "fault"),
+        },
+    }
+    (output / BUILD_SUMMARY).write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(
+        f"已生成 {summary['built']} 个 ELF（共 {len(manifest)} 条，跳过 {skipped or '无'}）：{output}"
+    )
 
 
 def timeout_partial_output(exc: subprocess.TimeoutExpired) -> str:
@@ -532,8 +830,12 @@ def run(args: argparse.Namespace) -> None:
     ndjson_path = cases_dir / RESULTS_NDJSON
     results = load_recorded_results(ndjson_path)
     completed_ids = {record["id"] for record in results}
-    pending = [case for case in cases if case["id"] not in completed_ids]
-    print(f"共 {len(cases)} 条；已完成 {len(completed_ids)} 条；本次运行 {len(pending)} 条")
+    runnable = [case for case in cases if case.get("elf")]
+    pending = [case for case in runnable if case["id"] not in completed_ids]
+    print(
+        f"共 {len(cases)} 条（可运行 {len(runnable)}、构建期跳过 {len(cases) - len(runnable)}）；"
+        f"已完成 {len(completed_ids)} 条；本次运行 {len(pending)} 条"
+    )
     needs_separator = (
         ndjson_path.is_file()
         and ndjson_path.stat().st_size > 0
@@ -588,6 +890,12 @@ def main() -> None:
     build_parser.add_argument("--vlen-bits", type=int, default=128)
     build_parser.add_argument("--compiler", default="riscv64-unknown-elf-gcc")
     build_parser.add_argument("--jobs", type=int, default=1, help="并行编译的进程数")
+    build_parser.add_argument(
+        "--sample-mode",
+        default="all",
+        choices=list(SAMPLE_MODES),
+        help="采样模式：all 全量（默认）；first-per-encoding 每个编码仅保留首条",
+    )
     run_parser = commands.add_parser("run")
     run_parser.add_argument("--cases", default=str(DEFAULT_OUT / "elf"))
     run_parser.add_argument("--emulator", required=True)

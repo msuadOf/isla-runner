@@ -74,6 +74,31 @@ python3 pipeline.py run \
 ISLA_JSON=/absolute/path/to/isla.json XS_VLEN_BITS=128 ./run-local-xiangshan.sh
 ```
 
+## 内存上下文重放
+
+Isla 输出的 `pre-memory`（首触内存，首触写为 `value: null`）、`post-memory`（最终字节）与 `memory-events`（访存事件，仅抄录诊断）会被 `pipeline.py` 消费，重放到生成的 ELF 中：
+
+- **初始内存（pre）**：payload 前按 JSON 给定序（即重放序）逐段逐字节 `sb` 恢复，只用 `t0`/`t1`，插在特权/向量设置之后、标量 `li` 之前，不破坏 JSON 标量初值；`value: null` 的自由字节按固定 `0xA5` 填充（非零模式，避免掩盖"硬件恰返回复位零"类问题）。地址为 null 的段跳过并计数。
+- **最终字节检查（post）**：payload 后逐段逐字节 `lbu` + `bne` 与模型期望比对，任一失配跳该段专属 `post_park_N` 标号（死循环，run 侧超时判 failure，commit trace 末 PC 定位失配段）；全过才执行 GOODTRAP。地址或 value 为 null 的检查段跳过并计数；若全部 post 段皆 null，整条跳过（`skipped_reason: post-all-null`）。
+- **fault 路径**：复用既有 `expects_trap` 哨兵机制（payload 处 trap → handler 按 `mepc==payload_ins` 判 GOODTRAP），不做 mcause/mtval 断言（后续工作）。
+- **fault 预分类（W13 对账）**：`build` 解析 fault 条目的 zSTORE 有效地址（`test-ins` 偏移 + `isa-state` 基址），对照 emu 实际有效 RAM [0x80000000,0x80000000000)（8TB，探针+源码实测；difftest csrc 的 256MB DRAM 宏对该 emu 不适用）预分类：
+  - 低位错位（有效地址 <0x80000000 且未对齐）：emu 报 access fault（mcause7）、NEMU 报 store misaligned（mcause6），difftest 对 mcause 分歧直接 ABORT——两侧都 fault、Isla 判 fault 正确，属工具链级真分歧，跳过重放并计数（`skipped_reason: lowaddr-misaligned-mcause-divergence`）。
+  - 图内对齐（[0x80000000,8TB) 且对齐）：Isla 历史上因 PMP 符号化产出假 fault（W13 全量 107/2479）；isla 侧在 `[registers.defaults]` 钉死 PMP 后应消失。**不跳过**，仅标注计数（`preclass: in-map-aligned-fault`，进 `build-summary.json` 的 `preclass`），出现即提示上游回归。
+  - 图内错位（emu 支持错位退休 vs Isla `plat_enable_misaligned_access=false`）为另一真分歧（W13 ⑤），当前用例集未触发，不在此处理。
+- **代码窗口（两遍构建）**：第一次链接后解析 ELF 各 ALLOC section 的实际占用区间，pre/post/memory-events 触碰地址与代码（含 `.data`）重叠的条目精确跳过（`skipped_reason: code-overlap`，汇编保留供诊断），避免前导 store 覆写自身代码；其余条目再链接一次生成最终 ELF。
+- **采样**：默认全量；大批量可用 `build --sample-mode first-per-encoding` 每个编码仅保留首条。
+- **产物**：`manifest.json` 逐条含 `path_class`（`ok`/`fault`）、`memory` 计数与 pre/post/events 抄录、fault 条目的 `preclass` 标注；`build-summary.json` 汇总 built/skipped/path_class/preclass 计数；`run` 自动跳过无 ELF 的条目。
+
+```bash
+python3 pipeline.py prepare-json --source /path/to/rv64_zSTORE.json --vlen-bits 128 \
+  --ret-val-regex '^Retire_Success' --output work/store-mem/ok.json
+python3 pipeline.py build --input work/store-mem/ok.json --vlen-bits 128 \
+  --output work/store-mem/elf --jobs 8
+python3 pipeline.py run --cases work/store-mem/elf \
+  --emulator xiangshan/build/emu \
+  --diff-so xiangshan/ready-to-run/riscv64-nemu-interpreter-so
+```
+
 ## 边界
 
 - JSON 中存在 vreg 初始状态时，`XS_VLEN_BITS` 必须与其 bit width、以及 XiangShan 构建参数一致；宽度不一致时流程会失败，绝不截断或补零。

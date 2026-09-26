@@ -34,3 +34,13 @@
 5. 多 agent 任务应明确每个 agent 的目标、可写文件、共享工作树边界和交付格式。主 agent 汇总结论并检查冲突；避免两个 agent 同时编辑同一文件。
 
 既有未提交内容属于当前工作区状态，处理文档或代码前先检查并保留。仓库内路径在说明文字中以根目录为基准，Markdown 链接按文件相对位置书写；不要把本机绝对路径写入可提交文档。
+
+## subagent选用（如果使用subagent）
+### 客户端为codex
+- gpt-6-luna low做不可靠search
+- gpt-6-sol medium/high/xhigh做一些可靠的事情，包括读代码写代码总结代码
+- gpt-6-astra medium/high/xhigh做一些关键的判断或者high level的东西架构层面的。
+- Main agent就负责调度和用户沟通
+
+### 客户端为claude
+无特别要求

@@ -1,5 +1,165 @@
 # Findings
 
+## 2026-09-27 内存一致性 W13：fault 分歧裁定与 emu 内存地图修订（只读诊断）
+
+- 修订一（重要）：此前 W10/W12 记录的"重放环境 DRAM=[0x80000000,0x90000000)（difftest `DEFAULT_EMU_RAM_SIZE=256MB`）"对该 emu 不成立——实测+源码（SoC.scala:335 memRange、Parameters.scala:568 SimMemSize=8190GB）证实 emu 有效 RAM=[0x80000000,0x80000000000)（8TB）；探针实测 0x90000000..0x1000000000 放行、0x9/0x2ff/0x80000000000 fault。原 256MB 宏适用于 difftest csrc 侧，不约束该 emu；W12 的"探针 256MB 上界成立"实际只证 0x8ffffff8 可达。证据 `/tmp/isla-memimpl-w13-20260927-053000/`。
+- 9 条 fault 失败裁定（实测分类 5/2/2，修正 W12 报的 4/2/3——case-012 有效地址也是 0x90000000，属顶界类）：(a) 5 条 @0x90000000=Isla 地图顶界与 emu 8TB 不对齐（配置对齐问题）；(b) 2 条低地址=**真分歧**：两侧都 fault 但 NEMU 报错位 mcause6、emu 报 access fault mcause7，difftest 内部不一致；(c) 2 条图内对齐=**PMP 假 fault**：solve-state 中 pmpcfg_n/pmpaddr_n 保持符号、PMP 检查未关（sys_pmp_count=0 const 未折叠；ASSUME_PMP_OFF 为本谱系死配置），"PMP 拒绝"分支产假 AccessFault（--debug rf 证实 119 fork 全在 pmp_control、taint 仅 PMP 寄存器）；green 全量 107/2479（4.3%）同因；JSON 不输出 PMP 状态故重放不可复现。
+- 建议与去向：① pma size 对齐 8TB；② 配置钉死 PMP 寄存器；③ pipeline 预分类跳过低位错位 mcause 分歧类——三件已作为 W14 启动实施；④⑤ 真分歧上报不修：错位异常优先级 NEMU(6) vs emu(7)、Isla plat_enable_misaligned_access=false vs emu 支持错位（错位用例将成真分歧源）。
+- 摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-27 内存一致性 W12：pipeline.py 消费 pre/post 内存上下文重放
+
+- 实施：`difftest-xiangshan/pipeline.py` +262/-34——`memory_plan()` 解析（pre-memory/post-memory/memory-events、null 语义、0xA5 填充、skip 计数）、`pre_memory_stores()`（逐字节 sb、仅 t0/t1）、`post_memory_checks()`（lbu+bne 逐字节、失配跳该段专属 park 死循环标号）、纯 Python ELF64 ALLOC 段解析 + 两遍构建精确代码窗口、`--sample-mode`、build-summary.json、case.json 抄录 pre/post/events+path_class；装配序 特权/向量→pre store→标量 li→payload→post 检查→GOODTRAP。测试 +428（17 用例，顺手修 4 个既有 error：mock subprocess.run vs Popen 的历史问题）；README 内存上下文重放节。改动仅限 plan-pipeline 允许的 3 个文件，前后 git status 核对。按 [plan-pipeline](memory_support_review/plan-pipeline.md) 实施。
+- 探针：0x8ffffff8 写读 GOODTRAP 2/2（借用 isla-xiangshanv2 的 emu+NEMU so，只读），256MB 上界成立——plan-pipeline 风险项"emu RAM 假设"实测解除。（W13 修订：该探针只证 0x8ffffff8 可达，256MB 并非上界；emu 实际有效 RAM 为 8TB，见 W13 条目。）
+- 单测 34/34 绿（基线 10 过 4 error）。
+- 端到端（green JSON 2610 条，证据 `/tmp/isla-memimpl-w12-20260927-050541/`）：成功路径 131 条→两遍窗口精确跳过 27 条 code-overlap（比静态 8KB 多保留 10 条）→**104/104 GOODTRAP**；fault 抽样 32 条→23 GOODTRAP、9 超时失败（Isla 判 AccessFault 而 emu 正常退休：4 条 ≥0x90000000、2 条低地址 0x9/0x2ff、3 条 DRAM 内——Isla PMA 地图与 emu 实际可访范围的边界分歧，非管线缺陷，W13 诊断中）。（W13 修正：分类实为 5/2/2——顶界不对齐/低位 mcause 真分歧/PMP 假 fault，且顶界类因 emu 有效 RAM 实为 8TB，见 W13 条目。）抽查 4 条汇编与 JSON 逐字节一致。
+- 遗留：9 条 fault 分歧对账（W13 进行中）；mcause 断言留后续；主工作树无 xiangshan 检出（借用兄弟工作区）。W8-W10 条目遗留清单中"pipeline.py 消费 pre/post"已完成（本轮），"按目标平台地图过滤"未做。
+- 摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-27 内存一致性 W10（S1）：`[[pma_regions]]` 配置地图
+
+- S1 实现：TOML `[[pma_regions]]`（base/size + attr 别名 ram/rom/mmio/hole 或明细字段逐项覆盖）→ `config.rs` 解析（自校验：size=0、溢出、重叠按 base 降序相邻检查、无 attr 无明细报错；输出按 base 降序对齐 IR 列表次序）→ `target.rs::pma_regions_list_value` 按 symtab/type_info 递归构造 `Val::List(vec![Val::Struct(...)])`（zencode 陷阱两处：`zsizze`、IR `zsupports_cbo_zzero` 解码为 supports_cbo_zero）→ `isarch_main.rs` 经 `insert_register` 写 `default_registers`（PMP 块后、initialize_architecture 前）。未配置不注入，IR 与模型零改动。与 [plan-pma](memory_support_review/plan-pma.md) 的 spike 核实一致。
+- 别名映射：ram=RWX+cacheable+no_fault+eventual；rom=R 只；mmio=RW+不 cacheable+alignment_fault+none；hole=全 false（镜像 IR 固化 region 属性）。IR record 无 number 字段。
+- 测试：单测 6/6 GREEN（config 4 + target 2）；`cargo test -p isla --lib` 117 过+1 预存红；isla-lib 单线程跳 3 预存 enum 崩后 250 全过；fmt 过；shell `t_pma_regions_config_error_hard_fails` PASS、`t_pma_regions_store_writes_in_config_ram` 180s 盒 SKIP（zSTORE 需 600s 级，600s 证据覆盖）；三件套 3/3。
+- 端到端（zSTORE、1/12 预算、600s 盒三组，证据 `/tmp/isla-memimpl-w10-20260927-032747/`，含 RESULT.txt/judge.py/三组 JSON）：RED（旧二进制配置被忽略）逐项复现 W9 基线（2579/2554/25/19，6 条写事件落 [0x90000000,0x100000000)）；GREEN（RAM-only 地图 [0x80000000,0x90000000)）2610/2479/131，**131 写事件全落配置地图内、地图外成功写 6→0 转为 fault、max addr=0x8fffffff 边界精确**；UNCONF（新二进制未配置）与基线逐项一致。success 25→131 解释：地图 3→1 region 后 PMA 链 fork 减少 + MMIO 段由内存层判死变为 PMA fault 路径保留。
+- 重放环境地图（S0 解除）：DRAM [0x80000000,0x90000000)——ELF 链接基址 0x80000000、ram.cpp/instructionsource.h RAM_BASE 同、pipeline 未传 --ram-size → difftest `DEFAULT_EMU_RAM_SIZE=256MB`；与 GREEN 配置一致。caveat：该值是编译期宏，XIANGSHAN_TOOLS emu 构建是否覆盖未确认。（W13 修订：此 S0 结论对该 emu 不成立——emu 实际有效 RAM 为 [0x80000000,0x80000000000) 8TB，256MB 宏属 difftest csrc 侧不约束 emu，见 W13 条目。）
+- 遗留：emu RAM 大小构建覆盖未确认；success/fault 比例变化只记现象；`[[pma_regions]]` 与 `[[memory_regions]]` 跨层重叠组合未校验（合法组合，无约束）；rom 别名 write_idempotent=T 忠实 IR 但语义存疑；shell 180s 盒跑不完 zSTORE 边界断言。W8 条目"精确边界需重生成 IR"的限制已由配置地图解除。
+- 下一步候选：S2 边界符号化（opt-in 研究档，含 AssumeReg/smt 消费符号 Struct-in-List 的待验证点）、pipeline.py 消费 pre/post、S4 JSON 地图判定输出。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-27 内存一致性 W9：excluded 判死区域替换白名单
+
+- 语义替换（用户确认）：删除 W8 的 `ISLA_RISCV_CONSTRAIN_ADDR_TO_REGIONS` 白名单机制整体（开关、`region_address_constraint`、相关 10 个测试）——本条修订上方 W8 条目，该开关已不存在。新增 `region_type = "excluded"` 判死区域：符号读写地址追加 NOT(与判死区域并集重叠) 约束（新写 `smt_excluded_constraint`，语义是"触到任一字节即死"，与白名单"完整落入"不同；65 位加法防回绕）+ 复用 W7 立即 `check_sat` 判死；具体地址命中（含跨界一字节）直接 Err；读写/ifetch 一视同仁；零判死=零约束。symbolic 降级纯声明，concrete 不变。
+- 改动：`isla-lib/src/memory.rs`（`Region::Excluded` 变体、`smt_excluded_constraint`、具体地址分派前置判死）、`config.rs`（解析）、`src/isarch/memory_builder.rs`（构造+重叠校验）、`memory_model.rs`/`exec.rs`（接线）、`litmus-dump.rs`、README、新增 `configs/riscv64_difftest_mem_excluded.toml`。
+- 测试：RED 106 过/10 失败 → GREEN 115 过 + 1 预存红（`rv64_target_trait`）；isla-lib 223 过（+预存 enum 崩）；fmt 过。
+- 端到端（1/12 预算、600s 盒，两档）：默认档复现 W8 基线逐项一致（2631 gen/2554 AccessFault/77 Retire/52 写事件落 MMIO）；判死档 2579 gen（=2631−52，MMIO 成功写路径被 BadWrite 判死，自洽）、2554 fault 不变（洞仍 trap）、**写事件落 MMIO 52→0**、写事件地址收缩进模型 RAM；成功+fault 路径仍并存；三件套 3/3 PASS。复跑命令带的 `ISLA_RISCV_BUILTIN_*/ASSUME_*` 环境变量按 W4 结论为本谱系死配置（默认档与 W8 基线数字逐项一致可佐证无效）。证据 `/tmp/isla-memimpl-w9-20260927-023425/`。
+- 遗留：基线配置 `# clint_enabled = true` 注释位于 `[[memory_regions]]` 之后（TOML 作用域陷阱，解开不生效，demo 配置已规避）；判死使每次符号访存多一次 check_sat。
+- 下一步：W10（S1 `[[pma_regions]]` 配置地图）已启动。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-26 内存一致性 W8：区域约束语义分层与两档验证
+
+- 语义分层修正（用户确认）：配置 `[[memory_regions]]` symbolic 区域后**默认不再生成任何区域地址约束**——Isla 内存层只管内容（字节数组、同址一致），地址全域自由；可访问性/trap 完全由模型自身 PMA/PMP 分叉决定，成功路径与 access-fault 路径并存输出。本条修订上方 W2/W6 条目"配置区域即生成地址约束"的表述；W7 的矛盾立即判死仅保留在定向档。新开关 `ISLA_RISCV_CONSTRAIN_ADDR_TO_REGIONS`（默认关，非法值 panic）：开=定向重放档（区域 OR 链 + W7 矛盾立即判死，主动放弃 fault 路径）。
+- 改动：`src/isarch/memory_model.rs`（开关解析/gate）、`src/isarch/exec.rs`（2 处传参）、README 语义节重写；isla-lib 零改动。
+- 测试：3 个 RED→GREEN（默认档符号读写不被圈定、与 PMA 断言矛盾的读写不被判死）；W7 系列 10 个测试重排到开关=开档；memory_model 31/31、`cargo test -p isla --lib` 114 过 + 1 预存红、isla-lib 230 过（未触碰）、fmt 过。
+- 端到端（difftest_mem 配置、预算 1/12、600s、两档 RC=0）：默认档 2631 gen、77 Retire（71 带写事件）、2554 AccessFault；写事件分布 MMIO 52 / sym_ram 内 15 / 模型 RAM 且 sym_ram 外 4；fault 路径无访存事件（trap 在访存前）。开关=开 2579/25/2554/19 全 ∈ sym_ram，与 W7 基线逐项一致。证据 `/tmp/isla-memimpl-w8-20260926-234713/`。
+- 遗留/观察：默认档 fault:success≈33:1（地址全域自由时多数取值落洞，需更多成功路径可用定向档或采样偏置）；MMIO 符号写在默认档走成功路径（52 条 CLINT 区写事件），MMIO 读写细化（设备副作用 vs 数组内容）未做；IR 固化 PMA 地图限制 README 已写明（[0x90000000,0x100000000) 按模型 PMA 是合法 RAM 不 trap，精确边界需重生成 IR）。
+- 下一步候选（均未实施）：符号化平台属性（符号化 RAM 上界等，走模型 PMA 逻辑的 A 折中方案）、`difftest-xiangshan/pipeline.py` 消费 pre/post 与按目标平台地图过滤、多指令序列、MMIO 细化、zC_LD 探索优化。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-26 内存一致性 W7：显式区域联立 Unsat 修复
+
+- 根因：显式区域联立 Unsat 的矛盾组合 = 模型侧 PMA 分支断言（sail `matching_pma_bits_range`→`range_subset` 首析取分支把读地址钉进 IR 固化 pma_regions 首项 ROM [0x1000,0x2000)）与数组模型读侧区域 OR 链（sym_ram [0x80000000,0x90000000)）交集为空。PMA 列表 [ROM,MMIO,RAM] 的 RAM 分支与 sym_ram 相交、本应 SAT——零配置 W6 证据（1974 读事件中 495 条 ≥0x80000000）佐证；缺陷本质是**矛盾路径死得太晚**：PMP→PMA 子树跑完、终值模型查询烧掉后才被 collector 丢弃，浪费探索，不是 RAM 路径被判死。证据 `/tmp/isla-memimpl-w7-1748/unsat_dump2..4/`（600+ 份同构 dump）。
+- 修复：`isla-lib/src/memory.rs` trait `symbolic_read/symbolic_write` 返回 bool（是否真实追加了地址 OR 链；零配置 false 零开销）；`read_symbolic/write_symbolic` 在回调后 add_event 前 `check_sat`，Unsat 立即返 BadRead/BadWrite 判死路径（不发事件）；`src/isarch/memory_model.rs` 回调回传区域链生成；`exec.rs` dump 目录 `create_dir_all`。区域约束语义不变（配了就圈进）、零配置行为不变。
+- 测试：新增红测试"区域约束与既有路径断言矛盾时符号读/写立即判死"（修复前 Ok、修复后立即 Err 且无事件）；3 个旧测试按新契约改写；`cargo test -p isla --lib` 108 过 + 1 预存红；`-p isla-lib` 208 过 + 5 预存 enum 冲突；fmt 过。
+- 端到端（`configs/riscv64_difftest_mem.toml`，修复后）：zSTORE 预算 1/12、500s rc=0 收敛，2579 路径、19 写事件全部地址 ∈ sym_ram（含边界），data==post-memory 19/19 逐字节一致、pre=null（首触写）——定向模式闭环 PASS。zC_LD：预算 1/12、780s 内 3507 路径、108 事件（全部 ∈ sym_ram、pre=post=事件值、0 不一致）但 rc=124 不收敛；预算 1/9、330s 收敛（rc=0）但 0 事件；预算扫描 8→24 显示 fork 树悬崖在 9↔10 之间，"收敛且含事件"的预算点 ≤780s 盒内不存在——受限如实。
+- 遗留：zC_LD 探索侧改进（读约束前移或采样偏向 sym_ram）属后续议题；unsat dump 的 Z3 辅助命名与 isla `k!N` 撞名、不能直接喂回 z3，建议后续换前缀。W7 运行曾误写根仓 `output/`，已移至 /tmp 并复核根仓无残留、worktree 用户 `output/` 未动（备份 `/tmp/isla-memimpl-w7-1748/user_output_backup/`）。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-26 内存一致性 W2-W6 实施结果（feat/memory-consistency）
+
+- 实施全部发生在 worktree `isla/.worktrees/memory-consistency`（分支 `feat/memory-consistency`，基于 `f06371f`，未提交）；用户在同一 worktree 并行开发（区域边界 Bvult→Ble 类修正、fixed_prestate 重构等），各阶段均避让未覆盖改动。本条修订同日「Isla 内存分支支持边界」调查条目的对应缺口：client_info 未装配、事件逆序、ExecuteAs 不续执行三项已实施解决；0008fae 基线测试结论不适用于该分支谱系。
+- W2 新增 `isla/src/isarch/memory_model.rs`：SeqMemory 数组内存模型（`Array(BitVec64)(BitVec8)`，读=Select+Concat 小端约束，写=逐字节 Store 链+数组常量重定义），经 `set_client_info` 装配（每 clause solver 创建后、checkpoint 前），`Memory::clone` 经 clone_box 自动保留回调；环境开关 `ISLA_RISCV_MEMORY_MODEL=array|fresh`。附带修复 `isla-lib/src/smt.rs` Z3 种子参数探测：Z3≥4.13 下 `random_seed` 不存在会致命错误杀测试，改为先探测 `seed`。7 个一致性单测（同址读读、写后读、4 字节写后读中间 1 字节、区域约束、无区域不受限、克隆保留）。
+- W3 在 `isla/src/isarch/exec.rs` 输出层：`memory-events` 改正序（trace 逆序在收集层 reverse）；新增 `pre-memory`/`post-memory` 稀疏段物化（正序重放事件维护字节映射；首触为写的字节初值输出 null 不编造；查不到 model 的分量输出 null 并计数）；ExecuteAs 续执行（collector 入队+外层轮次循环，压缩指令解码后继续执行，`c.mul` 端到端 0.96s）。CLI 测试新增 5 个内存用例与校验器；10 个单测。
+- W5 根因（真实访存路径立即死亡）：默认配置无 `[[memory_regions]]` 时仅有 CLINT concrete 区域，写侧区域 OR 链空集被折叠成 `Bool(false)` 直接 Assert（所有写 Unsat），读侧地址被断言进仅 CLINT 的链与指令 PMA NoOverlap 矛盾。修复为空集不加约束；`constrains_symbolic_reads` 钩子跳过 concrete 重叠预检查（与用户在途的 `constrains_symbolic_writes` 对称）。
+- W6 根因（收集器最终求解"卡死"）：持久增量求解器路径终态常为 Unsat 探针（`__monomorphize` 唯一性探测），Z3 Unsat 后丢弃内部模型，收集器被迫整路径重解；无 `smt-thread-interrupt` feature 构建无看门狗，表现为慢 Unsat 证明。修复：Solver 缓存最近一次 Sat 的模型（Assert 使其失效、Unsat 探针/超时不失效），零配置 zC_LD 实测 440/799（55%）路径零成本复用；`check_sat_deadline` + `ISLA_RISCV_MODEL_TIMEOUT_MS`（默认 30000ms；需 feature 才能真正中断；超时路径降级输出 JSON、物化字段置空并计数）。用户确认的零配置语义已落地：零配置=地址+内容全符号、全域自由，CLINT 只参与具体地址分派不参与约束生成；W5 曾引入的默认 RAM 注入已撤销（`ISLA_RISCV_DEFAULT_SYM_RAM` 默认关），区域约束只对显式 `[[memory_regions]]` 生成。9 个新增/改写单测。
+- 验证（均在该 worktree）：`cargo test -p isla --lib` 105 通过（仅预存失败为用户在途 `rv64_target_trait` 红测试）；`cargo test -p isla-lib` 241/241（跳过 5 个预存 Z3 全局 enum sort 冲突用例）；`cargo fmt --check` 通过；CLI 三件套（help/no_filter/c_mul）在 array 与 fresh 双档 PASS。
+- 零配置端到端闭环 PASS：默认 difftest 配置（零 memory_regions）+ 数组模型，`zC_LD` 300s 盒（fork 预算）149 条生成、14 条非空 memory-events；无预算 870s 799/799 物化、440 复用、435 读事件、0 超时；`zLOAD` 限流 1285 物化、504 读事件。证据 `/tmp/isla-memimpl-w6-1532/`（zc_ld_tiny/zc_ld_zero/zload_limited 子目录）。JSON 判读：`c.ld x8,0xb0(x8)` x8=0x02200148，读事件地址 0x022001f8=x8+0xb0 吻合，pre=post=读值，地址不落入任何区域。
+- 受限与死配置如实：`zC_LD`/`zC_SD` 无预算在高载机器 600-1800s 不收敛（fork 爆炸，需预算落盘；某路径超时导致 rc=1 但文件先写，退出码语义待 CLI 层区分）；时间盒依赖 feature 构建；`ISLA_RISCV_BUILTIN_*` gates 与 `ISLA_RISCV_TEST_Z*_WIDTH` 经 grep 证实在本分支谱系全仓无实现（死配置，历史 120s zSTORE 记录出自另一工作树状态不可复现）。
+- 进行中（W7，未解决）：显式 sym_ram 区域 + 模型 PMA/PMP 约束联立使真实访存路径 Unsat（零配置正常；证据 `/tmp/isla-memimpl-w6-1532/unsat_dump/unsat_zLOAD_t65.smt2`，dump 开关 `ISLA_RISCV_DUMP_UNSAT_DIR`），定向/重放模式待修。后续未做：`difftest-xiangshan/pipeline.py` 消费 pre/post 字段、多指令序列、MMIO 设备副作用。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-26 浮点 solve 修复已核实事实
+
+- 完整状态物化有可观的重复求值成本：c5诊断运行器在每终态对102字段初态多次求值，128位寄存器还需整值及分块求值；thread-interrupt为每次ModelEval建立/回收看门狗。VFMVFS实测157648次调用包装耗时14.729秒，Z3实际FFI仅0.251秒。单Model具体值缓存实验将调用降至73100，255终态保持且每次命中原路复算typed值一致；VFMV两组仍300秒超时，不能称整体收敛。`model_completion`会补解释，故Arbitrary和错误不可缓存、completion设置切换须清缓存。见[性能记录§16](float_support_review/solve-fix-performance.md#16-c5-终态物化看门狗与向量有限分叉的实测)。
+- 宽位输出缺陷已在 `fmtval.rs` `43806138…` 以 `BV::to_vec()` 修复，并经独立复核：debug/release各两项边界组合测试、B64/B129逐位探针及旧红新绿均通过。所记旧红二进制的初始构建来源不完整，后续重编另保存argv/库和二进制哈希；不把前者来源不足隐去。详见[全宽输出记录](float_support_review/solve-fix-fmtval.md)。这只放行格式化组件，不转记旧77批通过。
+- 宽位具体值输出缺陷已动态确认：`FmtVal::BitVal::from_bv` 的 `lower_u64() >> i` 不能读取B129高位，128位输入 `123456789abcdef0fedcba9876543210` 在release错误输出为 `fedcba9876543210fedcba9876543210`，debug移位溢出。`isarch` 生产使用B129，具体VPR和超过64位的Concrete MixedBits片段均可能受影响；符号值经 `ModelVal::Exp(Bits)` 的路径正常。Astra审定以既有LSB-first `BV::to_vec()`修复，后续正式批次必须绑定新版本。
+- 通用 `append(Symbolic, Bits)` 及反序保留为既有 `MixedBits` 片段后，固定编码字段切片可保持具体值，避免译码比较为恢复常量反复求解。合法Sail索引域已做局部等价复核；不能从30秒诊断退出124推断正式全组通过。`Model::get_val(MixedBits)` 仍可能返回全部片段具体化的 `MixedBits`，外部测试程序须按位拼接后比较，不能只接受 `Val::Bits`。见[实现及证据](float_support_review/solve-fix-mixed-bits.md)。
+- `hartSupports` 描述模型支持能力，运行态 `misa` 另受 `legalize_misa` 的依赖约束：D要求F，V要求F和D。本轮官方Target未把misa加入符号寄存器集，使用FD配置默认值；测试直接改写misa不自动属于官方输入域。关闭F却保留D/V的旧测试只作raw诊断，合法替代状态须清依赖位并记录独立配置，不能称全misa覆盖。见[状态域](float_support_review/solve-fix-state.md)及[标量覆盖](float_support_review/solve-fix-scalar-coverage.md)。
+- 纯数据等值也可能主动触发求解：`primop.rs` 的位串比较经 `try_concretize_bool_exp` 做最多两次 SAT 查询，因此去掉 Sail `if` 不等于去掉求解热点。P1 `accrue_fflags` 的 `old != f` 在 computed FP flags 上仍超时；同IR、相同未知f16/f32 Sqrt 输入下，末尾旧位串比较两格式均超过22秒，而既有通用 `eq_anything` 加 `not_bool` 约0.108秒、各一条SAT路径。模型仅在获准的纯数据比较中复用这个接口，不能据此改变合法性guard或全局primop策略。见[性能证据](float_support_review/solve-fix-performance.md)。
+- VPR 快速 `set_V_bits/set_V` 同样漏掉普通 `wV` 的 VS/SD Dirty 与回调；对旧 d012 直接同值写 v0（无 `set_vstart`）已复现：普通臂更新到 `0x8000000000000600`，快速臂错误保留 `0x200`。指令尾部 `set_vstart` 会掩盖这个缺陷，故指令状态样例不能代替直接 helper 检查。源码修复和新 IR 验证进行中；此处仅记录已证实的旧版反例。
+- BF16 仍能用指数边界区分融合 FMA：`2^64 × 2^64 − max_f32` 按结果及 OF 区分，`2^-80 × 2^-80 + 1` 按 UF 区分。纯 lane 路径必须分别屏蔽非活动源转换 flags 和 FMA flags，故标量源、向量源、累加器 sNaN 需要分别测试。922条定向包与历史版本证据见[BF16覆盖](float_support_review/solve-fix-bf16-coverage.md)。
+- `fdext_regs.sail` 的快速 `set_F_bits/set_F` 必须与普通 FPR 写入保持扩展断言、原值 callback 和 FS/SD Dirty 副作用；只检查浮点结果位会漏报此问题。旧 d012 的 FADD.S 无新增 flags 且 FS=Initial 时保留错误 mstatus；外部 P1 IR `f5141217…` 同例修复，并通过直接 getter/setter 状态检查。SYMBOLIC flags 累计采用完整 CSR 状态 ITE，真实旧 fcsr/mstatus/新 flags 全符号时保持一条可行路径且状态差异 UNSAT。见[FD证据](float_support_review/solve-fix-fd-state.md)。
+- Sail 汇编 FLI 必须使用标准立即数字面量；H 索引29文本 `65536.0` 与索引30文本 `inf` 虽对应同一半精度无穷值，也须保留不同指令编码。三格式96项加四BF16向量格式已做104条 LLVM 编码复核；这不代表不可直接执行的 Sail 整条字符串逆向映射已获得动态验证。见[汇编证据](float_support_review/solve-fix-assembly.md)。
+- 以下旧运行器结论对应 d012 审计时点；当前 Rust 的完整状态、错误账本、同solver译码和实际trace正在修复联调，最终联合验收尚未完成。
+
+## 2026-09-26 浮点 solve 调度与验收证据边界
+
+- 当前 `isla/scripts/run.mk` 中 `ALL=347`、`FD_FLOAT=89`、`MEMORY=48`，普通 `make solve` 的 220 个目标明确排除全部浮点。显式 RV64 非访存清单是 77 项；两条 32 位模式 Zfa 与 10 个访存项另列，不能把普通全组结果当作浮点结果。见[本轮审计](float_support_review/solve-audit.md)。
+- `isla/src/isarch/exec.rs` 从符号 constructor 直接调用 `zexecute`，结束后才尝试物化编码；没有先用正向译码 guard 约束执行。JSON 仅包含输入/编码/返回类别，没有 post-state；RV64 `Target::reg_list` 在 `isla/src/isarch/target.rs` 中还缺少 `fcsr`。实际动态 RM 样例参与 `fcsr` 分叉却不输出其具体值，因此现有 JSON 不能独立重放这些路径或证明结果/flags。详细实证见[运行器审计](float_support_review/solve-audit-method.md)。
+- collector 仅将 Timeout/SMT 类错误计入最终失败；MatchFailure/AssertionFailure 静默丢弃，Poison 只告警，其他执行错误及独立 Z3Unknown 未必导致非零退出。CLI 使用 Optimistic assertion mode；合法域的前置条件过滤与合法输入下内部不变量失败必须分辨，不能凭 exit 0 或日志无断言字样证明后者不存在。
+- VFMERGE/VFMV 配置顶层 `max_forks_per_branch=1` 且未设置 `execution_limits.regions`，实际约束整个调用树的重复静态 branch，而非注释所称只约束 lane 循环；局部 `region_fork_limits` 不会自动缩小顶层预算的作用域。采样/超时、enum 触达和源码 branch 全覆盖是不同概念。
+- 49 个标量、22 个非 BF16 向量、6 个 BF16 clause 的源码与现版本具体结果映射见[标量](float_support_review/solve-audit-scalar.md)、[向量](float_support_review/solve-audit-vector.md)、[BF16](float_support_review/solve-audit-bf16.md)。原 1509 条结果只检查各例声明的观察寄存器，不代表任意输入、全机状态或全部源码分支；各文档明确当前证据与未测域。
+- 标准汇编复核确认已有 Sail assembly 映射问题：FLI H/S/D 输出表索引而非标准浮点立即数，BF16 两向量转换在 `maybe_vmask` 前多加 `sep()`，两个 MACC 在源寄存器间使用 `spc()` 缺逗号。96 条 FLI JSON 及四 BF16 clause 日志有动态实证，修正文本的抽样编码一致；其它 3378 条最终 JSON 的非 FLI 文本重汇编编码一致。此项是输出/重放缺口，不证明数值算法错误，详见[日志语义复核](float_support_review/solve-audit-log-semantics.md)。
+
+## 2026-09-26 isla-testgen 内存机制核实与可借鉴边界
+
+- 本机 `/home/baiyifan/workplace-local/isla-testgen`（rems-project 上游，HEAD `cc4c613`，未改动的 `isla` 子模块指向 `bcc7ee84`，esop22-300 谱系）：内存建模为单一全地址空间字节数组 `Array(BitVec addr)(BitVec 8)` 加独立 tag 数组（CHERIoT capability 用），经实现 `MemoryCallbacks`（`symbolic_read/symbolic_write/symbolic_write_tag`）并 `set_client_info` 装入 frame（`src/execution.rs:131-247,592-608`）；读为逐字节 `Select`+`Concat`（小端硬编码），写为逐字节 `Store` 链并把 `memory_var` 重定义为新常量。
+- 该 checkout 不含常见转述中的三项优化：elimination、signposting 全仓库不存在；concretization 只有 `resolve_concrete_pc`（PC 约束唯一时钉成具体值，`execution.rs:284-330`），内存跨指令保持数组常量链，仅在序列末端单次 `check_sat` 后由 `extract_state.rs:295-669` 从 ReadMem/WriteMem 事件反查 model 重建 pre/post 内存映像（支持 `--sparse` 只输出触碰字节）。也没有 side-condition goal 机制：continuation 随机选一条（`testgen.rs:530`）或围绕核心指令全路径展开（`:589-780`），覆盖率由外部 sailcov 度量。异常函数默认作为 Kill 丢弃，`--exceptions-at N` 才放行。
+- 读写地址经 `smt_address_constraint`（`isla-lib/src/memory.rs:770-812`，OR 链）约束进区域：数据区默认 `0x1000..0x2000`、代码区 `init_pc..+0x10000`（`testgen.rs:303-316`），可挡外设地址。Morello 页表用单表项 8 字节 ite 链建模（`target.rs:293-323`）。无独立 RV64 target；CHERIoT 为 vendored 32 位改造 sail-riscv。输出两种：`--test-file` 给 OCaml harness；默认生成 `.s`（`.dataN` 初值 + `check_dataN` 期望终值，`generate_object_cheriot.rs:157-313`）汇编成 ELF 跑仿真器。
+- 与本仓内存缺口的对应：`feat/memory-support` 未装配的 `client_info` 正是该仓库使用的同一回调接口；其末端"事件反查 model → pre/post 内存映像 + 期望终值"模式直接对应 difftest 的"开跑前准备字节、跑完检查字节"；地址范围约束可补"区域配置不限制访问范围"缺口。本轮仅静态核实外部仓库，未在本仓实施。
+
+## 2026-09-26 浮点接口全量参考清单与新增缺口
+
+- 最终完整V128 C1 IR `d0123541…` 已在正式工作树与79配置同批切换；277个未知入口90/96/91各约5秒、SAT/单路径/普通体trace通过，证明先前A表示回退不再复现。67helper及列定指令样例见[最终IR验证](float_support_review/ir-refresh.md)。BF16 VF非法LMUL顺序在最终10例已验证，先前“新IR待验”属于修复前时点。
+
+- 类型复用最终采用C1：内部 `ieee_fp_exceptions` 五Bool事实通过 `ieee_exception_facts` 构造，仅出口 `ieee_pack_shared_flags` 转既有 `fp_exception_flags`，FD再转换位序。相同小IR/runner/未知RM3输入下，中间位串化A为67.28s、直接拼接位串B为48.38s、内部Bool的C0和仅出口共享编码的C1均0.05s；C1同形90个f16未知入口0.61s且全部SAT/单路径。泛型分类/nativeRM保持不变，故此回退应归于中间异常表示/转换组合；尚未做Z3内部profiling，不能断言具体simplify热点。见[性能对照](float_support_review/type-reuse-performance.md)。
+
+- 类型复用复核：已导入 Sail `float/common.sail` 提供 `fp_exception_flags`（NV0/DZ1/OF2/UF3/NX4）、`float_bits` 与 `float_decompose`。RISC-V flags 位序相反，须在包装边界显式转换；既有 `float_is_*` 的短路判断不能直接引入纯 helper。`float_decompose` 虽在 IR 保留按长度的 Jump，Isla `primop::length` 对固定格式符号 BV 返回具体长度；独立真正未知 bits16/32/64 分类探针各 SAT、单完成路径，支持基于该分解类型构建严格布尔适配。
+
+- 接续复核：`zvfbfwma_insts.sail` 的 VF 旧路径在 `illegal_fp_variable_width` 前断言 widening LMUL≤8；e16,m8 的真实编码在正式 `c9e1bfe2…` IR 动态触发断言，理应由既有合法性检查返回 `Illegal_Instruction`。本轮已移动 VF 断言至 guard 后、保留 VV 原断言；新 IR 验收待完成。
+- `isla-lib/src/smt/z3_timeout.rs` 的 smtperf 测试旧三参数宏调用不再匹配四参数接口；补 SourceLoc 和真实 Context 后，两种 smtperf feature 组合各4/4通过，仅测试变更。
+
+- 浮点E集成预检源码事实：`sail-riscv/model/extensions/FD/fext_insts.sail:255–262` 的`LOAD_FP`/`STORE_FP`按width=2/4/8分别覆盖FLH/FSH、FLW/FSW、FLD/FSD；H宽度合法性由Zfhmin或Zfbfmin决定，不能只测F/D。`isla/src/isarch_main.rs:505–508` 的RV32 `solve-state`无条件panic，因此当前`make solve-*`不能证明六个RV32限定浮点clause的合法执行。`sail-riscv/model/core/phys_mem_interface.sail:64–72`将RV32的34位物理地址零扩成固定BV64给内存请求；内存worktree截至2026-09-26 05:53的`exec.rs`仍按XLEN32建数组，直接联合会有sort宽度不符。详情与其余时点限制见[集成审查](float_support_review/memory-integration.md)，均非动态复现。
+- 实施版本修订：Isla `f4f8e45` 基线的通用 primop 为73个；当前未提交 A 阶段修改保留其全部名称和映射，新增4个FP→IEEE、4个FP→unsigned与一个f32→BF16位串出口，共82个。具体/MixedBits BV输入及真实sort检查已接入，旧 `softfloat_tests::solve_call` 的tactic初始化已修；`cargo test -q -p isla-lib --lib primop::float` 31/31，细节见[实施记录](float_support_review/implementation.md)。这不改变下列基线时专用RISC-V helper的错误结论，也不代表新IR验收。
+- Sail双后端实验修订初始静态疑虑：当前`isla-sail`插件对只有cpp/lem extern的Sail声明加`SYMBOLIC`同名函数体，会在Isla IR保留普通`val`与`fn`，C++生成仍调用cpp extern。`remove_extern_impls`不能被解释成无条件删除所有后端extern的同名函数体；实际67个helper仍需逐名核对IR。接口门槛见[异常契约](float_support_review/exception-contract.md)。
+- 基线 `sail-riscv@f8ce849` 的 `VFWMACCBF16_VF` 提前累计标量sNaN异常问题，当前未提交工作树已改成循环前纯转换、首次活动lane才累计一次。旧模型定向真实RV64/V256测试红灯`FAILURE: 2`，修后两条CTest通过；随后共享模型又变更，正式V128 IR待复验，见[结果](../docs/RESULTS.md)。下文原问题仍保留为基线发现，不能当作当前工作树仍未修复。
+- 同日计划复核新增跨议题边界：当前 `isla/scripts/run.mk` 的 `FD_FLOAT` 与 `MEMORY` 同时包含 `LOAD_FP`、`STORE_FP` 和八个压缩浮点访存 clause；执行入口 `isla/src/isarch/exec.rs` 收到 `Run::Finished` 不能单凭此证明实际读写。当前 `zcf/zcd` Sail 函数直接执行 `LOAD_FP/STORE_FP`，生成的 `rv64d.ir` 中 `C_FLWSP` 也递归调用 `zexecute`，所以整数压缩指令的 `ExecuteAs` 续执行缺口不能未经核对套到这些浮点条目。`sail-riscv/model/core/extensions.sail` 将 Zcf 限为 XLEN32，`extensions/FD/zfa_insts.sail` 的 `FMVH_X_D`/`FMVP_D_X` 编码要求 `in32BitMode()`；固定 RV64 IR 不能作为这六项合法编码执行的证据。实施边界见 [计划](float_support_review/plan.md)，均未动态验证。
+
+- [参考总表](float_support_review/reference-list.md)对照 `isla@f4f8e45`、`sail-riscv@f8ce849`：通用浮点登记73个名称（42 unary、26 binary、5 variadic），与67个按RISC-V名字分发的外部函数不同；Sail/IR相关helper共79个，其中67个外部函数、12个已有函数体。完整名字和源码位置分别见 [primops](float_support_review/inventory-primops.md)、[Sail](float_support_review/inventory-sail.md)。
+- `V/vext_fp_insts.sail:746–750` 的 `vfncvt.rod.f.f.w` 真实向 `riscv_f32ToF16/riscv_f64ToF32` 传编码6，SoftFloat构建开启ROD；`float.rs:737`只接受0–4，具体6会panic，符号6被约束排除。此前“所有helper经checkrm保证只有五种模式”的前提不成立。ROD应作为模型派生转换单列，不能凭空增加Z3第六种原生RM。
+- 基线 `f8ce849` 的 `bfloat16/zvfbfwma_insts.sail:102` 中 `VFWMACCBF16_VF` 在活动mask检查前调用 `bf16_to_f32_set_flags`；合法boxed标量sNaN在vl=0或全屏蔽时仍会累计NV。当前未提交修复和验证见本节前述修订。旧 `feq_quiet_S/D`、`flt_S/D` 无调用但有NaN/正负零比较缺陷，不能直接复用；详见Sail清单。
+- 通用ITE标量/普通record可复用，但 `primop_util.rs:250–304` 的union路径未将tag与条件绑定，交换两臂未反转条件，同constructor的复杂payload也未递归；是条件触发的通用缺陷，不影响当前FP/RM标量路径。MixedBits拼接顺序重新核对正确；完整限制见 [ITE表](float_support_review/inventory-ite.md)。
+- 专用 `add_nx` 只屏蔽左操作数非有限，因此f32 `1+inf`错误置NX，交换顺序则不置。`itofp_of` 在RUP对65505漏OF、对-65520误OF；负整数NX算法又漏报，详见 [专用实现表](float_support_review/inventory-runtime.md)。这些是静态推导，未运行Isla复现。
+- 修订旧读取接口描述：`get_finite_domain_var`对FP/RM返回None仅涉及抽样；直接 `get_var/get_val`会报unsupported sort。当前安装Sail 0.20.1的native库绑定69个通用名字，未声明已有的4个 `fp_to_signed*`；ToIEEE/ToUnsigned出口及Sail声明也待补。本轮读取已安装库，当前没有`sail/`源码checkout。
+- 独立CLI Z3 4.16.0小式接受当前ToIEEE打印形式和简单FP/BV/RM混合公式；因此打印只列规范化建议，tactic完整适用性仍待完整Isla模型验证。基线`softfloat_tests::solve_call`缺少当前Solver必需初始化，当前A修改已修且单独`f32_add_basic`测试1/1通过；命令和限制见 [支撑层表](float_support_review/inventory-support.md)及[实施记录](float_support_review/implementation.md)。
+- 当前 `executor.rs:1786–1821` 先查普通IR函数，找不到时才调用专用分发；`trace_functions` 可记录普通函数进入。新IR中一个helper有函数体不能证明它调用的其他函数都已迁移，应核对全部函数及实际调用，并在隔离测试中禁止旧浮点分发。该执行顺序是源码事实，完整迁移运行仍未验证。
+
+## 2026-09-26 Isla 内存分支支持边界
+
+- 远端实时核实 `origin/feat/memory-support=f06371ffb420becb6d325772aeeaf2336276bd16`；与当前 `f4f8e45` 共同祖先为 `0008fae`。五个独立提交接通初始内存、构造错误硬失败和 JSON 访存记录，没有改底层 `memory.rs` 或 IR。详细证据及固定版本链接见 [调查报告](memory_support_review/report.md)。
+- `f06371f:memory.rs:619–704` 的默认读取每次创建新未知值，写入只追加事件；`MemoryBuilder` 未装配 `MemoryCallbacks`，所以 solve-state 不自动建立同址重复读、写后读及重叠字节关系。指令自身计算产生的关系仍然存在；不能将两者混淆。Concrete 区域是只读初始快照，普通写不会修改其字节表。
+- `memory_regions` 本身不把未知地址限制在其范围内；具体数据地址未命中区域也可走 default 未知读取。未知地址可能覆盖具体区域且不唯一时，底层会报重叠错误；RISC-V 上游的地址/权限检查仍须另行考虑。
+- `f06371f:exec.rs:963–964` 直接遍历 `trace().to_vec()`，而 `smt.rs:540–555` 以逆时间顺序返回，故 `memory-events` 中多次访问顺序与执行相反。`region` 为类型标签而非配置自定义名字；未知值还可能表示为带有效位说明的字符串，不能把其中的零当确定数值。
+- `f06371f:rv64d.ir:287724–287725` 的 C_LD 返回 `ExecuteAs(LOAD)`，solve-state 只调用一次 zexecute；完整模型外层在 `:385190–385198` 才负责继续执行。新增 CLI 测试明确不产生真实访存，不能用其字段检查证明 LOAD/STORE 通过。
+- 分支收录的是 `0008fae` 改动前基线（352 通过/1 失败，AMO failed143），默认 `make solve` 仍排除内存组。当前根仓库 `difftest-xiangshan/pipeline.py::make_assembly` 不消费 `memory-events`，未接通基于这些记录的内存准备与检查。本轮仅静态调查，不新增动态 PASS。
+
+## 2026-09-26 浮点实施计划的版本复核
+
+- 正式写入实施计划时，Isla HEAD 已为 `f4f8e4584a70588c66c9e7a6286cc20211618f18`；`git -C isla diff 8148bc1..HEAD` 无输出，整个文件树与上一轮记录相同。Sail-RISC-V 仍为 `f8ce8490981eac6396a31013180a2e718615757d`，两个子模块工作树均干净。父仓库 Isla gitlink 仍指向 `85d7c70`；本轮未修改子模块或 gitlink。
+- [实施计划](float_support_review/plan.md)已采用新版本号；下列 `8148bc1`、`85d7c70` 记录保留其调查时间和适用范围。此次仅确认版本及文档，不新增浮点动态测试结论。
+
+## 2026-09-26 浮点分层方案的现有接口与限制
+
+- 本轮结束核对发现Isla由调查起点`85d7c70`更新为`8148bc1`（合并feat/float-support，非本轮文档操作）；合并后的`float.rs`与`1a1910e`相同，IR/workaround未在该合并中变化。下列85d7c70行号是已检查版本，后续计划已调整为基于合并版本保留通用改进并在模型替代通过后移除已有RISC-V专用分发。
+- 当前`isla@85d7c70`已有公开`ite`（`primop.rs:4295,4470`），经`primop_util::ite/build_ite`支持Bool/BV及以Symbolic表示的FP/RM同sort选择；无需新造fp_select/rm_select。已有Sail测试使用extern声明。普通if仍可能Jump/fork；ITE实参提前求值；全局linearize会drop assertions，不能替代架构合法性检查。
+- 通用FP入口仍不完整：`float.rs:129,168`等只接受Symbolic，直接具体BV输入会报Type；应复用`smt_value`等处理并校验sort。原记录称“直接物化FP/RM在当前`smt.rs:1739`返回None”，此句已由2026-09-26全量清单修订：抽样接口 `get_finite_domain_var` 返回None，直接 `get_var/get_val` 报不支持的类型，不能混为一谈。测试/架构输出采用BV；准确接口说明见 [支撑层S11](float_support_review/inventory-support.md)。
+- 当前Sail-RISC-V prelude已include位串接口`<float/interface.sail>`，可复用NaN等分类；其`float/common.sail`异常编码invalid最低位/inexact最高位，与RISC-V相反。旧native `<float.sail>`定义`rounding_mode`别名，会与RISC-V枚举冲突，不能直接整体include。
+- `isla-sail/sail_plugin_isla.ml:117-121`已映射float16/32/64/128及float_rounding_mode，`:348`设置SYMBOLIC；BF16的(8,8)不等于f16，公开接口需单独设计。模型保留cpp/lem声明并增加SYMBOLIC函数体的方案须先验证生成IR，不能假定所有extern/body组合都保留函数体。
+- `sail-riscv/model/CMakeLists.txt:225`默认formal配置为rv64d_v256_e64，与当前正式V128 IR不同；浮点模型迁移生成新IR必须显式固定V128配置并重新核对严格workaround。
+- 用户要求的细化方案已记录于 [接口与迁移设计](float_support_review/refactoring-plan.md)，当前仅设计，无实现或动态验证。
+
+## 2026-09-25 浮点ITE与建模边界
+
+- 对`1a1910e`相对`0008fae`的8个变更文件全量扫描：新增SMT ITE都在`float.rs`，15个源码调用点分布于13行（1204/1206各两个）；645–646为统一构造封装，不另计。六类为rm解码1、flags打包1、指数辅助2、整数幅值1、NaN规范化5、整数无效返回5。详见 [清单](float_support_review/ite-boundary.md)。
+- 这些ITE由`smt.rs:2193`映射`Z3_mk_ite`，不直接触发executor的`Instr::Jump`/fork；源码调用点、clone后表达式节点、Z3内部电路和路径数量是不同指标。IEEE数值操作已直接使用FP理论，flags条件中还有许多AND/OR，不能以ITE数量判定职责或成本。
+- SMT FP仅有一个抽象NaN，不提供sNaN/qNaN或payload保真，也不直接返回IEEE五类异常状态；无效FP→整数转换域未指定。因此IEEE异常事实需要独立建模，RISC-V规范NaN、无效整数返回、rm位编码与fflags/CSR属于ISA组合。建议核心仅提供通用原语，异常库置建模层。
+- 分支已有五种typed rounding mode构造和原生FP运算；新增ToIEEE仅接SMT层、未公开为Sail primop，ToUnsigned也仅底层存在。当前Sail helper返回(flags,result)，将ISA策略移回模型需补这些通用接口并建立模型包装，不能直接删flags处理。
+
+## 2026-09-25 Isla 浮点分支扩展复核
+
+- 实时 `ls-remote` 确认浮点分支仍为 `1a1910e17759d2f52344124dc0b0daa1ff5982bd`；当前 Isla HEAD 已为 `85d7c70`，与分支从 `0008fae` 分叉（当前侧8个提交、浮点侧5个）。旧状态“工作树在基线”不再适用。细节见 [复核报告](float_support_review/report.md)。
+- `float.rs:1098` Sub 的 NX 调用 `:791` 硬编码 Add 的公式；f32 RNE `1-2^-24` 精确却误报NX，`1-(-2^-24)`则漏报。`:793/:832/:1306` 等往返判等缺NaN屏蔽，`:842-844`缺负有限数invalid屏蔽，导致qNaN加法、无效乘法/开方、qNaN窄化多置NX。`:1143`还把负qNaN开方误判为invalid。
+- 转换也并非已精确：`:950` unsigned RDN下界写成`x<+1`，结合`:1206`令`f32ToUi32(+0)`错误返回全1并置NV；`:926-939`使f64→i32在真实整数舍入边界附近误判NV；`:1239-1260`用RTZ/RUP相等判精确，漏报负整数转换NX；`:1005`有符号负数按无符号比较误置f16转换OF。f16/f32→i64/ui64还存在`:868`界常数构造宽度不足风险。以上均为静态推导，未运行分支复现。
+- 当前Sail RVV在`vext_fp_insts.sail:37`读取frm，逐元素经`vext_fp_utils_insts.sail:179-188`调用同一组helper并累计flags；浮点分支未新增向量批量优化。两版IR都为79声明/12已有函数体/67外部helper，但哈希不同。
+- 分支的21个测试只有20个调用Z3，另1个只测分发；数值输入全具体、rm只测0和少量1，无Sub/Eq/unsigned数值转换/fp→64位整数用例。默认`make solve`不运行89项FD_FLOAT。作者的测试/冒烟声明不能覆盖上述缺陷或全量RVV。
+- 当前HEAD已含相同FD配置和部分向量搬运目标配置接线；移植还需适配`Solver::new`要求的`configure_tastic`初始化，并验证当前默认Qfaufbv对FP/BV公式的行为。审查没有修改Isla实现或重跑动态验证。
+
 ## 2026-09-25 Isla `origin/feat/float-support` 静态审查
 
 - 分支头 `1a1910e` 基于 `0008fae`，增加五个提交。当前 `isla/rv64d.ir` 有 79 个 `zriscv_*` val，其中 12 个在 IR 内另有函数体，67 个无函数体；分支 `softfloat_dispatch` 的名称集合覆盖这 67 个无函数体 helper。执行器在普通函数查找失败后通过 helper 名分发，返回 `(fflags, result)` 结构体；SMT 层增补 `ToIEEE`，FD 配置开启扩展与 FS=Dirty，`make solve-fd-float` 按 clause 运行。
@@ -1241,3 +1401,34 @@ vtype.zbits[63]=vill=0, [5:3]=vsew=010(SEW=32), [2:0]=vlmul=000(LMUL=1)
 - `isla/scripts/run.mk` 默认 `IR_FILE=./rv64d.ir`；`isla/rv64d.ir` 被 Git 跟踪，现有 SHA-256 为 `7c626989a03056c43c67c81de8f40f611cef4c43ed1069a81526b37856d7e37b`。`isla/configs/workarounds/` 中 79 份配置均设 `strict=true` 并绑定该旧哈希；执行器 `ExecutionLimitsConfig::validate_ir_sha256` 会在哈希不一致时返回错误。
 - 这 79 份配置中有 21 份的 67 个 region 指向本次修改的 `vext_arith_insts.sail`、`vext_control.sail`、`vext_utils_insts.sail`。同步新 IR 时，除全量哈希外还需逐个核对这些 region 的源码位置；其余文件的 region 不应因全局哈希替换而盲目移动。
 - 当前三份修改的 Sail 文件与 `/tmp/sail-dedup-perf-00rgqu2_/new-src/` 中对应快照逐字节相同；该次 VLEN=128 新 IR 哈希为 `6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c`。此为调查参考值，正式同步须从当前源码重新生成并校验。
+
+
+## 2026-09-27 统一 Sail 浮点 C++/Isla 的实际接线边界
+
+- 当前 Isla 插件按 `for_target:"c"` 读取 extern；统一声明应保留 c 原语绑定并加 cpp 数值适配，不能假定存在 isla 目标标签。
+- Sail 0.20.1 C/C++ 后端已有 native FP/RM 的 IR printer，但缺五种类型的 `convert_typ` 与默认/异常返回支持；泛型相等须采用 SMT sort equality（NaN相等、正负零不同），不能替换成数值 `fp_eq`。
+- `softfloat_interface.sail` 的67个策略级 cpp extern 会绕过同名 Sail 函数体。共用 flags 公式需撤下这些生产替代绑定，独立 native flags oracle另保留。f64异常公式已实际依赖f128，所以f128属于首版所需。
+- 统一前仓内 SoftFloat 默认状态为全局变量；单线程保存恢复不等于线程安全。统一改造已在生产CMake增加C/C++一致TLS宏和PUBLIC传递，并在类型头检查ABI宏；隔离adapter并发测试通过，完整模型构建仍待验证。详见 [统一方案](float_support_review/unified-backend-plan.md) 与 [实际探针](float_support_review/unified-backend-cpp-feasibility.md)；这些为已核源码/生成器事实，双后端生产运行仍待验收。
+
+
+### 共享 C++ 指令重放的初始化与并发边界
+
+已通过历史真实生成头和实际执行核对：可直接使用 `hart::Model::zext_decode`、`zexecute`，按102字段原始存储恢复初态；不能经 `set_F/set_V` 或CSR accessor加载，以免额外引入Dirty/WARL效果。`model_init`已初始化寄存器，重放不再执行reset/boot覆盖witness。向量lbits须按GMP所有权读写全部128位。实际生成头仍须逐版本导出/绑定，不能把历史`sbits/lbits`布局硬套后续版本。
+
+Sail生成模型含全局scratch，SoftFloat TLS只隔离数值库状态；完整模型worker当前使用独立进程并行、逐case新建/清理Model。三个未导出CSR `mseccfg/menvcfg/senvcfg`在1dcc实际初始化为具体零，后续版本须重提证据，不能仅依据源码默认值填写。详见[C++ replay方案](float_support_review/unified-backend-cpp-replay-plan.md)与[工具](float_support_review/tools/unified_backend_cpp_replay/README.md)。
+
+### 统一模型快照中的 SoftFloat 平台源码
+
+SoftFloat 的 `dependencies/softfloat/berkeley-softfloat-3/build/` 包含Git跟踪的平台头和Makefile，不能按目录名递归视作构建产物排除。v6完整C++构建实际因缺 `Linux-x86_64-GCC/platform.h` 失败；快照工具已改为只排仓根生成目录，并检查Git跟踪文件完整性。v7恢复20个固定HEAD逐字一致的平台文件，Sail模型树未变，因此原IR生成证据仍按v6输入保留，C++补件来源另绑v7。见[统一构建交接](float_support_review/unified-backend-plan.md#最终-adapterv6-ir-与-v7-cpp-构建交接)。
+
+### C++ 与 Isla 的有效配置需要核对初始化覆盖
+
+Isla 的 `initialize_letbinding` 会以 TOML `const_primops` 覆盖同名顶层let，因此同一生成JSON不能单独证明两后端运行配置相同。348147配对准备中确认8个同名配置输入，其中misaligned access、instructions per tick、PMP count在原JSON与FD TOML之间不同。C++生成的let初始化实际调用 `sail_config_get`，可在 `model_init` 之前加载单独记录来源的有效JSON，再读取初始化结果验证；不能在初始化之后直接改let来跳过派生状态。完整兼容还需核其它配置回调、寄存器和隐藏状态的读取范围。见[C++重放方案](float_support_review/unified-backend-cpp-replay-plan.md)。
+
+### 纯判断消分叉后的严格region退役
+
+56cc候选的`valid_rd_mask`保留完整vm/rd语义，但改用strict Bool后已无IR Jump。旧d012该函数与348147规范化同形，旧`vexttype.toml`第0个region原本恰选中1个Jump；新函数及对应源码region均0 Jump/0 Monomorphize。因此该条不能靠换hash或平移坐标继续迁移，须用旧新函数、全域等价证明与实际新IR绑定后精确退役。退役证书`72e53ee2…c4fb`只授权这一条；77活跃配置/2归档配置不变，活跃region130→129，退役1另列，其余129继续严格验证。详见[IR迁移记录](float_support_review/solve-fix-ir-generation.md)。
+
+### 隐式异常let不在IR显式全局定义中
+
+Isla frame初始化动态注入`current_exception`、`have_exception`、`throw_location`。只遍历IR的`Def::Register/Def::Let`构造全局集合会漏掉它们；executor对let赋值不发`WriteReg`事件，因此仅动态事件白名单也不能证明完整纯读。56cc decoder/encoder闭包的三个`internal_error`特化及`reserved_behavior`各有三处写；let在push/pop间保持，`Arbitrary`可返回Poison继续，不能把所有异常路径假定为终止。完整纯读检查须同时处理隐式全局及实际路径写入；此前浮点重放证书按[独审勘误](float_support_review/unified-backend-cpp-replay-independent-audit.md)缩限，数值/架构状态实际观察与纯读证明分开。
