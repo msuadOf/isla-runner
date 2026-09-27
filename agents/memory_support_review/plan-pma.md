@@ -28,7 +28,7 @@
 
 - **S0（前置输入）**：确认 XiangShan/NEMU 重放环境真实内存布局（DRAM base/size、ROM/外设区），作为 S1 验收地图。（已完成：DRAM [0x80000000,0x90000000)，与 difftest `DEFAULT_EMU_RAM_SIZE=256MB` 一致；caveat：编译期宏，XIANGSHAN_TOOLS emu 构建是否覆盖未确认。）
 - **S1 具体配置地图**：TOML `[[pma_regions]]`（base/size + attr 别名 ram/rom/mmio/hole 或明细位，逐字段对齐模型 `PMA_Region`，含 misaligned 策略/reservability 枚举）；list-of-records 值构造 + 寄存器初始化（先 spike 验证装配路径）；TDD：配置地图 → 圈外按地图 trap；未配置与现状逐项一致。（已完成 2026-09-27：GREEN 端到端 131 写事件全落地图内、边界精确，证据 `/tmp/isla-memimpl-w10-20260927-032747/`；细节见 findings。）
-- **S2 边界符号化（opt-in 研究档）**：region 边界符号值，同地址"界内/界外"两类用例。
+- **S2 边界符号化（opt-in 研究档）**：region 边界符号值，同地址"界内/界外"两类用例。（已完成 2026-09-27（W17）最小实现与验收：spike 三点过、同址两类路径 3/3，证据 `/tmp/isla-memimpl-w17-091536/`；属性符号化仍属 S3。）
 - **S3 全符号地图（opt-in 研究档）**：record/属性符号化（同地址"是 RAM/是 MMIO"两假设）；fork 预算限流。
 - **部分钉死**：与 S2/S3 正交，混合 concrete/symbolic 控分叉。
 - **S4（另议）**：JSON 每路径地图判定结果，供 pipeline 过滤。

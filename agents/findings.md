@@ -1,5 +1,14 @@
 # Findings
 
+## 2026-09-27 内存一致性 W17（S2）：PMA 边界符号化
+
+- Spike 三点全过（单测 symbolic_pma_region_size_forks_matching_range）：plausible 放行含符号字段的 List(Struct)；defaults 路径注入后执行链完整消费（手写 IR 复刻真实链）；zrange_subset 符号比较自然分叉（3 路径 Sat，size 模型值与界内/外吻合）——[plan-pma](memory_support_review/plan-pma.md) S2 待验证点（AssumeReg/smt 消费符号 Struct-in-List）成立。
+- 实现（6 文件 +735，worktree commit d643e0e）：PmaSize{Concrete|Symbolic{min,max}}、size="symbolic"+可选 size_bounds（默认 [0x1000,2^43) 锚 emu 顶界）、域校验硬失败；apply_symbolic_pma_regions_to_registers 在 setup_pre_state 后 checkpoint 前注入（Sym 需活在 solver 里）；全具体走 W10 原路径；solve_pre_state 侧通道输出 pma_regions.<name>.size（FmtVal 不支持 List）；新配置 `riscv64_difftest_mem_excluded_pma_sym.toml`。
+- 端到端验收：钉址 sb@0x80001000 **同址两类路径**——Retire_Success+写事件（size=0x1002 界内）/ AccessFault（size=0x1000 界外），3/3 稳定 ~1.0s；具体基线回归一致；超域对照 x31=2^45 单 fault 证域约束生效。证据 `/tmp/isla-memimpl-w17-091536/`。
+- 回归 119/119、fmt 过；预存 enum sort 崩溃 stash 对照确认与本改动无关。
+- 遗留：首跑一次终值查询降级（高载偶发，复跑 5 次均秒级）；多 region 符号化未压测；属性符号化（S3）未做；符号边界用例对固定平台重放需 pipeline 过滤（S4 职责，README 已注明 oracle 提醒）。
+- 提交链：worktree 59e2b5d→f1fb43f→21b4388→d643e0e；根仓库 b11a6f6→8cadc13→608f756→8631735。摘要见[状态](memory_support_review/status.md)。
+
 ## 2026-09-27 内存一致性 W16：rv64_target_trait 预置失败清零
 
 - 诊断：`rv64_target_trait` 失败根因＝**测试断言未跟上 fd92696 的设计变更**（该提交把 x0/PC 排除从 setup_pre_state 上移到 reg_list 数据源，是承重逻辑：x0 回表会符号化恒零寄存器、PC 会经 solve_pre_state 泄入 isa_state JSON），非环境依赖、非回归；自 fd92696 起生产路径一直按新语义运行。
