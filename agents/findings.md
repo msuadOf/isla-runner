@@ -1,5 +1,13 @@
 # Findings
 
+## 2026-09-27 内存一致性 W18（S4）：pipeline 地图假设过滤
+
+- S4 落地（根仓库 commit 6c56001）：pipeline 解析 isa-state 的 pma_regions.<name>.size 模型值；有效地址复用 store_effective_address（fault 路径 events 为空）；过滤判定假设无关（成功要求地址<真实顶界、fault 要求≥，不一致跳过 reason=map-hypothesis-mismatch 并计数 map_hypothesis{checked,skipped}）；顶界 build `--map-limit` 可配（默认 EMU_RAM_LIMIT=0x80000000000）；假设顶界 base+size 仅诊断（hypothesis_consistent 自洽校验）；检查先于 fault preclass。
+- 修复一个隐藏问题：无 vreg 条目的 8 字节占位 .data（链接脚本 0x1000 对齐位）会与低地址用例精确相撞被误判 code-overlap——移除占位后 .text.init 成唯一窗口（新增测试锁定）。
+- 测试 61/61（基线 44+17）。端到端：W17 样例 case0 真机 GOODTRAP（1.39s，pre 恢复+U 态 payload+post 校验全过）；case1 正确跳过（hypothesis_consistent=true 证明差异确在地图维度）；W12 ok 131 条重建 built=104/overlap=27 逐数一致、抽检 3/3 GOODTRAP；fault32 30/2 与 W13/W14 预分类一致。证据 `/tmp/isla-memimpl-w18-20260927-104711/`（含 RESULT.txt）。
+- 遗留：多符号 region 仅记录 sizes；zLOAD 符号条目不支持（出现即报错）；--map-limit 不影响 preclass 口径；mcause 断言与 ④⑤ 分歧维持上报不修。
+- 提交链：根仓库 b11a6f6→8cadc13→608f756→8631735→5ba0cec→6c56001；worktree 至 d643e0e 不变。摘要见[状态](memory_support_review/status.md)。
+
 ## 2026-09-27 内存一致性 W17（S2）：PMA 边界符号化
 
 - Spike 三点全过（单测 symbolic_pma_region_size_forks_matching_range）：plausible 放行含符号字段的 List(Struct)；defaults 路径注入后执行链完整消费（手写 IR 复刻真实链）；zrange_subset 符号比较自然分叉（3 路径 Sat，size 模型值与界内/外吻合）——[plan-pma](memory_support_review/plan-pma.md) S2 待验证点（AssumeReg/smt 消费符号 Struct-in-List）成立。
@@ -1474,3 +1482,7 @@ Isla frame初始化动态注入`current_exception`、`have_exception`、`throw_l
 ### BF16调用V4合法性helper的实际参数域
 
 56cc四个BF16 root在后置SEW==16判断之前先经`get_sew`：`get_sew_pow`读vtype[5:3]，0..3正常给SEW={8,16,32,64}，4..7走AssertionFailure，不能用后置SEW==16倒推root入口域。rm来自fcsr[7:5]（bits3），rd/vm来自同constructor（bits5/bits1）。V4两helper零Jump，返回公式分别为8<=SEW<=64且rm不在{5,6,7}、vm==1或rd!=0；`illegal_fp_variable_width`仍短路聚合四个!valid，true沿实际SSA/Jump到Illegal，false仅继续caller检查。8个callee-instance集成合同经独审`e8330949…e7e2f`签收；旧40短路方向只保历史退役链接，不计新source真假分支。
+
+### 严格region的源码重叠不等于实际runtime选择
+
+`audit_workaround_regions`中的源码区间overlap不能替代Rust `SourceRegion::selects_ir_location`：运行时排除严格包围配置区域的指令位置。56cc→e6a独审对129配置region核出127实际非空、2个历史空（vxtype.toml region_fork_limits[7]/[8]），470 raw overlap经排除48后为422实际指令位置；两个空项在旧新版本都相同，`zget_fixed_rounding_incr`源码/结构保持。独审`7681cf6b…5464e`只签逐项选择行为保持，明确否定“129全部实际命中”；旧producer报告原字节保留，不能据overlap结果删/扩区间或新增退役。详见[IR记录](float_support_review/solve-fix-ir-generation.md)。
