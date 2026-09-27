@@ -1,5 +1,24 @@
 # Findings
 
+## 2026-09-28 内存一致性 W21：CSR 符号化与 mstatus 钉死定稿
+
+- 机制（worktree commit 898e267）：`[symbolic_registers]` 新段——整寄存器 symbolic 或 `pin_mask/pin_value` 位级钉死 + `nonzero_groups` 位组域约束；三处冲突硬失败；注入点镜像 W17（setup_pre_state 后 checkpoint 前）；**encdec/assembly 物化门改读按路径模型具象化的 CSR 克隆**（`concretize_symbolic_csrs`，G8 gen=0 根因的修复）；钉死采用"符号后 Assert"；未声明零开销。任意 symtab 存在、形状 bits(w≤64) 的 CSR 可挂，不要求在 reg_list。
+- mstatus 钉死定稿：SD/MBE/SBE=0、FS≠Off 域（decode 守卫的最小复刻——execute 本体不读 FS，纯自由符号模型会取 0 令门恒假）；MPP/MPRV/MXR/SUM/TVM/VS/UXL 等全符号。
+- FD 恢复验收：Zcd 四 clause gen 与 G8 已执行基线逐项一致（C_FLD/C_FLDSP 各 32、C_FSD/C_FSDSP 各 24）；mstatus 模型值全量输出、违例 0；zSTORE 对照零影响（128 条/514 行/6s 逐项一致）。修订 W19/G8 勘误二的"mstatus 置 FS≠0 一行即恢复"为已落地。证据 `/data1/baiyifan/tmp/isla-memimpl-w21-20260928-030550/`。
+- CSR 审计定稿已并入 [csr-audit](memory_support_review/csr-audit.md)：mstatus 落地；satp/PMP 族给部分钉死两难分析与建议（PMP 三阶段先符号化 pmpcfg0 低字节；satp 先钉 MODE=sv39+PPN=固定页表基址）；misa/mcountinhibit/mcyclecfg/minstretcfg/mtimecmp/stimecmp 建议保持钉死（单指令窗口不可观察或与 IR 固化 hartSupports 矛盾）；fcsr 挂 FP 议题。
+- 遗留：STORE_FP/LOAD_FP 不在本轮（width 守卫+符号长度 zeros，即 W19 ④-2）；C_FLW/C_FSW RV64 编译期死维持剔除结论；W17 PMA 符号 size 与 CSR 符号化共存未端到端（正交机制）。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-28 内存一致性 W20：AMO 128 位比较 panic 根治
+
+- 修复（worktree commit 0c4fd52，W19 ④-1）：IR 加载期 `insert_primops` 把 8 个比较算子 Call 按 symtab 改写为 PrimopBinary 原生 Bvult/Bvslt 等（同宽位向量比较不经 `%i` 整数往返）；`sail_signed` 128 位恒等；B129 按 (tag,bits) 字典序；n<128 与旧路径逐例等价、n≥128 是唯一正确语义。
+- TDD 10+1 绿、`cargo test -p isla --lib` 119/119、isla-lib 263 过。端到端 zAMO：rc=0、23s、**670 gen**（原 rc=134 零产物）=258 成功+408 AF+4 Addr_Align，五宽度与 aq/rl 变体齐全，`amominu.q.aq` 复现 Retire_Success+16B 独占事件；G3 出口基线 #1-6/#10-11 达成，#7/#8（AMOCAS 两臂）需定向约束、#9（写阶段 fault）形态难现——遗留。证据 `/data1/baiyifan/tmp/isla-memimpl-w20-20260928/`。
+- 附带发现：/tmp 用户配额满会致 println panic→SIGABRT 空 stderr，酷似引擎缺陷（产物已迁 /data1/baiyifan/tmp）。摘要见[状态](memory_support_review/status.md)。
+
+## 2026-09-28 浮点候选的运行层与诊断边界
+
+- fc4ce909候选只把Sail `valid_reg_group`末尾整数相等改为既有option/int通用相等；相同e7ba二进制、518文件诊断runtime、1800/1740/30秒全符号配置下，a040与fc4的模型源166项仅`vext_utils_insts.sail`不同。fc4诊断完成219605次Z3调用，匹配worker窗口FFI比例97.636480%，1800.655874秒外限124且无最终JSON；同预算a040为199004次/97.864493%，两者都未完成，次数或局部终态不构成收敛加速证明。fc4下一热点是`assert_vector_num_elem_upto_128`五处整数相等1612次/642.207秒，须隔离保分支验证；无上下文CheckSat3019次/988.636秒先补caller/phase归因。证据见[诊断报告](../isla/target/float-solve-evidence/z3-diagnostic-fc4ce-fvftype-analysis-20260927/final-030m/report.md)。
+- fc4官方stage使用517文件runtime和b42ac4f5…47e7二进制，诊断层使用518文件/e7ba；两层虽用同raw IR及77活跃strict，不可把诊断binary身份写成官方身份。现FVVMTYPE/FVFMTYPE新stage分别由[预检清单](../isla/target/float-solve-evidence/fvvmtype-fc4ce-prepared-20260928/evidence/manifest.json)及[对应清单](../isla/target/float-solve-evidence/fvfmtype-fc4ce-prepared-20260928/evidence/manifest.json)绑定，均以完整符号输入域启动；运行中无最终JSON不计完成。
+
 ## 2026-09-27 内存 clause 分支覆盖对照（W19+G1-G8）
 
 - 口径：worktree d643e0e isarch（md5 b53f…）、配置 `riscv64_difftest_mem_excluded_pma.toml`（= W15 修正后 green 基线）、fork 预算 1/12、smt-timeout 1m；48 clause、45 有 JSON、4124 gen=1251 成功+1135 Load_AF+1012 Illg+712 SAMO_AF+10 VirI+4 Addr_Align；zSTORE 24/104 与 W15 基线逐数一致。合并矩阵与逐组证据见[议题合并矩阵](memsolve_branch_coverage/coverage-matrix.md)与 `/tmp/isla-memsolve-survey-20260927-125738/coverage/G1..G8`。
@@ -1521,3 +1540,18 @@ Isla `primop.rs::try_concretize_bool_exp` 对比较表达式主动调用 `check_
 ### 正常 trace 与路径继承计时不足以归因 SMT
 
 441c FVFTYPE 固定一小时trace前缀的858个完整终态与log逐项一致，包含6条实际浮点Retire；但正常trace没有逐查询耗时。默认路径统计会继承fork祖先，不能对所有终态求和当运行总量，worker CPU也包含Z3 FFI。trace短尾无case header时不能反推其case或当前worker前沿。性能结论必须区分完整终态、已执行路径、当前未完成查询和资源采样；独审 `dc8d953e…e1041` 只签该固定前缀的来源/计数及执行事实，不签FP SMT主导或加速。新独立诊断将按worker不可回滚的真实FFI事件计数，未测阶段保留未归因。
+
+
+### 归约改动的源码迁移与严格区域范围不同
+
+a040组合仅改 `model/extensions/V/vext_fp_utils_insts.sail` 两个helper，文件767→770行；77活跃配置的129个region没有指向该文件，所以配置除IR哈希外保持原字节是本批实际验证结果，并非“行号变化可忽略”的一般规则。实际Rust selector旧新均422引用、127非空/2历史空；该文件其余133条控制引用另按真实＋4/＋3 SourceLoc精确映射。证书 `517a7cad…ba7ae` 只签本批冻结迁移，详见[IR生成记录](float_support_review/solve-fix-ir-generation.md)。
+
+
+### 原生 Env 名称存在性不证明 module 可见性
+
+冻结Sail的 `Env.has_val_spec` 只检查Bindings中是否存在名字；当前AST exporter以它给出的 `class=callee` 只能证明名称库存，不能签实际module选择。`item_in_scope`还要求同module、已opened且Public、或open_all，`start_module`构造global_scope及requires；真实 `get_val_spec_opt` 通过 `get_item`检查scope，并返回声明位置和freshen后的类型。后续完整callee身份必须结合实际Env选择与声明位置，不能仅按private/Public名字筛选。该限制解释了完整source分母中的module门为何仍OPEN，详见[源码覆盖](float_support_review/e-coverage.md)。
+
+
+### DEF_val附带的Env是声明前状态，不能替代真实声明后流水线
+
+冻结Sail的`type_check.ml::check_def`先以`def_annot_map_env`保存输入Env；`check_val_spec`的annotate同样捕获入口Env，随后才返回`Env.add_val_spec`后的Env。因此直接查询`DEF_val.annot.env`不能证明当前声明加入后的签名。`check_defs_progress`还对global声明使用`with_global_scope`/`restore_scope`、对private声明应用`with_private_visibility_if`；`check_with_envs`直接调用`check_def`并递归，未包含这些wrapper，不能直接替代实际pipeline作after-state证据。事实核对基于隔离工具链`toolchain-a198-v2-20260927/sail-src/src/lib/type_check.ml`的第4977、5475、5571和5618行，源SHA `95967d02…e1a7`；完整Env等价仍待真实流水线hook验证。详见[源码覆盖](float_support_review/e-coverage.md)及[Env独审工作记录](../isla/target/float-support-review/final-coverage/integration/p1-56cc69/source-ast-full/independent-environment-resolution-review-v2/status.md)。
