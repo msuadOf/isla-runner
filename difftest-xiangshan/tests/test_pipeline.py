@@ -855,5 +855,299 @@ class FaultPreclassCompileTests(unittest.TestCase):
             self.assertEqual(case["elf"], str(elf))
 
 
+FAULT_RET_VAL = (
+    "Memory_Exception({tuple#%bv64_%union ExceptionType0: #x0000000080001000, "
+    "tuple#%bv64_%union ExceptionType1: E_SAMO_Access_Fault(())})"
+)
+
+
+def make_symbolic_boundary_entry(
+    ret_val="Retire_Success(())",
+    size="64'h0000_0000_0000_1002",
+    address="64'h0000_0000_8000_1000",
+    empty_memory=False,
+):
+    """W17 符号边界 zSTORE 条目：isa-state 带 pma_regions.ram.size 侧通道值。
+
+    成功路径带 pre/post/events（样例 case0，size=0x1002 顶界=地址+2）；fault 路径
+    三者为空（样例 case1，size=0x1000 顶界=地址）。地址即 x31（偏移 0）。
+    """
+    entry = {
+        "test-ins": "sb x0, 0x0(x31)",
+        "test-ins-encdec": "32'h000f_8023",
+        "isa-state": {
+            "cur_privilege": "User",
+            "pma_regions.ram.size": size,
+            "x31": address,
+        },
+        "ret_val": ret_val,
+    }
+    if empty_memory:
+        entry.update({"pre-memory": [], "post-memory": [], "memory-events": []})
+    else:
+        entry.update({
+            "pre-memory": [{"address": address, "bytes": 1, "value": None}],
+            "post-memory": [{"address": address, "bytes": 1, "value": "8'h00"}],
+            "memory-events": [
+                {
+                    "kind": "write",
+                    "exclusive": False,
+                    "region": "default",
+                    "address": address,
+                    "bytes": 1,
+                    "value": "1'h0",
+                    "data": "8'h00",
+                }
+            ],
+        })
+    return entry
+
+
+class MapHypothesisParseTests(unittest.TestCase):
+    def test_parses_size_base_top_and_effective_address(self):
+        hypothesis = pipeline.parse_map_hypothesis(make_symbolic_boundary_entry())
+
+        self.assertEqual(hypothesis["region"], "ram")
+        self.assertEqual(hypothesis["size"], 0x1002)
+        # base 约定：JSON 不含 base 字段，单 region "ram" 钉 DRAM 基界
+        self.assertEqual(hypothesis["base"], 0x80000000)
+        self.assertEqual(hypothesis["top"], 0x80001002)
+        # 有效地址来自指令偏移+基址寄存器，不依赖 memory-events
+        self.assertEqual(hypothesis["address"], 0x80001000)
+
+    def test_fault_path_resolves_address_without_memory_events(self):
+        # W17 case1：AccessFault 路径 pre/post/events 全空，地址只能从指令推导
+        hypothesis = pipeline.parse_map_hypothesis(
+            make_symbolic_boundary_entry(
+                ret_val=FAULT_RET_VAL, size="64'h0000_0000_0000_1000", empty_memory=True
+            )
+        )
+
+        self.assertEqual(hypothesis["size"], 0x1000)
+        self.assertEqual(hypothesis["top"], 0x80001000)
+        self.assertEqual(hypothesis["address"], 0x80001000)
+
+    def test_entry_without_symbolic_size_returns_none(self):
+        self.assertIsNone(pipeline.parse_map_hypothesis(make_memory_entry()))
+        self.assertIsNone(pipeline.parse_map_hypothesis(make_fault_entry()))
+
+    def test_malformed_size_value_propagates(self):
+        entry = make_symbolic_boundary_entry(size="64'x")
+        with self.assertRaisesRegex(ValueError, "pma_regions"):
+            pipeline.parse_map_hypothesis(entry)
+
+    def test_unresolvable_address_raises(self):
+        # 含符号 size 却解析不出有效地址：无法对照真实地图，宁可构建失败也不放过
+        entry = make_symbolic_boundary_entry()
+        entry["test-ins"] = "fence iorw, iorw"
+        with self.assertRaisesRegex(ValueError, "有效地址"):
+            pipeline.parse_map_hypothesis(entry)
+
+
+class MapHypothesisFilterTests(unittest.TestCase):
+    def make_fault_case(self):
+        return make_symbolic_boundary_entry(
+            ret_val=FAULT_RET_VAL, size="64'h0000_0000_0000_1000", empty_memory=True
+        )
+
+    def test_ok_path_inside_real_map_is_replayable(self):
+        # W17 case0：地址 0x80001000 在假设顶界内成功，也在真实顶界 0x80000000000 内
+        # → 期望行为在真实地图下成立，可重放
+        skip, record = pipeline.classify_map_hypothesis(make_symbolic_boundary_entry())
+
+        self.assertIsNone(skip)
+        self.assertTrue(record["consistent_with_real_map"])
+        self.assertEqual(record["real_limit"], 0x80000000000)
+        # base 约定自洽：地址在假设顶界 0x80001002 内
+        self.assertTrue(record["hypothesis_consistent"])
+
+    def test_fault_path_inside_real_map_is_skipped(self):
+        # W17 case1：假设顶界 0x80001000、地址界外 fault；真实地图地址在界内，
+        # fault 不成立 → map-hypothesis-mismatch
+        skip, record = pipeline.classify_map_hypothesis(self.make_fault_case())
+
+        self.assertEqual(skip, "map-hypothesis-mismatch")
+        self.assertFalse(record["consistent_with_real_map"])
+        self.assertTrue(record["hypothesis_consistent"])
+
+    def test_ok_path_beyond_real_map_is_skipped(self):
+        # 反向：成功路径但地址 ≥ 真实顶界（符号域上界 2^43 处），重放必 fault
+        skip, record = pipeline.classify_map_hypothesis(
+            make_symbolic_boundary_entry(address="64'h0000_8000_0000_0000")
+        )
+
+        self.assertEqual(skip, "map-hypothesis-mismatch")
+        self.assertFalse(record["consistent_with_real_map"])
+
+    def test_fault_path_beyond_real_map_is_replayable(self):
+        skip, record = pipeline.classify_map_hypothesis(
+            make_symbolic_boundary_entry(
+                ret_val=FAULT_RET_VAL, address="64'h0000_8000_0000_0000", empty_memory=True
+            )
+        )
+
+        self.assertIsNone(skip)
+        self.assertTrue(record["consistent_with_real_map"])
+
+    def test_custom_map_limit_changes_verdict(self):
+        # 重放平台地图可配：真实顶界收到 0x80001000 时，case0 的成功路径不再成立，
+        # case1 的 fault 路径反而与地图一致
+        ok_entry = make_symbolic_boundary_entry()
+
+        skip_ok, _ = pipeline.classify_map_hypothesis(ok_entry, map_limit=0x80001000)
+        skip_fault, _ = pipeline.classify_map_hypothesis(
+            self.make_fault_case(), map_limit=0x80001000
+        )
+
+        self.assertEqual(skip_ok, "map-hypothesis-mismatch")
+        self.assertIsNone(skip_fault)
+
+    def test_no_symbolic_size_is_never_filtered(self):
+        self.assertEqual(pipeline.classify_map_hypothesis(make_memory_entry()), (None, None))
+        self.assertEqual(pipeline.classify_map_hypothesis(make_fault_entry()), (None, None))
+
+
+class MapHypothesisCompileTests(unittest.TestCase):
+    def test_compile_case_skips_mismatch_before_linking(self):
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            linker = output / "xiangshan.ld"
+            entry = make_symbolic_boundary_entry(
+                ret_val=FAULT_RET_VAL, size="64'h0000_0000_0000_1000", empty_memory=True
+            )
+            with patch.object(pipeline.subprocess, "run") as run:
+                case = pipeline.compile_case(0, entry, output, linker, "gcc", 128)
+
+            run.assert_not_called()
+            self.assertEqual(case["skipped_reason"], "map-hypothesis-mismatch")
+            self.assertEqual(case["path_class"], "fault")
+            self.assertNotIn("elf", case)
+            self.assertFalse((output / "case-000").exists())
+            self.assertEqual(case["map_hypothesis"]["size"], 0x1000)
+            self.assertFalse(case["map_hypothesis"]["consistent_with_real_map"])
+
+    def test_compile_case_builds_consistent_entry_and_records_hypothesis(self):
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            linker = output / "xiangshan.ld"
+            linker.write_text(pipeline.LINKER, encoding="utf-8")
+            entry = make_symbolic_boundary_entry()
+            elf = output / "case-000" / "program.elf"
+
+            def fake_run(command, check=None):
+                # 代码窗口只含 .text.init，不与 0x80001000 内存段重叠
+                elf.write_bytes(synthetic_elf_bytes([(0x80000000, 0x120)]))
+                return None
+
+            with patch.object(pipeline.subprocess, "run", side_effect=fake_run):
+                case = pipeline.compile_case(0, entry, output, linker, "gcc", 128)
+
+            self.assertIsNone(case["skipped_reason"])
+            self.assertEqual(case["elf"], str(elf))
+            self.assertEqual(case["map_hypothesis"]["top"], 0x80001002)
+            recorded = json.loads(
+                (output / "case-000" / "case.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(recorded["map_hypothesis"]["size"], 0x1002)
+            self.assertEqual(recorded["map_hypothesis"]["real_limit"], 0x80000000000)
+
+    def test_compile_case_honors_custom_map_limit(self):
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            linker = output / "xiangshan.ld"
+            entry = make_symbolic_boundary_entry()
+            with patch.object(pipeline.subprocess, "run") as run:
+                case = pipeline.compile_case(
+                    0, entry, output, linker, "gcc", 128, map_limit=0x80001000
+                )
+
+            run.assert_not_called()
+            self.assertEqual(case["skipped_reason"], "map-hypothesis-mismatch")
+
+
+class MapHypothesisSummaryTests(unittest.TestCase):
+    def test_build_summary_counts_map_hypothesis(self):
+        with TemporaryDirectory() as directory:
+            source = Path(directory) / "in.json"
+            source.write_text(
+                json.dumps(
+                    {
+                        "gen": [
+                            make_symbolic_boundary_entry(),
+                            make_symbolic_boundary_entry(
+                                ret_val=FAULT_RET_VAL,
+                                size="64'h0000_0000_0000_1000",
+                                empty_memory=True,
+                            ),
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            out = Path(directory) / "elf"
+            args = SimpleNamespace(
+                input=str(source),
+                output=str(out),
+                vlen_bits=128,
+                compiler="gcc",
+                jobs=1,
+                sample_mode="all",
+                map_limit=pipeline.EMU_RAM_LIMIT,
+            )
+            built_case = {
+                "id": "case-000",
+                "path_class": "ok",
+                "skipped_reason": None,
+                "preclass": None,
+                "map_hypothesis": {"region": "ram"},
+                "elf": "x",
+            }
+            skipped_case = {
+                "id": "case-001",
+                "path_class": "fault",
+                "skipped_reason": "map-hypothesis-mismatch",
+                "preclass": None,
+                "map_hypothesis": {"region": "ram"},
+            }
+            with patch.object(
+                pipeline, "compile_case", side_effect=[built_case, skipped_case]
+            ):
+                pipeline.build(args)
+
+            summary = json.loads(
+                (out / "build-summary.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(summary["built"], 1)
+            self.assertEqual(summary["skipped"], {"map-hypothesis-mismatch": 1})
+            self.assertEqual(summary["map_hypothesis"], {"checked": 2, "skipped": 1})
+
+
+class DataSectionTests(unittest.TestCase):
+    def test_entry_without_vregs_omits_dead_data_section(self):
+        # W17 样例访存地址 0x80001000 与 8 字节占位 .data 精确相撞（code-overlap
+        # 误伤可重放条目）；无 vreg 条目不引用 vector_initial_state，省去占位段
+        assembly = pipeline.make_assembly(make_symbolic_boundary_entry(), 128)
+
+        self.assertNotIn(".section .data", assembly)
+        self.assertNotIn("vector_initial_state", assembly)
+
+    def test_entry_with_vregs_keeps_vector_initial_state(self):
+        entry = {
+            "test-ins": "vadd.vv v8, v4, v12",
+            "test-ins-encdec": "32'h0246_0457",
+            "isa-state": {
+                "cur_privilege": "User",
+                "vl": "64'h0000_0000_0000_0007",
+                "vtype": "64'h0000_0000_0000_00da",
+                "vr8": "128'h0000_0000_0000_0000_0000_0000_0000_0001",
+            },
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn(".section .data", assembly)
+        self.assertIn("vector_initial_state:", assembly)
+
+
 if __name__ == "__main__":
     unittest.main()

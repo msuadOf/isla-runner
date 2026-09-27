@@ -52,6 +52,16 @@ PRECLASS_INMAP_ALIGNED_FAULT = "in-map-aligned-fault"
 # DRAM 宏对该 emu 不适用。
 EMU_RAM_BASE = 0x80000000
 EMU_RAM_LIMIT = 0x80000000000
+# S4 地图假设过滤（W17 符号边界用例配套）：`[[pma_regions]] size="symbolic"` 求解
+# 后每条路径 isa-state 带 pma_regions.<name>.size 模型值（侧通道）。S4 oracle
+# 规则：符号化地图假设的重放必须与目标平台真实地图一致——期望行为（成功/fault）
+# 在真实地图下不成立的路径跳过（其价值在生成期多地图假设覆盖，不在固定平台重放）。
+SKIP_MAP_HYPOTHESIS_MISMATCH = "map-hypothesis-mismatch"
+PMA_SIZE_KEY_RE = re.compile(r"^pma_regions\.([A-Za-z0-9_-]+)\.size$")
+# 假设顶界（base+size）推导的基界约定：W17 符号配置单 region "ram" 钉 DRAM 基界，
+# JSON 不携带 base 字段（README 记录该约定）；过滤判定本身只依赖真实顶界与有效
+# 地址，不依赖该约定。
+MAP_HYPOTHESIS_BASE = EMU_RAM_BASE
 STORE_EFFECT_RE = re.compile(
     r"^(s[bhwd])\s+\S+,\s*(-?0[xX][0-9a-fA-F]+|-?\d+)\((x(?:[0-9]|[12][0-9]|3[01]))\)$"
 )
@@ -113,6 +123,75 @@ def classify_fault_preclass(entry: dict) -> tuple[str | None, str | None]:
     if in_map and not misaligned:
         return None, PRECLASS_INMAP_ALIGNED_FAULT
     return None, None
+
+
+def parse_map_hypothesis(entry: dict) -> dict | None:
+    """解析符号边界路径的地图假设（W17 侧通道 pma_regions.<name>.size）。
+
+    返回 {regions, region, size, base, top, address}；无符号 size 键返回 None。
+    顶界 top = base + size：单符号 region 按约定取 MAP_HYPOTHESIS_BASE（样本配置
+    region "ram" 即 DRAM 基界，JSON 未携带 base 字段）；多符号 region 只记录各
+    size、top 置 None。有效地址复用 store_effective_address（fault 路径
+    memory-events 为空，从指令偏移+基址寄存器解析）；解析失败抛 ValueError——
+    含符号 size 却无法核实访存地址的条目宁可构建失败，不可直接重放。
+    """
+    state = entry.get("isa-state")
+    if not isinstance(state, dict):
+        return None
+    sizes: dict[str, int] = {}
+    for key, raw in state.items():
+        match = PMA_SIZE_KEY_RE.match(key)
+        if match is None:
+            continue
+        sizes[match.group(1)] = parse_bits(str(raw), key)
+    if not sizes:
+        return None
+    resolved = store_effective_address(entry)
+    if resolved is None:
+        raise ValueError(
+            f"条目含符号 pma_regions size（{sorted(sizes)}）但无法解析有效地址，"
+            "S4 地图假设过滤要求可核实的访存地址"
+        )
+    address, _ = resolved
+    hypothesis = {
+        "regions": dict(sizes),
+        "region": next(iter(sizes)),
+        "size": next(iter(sizes.values())),
+        "base": MAP_HYPOTHESIS_BASE,
+        "top": None,
+        "address": address,
+    }
+    if len(sizes) == 1:
+        hypothesis["top"] = (MAP_HYPOTHESIS_BASE + hypothesis["size"]) % (1 << 64)
+    return hypothesis
+
+
+def classify_map_hypothesis(
+    entry: dict, map_limit: int = EMU_RAM_LIMIT
+) -> tuple[str | None, dict | None]:
+    """S4 地图假设过滤：符号边界路径的期望行为必须在真实地图下才可重放。
+
+    成功路径要求有效地址 < map_limit（真实图内），fault 路径（expects_trap）要求
+    有效地址 >= map_limit（真实图外）；一致返回 (None, hypothesis 记录)，不一致
+    返回 (map-hypothesis-mismatch, 记录)。无符号 size 返回 (None, None)，对既有
+    用例零影响。记录中 hypothesis_consistent 是假设自洽性诊断（ret_val 与
+    地址/假设顶界 base+size 是否吻合，校验 base 约定），不参与过滤判定。
+    """
+    hypothesis = parse_map_hypothesis(entry)
+    if hypothesis is None:
+        return None, None
+    address = hypothesis["address"]
+    in_real_map = address < map_limit
+    fault_expected = expects_trap(entry)
+    consistent = in_real_map != fault_expected
+    record = dict(hypothesis)
+    record["real_limit"] = map_limit
+    record["consistent_with_real_map"] = consistent
+    top = hypothesis["top"]
+    record["hypothesis_consistent"] = (
+        None if top is None else (address < top) != fault_expected
+    )
+    return (None if consistent else SKIP_MAP_HYPOTHESIS_MISMATCH, record)
 
 
 def read_json(path: Path) -> dict:
@@ -580,7 +659,12 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
             "    # 不预期 trap：任何 trap 在此挂起，由超时判定失败",
             "2:  j 2b",
         ]
-    data = "\n".join(words) if words else "    .dword 0"
+    # 无 vreg 条目不发射占位数据段：8 字节 .dword 0 会让 .data 落在链接脚本
+    # 0x80001000 对齐位，与以该地址为访存窗口的用例精确相撞（code-overlap 误伤）
+    if words:
+        tail = [".section .data", ".align 3", "vector_initial_state:", "\n".join(words), ""]
+    else:
+        tail = []
     return "\n".join([
         ".option norvc", ".section .text.init", ".globl _start", "_start:",
         *init,
@@ -590,8 +674,7 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
         "1:  j 1b",
         *park_lines,
         *trap_handler,
-        ".section .data", ".align 3",
-        "vector_initial_state:", data, "",
+        *tail,
     ])
 
 
@@ -608,7 +691,15 @@ SECTIONS {
 """
 
 
-def compile_case(index: int, entry: dict, output: Path, linker: Path, compiler: str, vlen_bits: int) -> dict:
+def compile_case(
+    index: int,
+    entry: dict,
+    output: Path,
+    linker: Path,
+    compiler: str,
+    vlen_bits: int,
+    map_limit: int = EMU_RAM_LIMIT,
+) -> dict:
     case_dir = output / f"case-{index:03d}"
     plan = memory_plan(entry)
     case = {
@@ -623,7 +714,15 @@ def compile_case(index: int, entry: dict, output: Path, linker: Path, compiler: 
         "memory": {**plan["counts"], **plan["raw"]},
         "skipped_reason": None,
         "preclass": None,
+        "map_hypothesis": None,
     }
+    # S4 地图假设过滤先于 fault 预分类：符号边界假设与真实地图不符的路径直接跳过
+    hypothesis_skip, hypothesis = classify_map_hypothesis(entry, map_limit)
+    if hypothesis is not None:
+        case["map_hypothesis"] = hypothesis
+        if hypothesis_skip:
+            case["skipped_reason"] = hypothesis_skip
+            return case
     if case["expect_trap"]:
         preclass_skip, preclass_tag = classify_fault_preclass(entry)
         case["preclass"] = preclass_tag
@@ -686,7 +785,9 @@ def build(args: argparse.Namespace) -> None:
     with ThreadPoolExecutor(max_workers=args.jobs) as executor:
         manifest = list(
             executor.map(
-                lambda pair: compile_case(pair[0], pair[1], output, linker, args.compiler, args.vlen_bits),
+                lambda pair: compile_case(
+                    pair[0], pair[1], output, linker, args.compiler, args.vlen_bits, args.map_limit
+                ),
                 enumerate(entries),
             )
         )
@@ -705,6 +806,10 @@ def build(args: argparse.Namespace) -> None:
         "built": sum(1 for case in manifest if case.get("elf")),
         "skipped": skipped,
         "preclass": preclass,
+        "map_hypothesis": {
+            "checked": sum(1 for case in manifest if case.get("map_hypothesis")),
+            "skipped": skipped.get(SKIP_MAP_HYPOTHESIS_MISMATCH, 0),
+        },
         "path_class": {
             "ok": sum(1 for case in manifest if case["path_class"] == "ok"),
             "fault": sum(1 for case in manifest if case["path_class"] == "fault"),
@@ -895,6 +1000,15 @@ def main() -> None:
         default="all",
         choices=list(SAMPLE_MODES),
         help="采样模式：all 全量（默认）；first-per-encoding 每个编码仅保留首条",
+    )
+    build_parser.add_argument(
+        "--map-limit",
+        type=lambda value: int(value, 0),
+        default=EMU_RAM_LIMIT,
+        help=(
+            "S4 地图假设过滤的目标平台真实 RAM 顶界（支持十六进制；"
+            f"默认 emu 实测 0x{EMU_RAM_LIMIT:x}）"
+        ),
     )
     run_parser = commands.add_parser("run")
     run_parser.add_argument("--cases", default=str(DEFAULT_OUT / "elf"))

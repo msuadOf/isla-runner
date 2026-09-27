@@ -85,9 +85,11 @@ Isla 输出的 `pre-memory`（首触内存，首触写为 `value: null`）、`po
   - 低位错位（有效地址 <0x80000000 且未对齐）：emu 报 access fault（mcause7）、NEMU 报 store misaligned（mcause6），difftest 对 mcause 分歧直接 ABORT——两侧都 fault、Isla 判 fault 正确，属工具链级真分歧，跳过重放并计数（`skipped_reason: lowaddr-misaligned-mcause-divergence`）。
   - 图内对齐（[0x80000000,8TB) 且对齐）：Isla 历史上因 PMP 符号化产出假 fault（W13 全量 107/2479）；isla 侧在 `[registers.defaults]` 钉死 PMP 后应消失。**不跳过**，仅标注计数（`preclass: in-map-aligned-fault`，进 `build-summary.json` 的 `preclass`），出现即提示上游回归。
   - 图内错位（emu 支持错位退休 vs Isla `plat_enable_misaligned_access=false`）为另一真分歧（W13 ⑤），当前用例集未触发，不在此处理。
-- **代码窗口（两遍构建）**：第一次链接后解析 ELF 各 ALLOC section 的实际占用区间，pre/post/memory-events 触碰地址与代码（含 `.data`）重叠的条目精确跳过（`skipped_reason: code-overlap`，汇编保留供诊断），避免前导 store 覆写自身代码；其余条目再链接一次生成最终 ELF。
+- **符号边界地图假设过滤（S4，W17 配套）**：Isla `[[pma_regions]] size="symbolic"` 求解的用例，每条路径 `isa-state` 携带 `pma_regions.<name>.size` 模型值（侧通道；fault 路径 `memory-events` 为空）。`build` 对含该键的路径执行 S4 oracle 过滤——路径期望行为必须在目标平台真实地图下成立：成功路径要求有效地址 < 真实顶界、fault 路径要求 ≥（有效地址复用 zSTORE 解析：指令偏移 + 基址寄存器，与 fault 预分类同源）；不成立则跳过（`skipped_reason: map-hypothesis-mismatch`，计入 `build-summary.json` 的 `skipped` 与 `map_hypothesis{checked,skipped}`）。此类路径的价值在生成期一次求解覆盖多地图假设，不在固定平台重放。无符号 size 的条目零影响；含符号 size 却无法解析有效地址的条目构建期报错（宁可失败也不重放未核实的假设）。
+- **真实顶界配置**：默认 `0x80000000000`（emu 实测有效 RAM 顶界，模块常量 `EMU_RAM_LIMIT`），`build --map-limit 0x...` 可覆盖（如重放到可配地图的平台）。假设顶界（base+size）仅为诊断记录，不参与判定：JSON 不携带 base 字段，按约定单 region `ram` 取 DRAM 基界 `0x80000000`（`EMU_RAM_BASE`，与 W17 符号配置一致），连同 region/size/top/address/一致性写入 `manifest.json` 与 `case.json` 的 `map_hypothesis` 字段，其中 `hypothesis_consistent` 校验该 base 约定与 ret_val 是否自洽、`consistent_with_real_map` 是过滤判定本身；多符号 region 只记录各 size、top 置空。
+- **代码窗口（两遍构建）**：第一次链接后解析 ELF 各 ALLOC section 的实际占用区间，pre/post/memory-events 触碰地址与代码（含 `.data`）重叠的条目精确跳过（`skipped_reason: code-overlap`，汇编保留供诊断），避免前导 store 覆写自身代码；其余条目再链接一次生成最终 ELF。无 vreg 初始状态的条目不发射占位 `.data`：原 8 字节 `vector_initial_state` 占位恰落在链接脚本的 0x80001000 对齐位，会与以该地址为访存窗口的用例相撞而误判 code-overlap，且占位无任何引用。
 - **采样**：默认全量；大批量可用 `build --sample-mode first-per-encoding` 每个编码仅保留首条。
-- **产物**：`manifest.json` 逐条含 `path_class`（`ok`/`fault`）、`memory` 计数与 pre/post/events 抄录、fault 条目的 `preclass` 标注；`build-summary.json` 汇总 built/skipped/path_class/preclass 计数；`run` 自动跳过无 ELF 的条目。
+- **产物**：`manifest.json` 逐条含 `path_class`（`ok`/`fault`）、`memory` 计数与 pre/post/events 抄录、fault 条目的 `preclass` 标注、符号边界条目的 `map_hypothesis` 记录；`build-summary.json` 汇总 built/skipped/path_class/preclass/map_hypothesis 计数；`run` 自动跳过无 ELF 的条目。
 
 ```bash
 python3 pipeline.py prepare-json --source /path/to/rv64_zSTORE.json --vlen-bits 128 \
