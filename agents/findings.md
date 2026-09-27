@@ -1,5 +1,14 @@
 # Findings
 
+## 2026-09-27 内存一致性 W14：PMA 8TB 对齐 + PMP 钉死 + pipeline 预分类
+
+- 实施：isla worktree 配置 `riscv64_difftest_mem_excluded_pma.toml`——① pma size 0x10000000→0x7FFF80000000（RAM=[0x80000000,0x80000000000) 对齐 emu 8TB）；② `[registers.defaults]` 钉死 PMP 族寄存器：pmpcfg_n=[{bits=0x1f};64]、pmpaddr_n=[0xffffffffffffffff;64]（NAPOT-全1-RWX）。关键核实：sys_pmp_count=16 是 IR let（const_primops 死配置，即 W13"未折叠"根因），全钉 OFF 会 U/S fallthrough 必 fault，故钉许可式 NAPOT。README 增修订注记。根仓库 pipeline.py 预分类（store_effective_address+classify_fault_preclass+preclass 计数；分类器从"图外且错位"收紧为"<0x80000000 且错位"防误跳），tests +9 共 44/44。证据 `/tmp/isla-memimpl-w14-20260927-065108/`。
+- 定向验证：c015/c030 假 fault 消失（92f+28o→1 成功带写事件）；5 条 @0x90000000 全转成功；图外对照（0x6ffffffc、0x10000000、2^43 恰界、+0x100）全 AccessFault 边界精确。
+- green 重跑：修复前 131 成功/2479 fault/107 图内假 fault → **修复后 128 gen=24 成功/104 fault/图内假 fault 0**（路径数坍缩为 PMP 符号分支消除的预期结果）。
+- fault32 复跑：**9 失败→0**（30/30：5 条顶界+2 条假 fault 重解转 ok 类 GOODTRAP、2 条低位错位预分类 skip、23 条保持 GOODTRAP 含 −1 回绕用例）；ok 回归 15/15。
+- 遗留/上报：④ 错位优先级真分歧（NEMU mcause6 vs emu mcause7）已预分类跳过不修；⑤ plat_enable_misaligned_access=false vs emu 支持错位，未来错位用例成分歧源；**W14 新发现（W15 候选）**：2^43 顶界以上放行非单调（2^43+1/2^44/2^47−ε 放行，2^43/2^43+0x100/2^47/2^63 fault），与 range_subset 环绕语义手算矛盾，疑访存路径短路或宽度推断问题，需 IR 级定位；不影响 ≤2^43 与本次全部重放。
+- 提交：isla worktree 收口 commit 59e2b5d（W2-W14，17 文件 +5682/−471，注明含用户并行改动）；根仓库 b11a6f6（议题文档+harness，12 文件 +1442/−35）。用户已要求此后每完成一个 W 即 commit。摘要见[状态](memory_support_review/status.md)。
+
 ## 2026-09-27 内存一致性 W13：fault 分歧裁定与 emu 内存地图修订（只读诊断）
 
 - 修订一（重要）：此前 W10/W12 记录的"重放环境 DRAM=[0x80000000,0x90000000)（difftest `DEFAULT_EMU_RAM_SIZE=256MB`）"对该 emu 不成立——实测+源码（SoC.scala:335 memRange、Parameters.scala:568 SimMemSize=8190GB）证实 emu 有效 RAM=[0x80000000,0x80000000000)（8TB）；探针实测 0x90000000..0x1000000000 放行、0x9/0x2ff/0x80000000000 fault。原 256MB 宏适用于 difftest csrc 侧，不约束该 emu；W12 的"探针 256MB 上界成立"实际只证 0x8ffffff8 可达。证据 `/tmp/isla-memimpl-w13-20260927-053000/`。
