@@ -1,5 +1,15 @@
 # Findings
 
+## 2026-09-27 内存 clause 分支覆盖对照（W19+G1-G8）
+
+- 口径：worktree d643e0e isarch（md5 b53f…）、配置 `riscv64_difftest_mem_excluded_pma.toml`（= W15 修正后 green 基线）、fork 预算 1/12、smt-timeout 1m；48 clause、45 有 JSON、4124 gen=1251 成功+1135 Load_AF+1012 Illg+712 SAMO_AF+10 VirI+4 Addr_Align；zSTORE 24/104 与 W15 基线逐数一致。合并矩阵与逐组证据见[议题合并矩阵](memsolve_branch_coverage/coverage-matrix.md)与 `/tmp/isla-memsolve-survey-20260927-125738/coverage/G1..G8`。
+- ①覆盖良好：标量 LOAD/STORE、压缩 13 clause（B/H 四形态全、C_LB 为⑤）、LR（成功/AF/Align 齐且 Align 独立检查定论）、SC 成功/fault（失配②）、向量 unit/mask 与段式（部分成功后异常、first-fault 全分支 i==0 异常 97+trim 100+尾段二分 52/48）、cbo/fence 10 clause 全（TVM 双向同编码实证、VirI 真实可达、cbo.zero 真实 64B 零写）。
+- 勘误一：`plat_enable_misaligned_access` IR 固化 **true**（rv64d.ir:10771，取 Sail config 默认；TOML `[const_primops]` 同名键对 let 无效是死配置）——非对齐走拆分且 B/H 已覆盖成功，普通访存 Addr_Align 出口②不可达，仅 LR（res=true 无条件检查，vmem_utils.sail:125-129）可出（全 survey 仅 4 条全出自 LR）；需覆盖须重生成 IR。同时修订 W13 上报项⑤的前提（该配置并未生效为 false，错位分歧源预测需重估）。
+- 勘误二：`sys_enable_fdext` 死键（IR 0 次出现，扩展开关 IR 生成期烘 hartSupports），FD 真实闸门是 mstatus=0x600 的 FS=Off（fdext_control.sail:19）；solve-state 绕过 decode，关 FD 只杀 encdec 物化不产 Illegal_Instruction——Zcd 四条路径已执行、mstatus 置 FS≠0 一行即恢复；Zcf 四条 `when xlen==32` 编译期死，RV64 清单应剔除。
+- ④引擎缺陷 7 项（本轮最可行动产出，详见合并矩阵 §3）：(1) AMO min/max.q panic（primop.rs:1322 assert<128，%i128 装不下无符号 128；solve-state 不施加 amo_encoding_valid，amoswap/add/xor.q 能跑通而 min/max.q 全死，AMO 12+ 出口全缺；修复三选：比较改位向量原生/fun_args 编码约束/limits 截 width=16）；(2) LOAD_FP 符号 width 撞 vmem_utils.sail:139 符号长度 zeros 0 存活（整数 LOAD 靠 match width 先 fork 常量幸免）；(3) 终值物化与路径条件脱钩（VLRETYPE vd%nf 见证矛盾 + G5/G6 未归因 Illg 8/8/3/3 疑同根，G6 侧有特权态相关性证据）；(4) sail is_exclusive 只识别 AK_explicit 不识别 AK_arch——.aqrl 全部事件 exclusive=false（保真度）；(5) --instruction-bits panic（smt.rs:2168 Z3 func_decl 101，新发现）；(6) W/D store 零拆分写嫌疑（fork 发生子树无产出、无超时无报错）；(7) 独占写 value Bool 全 false 物化偏置（29/29）。
+- ③预算截断：VLXSEGTYPE/VSXSEGTYPE（吞吐劣化 5-12×，三档 3600s 无 JSON；建议独占泳道+增量落盘+索引 concretize）；C_LW/C_LD/C_LWSP/C_LDSP（符号 size 致 addr%size 非线性 60s 超时中止，LWSP/LDSP 连 fault 未及）；LOAD w4/8 拆分成功、STORE sh 对齐成功、VSRETYPE 早退真侧、SC 20 条超时（JSON 完整）。②汇总：MMIO/PMP/翻译/SC 失配（match_reservation 钉 true+write_ram 丢 Bool）/VS 态（H 未支持 internal_error 风险）等。⑤：C_LB、VMTYPE Addr_Align、SC.B/H encdec 空、FENCE 唯一出口、store 无 FF 变体等。
+- 下一步候选：AMO④修复、FD 配置一行恢复+清单剔除 Zcf、物化脱钩④议题、VLX/VSX 独占泳道复跑。摘要见[状态](memsolve_branch_coverage/status.md)。
+
 ## 2026-09-27 内存一致性 W18（S4）：pipeline 地图假设过滤
 
 - S4 落地（根仓库 commit 6c56001）：pipeline 解析 isa-state 的 pma_regions.<name>.size 模型值；有效地址复用 store_effective_address（fault 路径 events 为空）；过滤判定假设无关（成功要求地址<真实顶界、fault 要求≥，不一致跳过 reason=map-hypothesis-mismatch 并计数 map_hypothesis{checked,skipped}）；顶界 build `--map-limit` 可配（默认 EMU_RAM_LIMIT=0x80000000000）；假设顶界 base+size 仅诊断（hypothesis_consistent 自洽校验）；检查先于 fault preclass。
@@ -1486,3 +1496,28 @@ Isla frame初始化动态注入`current_exception`、`have_exception`、`throw_l
 ### 严格region的源码重叠不等于实际runtime选择
 
 `audit_workaround_regions`中的源码区间overlap不能替代Rust `SourceRegion::selects_ir_location`：运行时排除严格包围配置区域的指令位置。56cc→e6a独审对129配置region核出127实际非空、2个历史空（vxtype.toml region_fork_limits[7]/[8]），470 raw overlap经排除48后为422实际指令位置；两个空项在旧新版本都相同，`zget_fixed_rounding_incr`源码/结构保持。独审`7681cf6b…5464e`只签逐项选择行为保持，明确否定“129全部实际命中”；旧producer报告原字节保留，不能据overlap结果删/扩区间或新增退役。详见[IR记录](float_support_review/solve-fix-ir-generation.md)。
+
+
+### 原生 AST 导出的阶段与源码分母
+
+浮点覆盖探针通过原生 `Target.register` 的 `pre_rewrites_hook` 导出普通/SYMBOLIC完整typed树，但hook已经经过descatter/config，不能将它称为原始源码AST。private属性可能落在合成的 `DEF_val` 而非 `fundef`，必须结合module/id关联；源码词法库存到typed声明/调用闭包需要双向核对生成项及未选择项。有限exporter独审 `e42ec709…5001` 只支持结构发现，不证明完整branch分母或caller可达。见[源码覆盖记录](float_support_review/e-coverage.md)。
+
+
+### 原生闭包库存不能漏掉寄存器引用与类型条件
+
+完整native闭包提取中发现，仅扫描值标识符/函数调用会漏掉 `E_ref` 指向的全局寄存器依赖，影响SYMBOLIC寄存器引用及root关联。另有生成的 `E_if` 来自物理源码 `ATyp_if`（例如flen及core类型），不能按生成位置排除分母。三族提取器正在按完整schema补齐并复验；旧原生候选仍只作有限结构发现，不能宣布分母完整。见[覆盖记录](float_support_review/e-coverage.md)。
+
+
+### 短路纯化仍须检查 SMT 查询的错误行为
+
+Isla `primop.rs::try_concretize_bool_exp` 对比较表达式主动调用 `check_sat_with`；`SmtResult::Unknown` 才继续构造符号表达式，`Error` 返回 `ExecError::Smt`。`smt.rs::check_sat_with` 对线程超时中断返回 `Error`，不是 `Unknown`。因此即使 Sail 比较数学上是纯函数，将 `illegal_fp_reduction` / `illegal_fp_widening_reduction` 原短路改为eager求值也可能引入原路径不会执行的查询和超时。隔离归约v1因此未获生产许可；修订须保持任意EEW整数比较的lazy前件，不得按128位截断C++无界整数。已核生产runtime文件SHA分别为 `6c6d5a42…f4a20` / `3ce7310d…122f`；具体边界和修订见[架构记录](float_support_review/solve-fix-architecture.md)。
+
+
+### 同一候选中的运行源码树与新 IR 产物路径不同
+
+441c候选的冻结runtime源码树 `candidate/isla/rv64d.ir` 仍是56cc；新生成产物是 `candidate/ir/rv64d_p1_unified.ir`，实际官方stage根 `rv64d.ir` 已精确替换为441c并迁移77活跃配置。二进制b42ac按源码等同从e6a实际构建provider复制，Cargo指纹/依赖仍在provider，不能假称新stage重新编译。初始化、helper、回放各入口必须绑定实际IR产物与构建provider复制链，而不从目录名推断版本。层次sidecar见 `isla/target/float-solve-evidence/unified-backend-build/model-lmul-unary-20260927/candidate-ir-layer-handoff.json`（`3e9ac247…eac6`）；原freeze不回写。
+
+
+### 正常 trace 与路径继承计时不足以归因 SMT
+
+441c FVFTYPE 固定一小时trace前缀的858个完整终态与log逐项一致，包含6条实际浮点Retire；但正常trace没有逐查询耗时。默认路径统计会继承fork祖先，不能对所有终态求和当运行总量，worker CPU也包含Z3 FFI。trace短尾无case header时不能反推其case或当前worker前沿。性能结论必须区分完整终态、已执行路径、当前未完成查询和资源采样；独审 `dc8d953e…e1041` 只签该固定前缀的来源/计数及执行事实，不签FP SMT主导或加速。新独立诊断将按worker不可回滚的真实FFI事件计数，未测阶段保留未归因。
