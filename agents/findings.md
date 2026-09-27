@@ -1,5 +1,12 @@
 # Findings
 
+## 2026-09-27 内存一致性 W16：rv64_target_trait 预置失败清零
+
+- 诊断：`rv64_target_trait` 失败根因＝**测试断言未跟上 fd92696 的设计变更**（该提交把 x0/PC 排除从 setup_pre_state 上移到 reg_list 数据源，是承重逻辑：x0 回表会符号化恒零寄存器、PC 会经 solve_pre_state 泄入 isa_state JSON），非环境依赖、非回归；自 fd92696 起生产路径一直按新语义运行。
+- 修复：按新语义改断言（x0/PC 不在 reg_list、pre_state=reg_list），注释同步；`cargo test -p isla --lib` **118/118 全绿，预置失败清零**。worktree commit 21b4388。
+- 顺带发现：RV32::reg_list 仍旧语义 (0..32)+PC，但 solve 路径 RV32 在 isarch_main 直接 panic 不可达；将来支持 RV32 需同步——记入遗留。
+- 提交链：worktree 59e2b5d(W2-W14) → f1fb43f(W15) → 21b4388(W16)；根仓库 b11a6f6 → 8cadc13 → 608f756。证据 `/tmp/isla-memimpl-w16-20260927-084122/`。摘要见[状态](memory_support_review/status.md)。
+
 ## 2026-09-27 内存一致性 W15：非单调销案与 pma size 勘误
 
 - 销案：W14 报告的"2^43 顶界非单调"为**伪异常**——所谓钉 2^43 的探针实际钉的是 2^47（JSON x31=0x0000_8000_0000_0000 被误读；2^43 应为 0x0800_0000_0000）。
@@ -1454,3 +1461,7 @@ Isla frame初始化动态注入`current_exception`、`have_exception`、`throw_l
 ### ITRACE分叉快照的深拷贝与前缀共享
 
 浮点j1资源调查确认旧ITRACE的records/conditions/edges使用Vec快照，Frame分叉会复制已有记录与backtrace。新实现将三个私有序列共用不可变Arc前缀和独占后缀，保留前向迭代/输出顺序，不改任务队列、终态collector或求解域。4096记录×64快照测试中payload复制262144→0、backtrace复制2097152→0，首append也为0；真实Frame、完整/紧凑文本对照和深链drop测试通过。证据[trace共享记录](../isla/target/float-solve-evidence/itrace-sharing-20260927/README.md)，manifest`b1fef6f2…44e66`。这些是结构/文本测试；真实RSS与全77仍须新runtime运行，不能据复制计数宣称内存问题已全部解决。
+
+### BF16调用V4合法性helper的实际参数域
+
+56cc四个BF16 root在后置SEW==16判断之前先经`get_sew`：`get_sew_pow`读vtype[5:3]，0..3正常给SEW={8,16,32,64}，4..7走AssertionFailure，不能用后置SEW==16倒推root入口域。rm来自fcsr[7:5]（bits3），rd/vm来自同constructor（bits5/bits1）。V4两helper零Jump，返回公式分别为8<=SEW<=64且rm不在{5,6,7}、vm==1或rd!=0；`illegal_fp_variable_width`仍短路聚合四个!valid，true沿实际SSA/Jump到Illegal，false仅继续caller检查。8个callee-instance集成合同经独审`e8330949…e7e2f`签收；旧40短路方向只保历史退役链接，不计新source真假分支。
