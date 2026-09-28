@@ -15,3 +15,5 @@
 每次 IR 生成或测试应记录受测的源码 commit、IR 哈希、配置、关键工具版本和输出位置。历史结果以生成当时的 provenance 为准；当前状态及是否需要复验见 [specs/TODOs.md](specs/TODOs.md)，逐次记录见 [docs/RESULTS.md](docs/RESULTS.md)。
 
 提交或迁移前检查根仓库及相关子仓库的 staged、unstaged 和 untracked 内容。移动文件时先保留用户已有修改，再核对目标文件和引用。发布父仓库 gitlink 前，确认引用的子模块 commit 可从记录的 remote 获取。
+
+workaround 配置归 `sail-riscv/configs/isla/workarounds/` 管理，Isla 直接读取，不再保留生成副本。后续提交这组改动时，先形成可获取的 Sail-RISC-V 提交，再形成消费它的 Isla 提交，最后由父仓库同时更新两个 gitlink；仅提交父仓库文档不能固定当前子模块未提交内容。

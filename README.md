@@ -32,6 +32,8 @@ make repos
 
 该目标构建 Sail、Sail-RISC-V 和 Isla 所需组件；使用前请检查当前工作树、工具链与可用资源。`Makefile` 中的 `repo-sail-riscv` 目标会生成 RV32/RV64 Isla IR，并打印生成位置。`init.sh` 本身不构建、不生成 IR，也不自动应用历史 `sail-riscv.patch`。Docker 构建入口当前未作为已验证的使用路径。
 
+workaround 配置直接位于 `sail-riscv/configs/isla/workarounds/`，`make solve-<clause>` 从该目录加载对应文件。配置设 `strict=false`：IR 哈希偏离基准时 Isla 报 warning 并继续执行。只有相关 Sail 模型代码变化时才需检查并调整源码区域；检查入口见 [IR 工作流](specs/ir-workflow.md)。
+
 ## 结果与分析
 
 逐次验证摘要见 [docs/RESULTS.md](docs/RESULTS.md)，专题调查与历史记录见 [agents/](agents/)。这些记录可能对应不同源码、IR、配置和模拟器版本；复用结论前先核对其 provenance。

@@ -5,7 +5,7 @@
 | 路径 | 职责与管理方式 |
 | --- | --- |
 | `isla/` | Isla 核心源码与 IR 生成、执行工具；父仓库以 gitlink 固定版本，目录内另有 `AGENTS.md`。 |
-| `sail-riscv/` | RISC-V Sail 模型；父仓库以 gitlink 固定版本。 |
+| `sail-riscv/` | RISC-V Sail 模型与 Isla workaround 可编辑描述；父仓库以 gitlink 固定版本。 |
 | `sail/` | Sail 工具链；由 `init.sh` 按兼容版本独立管理，不是父仓库 gitlink。 |
 | `ara/`、`difftest-xiangshan/` | 处理器 PoC 和差异测试 harness；内部上游 checkout 按各自边界管理。 |
 | `agents/` | 原有的议题计划、状态摘要、审查、报告、证据和辅助脚本；保持原位，由 `agents/overview.md` 索引。 |
@@ -15,6 +15,8 @@
 | `init.sh`、`Makefile` | 工作区初始化与构建入口。 |
 
 `isla/` 与 `sail-riscv/` 的精确版本由父仓库 gitlink 和 `.gitmodules` 决定；分支名不代替 gitlink。已有 checkout 的修改必须保留。`sail/` 及其他独立仓库遵循各自的分支和工作树规则，不应被父仓库的子模块初始化命令重置。
+
+Isla workaround 配置直接由 `sail-riscv/configs/isla/workarounds/` 管理，`isla/scripts/run.mk` 从该目录加载；Isla 不保存配置副本。源码区域的维护流程见 [ir-workflow.md](ir-workflow.md)。
 
 具体 Git 操作边界见 [GIT.md](../GIT.md)。
 

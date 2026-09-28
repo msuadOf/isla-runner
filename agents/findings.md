@@ -1,5 +1,10 @@
 # Findings
 
+## 2026-09-28 workaround 直接归 Sail-RISC-V 的现行入口
+
+- `sail-riscv/configs/isla/workarounds/` 中 79 份 TOML 现为 Isla 直接加载的唯一副本，`strict=false` 且带 d012 基准哈希；`isla/configs/workarounds/` 已删除。`isla/scripts/run.mk` 有 77 个目标直接引用 Sail-RISC-V，VFMV/VFMERGE 两份历史配置保留但原有 Makefile 绑定仍关闭。非严格模式哈希不匹配时 `isarch_main.rs` 输出 warning 并继续，严格模式硬失败不变。
+- `agents/v_symbolic_ir_workarounds/verify.py` 已指向 Sail-RISC-V 配置，检查全部 132 个 region 与 22 处现有注释锚点；基准 IR 哈希不同只提示。`sail-riscv@f8ce849` 已提交模型树全量检查通过，当前暂存模型树已有旧坐标失配。此处验证的是区域坐标和注释文本，不能证明全部实际求解路径；相关 Sail 代码变化后仍须逐区域确认。状态见[迁移记录](workaround_ownership/status.md)。
+
 ## 2026-09-28 内存一致性 W21：CSR 符号化与 mstatus 钉死定稿
 
 - 机制（worktree commit 898e267）：`[symbolic_registers]` 新段——整寄存器 symbolic 或 `pin_mask/pin_value` 位级钉死 + `nonzero_groups` 位组域约束；三处冲突硬失败；注入点镜像 W17（setup_pre_state 后 checkpoint 前）；**encdec/assembly 物化门改读按路径模型具象化的 CSR 克隆**（`concretize_symbolic_csrs`，G8 gen=0 根因的修复）；钉死采用"符号后 Assert"；未声明零开销。任意 symtab 存在、形状 bits(w≤64) 的 CSR 可挂，不要求在 reg_list。

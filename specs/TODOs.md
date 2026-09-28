@@ -19,7 +19,8 @@
 | VINIT-01 | V 扩展上下文初始化 | 历史实现 | 待复验 | [状态](../agents/v-ext-init/status.md)；原记录的测试结果只对应当时 assembly-gen 版本。 |
 | VDEDUP-01 | V 扩展 SYMBOLIC 去重 | 历史实现 | 待复验 | [状态](../agents/v_symbolic_dedup/status.md)、[性能](../agents/v_symbolic_dedup_perf/report.md)。 |
 | VDEDUP-02 | V 去重性能对照 | 已完成历史实验 | PASS（所记四类样本） | [状态](../agents/v_symbolic_dedup_perf/status.md)、[报告](../agents/v_symbolic_dedup_perf/report.md)；不代表全量 V 扩展性能。 |
-| VWORK-01 | V IR 与 workaround 绑定 | 已记录同步 | PASS（哈希与坐标校验） | [状态](../agents/v_symbolic_ir_workarounds/status.md)；现行 IR 再变更须重验。 |
+| VWORK-01 | V IR 与 workaround 绑定 | 已记录同步 | PASS（2026-09-25 版本；当前源码待复验） | [历史状态](../agents/v_symbolic_ir_workarounds/status.md)；当前暂存 Sail 源码已有坐标漂移，不能沿用旧 PASS。 |
+| VWORK-02 | workaround 配置直接归 Sail-RISC-V | 已实现并本地提交 | PASS（79 配置解析、Make 入口、Rust 告警单测、f8ce849 源码132区域/22锚点）；当前暂存源码 FAIL | [状态](../agents/workaround_ownership/status.md)；Isla 副本已删除，`strict=false` 失配告警；相关 Sail 代码修改造成旧坐标漂移，待逐区域重绑和同源 IR 复验。 |
 | VVTYPE-01 | saturation qfaufbv | 历史实现 | PASS（所记定向测试） | [状态](../agents/vvtype_saturation_qfaufbv/status.md)；性能差异只有单轮信号。 |
 | VVTYPE-02 | 局部限制与均衡采样 | 历史实验 | PASS（当时 30 分钟验收） | [状态](../agents/vvtype_balanced_local_limits/status.md)；对应旧 IR/配置。 |
 | ARA-01 | Ara 批量 PoC | 历史实验已归档 | 待核实 | [状态](../agents/ara_poc_batch/status.md)、[冻结证据](../archives/ara/2026-09-23-poc-batch/README.md)。 |

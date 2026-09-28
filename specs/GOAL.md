@@ -2,7 +2,7 @@
 
 本文记录 isla-runner 的长期目标与验收边界。当前任务进度见 [TODOs.md](TODOs.md)，目录和版本关系见 [project-structure.md](project-structure.md)，逐次验证见 [RESULTS.md](../docs/RESULTS.md)。
 
-IR 生成与严格配置的可复用检查约定见 [ir-workflow.md](ir-workflow.md)。
+IR 生成与 workaround 配置的可复用检查约定见 [ir-workflow.md](ir-workflow.md)。
 
 ## 目标
 

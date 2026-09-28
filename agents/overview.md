@@ -9,4 +9,5 @@
 - 新议题应在 `agents/<议题名>/` 下维护 `plan.md` 和 `status.md`，并把可复用的代码理解同步回 [findings.md](findings.md)。
 - Isla 浮点支持调查与实施计划见 [float_support_review/status.md](float_support_review/status.md)，现行计划见 [float_support_review/plan.md](float_support_review/plan.md)。
 - Isla `origin/feat/memory-support` 内存支持调查见 [memory_support_review/status.md](memory_support_review/status.md)。
+- workaround 描述归属与运行配置生成见 [workaround_ownership/status.md](workaround_ownership/status.md)。
 - 内存 clause 分支覆盖对照（W19+G1-G8）见 [memsolve_branch_coverage/status.md](memsolve_branch_coverage/status.md)。
