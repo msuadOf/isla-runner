@@ -1,5 +1,19 @@
 # Findings
 
+## 2026-09-29 内存 E 线：已知 XiangShan bug 定向复现（4/4 触发）
+
+- 方法：Isla 定向生成（`--instruction-bits`/`--prestate`，Sail 模型期望随 JSON 落盘）→ difftest-xiangshan pipeline → 真 emu+NEMU DiffTest；产物 `/data1/baiyifan/tmp/xs-known-bugs-repro-20260929-034817/`（含四份 upstream_reply.md 草稿），未改仓库无提交。
+- **emu 谱系关键事实（易混，最重的工具链反馈）**：根仓 `difftest-xiangshan/xiangshan` @ `a13efc8775` 才是 kunminghu-v3（四 bug 全活）；`isla-xiangshanv2` @ `f86f50b83` 实为 kunminghu-v2——T1（v3 的 IssuePipe/LatDecoder 重构回归）在 v2 上三轮不触发即此原因。此前的"B3 对照基准=f86f50b83（kunminghu-v2）"表述据此精化。
+- **4/4 靶标全部触发（单指令确定性）**：T1 #6475（ROB assert `robEntries 18 uopNum is overflow!`，instrCnt=214 确定性；vsseg5e32 与 masked vsseg3e32 同 abort，nf=2@e32/m2 形态 pass）；T2 #6486（**比原报告更精确**：DUT 把字段 1 源选成 v8 而非 v10——"错选源寄存器"而非"写 0"，DUT origin 128bit 直证，Store Commit Mismatch REF=a001(v10) vs DUT=8002(错选 v8)）；T3a #6288/#6316 类（同址错位 sw→7 vs amoswap.w→6，**v2/v3 emu 均现=修复未生效或回归**）；T3b #6296 族**新变体（疑似可报新 issue）**：vsse32 RAM 错位→DUT 死锁、vse32 RAM 错位→静默丢字节；T4 #6605（strided/indexed 入 locked PMP 区：DUT 不 trap 且**核心停摆 15000+ 周期**，比原报告"静默退休"恶化；Sail=AccessFault/NEMU=trap7/unit-stride 对照正确 trap）。
+- 工具链反馈五条：emu 谱系易混（最重，见上）；`--instruction-bits` 需 0x 前缀/prestate 宽度按 hex 位数推断；vreg 键名 vrN；`csr_sym_vs` 与 `--prestate` mstatus 互斥；pipeline preclass 静默跳过已知分歧用例（应可标记输出）。另：/data1 配额紧（scratch 移 /home）。clause 与编码绑定（vse32→VSSEGTYPE）。
+- 下一步：P1（值域 signposting）实施启动；upstream_reply 草稿四份待提交上游。摘要见[状态](memsolve_branch_coverage/status.md)。
+
+## 2026-09-29 浮点向量直接求解的编码域与限制预算
+
+- 当前 `isla/src/isarch/exec.rs` 的官方入口直接以符号 constructor 调用 `zexecute`，`target.setup_pre_state` 会重新符号化 mstatus 等初态，FD TOML 的 Dirty 默认值并不钉住输出见证。Sail 的向量浮点 `encdec` 还要求扩展使能和特定 SEW；因此直接执行的路径可能可满足，却没有对应机器编码。终态阶段先以 SAT 检查优选 FS/VS Dirty 不收窄执行域；不相容路径保持可满足，非法且不可编码者需要单列，成功执行但不可编码仍是错误。代码与动态边界见[本轮报告](float_support_review/vector-sampling-20260929.md)。
+- `valid_fp_op` 故意允许 SEW8 给部分 INT8↔FP16 转换；普通 FP、比较、移动、归约和 widening 算术的映射没有 SEW8。BF16 向量四个 clause 映射只接受 SEW16。直接 constructor 执行绕过映射 guard 时，若 execute guard 不先拒绝这些宽度，会到达源码断言；本轮 Sail guard 修改已在 V128 实验 IR 中消除所测 BF16／widening 的这类断言，未测试其余全部 clause。
+- `isla-lib/src/executor/execution_limits.rs` 的 `max_forks_per_branch` 是路径×静态分支点预算；`region_fork_limits` 同样以 region×`ControlFlowScope` 计数，**不把同 region 中不同 IR pc 的 match 臂合计为一个共享预算**。每路径总 fork 上限会在前导 guard 用尽，实测 BF16／widening 的上限5试验没有任何 Retire；故仅凭小预算结束或 `sampled=true` 不能证明源码 if/else 闭合。
+
 ## 2026-09-29 内存六线并行轮：上游交叉对照与 F1-F7 修复落地
 
 - 提交：worktree 0d70b06/9f82a87（C/D 线）、根仓库 419dafb（C 线 pipeline）；A 在隔离分支 `model-fix-vd-nf@46f8273a` 不合回；B 组纯研究未改仓库。
