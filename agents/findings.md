@@ -2,7 +2,7 @@
 
 ## 2026-09-28 workaround 直接归 Sail-RISC-V 的现行入口
 
-- `sail-riscv/configs/isla/workarounds/` 中 79 份 TOML 现为 Isla 直接加载的唯一副本，`strict=false` 且带 d012 基准哈希；`isla/configs/workarounds/` 已删除。`isla/scripts/run.mk` 有 77 个目标直接引用 Sail-RISC-V，VFMV/VFMERGE 两份历史配置保留但原有 Makefile 绑定仍关闭。非严格模式哈希不匹配时 `isarch_main.rs` 输出 warning 并继续，严格模式硬失败不变。
+- `sail-riscv/configs/isla/workarounds/` 中 79 份 TOML 现为 Isla 直接加载的唯一副本，`strict=false` 且带已提交 V128 IR 的 `6fc39efd…` 基准哈希；`isla/configs/workarounds/` 已删除。`isla/scripts/run.mk` 有 77 个目标直接引用 Sail-RISC-V，VFMV/VFMERGE 两份历史配置保留但原有 Makefile 绑定仍关闭。非严格模式哈希不匹配时 `isarch_main.rs` 输出 warning 并继续，严格模式硬失败不变；当前暂存 d012 IR 会告警。
 - `agents/v_symbolic_ir_workarounds/verify.py` 已指向 Sail-RISC-V 配置，检查全部 132 个 region 与 22 处现有注释锚点；基准 IR 哈希不同只提示。`sail-riscv@f8ce849` 已提交模型树全量检查通过，当前暂存模型树已有旧坐标失配。此处验证的是区域坐标和注释文本，不能证明全部实际求解路径；相关 Sail 代码变化后仍须逐区域确认。状态见[迁移记录](workaround_ownership/status.md)。
 
 ## 2026-09-28 内存一致性 W21：CSR 符号化与 mstatus 钉死定稿

@@ -57,8 +57,8 @@ def main() -> None:
             if line_number > len(lines) or lines[line_number - 1].strip() != match.group(2).strip():
                 errors.append(f"{path.name}: 注释锚点 {source.name}:{line_number} 不符")
 
-    for warning in warnings:
-        print(f"警告：{warning}", file=sys.stderr)
+    if warnings:
+        print(f"警告：{len(warnings)} 份配置的基准 IR 哈希与 {args.ir} 不一致；例如 {warnings[0]}", file=sys.stderr)
     if errors:
         raise SystemExit("\n".join(errors))
     print(f"通过：{len(configs)} 份非严格配置、{regions} 个源码 region、{anchors} 处注释锚点，IR SHA-256 {digest}")
