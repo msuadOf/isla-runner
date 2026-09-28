@@ -39,7 +39,7 @@
 ### 客户端为codex
 - gpt-6-luna low做不可靠search
 - gpt-6-sol medium/high/xhigh做一些可靠的事情，包括读代码写代码总结代码
-- gpt-6-astra medium/high/xhigh做一些关键的判断或者high level的东西架构层面的。
+- gpt-6-astra medium/high/xhigh做一些关键的判断或者high level的东西架构层面的。所有的astra不准产生二级子代理。
 - Main agent就负责调度和用户沟通
 
 ### 客户端为claude

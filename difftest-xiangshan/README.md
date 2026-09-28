@@ -66,6 +66,11 @@ python3 pipeline.py run \
 
 `prepare-json` 默认保留全部 JSON 条目，即使 payload 编码相同但寄存器上下文不同也会生成不同 ELF。每个 ELF 在执行 payload 前按 JSON 设置 `vtype`、`vl`、`vstart`、`vcsr`（`vxrm`/`vxsat`）与所有 `vr*`；`cur_privilege=User`/`Supervisor` 会通过 `mret` 进入对应特权级。为保证测试映像在降权后仍可取指，入口会先配置一条只服务于测试的全地址 RWX PMP 规则。
 
+## CSR 状态前导与压缩 payload（W22）
+
+- **mstatus 前导**：isa-state 带 `mstatus` 模型值（Isla `[symbolic_registers]` 求解输出，`N'h…` 格式）时，前导按值整写（`li t0, 0x…` + `csrw mstatus, t0`）——FD 等依赖 CSR 状态的用例若沿用固定前导会因 FS=Off 被 emu 打回（Illegal）；解析失败硬失败（错误状态下的"成功"重放比构建失败更糟）。无模型值的旧 JSON 维持既有默认（读改写 OR 0x600，VS=Dirty）。特权降权的 `mret` RMW 只改 MPP/MIE，保留模型值其余位。
+- **压缩 payload**：`test-ins-encdec` 为 `16'h…`（C 扩展，如 FD clause 的 `c.fld`）时 payload 用 `.2byte` 原样发射编码（`.option norvc` 只约束汇编器自选指令形态，不影响原始数据发射）；32 位仍为 `.4byte`。编码超出声明位宽构建期报错。
+
 仓库内的 `tests/tools/` 仅供 CI/本地 smoke：它模拟 emulator 输出 `HIT GOOD TRAP`，用于验证 Docker、JSON、ELF 和批处理连接；它不是 XiangShan，也不能替代真实 DiffTest 结论。
 
 若要转换其它 Isla JSON，可显式传入输入文件：

@@ -21,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DEFAULT_SOURCE = ROOT.parent / "isla" / "output" / "rv64_zVVTYPE.json"
 DEFAULT_OUT = ROOT / "work"
-ENCODING_RE = re.compile(r"(?:32|64)'h([0-9a-fA-F_]+)$")
+ENCODING_RE = re.compile(r"(?P<width>16|32|64)'h(?P<digits>[0-9a-fA-F_]+)$")
 BITS_RE = re.compile(r"(\d+)'h([0-9a-fA-F_]+)$")
 VECTOR_RE = re.compile(r"^vr([0-9]|[12][0-9]|3[01])$")
 GPR_RE = re.compile(r"^x([0-9]|[12][0-9]|3[01])$")
@@ -258,11 +258,17 @@ def prepare(args: argparse.Namespace) -> None:
     print(f"已写入 {output}（{len(entries)} 条）")
 
 
-def parse_encoding(value: str) -> int:
+def parse_encoding(value: str) -> tuple[int, int]:
+    """解析 test-ins-encdec，返回 (编码值, 位宽)。16 位为压缩指令（C 扩展，
+    如 FD clause 的 c.fld），发射时须用 .2byte 保持编码原样。"""
     match = ENCODING_RE.fullmatch(value.strip())
     if match is None:
         raise ValueError(f"不支持的 test-ins-encdec: {value!r}")
-    return int(match.group(1).replace("_", ""), 16)
+    width = int(match.group("width"))
+    value_number = int(match.group("digits").replace("_", ""), 16)
+    if value_number >= 1 << width:
+        raise ValueError(f"test-ins-encdec 编码超出声明位宽 {width}: {value!r}")
+    return value_number, width
 
 
 def parse_bits(value: str, name: str, maximum_width: int = 64) -> int:
@@ -602,9 +608,45 @@ def privilege_setup(state: dict) -> list[str]:
     ]
 
 
+def mstatus_setup(state: dict) -> list[str]:
+    """前导 mstatus 编程（W22 重放缺口修复）。
+
+    isa-state 带 mstatus 模型值（W21 起 `[symbolic_registers]` 求解输出，
+    "N'h…" 格式）时按值整写：FD 等依赖 CSR 状态的用例若沿用默认前导，
+    会因 FS=Off 被 emu 打回（Illegal）；解析失败硬失败——错误状态下的
+    "成功"重放比构建失败更糟。无模型值（旧 JSON/未符号化 CSR）时维持
+    既有默认：读改写 OR 0x600（VS=Dirty），保持历史 V 上下文用例行为。
+    """
+    raw = state.get("mstatus")
+    if raw is None:
+        return [
+            "    csrr t0, mstatus",
+            "    li t1, 0x600",
+            "    or t0, t0, t1",
+            "    csrw mstatus, t0",
+        ]
+    value = parse_bits(str(raw), "mstatus")
+    return [
+        "    # Isla mstatus 模型值整写（符号化 CSR 前导，含 SD/UXL/SXL 钉死域）",
+        f"    li t0, 0x{value:x}",
+        "    csrw mstatus, t0",
+    ]
+
+
+def payload_insn_line(encoding: int, encoding_bits: int) -> str:
+    """payload 指令按编码位宽发射：16 位压缩指令用 .2byte（编码原样），
+    32/64 位用 .4byte。整段 .option norvc 只约束汇编器自选指令形态，
+    不影响此处原始数据发射。"""
+    if encoding_bits == 16:
+        return f"    .2byte 0x{encoding:04x}"
+    if encoding_bits == 32:
+        return f"    .4byte 0x{encoding:08x}"
+    raise ValueError(f"不支持的 payload 编码位宽: {encoding_bits}")
+
+
 def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
     instruction = str(entry["test-ins"])
-    encoding = parse_encoding(str(entry["test-ins-encdec"]))
+    encoding, encoding_bits = parse_encoding(str(entry["test-ins-encdec"]))
     state = entry.get("isa-state", {})
     if not isinstance(state, dict):
         raise ValueError("isa-state 必须是对象")
@@ -622,11 +664,7 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
         post_lines, park_lines = [], []
     else:
         post_lines, park_lines = post_memory_checks(plan)
-    init = [
-        "    csrr t0, mstatus",
-        "    li t1, 0x600",
-        "    or t0, t0, t1",
-        "    csrw mstatus, t0",
+    init = mstatus_setup(state) + [
         "    # 清零 medeleg：emu 默认 medeleg=0x1444 会把 U-mode 非法指令委托到 stvec=0",
         "    csrw medeleg, x0",
         "    # 任何 trap 进入 M-mode trap_handler，由 mepc 是否等于 payload 区分 trap 位置",
@@ -669,7 +707,7 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
         ".option norvc", ".section .text.init", ".globl _start", "_start:",
         *init,
         "payload_ins:",
-        f"    # Isla: {instruction}", f"    .4byte 0x{encoding:08x}",
+        f"    # Isla: {instruction}", payload_insn_line(encoding, encoding_bits),
         *payload_tail,
         "1:  j 1b",
         *park_lines,

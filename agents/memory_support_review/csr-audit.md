@@ -1,16 +1,18 @@
 # CSR 符号化审计表（W21）
 
 日期：2026-09-28 ｜ worktree `feat/memory-consistency`（W21 未提交态）｜ 配置底座 `configs/riscv64_difftest_mem_excluded_pma.toml` + `..._csr_sym.toml`
+（W22 审阅后修订：mstatus 钉死描述更新为 SD 派生 + MBE/SBE/UXL/SXL 钉 0/0b10，补 mie/mip/mideleg/medeleg 行，§2.2 page_table 接线表述按 f06371f 后源码核实改写）
 
 原则（用户确认）：**所有 CSR 原则上都应符号化，只有无探索意义的 bitfield 可钉死**。本表按"符号化 / 部分钉死 / 保持钉死"三档给出建议，衡量维度：探索价值（能开多少真实语义分支）× 求解成本（分叉/求解时长）× 重放配套（isa-state 输出 + difftest 前导编程 + emu 对齐）。
 
-机制背景（W21 已落地）：`[symbolic_registers]` 声明 solver 期符号注入（`pin_mask/pin_value` 位级钉死 + `nonzero_groups` 位组域约束）；注入不要求寄存器在 `reg_list`——任意 CSR 名（symtab 存在且形状为 `bits(w)`/单 bits 字段 struct，w≤64）都可挂；encdec/assembly 物化门按当前路径模型具象化评估（`concretize_symbolic_csrs`）。
+机制背景（W21 已落地，W22 扩展）：`[symbolic_registers]` 声明 solver 期符号注入（`pin_mask/pin_value` 位级钉死 + `nonzero_groups` 位组域约束 + `derive_bit` 派生位等价约束（W22：target 位 ⇔ OR(每组组内全 1)，双向））；注入不要求寄存器在 `reg_list`——任意 CSR 名（symtab 存在且形状为 `bits(w)`/单 bits 字段 struct，w≤64）都可挂；encdec/assembly 物化门按当前路径模型具象化评估（`concretize_symbolic_csrs`）。
 
 ## 1. 逐 CSR 审计
 
 | CSR | 现状（defaults/机制） | 建议档位 | 理由（探索价值/求解成本/重放配套） |
 |---|---|---|---|
-| **mstatus** | W21 已改 `[symbolic_registers]`：钉 SD(63)/MBE(37)/SBE(36)=0 + FS[14:13]≠0 域 | **部分钉死（本轮落地）** | FS/VS/MPP/SPP/MPIE/MIE/SPIE/SIE/TVM/MXR/SUM/MPRV/TSR/TW/UXL/SXL 全符号：MPP 开特权迁移分支、MPRV 开 M 态翻译语义、VS 开 V 上下文（与 vtype 配对约束已有）。钉死位均为无探索价值：SD 只读镜像、MBE/SBE 大小端必须 LE。重放配套已具备：isa-state 输出 mstatus 模型值，pipeline 直接加载。 |
+| **mstatus** | W21 已改 `[symbolic_registers]`（W22 修订）：SD(63) 派生等价（⇔ FS=11 ∨ VS=11 ∨ XS=11，双向）+ MBE(37)/SBE(36)=0、UXL[44:43]/SXL[35:34]=0b10 钉死 + FS[14:13]≠0 域 | **部分钉死（本轮落地）** | FS/VS/MPP/SPP/MPIE/MIE/SPIE/SIE/TVM/MXR/SUM/MPRV/TSR/TW/XS 全符号：MPP 开特权迁移分支、MPRV 开 M 态翻译语义、VS 开 V 上下文（与 vtype 配对约束已有）。钉死位均为无探索价值：SD 只读镜像改派生（W22：钉 0 与 FS/VS/XS 可取 Dirty 矛盾；重放侧 CSR 写经 WARL `zlegalizze_mstatus` 按同一投影重算 SD，前态不自洽会被 emu 改写、重放不可比）、MBE/SBE 大小端必须 LE、UXL/SXL 模型 XLEN 固定 64（编码同 misa.MXL：64 位=0b10、0b11 是 RV128；其他取值是矛盾状态，与 MBE/SBE 同类）。重放配套已具备：isa-state 输出 mstatus 模型值，pipeline 前导按值整写（W22 修复，见 README CSR 状态前导节）。 |
+| **mie/mip/mideleg/medeleg** | 不在 defaults、不在 reg_list：IR 模型 init 给具体值（≈0），pre-state 输出不可见 | **保持钉死（不可观察）** | 单指令 solve-state 窗口内无中断源可触发：CLINT 关（`clint_enabled=false`，[0x02000000,0x04000000) 判死段包住 mtime/mtimecmp 的 MMIO 源），mip 恒 0、mie 符号化只开"使能位≠0"的域而无中断事件可产生；mideleg/medeleg 只影响 trap 的处理特权级走向（取向 mtvec/stvec 的分叉），单指令 trap 只写 mepc/mcause 不取向，重放侧 pipeline 前导固定 medeleg=0。等 mret 链/trap 深入议题（trap 后续行为可观察）再评估符号化。 |
 | **misa** | 钉 `0x800000000034112f`（MXL=RV64, AFCDIM…） | **保持钉死** | 探索价值：写 misa 关扩展（WARL）路径理论上存在，但本模型扩展开关 `hartSupports` 已 IR 生成期烘死，misa 位图与 hartSupports 不一致的状态是"配置矛盾"而非真实架构状态，符号化只产自相矛盾用例。求解成本：encdec 门 `misa[F]/[D]` 分支化直接威胁 FD 物化稳定性。重放：emu misa 固定。结论：等"扩展状态迁移"独立议题再评估。 |
 | **satp** | 钉 `0x0`（bare，翻译路径全死） | **部分钉死（需页表预设配套）**——见 §2 两难 | 收益：开翻译分支（见两难）；成本：MODE 三路 fork + 符号 PPN 使首层 PTE 读地址符号化，vmem 翻译循环是已知热点（W19 VLX/VSX 超时同族）。最小步：钉 MODE=sv39 + PPN=预设页表基址，符号化 ASID 位与其它 WPRI 位，先验证"翻译访存"单条通路。 |
 | **mcountinhibit** | 钉 `0` | **保持钉死** | 只影响 cycle/instret 计数行为；单指令 solve-state 内计数不可观察（无 tick 语义），符号化探索价值≈0。随性能计数议题（Zicntr/Smcntrpmf）再动。 |
@@ -34,14 +36,14 @@
 
 - **符号化的收益**：开翻译分支。当前钉 0（bare）后 sv39/sv48 翻译路径全死——`vmem` 的两段翻译、PTE 权限位检查、MXR/SUM 影响、TLB 语义（模型无 TLB 但走查循环在）全部不可达；这与 FD 当年的处境同构（配置性不可达）。
 - **符号化的成本**：satp MODE 字段符号即三路 fork（bare/sv39/sv48/sv57 非法）；PPN 符号使第一层页表读的**地址**符号化——数组内存模型上符号地址读 = 全数组内容 fork，叠加每层 512 项走查，W19 已证明该族（VLX/VSX 间接访存）吞吐掉 5-12 倍。裸符号化基本必然超时。
-- **重放配套**：① **必须**配套页表内容预设——`page_table_config`（identity/offset/protected/symbolic 预设）在 testgen 侧有基建，但 solve-state 尚未接线；② isa-state 输出 satp 模型值之外，还要输出被触及 PTE 的物化内容（pre-memory 已有机制可承载）；③ pipeline 前导要按预设把页表写进 emu 物理内存，且 emu 页表遍历与模型逐位一致（W12 两遍 ELF 窗口机制可复用）；④ satp 符号化与 mstatus.MPRV 符号化（本轮已开）有耦合：MPRV=1 时 M 态也走翻译，分支相乘。
+- **重放配套**：① 页表内容预设**已接线到 solve-state 内存构造**（f06371f 调查记录属实，本表 W21 版"尚未接线"表述有误，按源码改写）：`page_table_config` 由 `get_page_table_config`（config.rs）解析进 `ISAConfig`，solve-state 启动时 `isarch_main.rs` 经 `MemoryBuilder::from_config` 带入、`build()` 按预设把 PTE 字节物化为 `Region::Concrete`（identity/offset/protected；symbolic 预设为 `Region::Symbolic`）进入 `Memory` 区域表；但距"翻译链路可用"仍差两步——satp 仍在 `[registers.defaults]` 钉 0（bare，翻译走查不触发），且默认数组内存模型下符号读值来自全符号字节数组、`Region::Concrete` 的 PTE 内容不进数组（只有具体地址读分派到区域内容），故无翻译全链路验收；② isa-state 输出 satp 模型值之外，还要输出被触及 PTE 的物化内容（pre-memory 已有机制可承载）；③ pipeline 前导要按预设把页表写进 emu 物理内存，且 emu 页表遍历与模型逐位一致（W12 两遍 ELF 窗口机制可复用）；④ satp 符号化与 mstatus.MPRV 符号化（本轮已开）有耦合：MPRV=1 时 M 态也走翻译，分支相乘。
 - **建议路径**：先"**钉模式与根、符号其余**"：`pin` MODE=bare 之外先做 MODE=sv39 + PPN=固定页表基址的最小通路（页表内容用 identity 预设，符号化 ASID 与 WPRI 位），验证一条"翻译后访存成功 + 翻译 fault"用例能端到端重放；再逐步放开 PPN（多组预设页表基址枚举）与 MODE。
 
 ## 3. 汇总计数
 
-- **符号化（已落地）**：mstatus（部分钉死档：3 位钉死 + 1 组域约束）
+- **符号化（已落地）**：mstatus（部分钉死档：SD 派生等价 + MBE/SBE/UXL/SXL 钉 0/11 + FS 域约束，W22 修订后）
 - **部分钉死（建议，需配套）**：satp（需页表预设）、pmpcfg_n/pmpaddr_n（需 pipeline CSR 前导 + 分阶段）
-- **保持钉死（本轮建议）**：misa、mcountinhibit、mcyclecfg、minstretcfg、mtimecmp、stimecmp（共 6 个，共同点：单指令窗口不可观察或与 IR 固化状态矛盾）
+- **保持钉死（本轮建议）**：misa、mcountinhibit、mcyclecfg、minstretcfg、mtimecmp、stimecmp（共 6 个，共同点：单指令窗口不可观察或与 IR 固化状态矛盾）；mie/mip/mideleg/medeleg（W22 补记，不可观察，mret 链议题后再评估）
 - **维持现状机制（reg_list/惰性）**：cur_privilege（符号）、fcsr 等按议题挂
 
 ## 4. 与本轮验收的关系

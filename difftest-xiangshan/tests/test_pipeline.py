@@ -487,6 +487,83 @@ class MemoryPlanTests(unittest.TestCase):
             pipeline.memory_plan(entry)
 
 
+class MstatusPreambleTests(unittest.TestCase):
+    def make_fd_entry(self, mstatus=None, privilege="User"):
+        state = {"cur_privilege": privilege}
+        if mstatus is not None:
+            state["mstatus"] = mstatus
+        return {
+            "test-ins": "fld f8, 0xc0(x15)",
+            "test-ins-encdec": "32'h00e7b307",
+            "isa-state": state,
+            "ret_val": "Retire_Success(())",
+        }
+
+    def test_replays_mstatus_model_value_verbatim(self):
+        entry = self.make_fd_entry(mstatus="64'h0000_0008_0000_6000")
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        # 模型值整写（0x0000000800006000：SD=1、FS=Dirty、SXL=01 的 W21 样形）
+        self.assertIn("li t0, 0x800006000", assembly)
+        self.assertIn("csrw mstatus, t0", assembly)
+        # 不再发射默认读改写（OR 0x600）块
+        self.assertNotIn("li t1, 0x600", assembly)
+        # 整写在特权降权 RMW 之前（mret 只改 MPP/MIE，保留模型值其余位）
+        self.assertLess(
+            assembly.index("csrw mstatus, t0"),
+            assembly.index("csrr t0, mstatus"),
+        )
+
+    def test_default_preamble_without_model_value_keeps_rmw(self):
+        entry = self.make_fd_entry(mstatus=None)
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn("csrr t0, mstatus", assembly)
+        self.assertIn("li t1, 0x600", assembly)
+        self.assertIn("or t0, t0, t1", assembly)
+        self.assertIn("csrw mstatus, t0", assembly)
+
+    def test_rejects_unparseable_mstatus_model_value(self):
+        entry = self.make_fd_entry(mstatus="garbage")
+
+        with self.assertRaisesRegex(ValueError, "mstatus"):
+            pipeline.make_assembly(entry, 128)
+
+    def test_rejects_mstatus_masked_bitvector(self):
+        # 带掩码的位向量（x 形式）不是模型值格式，必须硬失败而非静默忽略
+        entry = self.make_fd_entry(mstatus="64'hxxxx_0000_0000_6000")
+
+        with self.assertRaisesRegex(ValueError, "mstatus"):
+            pipeline.make_assembly(entry, 128)
+
+
+class CompressedPayloadTests(unittest.TestCase):
+    def test_compressed_encoding_emits_two_byte_payload(self):
+        entry = {
+            "test-ins": "c.fld f8, 0xc0(x15)",
+            "test-ins-encdec": "16'h23e0",
+            "isa-state": {
+                "cur_privilege": "User",
+                "mstatus": "64'h0000_0000_0000_6000",
+            },
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn(".2byte 0x23e0", assembly)
+        self.assertNotIn(".4byte 0x000023e0", assembly)
+        self.assertLess(assembly.index("payload_ins:"), assembly.index(".2byte 0x23e0"))
+        # 哨兵与 GOODTRAP 仍是 32 位 .4byte
+        self.assertIn(".4byte 0x0000006b", assembly)
+
+    def test_parse_encoding_rejects_width_overflow(self):
+        with self.assertRaisesRegex(ValueError, "16"):
+            pipeline.parse_encoding("16'h12345")
+
+
 class PreMemoryAssemblyTests(unittest.TestCase):
     def test_emits_byte_stores_between_privilege_setup_and_scalar_loads(self):
         entry = make_memory_entry(
