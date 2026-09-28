@@ -1,9 +1,23 @@
 # Findings
 
+## 2026-09-28 内存一致性 W24：最新生成 + 24 路并行 DiffTest campaign
+
+- 凭据：WT e4410fe（含 W20/W21/W22）、isarch md5 bd945aa4…、配置 `riscv64_difftest_mem_excluded_pma_csr_sym.toml` md5 9270ec86…、IR VLEN=128 sha256 7c626989…、pipeline 41ff806（W22 per-case mstatus 前导+16 位压缩）；仓库零改动零提交（文档同步除外）。详证 `/data1/baiyifan/tmp/campaign24-20260928-193712/SUMMARY.md`。
+- 阶段 A：44 可跑 clause 中 41 有 JSON 共 1990 路径（Zcf 四条 RV64 死跳过、VLX/VSX 1800s rc=124 记部分）。恢复类：AMO 0→552（W20）、C_F* 0→70（FS≠Off）、STORE_FP 0→80、LOAD_FP 仍 0（W19 ④-2 未实施）；收缩类：标量/压缩 −30~−60%、向量 −75~−90%（mstatus 符号化 VS=Off 分支消耗预算，VLRETYPE 198→20 且 Retire 归零，只记现象）；FENCE/SINVAL 逐字不变；mstatus 模型值全量输出、位约束 100% 自洽。
+- 重放：37 clause（ZICBOM/ZICBOZ 因 emu 缺 Zicbom/Zicboz 判 ext-missing 不入批）、1683 实跑、1307 pass（77.7%），剔除环境类（ext-missing 213+已知错位 13）后有效 89.8%；LOADRES/STORE/压缩标量/FENCE/SINVAL 系满分。24 车道首启超订（load 120-135）按规则降 12 并记录。
+- 候选发现分诊 8 条：**F1【模型 bug 坐实，非 DUT】** segment 访存缺 vd+nf×EMUL≤32 组界检查——`vext_utils_insts.sail:202` 的 illegal_load 只查 vill/rd-mask/eew-emul/nf×EMUL≤8，调用处（vext_mem_insts.sail:98/179/240/305/367）仅补单字段 `valid_reg_group(vd,EMUL_pow)`；emu 权威=XiangShan `VecExceptionGen.scala` `lsSegIllegal = segRegNum>8 || vd+segRegNum>32`（segRegNum=nf<<|EMUL_pow|，分数 EMUL 放大记账）；12 探针逐例吻合+W23 9/19 wrap 佐证。**F2【模型过严】** vstart>VLEN/SEW−1 保留区判 Illegal（`get_start_element` 注释自标 TODO 存疑），emu+NEMU 退休，80 例。**F3【isarch 物化 bug】** AMO 非 aqrl 写 post-memory 漏物化（post==pre）7 例、`.aqrl` 4/4 正确——aq/rl 位相关，W20 未覆盖该面。**F4【能力缺口】** isa-state 不输出 FPR/VPR 初值→30 例 ok 路径 post-mismatch。**F5【环境分歧，唯一真 ABORT】** VLSEGFF case-038 fault-first 部分装载暴露 NEMU vs emu 的 v0 复位值差 1 字节。**F6【管线/状态交互两根因】** (a) VS=Off（82% 条目）×无条件向量 CSR 前导→vsetvli 即 illegal（input 侧剥离规避+复验）；(b) MPRV+MPP≠M × vl1re8 先于 PMP 设置→cause5，16 例。**F7【重放语义缺口】** SC 无前置 LR（模型 match_reservation=true），STORECON 15 例 post-mismatch。**F8【已知类】** 13 例错位优先级真分歧（W13④）。
+- 受限：VLX/VSX 无重放面；VS=Off 剥离为明示偏差；/tmp 曾被兄弟会话打满致 emu 伪挂死（产物已改 /data1）；向量产率降至旧 1/8~1/10 使 wrap-ok 覆盖变薄；F3/F4/F7 待修复后复验。
+- 下一步候选：F3/F4 isarch 修复、F6 管线前导修正（VS 条件化+PMP 先序）、F1/F2 上游 sail-riscv 模型问题（补丁或上报）、F5 环境初值对齐、F7 重放语义设计。摘要见[状态](memsolve_branch_coverage/status.md)。
+
 ## 2026-09-28 workaround 直接归 Sail-RISC-V 的现行入口
 
 - `sail-riscv/configs/isla/workarounds/` 中 79 份 TOML 现为 Isla 直接加载的唯一副本，`strict=false` 且带已提交 V128 IR 的 `6fc39efd…` 基准哈希；`isla/configs/workarounds/` 已删除。`isla/scripts/run.mk` 有 77 个目标直接引用 Sail-RISC-V，VFMV/VFMERGE 两份历史配置保留但原有 Makefile 绑定仍关闭。非严格模式哈希不匹配时 `isarch_main.rs` 输出 warning 并继续，严格模式硬失败不变；当前暂存 d012 IR 会告警。
 - `agents/v_symbolic_ir_workarounds/verify.py` 已指向 Sail-RISC-V 配置，检查全部 132 个 region 与 22 处现有注释锚点；基准 IR 哈希不同只提示。`sail-riscv@f8ce849` 已提交模型树全量检查通过，当前暂存模型树已有旧坐标失配。此处验证的是区域坐标和注释文本，不能证明全部实际求解路径；相关 Sail 代码变化后仍须逐区域确认。状态见[迁移记录](workaround_ownership/status.md)。
+
+## 2026-09-28 浮点直接入口的编码状态与向量非法态
+
+- `isla/src/isarch/exec.rs::materialize_finished_case` 从求解路径模型获取具体指令和 pre-state，再调用 Sail `zencdec_forwards` 生成物理 word。`FLI_S` 的 `sail-riscv/model/extensions/FD/zfa_insts.sail:65–67` 映射以 `currentlyEnabled(Ext_Zfa)` 为守卫；后者经 `fdext_control.sail:18` 读取 `mstatus.FS`。直接 `zexecute` 对 51 个标量目标的路径未约束该位，Z3 默认见证 FS=0，使 v2 标量虽有 1344 个完整 JSON 结果，却不能据此宣称物理字重放。v3 在执行终态之后才令模型选 FS=VS=3，未改变执行入口和完整符号输入；51 个标量的 1344 个输出均能物化编码，终态账本见[专题状态](float_support_review/status.md)。这只保证见证选值，不代替真实 decoder replay。
+- 直接调用向量 `execute` 会到达此前由该指令译码守卫过滤的状态。`VFMVFS` 的 `sail-riscv/model/extensions/V/vext_fp_insts.sail:1834–1838` 编码映射仅允许 SEW=16/32/64，`1840–1848` 的 execute 却可在合法 vtype 的 SEW=8 状态到达 `assert(num_elem>0 && SEW!=8)`。73df IR/v3 定向运行的 case 2/6 已从 execute 得到 Illegal、随后编码无返回；case 9 则在上述断言失败。`target.rs:636–692` 现行完整配置域为合法 vtype/vl 或 canonical vill＋vl=0，并非任意 64 位 vtype；`vext_regs.sail:346–349` 的保留 vsew 断言不属于此次 case 9。不能把这些结果记为完成，也不能把 Assertion 普遍改记 Illegal。修复需保持直接入口、保留已得到的 Illegal 终态，并单独决定 execute 全状态语义合同。
 
 ## 2026-09-28 内存一致性 W21：CSR 符号化与 mstatus 钉死定稿
 
@@ -1560,3 +1574,23 @@ a040组合仅改 `model/extensions/V/vext_fp_utils_insts.sail` 两个helper，�
 ### DEF_val附带的Env是声明前状态，不能替代真实声明后流水线
 
 冻结Sail的`type_check.ml::check_def`先以`def_annot_map_env`保存输入Env；`check_val_spec`的annotate同样捕获入口Env，随后才返回`Env.add_val_spec`后的Env。因此直接查询`DEF_val.annot.env`不能证明当前声明加入后的签名。`check_defs_progress`还对global声明使用`with_global_scope`/`restore_scope`、对private声明应用`with_private_visibility_if`；`check_with_envs`直接调用`check_def`并递归，未包含这些wrapper，不能直接替代实际pipeline作after-state证据。事实核对基于隔离工具链`toolchain-a198-v2-20260927/sail-src/src/lib/type_check.ml`的第4977、5475、5571和5618行，源SHA `95967d02…e1a7`；完整Env等价仍待真实流水线hook验证。详见[源码覆盖](float_support_review/e-coverage.md)及[Env独审工作记录](../isla/target/float-support-review/final-coverage/integration/p1-56cc69/source-ast-full/independent-environment-resolution-review-v2/status.md)。
+
+### 浮点整数match热点的原语与后继Jump须合看
+
+fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个整数相等后均紧跟真实Jump。`eq_int`提前查询与Jump分支查询可能互相抵消；将五处直接改泛型相等并不能由Z3调用位点的642.207秒推导出收益，末尾`==16`的168次查询全UNSAT且已有提前定真。当前源码`model/extensions/V/vext_control.sail` SHA `e44e3506…ac75`保留五个互斥match臂，隔离候选仅逆序为`16,8,4,2,1`，保持成功值集合、其余臂和断言位置；2049个整数的有限集合核对之外，整数全集SMT差异UNSAT、完整CPP/IR构建PASS且2049函数仅该函数改变；同e7ba 30分钟诊断的五处Eq调用1612→384、FFI642.207→144.109秒，但两侧均外限124且无最终求解JSON，整指令双后端候选验收仍待做。诊断来源为[fc4最终汇总](../isla/target/float-solve-evidence/z3-diagnostic-fc4ce-fvftype-analysis-20260927/final-030m/summary.json) `97ebd663…9466`，该目标外限124且无最终JSON。
+
+### 共享RM转换的纯位值比较会触发提前SMT查询
+
+冻结`softfloat_symbolic.sail`的`riscv_valid_rm_to_ieee`四处`rm == bits3`在顺序候选完整域FVFTYPE 1800秒诊断中产生448次已完成查询、228.735秒Z3 FFI。隔离替为模型已有`eq_anything(rm, bits3)`后，同e7ba运行器的新IR`73dfb2e1…d2a`的2049函数仅该函数改变；67 helper的83＋17,586条C++/Isla/native列定数值及五flags三方回归通过，新的完整域诊断该位点完成查询为0。两轮均外限124且无最终JSON，不能据此说FVFTYPE完成或所有符号RM语义已证明；差异、版本与运行账本见[性能记录](float_support_review/solve-fix-performance.md#199-rm转换纯比较第二隔离候选2026-09-28)及[三方证据](../isla/target/float-solve-evidence/num-elem-order-rm-eq-crosscheck-20260928/overall-summary.json) `3c36b568…7d01d`。生产Sail未应用该候选。
+
+### 官方分支缺口与后继定向见证须按版本分账
+
+56cc自然完成57目标的80416个产物中，指令编码`rm=101/110`译码失败分支均零覆盖；这些是官方求解器的生成输入域事实。fc4的89条定向回放中已有单独的`F_BIN_RM_TYPE_S` `rm=101` raw word `0x0020d1d3`（case-id `16394225216284458301`），`mstatus=0x0000000a00006600`令FS使能、`fcsr=0`，实际解码`ILLEGAL(raw_word)`且C++/Isla配对通过；证据见[case账本](../isla/target/float-solve-evidence/unified-backend-cpp-replay/sharedtrace-valid-reg-group-replay-20260927/final-directed89/case-ledger.json)与[最终封包](../isla/target/float-solve-evidence/unified-backend-cpp-replay/sharedtrace-valid-reg-group-replay-20260927/final-directed89/summary.json) `40296a3d…e499`。本轮另以同完整初态派生`rm=110` raw word `0x0020e1d3`，fc4 Isla真实译码/执行与C++ AST、返回值、102字段配对通过，见[新见证](../isla/target/float-solve-evidence/fc4ce-rm6-directed-20260928/final-summary.json) `36aa0dad…2509`。两值仅为`F_BIN_RM_TYPE_S`列定输入，不迁记56cc官方分母、不覆盖其它clause，也不授予完整源码arm闭合。
+
+### 向量读取的 LMUL 重复断言有调用点前件
+
+在隔离 IR `73dfb2e1…d2a` 对应的 `FVFTYPE` execute 中，`get_num_elem(LMUL_pow, SEW)` 正常返回前会执行 `assert_lmul_pow`，其后两次 `read_vreg(num_elem, SEW, LMUL_pow, …)` 使用同一个不可变局部 LMUL 值。`read_vreg_extra` 又先调用同一断言，然后才做负值折叠、组大小、越界/对齐检查和 `isla_read_vreg`。这给**这两个调用点**提供去重复检查的隔离候选前件；公共 `read_vreg_extra` 的签名仍接受任意整数，例如 `-4` 必须继续失败，不能全局删断言。73df 30 分钟诊断的 `assert_lmul_pow` 总计 1624 次／133.744 秒没有 caller 归因，不能全归到这两个读取，也不能据此预测整项目标完成。源码依据为隔离 `vext_control.sail` SHA `ffb8d575…d5cef6` 与 `vext_fp_insts.sail` SHA `2417a6bc…576e6`；运行器 `e7ba503a…10f81`、完整域 1800/1740/30 秒的[性能账本](../isla/target/float-solve-evidence/num-elem-order-rm-eq-candidate-20260928/long-comparison.json) `3c1b584a…c6bb`。未实施此候选，主 IR 仍为 d012。
+
+### FVFTYPE 全域超时中的分叉是生成 decoder 与状态守卫的组合
+
+73df IR/e7ba 运行器的 FVFTYPE 两小时完整域诊断外限124且无最终JSON。冻结 `executor.rs` 在真假两向 SAT 后才记录 `FORK` 并提交另一条任务，因此日志的6828个FORK是实际路径分裂；已完成的95679次SAT检查最大仅4.398秒、≥5秒为0，不能将此次超时归为单次SMT失控。本次77目标被运行器选为`FullEncoded32`，入口在同一符号路径调用`zencdec_forwards → zext_decode → zexecute`；此前直接`zexecute`、结束后具体编码的旧方法不适用于本次stage。生成 `zencdec_backwards` 的三个跳转（PC27942/28107/28319）对应 Sail `VFUNARY0`、`VFWUNARY0`、`VFUNARY1` 的 encdec 条款，合计1977个实际fork；`zbool_bit_backwards_matches`另567个。以VFUNARY0为例，生成IR先测试`vs1` mapping，再测固定opcode和`funct3=001`，而FVFTYPE的`funct3=101`，所以全模型decoder在本clause的完整编码路径上产生了可达但后续可排除的子字段分叉。执行阶段`valid_reg_group`的`EMUL_pow>0`分支1449个fork（taint `vtype`），FVFTYPE复合非法guard1305个（taint `vtype`/`fcsr`），`get_start_element`的`vstart`上界356个；FP元素循环区域只有48个fork、局部Retire33。此事实绑定[诊断](float_support_review/path-explosion-diagnosis-20260928.md)的IR、源码、runtime、配置和残缺前缀，不证明完整路径总数或任一单点优化足以使求解收敛。
