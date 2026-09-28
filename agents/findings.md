@@ -1,5 +1,39 @@
 # Findings
 
+## 2026-09-29 内存六线并行轮：上游交叉对照与 F1-F7 修复落地
+
+- 提交：worktree 0d70b06/9f82a87（C/D 线）、根仓库 419dafb（C 线 pipeline）；A 在隔离分支 `model-fix-vd-nf@46f8273a` 不合回；B 组纯研究未改仓库。
+- B1（上游 sail-riscv，仓库已迁移为 riscv/sail-riscv）：F1=PR#1752 已修（0.13）——`valid_segment_group_without_overflow(reg,nf,EMUL_pow)` = `unsigned(reg)+nf*2^max(EMUL_pow,0)<=32`，与 XiangShan `VecExceptionGen.scala` 公式逐字等价（campaign 摘要"nf<<|pow|"为转写误差）；F2=PR#1744 已配置化（`extensions.V.reserved_behavior.vstart_out_of_bounds` 默认 Vstart_Illegal/可选 Vstart_Ignore；whole-reg load 形态是 bug 上游已按 evl 界修复）；本地基线 merge-base `efdfe9b`（2026-03-01）不含 #1688/#1698/#1703/#1744/#1752；spec 四条款 anchor：`norm:emul_nfields_rsv`（ceil 记账）、`norm:vector_ls_seg_rsv`、`norm:vstart_val_rsv`（recommended-not-required）、`norm:vector_ls_seg_wholereg_evl`。
+- B2：基线=13d19ac+9 本地提交，2026-03 后上游修复均不在 IR；#1574（misaligned SC，基线仍含）判 **Z3 未覆盖**——STORECON 45 条 ok 路径 0/45 错位（AMO 256/LOAD 94 同全对齐），错位-in-RAM 形态整体缺失（与 B3 地址退化观察互证）；**pipeline 类新发现两件**：`ldu` 非法变体（`base_insts.sail:270` encdec 有 valid_load_encdec 守卫而 execute 无，isarch 枚举越过守卫产 RV64 不存在的 ldu，gen 7 重放 5 全超时，全 48 clause 唯一非法助记符）与 LOAD clause 重放结果未汇总（少计 174 实跑，F8 实为 28 abort+10 skip）；cherry-pick #1603/#1625/#1900 可消 F8 全部 38 例；#1150 SXL/UXL open，W22 本地实现可反哺上游。
+- B3（XiangShan/NEMU）：F5=difftest#969 已知框架 bug（DUT vreg 写永不到达 REF、NEMU 卡 initial pattern）——非语义分歧，harness 预置向量初值即正确规避；F8=已裁定实现自由（XiangShan #6265/#6288 closed not-a-bug，NEMU #990 open 反向主张，向量侧 #6296 open）；F6b=非 bug（MPRV+MPP≠M 低特权 PMP 检查为 spec 正确行为）；未命中归因：#6475 Z3 未覆盖、#6085 Z3 超时、#6486 POC 形态不足、其余范围外；CBO 缺失=emu `EnableCHI` 构建门控非 RTL 硬缺，Zabha 上游 #6248 已补不在 emu；emu 升级 master（含 #6316/#6248）可消 AMO 口径差与 213 ext-missing。
+- A（模型修复，隔离分支不合回）：基线 5f1a0de 三重锁定（自建 IR 逐字节复现 adcaf7f7）；移植 #1752 + F2 采 Vstart_Ignore（get_start_element 直返 vstart，越界零写入退休）；#1698 不移植（证据口径，eval_1698.md 留笔记）；修复 IR 984d9f4a；探针 F1 翻 6/F2 翻 2/守卫 12 不变；VLSEGFF pristine=campaign24、fixed 8 Illg 全 vstart=0；重放 4/4 GOODTRAP；遗留 --instruction-bits decode panic、workaround 重绑。
+- D（VS 探索，worktree 9f82a87）：`csr_sym_vs` 配置（VS≠Off 域）；四 clause 3-9 倍恢复超旧 survey——向量收缩主因是 VS=Off 分支耗物化门预算而非语义代价（八向量 clause 本就 0 条 VS=Off）；F6a 随之消失（阴性对照验证）；FS 组必须保留。
+- C（isarch F3/F4+F6 修复，worktree 0d70b06+根仓 419dafb）：F3 根因=write_ram 把 `Ok(_)` 烧成 true 具体值致独占写 Bool 无约束（修复：注入期断言 Bool=true）；F4=must_output_register 输出 f/v 初值 + pipeline fld/vl1re8 装载；顺带修 F6(a)(b)（VS/FS=Off 前导门控、PMP 前置）；isla 127 绿/pipeline 77 绿；复验 F3 7→0、F4 30→0、合计 517 pass。产物 `/data1/baiyifan/tmp/{model-fix-20260929,isarch-fix-f3f4-20260929-005822,vs-explore-20260929-004109}/`、B 组笔记 `/data1/baiyifan/tmp/github-xref-b{1,2,3}/NOTES.md`。
+- 下一步候选：模型修复转正决策（重生成正式 IR+重绑 workaround）、ldu 枚举过滤、LOAD 汇总修复、错位成功路径采样偏置治理、cherry-pick #1603/#1625/#1900、#1800 补 difftest 复现与 F5 上报、VLX/VSX 独占泳道、emu 升级评估。摘要见[状态](memsolve_branch_coverage/status.md)。
+
+## 2026-09-29 d740e02 终态分类与职责复核
+
+- **结构纠偏**：现行 `31523ab` 以父 `b18d6b7` 恢复 callback 原嵌套分支/日志/早退和全部注释；case-id/终态/trace 在原多调用 submit_itrace 闭包汇交。取消6f阶段的物化标签块，正常返回仍保留finished记账。原注释核对无缺失，精确及暂存组合回归通过，详见[证据](float_support_review/catalog-commit-review-20260929.md#恢复回调原结构和注释2026-09-29)。以下6f为已修订的中间阶段。
+
+- **封装接续**：现行 `6fefb6b` 将单生产调用的物化/终态创建更新/来源设置/汇总就地展开，并删除已无生产调用的 unfinished 判断；相关生产函数共减少6个。FS/VS测试经真实collector，终态测试经真实双路径，不再为测试保留生产入口。`case_sort_key` 有全量/配额排序两处生产复用，保留；详见[实施证据](float_support_review/catalog-commit-review-20260929.md#撤销单调用封装2026-09-29)。
+- **实施修订**：用户要求最小改动并amend后，`f5aa97d` 已撤两处白名单；其他正常返回记为 finished，并纳入完整性/配额统计，原始 ret_val 保留。真实 collector 八场景及隔离/主工作区回归通过，未跑完整 Sail 指令或硬件重放；不新增 ExecuteAs 续执行、不拆模块。下述问题描述保持 `d740e02` 适用范围，见[实施证据](float_support_review/catalog-commit-review-20260929.md#最小修正与-amend2026-09-29)。
+- 历史补查：`git log --all -S 'unexpected ExecutionResult:' -- src/isarch/exec.rs` 及 `-S 'fn materialize_finished_case'` 均指向 `b08997d`（2026-09-28 17:17:42 +0800，另一条由 `origin/feat/float-support` 引用的历史）和当前分支的 `d740e02`。前者不是后者祖先；当前分支通过后者收入物化后分类/终态处理结构。`d740e02` 作者时间为09-29 01:06:31、提交时间01:56:15；当前调用参数 `&symbolic_regs` 相对该提交仍为暂存改动（提交内为 `regs`）。不能把整段逻辑描述成第一次写于09-29，也不能将当前完整状态输出归入该提交。
+- `isla@d740e02` 的 `src/isarch/exec.rs` 在通用 collector 中只接受 Retire_Success/Illegal_Instruction；同提交 `rv64d.ir` 中 EBREAK 返回 Memory_Exception、Machine 模式 WFI 返回 Enter_Wait，均会在物化前被转成 Unreachable 并使 clause 失败。分类、物化后二次判定和 summary.complete 三处需同步修正；这是静态确认，动态回归未跑。
+- catalog ready 与 compact 渲染共用开关，公共 API 不能同时选择 runtime catalog 与完整指令输出；这属于职责耦合，不否定紧凑输出的已批准用途。前缀容器则在三种轨迹序列间有实际复用。细节及提交快照行号见[审查报告](float_support_review/catalog-commit-review-20260929.md)。
+
+## 2026-09-29 runtime catalog 的引入原因复核
+
+- 最初缺口见 `float_support_review/solve-audit-method.md`：`assertions_to_jumps` 把原 assert Call 改成 Goto，在函数末尾新增 Jump/Exit handler；原 `.ir` 文件不能解释新增运行时 PC。当前 `isla-lib/src/ir.rs::assertions_to_jumps` 仍有该行为，`isarch_main.rs` 的 solve-state 仍调用它，故删去编码 wrapper 并未消除这一需要。catalog 从实际 `SharedState.functions` 建表，服务 trace 指令定位、SourceLoc 及真实分支后继核验。
+- 紧凑渲染是之后基于实测加入的独立优化，历史设计明确记录“经总协调请求，批准 catalog 模式改为紧凑渲染”，不能解释为无意丢日志。P1 FLI_S 历史对照：完整文本297845196字节/23.17秒，紧凑60000062字节/22.10秒，两者297721条有序edge相同；主要收益是文件约缩80%，非大幅求解加速。见[实施记录](float_support_review/solve-fix-trace.md#p1-fli_s-联合运行及紧凑模式)及[设计](float_support_review/solve-fix-runtime-design.md)。本轮核对文档与当前代码，未重跑该历史实验。
+
+## 2026-09-28 Isla 浮点改动范围复核
+
+- **接续修订**：用户明确编码模式属于误加逻辑后，工作区 `exec.rs` 已删除下述双模式及 FS=VS=3 约束，直接进入 `zexecute`；原有求解后的编码字段保留。FS/VS16组合真实物化红绿回归及84＋24测试通过，详见[实施接续](float_support_review/scope-review-20260928.md#用户明确边界后的实施接续)。下列事实保持首轮暂存快照适用范围；catalog 未改。
+
+- `isla@b18d6b7` 加当前暂存改动中，`exec.rs::SOLVE_ENTRY_MODE` 固定为 ConstructorDiagnostic；`install_solve_wrapper` 只有单测调用，生产只调用 `zexecute`。旧 FullEncoded32 双模式逻辑仍残留；但 `mod.rs::run_mapping` 仍被实际汇编/编码物化使用。
+- 同版本 `materialize_finished_case` 对所有 clause 的终态无条件追加初态 FS=VS=3。它不修改此前符号执行过程，却会与已完成路径的非 3 约束冲突，导致 NoModel/materialization-error；因此旧记录“仅输出选择”不能理解为不会影响终态签收。当前对应单测只覆盖无约束 mstatus。
+- `ItraceHandler::set_runtime_catalog` 的 ready 标志同时控制 compact 输出；所有开启 itrace 的 solve clause 都调用它，因此跳过普通指令行。catalog 坐标修复与输出模式是被耦合的两个职责。版本、行号、测试及审查边界见[范围与封装审查](float_support_review/scope-review-20260928.md)。
+
 ## 2026-09-28 内存一致性 W24：最新生成 + 24 路并行 DiffTest campaign
 
 - 凭据：WT e4410fe（含 W20/W21/W22）、isarch md5 bd945aa4…、配置 `riscv64_difftest_mem_excluded_pma_csr_sym.toml` md5 9270ec86…、IR VLEN=128 sha256 7c626989…、pipeline 41ff806（W22 per-case mstatus 前导+16 位压缩）；仓库零改动零提交（文档同步除外）。详证 `/data1/baiyifan/tmp/campaign24-20260928-193712/SUMMARY.md`。
@@ -1594,3 +1628,7 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 ### FVFTYPE 全域超时中的分叉是生成 decoder 与状态守卫的组合
 
 73df IR/e7ba 运行器的 FVFTYPE 两小时完整域诊断外限124且无最终JSON。冻结 `executor.rs` 在真假两向 SAT 后才记录 `FORK` 并提交另一条任务，因此日志的6828个FORK是实际路径分裂；已完成的95679次SAT检查最大仅4.398秒、≥5秒为0，不能将此次超时归为单次SMT失控。本次77目标被运行器选为`FullEncoded32`，入口在同一符号路径调用`zencdec_forwards → zext_decode → zexecute`；此前直接`zexecute`、结束后具体编码的旧方法不适用于本次stage。生成 `zencdec_backwards` 的三个跳转（PC27942/28107/28319）对应 Sail `VFUNARY0`、`VFWUNARY0`、`VFUNARY1` 的 encdec 条款，合计1977个实际fork；`zbool_bit_backwards_matches`另567个。以VFUNARY0为例，生成IR先测试`vs1` mapping，再测固定opcode和`funct3=001`，而FVFTYPE的`funct3=101`，所以全模型decoder在本clause的完整编码路径上产生了可达但后续可排除的子字段分叉。执行阶段`valid_reg_group`的`EMUL_pow>0`分支1449个fork（taint `vtype`），FVFTYPE复合非法guard1305个（taint `vtype`/`fcsr`），`get_start_element`的`vstart`上界356个；FP元素循环区域只有48个fork、局部Retire33。此事实绑定[诊断](float_support_review/path-explosion-diagnosis-20260928.md)的IR、源码、runtime、配置和残缺前缀，不证明完整路径总数或任一单点优化足以使求解收敛。
+
+### XiangShan 浮点 DiffTest 的结果续跑按 case ID 跳过所有已记录条目
+
+`difftest-xiangshan/pipeline.py::run`从`results.ndjson`取得已有ID时不区分success/failure，后续同目录运行会跳过旧失败；`run_case`首跑超时后另以`--dump-commit-trace`重跑，重跑即使打印GOODTRAP，原记录仍为failure/returncode=null。对版本SHA `8099715d…22390c`的本地1344输入批次，30秒24路首轮135条有104成功/31超时（25条trace GOODTRAP），120秒24路第二轮1322条中1317成功/5超时（5条trace GOODTRAP），独立低并发重跑5条才取得5个正常退出。复跑须封存原日志并建立新结果目录，最终PASS只计对应case的GOODTRAP且returncode=0；[当前工作区逐例核账](../difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json)绑定IR `73dfb2e1…671d2a`、Isla `4e315e9a…59ae0`、FD配置 `20851fdb…723d0`、XiangShan `a13efc8`／emu `8714169…a85ee`／NEMU `9188e7d…ef43`。
