@@ -25,6 +25,11 @@ ENCODING_RE = re.compile(r"(?P<width>16|32|64)'h(?P<digits>[0-9a-fA-F_]+)$")
 BITS_RE = re.compile(r"(\d+)'h([0-9a-fA-F_]+)$")
 VECTOR_RE = re.compile(r"^vr([0-9]|[12][0-9]|3[01])$")
 GPR_RE = re.compile(r"^x([0-9]|[12][0-9]|3[01])$")
+FPR_RE = re.compile(r"^f([0-9]|[12][0-9]|3[01])$")
+# payload 汇编文本是否触用 FP/向量寄存器：前导只编程 payload 实际消费的状态，
+# 无关装载既膨胀前导也会在 VS/FS=Off 的条目上先于 payload illegal（F6(a)）
+FPR_INSN_RE = re.compile(r"(?:^|[\s,(])f(?:[0-9]|[12][0-9]|3[01])(?![0-9])")
+VREG_INSN_RE = re.compile(r"(?:^|[\s,(])v(?:[0-9]|[12][0-9]|3[01])(?![0-9])")
 V_CONTEXT_REGISTERS = {"vl", "vstart", "vtype", "vcsr"}
 VSTART_CSR = 0x008
 VXSAT_CSR = 0x009
@@ -567,6 +572,39 @@ def vector_setup(state: dict, vlen_bits: int) -> tuple[list[str], list[str]]:
     return loads, words
 
 
+def mstatus_extension_enabled(state: dict, shift: int) -> bool:
+    """mstatus 模型值中某扩展状态域（FS=13..14、VS=9..10）是否非 Off。
+
+    无 mstatus 键（旧 JSON）时默认允许：向量前导沿用默认 RMW（OR 0x600 →
+    VS=Dirty）的既有行为；FPR 前导只在 isa-state 携带 f 键（W21 后新 JSON）
+   时触发，而新 JSON 恒有 mstatus 模型值，不受该默认影响。
+    """
+    raw = state.get("mstatus")
+    if raw is None:
+        return True
+    return (parse_bits(str(raw), "mstatus") >> shift) & 0b11 != 0
+
+
+def fpr_setup(state: dict) -> tuple[list[str], list[str]]:
+    """isa-state 的 f0-f31 模型值经数据区 + fld 装载（F4 消费侧）。
+
+    RV64D 下 fld 按位精确恢复 64 位模型值；数据区小端 .dword 布局与
+    vector_initial_state 同构。只装载 isa-state 实际携带的 f 寄存器。
+    """
+    registers = sorted((key for key in state if FPR_RE.fullmatch(key)), key=lambda key: int(key[1:]))
+    if not registers:
+        return [], []
+    words: list[str] = []
+    loads: list[str] = ["    la t0, fpr_initial_state"]
+    for name in registers:
+        register = int(name[1:])
+        value = parse_bits(str(state[name]), name)
+        loads.append(f"    fld f{register}, 0(t0)")
+        loads.append(f"    addi t0, t0, 8")
+        words.append(f"    .dword 0x{value:016x}")
+    return loads, words
+
+
 def scalar_setup(state: dict) -> list[str]:
     registers = sorted(
         (key for key in state if GPR_RE.fullmatch(key)), key=lambda key: int(key[1:])
@@ -583,6 +621,72 @@ def scalar_setup(state: dict) -> list[str]:
     return loads
 
 
+def float_state(entry: dict) -> tuple[dict[str, int], dict[str, int]] | None:
+    pre = entry.get("isa-state-complete")
+    post = entry.get("isa-state-post")
+    if not any(isinstance(state, dict) and any(FPR_RE.fullmatch(key) for key in state) for state in (pre, post)):
+        return None
+    if not isinstance(pre, dict) or not isinstance(post, dict):
+        raise ValueError("浮点用例必须同时提供 isa-state-complete 和 isa-state-post")
+    names = [f"f{index}" for index in range(32)] + ["fcsr"]
+    values = []
+    for label, state in (("pre", pre), ("post", post)):
+        parsed = {}
+        for name in names:
+            if name not in state:
+                raise ValueError(f"浮点 {label} 状态缺少 {name}")
+            raw = str(state[name])
+            match = BITS_RE.fullmatch(raw)
+            width = 32 if name == "fcsr" else 64
+            if match is None or int(match.group(1)) != width:
+                raise ValueError(f"浮点 {label} 状态 {name} 必须是 {width} 位具体值")
+            parsed[name] = parse_bits(raw, name)
+        values.append(parsed)
+    concise = entry.get("isa-state") or {}
+    for name in names:
+        if name in concise and parse_bits(str(concise[name]), name) != values[0][name]:
+            raise ValueError(f"isa-state 与 isa-state-complete 的 {name} 不一致")
+    return values[0], values[1]
+
+
+def float_setup(pre: dict[str, int]) -> list[str]:
+    loads = []
+    for index in range(32):
+        loads.extend((f"    li t0, 0x{pre[f'f{index}']:x}", f"    fmv.d.x f{index}, t0"))
+    loads.extend((f"    li t0, 0x{pre['fcsr']:x}", "    csrw fcsr, t0"))
+    return loads
+
+
+def float_post_checks(post: dict[str, int]) -> tuple[list[str], list[str]]:
+    checks = []
+    parks = []
+    for index in range(32):
+        name = f"f{index}"
+        label = f"fp_post_park_{name}"
+        checks.extend((f"    fmv.x.d t0, {name}", f"    li t1, 0x{post[name]:x}", f"    bne t0, t1, {label}"))
+        parks.extend((f"{label}:", f"    j {label}"))
+    checks.extend(("    csrr t0, fcsr", f"    li t1, 0x{post['fcsr']:x}", "    bne t0, t1, fp_post_park_fcsr"))
+    parks.extend(("fp_post_park_fcsr:", "    j fp_post_park_fcsr"))
+    return checks, parks
+
+
+def pmp_open_setup() -> list[str]:
+    """开放全地址 RWX 的 PMP 规则（pmpaddr0=-1/pmpcfg0=0x1f，Locked NAPOT）。
+
+    与 Isla 侧 `[registers.defaults]` 的 PMP 关闭态钉死（W14）语义一致：模型
+    pmpCheck 恒 None，重放侧开放后访存判定只由 PMA/地图决定。必须前置于一切
+    访存前导——模型 mstatus 携带 MPRV=1 且 MPP≠M 时（campaign24 F6(b)），写完
+    mstatus 后 M 态数据访问按 MPP 特权级过 PMP，复位态 PMP（无规则 → S/U 拒绝）
+    会让 fld/vl1re8/pre-store 在 payload 前 access fault（cause 5）。
+    """
+    return [
+        "    li t0, -1",
+        f"    .4byte 0x{encode_csrw(PMPADDR0_CSR, T0):08x} # csrw pmpaddr0, t0",
+        "    li t0, 0x1f",
+        f"    .4byte 0x{encode_csrw(PMPCFG0_CSR, T0):08x} # csrw pmpcfg0, t0",
+    ]
+
+
 def privilege_setup(state: dict) -> list[str]:
     privilege = state.get("cur_privilege", "Machine")
     if privilege == "Machine":
@@ -591,10 +695,6 @@ def privilege_setup(state: dict) -> list[str]:
     if mpp is None:
         raise ValueError(f"不支持的 cur_privilege: {privilege!r}")
     return [
-        "    li t0, -1",
-        f"    .4byte 0x{encode_csrw(PMPADDR0_CSR, T0):08x} # csrw pmpaddr0, t0",
-        "    li t0, 0x1f",
-        f"    .4byte 0x{encode_csrw(PMPCFG0_CSR, T0):08x} # csrw pmpcfg0, t0",
         "    la t0, payload",
         "    csrw mepc, t0",
         "    csrr t0, mstatus",
@@ -650,9 +750,25 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
     state = entry.get("isa-state", {})
     if not isinstance(state, dict):
         raise ValueError("isa-state 必须是对象")
-    context_before_loads, context_after_loads = vector_context_setup(state, vlen_bits)
-    loads, words = vector_setup(state, vlen_bits)
+    # F6(a)/F4 消费侧：向量/FPR 前导只对触用相应寄存器的 payload 发射；
+    # mstatus VS/FS=Off 的条目跳过相应前导（vsetvli/vl1re8/fld 在 Off 下
+    # illegal，会在 payload 前 trap 掩盖真实语义）
+    vector_preamble_enabled = VREG_INSN_RE.search(instruction) is not None and mstatus_extension_enabled(state, 9)
+    if vector_preamble_enabled:
+        context_before_loads, context_after_loads = vector_context_setup(state, vlen_bits)
+        loads, vector_words = vector_setup(state, vlen_bits)
+    else:
+        context_before_loads, context_after_loads = [], []
+        loads, vector_words = [], []
     scalar_loads = scalar_setup(state)
+    fp = float_state(entry)
+    fp_loads = float_setup(fp[0]) if fp is not None else []
+    fp_checks, fp_parks = float_post_checks(fp[1]) if fp is not None else ([], [])
+    # isa-state 的 f 键（F4）只在浮点会话的 complete/post 机制不适用时经数据区+fld 装载
+    if fp is None and FPR_INSN_RE.search(instruction) is not None and mstatus_extension_enabled(state, 13):
+        fpr_loads, fpr_words = fpr_setup(state)
+    else:
+        fpr_loads, fpr_words = [], []
     expect_trap = expects_trap(entry)
     if plan is None:
         plan = memory_plan(entry)
@@ -664,13 +780,17 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
         post_lines, park_lines = [], []
     else:
         post_lines, park_lines = post_memory_checks(plan)
-    init = mstatus_setup(state) + [
+    init = [
+        "    # PMP 开放规则前置于一切访存前导（F6(b)：MPRV=1+MPP≠M 的模型 mstatus",
+        "    # 会让后续 M 态数据访问按 MPP 特权级过 PMP，复位态 PMP 拒绝 S/U）",
+        *pmp_open_setup(),
+        *mstatus_setup(state),
         "    # 清零 medeleg：emu 默认 medeleg=0x1444 会把 U-mode 非法指令委托到 stvec=0",
         "    csrw medeleg, x0",
         "    # 任何 trap 进入 M-mode trap_handler，由 mepc 是否等于 payload 区分 trap 位置",
         "    la t0, trap_handler",
         "    csrw mtvec, t0",
-    ] + context_before_loads + loads + context_after_loads + privilege_setup(state) + pre_lines + scalar_loads
+    ] + context_before_loads + loads + context_after_loads + fp_loads + fpr_loads + privilege_setup(state) + pre_lines + scalar_loads
     if expect_trap:
         payload_tail = [
             "    # Isla 预期该指令 trap：payload 未 trap 时，哨兵全零非法指令必然触发，",
@@ -683,12 +803,13 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
             "    la t1, payload_ins",
             "    bne t0, t1, 2f",
             "    # payload_ins 处 trap，与 Isla 预期一致",
+            *fp_checks,
             "    # XiangShan DiffTest STATE_GOODTRAP custom instruction.",
             "    .4byte 0x0000006b",
             "2:  j 2b",
         ]
     else:
-        payload_tail = post_lines + [
+        payload_tail = fp_checks + post_lines + [
             "    # XiangShan DiffTest STATE_GOODTRAP custom instruction.",
             "    .4byte 0x0000006b",
         ]
@@ -697,10 +818,15 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
             "    # 不预期 trap：任何 trap 在此挂起，由超时判定失败",
             "2:  j 2b",
         ]
-    # 无 vreg 条目不发射占位数据段：8 字节 .dword 0 会让 .data 落在链接脚本
+    # 无 vreg/fpr 条目不发射占位数据段：8 字节 .dword 0 会让 .data 落在链接脚本
     # 0x80001000 对齐位，与以该地址为访存窗口的用例精确相撞（code-overlap 误伤）
-    if words:
-        tail = [".section .data", ".align 3", "vector_initial_state:", "\n".join(words), ""]
+    data_sections: list[str] = []
+    if vector_words:
+        data_sections.append("vector_initial_state:\n" + "\n".join(vector_words))
+    if fpr_words:
+        data_sections.append("fpr_initial_state:\n" + "\n".join(fpr_words))
+    if data_sections:
+        tail = [".section .data", ".align 3", "\n\n".join(data_sections), ""]
     else:
         tail = []
     return "\n".join([
@@ -710,6 +836,7 @@ def make_assembly(entry: dict, vlen_bits: int, plan: dict | None = None) -> str:
         f"    # Isla: {instruction}", payload_insn_line(encoding, encoding_bits),
         *payload_tail,
         "1:  j 1b",
+        *fp_parks,
         *park_lines,
         *trap_handler,
         *tail,

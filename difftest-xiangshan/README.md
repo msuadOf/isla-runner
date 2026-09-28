@@ -66,6 +66,31 @@ python3 pipeline.py run \
 
 `prepare-json` 默认保留全部 JSON 条目，即使 payload 编码相同但寄存器上下文不同也会生成不同 ELF。每个 ELF 在执行 payload 前按 JSON 设置 `vtype`、`vl`、`vstart`、`vcsr`（`vxrm`/`vxsat`）与所有 `vr*`；`cur_privilege=User`/`Supervisor` 会通过 `mret` 进入对应特权级。为保证测试映像在降权后仍可取指，入口会先配置一条只服务于测试的全地址 RWX PMP 规则。
 
+### FPR/VPR 初值与 payload 条件前导（W24，F4 消费侧）
+
+isarch 侧修复（W24）后 `isa-state` 恒携带 `f0`–`f31`/`vr0`–`vr31` 的模型值（与 `post-memory` 写数据同一次 complete-model 补全，保证初值与期望终值同源）。管线按 payload 是否触用相应寄存器选择性编程前导：
+
+- **FPR（FP 访存 payload）**：`test-ins` 引用 `fN` 且 mstatus 模型值 `FS≠Off` 时，把 `isa-state` 携带的 f 寄存器经 `.data` 数据区（`fpr_initial_state`）逐个 `fld` 装载——RV64D 位精确，缺失初值会让 emu 用自身复位 FPR 导致 post 期望不可比（campaign24 F4，30 例）。
+- **VPR（向量 payload）**：沿用既有 `vsetvli` + `vl1re8.v` 机制，数据源即 `isa-state` 的 `vrN` 模型值；顺带消除 NEMU/emu 向量复位值差一字节的环境噪声（campaign24 F5）。
+- **门控**：payload 不触用向量/FPR 寄存器时整个跳过相应前导；mstatus 模型值 `VS=Off`/`FS=Off` 的条目也跳过（vsetvli/vl1re8/fld 在 Off 下 illegal，会在 payload 前 trap 掩盖真实语义——campaign24 F6(a) 的管线侧修复）。浮点会话的 `isa-state-complete`/`isa-state-post` 机制存在时优先，二者不叠加。
+
+## 标量浮点 JSON 与 XiangShan DiffTest
+
+`prepare-json` 可接收多个 `--source`，把 Isla 的标量浮点 JSON 合为一批。含完整浮点状态的条目会从 `isa-state-complete` 逐个装载 32 个 64 位浮点寄存器及 `fcsr`，执行 payload 后按 `isa-state-post` 检查它们的原始位值；Retire 在 payload 后检查，预期 Illegal 则在确认 trap 来自 payload 后检查。任一值不符会进入该寄存器专属的停机循环，`run` 将其记为失败。`mstatus` 和向量上下文仍取同一条目的 `isa-state`。缺失或不一致的完整浮点字段会在构建期报错。
+
+```bash
+python3 pipeline.py prepare-json --source /path/to/rv64_zFLI_S.json \
+  --vlen-bits 128 --output work/float-input.json
+python3 pipeline.py build --input work/float-input.json \
+  --vlen-bits 128 --jobs 24 --output work/float-elf
+python3 pipeline.py run --cases work/float-elf \
+  --emulator xiangshan/build/emu \
+  --diff-so xiangshan/ready-to-run/riscv64-nemu-interpreter-so \
+  --timeout 120 --jobs 24
+```
+
+2026-09-29 的 51 标量目标已使用**本目录**的 `xiangshan@a13efc8`、MinimalConfig `build/emu` 与配套 NEMU SO 重新运行：1322 条可支持输入最终 1322/1322 GOODTRAP／退出0；22 条 BF16 Retire 在 payload 报 cause 2；故意改错 FPR post 的负对照停在检查循环。先前调用另一工作区二进制的同数目结果仍留作历史诊断，不计本轮。版本、短超时封存、重试与逐例哈希见[当前工作区核账](work/float-v3-20260929/current-workspace-audit.json)和[专题状态](../agents/difftest_xiangshan_v/status.md)。此结果不替代 Isla/C++ 双后端重放或源码 branch 证据。
+
 ## CSR 状态前导与压缩 payload（W22）
 
 - **mstatus 前导**：isa-state 带 `mstatus` 模型值（Isla `[symbolic_registers]` 求解输出，`N'h…` 格式）时，前导按值整写（`li t0, 0x…` + `csrw mstatus, t0`）——FD 等依赖 CSR 状态的用例若沿用固定前导会因 FS=Off 被 emu 打回（Illegal）；解析失败硬失败（错误状态下的"成功"重放比构建失败更糟）。无模型值的旧 JSON 维持既有默认（读改写 OR 0x600，VS=Dirty）。特权降权的 `mret` RMW 只改 MPP/MIE，保留模型值其余位。

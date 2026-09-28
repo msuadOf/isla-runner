@@ -539,6 +539,203 @@ class MstatusPreambleTests(unittest.TestCase):
             pipeline.make_assembly(entry, 128)
 
 
+class FloatingPointAssemblyTests(unittest.TestCase):
+    def make_entry(self, ret_val="Retire_Success(())"):
+        pre = {f"f{index}": "64'h0000_0000_0000_0000" for index in range(32)}
+        pre["f1"] = "64'hffff_ffff_3f80_0000"
+        pre["f2"] = "64'hffff_ffff_4000_0000"
+        pre["fcsr"] = "32'h0000_0060"
+        post = dict(pre)
+        post["f1"] = "64'hffff_ffff_4040_0000"
+        post["fcsr"] = "32'h0000_0070"
+        return {
+            "test-ins": "fadd.s f1, f1, f2",
+            "test-ins-encdec": "32'h0020_80d3",
+            "isa-state": {"cur_privilege": "Machine", "mstatus": "64'h0000_000a_0000_6600"},
+            "isa-state-complete": pre,
+            "isa-state-post": post,
+            "ret_val": ret_val,
+        }
+
+    def test_float_prestate_and_poststate_are_checked(self):
+        assembly = pipeline.make_assembly(self.make_entry(), 128)
+
+        self.assertIn("fmv.d.x f1, t0", assembly)
+        self.assertIn("li t0, 0xffffffff3f800000", assembly)
+        self.assertIn("csrw fcsr, t0", assembly)
+        self.assertIn("fmv.x.d t0, f1", assembly)
+        self.assertIn("li t1, 0xffffffff40400000", assembly)
+        self.assertIn("csrr t0, fcsr", assembly)
+        self.assertIn("bne t0, t1, fp_post_park_f1", assembly)
+        self.assertLess(assembly.index("fmv.d.x f1, t0"), assembly.index("payload_ins:"))
+        self.assertGreater(assembly.index("fmv.x.d t0, f1"), assembly.index("payload_ins:"))
+
+    def test_illegal_float_path_checks_poststate_in_trap_handler(self):
+        assembly = pipeline.make_assembly(self.make_entry("Illegal_Instruction(())"), 128)
+
+        self.assertGreater(assembly.index("fmv.x.d t0, f1"), assembly.index("trap_handler:"))
+        self.assertLess(assembly.index("fmv.x.d t0, f1"), assembly.rindex(".4byte 0x0000006b"))
+
+    def test_float_state_must_include_all_registers_and_fcsr(self):
+        entry = self.make_entry()
+        del entry["isa-state-complete"]["f2"]
+        with self.assertRaisesRegex(ValueError, "f2"):
+            pipeline.make_assembly(entry, 128)
+
+
+class FprIsaStateAssemblyTests(unittest.TestCase):
+    """F4（campaign24，30 例 ok 路径 post-mismatch）的消费侧。
+
+    isarch 侧修复后 isa-state 恒携带 f0-f31/vr0-vr31 模型值（与 post-memory
+    写数据同源）；管线按 payload 是否触用 FP/向量寄存器选择性编程：
+    - FP payload 用数据区 + fld 装载 FPR 初值（RV64D 位精确）；
+    - 向量 payload 沿用既有 vsetvli + vl1re8 机制接上 vr 数据源；
+    - 非 FP/向量 payload 不发射相应前导，避免无关装载改变可重放状态；
+    - mstatus VS=Off 的条目不发射向量前导（campaign24 F6(a)：vsetvli 在
+      VS=Off 下 illegal，会在 payload 前 trap）；
+    - 浮点会话的 isa-state-complete/isa-state-post 机制优先，二者不叠加。
+    """
+
+    FLOAT_ZERO = "64'h0000_0000_0000_0000"
+    VECTOR_ZERO = "128'h0000_0000_0000_0000_0000_0000_0000_0000"
+
+    def make_state(self, mstatus="64'h0000_0000_0000_2000"):
+        state = {
+            "cur_privilege": "Machine",
+            "mstatus": mstatus,
+            "vl": "64'h0000_0000_0000_0004",
+            "vstart": "64'h0000_0000_0000_0000",
+            "vtype": "64'h0000_0000_0000_0013",
+            "vcsr": "3'h0",
+            "x10": "64'h0000_07ff_5428_02af",
+        }
+        state.update({f"f{index}": self.FLOAT_ZERO for index in range(32)})
+        state.update({f"vr{index}": self.VECTOR_ZERO for index in range(32)})
+        return state
+
+    def test_fpr_prestate_loaded_via_data_area_and_fld(self):
+        entry = {
+            "test-ins": "fsd f0, 0x569(x10)",
+            "test-ins-encdec": "32'h5605_34a7",
+            "isa-state": self.make_state() | {"f0": "64'h1122_3344_5566_7788"},
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn("la t0, fpr_initial_state", assembly)
+        self.assertIn("fld f0, 0(t0)", assembly)
+        # .dword 按值落盘，fld 小端读取往返保真（与 vector_initial_state 同构）
+        self.assertIn(".dword 0x1122334455667788", assembly)
+        self.assertIn("fpr_initial_state:", assembly)
+        self.assertLess(assembly.index("fld f0, 0(t0)"), assembly.index("payload_ins:"))
+
+    def test_non_float_payload_skips_fpr_programming(self):
+        entry = {
+            "test-ins": "amoor.w.aq x0, x31, (x29)",
+            "test-ins-encdec": "32'h45fe_a02f",
+            "isa-state": self.make_state() | {"f0": "64'h1122_3344_5566_7788"},
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertNotIn("fpr_initial_state", assembly)
+        self.assertNotIn("fld ", assembly)
+
+    def test_float_complete_schema_takes_precedence_over_isa_state(self):
+        complete = {f"f{index}": self.FLOAT_ZERO for index in range(32)}
+        complete["f0"] = "64'h1122_3344_5566_7788"
+        complete["fcsr"] = "32'h0000_0000"
+        post = dict(complete)
+        entry = {
+            "test-ins": "fsd f0, 0x569(x10)",
+            "test-ins-encdec": "32'h5605_34a7",
+            "isa-state": self.make_state() | {"f0": "64'h1122_3344_5566_7788"},
+            "isa-state-complete": complete,
+            "isa-state-post": post,
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn("fmv.d.x f0, t0", assembly)
+        self.assertNotIn("fpr_initial_state", assembly)
+
+    def test_vector_payload_programs_vregs_from_isa_state(self):
+        entry = {
+            "test-ins": "vse32.v v0, (x10)",
+            "test-ins-encdec": "32'h02b5_2027",
+            "isa-state": self.make_state(mstatus="64'h0000_0000_0000_2600")
+            | {"vr0": "128'h0000_0000_0000_0000_1122_3344_5566_7788"},
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn("vsetvli", assembly)
+        self.assertIn("la t0, vector_initial_state", assembly)
+        self.assertIn(".4byte 0x02828007 # vl1re8.v v0, (t0)", assembly)
+        # vr0 的 128 位值按值双 dword 落盘（低位 dword 在前）
+        self.assertIn(".dword 0x1122334455667788", assembly)
+        self.assertIn(".dword 0x0000000000000000", assembly)
+
+    def test_vs_off_entry_skips_vector_preamble(self):
+        entry = {
+            "test-ins": "amoor.w.aq x0, x31, (x29)",
+            "test-ins-encdec": "32'h45fe_a02f",
+            "isa-state": self.make_state(mstatus="64'h0000_0000_0000_2000"),
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        # VS=Off（mstatus[10:9]=00）：vsetvli/vl1re8 都会 illegal，全部省略
+        self.assertNotIn("vsetvli", assembly)
+        self.assertNotIn("vl1re8", assembly)
+        self.assertNotIn("vector_initial_state", assembly)
+
+    def test_fs_off_float_payload_skips_fpr_programming(self):
+        entry = {
+            "test-ins": "fsd f0, 0x569(x10)",
+            "test-ins-encdec": "32'h5605_34a7",
+            "isa-state": self.make_state(mstatus="64'h0000_0000_0000_0000"),
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        # FS=Off（mstatus[14:13]=00）：fld 前导会在 payload 前 illegal，省略
+        self.assertNotIn("fpr_initial_state", assembly)
+
+    def test_pmp_precedes_mprv_affected_data_loads(self):
+        # campaign24 F6(b)：模型 mstatus 携带 MPRV=1 且 MPP≠M 时，写完 mstatus 后
+        # M 态数据访问按 MPP 特权级过 PMP；PMP 若仍为复位态（无规则 → S/U 拒绝），
+        # 前导的 fld/vl1re8/pre-store 会 access fault（cause 5）先于 payload。
+        # PMP 开放规则必须前置于一切访存前导。
+        entry = {
+            "test-ins": "fsd f0, 0x569(x10)",
+            "test-ins-encdec": "32'h5605_34a7",
+            "isa-state": self.make_state(mstatus="64'h0000_0000_0002_2800")
+            | {"cur_privilege": "User"},
+            "ret_val": "Retire_Success(())",
+        }
+
+        assembly = pipeline.make_assembly(entry, 128)
+
+        self.assertIn("csrw pmpaddr0, t0", assembly)
+        self.assertLess(
+            assembly.index("csrw pmpaddr0, t0"),
+            assembly.index("csrw mstatus, t0"),
+            "PMP 开放规则必须在 mstatus 模型值整写之前",
+        )
+        self.assertLess(
+            assembly.index("csrw pmpaddr0, t0"),
+            assembly.index("fld f0, 0(t0)"),
+            "PMP 开放规则必须在 FPR 装载之前",
+        )
+
+
 class CompressedPayloadTests(unittest.TestCase):
     def test_compressed_encoding_emits_two_byte_payload(self):
         entry = {
