@@ -1,5 +1,23 @@
 # Findings
 
+## 2026-09-29 bughunt F 线验收战役：四签名命中矩阵与三族新候选
+
+- 产物：根仓 `.tmp/accept1-20260929-124451/`（gitignored）；结论：**P1-P3 改造达标**——已知 bug 自动级批量命中 + 新 bug 三族自动发现 + 重放毒丸消除。
+- 四签名命中矩阵：**#6475 自动级 155 例**（片内含 vsseg3e32 + 自由批 43 也触发）；**#6486 自动级 295 例中 41 例 data/mask/addr 级真分歧**（错元素 mask 0x10↔0x01、错地址±0x10；vsseg2e16×24/vse32×27）；T3b 未复现（nf=2 错位 post 字节精确 PASS、nf=3 错位转触 #6475——原签名疑依赖定向载体，后续在 VSSTYPE/VSETYPE 原载体复验）；#6605 原签名未复现但出新候选 NC-3。
+- **新候选三族（DUT bug 候选，自动发现）**：NC-1 vstart 保留区 vsseg（3e32/3e64/6e32）——模型+NEMU Illegal、**DUT 不 trap 且 15000 周期死锁**，5 例；NC-2 vstart≥vl 的 vsseg4e*/5e*——DUT 仍访存→mcause7@垃圾低位地址、NEMU/模型零访存，3+ 例；NC-3 locked-PMP 拒绝区段 store **mtval+0x10**（0x80600010≠首元素 0x80600000），2 例。P2 带出的 mstatus/mepc/mcause 形态裁定：与 NC-2 同根（DUT 不查 vstart 保留区先访存），非模型非配置。
+- P3 收口：zLOAD reject 26（ldu=0）、zAMO 88、**AMO 过滤后全量重放 0 失败**（P2 遗留闭环）；preclass 可见化 144 例。分布对照：VSSEG 自由批 0 命中→分片每片必出；zSTORE 错位材料 0→256+；自由批量级不变（分片不压缩自由域）。
+- 受限/待办：a1 盒杀于 nf=6；a2 用 P1 冻结 JSON 代用（回归一致）；**P1 待办：hint 批应可前置/免自由批**（VSSEGTYPE 自由批税 4×1800s 未见批）；T3b 需原载体复验；A4 需 pipeline PMP 前导可配置化；第二波 P4/P5/P6 候选不变。NC-1/2/3 可与 E 线四份草稿并成**上游上报包（7 项）**。摘要见[状态](memsolve_branch_coverage/status.md)。
+
+## 2026-09-29 浮点向量直接入口路径规模与源码结构
+
+当前 `e893` IR 的 `FVVTYPE` SYMBOLIC 主体在 `sail-riscv/model/extensions/V/vext_fp_insts.sail` 用 `match funct6` 计算每个 lane 候选，再以 `ite(mask[i])` 累计 flags 和 `vector_select_masked` 选值；该循环**没有逐 lane `if mask` 执行分叉**。同文件 `FVFTYPE` slide 分支和 `VFUNARY1` 特殊分支仍有 `foreach` 内的 mask 判断。因而 SEW32／LMUL8 的 `2^32` 只是存在独立二路判断时的理论上界，不可套到全部 FP 向量 clause。直接 `zexecute`、无抽样的77项完整 trace 基线中，22个超时向量前缀实际合计2635次fork；最多的可复用位点是 `vext_utils_insts.sail:284` 的 vstart 上界486次、`vext_control.sail:514` 的 `read_vmask` vm 分支286次、`:365` 的 LMUL正负100次，以及 `vext_utils_insts.sail:83–84` 的组重叠判断两位点158次。局部限制 slide 或把 `FVVTYPE` 改为按活动 lane 计算均未使目标在300秒内收束；具体版本和限制见[浮点报告](float_support_review/vector-sampling-20260929.md#直接入口完整-trace-批次与卡点2026-09-29)。
+
+**对下文 2026-06-25 `registers.defaults` 可具体化求解寄存器说法的现行版本修订**：当前 `isla/src/isarch/target.rs::Target::setup_pre_state` 对 `reg_list()` 中每个寄存器重新创建符号值，并写回执行寄存器与 `pre_state`；其单测 `setup_pre_state_overrides_initialized_non_anybits_register` 明确验证覆盖已初始化值。因此只在 FD TOML 的 `[registers.defaults]` 设 `vtype/vl/vstart/fcsr`，不能固定本轮 `solve-state` 的这些输入。隔离 FVVTYPE 配置试验仍在 `assert_sew` 的多个分支取边，120秒外限无JSON；该试验不构成具体状态分片性能证据。旧发现应按当时入口／源码版本理解，当前需在 `setup_pre_state` 之后保证执行帧和 `pre_state` 同值，才可设计新的分片机制。
+
+`RFWVVTYPE` 的 SYMBOLIC 归约体在 `sail-riscv/model/extensions/V/vext_fp_red_insts.sail:192–197` 每个元素先构造 `fp_widen_pure` 和依赖上一个 `sum` 的 `fp_add_pure`，然后用 ITE 选累计值；循环条件在12条Retire前缀共访问144次、单条最多33次，但该循环源位置实际fork为0。300秒外限时全目标仅29次fork。此例证明局部 loop fork limit 无法解决所有FP向量超时；表达式链成本是源码可见的候选原因，精确 SMT 耗时仍需单独诊断。详见[逐PC trace核账](float_support_review/evidence/float-full-trace-20260929/loop-trace-audit.json)。
+
+当前 SYMBOLIC 浮点 clause 的逐 lane `if mask[i]` 只在 `FVFTYPE` slide、`VFUNARY1` 估算，以及 `VFWUNARY0`／`VFNUNARY0` 的 SEW8 非法转换臂出现。前两者没有首个活动 lane 的提前返回，固定合法 SEW16／LMUL8、`vl=64`、`vstart=0`、`vm=0` 时仅掩码就允许 (2^{64}) 个独立控制序列；`VFUNARY1` 再按 sNaN／qNaN 至少分出 (3^{64}) 种 lane 决策。后两者遇到首个活动 lane 即返回 Illegal，最多 (n+1≤65) 种循环控制序列，不能按 (2^n) 算。数表、适用条件和代码证据见[理论规模段](float_support_review/vector-sampling-20260929.md#热路径的条件路径数2026-09-29)。
+
 ## 2026-09-29 bughunt 第一波 P1/P2/P3 收口（提交与验收汇总）
 
 - 提交：worktree 60ca0e0（P1）/58c9766（P2）/47ac90c（P3）、根仓库 488803f（pipeline preclass 跳过可见化）。P2 的根因/机制/验收详见下方「P2 编码维度预分片」条目（含 zSTORE 128 vs 2579 口径注记与 --timeout 单路径语义）。
@@ -49,6 +67,8 @@
 - 下一步候选：模型修复转正决策（重生成正式 IR+重绑 workaround）、ldu 枚举过滤、LOAD 汇总修复、错位成功路径采样偏置治理、cherry-pick #1603/#1625/#1900、#1800 补 difftest 复现与 F5 上报、VLX/VSX 独占泳道、emu 升级评估。摘要见[状态](memsolve_branch_coverage/status.md)。
 
 ## 2026-09-29 d740e02 终态分类与职责复核
+
+- **观测范围收缩**：`323021b` 恢复 `b18d6b7` 原Timeout/SMT错误退出和Assertion/Dead trace策略；普通错误、物化无结果及抽样不完整由终态/complete报告，不再升级命令失败。callback仅追加信息，原8早退/1次最终SMT查询及全部注释保持；原非SAT/模型失败后可能生成空用例的流程未在catalog中修复。候选、暂存组合及未暂存组合分别通过回归，见[现行证据](float_support_review/catalog-commit-review-20260929.md#catalog限于观测信息2026-09-29)。下述31523ab及更早结论保留为历史版本。
 
 - **结构纠偏**：现行 `31523ab` 以父 `b18d6b7` 恢复 callback 原嵌套分支/日志/早退和全部注释；case-id/终态/trace 在原多调用 submit_itrace 闭包汇交。取消6f阶段的物化标签块，正常返回仍保留finished记账。原注释核对无缺失，精确及暂存组合回归通过，详见[证据](float_support_review/catalog-commit-review-20260929.md#恢复回调原结构和注释2026-09-29)。以下6f为已修订的中间阶段。
 
