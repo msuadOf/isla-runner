@@ -1,5 +1,27 @@
 # Findings
 
+## 2026-09-29 bughunt 第一波 P1/P2/P3 收口（提交与验收汇总）
+
+- 提交：worktree 60ca0e0（P1）/58c9766（P2）/47ac90c（P3）、根仓库 488803f（pipeline preclass 跳过可见化）。P2 的根因/机制/验收详见下方「P2 编码维度预分片」条目（含 zSTORE 128 vs 2579 口径注记与 --timeout 单路径语义）。
+- P1 `[[value_hints]]`：base/data/vector_ctx 三维度候选值批（首批恒自由对照档、批间独立、增量落盘）。验收：错位形态 0→192（#1574 类捕获材料；语义勘误——错位成功形态需平台位，此前"Z3 未覆盖"的判定补充为可经值域提示诱导）；非零 vr 数据可见；T2 完整形态 45/45；回归逐项一致（P1 报告的 zSTORE 128 条口径按 P2 复跑 2579 与该条目注记为准）。
+- P3 译码回环过滤：**物化环境缺陷新发现**——`model.get_val` 的 %i64 字段是 64 位 Bits 形态垃圾值致 when 守卫放行（ldu 16 条实证链路三层收敛）；修复=forwards 编码经 zext_decode 回环构造子一致才落盘 + skip 计数 + opt-in 开关。验收：ldu 16→0、其余零差异、148 绿；pipeline preclass 跳过可见化（80 绿，根仓 488803f）。
+- 遗留：zAMO 全量 JSON 未取得（>30min，以 37 回环 13 REJECT+单测替代）；VSSEG 全量扫描不完整（转入验收战役）；forwards 对 Bits 形态 i64 放行守卫的精确机制未定论（回环不依赖它）。
+- 验收战役（F 线）已启动：四签名命中验证（E 线靶标）+ 新候选分诊（含 P2 发现的 mstatus/mepc/mcause ABORT 分歧形态）。摘要见[状态](memsolve_branch_coverage/status.md)。
+
+## 2026-09-29 GitHub 内存 issue 漏检归因的代码边界
+
+- 当前及 W24 `difftest-xiangshan/pipeline.py` 的 `STORE_EFFECT_RE` 只识别标量 `sb/sh/sw/sd`，低位错位预分类对 `sc.w`、`amoswap`、`vssseg` 返回 None；当前新加的 `skipped-preclass` 结果条目只让已有 skip 显式可见，不扩大过滤对象。当前版本 `3b31333c…a0ace` 的三用例函数探针见[证据](../difftest-xiangshan/work/github-memory-review/preclass-probe.json) SHA `07a583b9…b3307`。fault handler 仅核 `mepc==payload_ins`，不核 Sail 期望 `mcause`，fault 路径也不查 post-memory；因此 DUT/REF 共同的错误 cause 或部分副作用漏检仍可能 GOODTRAP。
+- 当前 `isla/src/isarch/exec.rs` 将指令 constructor 参数按类型整体符号化；`diversify_unconstrained_finite_domains` 仅在 Illegal 终态调用，Retire 不穷举同路径下的具体 nf/EEW。W19/W24 无某个编码或值只能证产物未覆盖，不能据此称 Z3 判错。当前主树 `isla/isla-lib/src/init.rs:75–116` 可用 `const_primops` 覆盖顶层 let，主 `riscv64_difftest.toml` 将 `plat_enable_misaligned_access=false`；这与旧内存分支 IR 固化 true 的调查版本不同。
+- 当前工作区 `a13efc8` emu 对定向 `vsseg3e32.v` 报与 [XiangShan #6475](https://github.com/OpenXiangShan/XiangShan/issues/6475) 同名的 ROB `uopNum` 断言，唯改 nf=2 则 GOODTRAP；[XiangShan #6486](https://github.com/OpenXiangShan/XiangShan/issues/6486) 上游原 ELF 在本地复现同 PC store data REF `0xdac10000`／DUT `0`，合成单指令非零源值版通过。两者是定向输入，不是官方符号求解命中；[机器核账](../difftest-xiangshan/work/github-memory-review/evidence.json) SHA `55c8474a…f45521`及[完整分组报告](memory_github_xref/report.md)绑定 IR、源码、runtime、配置及上游版本。#6475/#6486 维护者另注明 kunminghu-v3 所测 segment 功能仍 WIP。
+
+## 2026-09-29 P2 编码维度预分片 + --instruction-bits panic 根因修复
+
+- **`--instruction-bits` 启动期 panic（G6/E/P1 三次撞到）根因已修**：`decode_fixed_instruction`→`concrete_function_result` 在**独立 solver**里执行 zext_decode，但传入的是 `setup_pre_state` 之后的 symbolic_regs——其符号只在主 solver 声明。向量 clause 的 encdec 守卫（`zencdec_backwards` 分支经 `zcurrentlyEnabled(zExt_Zve32x)` 读 `z_get_Mstatus_VS(zmstatus)`）对符号做 neq 时，`translate_exp` 找不到 func_decl 即 panic（smt.rs:2168）。标量译码无守卫故单用正常；bits+prestate 钉住 mstatus/cur_privilege 时守卫取具体值故 E 线可用。修复：译码环境改用初始具体寄存器表 + prestate 钉值（`exec.rs::decode_register_bindings`）。`--instruction-bits` 单用向量 clause 现为干净错误（"译码返回依赖符号状态"）而非 panic。注意：`[symbolic_registers]` 配置与向量 bits 分片互斥（符号化 CSR 不能钉具体值，计划期拦截）。
+- **P2 机制**：`[[encoding_slices]]` 配置（clause + enumerate/dimensions 维度 + operand_defaults + 每片 prestate/case_limit/timebox_s），独立 TOML 可经 `--encoding-slices-config` 叠加在 `-C` 之上。维度表 `src/isarch/encoding_slices.rs`：clause→载荷元组语义布局（VSSEGTYPE/VLSEGFFTYPE 5 字段、VLXSEGTYPE/VSXSEGTYPE 7 字段），枚举域从 IR 类型推导（zvlewidth/zindexed_mop 成员、nf 内置 2..=8），布局逐位对 IR 校验、漂移硬失败。每片 = 构造具体 Ctor→`zencdec_forwards` 求编码→`--instruction-bits` 通道（保留译码回环校验）+ prestate 批。批调度复用 P1 骨架（自由对照批+分片批，SolveBatch 增加 instruction/case_limit/timeout）；分片激活时该 clause 的 value_hints 批让位。JSON 新增 `encoding-slice` 标签（skip-if-none 保持无分片输出逐字节兼容）。
+- **验收数据（产物 /home/baiyifan/xsrepro/p2-20260929-081521/）**：①VSSEG 全枚举 28/28 组合各 ≥2 条（含 vsseg3e32，基线 51 例 0）；②vsseg3e32 片产物重放 kunminghu-v3 emu（a13efc8775）即中 #6475 签名 `Assertion failed: robEntries 47 uopNum is overflow!`→ABORT（无定向参数自动命中；同片 Illegal_Instruction 变体另现 mstatus/mepc/mcause 分歧）；③VLXSEGTYPE 缩域（EMUL∈{1,2}×nf∈{2,3}×mop，600s 盒）8 片 32 条产物（基线 3600s 零）；④回归：无分片 zSTORE 三跑（P1 基线二进制/新二进制×2）条数 2579、ret_val 分布 {ME 2554, RS 25}、JSON 字段全同；同二进制重跑亦差 2/2579 条（Z3 时间种子下未约束模型值任意取值），非语义回归。`cargo test -p isla --lib` 140 绿（133+7）。
+- 旧 P1 基线 JSON（zstore-reg-new 128 条/4s）当日不可复现（同时代二进制今日 2579 条）——该快照疑为中途截断产物，不宜再作逐项回归参照；回归对照应采同日双二进制跑。
+- `--timeout` 语义为**单路径预算**（path_timing.rs PathTimeout::limit），非批/整体墙钟；分片时间盒 timebox_s 同为单路径语义。验收跑 rc=1 均源于自由对照批按 --timeout 截断（分片批不受影响）。
+
 ## 2026-09-29 内存 E 线：已知 XiangShan bug 定向复现（4/4 触发）
 
 - 方法：Isla 定向生成（`--instruction-bits`/`--prestate`，Sail 模型期望随 JSON 落盘）→ difftest-xiangshan pipeline → 真 emu+NEMU DiffTest；产物 `/data1/baiyifan/tmp/xs-known-bugs-repro-20260929-034817/`（含四份 upstream_reply.md 草稿），未改仓库无提交。
@@ -13,6 +35,7 @@
 - 当前 `isla/src/isarch/exec.rs` 的官方入口直接以符号 constructor 调用 `zexecute`，`target.setup_pre_state` 会重新符号化 mstatus 等初态，FD TOML 的 Dirty 默认值并不钉住输出见证。Sail 的向量浮点 `encdec` 还要求扩展使能和特定 SEW；因此直接执行的路径可能可满足，却没有对应机器编码。终态阶段先以 SAT 检查优选 FS/VS Dirty 不收窄执行域；不相容路径保持可满足，非法且不可编码者需要单列，成功执行但不可编码仍是错误。代码与动态边界见[本轮报告](float_support_review/vector-sampling-20260929.md)。
 - `valid_fp_op` 故意允许 SEW8 给部分 INT8↔FP16 转换；普通 FP、比较、移动、归约和 widening 算术的映射没有 SEW8。BF16 向量四个 clause 映射只接受 SEW16。直接 constructor 执行绕过映射 guard 时，若 execute guard 不先拒绝这些宽度，会到达源码断言；本轮 Sail guard 修改已在 V128 实验 IR 中消除所测 BF16／widening 的这类断言，未测试其余全部 clause。
 - `isla-lib/src/executor/execution_limits.rs` 的 `max_forks_per_branch` 是路径×静态分支点预算；`region_fork_limits` 同样以 region×`ControlFlowScope` 计数，**不把同 region 中不同 IR pc 的 match 臂合计为一个共享预算**。每路径总 fork 上限会在前导 guard 用尽，实测 BF16／widening 的上限5试验没有任何 Retire；故仅凭小预算结束或 `sampled=true` 不能证明源码 if/else 闭合。
+- 73df **FullEncoded32** 入口的剩余20目标长时诊断均外限无最终JSON（19×30分钟、FVFTYPE两小时）。19份日志58,845个实际fork中，至少12,866个属于已定位的四个反向译码无源码位置，浮点变量宽度guard两位点9,542，LMUL正负判断3,917，vstart上界2,334；按冻结Sail中五个FP clause文件的SYMBOLIC `foreach`行区间仅直接命中12，其他辅助/无位点fork不在此数。FVFTYPE两小时95,679次SAT检查累计14,094.107秒双worker FFI，完成的单次均<5秒。结论限旧入口与IR，不能迁给当前直接zexecute；见[聚合报告](float_support_review/vector-sampling-20260929.md#已有完整批次与长时卡点复核2026-09-29只读)。
 
 ## 2026-09-29 内存六线并行轮：上游交叉对照与 F1-F7 修复落地
 
@@ -1518,6 +1541,8 @@ vtype.zbits[63]=vill=0, [5:3]=vsew=010(SEW=32), [2:0]=vlmul=000(LMUL=1)
 - 覆盖缺口：`isla/scripts/run.mk` 的 MEMORY 组默认排除全部向量访存 clause（VLRETYPE/VLSEG*/VLSSEG/VLXSEG/VMTYPE/VSRETYPE/VSSEG/VSSSEG/VSXSEG），FD_FLOAT 组也默认不跑；28 个已确认 RTL bug 约 2/3 涉及访存指令（FOF/segment/异常链/mtval/store 队列），isla 侧根本生成不出。
 - 序列/环境缺口：#5739 需 vsetvli(rd≠x0)→csrr vl 回读（solve 有 rd=x31 的 vsetvli 但 ELF 无后续观察指令，且 v3 已修）；#6561 需 VS=Clean 前提（harness 反而固定置 Dirty）+ vl=0 store（访存被排除）；FOF 类需 PMP deny 区（harness 只会开全权限 pmpcfg0=0x1f）；#6467 需 store 队列压力长序列；#6399/#6482/#6540 需 fault→mret→fault + handler 查 mtval；#4190 是性能 oracle，difftest 原理不适用。
 - DUT 为 kunminghu-v3 分支 MinimalConfig(VLEN=128) + NEMU 参考：v2 专属 bug 在 v3 可能不存在/未开发（#6576 维护者原话），2026-03/04 已修 bug（#5739/#5809）所用构建可能已含修复；NEMU 自身与 XiangShan 同源的系统性偏差（vstart!=0 trap、#5426 类 NEMU bug）difftest 盲区，isla/Sail 黄金模型未参与断言是半条根因。
+
+2026-09-29 补核：上述“所用构建可能已含修复”适用于旧批记录，**当前**工作区 `difftest-xiangshan/xiangshan@a13efc8` 已由祖先关系确认包含 #5809 的 `fdd634f` 和 #5739 的 `75bf3fb`。#5809 原 `rv64_zVMVXS.json` `gen[2]`（SHA `cc032413…454f7a`）精确含 `vmv.x.s`／`vill=1`／Illegal；2026-09-18 trap 补跑旧基线 `case-4815` 已记 success，本轮同原 JSON 行在当前 pipeline `3b31333c…a0ace`／MinimalConfig emu `87141692…a85ee` 的 ELF `e9aa3b79…ebcc5` 再验证 payload `0x42202557`、cause 2、GOODTRAP。因此可计历史求解触发条件覆盖和当前修复后行为，不能称当前 DUT 仍有 bug，也不能迁记 d012 当前官方库存。#5739 单指令缺 `csrr vl`，#6316 AMO 定向缺 MMIO／NC 条件证明，尚不计已修复覆盖。详见 [GitHub 对照](memory_github_xref/report.md#已修复-bug-的触发条件覆盖另列的向量非访存例)与[核账](../difftest-xiangshan/work/github-memory-review/fixed-coverage-evidence.json) SHA `4af0be30…33f615`。
 
 ## 2026-09-20 V 扩展 SYMBOLIC 重复实现收敛
 
