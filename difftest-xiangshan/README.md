@@ -120,6 +120,7 @@ Isla 输出的 `pre-memory`（首触内存，首触写为 `value: null`）、`po
 - **代码窗口（两遍构建）**：第一次链接后解析 ELF 各 ALLOC section 的实际占用区间，pre/post/memory-events 触碰地址与代码（含 `.data`）重叠的条目精确跳过（`skipped_reason: code-overlap`，汇编保留供诊断），避免前导 store 覆写自身代码；其余条目再链接一次生成最终 ELF。无 vreg 初始状态的条目不发射占位 `.data`：原 8 字节 `vector_initial_state` 占位恰落在链接脚本的 0x80001000 对齐位，会与以该地址为访存窗口的用例相撞而误判 code-overlap，且占位无任何引用。
 - **采样**：默认全量；大批量可用 `build --sample-mode first-per-encoding` 每个编码仅保留首条。
 - **产物**：`manifest.json` 逐条含 `path_class`（`ok`/`fault`）、`memory` 计数与 pre/post/events 抄录、fault 条目的 `preclass` 标注、符号边界条目的 `map_hypothesis` 记录；`build-summary.json` 汇总 built/skipped/path_class/preclass/map_hypothesis 计数；`run` 自动跳过无 ELF 的条目。
+- **preclass 跳过条目的 results 可见性（E 线反馈④）**：`lowaddr-misaligned-mcause-divergence` 跳过的条目不再只在 `manifest.json`/`build-summary.json` 里静默消失——`run` 会为它们在 `results.ndjson`/`results.json` 追加 `category: "skipped-preclass"` 记录（含 `id`、`instruction`、`ret_val`、`reason`），下游分诊可直接看到被过滤的已知分歧清单。这类记录不进重放、不计入失败统计（汇总行单独报 `skipped-preclass N`），resume 语义与重放记录一致（已记录的 id 不重复写）。其他构建期跳过（`code-overlap`、`map-hypothesis-mismatch`、`post-all-null`）维持只在 build 侧计数的既有行为。
 
 ```bash
 python3 pipeline.py prepare-json --source /path/to/rv64_zSTORE.json --vlen-bits 128 \

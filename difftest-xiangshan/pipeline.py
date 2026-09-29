@@ -1071,6 +1071,32 @@ def run_case(case: dict, emulator: Path, diff_so: Path, timeout: int) -> dict:
     }
 
 
+def make_skipped_preclass_record(case: dict) -> dict:
+    """E 线反馈④：preclass 跳过的已知分歧用例（lowaddr 错位 mcause 分歧）
+    生成 results 可见条目——category=skipped-preclass + reason + case id，
+    不再只在 manifest 里静默消失。这类条目无 ELF、不参与重放与失败统计，
+    但下游分诊能看到被过滤掉的 case 清单。"""
+    return {
+        "id": case["id"],
+        "instruction": case.get("instruction"),
+        "ret_val": case.get("ret_val"),
+        "path_class": case.get("path_class"),
+        "category": "skipped-preclass",
+        "reason": case.get("skipped_reason"),
+        "elapsed": 0.0,
+    }
+
+
+def is_preclass_skipped(case: dict) -> bool:
+    """preclass 分歧跳过的判据：无 ELF 且 skipped_reason 是 preclass 产生的
+    lowaddr-misaligned-mcause-divergence（其他 skipped_reason 是构建期跳过，
+    维持只在 build-summary 计数的既有行为）。"""
+    return (
+        not case.get("elf")
+        and case.get("skipped_reason") == SKIP_MCAUSE_DIVERGENCE
+    )
+
+
 def load_recorded_results(ndjson: Path) -> list[dict]:
     """读取已有 results.ndjson，返回完整记录列表；半行（进程中断残留）打印警告后跳过。"""
     results: list[dict] = []
@@ -1102,8 +1128,16 @@ def run(args: argparse.Namespace) -> None:
     completed_ids = {record["id"] for record in results}
     runnable = [case for case in cases if case.get("elf")]
     pending = [case for case in runnable if case["id"] not in completed_ids]
+    # preclass 跳过的已知分歧用例：随 results 落盘（category=skipped-preclass），
+    # resume 语义与其他记录一致（已记录的 id 不重复写）
+    pending_preclass_records = [
+        make_skipped_preclass_record(case)
+        for case in cases
+        if is_preclass_skipped(case) and case["id"] not in completed_ids
+    ]
     print(
-        f"共 {len(cases)} 条（可运行 {len(runnable)}、构建期跳过 {len(cases) - len(runnable)}）；"
+        f"共 {len(cases)} 条（可运行 {len(runnable)}、构建期跳过 {len(cases) - len(runnable)}"
+        f"其中 preclass 分歧 {sum(1 for case in cases if is_preclass_skipped(case))}）；"
         f"已完成 {len(completed_ids)} 条；本次运行 {len(pending)} 条"
     )
     needs_separator = (
@@ -1115,7 +1149,10 @@ def run(args: argparse.Namespace) -> None:
         if needs_separator:
             # 上次中断残留的半行没有换行结尾，先隔断，避免新记录拼接成损坏行
             stream.write("\n")
-        done = len(completed_ids)
+        for record in pending_preclass_records:
+            stream.write(json.dumps(record, ensure_ascii=False) + "\n")
+            results.append(record)
+        done = len(completed_ids) + len(pending_preclass_records)
         with ThreadPoolExecutor(max_workers=args.jobs) as executor:
             futures = [
                 executor.submit(run_case, case, emulator, diff_so, args.timeout)
@@ -1130,8 +1167,12 @@ def run(args: argparse.Namespace) -> None:
                 print(f"[{done}/{len(cases)}] {result['id']} {result['category']} ({result['elapsed']}s)")
     results_path = cases_dir / "results.json"
     results_path.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    failures = sum(item["category"] != "success" for item in results)
-    print(f"DiffTest 完成：{len(results) - failures}/{len(results)} success；{results_path}")
+    skipped_preclass_count = sum(item["category"] == "skipped-preclass" for item in results)
+    failures = sum(item["category"] != "success" and item["category"] != "skipped-preclass" for item in results)
+    print(
+        f"DiffTest 完成：{len(results) - failures - skipped_preclass_count}/{len(results)} success"
+        f"（skipped-preclass {skipped_preclass_count}）；{results_path}"
+    )
     if failures:
         raise SystemExit(1)
 

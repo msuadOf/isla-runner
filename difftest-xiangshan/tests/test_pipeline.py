@@ -1396,6 +1396,175 @@ class MapHypothesisSummaryTests(unittest.TestCase):
             self.assertEqual(summary["map_hypothesis"], {"checked": 2, "skipped": 1})
 
 
+class PreclassFlagTests(unittest.TestCase):
+    """E 线反馈④：preclass 跳过的已知分歧用例必须在 results 里可见
+    （category=skipped-preclass + reason），不再只在 manifest 里静默消失。"""
+
+    @staticmethod
+    def make_args(cases_dir: Path) -> SimpleNamespace:
+        return SimpleNamespace(
+            cases=str(cases_dir),
+            emulator=str(cases_dir / "emu"),
+            diff_so=str(cases_dir / "ref.so"),
+            jobs=1,
+            timeout=5,
+        )
+
+    def test_run_records_preclass_skipped_case_in_results(self):
+        with TemporaryDirectory() as directory:
+            cases_dir = Path(directory)
+            elf = cases_dir / "case-000" / "program.elf"
+            elf.parent.mkdir(parents=True, exist_ok=True)
+            elf.touch()
+            manifest = [
+                {
+                    "id": "case-000",
+                    "instruction": "sd x0, 0x0(x30)",
+                    "elf": str(elf),
+                    "ret_val": "Retire_Success(())",
+                    "skipped_reason": None,
+                    "preclass": None,
+                },
+                {
+                    "id": "case-001",
+                    "instruction": "sh x0, 0x9(x0)",
+                    "elf": None,
+                    "ret_val": "Memory_Exception({tuple#%bv64_%union ExceptionType0: #x00000000840b3200, "
+                    "tuple#%bv64_%union ExceptionType1: E_SAMO_Access_Fault(())})",
+                    "skipped_reason": pipeline.SKIP_MCAUSE_DIVERGENCE,
+                    "preclass": pipeline.SKIP_MCAUSE_DIVERGENCE,
+                },
+            ]
+            (cases_dir / "manifest.json").write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            (cases_dir / "emu").touch()
+            (cases_dir / "ref.so").touch()
+            fake = {
+                **manifest[0],
+                "category": "success",
+                "returncode": 0,
+                "log": "x",
+                "elapsed": 0.1,
+            }
+            with patch.object(pipeline, "run_case", return_value=fake):
+                pipeline.run(self.make_args(cases_dir))
+
+            results = json.loads(
+                (cases_dir / "results.json").read_text(encoding="utf-8")
+            )
+            by_id = {item["id"]: item for item in results}
+            self.assertEqual(
+                sorted(by_id), ["case-000", "case-001"], "preclass 跳过条目必须出现在 results"
+            )
+            skipped = by_id["case-001"]
+            self.assertEqual(skipped["category"], "skipped-preclass")
+            self.assertEqual(
+                skipped["reason"], pipeline.SKIP_MCAUSE_DIVERGENCE
+            )
+            self.assertIn("instruction", skipped)
+
+    def test_preclass_skipped_records_do_not_count_as_failures_and_resume(self):
+        with TemporaryDirectory() as directory:
+            cases_dir = Path(directory)
+            elf = cases_dir / "case-000" / "program.elf"
+            elf.parent.mkdir(parents=True, exist_ok=True)
+            elf.touch()
+            manifest = [
+                {
+                    "id": "case-000",
+                    "instruction": "sd x0, 0x0(x30)",
+                    "elf": str(elf),
+                    "ret_val": "Retire_Success(())",
+                    "skipped_reason": None,
+                    "preclass": None,
+                },
+                {
+                    "id": "case-001",
+                    "instruction": "sh x0, 0x9(x0)",
+                    "elf": None,
+                    "ret_val": "Memory_Exception(())",
+                    "skipped_reason": pipeline.SKIP_MCAUSE_DIVERGENCE,
+                    "preclass": pipeline.SKIP_MCAUSE_DIVERGENCE,
+                },
+            ]
+            (cases_dir / "manifest.json").write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            (cases_dir / "emu").touch()
+            (cases_dir / "ref.so").touch()
+            fake = {
+                **manifest[0],
+                "category": "success",
+                "returncode": 0,
+                "log": "x",
+                "elapsed": 0.1,
+            }
+            with patch.object(pipeline, "run_case", return_value=fake) as run_case_mock:
+                pipeline.run(self.make_args(cases_dir))
+
+            # 一次运行后 ndjson 应同时含两条记录；重跑不重复、不再调 run_case
+            first_pass = [
+                json.loads(line)
+                for line in (cases_dir / "results.ndjson").read_text(encoding="utf-8").splitlines()
+            ]
+            self.assertEqual(len(first_pass), 2)
+            self.assertEqual(
+                sum(item["category"] == "skipped-preclass" for item in first_pass), 1
+            )
+            with patch.object(pipeline, "run_case", return_value=fake) as rerun_mock:
+                pipeline.run(self.make_args(cases_dir))
+            rerun_mock.assert_not_called()
+            second_pass = [
+                json.loads(line)
+                for line in (cases_dir / "results.ndjson").read_text(encoding="utf-8").splitlines()
+            ]
+            self.assertEqual(len(second_pass), 2, "重跑不得重复写入 skipped-preclass 记录")
+
+    def test_non_preclass_build_skips_stay_out_of_results(self):
+        # code-overlap 是构建期跳过而非 preclass 分歧，维持只在 build-summary
+        # 计数、不进 results 的既有行为（test_run_ignores_manifest_entries_without_elf
+        # 已覆盖断言，这里防止 preclass 改动扩大化）
+        with TemporaryDirectory() as directory:
+            cases_dir = Path(directory)
+            elf = cases_dir / "case-000" / "program.elf"
+            elf.parent.mkdir(parents=True, exist_ok=True)
+            elf.touch()
+            manifest = [
+                {
+                    "id": "case-000",
+                    "instruction": "sd x0, 0x0(x30)",
+                    "elf": str(elf),
+                    "ret_val": "Retire_Success(())",
+                    "skipped_reason": None,
+                },
+                {
+                    "id": "case-001",
+                    "instruction": "sb x0, 0(x29)",
+                    "ret_val": "Retire_Success(())",
+                    "skipped_reason": "code-overlap",
+                },
+            ]
+            (cases_dir / "manifest.json").write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            (cases_dir / "emu").touch()
+            (cases_dir / "ref.so").touch()
+            fake = {
+                **manifest[0],
+                "category": "success",
+                "returncode": 0,
+                "log": "x",
+                "elapsed": 0.1,
+            }
+            with patch.object(pipeline, "run_case", return_value=fake):
+                pipeline.run(self.make_args(cases_dir))
+            results = json.loads(
+                (cases_dir / "results.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual([item["id"] for item in results], ["case-000"])
+
+
 class DataSectionTests(unittest.TestCase):
     def test_entry_without_vregs_omits_dead_data_section(self):
         # W17 样例访存地址 0x80001000 与 8 字节占位 .data 精确相撞（code-overlap
