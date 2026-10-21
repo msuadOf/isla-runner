@@ -1,5 +1,7 @@
 # TODOs — 当前协作状态
 
+**2026-10-21 float版本快照**：本根仓分支固定组件提交与IR哈希，版本见 [manifest](topic-version.json)。原有状态表是共同基线的历史记录，不代表本分支额外验收；当前交付边界见 [双分支说明](topic-versions.md)。
+
 **FLOAT-01 catalog观测范围收缩（2026-09-29）**：已amend为 `323021b`，只纳入catalog及关联信息；恢复原错误退出/trace策略，summary.complete只报告，保留8早退/1次最终SMT查询及原注释。精确64＋24、暂存82＋24、完整工作区83＋24及默认定向/编译/fmt通过（过滤已知x0失败），未跑全量solve/重放。原27文件暂存及exec.rs未暂存浮点层保留；[现行证据](../agents/float_support_review/catalog-commit-review-20260929.md#catalog限于观测信息2026-09-29)。31523ab及更早catalog记录为历史。
 
 **FLOAT-01 XiangShan GitHub 浮点 issue 清单（2026-09-29，逐条核完）**：`OpenXiangShan/XiangShan` 全 898 条 issue 标题／正文和公开时间线均已读取；37 条时间线第二页补齐。四名 Sol＋主 agent 按 180/180/180/180/178 分批逐条判断，898/898 编号、顺序、评论数机器核对通过。[表格文件](../agents/float_support_review/xiangshan-github-float-issues.md)现列 27 条直接相关 XiangShan 浮点报告（12 open／15 closed）、17 条重复／参考模型／无效等相关报告及 7 条性能／FP 代码配置／构建交集；新识别 #2890 的 `vfmacc.vf` 工作负载、#3735 的 FP 调度参数笔误、#4980 的 MMIO `fld` DiffTest 同步，#6410 的 FP 泛化推论另列未证。关闭不自动等于本地修复；未运行硬件。[逐项总账](../agents/float_support_review/github-issue-audit/summary.json) SHA `491c2e30…af5cbb`、[快照](../agents/float_support_review/github-issues-all-20260929.json) SHA `b6af07e4…0c15e`、[完整公开时间线](../agents/float_support_review/github-issue-details-20260929.json) SHA `af17f7dc…990e29`。

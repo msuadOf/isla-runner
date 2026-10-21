@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "topic": "float",
+  "created": "2026-10-21",
+  "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
+  "status": "源码候选快照；本轮未做联合功能验收",
+  "components": {
+    "isla": {
+      "commit": "be1296bbe66ca03a3c17c17ad7b9039a9cefc9c9",
+      "source_branch": "feat/float-only-20261008",
+      "url": "https://github.com/ariscv/isla.git"
+    },
+    "sail-riscv": {
+      "commit": "3ea3cbaf599b0b210a365eac50736f097b4b2337",
+      "source_branch": "feat/sail-riscv-by-category-20261019",
+      "url": "https://github.com/msuadOf/sail-riscv.git"
+    }
+  },
+  "ir": {
+    "path": "isla/rv64d.ir",
+    "sha256": "aea104c88a3c90f5e3030365d38dbcbc97a058dcfaf22b77b6717bffae59b544",
+    "provenance": "来自所固定Isla提交的产物；未宣称由所固定模型重新生成"
+  },
+  "excluded_isla_branches": [
+    "refactor/general-support-20261007",
+    "feat/witness-randomization"
+  ],
+  "publication": {
+    "pushed_this_round": false,
+    "remote_reachability": "TLS查询失败，未核实"
+  }
+}

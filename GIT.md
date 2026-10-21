@@ -17,3 +17,7 @@
 提交或迁移前检查根仓库及相关子仓库的 staged、unstaged 和 untracked 内容。移动文件时先保留用户已有修改，再核对目标文件和引用。发布父仓库 gitlink 前，确认引用的子模块 commit 可从记录的 remote 获取。
 
 workaround 配置归 `sail-riscv/configs/isla/workarounds/` 管理，Isla 直接读取，不再保留生成副本。后续提交这组改动时，先形成可获取的 Sail-RISC-V 提交，再形成消费它的 Isla 提交，最后由父仓库同时更新两个 gitlink；仅提交父仓库文档不能固定当前子模块未提交内容。
+
+## 根仓议题分支
+
+`float`、`memory` 分别记录组件gitlink，具体同步顺序与本地工作树入口见 [双分支版本说明](specs/topic-versions.md)。不得把子模块分支切换当作已更新根仓版本。
