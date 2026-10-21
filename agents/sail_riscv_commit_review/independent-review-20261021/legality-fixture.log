@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<仓库根目录>/.worktree/sail-riscv-by-category-20261019/test/solve_fp_legality/build_probe.py", line 37, in <module>
+    assert old == new, f"unapproved change outside four functions in {name}"
+           ^^^^^^^^^^
+AssertionError: unapproved change outside four functions in vext_utils_insts.sail

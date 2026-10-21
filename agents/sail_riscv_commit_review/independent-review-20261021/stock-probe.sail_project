@@ -1,0 +1,2 @@
+prelude { files model/prelude/prelude.sail, model/prelude/ieee_fp_primops.sail, }
+probe { requires prelude files "stock-probe.sail", }

@@ -39,3 +39,5 @@ workaround 配置直接位于 `sail-riscv/configs/isla/workarounds/`，`make sol
 ## 结果与分析
 
 逐次验证摘要见 [docs/RESULTS.md](docs/RESULTS.md)，专题调查与历史记录见 [agents/](agents/)。这些记录可能对应不同源码、IR、配置和模拟器版本；复用结论前先核对其 provenance。
+
+本候选的Sail-RISC-V独立代码审阅及构建／测试建议见 [审阅报告](agents/sail_riscv_commit_review/independent-review-20261021.md)。报告及小型证据随float版本保存；不表示已修复报告问题或完成联合验收。

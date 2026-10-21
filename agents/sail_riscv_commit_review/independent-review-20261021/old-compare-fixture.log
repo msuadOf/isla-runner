@@ -1,0 +1,9 @@
+patching file model/core/ieee_fp_exceptions.sail
+patching file model/extensions/FD/softfloat_symbolic_f16.sail
+patching file model/extensions/FD/softfloat_symbolic_f32.sail
+patching file model/extensions/FD/softfloat_symbolic_f64.sail
+Traceback (most recent call last):
+  File "<仓库根目录>/.worktree/sail-riscv-by-category-20261019/test/solve_pure_compare/restore_before.py", line 27, in <module>
+    assert actual == expected, f"旧快照不匹配: {name}: {actual} != {expected}"
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: 旧快照不匹配: model/core/ieee_fp_exceptions.sail: bca3ed0d67bfd7b17c9b77829ae8b5200faf323269c7c0003b0a1c337d520dd4 != d80c4aabcc40f6c0de5aad439aab24a012de51a98ec1a3669ff4a52a781c9bf6

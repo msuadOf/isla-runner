@@ -1,0 +1,16 @@
+{
+  "head": "3ea3cbaf599b0b210a365eac50736f097b4b2337",
+  "base": "4f2ac293654a02db26dac5055be7f93fd6e3141e",
+  "tree": "6fafcbc406156ee275bcf301e6db1743eb417a0f",
+  "status": "",
+  "stock_version": "Sail 0.20.1 (HEAD @ 446fb477c508853595ccc937ed60765aa685ae31)",
+  "compiler_sha256": {
+    "stock": "8915ef46daf4bd9a7a99c563e007f554665930b5def7dd34aeeff9341bcc2a6a",
+    "patched": "2e89d5f5467195ea0a2fb4b072133a0ee73933db3e8808b8a6518c7ef59ec807"
+  },
+  "limitations": [
+    "源快照逐文件比对1011路径；未重新生成或编译完整模型",
+    "未执行SYMBOLIC数值对照、转换包装、向量完整执行或硬件测试",
+    "初次最小probe项目文件因未引用含连字符路径发生词法错误；改用本目录model相对符号链接后形成最终A/B探针，初次失败不作为构建缺陷证据"
+  ]
+}

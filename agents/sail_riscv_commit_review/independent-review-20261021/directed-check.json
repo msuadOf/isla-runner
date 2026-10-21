@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "run_command": [
+    "agents/sail_riscv_commit_review/independent-review-20261021/directed-probe",
+    ".tmp/sail-riscv-split-20261016/cpp-build/config/rv64d_v128_e64.json"
+  ],
+  "cases": 524880,
+  "source_sha256": "768c4d8df911cc40b0876e119506c4a8b06f4700005b4a9b81ab446663ce7e73"
+}
