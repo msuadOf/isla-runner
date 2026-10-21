@@ -1,5 +1,7 @@
 # isla-runner
 
+当前根仓议题分支：`memory`。精确组件版本见 [topic-version.json](specs/topic-version.json)，双分支同步入口及验证边界见 [topic-versions.md](specs/topic-versions.md)。
+
 本仓库把兼容版本的 Sail、RISC-V Sail 模型和 Isla 组织到一个工作区，用于生成与分析 RISC-V 模型 IR。目标和验收边界见 [specs/GOAL.md](specs/GOAL.md)；当前议题状态见 [specs/TODOs.md](specs/TODOs.md)。
 
 ## 初始化

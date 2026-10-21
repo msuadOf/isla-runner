@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "topic": "memory",
+  "created": "2026-10-21",
+  "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
+  "status": "源码候选快照；本轮未做联合功能验收",
+  "components": {
+    "isla": {
+      "commit": "47ac90cd53d4542179c3c255dc0db34886f10ec6",
+      "source_branch": "feat/memory-consistency",
+      "url": "https://github.com/ariscv/isla.git"
+    },
+    "sail-riscv": {
+      "commit": "4f2ac293654a02db26dac5055be7f93fd6e3141e",
+      "source_branch": "feat/isla-workarounds",
+      "url": "https://github.com/msuadOf/sail-riscv.git"
+    }
+  },
+  "ir": {
+    "path": "isla/rv64d.ir",
+    "sha256": "7c626989a03056c43c67c81de8f40f611cef4c43ed1069a81526b37856d7e37b",
+    "provenance": "来自所固定Isla提交的产物；未宣称由所固定模型重新生成"
+  },
+  "excluded_isla_branches": [
+    "feat/float-only-20261008",
+    "refactor/general-support-20261007",
+    "feat/witness-randomization"
+  ],
+  "publication": {
+    "pushed_this_round": false,
+    "remote_reachability": "TLS查询失败，未核实"
+  }
+}
