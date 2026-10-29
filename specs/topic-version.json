@@ -3,16 +3,16 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "源码候选快照；本轮未做联合功能验收",
+  "status": "组件提交、manifest、gitlink与checkout核对通过；本轮未做联合功能验收",
   "components": {
     "isla": {
-      "commit": "be1296bbe66ca03a3c17c17ad7b9039a9cefc9c9",
-      "source_branch": "feat/float-only-20261008",
+      "commit": "b0138b7c2ff8addb81f68f42669600a2a9c2b813",
+      "source_branch": "feat/float-support",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "3ea3cbaf599b0b210a365eac50736f097b4b2337",
-      "source_branch": "feat/sail-riscv-by-category-20261019",
+      "commit": "18389a897264eede4e8c6cc791f3700974def840",
+      "source_branch": "feat/sail-riscv-general-float-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
@@ -22,11 +22,11 @@
     "provenance": "来自所固定Isla提交的产物；未宣称由所固定模型重新生成"
   },
   "excluded_isla_branches": [
-    "refactor/general-support-20261007",
     "feat/witness-randomization"
   ],
   "publication": {
     "pushed_this_round": false,
-    "remote_reachability": "TLS查询失败，未核实"
-  }
+    "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
+  },
+  "updated": "2026-10-30"
 }
