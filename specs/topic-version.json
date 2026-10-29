@@ -3,23 +3,23 @@
   "topic": "memory",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "组件提交、manifest、gitlink与checkout核对通过；本轮未做联合功能验收",
+  "status": "IR来源与定向语义验证通过；GCC和Clang汇编编码往返通过；完整源码控制流覆盖和硬件重放未验收",
   "components": {
     "isla": {
-      "commit": "47ac90cd53d4542179c3c255dc0db34886f10ec6",
+      "commit": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
       "source_branch": "feat/memory-consistency",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "1fa931176a64b3fb8f68b7f0d502f090f6a6ebb2",
+      "commit": "c70482a73be2a67c5a89d88b1e6c2bbea224940c",
       "source_branch": "feat/sail-riscv-memory-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "7c626989a03056c43c67c81de8f40f611cef4c43ed1069a81526b37856d7e37b",
-    "provenance": "来自所固定Isla提交的产物；未宣称由所固定模型重新生成"
+    "sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
   },
   "excluded_isla_branches": [
     "feat/float-only-20261008",
@@ -30,5 +30,15 @@
     "pushed_this_round": false,
     "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
   },
-  "updated": "2026-10-30"
+  "updated": "2026-10-30",
+  "validation": {
+    "date": "2026-10-30",
+    "report": "docs/json-semantic-validation-20261030.md",
+    "assembly_required": [
+      "gcc",
+      "clang"
+    ],
+    "full_model_control_flow_coverage": "not-measured",
+    "hardware_replay": "not-run"
+  }
 }
