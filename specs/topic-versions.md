@@ -4,10 +4,10 @@
 
 | 根仓分支 | Isla | Sail-RISC-V | 当前定位 |
 | --- | --- | --- | --- |
-| float | b0138b7，通用＋浮点已合并 | 18389a89，通用先行／浮点后续的模型分类分支 | 2026-10-30更新的浮点议题快照 |
-| memory | 47ac90c，完整内存工作线 | 1fa93117，独立内存模型改动 | 2026-10-30更新的内存议题快照 |
+| float | 8fae36a9，通用＋浮点与JSON修复 | afff3822，模型与汇编修复 | IR同步、双工具链定向验收 |
+| memory | bdd047bc，内存与JSON修复 | c70482a7，内存模型与预算坐标 | IR同步、定向内存语义验收 |
 
-每条分支的 `specs/topic-version.json` 是本分支的组件记录，gitlink是实际检出依据。float包含已合并通用支持、初态位模式配置、浮点支持及返回值具体化修复，不包含独立见证随机化分支；memory含PMA/CSR、value hints和encoding slices等已提交策略，Isla提交仍为47ac90c。创建版本分支不代表接纳全部策略或完成联合功能验收。
+每条分支的 `specs/topic-version.json` 是本分支的组件记录，gitlink是实际检出依据。float包含已合并通用支持、初态位模式配置、浮点支持及返回值具体化修复，不包含独立见证随机化分支；memory含PMA/CSR、value hints和encoding slices等已提交策略，新增SC双结果覆盖配置与不完整诊断。创建版本分支不代表接纳全部策略或完成联合功能验收。
 
 ## 本机入口
 
@@ -39,10 +39,12 @@ git -C .worktree/runner-float merge --ff-only origin/float
 
 ## 构建与验证边界
 
-float的IR来自已提交 `b0138b7:rv64d.ir`，Sail-RISC-V固定为18389a89；memory的IR仍来自47ac90c，模型固定为1fa93117。两套版本均尚未证明用此精确源码重新生成的IR与现有IR一致。普通Sail0.20.1不能直接编译新浮点原语，需要固定补丁版工具链。原工作区浮点工具链脚本及大量证据尚未提交到共同根仓基线，不在此版本中被虚构为已固定依赖。选择接纳源码后需另交付工具链、重生IR并验证workaround区域。
+两套版本的全部五个IR文件均从当前固定模型完整生成，配置、模型文件与工具哈希见`isla/ir/provenance/manifest.json`。工具链为浮点扩展Sail0.20.1快照；普通同版本发行版不能替代，快照的完整源码树未重新核验。源码预算区域已分别迁移到当前模型。
 
-本轮验证仅覆盖gitlink／manifest／实际checkout／IR哈希及子模块初始化入口。历史内存或浮点测试按原报告版本理解，不转记为这两个根仓版本的完整构建、联合求解或硬件PASS。
+定向JSON、GCC/Clang文本编码往返、浮点helper/状态和内存数组测试通过，具体范围见[验证记录](../docs/json-semantic-validation-20261030.md)。JSON明确记录采样、错误、未完成和裁剪；`finished`也不宣称源码控制流全覆盖。没有完成全部77浮点clause、全部访存/异常域或硬件重放验收。
 
 ## 版本更新记录
 
 2026-10-30：float从Isla be1296b／模型3ea3cbaf更新为b0138b7／18389a89；memory保留Isla47ac90c，模型从4f2ac293更新为1fa93117。同步manifest、gitlink及独立子模块检出，版本核对与`./init.sh --submodules-only`通过。本轮未重新生成IR、编译组件或执行联合功能/硬件测试；旧组件测试不自动转记为当前根仓成套验收。
+
+2026-10-30复审修复：同步当前两套模型IR、迁移workaround坐标，补JSON结果合同及SC覆盖配置；汇编要求GCC与Clang双通过。当前组件版本及定向验收见上文，前一次未重生IR的结论保留为历史版本记录。

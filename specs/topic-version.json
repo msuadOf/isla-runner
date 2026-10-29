@@ -3,23 +3,23 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "组件提交、manifest、gitlink与checkout核对通过；本轮未做联合功能验收",
+  "status": "IR来源与定向语义验证通过；GCC和Clang汇编编码往返通过；完整源码控制流覆盖和硬件重放未验收",
   "components": {
     "isla": {
-      "commit": "b0138b7c2ff8addb81f68f42669600a2a9c2b813",
+      "commit": "8fae36a90e77ec51a2ef165c79d60b3377ce18b2",
       "source_branch": "feat/float-support",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "18389a897264eede4e8c6cc791f3700974def840",
+      "commit": "afff3822cdaca206b325a39dfe114e28d5c63bf6",
       "source_branch": "feat/sail-riscv-general-float-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "aea104c88a3c90f5e3030365d38dbcbc97a058dcfaf22b77b6717bffae59b544",
-    "provenance": "来自所固定Isla提交的产物；未宣称由所固定模型重新生成"
+    "sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
   },
   "excluded_isla_branches": [
     "feat/witness-randomization"
@@ -28,5 +28,15 @@
     "pushed_this_round": false,
     "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
   },
-  "updated": "2026-10-30"
+  "updated": "2026-10-30",
+  "validation": {
+    "date": "2026-10-30",
+    "report": "docs/json-semantic-validation-20261030.md",
+    "assembly_required": [
+      "gcc",
+      "clang"
+    ],
+    "full_model_control_flow_coverage": "not-measured",
+    "hardware_replay": "not-run"
+  }
 }
