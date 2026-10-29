@@ -182,3 +182,7 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 ```
 
 两条测试使用 `rv64d_v256_e64.json` 与 `test/first_party/src/no_override.json`；V256 配置、测试 ELF、模拟器的 SHA-256 依次为 `e28ac77273be6a31c544db6b196914dfb55b3b9fb72295ae7ef6cfc7b99dfc47`、`918863ec017c51732a294eddae17685929390d7f6af72f29dfcd054360ecedfa`、`aa493777b7c0362abc98f7a38d5008b0e3ff1970831e65eeaff9633b22182631`。修复前 CTest 退出 8 且新测试 `FAILURE: 2`；修复后 CTest 退出 0、2/2 通过。此结果只对应上述产物，后续源码和 V128 IR 需复验。
+
+## 2026-10-30 根仓memory版本更新
+
+固定isla 47ac90cd、sail-riscv 1fa93117；核对manifest、gitlink、实际checkout与IR SHA256，`./init.sh --submodules-only`通过。仅版本管理验证，未重生IR/编译/运行成套功能或硬件测试。来源和局限见[版本说明](../specs/topic-versions.md)。

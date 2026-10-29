@@ -3,7 +3,7 @@
   "topic": "memory",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "源码候选快照；本轮未做联合功能验收",
+  "status": "组件提交、manifest、gitlink与checkout核对通过；本轮未做联合功能验收",
   "components": {
     "isla": {
       "commit": "47ac90cd53d4542179c3c255dc0db34886f10ec6",
@@ -11,8 +11,8 @@
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "4f2ac293654a02db26dac5055be7f93fd6e3141e",
-      "source_branch": "feat/isla-workarounds",
+      "commit": "1fa931176a64b3fb8f68b7f0d502f090f6a6ebb2",
+      "source_branch": "feat/sail-riscv-memory-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
@@ -28,6 +28,7 @@
   ],
   "publication": {
     "pushed_this_round": false,
-    "remote_reachability": "TLS查询失败，未核实"
-  }
+    "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
+  },
+  "updated": "2026-10-30"
 }

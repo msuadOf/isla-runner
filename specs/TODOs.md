@@ -77,3 +77,5 @@
 | COMMIT-01 | 工作区提交审计 | 历史批次完成 | 待核实 | [状态](../agents/commit_workspace_audit/status.md)；仅描述 2026-09-23 批次。 |
 
 没有独立 `status.md` 的专题仍以其计划或报告作为证据入口。新增议题先在本表登记，再按根 `AGENTS.md` 的要求建立可审阅方案。
+
+**根仓memory组件版本更新（2026-10-30，完成／版本核对）**：固定isla 47ac90cd、sail-riscv 1fa93117；manifest与gitlink同步。只验版本/初始化，不计联合功能PASS；未push。[版本说明](topic-versions.md)。
