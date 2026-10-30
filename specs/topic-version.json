@@ -3,22 +3,22 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "IR来源与定向语义验证通过；GCC和Clang汇编编码往返通过；完整源码控制流覆盖和硬件重放未验收",
+  "status": "恢复NaN-boxing显式分支；IR重生与定向两侧见证回归通过，其他独立review问题仍待修",
   "components": {
     "isla": {
-      "commit": "8fae36a90e77ec51a2ef165c79d60b3377ce18b2",
+      "commit": "80231ce9928ccda10ba5750e5ff3570f5afb03fe",
       "source_branch": "feat/float-support",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "afff3822cdaca206b325a39dfe114e28d5c63bf6",
+      "commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
       "source_branch": "feat/sail-riscv-general-float-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
     "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
   },
   "excluded_isla_branches": [
@@ -28,10 +28,10 @@
     "pushed_this_round": false,
     "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
   },
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "validation": {
-    "date": "2026-10-30",
-    "report": "docs/json-semantic-validation-20261030.md",
+    "date": "2026-10-31",
+    "report": "docs/nan-unbox-branch-restore-20261031.md",
     "assembly_required": [
       "gcc",
       "clang"

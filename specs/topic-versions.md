@@ -4,7 +4,7 @@
 
 | 根仓分支 | Isla | Sail-RISC-V | 当前定位 |
 | --- | --- | --- | --- |
-| float | 8fae36a9，通用＋浮点与JSON修复 | afff3822，模型与汇编修复 | IR同步、双工具链定向验收 |
+| float | 80231ce9，恢复boxing显式分支及IR | 9c339044，恢复boxing显式if | IR同步、双工具链定向验收 |
 | memory | bdd047bc，内存与JSON修复 | c70482a7，内存模型与预算坐标 | IR同步、定向内存语义验收 |
 
 每条分支的 `specs/topic-version.json` 是本分支的组件记录，gitlink是实际检出依据。float包含已合并通用支持、初态位模式配置、浮点支持及返回值具体化修复，不包含独立见证随机化分支；memory含PMA/CSR、value hints和encoding slices等已提交策略，新增SC双结果覆盖配置与不完整诊断。创建版本分支不代表接纳全部策略或完成联合功能验收。
@@ -48,3 +48,5 @@ git -C .worktree/runner-float merge --ff-only origin/float
 2026-10-30：float从Isla be1296b／模型3ea3cbaf更新为b0138b7／18389a89；memory保留Isla47ac90c，模型从4f2ac293更新为1fa93117。同步manifest、gitlink及独立子模块检出，版本核对与`./init.sh --submodules-only`通过。本轮未重新生成IR、编译组件或执行联合功能/硬件测试；旧组件测试不自动转记为当前根仓成套验收。
 
 2026-10-30复审修复：同步当前两套模型IR、迁移workaround坐标，补JSON结果合同及SC覆盖配置；汇编要求GCC与Clang双通过。当前组件版本及定向验收见上文，前一次未重生IR的结论保留为历史版本记录。
+
+2026-10-31：float更新Isla80231ce9／模型9c339044，恢复nan_unbox原Sail if并完整重生IR；两侧见证与数值回归见[本次记录](../docs/nan-unbox-branch-restore-20261031.md)。没有由局部Jump减少推断整Clause提速。memory版本不变，其他独立review问题未在本轮修复。
