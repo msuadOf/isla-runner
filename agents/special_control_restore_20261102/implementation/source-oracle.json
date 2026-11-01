@@ -1,0 +1,5 @@
+{
+  "pass": true,
+  "checks": 65752,
+  "scope": "独立字段公式与BF16穷举，不代替Sail执行或IR验证"
+}

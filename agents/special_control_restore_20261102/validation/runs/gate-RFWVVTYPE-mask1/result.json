@@ -1,0 +1,29 @@
+{
+  "seconds": 4.036,
+  "exit": 0,
+  "state": "PASS",
+  "checks": "43/43",
+  "gen": 1,
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zRFWVVTYPE"
+  },
+  "partial": false,
+  "detail": {
+    "successes": 1,
+    "check_count": 43,
+    "failed_checks": 0
+  },
+  "output_sha256": "83331663442c31b4be8cf5b99851d9de24c97901a04453346718a2cdba1e8f2f"
+}

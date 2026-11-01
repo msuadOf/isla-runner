@@ -13,3 +13,6 @@
 - 内存 clause 分支覆盖对照（W19+G1-G8）见 [memsolve_branch_coverage/status.md](memsolve_branch_coverage/status.md)。
 
 - 显式语义分支恢复、预算与GPT-6.1 Sol独审：[状态](explicit_branch_restore_20261102/status.md)。
+
+- [剩余特殊值控制分支](special_control_restore_20261102/status.md)：每源NaN、其他格式及20个活动gate恢复，Sol及定向验收通过。
+- [显式分支超时定位](explicit_branch_timeout_diagnosis_20261102/status.md)：区分flags的SMT成本与旧饱和循环的额外分叉。

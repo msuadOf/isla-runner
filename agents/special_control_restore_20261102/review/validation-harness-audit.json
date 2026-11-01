@@ -1,0 +1,296 @@
+{
+  "validator_sha256": "a1516ab7aad7942d026f0feadf3d0e0df098cf1847a3e1da155a5dd8aa0c098a",
+  "old_ir_sha256": "0e7a9bfd9bb0655e48fbb02097c31a83f97b59d0eb3fbbf4b048c606eee7a85f",
+  "job_count": 56,
+  "constrained_wrappers": [
+    {
+      "name": "gate-VFUNARY0-mask1",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-VFUNARY0-mask2",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-FVVMTYPE-mask1",
+      "constraints": 5,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-FVVMTYPE-mask2",
+      "constraints": 5,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-FVFMTYPE-mask1",
+      "constraints": 5,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-FVFMTYPE-mask2",
+      "constraints": 5,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-RFWVVTYPE-mask1",
+      "constraints": 5,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "gate-RFWVVTYPE-mask2",
+      "constraints": 5,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-fused-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-fused-rm1",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-fused-rm2",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-fused-rm3",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-fused-rm4",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-tiny-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-tiny-rm1",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-tiny-rm2",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-tiny-rm3",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-tiny-rm4",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-vector-snan-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-other-snan-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-acc-snan-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-vl0-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-multi-mask1-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-multi-mask2-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-multi-mask3-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VV-multi-mask0-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-fused-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-fused-rm1",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-fused-rm2",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-fused-rm3",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-fused-rm4",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-tiny-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-tiny-rm1",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-tiny-rm2",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-tiny-rm3",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-tiny-rm4",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-vector-snan-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-other-snan-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-acc-snan-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-vl0-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-multi-mask1-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-multi-mask2-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-multi-mask3-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VF-multi-mask0-rm0",
+      "constraints": 4,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VFNCVTBF16_F_F_W-mask1",
+      "constraints": 3,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VFNCVTBF16_F_F_W-mask2",
+      "constraints": 3,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VFWCVTBF16_F_F_V-mask1",
+      "constraints": 3,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    },
+    {
+      "name": "bf16-VFWCVTBF16_F_F_V-mask2",
+      "constraints": 3,
+      "original_execute_byte_identical": true,
+      "full_reverse_byte_identical": true
+    }
+  ],
+  "scope": "旧IR验证薄包装变换保真；新IR运行前须复核同一性质"
+}

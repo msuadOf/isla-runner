@@ -1,0 +1,428 @@
+{
+  "binary_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "source_sha256": "c5067c9f3714012fff65b78257b8cf0449762ecf9f9635f84a4de08deb4c44b6",
+  "libsoftfloat_sha256": "1add1fbb8998f781899c183e838b8aba18ec0410da4c337ffaf19bcc25efaa07",
+  "isolation": "\u6bcf\u6b21\u8c03\u7528\u72ec\u7acb\u5b50\u8fdb\u7a0b\uff0c\u91cd\u7f6eRM\u548cflags\uff1btininess after rounding",
+  "cases": [
+    {
+      "case": "overflow",
+      "rm": 0,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x73800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f800000",
+        "flags": "0x05",
+        "NV": false,
+        "DZ": false,
+        "OF": true,
+        "UF": false,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 5,
+      "distinct": true
+    },
+    {
+      "case": "overflow",
+      "rm": 1,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x73800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f7fffff",
+        "flags": "0x05",
+        "NV": false,
+        "DZ": false,
+        "OF": true,
+        "UF": false,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 5,
+      "distinct": true
+    },
+    {
+      "case": "overflow",
+      "rm": 2,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x73800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f7fffff",
+        "flags": "0x05",
+        "NV": false,
+        "DZ": false,
+        "OF": true,
+        "UF": false,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x80000000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 5,
+      "distinct": true
+    },
+    {
+      "case": "overflow",
+      "rm": 3,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x73800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f800000",
+        "flags": "0x05",
+        "NV": false,
+        "DZ": false,
+        "OF": true,
+        "UF": false,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 5,
+      "distinct": true
+    },
+    {
+      "case": "overflow",
+      "rm": 4,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x73800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f800000",
+        "flags": "0x05",
+        "NV": false,
+        "DZ": false,
+        "OF": true,
+        "UF": false,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x7f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 5,
+      "distinct": true
+    },
+    {
+      "case": "tiny",
+      "rm": 0,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x01",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": true
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000000",
+        "flags": "0x03",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": true,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 3,
+      "distinct": true
+    },
+    {
+      "case": "tiny",
+      "rm": 1,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x01",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": true
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000000",
+        "flags": "0x03",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": true,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 3,
+      "distinct": true
+    },
+    {
+      "case": "tiny",
+      "rm": 2,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x01",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": true
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000000",
+        "flags": "0x03",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": true,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 3,
+      "distinct": true
+    },
+    {
+      "case": "tiny",
+      "rm": 3,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800001",
+        "flags": "0x01",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": true
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000001",
+        "flags": "0x03",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": true,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800001",
+        "flags": "0x01",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": true
+      },
+      "split_flags": 3,
+      "distinct": true
+    },
+    {
+      "case": "tiny",
+      "rm": 4,
+      "fused": {
+        "op": "fma",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x01",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": true
+      },
+      "split_mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000000",
+        "flags": "0x03",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": true,
+        "NX": true
+      },
+      "split_add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "split_flags": 3,
+      "distinct": true
+    }
+  ]
+}

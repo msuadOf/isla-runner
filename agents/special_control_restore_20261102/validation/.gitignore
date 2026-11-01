@@ -1,0 +1,9 @@
+# 二进制与可由冻结源和测试包装重建的大体积 IR 留在本地；版本/哈希见命令记录。
+bin/
+*.ir
+__pycache__/
+# 本地make入口链接及编译工具链中间件。
+make-smoke/target/
+make-smoke/scripts
+*.o
+*.bin

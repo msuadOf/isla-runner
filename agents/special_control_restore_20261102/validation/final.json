@@ -1,0 +1,372 @@
+{
+  "state": "PASS",
+  "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3",
+  "ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+  "binary_sha256": "ce338b4cd6aee05f7d73789334443ff12a4eafea423f07eb2071da74cabff7df",
+  "tasks": 56,
+  "json_cases": 156,
+  "checks": 3518,
+  "failed_checks": 0,
+  "min_seconds": 2.468,
+  "max_seconds": 53.174,
+  "results": {
+    "fleq-H-sNaN": {
+      "state": "PASS",
+      "seconds": 13.087,
+      "gen": 8,
+      "checks": "15/15"
+    },
+    "fleq-S-sNaN": {
+      "state": "PASS",
+      "seconds": 13.734,
+      "gen": 8,
+      "checks": "15/15"
+    },
+    "fleq-H-qNaN": {
+      "state": "PASS",
+      "seconds": 12.948,
+      "gen": 8,
+      "checks": "15/15"
+    },
+    "fleq-S-qNaN": {
+      "state": "PASS",
+      "seconds": 14.43,
+      "gen": 8,
+      "checks": "15/15"
+    },
+    "fleq-D-sNaN": {
+      "state": "PASS",
+      "seconds": 12.932,
+      "gen": 8,
+      "checks": "15/15"
+    },
+    "fleq-D-qNaN": {
+      "state": "PASS",
+      "seconds": 14.039,
+      "gen": 8,
+      "checks": "15/15"
+    },
+    "sqrt-H": {
+      "state": "PASS",
+      "seconds": 53.174,
+      "gen": 36,
+      "checks": "26/26"
+    },
+    "sqrt-D": {
+      "state": "PASS",
+      "seconds": 27.975,
+      "gen": 24,
+      "checks": "26/26"
+    },
+    "gate-FVFMTYPE-mask1": {
+      "state": "PASS",
+      "seconds": 4.331,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "gate-VFUNARY0-mask2": {
+      "state": "PASS",
+      "seconds": 4.635,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "gate-VFUNARY0-mask1": {
+      "state": "PASS",
+      "seconds": 5.15,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "gate-FVVMTYPE-mask1": {
+      "state": "PASS",
+      "seconds": 5.732,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "gate-FVFMTYPE-mask2": {
+      "state": "PASS",
+      "seconds": 9.148,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "gate-FVVMTYPE-mask2": {
+      "state": "PASS",
+      "seconds": 7.235,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "bf16-VV-fused-rm4": {
+      "state": "PASS",
+      "seconds": 6.92,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-fused-rm1": {
+      "state": "PASS",
+      "seconds": 12.334,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-fused-rm0": {
+      "state": "PASS",
+      "seconds": 11.754,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-fused-rm2": {
+      "state": "PASS",
+      "seconds": 7.729,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-fused-rm3": {
+      "state": "PASS",
+      "seconds": 8.93,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-tiny-rm0": {
+      "state": "PASS",
+      "seconds": 5.424,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-acc-snan-rm0": {
+      "state": "PASS",
+      "seconds": 11.027,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "gate-RFWVVTYPE-mask2": {
+      "state": "PASS",
+      "seconds": 5.218,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "bf16-VV-vector-snan-rm0": {
+      "state": "PASS",
+      "seconds": 8.83,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VV-vl0-rm0": {
+      "state": "PASS",
+      "seconds": 6.421,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VV-tiny-rm4": {
+      "state": "PASS",
+      "seconds": 13.733,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-tiny-rm3": {
+      "state": "PASS",
+      "seconds": 7.722,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-other-snan-rm0": {
+      "state": "PASS",
+      "seconds": 9.823,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VV-tiny-rm2": {
+      "state": "PASS",
+      "seconds": 7.321,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-fused-rm3": {
+      "state": "PASS",
+      "seconds": 5.319,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-fused-rm2": {
+      "state": "PASS",
+      "seconds": 7.021,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-fused-rm0": {
+      "state": "PASS",
+      "seconds": 4.724,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-multi-mask3-rm0": {
+      "state": "PASS",
+      "seconds": 5.931,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VV-multi-mask2-rm0": {
+      "state": "PASS",
+      "seconds": 6.05,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-other-snan-rm0": {
+      "state": "PASS",
+      "seconds": 12.62,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-fused-rm1": {
+      "state": "PASS",
+      "seconds": 12.443,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-tiny-rm3": {
+      "state": "PASS",
+      "seconds": 11.335,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VV-multi-mask0-rm0": {
+      "state": "PASS",
+      "seconds": 3.018,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-vector-snan-rm0": {
+      "state": "PASS",
+      "seconds": 5.223,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-tiny-rm1": {
+      "state": "PASS",
+      "seconds": 6.434,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-tiny-rm0": {
+      "state": "PASS",
+      "seconds": 7.645,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-tiny-rm2": {
+      "state": "PASS",
+      "seconds": 4.333,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VFNCVTBF16_F_F_W-mask1": {
+      "state": "PASS",
+      "seconds": 4.618,
+      "gen": 1,
+      "checks": "42/42"
+    },
+    "gate-RFWVVTYPE-mask1": {
+      "state": "PASS",
+      "seconds": 4.036,
+      "gen": 1,
+      "checks": "43/43"
+    },
+    "bf16-VF-multi-mask2-rm0": {
+      "state": "PASS",
+      "seconds": 3.519,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-multi-mask1-rm0": {
+      "state": "PASS",
+      "seconds": 5.318,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VFNCVTBF16_F_F_W-mask2": {
+      "state": "PASS",
+      "seconds": 7.919,
+      "gen": 1,
+      "checks": "42/42"
+    },
+    "bf16-VF-vl0-rm0": {
+      "state": "PASS",
+      "seconds": 4.044,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-tiny-rm4": {
+      "state": "PASS",
+      "seconds": 10.645,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-multi-mask3-rm0": {
+      "state": "PASS",
+      "seconds": 10.747,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VV-tiny-rm1": {
+      "state": "PASS",
+      "seconds": 8.431,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VFWCVTBF16_F_F_V-mask2": {
+      "state": "PASS",
+      "seconds": 3.516,
+      "gen": 1,
+      "checks": "42/42"
+    },
+    "bf16-VV-multi-mask1-rm0": {
+      "state": "PASS",
+      "seconds": 4.322,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-multi-mask0-rm0": {
+      "state": "PASS",
+      "seconds": 2.468,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VF-fused-rm4": {
+      "state": "PASS",
+      "seconds": 2.715,
+      "gen": 1,
+      "checks": "80/80"
+    },
+    "bf16-VF-acc-snan-rm0": {
+      "state": "PASS",
+      "seconds": 2.716,
+      "gen": 1,
+      "checks": "79/79"
+    },
+    "bf16-VFWCVTBF16_F_F_V-mask1": {
+      "state": "PASS",
+      "seconds": 3.023,
+      "gen": 1,
+      "checks": "42/42"
+    }
+  },
+  "source_joblist_sha256": "a1516ab7aad7942d026f0feadf3d0e0df098cf1847a3e1da155a5dd8aa0c098a",
+  "summary_sha256": "7280d1337b733da39ce1bae9f5f2a2d0a0b8384819b3b2bb49289394cb6c7e00",
+  "limits": "仅固定值与vl≤2定向域，不宣称全域Clause或全位串完整覆盖。",
+  "make_entry": {
+    "state": "PASS",
+    "clause": "FLEQ_S",
+    "seconds": 3.6922699530259706,
+    "json_cases": 8,
+    "partial": false,
+    "result": "make-smoke/result.json"
+  },
+  "dual_toolchain": {
+    "state": "PASS",
+    "fixtures": 10,
+    "checks": 60,
+    "forms": [
+      "mnemonic",
+      "binary",
+      "insn"
+    ],
+    "result": "toolchains/results.json"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "make_entry": {
+    "exit": 0,
+    "json_cases": 8,
+    "observed_pairs": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "qNaN"
+      ]
+    ],
+    "result_sha256": "91f3809b30850f886d54a1fb3d01f95d6b2300e5dae8765baee955b5a7fe4932"
+  },
+  "toolchain": {
+    "checks": 60,
+    "fixtures": 10,
+    "stored_extracted_bytes_match": true,
+    "results_sha256": "f42e8aa10735c194d164ef4c9852f0e6b3e142a990739a84b9e6b66bb943b87e"
+  },
+  "final_validation_json_sha256": "63e76bd462e8885b88af43b0f4a8ab35d917792201c730aa7440c2ae35c40d0b"
+}

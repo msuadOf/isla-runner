@@ -3,22 +3,22 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "显式语义分支源码/IR独审与7项组合Clause验证全部通过；flags算术/饱和显式分支超预算保留ITE",
+  "status": "每源NaN分类、同构NaN出口、20个活动分支恢复；Sol独审及56项定向验收通过",
   "components": {
     "isla": {
-      "commit": "f152290e6447305f32509621e98478dc4ba5cf21",
+      "commit": "99a83bb9b2b285fca7c2a06e62548831d950b12a",
       "source_branch": "feat/float-support",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "fd71c9ab58fe6f41b97c976a5f7e470318c708a8",
+      "commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3",
       "source_branch": "feat/sail-riscv-general-float-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "0e7a9bfd9bb0655e48fbb02097c31a83f97b59d0eb3fbbf4b048c606eee7a85f",
+    "sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
     "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
   },
   "excluded_isla_branches": [
@@ -39,7 +39,7 @@
     "full_model_control_flow_coverage": "not-measured",
     "hardware_replay": "not-run",
     "source_and_ir_review": "GPT-6.1 Sol: PASS",
-    "ir_regression_steps": 24,
+    "ir_regression_steps": 25,
     "combined_clause_passed": [
       "minmax",
       "minm",
@@ -54,6 +54,12 @@
     "explicit_branch_excluded_due_to_7200s_timeout": [
       "flags-arithmetic",
       "sat"
-    ]
+    ],
+    "directed_special_control_tasks": 56,
+    "directed_json_cases": 156,
+    "directed_assertions": 3518,
+    "gcc_clang_encoding_checks": 60,
+    "latest_report": "agents/special_control_restore_20261102/status.md",
+    "saturation_timeout_scope": "旧循环先算不活动lane；修正后的overflow显式化尚需复测"
   }
 }

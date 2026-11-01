@@ -1,0 +1,67 @@
+{
+  "exit": 0,
+  "seconds": 3.6922699530259706,
+  "command": [
+    "taskset",
+    "-c",
+    "34",
+    "make",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/validation/make-smoke",
+    "-f",
+    "/data1/baiyifan/workplace/isla-runner/isla/scripts/run.mk",
+    "-o",
+    "build-isarch",
+    "solve-FLEQ_S",
+    "IR_FILE=/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/validation/inputs/model.ir",
+    "ISA_CONFIG=/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/config.toml",
+    "THREADS=1",
+    "SOLVE_TIMEOUT=",
+    "SMT_TIMEOUT=7200s",
+    "OUTER_TIMEOUT=7200s",
+    "TASTIC=qffp",
+    "ITRACE=0"
+  ],
+  "state": "PASS",
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zFLEQ_S"
+  },
+  "gen": 8,
+  "detail": {
+    "x0_result_not_observable": 4,
+    "pairs": {
+      "normal/qNaN": 2,
+      "qNaN/qNaN": 2,
+      "normal/normal": 2,
+      "qNaN/normal": 2
+    },
+    "required_pairs": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ]
+    ],
+    "check_count": 15,
+    "failed_checks": 0
+  }
+}

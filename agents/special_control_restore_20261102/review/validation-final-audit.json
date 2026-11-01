@@ -1,0 +1,556 @@
+{
+  "pass": true,
+  "jobs": 56,
+  "json_cases": 156,
+  "retire_cases": 156,
+  "exact_wrapper_reverse_count": 48,
+  "base_ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+  "independent_pair_classes": {
+    "fleq-H-sNaN": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "sNaN"
+      ],
+      [
+        "sNaN",
+        "normal"
+      ],
+      [
+        "sNaN",
+        "sNaN"
+      ]
+    ],
+    "fleq-H-qNaN": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "qNaN"
+      ]
+    ],
+    "fleq-S-sNaN": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "sNaN"
+      ],
+      [
+        "sNaN",
+        "normal"
+      ],
+      [
+        "sNaN",
+        "sNaN"
+      ]
+    ],
+    "fleq-S-qNaN": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "qNaN"
+      ]
+    ],
+    "fleq-D-sNaN": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "sNaN"
+      ],
+      [
+        "sNaN",
+        "normal"
+      ],
+      [
+        "sNaN",
+        "sNaN"
+      ]
+    ],
+    "fleq-D-qNaN": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "qNaN"
+      ]
+    ]
+  },
+  "fused_boundary_rm_form_count": 20,
+  "multi_lane_or_cases": [
+    [
+      "VF",
+      0,
+      0
+    ],
+    [
+      "VF",
+      1,
+      16
+    ],
+    [
+      "VF",
+      2,
+      5
+    ],
+    [
+      "VF",
+      3,
+      21
+    ],
+    [
+      "VV",
+      0,
+      0
+    ],
+    [
+      "VV",
+      1,
+      16
+    ],
+    [
+      "VV",
+      2,
+      5
+    ],
+    [
+      "VV",
+      3,
+      21
+    ]
+  ],
+  "rows": [
+    {
+      "job": "fleq-H-sNaN",
+      "gen": 8,
+      "retire": 8,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "fleq-H-qNaN",
+      "gen": 8,
+      "retire": 8,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "fleq-S-sNaN",
+      "gen": 8,
+      "retire": 8,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "fleq-S-qNaN",
+      "gen": 8,
+      "retire": 8,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "fleq-D-sNaN",
+      "gen": 8,
+      "retire": 8,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "fleq-D-qNaN",
+      "gen": 8,
+      "retire": 8,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "sqrt-H",
+      "gen": 36,
+      "retire": 36,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "sqrt-D",
+      "gen": 24,
+      "retire": 24,
+      "wrapper_reversed_exactly": false,
+      "exit": 0
+    },
+    {
+      "job": "gate-VFUNARY0-mask1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-VFUNARY0-mask2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-FVVMTYPE-mask1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-FVVMTYPE-mask2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-FVFMTYPE-mask1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-FVFMTYPE-mask2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-RFWVVTYPE-mask1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "gate-RFWVVTYPE-mask2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-fused-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-fused-rm1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-fused-rm2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-fused-rm3",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-fused-rm4",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-tiny-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-tiny-rm1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-tiny-rm2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-tiny-rm3",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-tiny-rm4",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-vector-snan-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-other-snan-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-acc-snan-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-vl0-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-multi-mask1-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-multi-mask2-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-multi-mask3-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VV-multi-mask0-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-fused-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-fused-rm1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-fused-rm2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-fused-rm3",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-fused-rm4",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-tiny-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-tiny-rm1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-tiny-rm2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-tiny-rm3",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-tiny-rm4",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-vector-snan-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-other-snan-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-acc-snan-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-vl0-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-multi-mask1-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-multi-mask2-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-multi-mask3-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VF-multi-mask0-rm0",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VFNCVTBF16_F_F_W-mask1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VFNCVTBF16_F_F_W-mask2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VFWCVTBF16_F_F_V-mask1",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    },
+    {
+      "job": "bf16-VFWCVTBF16_F_F_V-mask2",
+      "gen": 1,
+      "retire": 1,
+      "wrapper_reversed_exactly": true,
+      "exit": 0
+    }
+  ],
+  "scope": "固定初态、字段约束及vl≤2的定向域；不证明默认全域及全部20循环动态覆盖"
+}

@@ -1,0 +1,121 @@
+{
+  "seconds": 5.424,
+  "exit": 0,
+  "state": "PASS",
+  "checks": "80/80",
+  "gen": 1,
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zVFWMACCBF16_VV"
+  },
+  "partial": false,
+  "detail": {
+    "successes": 1,
+    "oracle": [
+      {
+        "lane": 0,
+        "command": [
+          "/data1/baiyifan/workplace/isla-runner/.tmp/unified-backend-crosscheck/oracle-build/oracle",
+          "--op",
+          "fma",
+          "--fmt",
+          "f32",
+          "--rm",
+          "0",
+          "--a",
+          "0x17800000",
+          "--b",
+          "0x17800000",
+          "--c",
+          "0x3f800000"
+        ],
+        "expected": {
+          "op": "fma",
+          "fmt": "f32",
+          "dst": "f32",
+          "result_bits": "0x3f800000",
+          "flags": "0x01",
+          "NV": false,
+          "DZ": false,
+          "OF": false,
+          "UF": false,
+          "NX": true
+        },
+        "actual": "0x3f800000"
+      },
+      {
+        "lane": 1,
+        "command": [
+          "/data1/baiyifan/workplace/isla-runner/.tmp/unified-backend-crosscheck/oracle-build/oracle",
+          "--op",
+          "fma",
+          "--fmt",
+          "f32",
+          "--rm",
+          "0",
+          "--a",
+          "0x17800000",
+          "--b",
+          "0x17800000",
+          "--c",
+          "0x3f800000"
+        ],
+        "expected": {
+          "op": "fma",
+          "fmt": "f32",
+          "dst": "f32",
+          "result_bits": "0x3f800000",
+          "flags": "0x01",
+          "NV": false,
+          "DZ": false,
+          "OF": false,
+          "UF": false,
+          "NX": true
+        },
+        "actual": "0x3f800000"
+      }
+    ],
+    "oracle_accumulated_flags": 1,
+    "split": {
+      "mul": {
+        "op": "mul",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x00000000",
+        "flags": "0x03",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": true,
+        "NX": true
+      },
+      "add": {
+        "op": "add",
+        "fmt": "f32",
+        "dst": "f32",
+        "result_bits": "0x3f800000",
+        "flags": "0x00",
+        "NV": false,
+        "DZ": false,
+        "OF": false,
+        "UF": false,
+        "NX": false
+      },
+      "combined_flags": 3
+    },
+    "check_count": 80,
+    "failed_checks": 0
+  },
+  "output_sha256": "370ab5273c9776fe4ae339b009a404d0077732f44d17ad168d47af0c59d0ac62"
+}

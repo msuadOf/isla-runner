@@ -1,0 +1,261 @@
+[
+  {
+    "label": "build",
+    "command": [
+      "cargo",
+      "build",
+      "--offline",
+      "-q",
+      "--manifest-path",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/runner/Cargo.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "migration-conflicts",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/test_migration.py"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "nan-unbox-branches",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_nan_unbox_branches.py"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "explicit-semantic-branches",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "special-semantic-branches",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_special_semantic_branches.py"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d-wrap",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/softfloat_legacy/wrap.py",
+      "--ir",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "--cases",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d.tsv",
+      "--output",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d-wrapped.ir"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d-helpers",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-helpers",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d-wrapped.ir",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d.tsv"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d-state",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "state",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d-guard",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "guard",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv32d-wrap",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/softfloat_legacy/wrap.py",
+      "--ir",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv32d.ir",
+      "--cases",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv32d.tsv",
+      "--output",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv32d-wrapped.ir"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv32d-helpers",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-helpers",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv32d-wrapped.ir",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv32d.tsv"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv32d-state",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv32d.ir",
+      "state",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/rv32_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv32d-guard",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv32d.ir",
+      "guard",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/rv32_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v128_e64-wrap",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/softfloat_legacy/wrap.py",
+      "--ir",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+      "--cases",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v128_e64.tsv",
+      "--output",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v128_e64-wrapped.ir"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v128_e64-helpers",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-helpers",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v128_e64-wrapped.ir",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v128_e64.tsv"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v128_e64-state",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+      "state",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v128_e64-guard",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+      "guard",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v256_e64-wrap",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/softfloat_legacy/wrap.py",
+      "--ir",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v256_e64.ir",
+      "--cases",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v256_e64.tsv",
+      "--output",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v256_e64-wrapped.ir"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v256_e64-helpers",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-helpers",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v256_e64-wrapped.ir",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v256_e64.tsv"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v256_e64-state",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v256_e64.ir",
+      "state",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v256_e64-guard",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v256_e64.ir",
+      "guard",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v512_e64-wrap",
+    "command": [
+      "python3",
+      "/data1/baiyifan/workplace/isla-runner/isla/test/softfloat_legacy/wrap.py",
+      "--ir",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v512_e64.ir",
+      "--cases",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v512_e64.tsv",
+      "--output",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v512_e64-wrapped.ir"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v512_e64-helpers",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-helpers",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v512_e64-wrapped.ir",
+      "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/ir-regression/rv64d_v512_e64.tsv"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v512_e64-state",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v512_e64.ir",
+      "state",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rv64d_v512_e64-guard",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/float-ir-state",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v512_e64.ir",
+      "guard",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "exit": 0
+  }
+]

@@ -89,3 +89,10 @@
 七项新组合Clause全部退出0、finished、无错误或超时。FVVTYPE 3121.758秒（329条），VFUNARY1 1880.107秒（520条），RFVVTYPE 290.252秒（184条），其余四项15.471–150.914秒；均低于完整Clause7200秒预算。以validation/report.md和summary.json的最终记录为准，旧“运行中”记录仅适用于提交时快照。
 
 单变量消融84/84已结束。flags算术和转换饱和的显式分支B各三次均触及7200秒外限，故不符合本轮恢复条件，保留ITE；不能写成这些情况不需要控制流或覆盖已经完整。其他格式/循环、右源独立NaN、BF16融合及多lane异常等仍有覆盖验证义务。
+
+
+## 2026-11-02：独立源NaN与活动lane分支
+
+模型四分类提交350a072/f263774/eb17b05/a9fd947，Isla对应IR提交99a83bb9；四配置严格生成、普通严格检查、五IR25步回归通过。独立GPT-6.1 Sol源码、实际CFG、56项定向结果复核通过。156条JSON、3518断言、正式make solve及GCC/Clang60项编码检查通过。固定域与vl≤2，不代表全域完整覆盖。
+
+flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱和实验对不活动lane提前计算，导致额外分叉，新的活动gate已纠正。饱和overflow显式化仍需重新预算实验；flags changed及其余特殊异常分界未全部恢复。见[本轮状态](../agents/special_control_restore_20261102/status.md)和[超时定位](../agents/explicit_branch_timeout_diagnosis_20261102/report.md)。未推送。

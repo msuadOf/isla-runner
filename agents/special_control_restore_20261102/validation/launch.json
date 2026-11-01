@@ -1,0 +1,23 @@
+{
+  "pid": 2810977,
+  "epoch": 1793569030.3561356,
+  "cpu": [
+    34,
+    35,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "binary_sha256": "ce338b4cd6aee05f7d73789334443ff12a4eafea423f07eb2071da74cabff7df",
+  "binary_version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613",
+  "max_parallel": 8,
+  "budget": 7200,
+  "smt_budget": 7200,
+  "oracle_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "oracle_source_sha256": "c5067c9f3714012fff65b78257b8cf0449762ecf9f9635f84a4de08deb4c44b6",
+  "libsoftfloat_sha256": "1add1fbb8998f781899c183e838b8aba18ec0410da4c337ffaf19bcc25efaa07",
+  "preparation": "等待driver exit0及hash，未开始求解"
+}

@@ -1691,3 +1691,10 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 ### XiangShan 浮点 DiffTest 的结果续跑按 case ID 跳过所有已记录条目
 
 `difftest-xiangshan/pipeline.py::run`从`results.ndjson`取得已有ID时不区分success/failure，后续同目录运行会跳过旧失败；`run_case`首跑超时后另以`--dump-commit-trace`重跑，重跑即使打印GOODTRAP，原记录仍为failure/returncode=null。对版本SHA `8099715d…22390c`的本地1344输入批次，30秒24路首轮135条有104成功/31超时（25条trace GOODTRAP），120秒24路第二轮1322条中1317成功/5超时（5条trace GOODTRAP），独立低并发重跑5条才取得5个正常退出。复跑须封存原日志并建立新结果目录，最终PASS只计对应case的GOODTRAP且returncode=0；[当前工作区逐例核账](../difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json)绑定IR `73dfb2e1…671d2a`、Isla `4e315e9a…59ae0`、FD配置 `20851fdb…723d0`、XiangShan `a13efc8`／emu `8714169…a85ee`／NEMU `9188e7d…ef43`。
+
+
+## 2026-11-02：独立源NaN与活动lane分支
+
+模型四分类提交350a072/f263774/eb17b05/a9fd947，Isla对应IR提交99a83bb9；四配置严格生成、普通严格检查、五IR25步回归通过。独立GPT-6.1 Sol源码、实际CFG、56项定向结果复核通过。156条JSON、3518断言、正式make solve及GCC/Clang60项编码检查通过。固定域与vl≤2，不代表全域完整覆盖。
+
+flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱和实验对不活动lane提前计算，导致额外分叉，新的活动gate已纠正。饱和overflow显式化仍需重新预算实验；flags changed及其余特殊异常分界未全部恢复。见[本轮状态](special_control_restore_20261102/status.md)和[超时定位](explicit_branch_timeout_diagnosis_20261102/report.md)。未推送。
