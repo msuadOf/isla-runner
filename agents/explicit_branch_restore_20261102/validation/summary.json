@@ -1,5 +1,5 @@
 {
-  "state": "running",
+  "state": "complete",
   "jobs": {
     "minmax": {
       "state": "PASS",
@@ -252,11 +252,55 @@
       "seed_intercepted": true
     },
     "mask": {
-      "state": "running",
+      "state": "PASS",
       "clause": "FVVTYPE",
       "cpu": 121,
       "started_utc": "2026-11-01T19:59:48.639766+00:00",
-      "pid": 1378164
+      "pid": 1378164,
+      "exit_code": 0,
+      "elapsed_s": 3121.758,
+      "outer_timeout": false,
+      "finished_utc": "2026-11-01T20:51:50.398666+00:00",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 329,
+      "retire": 293,
+      "illegal": 36,
+      "partial": false,
+      "categories": {
+        "masked_active_only": 117,
+        "masked_inactive_only": 9,
+        "masked_mixed": 50,
+        "unmasked": 117
+      },
+      "fflags_transitions": {
+        "0x00->0x10": 156,
+        "0x00->0x00": 151,
+        "0x00->0x01": 10,
+        "0x00->0x13": 3,
+        "0x00->0x03": 4,
+        "0x00->0x11": 2,
+        "0x00->0x18": 2,
+        "0x00->0x05": 1
+      },
+      "effective_fp32_operand_pairs": {},
+      "historical_comparison_limit": "旧A/B程序未含当前ExecuteAs/汇编修复；旧类别为三个seed并集，新模型单seed。missing仅表示本次未见证，不自动判回归；此处非净性能比较。",
+      "output": "agents/explicit_branch_restore_20261102/validation/runs/mask/output/rv64_zFVVTYPE.json",
+      "output_sha256": "c3584186051df7ceb626632c04d7628e463321c3ed385ea9e60d1762551e4159",
+      "seed_intercepted": true
     },
     "reduction": {
       "state": "PASS",
@@ -305,14 +349,62 @@
       "seed_intercepted": true
     },
     "class": {
-      "state": "running",
+      "state": "PASS",
       "clause": "VFUNARY1",
       "cpu": 116,
       "started_utc": "2026-11-01T20:00:03.971023+00:00",
-      "pid": 1402170
+      "pid": 1402170,
+      "exit_code": 0,
+      "elapsed_s": 1880.107,
+      "outer_timeout": false,
+      "finished_utc": "2026-11-01T20:31:24.080170+00:00",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zVFUNARY1"
+      },
+      "gen": 520,
+      "retire": 504,
+      "illegal": 16,
+      "partial": false,
+      "categories": {
+        "class_bit_0": 11,
+        "class_bit_1": 10,
+        "class_bit_2": 17,
+        "class_bit_3": 10,
+        "class_bit_4": 10,
+        "class_bit_5": 17,
+        "class_bit_6": 10,
+        "class_bit_7": 10,
+        "class_bit_8": 17,
+        "class_bit_9": 12,
+        "class_other_0x0": 76,
+        "other_opcode": 304
+      },
+      "fflags_transitions": {
+        "0x00->0x00": 406,
+        "0x00->0x08": 20,
+        "0x00->0x05": 48,
+        "0x00->0x10": 46
+      },
+      "effective_fp32_operand_pairs": {},
+      "historical_comparison_limit": "旧A/B程序未含当前ExecuteAs/汇编修复；旧类别为三个seed并集，新模型单seed。missing仅表示本次未见证，不自动判回归；此处非净性能比较。",
+      "output": "agents/explicit_branch_restore_20261102/validation/runs/class/output/rv64_zVFUNARY1.json",
+      "output_sha256": "bb6e1afb5beb8e09f3f4f36a496b06a95aced561b920403a8f2032b17b72b369",
+      "seed_intercepted": true
     }
   },
-  "updated_utc": "2026-11-01T20:06:47.511413+00:00",
+  "updated_utc": "2026-11-01T20:52:17.851147+00:00",
   "ir_sha256": "0e7a9bfd9bb0655e48fbb02097c31a83f97b59d0eb3fbbf4b048c606eee7a85f",
   "model_commit": "fd71c9ab58fe6f41b97c976a5f7e470318c708a8"
 }

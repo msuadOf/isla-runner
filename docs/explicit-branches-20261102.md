@@ -29,3 +29,10 @@ Isla `f152290e`已提交四配置五IR、provenance及永久分支回归。普�
 组合七Clause当前5项PASS，其余2项仍运行；提交中的validation结果是本次快照，不能视为最终预算结论。未运行全量Clause或硬件重放，未推送远端。
 
 详细独审见[报告](../agents/explicit_branch_restore_20261102/review/report.md)，具体版本见[记录](../agents/explicit_branch_restore_20261102/versions.json)。
+
+
+## 2026-11-02 最终后台验证结果
+
+七项新组合Clause全部退出0、finished、无错误或超时。FVVTYPE 3121.758秒（329条），VFUNARY1 1880.107秒（520条），RFVVTYPE 290.252秒（184条），其余四项15.471–150.914秒；均低于完整Clause7200秒预算。以validation/report.md和summary.json的最终记录为准，旧“运行中”记录仅适用于提交时快照。
+
+单变量消融84/84已结束。flags算术和转换饱和的显式分支B各三次均触及7200秒外限，故不符合本轮恢复条件，保留ITE；不能写成这些情况不需要控制流或覆盖已经完整。其他格式/循环、右源独立NaN、BF16融合及多lane异常等仍有覆盖验证义务。

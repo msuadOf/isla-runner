@@ -3,7 +3,7 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "恢复预算内显式语义分支；独立GPT-6.1 Sol源码与IR审查、严格生成与24步回归通过，组合验证部分进行中",
+  "status": "显式语义分支源码/IR独审与7项组合Clause验证全部通过；flags算术/饱和显式分支超预算保留ITE",
   "components": {
     "isla": {
       "commit": "f152290e6447305f32509621e98478dc4ba5cf21",
@@ -45,11 +45,15 @@
       "minm",
       "maxm",
       "nan",
-      "reduction"
-    ],
-    "combined_clause_pending": [
       "mask",
+      "reduction",
       "class"
+    ],
+    "combined_clause_pending": [],
+    "ablation_completed_runs": 84,
+    "explicit_branch_excluded_due_to_7200s_timeout": [
+      "flags-arithmetic",
+      "sat"
     ]
   }
 }
