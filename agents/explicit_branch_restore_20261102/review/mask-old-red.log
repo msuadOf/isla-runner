@@ -1,0 +1,3 @@
+PASS agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir: FVVTYPE mask Jump支配6处纯运算，非活动lane绕过运算
+EXPECTED RED agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir: RFVVTYPE缺少唯一mask Jump
+EXPECTED RED isla/rv64d.ir: FVVTYPE缺少唯一mask Jump

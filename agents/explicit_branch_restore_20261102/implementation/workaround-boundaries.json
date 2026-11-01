@@ -1,0 +1,26 @@
+[
+  {
+    "config": "configs/isla/workarounds/vfmerge.toml",
+    "region": {
+      "max_forks_per_region": 1,
+      "file": "extensions/V/vext_fp_insts.sail",
+      "start_line": 2656,
+      "start_column": 2,
+      "end_line": 2668,
+      "end_column": 3
+    },
+    "same_lines": true
+  },
+  {
+    "config": "configs/isla/workarounds/vfmv.toml",
+    "region": {
+      "max_forks_per_region": 1,
+      "file": "extensions/V/vext_fp_insts.sail",
+      "start_line": 2746,
+      "start_column": 2,
+      "end_line": 2748,
+      "end_column": 3
+    },
+    "same_lines": true
+  }
+]

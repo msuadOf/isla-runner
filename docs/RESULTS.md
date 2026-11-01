@@ -186,3 +186,6 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 ## 2026-10-30 根仓float版本更新
 
 固定isla b0138b7c、sail-riscv 18389a89；核对manifest、gitlink、实际checkout与IR SHA256，`./init.sh --submodules-only`通过。仅版本管理验证，未重生IR/编译/运行成套功能或硬件测试。来源和局限见[版本说明](../specs/topic-versions.md)。
+
+
+**显式分支恢复（2026-11-02）**：四配置生成/普通strict重跑/五IR24步骤/make-FMINM_S12条/GCC+Clang72项通过，GPT-6.1 Sol源码和IR独审无阻断；组合验证仅已完成项为PASS，源配置/版本/日志见[专题](../agents/explicit_branch_restore_20261102/status.md)。首轮ordinary缓存目录包装错误失败已保留；未全Clause/硬件验收。

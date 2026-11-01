@@ -1,0 +1,478 @@
+{
+  "model_commit": "fd71c9ab58fe6f41b97c976a5f7e470318c708a8",
+  "test_sha256": "1dd12556ba69af0472de059d51732d22a46ad8db4d51386da880a0239c0b1843",
+  "configurations": {
+    "rv64d_v128_e64": {
+      "ir": "agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "ir_sha256": "0e7a9bfd9bb0655e48fbb02097c31a83f97b59d0eb3fbbf4b048c606eee7a85f",
+      "model_source_count": 166,
+      "record": "agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/generation.json",
+      "config_sha256": "89923ebff21718bb382df38bf246207cbb1eb5ae0cd314d078d87c0ab2b9f625",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6",
+      "actual_stdlib_filetable_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "normalized_changed_functions_from_old_v128": [
+        "zexecute",
+        "zfp_class_onehot_pure",
+        "zfp_max_pure",
+        "zfp_maxm_pure",
+        "zfp_min_pure",
+        "zfp_minm_pure",
+        "zillegal_fp_normal",
+        "zillegal_fp_reduction",
+        "zriscv_f32_symbolic_bits",
+        "zvalid_fp_op"
+      ],
+      "target_jump_counts": {
+        "zfp_min_pure": 8,
+        "zfp_max_pure": 8,
+        "zfp_minm_pure": 1,
+        "zfp_maxm_pure": 1,
+        "zriscv_f32_symbolic_bits": 1,
+        "zfp_class_onehot_pure": 17,
+        "zvalid_fp_op": 3,
+        "zillegal_fp_normal": 3,
+        "zillegal_fp_reduction": 3,
+        "zexecute": 2083
+      },
+      "mask_cfg": {
+        "FVVTYPE": {
+          "branch_pc": 24232,
+          "instruction": "jump zz410200 goto 24235 `93 67:4-81:5;",
+          "active_pc": 24235,
+          "join_pc": 24538,
+          "condition_definition": "zz410200 = zeq_bits(zz410203, zz410204) `93 67:7-67:21;",
+          "inactive_path": [
+            "zz410199 = () `93 81:5-81:5;",
+            "goto 24538;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 24246,
+              "instruction": "zz410206 = zfp_add_pure(zz410140, zz410207, zz410209) `93 69:28-69:70;"
+            },
+            {
+              "pc": 24257,
+              "instruction": "zz410206 = zfp_sub_pure(zz410140, zz410211, zz410213) `93 70:28-70:70;"
+            },
+            {
+              "pc": 24268,
+              "instruction": "zz410206 = zfp_min_pure(zz410215, zz410217) `93 71:28-71:63;"
+            },
+            {
+              "pc": 24279,
+              "instruction": "zz410206 = zfp_max_pure(zz410219, zz410221) `93 72:28-72:63;"
+            },
+            {
+              "pc": 24290,
+              "instruction": "zz410206 = zfp_mul_pure(zz410140, zz410223, zz410225) `93 73:28-73:70;"
+            },
+            {
+              "pc": 24301,
+              "instruction": "zz410206 = zfp_div_pure(zz410140, zz410227, zz410229) `93 74:28-74:70;"
+            }
+          ]
+        },
+        "RFVVTYPE": {
+          "branch_pc": 37612,
+          "instruction": "jump zz415938 goto 37615 `99 62:4-72:5;",
+          "active_pc": 37615,
+          "join_pc": 37661,
+          "condition_definition": "zz415938 = zeq_bits(zz415941, zz415942) `99 62:7-62:21;",
+          "inactive_path": [
+            "zz415937 = () `99 72:5-72:5;",
+            "goto 37661;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 37622,
+              "instruction": "zz415944 = zfp_add_pure(zz415885, zz415925, zz415945) `99 65:25-65:60;"
+            },
+            {
+              "pc": 37629,
+              "instruction": "zz415944 = zfp_add_pure(zz415885, zz415925, zz415947) `99 66:25-66:60;"
+            },
+            {
+              "pc": 37636,
+              "instruction": "zz415944 = zfp_max_pure(zz415925, zz415949) `99 67:25-67:53;"
+            },
+            {
+              "pc": 37642,
+              "instruction": "zz415944 = zfp_min_pure(zz415925, zz415951) `99 68:25-68:53;"
+            }
+          ]
+        }
+      },
+      "test_command": [
+        "python3",
+        "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py",
+        "--ir",
+        "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir"
+      ],
+      "test_exit_code": 0,
+      "test_output": "PASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir: FVVTYPE mask Jump支配6处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir: RFVVTYPE mask Jump支配4处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir: 已恢复行为分界保留显式Jump\n"
+    },
+    "rv32d": {
+      "ir": "agents/explicit_branch_restore_20261102/implementation/generation/rv32d/rv32d.ir",
+      "ir_sha256": "65a11d9900d695500f85cf64a1ddc032ff85eb39aa6e94fa0bb9cdfdabfbb520",
+      "model_source_count": 166,
+      "record": "agents/explicit_branch_restore_20261102/implementation/generation/rv32d/generation.json",
+      "config_sha256": "bf36f1d84bc96d1229d546eefe3cae0b7282a03cea5064ade904eb1d90a23b30",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6",
+      "actual_stdlib_filetable_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "normalized_changed_functions_from_old_v128": null,
+      "target_jump_counts": {
+        "zfp_min_pure": 8,
+        "zfp_max_pure": 8,
+        "zfp_minm_pure": 1,
+        "zfp_maxm_pure": 1,
+        "zriscv_f32_symbolic_bits": 1,
+        "zfp_class_onehot_pure": 17,
+        "zvalid_fp_op": 3,
+        "zillegal_fp_normal": 3,
+        "zillegal_fp_reduction": 3,
+        "zexecute": 2050
+      },
+      "mask_cfg": {
+        "FVVTYPE": {
+          "branch_pc": 23619,
+          "instruction": "jump zz49947 goto 23622 `93 67:4-81:5;",
+          "active_pc": 23622,
+          "join_pc": 23925,
+          "condition_definition": "zz49947 = zeq_bits(zz49950, zz49951) `93 67:7-67:21;",
+          "inactive_path": [
+            "zz49946 = () `93 81:5-81:5;",
+            "goto 23925;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 23633,
+              "instruction": "zz49953 = zfp_add_pure(zz49887, zz49954, zz49956) `93 69:28-69:70;"
+            },
+            {
+              "pc": 23644,
+              "instruction": "zz49953 = zfp_sub_pure(zz49887, zz49958, zz49960) `93 70:28-70:70;"
+            },
+            {
+              "pc": 23655,
+              "instruction": "zz49953 = zfp_min_pure(zz49962, zz49964) `93 71:28-71:63;"
+            },
+            {
+              "pc": 23666,
+              "instruction": "zz49953 = zfp_max_pure(zz49966, zz49968) `93 72:28-72:63;"
+            },
+            {
+              "pc": 23677,
+              "instruction": "zz49953 = zfp_mul_pure(zz49887, zz49970, zz49972) `93 73:28-73:70;"
+            },
+            {
+              "pc": 23688,
+              "instruction": "zz49953 = zfp_div_pure(zz49887, zz49974, zz49976) `93 74:28-74:70;"
+            }
+          ]
+        },
+        "RFVVTYPE": {
+          "branch_pc": 37019,
+          "instruction": "jump zz415695 goto 37022 `99 62:4-72:5;",
+          "active_pc": 37022,
+          "join_pc": 37068,
+          "condition_definition": "zz415695 = zeq_bits(zz415698, zz415699) `99 62:7-62:21;",
+          "inactive_path": [
+            "zz415694 = () `99 72:5-72:5;",
+            "goto 37068;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 37029,
+              "instruction": "zz415701 = zfp_add_pure(zz415640, zz415682, zz415702) `99 65:25-65:60;"
+            },
+            {
+              "pc": 37036,
+              "instruction": "zz415701 = zfp_add_pure(zz415640, zz415682, zz415704) `99 66:25-66:60;"
+            },
+            {
+              "pc": 37043,
+              "instruction": "zz415701 = zfp_max_pure(zz415682, zz415706) `99 67:25-67:53;"
+            },
+            {
+              "pc": 37049,
+              "instruction": "zz415701 = zfp_min_pure(zz415682, zz415708) `99 68:25-68:53;"
+            }
+          ]
+        }
+      },
+      "test_command": [
+        "python3",
+        "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py",
+        "--ir",
+        "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv32d/rv32d.ir"
+      ],
+      "test_exit_code": 0,
+      "test_output": "PASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv32d/rv32d.ir: FVVTYPE mask Jump支配6处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv32d/rv32d.ir: RFVVTYPE mask Jump支配4处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv32d/rv32d.ir: 已恢复行为分界保留显式Jump\n"
+    },
+    "rv64d_v256_e64": {
+      "ir": "agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v256_e64/rv64d_v256_e64.ir",
+      "ir_sha256": "946d28643cf4566fb64ef41212ddef757d62a8b592207756572252865a740bb6",
+      "model_source_count": 166,
+      "record": "agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v256_e64/generation.json",
+      "config_sha256": "e28ac77273be6a31c544db6b196914dfb55b3b9fb72295ae7ef6cfc7b99dfc47",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6",
+      "actual_stdlib_filetable_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "normalized_changed_functions_from_old_v128": null,
+      "target_jump_counts": {
+        "zfp_min_pure": 8,
+        "zfp_max_pure": 8,
+        "zfp_minm_pure": 1,
+        "zfp_maxm_pure": 1,
+        "zriscv_f32_symbolic_bits": 1,
+        "zfp_class_onehot_pure": 17,
+        "zvalid_fp_op": 3,
+        "zillegal_fp_normal": 3,
+        "zillegal_fp_reduction": 3,
+        "zexecute": 2083
+      },
+      "mask_cfg": {
+        "FVVTYPE": {
+          "branch_pc": 24232,
+          "instruction": "jump zz410200 goto 24235 `93 67:4-81:5;",
+          "active_pc": 24235,
+          "join_pc": 24538,
+          "condition_definition": "zz410200 = zeq_bits(zz410203, zz410204) `93 67:7-67:21;",
+          "inactive_path": [
+            "zz410199 = () `93 81:5-81:5;",
+            "goto 24538;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 24246,
+              "instruction": "zz410206 = zfp_add_pure(zz410140, zz410207, zz410209) `93 69:28-69:70;"
+            },
+            {
+              "pc": 24257,
+              "instruction": "zz410206 = zfp_sub_pure(zz410140, zz410211, zz410213) `93 70:28-70:70;"
+            },
+            {
+              "pc": 24268,
+              "instruction": "zz410206 = zfp_min_pure(zz410215, zz410217) `93 71:28-71:63;"
+            },
+            {
+              "pc": 24279,
+              "instruction": "zz410206 = zfp_max_pure(zz410219, zz410221) `93 72:28-72:63;"
+            },
+            {
+              "pc": 24290,
+              "instruction": "zz410206 = zfp_mul_pure(zz410140, zz410223, zz410225) `93 73:28-73:70;"
+            },
+            {
+              "pc": 24301,
+              "instruction": "zz410206 = zfp_div_pure(zz410140, zz410227, zz410229) `93 74:28-74:70;"
+            }
+          ]
+        },
+        "RFVVTYPE": {
+          "branch_pc": 37600,
+          "instruction": "jump zz415938 goto 37603 `99 62:4-72:5;",
+          "active_pc": 37603,
+          "join_pc": 37649,
+          "condition_definition": "zz415938 = zeq_bits(zz415941, zz415942) `99 62:7-62:21;",
+          "inactive_path": [
+            "zz415937 = () `99 72:5-72:5;",
+            "goto 37649;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 37610,
+              "instruction": "zz415944 = zfp_add_pure(zz415885, zz415925, zz415945) `99 65:25-65:60;"
+            },
+            {
+              "pc": 37617,
+              "instruction": "zz415944 = zfp_add_pure(zz415885, zz415925, zz415947) `99 66:25-66:60;"
+            },
+            {
+              "pc": 37624,
+              "instruction": "zz415944 = zfp_max_pure(zz415925, zz415949) `99 67:25-67:53;"
+            },
+            {
+              "pc": 37630,
+              "instruction": "zz415944 = zfp_min_pure(zz415925, zz415951) `99 68:25-68:53;"
+            }
+          ]
+        }
+      },
+      "test_command": [
+        "python3",
+        "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py",
+        "--ir",
+        "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v256_e64/rv64d_v256_e64.ir"
+      ],
+      "test_exit_code": 0,
+      "test_output": "PASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v256_e64/rv64d_v256_e64.ir: FVVTYPE mask Jump支配6处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v256_e64/rv64d_v256_e64.ir: RFVVTYPE mask Jump支配4处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v256_e64/rv64d_v256_e64.ir: 已恢复行为分界保留显式Jump\n"
+    },
+    "rv64d_v512_e64": {
+      "ir": "agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v512_e64/rv64d_v512_e64.ir",
+      "ir_sha256": "03ba34ebb2b7cd2782f68a9754fee1cd464ca17ce3487f3f529b96390e6637d6",
+      "model_source_count": 166,
+      "record": "agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v512_e64/generation.json",
+      "config_sha256": "9b32561d0d880d01732da669769237d8fc881e5de3e4b6384073c928ef3c3ff1",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6",
+      "actual_stdlib_filetable_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "normalized_changed_functions_from_old_v128": null,
+      "target_jump_counts": {
+        "zfp_min_pure": 8,
+        "zfp_max_pure": 8,
+        "zfp_minm_pure": 1,
+        "zfp_maxm_pure": 1,
+        "zriscv_f32_symbolic_bits": 1,
+        "zfp_class_onehot_pure": 17,
+        "zvalid_fp_op": 3,
+        "zillegal_fp_normal": 3,
+        "zillegal_fp_reduction": 3,
+        "zexecute": 2083
+      },
+      "mask_cfg": {
+        "FVVTYPE": {
+          "branch_pc": 24232,
+          "instruction": "jump zz410200 goto 24235 `93 67:4-81:5;",
+          "active_pc": 24235,
+          "join_pc": 24538,
+          "condition_definition": "zz410200 = zeq_bits(zz410203, zz410204) `93 67:7-67:21;",
+          "inactive_path": [
+            "zz410199 = () `93 81:5-81:5;",
+            "goto 24538;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 24246,
+              "instruction": "zz410206 = zfp_add_pure(zz410140, zz410207, zz410209) `93 69:28-69:70;"
+            },
+            {
+              "pc": 24257,
+              "instruction": "zz410206 = zfp_sub_pure(zz410140, zz410211, zz410213) `93 70:28-70:70;"
+            },
+            {
+              "pc": 24268,
+              "instruction": "zz410206 = zfp_min_pure(zz410215, zz410217) `93 71:28-71:63;"
+            },
+            {
+              "pc": 24279,
+              "instruction": "zz410206 = zfp_max_pure(zz410219, zz410221) `93 72:28-72:63;"
+            },
+            {
+              "pc": 24290,
+              "instruction": "zz410206 = zfp_mul_pure(zz410140, zz410223, zz410225) `93 73:28-73:70;"
+            },
+            {
+              "pc": 24301,
+              "instruction": "zz410206 = zfp_div_pure(zz410140, zz410227, zz410229) `93 74:28-74:70;"
+            }
+          ]
+        },
+        "RFVVTYPE": {
+          "branch_pc": 37600,
+          "instruction": "jump zz415938 goto 37603 `99 62:4-72:5;",
+          "active_pc": 37603,
+          "join_pc": 37649,
+          "condition_definition": "zz415938 = zeq_bits(zz415941, zz415942) `99 62:7-62:21;",
+          "inactive_path": [
+            "zz415937 = () `99 72:5-72:5;",
+            "goto 37649;"
+          ],
+          "active_operation_calls": [
+            {
+              "pc": 37610,
+              "instruction": "zz415944 = zfp_add_pure(zz415885, zz415925, zz415945) `99 65:25-65:60;"
+            },
+            {
+              "pc": 37617,
+              "instruction": "zz415944 = zfp_add_pure(zz415885, zz415925, zz415947) `99 66:25-66:60;"
+            },
+            {
+              "pc": 37624,
+              "instruction": "zz415944 = zfp_max_pure(zz415925, zz415949) `99 67:25-67:53;"
+            },
+            {
+              "pc": 37630,
+              "instruction": "zz415944 = zfp_min_pure(zz415925, zz415951) `99 68:25-68:53;"
+            }
+          ]
+        }
+      },
+      "test_command": [
+        "python3",
+        "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py",
+        "--ir",
+        "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v512_e64/rv64d_v512_e64.ir"
+      ],
+      "test_exit_code": 0,
+      "test_output": "PASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v512_e64/rv64d_v512_e64.ir: FVVTYPE mask Jump支配6处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v512_e64/rv64d_v512_e64.ir: RFVVTYPE mask Jump支配4处纯运算，非活动lane绕过运算\nPASS /data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v512_e64/rv64d_v512_e64.ir: 已恢复行为分界保留显式Jump\n"
+    }
+  },
+  "ordinary_strict": {
+    "exit_code": 0,
+    "record": "agents/explicit_branch_restore_20261102/implementation/generation/ordinary-strict/driver.json"
+  },
+  "pass": true
+}

@@ -3,22 +3,22 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "恢复NaN-boxing显式分支；IR重生与定向两侧见证回归通过，其他独立review问题仍待修",
+  "status": "恢复预算内显式语义分支；独立GPT-6.1 Sol源码与IR审查、严格生成与24步回归通过，组合验证部分进行中",
   "components": {
     "isla": {
-      "commit": "80231ce9928ccda10ba5750e5ff3570f5afb03fe",
+      "commit": "f152290e6447305f32509621e98478dc4ba5cf21",
       "source_branch": "feat/float-support",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+      "commit": "fd71c9ab58fe6f41b97c976a5f7e470318c708a8",
       "source_branch": "feat/sail-riscv-general-float-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+    "sha256": "0e7a9bfd9bb0655e48fbb02097c31a83f97b59d0eb3fbbf4b048c606eee7a85f",
     "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
   },
   "excluded_isla_branches": [
@@ -26,17 +26,30 @@
   ],
   "publication": {
     "pushed_this_round": false,
-    "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
+    "remote_reachability": "本轮仅从本机源仓获取已提交对象，未推送或重新核实正式远端"
   },
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "validation": {
-    "date": "2026-10-31",
-    "report": "docs/nan-unbox-branch-restore-20261031.md",
+    "date": "2026-11-02",
+    "report": "docs/explicit-branches-20261102.md",
     "assembly_required": [
       "gcc",
       "clang"
     ],
     "full_model_control_flow_coverage": "not-measured",
-    "hardware_replay": "not-run"
+    "hardware_replay": "not-run",
+    "source_and_ir_review": "GPT-6.1 Sol: PASS",
+    "ir_regression_steps": 24,
+    "combined_clause_passed": [
+      "minmax",
+      "minm",
+      "maxm",
+      "nan",
+      "reduction"
+    ],
+    "combined_clause_pending": [
+      "mask",
+      "class"
+    ]
   }
 }

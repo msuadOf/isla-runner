@@ -1,0 +1,22 @@
+{
+  "command": [
+    "make",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/make-smoke",
+    "-f",
+    "/data1/baiyifan/workplace/isla-runner/isla/scripts/run.mk",
+    "-o",
+    "build-isarch",
+    "solve-FMINM_S",
+    "IR_FILE=/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+    "ISA_CONFIG=/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+    "THREADS=1",
+    "SOLVE_TIMEOUT=",
+    "SMT_TIMEOUT=7200s",
+    "OUTER_TIMEOUT=7200s",
+    "TASTIC=qffp",
+    "ITRACE=0"
+  ],
+  "exit": 0,
+  "wall_s": 25.64532207301818
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "mutation": "operation_before_mask",
+    "expected_failure": "agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir: FVVTYPE活动分支不能到达全部运算"
+  },
+  {
+    "mutation": "inactive_executes_operation",
+    "expected_failure": "agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir: FVVTYPE非活动分支仍执行运算"
+  }
+]

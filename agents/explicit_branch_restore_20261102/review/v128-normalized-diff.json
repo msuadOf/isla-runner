@@ -1,0 +1,16 @@
+{
+  "old_function_count": 2053,
+  "new_function_count": 2053,
+  "changed_functions": [
+    "zexecute",
+    "zfp_class_onehot_pure",
+    "zfp_max_pure",
+    "zfp_maxm_pure",
+    "zfp_min_pure",
+    "zfp_minm_pure",
+    "zillegal_fp_normal",
+    "zillegal_fp_reduction",
+    "zriscv_f32_symbolic_bits",
+    "zvalid_fp_op"
+  ]
+}

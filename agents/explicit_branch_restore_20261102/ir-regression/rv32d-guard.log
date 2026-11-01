@@ -1,0 +1,9 @@
+No primop parse_hex_bits (Name { id: 2553 })
+No primop emulator_write_tag (Name { id: 2966 })
+No primop emulator_read_tag (Name { id: 2965 })
+No primop valid_reservation (Name { id: 4448 })
+PASS guard zset_F_bits fast=false
+PASS guard zget_F_bits fast=false
+PASS guard zset_F_bits fast=true
+PASS guard zget_F_bits fast=true
+failures=0

@@ -79,3 +79,6 @@
 没有独立 `status.md` 的专题仍以其计划或报告作为证据入口。新增议题先在本表登记，再按根 `AGENTS.md` 的要求建立可审阅方案。
 
 **根仓float组件版本更新（2026-10-30，完成／版本核对）**：固定isla b0138b7c、sail-riscv 18389a89；manifest与gitlink同步。只验版本/初始化，不计联合功能PASS；未push。[版本说明](topic-versions.md)。
+
+
+**显式语义分支恢复（2026-11-02，源码/IR已提交，限定验证通过）**：模型7f3f50d/fd71c9a与Isla f152290按预算恢复特殊值、十分类、合法性及两mask循环；独立GPT-6.1 Sol源码/IR审查通过，四配置生成、普通strict重跑、24步回归、make与72项双工具链编码检查通过。组合7Clause部分完成、其余运行；flags/sat未结束，不恢复。源、IR和gitlink已同步，未push。[报告](../docs/explicit-branches-20261102.md)。

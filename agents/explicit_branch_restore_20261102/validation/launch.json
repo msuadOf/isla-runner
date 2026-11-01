@@ -1,0 +1,22 @@
+{
+  "pid": 1099883,
+  "started_utc": "2026-11-01T19:47:25.975310+00:00",
+  "cpus": [
+    98,
+    100,
+    116,
+    120,
+    121,
+    73
+  ],
+  "binary_sha256": "ce338b4cd6aee05f7d73789334443ff12a4eafea423f07eb2071da74cabff7df",
+  "binary_version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613",
+  "isla_commit": "09678a737743d87057df8138fb321658a52aee20",
+  "seed_shim_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "threads": 1,
+  "tactic": "qffp",
+  "outer_timeout_s": 7200,
+  "smt_timeout_s": 7200,
+  "path_timeout": null,
+  "official_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+}

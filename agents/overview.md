@@ -11,3 +11,5 @@
 - Isla `origin/feat/memory-support` 内存支持调查见 [memory_support_review/status.md](memory_support_review/status.md)。
 - workaround 描述归属与运行配置生成见 [workaround_ownership/status.md](workaround_ownership/status.md)。
 - 内存 clause 分支覆盖对照（W19+G1-G8）见 [memsolve_branch_coverage/status.md](memsolve_branch_coverage/status.md)。
+
+- 显式语义分支恢复、预算与GPT-6.1 Sol独审：[状态](explicit_branch_restore_20261102/status.md)。

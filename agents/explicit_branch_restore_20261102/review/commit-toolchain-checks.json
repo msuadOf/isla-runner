@@ -1,0 +1,37 @@
+{
+  "model_commit": "fd71c9ab58fe6f41b97c976a5f7e470318c708a8",
+  "model_clean": true,
+  "reviewed_source_unchanged": {
+    "model/extensions/FD/fp_minmax.sail": true,
+    "model/extensions/FD/softfloat_symbolic_f32.sail": true,
+    "model/extensions/V/vext_fp_insts.sail": true,
+    "model/extensions/V/vext_fp_red_insts.sail": true,
+    "model/extensions/V/vext_fp_utils_insts.sail": true
+  },
+  "toolchain_hashes_match": {
+    "sail": true,
+    "_build/install/default/bin/sail": true,
+    "lib/float/interface.sail": true,
+    "lib/float/classify.sail": true,
+    "src/lib/jib_compile.ml": true
+  },
+  "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6",
+  "installed_stdlib": {
+    "/home/baiyifan/.opam/default/share/sail/lib/float/interface.sail": {
+      "sha256": "0251513792446a87fdd04befa6daca16b3058188556be71b1b9c45fb1c76090b",
+      "same_as_snapshot": true
+    },
+    "/home/baiyifan/.opam/default/share/sail/lib/float/classify.sail": {
+      "sha256": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+      "same_as_snapshot": true
+    }
+  },
+  "historical_stdlib_filetables": {
+    "isla/rv64d.ir": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail"
+    ],
+    "agents/branch_ablation_20261031/classification/class_if/ir/rv64d.ir": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail"
+    ]
+  }
+}

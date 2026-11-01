@@ -1,0 +1,216 @@
+diff --git a/model/extensions/FD/fp_minmax.sail b/model/extensions/FD/fp_minmax.sail
+index 6494242..826bbf2 100644
+--- a/model/extensions/FD/fp_minmax.sail
++++ b/model/extensions/FD/fp_minmax.sail
+@@ -12,12 +12,14 @@ function fp_min_pure(op1, op2) = {
+   let op2_neg_zero = eq_anything(op2, 0b1 @ zeros('m - 1));
+   let op1_pos_zero = eq_anything(op1, zeros('m));
+   let op2_pos_zero = eq_anything(op2, zeros('m));
+-  let result_val = ite(strict_and_bool(op1_nan, op2_nan), canonical_NaN('m),
+-    ite(op1_nan, op2,
+-      ite(op2_nan, op1,
+-        ite(strict_and_bool(op1_neg_zero, op2_pos_zero), op1,
+-          ite(strict_and_bool(op2_neg_zero, op1_pos_zero), op2,
+-            ite(op1_lt_op2, op1, op2))))));
++  let result_val =
++    if strict_and_bool(op1_nan, op2_nan) then canonical_NaN('m)
++    else if op1_nan then op2
++    else if op2_nan then op1
++    else if strict_and_bool(op1_neg_zero, op2_pos_zero) then op1
++    else if strict_and_bool(op2_neg_zero, op1_pos_zero) then op2
++    else if op1_lt_op2 then op1
++    else op2;
+   (fflags, result_val)
+ }
+ 
+@@ -34,24 +36,26 @@ function fp_max_pure(op1, op2) = {
+   let op2_neg_zero = eq_anything(op2, 0b1 @ zeros('m - 1));
+   let op1_pos_zero = eq_anything(op1, zeros('m));
+   let op2_pos_zero = eq_anything(op2, zeros('m));
+-  let result_val = ite(strict_and_bool(op1_nan, op2_nan), canonical_NaN('m),
+-    ite(op1_nan, op2,
+-      ite(op2_nan, op1,
+-        ite(strict_and_bool(op1_neg_zero, op2_pos_zero), op2,
+-          ite(strict_and_bool(op2_neg_zero, op1_pos_zero), op1,
+-            ite(op1_lt_op2, op2, op1))))));
++  let result_val =
++    if strict_and_bool(op1_nan, op2_nan) then canonical_NaN('m)
++    else if op1_nan then op2
++    else if op2_nan then op1
++    else if strict_and_bool(op1_neg_zero, op2_pos_zero) then op2
++    else if strict_and_bool(op2_neg_zero, op1_pos_zero) then op1
++    else if op1_lt_op2 then op2
++    else op1;
+   (fflags, result_val)
+ }
+ 
+ val fp_minm_pure : forall 'm, 'm in {16, 32, 64}. (bits('m), bits('m)) -> (bits_fflags, bits('m))
+ function fp_minm_pure(op1, op2) = {
+   let (fflags, result_val) = fp_min_pure(op1, op2);
+-  (fflags, ite(strict_or_bool(ieee_is_nan(op1), ieee_is_nan(op2)), canonical_NaN('m), result_val))
++  (fflags, if strict_or_bool(ieee_is_nan(op1), ieee_is_nan(op2)) then canonical_NaN('m) else result_val)
+ }
+ 
+ val fp_maxm_pure : forall 'm, 'm in {16, 32, 64}. (bits('m), bits('m)) -> (bits_fflags, bits('m))
+ function fp_maxm_pure(op1, op2) = {
+   let (fflags, result_val) = fp_max_pure(op1, op2);
+-  (fflags, ite(strict_or_bool(ieee_is_nan(op1), ieee_is_nan(op2)), canonical_NaN('m), result_val))
++  (fflags, if strict_or_bool(ieee_is_nan(op1), ieee_is_nan(op2)) then canonical_NaN('m) else result_val)
+ }
+ 
+diff --git a/model/extensions/FD/softfloat_symbolic_f32.sail b/model/extensions/FD/softfloat_symbolic_f32.sail
+index cd1ef66..fbb12a4 100644
+--- a/model/extensions/FD/softfloat_symbolic_f32.sail
++++ b/model/extensions/FD/softfloat_symbolic_f32.sail
+@@ -7,7 +7,7 @@
+ 
+ 
+ function riscv_f32_symbolic_bits(value : float32) -> bits_S =
+-  ite(fp32_is_nan(value), riscv_canonical_nan32(), fp32_to_ieee(value))
++  if fp32_is_nan(value) then riscv_canonical_nan32() else fp32_to_ieee(value)
+ 
+ // ROD is a derived narrowing operation; its unused ordinary candidate must
+ // still use the native RTZ rounding mode rather than an illegal RM encoding.
+diff --git a/model/extensions/V/vext_fp_insts.sail b/model/extensions/V/vext_fp_insts.sail
+index 2ee8158..51f4a0a 100644
+--- a/model/extensions/V/vext_fp_insts.sail
++++ b/model/extensions/V/vext_fp_insts.sail
+@@ -62,10 +62,10 @@ function clause execute FVVTYPE(funct6, vm, vs2, vs1, vd) = {
+   };
+   var result = initial_result;
+ 
+-  var candidates = initial_result;
+   var combined_flags : bits_fflags = 0b00000;
+   foreach (i from 0 to (num_elem - 1)) {
+-    let (operation_flags, lane_value) : (bits_fflags, bits('m)) = match funct6 {
++    if mask[i] == 0b1 then {
++      let (operation_flags, lane_value) : (bits_fflags, bits('m)) = match funct6 {
+         FVV_VADD         => fp_add_pure(rm_3b, vs2_val[i], vs1_val[i]),
+         FVV_VSUB         => fp_sub_pure(rm_3b, vs2_val[i], vs1_val[i]),
+         FVV_VMIN         => fp_min_pure(vs2_val[i], vs1_val[i]),
+@@ -75,11 +75,11 @@ function clause execute FVVTYPE(funct6, vm, vs2, vs1, vd) = {
+         FVV_VSGNJ        => (0b00000, [vs1_val[i]['m - 1]] @ vs2_val[i][('m - 2)..0]),
+         FVV_VSGNJN       => (0b00000, (0b1 ^ [vs1_val[i]['m - 1]]) @ vs2_val[i][('m - 2)..0]),
+         FVV_VSGNJX       => (0b00000, ([vs2_val[i]['m - 1]] ^ [vs1_val[i]['m - 1]]) @ vs2_val[i][('m - 2)..0])
+-    };
+-    candidates[i] = lane_value;
+-    combined_flags = combined_flags | ite(mask[i] == 0b1, operation_flags, 0b00000)
++      };
++      result[i] = lane_value;
++      combined_flags = combined_flags | operation_flags
++    }
+   };
+-  result = vector_select_masked(mask, initial_result, candidates);
+   accrue_fflags(combined_flags);
+ 
+   write_vreg(num_elem, SEW, LMUL_pow, vd, result);
+diff --git a/model/extensions/V/vext_fp_red_insts.sail b/model/extensions/V/vext_fp_red_insts.sail
+index 1484192..83ee06f 100644
+--- a/model/extensions/V/vext_fp_red_insts.sail
++++ b/model/extensions/V/vext_fp_red_insts.sail
+@@ -59,15 +59,17 @@ function clause execute RFVVTYPE(funct6, vm, vs2, vs1, vd) = {
+   var sum : bits('m) = read_single_element(SEW, 0, vs1);
+   var combined_flags : bits_fflags = 0b00000;
+   foreach (i from 0 to (num_elem_vs - 1)) {
+-    let (operation_flags, candidate) : (bits_fflags, bits('m)) = match funct6 {
+-      // Ordered and unordered sums retain the existing lane order.
+-      FVV_VFREDOSUM => fp_add_pure(rm_3b, sum, vs2_val[i]),
+-      FVV_VFREDUSUM => fp_add_pure(rm_3b, sum, vs2_val[i]),
+-      FVV_VFREDMAX  => fp_max_pure(sum, vs2_val[i]),
+-      FVV_VFREDMIN  => fp_min_pure(sum, vs2_val[i]),
+-    };
+-    combined_flags = combined_flags | ite(mask[i] == 0b1, operation_flags, 0b00000);
+-    sum = ite(mask[i] == 0b1, candidate, sum)
++    if mask[i] == 0b1 then {
++      let (operation_flags, candidate) : (bits_fflags, bits('m)) = match funct6 {
++        // Ordered and unordered sums retain the existing lane order.
++        FVV_VFREDOSUM => fp_add_pure(rm_3b, sum, vs2_val[i]),
++        FVV_VFREDUSUM => fp_add_pure(rm_3b, sum, vs2_val[i]),
++        FVV_VFREDMAX  => fp_max_pure(sum, vs2_val[i]),
++        FVV_VFREDMIN  => fp_min_pure(sum, vs2_val[i]),
++      };
++      combined_flags = combined_flags | operation_flags;
++      sum = candidate
++    }
+   };
+   accrue_fflags(combined_flags);
+ 
+diff --git a/model/extensions/V/vext_fp_utils_insts.sail b/model/extensions/V/vext_fp_utils_insts.sail
+index 702b325..1717a5e 100644
+--- a/model/extensions/V/vext_fp_utils_insts.sail
++++ b/model/extensions/V/vext_fp_utils_insts.sail
+@@ -15,10 +15,12 @@
+ // 2. Valid floating-point rounding mode
+ function valid_fp_op(SEW : sew_bitsize, rm_3b : bits(3)) -> bool = {
+   // SEW=8 is valid for conversions between INT8 and FP16(vfncvt[.rtz].x[u].f.w, etc.)
+-  let valid_sew = strict_and_bool(SEW >= 8, SEW <= 64);
+-  let valid_rm = not_bool(strict_or_bool(eq_anything(rm_3b, 0b101),
+-                     strict_or_bool(eq_anything(rm_3b, 0b110), eq_anything(rm_3b, 0b111))));
+-  strict_and_bool(valid_sew, valid_rm)
++  if SEW < 8 then false
++  else if SEW > 64 then false
++  else if eq_anything(rm_3b, 0b101) then false
++  else if eq_anything(rm_3b, 0b110) then false
++  else if eq_anything(rm_3b, 0b111) then false
++  else true
+ }
+ 
+ // Ordinary vector FP instructions have no SEW=8 encoding. Widening and
+@@ -28,9 +30,10 @@ function valid_fp_standard_op(SEW : sew_bitsize, rm_3b : bits(3)) -> bool =
+ 
+ // a. Normal check for floating-point instructions
+ function illegal_fp_normal(vd : vregidx, vm : bits(1), SEW : sew_bitsize, rm_3b : bits(3)) -> bool = {
+-  strict_or_bool(not_bool(valid_vtype()),
+-                 strict_or_bool(not_bool(valid_rd_mask(vd, vm)),
+-                                not_bool(valid_fp_standard_op(SEW, rm_3b))))
++  if not_bool(valid_vtype()) then true
++  else if not_bool(valid_rd_mask(vd, vm)) then true
++  else if not_bool(valid_fp_standard_op(SEW, rm_3b)) then true
++  else false
+ }
+ 
+ // b. Masked check for floating-point instructions encoded with vm = 0
+@@ -57,9 +60,10 @@ function illegal_fp_standard_variable_width(vd : vregidx, vm : bits(1), SEW : se
+ // e. Normal check for floating-point reduction instructions
+ function illegal_fp_reduction(SEW : sew_bitsize, rm_3b : bits(3)) -> bool = {
+   // Reductions have no SEW=8 encoding, but still check RM independently.
+-  strict_or_bool(not_bool(valid_vtype()),
+-                 strict_or_bool(not_bool(eq_anything(vstart, zeros())),
+-                                not_bool(valid_fp_standard_op(SEW, rm_3b))))
++  if not_bool(valid_vtype()) then true
++  else if not_bool(eq_anything(vstart, zeros())) then true
++  else if not_bool(valid_fp_standard_op(SEW, rm_3b)) then true
++  else false
+ }
+ 
+ // f. Variable width check for floating-point widening reduction instructions
+@@ -307,16 +311,19 @@ function fp_class_onehot_pure(raw) = {
+   let zero = strict_and_bool(exp_zero, mant_zero);
+   let sub = strict_and_bool(exp_zero, not_bool(mant_zero));
+   let normal = strict_and_bool(not_bool(exp_zero), not_bool(exp_ones));
+-  isla_bool_to_bit(qnan) @
+-  isla_bool_to_bit(snan) @
+-  isla_bool_to_bit(strict_and_bool(positive, inf)) @
+-  isla_bool_to_bit(strict_and_bool(positive, normal)) @
+-  isla_bool_to_bit(strict_and_bool(positive, sub)) @
+-  isla_bool_to_bit(strict_and_bool(positive, zero)) @
+-  isla_bool_to_bit(strict_and_bool(negative, zero)) @
+-  isla_bool_to_bit(strict_and_bool(negative, sub)) @
+-  isla_bool_to_bit(strict_and_bool(negative, normal)) @
+-  isla_bool_to_bit(strict_and_bool(negative, inf))
++  if qnan then 0b1000000000
++  else if snan then 0b0100000000
++  else if positive then {
++    if inf then 0b0010000000
++    else if normal then 0b0001000000
++    else if sub then 0b0000100000
++    else 0b0000010000
++  } else {
++    if zero then 0b0000001000
++    else if sub then 0b0000000100
++    else if normal then 0b0000000010
++    else 0b0000000001
++  }
+ }
+ $endif
+ 
