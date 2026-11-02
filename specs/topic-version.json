@@ -60,6 +60,12 @@
     "directed_assertions": 3518,
     "gcc_clang_encoding_checks": 60,
     "latest_report": "agents/special_control_restore_20261102/status.md",
-    "saturation_timeout_scope": "旧循环先算不活动lane；修正后的overflow显式化尚需复测"
+    "saturation_timeout_scope": "旧循环先算不活动lane；修正后的overflow显式化尚需复测",
+    "timeout_cause_report": "agents/explicit_branch_timeout_diagnosis_20261102/confirmation-report.md",
+    "timeout_tactics_tested": [
+      "qffp",
+      "default",
+      "smt"
+    ]
   }
 }

@@ -16,3 +16,5 @@
 
 - [剩余特殊值控制分支](special_control_restore_20261102/status.md)：每源NaN、其他格式及20个活动gate恢复，Sol及定向验收通过。
 - [显式分支超时定位](explicit_branch_timeout_diagnosis_20261102/status.md)：区分flags的SMT成本与旧饱和循环的额外分叉。
+
+- [flags/sat完整归因确认](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)：两小时主路径账、六策略臂、活动gate与collector因果诊断，生产未改。

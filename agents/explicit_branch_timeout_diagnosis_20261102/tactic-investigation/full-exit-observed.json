@@ -1,0 +1,56 @@
+{
+  "flags-arithmetic/qffp": {
+    "workload": "flags-arithmetic",
+    "tactic": "qffp",
+    "timeout_pid": 335995,
+    "started_monotonic": 531606.174194675,
+    "exit_seen_monotonic": 538806.607039396,
+    "elapsed_s_observed": 7200.4328479609685,
+    "precision_s": 0.2
+  },
+  "flags-arithmetic/default": {
+    "workload": "flags-arithmetic",
+    "tactic": "default",
+    "timeout_pid": 336845,
+    "started_monotonic": 531606.871505382,
+    "exit_seen_monotonic": 538807.21035967,
+    "elapsed_s_observed": 7200.338854947942,
+    "precision_s": 0.2
+  },
+  "flags-arithmetic/smt": {
+    "workload": "flags-arithmetic",
+    "tactic": "smt",
+    "timeout_pid": 337846,
+    "started_monotonic": 531607.525416905,
+    "exit_seen_monotonic": 538807.71313829,
+    "elapsed_s_observed": 7200.187722485047,
+    "precision_s": 0.2
+  },
+  "sat/qffp": {
+    "workload": "sat",
+    "tactic": "qffp",
+    "timeout_pid": 338451,
+    "started_monotonic": 531608.160392142,
+    "exit_seen_monotonic": 538808.415802506,
+    "elapsed_s_observed": 7200.25541110395,
+    "precision_s": 0.2
+  },
+  "sat/default": {
+    "workload": "sat",
+    "tactic": "default",
+    "timeout_pid": 338501,
+    "started_monotonic": 531608.818357322,
+    "exit_seen_monotonic": 538809.117425202,
+    "elapsed_s_observed": 7200.299068170018,
+    "precision_s": 0.2
+  },
+  "sat/smt": {
+    "workload": "sat",
+    "tactic": "smt",
+    "timeout_pid": 338520,
+    "started_monotonic": 531609.451838795,
+    "exit_seen_monotonic": 538809.618492317,
+    "elapsed_s_observed": 7200.166653802036,
+    "precision_s": 0.2
+  }
+}

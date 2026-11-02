@@ -1,0 +1,12 @@
+{
+  "base_model_commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+  "old_overflow_if_model": "agents/branch_ablation_20261031/classification/sat_f16_i16_if/model/extensions/V/vext_fp_insts.sail",
+  "changed_file": "model/extensions/V/vext_fp_insts.sail",
+  "change": "Only the SYMBOLIC VFUNARY0 activity-gate block is replaced; prelude, epilogue and all other files remain old B.",
+  "sha256": {
+    "old_source": "bdc27ae064c69ea703d8920acaa0874168691c9bc04e9aff2152a12fbfe4b6cb",
+    "gate_source": "f2d01a04fcdf529875c304668a3b9f4aef9ec03c63b840b3085e4d03065bfc1f"
+  },
+  "prefix_equal": true,
+  "suffix_equal": true
+}

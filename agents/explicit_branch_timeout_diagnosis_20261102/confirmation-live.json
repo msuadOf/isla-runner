@@ -1,0 +1,140 @@
+{
+  "updated_utc": "2026-11-02T06:20:19Z",
+  "note": "运行中快照；各实验最终记录及报告优先",
+  "paths": {
+    "flags-arithmetic": {
+      "event_counts": {
+        "initial_task": 1,
+        "run_begin": 150,
+        "fork_child": 255,
+        "run_return finished": 150,
+        "task_done": 149
+      },
+      "main_forks": 255,
+      "main_run_returned": 150,
+      "main_collector_done": 149,
+      "outstanding_queue_plus_active": 107,
+      "active": 1,
+      "queued_estimate": 106,
+      "aux_initial_tasks": 0,
+      "aux_forks": 0,
+      "aux_run_returned": 0,
+      "aux_collector_done": 0,
+      "aux_outstanding_queue_plus_active": 0,
+      "aux_active": 0,
+      "queries_begun": 6388,
+      "queries_finished": 6387,
+      "phase_queries": {
+        "executor": {
+          "checks": 602,
+          "seconds": 396.7861715070003,
+          "max_seconds": 48.008122518
+        },
+        "collector": {
+          "checks": 5785,
+          "seconds": 6777.715555214032,
+          "max_seconds": 1038.65790227
+        },
+        "other": {
+          "checks": 0,
+          "seconds": 0.0,
+          "max_seconds": 0.0
+        }
+      },
+      "first_event": [
+        532760.134845132,
+        "initial_task"
+      ],
+      "last_event": [
+        539948.34616338,
+        "run_return finished"
+      ]
+    },
+    "sat": {
+      "event_counts": {
+        "initial_task": 1,
+        "run_begin": 199,
+        "fork_child": 434,
+        "run_return finished": 199,
+        "task_done": 198
+      },
+      "main_forks": 434,
+      "main_run_returned": 199,
+      "main_collector_done": 198,
+      "outstanding_queue_plus_active": 237,
+      "active": 1,
+      "queued_estimate": 236,
+      "aux_initial_tasks": 0,
+      "aux_forks": 0,
+      "aux_run_returned": 0,
+      "aux_collector_done": 0,
+      "aux_outstanding_queue_plus_active": 0,
+      "aux_active": 0,
+      "queries_begun": 16952,
+      "queries_finished": 16951,
+      "phase_queries": {
+        "executor": {
+          "checks": 8338,
+          "seconds": 2900.641318705008,
+          "max_seconds": 4.819379389
+        },
+        "collector": {
+          "checks": 8613,
+          "seconds": 4195.808639596007,
+          "max_seconds": 4.7694628
+        },
+        "other": {
+          "checks": 0,
+          "seconds": 0.0,
+          "max_seconds": 0.0
+        }
+      },
+      "first_event": [
+        532760.254907711,
+        "initial_task"
+      ],
+      "last_event": [
+        539938.417956709,
+        "run_return finished"
+      ]
+    }
+  },
+  "tactics": [
+    {
+      "workload": "sat",
+      "tactic": "qffp",
+      "exit_code": 124,
+      "gen": null
+    },
+    {
+      "workload": "sat",
+      "tactic": "default",
+      "exit_code": 124,
+      "gen": null
+    },
+    {
+      "workload": "sat",
+      "tactic": "smt",
+      "exit_code": 124,
+      "gen": null
+    },
+    {
+      "workload": "flags-arithmetic",
+      "tactic": "qffp",
+      "exit_code": 124,
+      "gen": null
+    },
+    {
+      "workload": "flags-arithmetic",
+      "tactic": "default",
+      "exit_code": 124,
+      "gen": null
+    },
+    {
+      "workload": "flags-arithmetic",
+      "tactic": "smt",
+      "exit_code": 124,
+      "gen": null
+    }
+  ]
+}

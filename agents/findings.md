@@ -1698,3 +1698,12 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 模型四分类提交350a072/f263774/eb17b05/a9fd947，Isla对应IR提交99a83bb9；四配置严格生成、普通严格检查、五IR25步回归通过。独立GPT-6.1 Sol源码、实际CFG、56项定向结果复核通过。156条JSON、3518断言、正式make solve及GCC/Clang60项编码检查通过。固定域与vl≤2，不代表全域完整覆盖。
 
 flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱和实验对不活动lane提前计算，导致额外分叉，新的活动gate已纠正。饱和overflow显式化仍需重新预算实验；flags changed及其余特殊异常分界未全部恢复。见[本轮状态](special_control_restore_20261102/status.md)和[超时定位](explicit_branch_timeout_diagnosis_20261102/report.md)。未推送。
+
+
+## 2026-11-02：flags/sat超时完整归因确认
+
+六臂冻结B的qffp/default/smt完整Clause对照均7200s外限exit124，无完整JSON；CPU约99.5–99.7%，更换这两策略未使本轮负载完成。插桩主路径2h账：flags结构上界332、创建256、执行返回150/收集返回149、排队106+collector中1；sat上界1033、创建435、执行返回199/收集返回198、排队236+collector中1。主树/编码辅助树/JSON分别计数。
+
+flags已完成SMT查询约94.5%时间在collector，最长单次1038.658s SAT；sat最长4.819s、16951次已返回查询累积，兼旧8lane溢出组合。两项已返回check无UNKNOWN，外限截断时各一条刚开始的pending。旧源只加活动gate、保留overflow-if，同seed17三次57–64秒完整finished，确认不活动lane过早转换是重要原因。flags干净同具体FDIV_S编码诊断：原路径约束36.50秒，隔离后0.04–0.05秒，同机器码；不能据此直接删除生产约束。
+
+独立review发现并修正计数混合、旧探针残留同核竞争、check边界误归属；先前240/455秒性能值撤回为受干扰诊断。未微观定位原17分钟query为何跨轮变动，不宣称tactic普遍无影响或会话历史bug。生产源码/模型/策略未改。完整证据见[确认报告](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)。

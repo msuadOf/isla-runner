@@ -1,0 +1,29 @@
+{
+  "query": 685,
+  "cpu": 114,
+  "seed": 17,
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "9000s",
+    "taskset",
+    "-c",
+    "114",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "started_monotonic": 537610.195488908,
+  "note": "Same-process fresh qffp check first, then original incremental qffp check; each SMT budget 7200s."
+}

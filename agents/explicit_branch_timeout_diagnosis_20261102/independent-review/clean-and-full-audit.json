@@ -1,0 +1,115 @@
+{
+  "fresh1": {
+    "ids": [
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "count": 7,
+    "seconds": 0.007524375,
+    "all_sat": true
+  },
+  "fresh2": {
+    "ids": [
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "count": 7,
+    "seconds": 0.008159833,
+    "all_sat": true
+  },
+  "fresh3": {
+    "ids": [
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "count": 7,
+    "seconds": 0.007071823,
+    "all_sat": true
+  },
+  "original": {
+    "ids": [
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "count": 7,
+    "seconds": 36.41811414,
+    "all_sat": true
+  },
+  "source_hashes_match": true,
+  "full_six": [
+    {
+      "arm": "flags-arithmetic/qffp",
+      "exit124": true,
+      "seed17": true,
+      "frozen_hash_match": true,
+      "json_absent": true,
+      "observed_wall_s": 7200.4328479609685,
+      "cpu_total_s": 7173.45
+    },
+    {
+      "arm": "flags-arithmetic/default",
+      "exit124": true,
+      "seed17": true,
+      "frozen_hash_match": true,
+      "json_absent": true,
+      "observed_wall_s": 7200.338854947942,
+      "cpu_total_s": 7169.16
+    },
+    {
+      "arm": "flags-arithmetic/smt",
+      "exit124": true,
+      "seed17": true,
+      "frozen_hash_match": true,
+      "json_absent": true,
+      "observed_wall_s": 7200.187722485047,
+      "cpu_total_s": 7175.32
+    },
+    {
+      "arm": "sat/qffp",
+      "exit124": true,
+      "seed17": true,
+      "frozen_hash_match": true,
+      "json_absent": true,
+      "observed_wall_s": 7200.25541110395,
+      "cpu_total_s": 7173.570000000001
+    },
+    {
+      "arm": "sat/default",
+      "exit124": true,
+      "seed17": true,
+      "frozen_hash_match": true,
+      "json_absent": true,
+      "observed_wall_s": 7200.299068170018,
+      "cpu_total_s": 7165.71
+    },
+    {
+      "arm": "sat/smt",
+      "exit124": true,
+      "seed17": true,
+      "frozen_hash_match": true,
+      "json_absent": true,
+      "observed_wall_s": 7200.166653802036,
+      "cpu_total_s": 7168.26
+    }
+  ]
+}

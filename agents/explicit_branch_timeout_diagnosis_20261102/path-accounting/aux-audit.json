@@ -1,0 +1,52 @@
+{
+  "flags-arithmetic": {
+    "main_completed": 172,
+    "prelude": {
+      "aux_initial_task": 272,
+      "aux_run_begin": 272,
+      "aux_run_return finished": 272,
+      "aux_task_done": 272
+    },
+    "classes": [
+      {
+        "ret_val": "Illegal_Instruction(())",
+        "aux_initial_tasks": 13,
+        "aux_forks": 7,
+        "aux_completed": 20,
+        "main_paths": 12
+      },
+      {
+        "ret_val": "Retire_Success(())",
+        "aux_initial_tasks": 4,
+        "aux_forks": 1,
+        "aux_completed": 5,
+        "main_paths": 160
+      }
+    ]
+  },
+  "sat": {
+    "main_completed": 13,
+    "prelude": {
+      "aux_initial_task": 272,
+      "aux_run_begin": 272,
+      "aux_run_return finished": 272,
+      "aux_task_done": 272
+    },
+    "classes": [
+      {
+        "ret_val": "Illegal_Instruction(())",
+        "aux_initial_tasks": 15,
+        "aux_forks": 7,
+        "aux_completed": 22,
+        "main_paths": 1
+      },
+      {
+        "ret_val": "Retire_Success(())",
+        "aux_initial_tasks": 5,
+        "aux_forks": 2,
+        "aux_completed": 7,
+        "main_paths": 12
+      }
+    ]
+  }
+}

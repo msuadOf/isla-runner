@@ -1,0 +1,5 @@
+Command terminated by signal 6
+wall_s=425.67
+user_s=206.68
+sys_s=4.13
+maxrss_kb=836412

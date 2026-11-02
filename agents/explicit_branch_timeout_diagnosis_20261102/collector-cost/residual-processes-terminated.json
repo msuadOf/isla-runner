@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-02T05:29:50Z",
+  "reason": "独立审查发现诊断探针未实际结束并同核竞争，保存后停止仅这些已核实进程组",
+  "processes": [
+    {
+      "pid": 663635,
+      "pgid": 663634,
+      "cmd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost/isla-probe/target/release/isarch -A /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir -C /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml -T 1 --tastic qffp --smt-timeout 7200s solve-state --clause=F_BIN_RM_TYPE_S ",
+      "cwd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost",
+      "stat": "663635 (isarch) S 663634 663634 663633 0 -1 4194304 5370255 0 0 0 183705 2002 0 0 20 0 2 0 53342366 938176512 194368 18446744073709551615 95218339765024 95218342748720 140732054125200 0 0 0 0 4096 1090 0 0 0 17 112 0 0 0 0 0 95218343021320 95218343023968 95219303559168 140732054128135 140732054128582 140732054128582 140732054134640 0\n"
+    },
+    {
+      "pid": 887159,
+      "pgid": 887158,
+      "cmd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost/isla-probe/target/release/isarch -A /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir -C /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml -T 1 --tastic qffp --smt-timeout 7200s solve-state --clause=F_BIN_RM_TYPE_S ",
+      "cwd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost",
+      "stat": "887159 (isarch) S 887158 887158 887157 0 -1 4194304 3315065 0 0 0 61772 1178 0 0 20 0 2 0 53506365 1349361664 304145 18446744073709551615 94670459773696 94670462765472 140722627166256 0 0 0 0 4096 1090 0 0 0 17 112 0 0 0 0 0 94670463038704 94670463041352 94671338221568 140722627171774 140722627172221 140722627172221 140722627178352 0\n"
+    },
+    {
+      "pid": 917523,
+      "pgid": 917522,
+      "cmd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost/isla-probe/target/release/isarch -A /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir -C /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml -T 1 --tastic qffp --smt-timeout 7200s solve-state --clause=F_BIN_RM_TYPE_S ",
+      "cwd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost",
+      "stat": "917523 (isarch) S 917522 917522 917521 0 -1 4194304 2743446 0 0 0 37766 767 0 0 20 0 2 0 53555355 1063763968 247680 18446744073709551615 99644482392784 99644485388384 140730334905360 0 0 0 0 4096 1090 0 0 0 17 112 0 0 0 0 0 99644485661520 99644485664168 99644939493376 140730334909854 140730334910301 140730334910301 140730334916464 0\n"
+    },
+    {
+      "pid": 937631,
+      "pgid": 937630,
+      "cmd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost/isla-probe/target/release/isarch -A /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir -C /data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml -T 1 --tastic qffp --smt-timeout 7200s solve-state --clause=F_BIN_RM_TYPE_S ",
+      "cwd": "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/collector-cost",
+      "stat": "937631 (isarch) S 937630 937630 937629 0 -1 4194304 1894178 0 0 0 27140 554 0 0 20 0 2 0 53587978 669753344 142266 18446744073709551615 99087263474384 99087266469984 140721903087264 0 0 0 0 4096 1090 0 0 0 17 112 0 0 0 0 0 99087266743120 99087266745768 99088006582272 140721903089084 140721903089531 140721903089531 140721903095664 0\n"
+    }
+  ]
+}

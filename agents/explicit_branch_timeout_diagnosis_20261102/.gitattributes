@@ -1,0 +1,3 @@
+# 保存原始diff上下文空行和CSV标准CRLF，不重写实验输入与补丁。
+*.patch -whitespace
+*.csv whitespace=cr-at-eol

@@ -1,0 +1,273 @@
+{
+  "launch": {
+    "started_utc": "2026-11-02T04:19:10.036752+00:00",
+    "monotonic": 532750.102863467,
+    "binary_sha256": "e40bc2441cb1af70663a155b802b58b29c17d8b822c9c30156b290b6e98d7d63",
+    "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+    "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+    "source_head": "09ffa91",
+    "runs": {
+      "flags-arithmetic": {
+        "pid": 589471,
+        "cpu": 96,
+        "command": [
+          "/usr/bin/time",
+          "-f",
+          "wall_s=%e\\nuser_s=%U\\nsys_s=%S\\nmaxrss_kb=%M",
+          "-o",
+          "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/path-accounting/final-flags-arithmetic/time.txt",
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=10s",
+          "7200s",
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/path-accounting/isla-frozen-src/target/release/isarch",
+          "-A",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+          "-C",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+          "-T",
+          "1",
+          "--tastic",
+          "qffp",
+          "--smt-timeout",
+          "7200s",
+          "solve-state",
+          "--clause=F_BIN_RM_TYPE_S"
+        ],
+        "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+        "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+        "exit_code": 124
+      },
+      "sat": {
+        "pid": 589477,
+        "cpu": 97,
+        "command": [
+          "/usr/bin/time",
+          "-f",
+          "wall_s=%e\\nuser_s=%U\\nsys_s=%S\\nmaxrss_kb=%M",
+          "-o",
+          "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/path-accounting/final-sat/time.txt",
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=10s",
+          "7200s",
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/path-accounting/isla-frozen-src/target/release/isarch",
+          "-A",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/sat/B.ir",
+          "-C",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/sat/config.toml",
+          "-T",
+          "1",
+          "--tastic",
+          "qffp",
+          "--smt-timeout",
+          "7200s",
+          "solve-state",
+          "--clause=VFUNARY0"
+        ],
+        "ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+        "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+        "exit_code": 124
+      }
+    },
+    "finished_utc": "2026-11-02T06:20:10.599408+00:00"
+  },
+  "cpu_usage": {
+    "cpu32": {
+      "busy_fraction": 0.056930299667343406,
+      "sampled_jiffies": 723569
+    },
+    "cpu33": {
+      "busy_fraction": 0.01767249898755627,
+      "sampled_jiffies": 723497
+    },
+    "cpu96": {
+      "busy_fraction": 0.9926330811573281,
+      "sampled_jiffies": 725948
+    },
+    "cpu97": {
+      "busy_fraction": 0.9924252546610374,
+      "sampled_jiffies": 725965
+    }
+  },
+  "runs": {
+    "flags-arithmetic": {
+      "event_counts": {
+        "initial_task": 1,
+        "run_begin": 150,
+        "fork_child": 255,
+        "run_return finished": 150,
+        "task_done": 149
+      },
+      "main_forks": 255,
+      "main_run_returned": 150,
+      "main_collector_done": 149,
+      "outstanding_queue_plus_active": 107,
+      "active": 1,
+      "queued_estimate": 106,
+      "aux_initial_tasks": 0,
+      "aux_forks": 0,
+      "aux_run_returned": 0,
+      "aux_collector_done": 0,
+      "aux_outstanding_queue_plus_active": 0,
+      "aux_active": 0,
+      "queries_begun": 6388,
+      "queries_finished": 6387,
+      "phase_queries": {
+        "executor": {
+          "checks": 602,
+          "seconds": 396.7861715070003,
+          "max_seconds": 48.008122518
+        },
+        "collector": {
+          "checks": 5785,
+          "seconds": 6777.715555214032,
+          "max_seconds": 1038.65790227
+        },
+        "other": {
+          "checks": 0,
+          "seconds": 0.0,
+          "max_seconds": 0.0
+        }
+      },
+      "path_times": {
+        "executor": {
+          "completed_intervals": 150,
+          "total_s": 399.27812039176933,
+          "median_s": 0.03275421098805964,
+          "max_s": 95.2251827949658
+        },
+        "collector": {
+          "completed_intervals": 149,
+          "total_s": 6788.510273259482,
+          "median_s": 0.24858400993980467,
+          "max_s": 2126.9033939419314
+        }
+      },
+      "active_phase": "collector",
+      "first_event": [
+        532760.134845132,
+        "initial_task"
+      ],
+      "last_event": [
+        539948.34616338,
+        "run_return finished"
+      ],
+      "time": {
+        "wall_s": 7200.37,
+        "user_s": 7081.96,
+        "sys_s": 91.94,
+        "maxrss_kb": 1660516.0
+      },
+      "cpu_time_fraction_of_wall": 0.996323800026943,
+      "exit_code": 124,
+      "json_paths": [],
+      "seed_log": [
+        "parameter=random_seed original=364398727 fixed=17"
+      ],
+      "query_status": {
+        "sat": 4801,
+        "unsat": 1586,
+        "unknown": 0
+      },
+      "pending_query": {
+        "id": 6388,
+        "kind": "assuming",
+        "begin_monotonic": 539950.167662701,
+        "launch_plus_wall_minus_begin_s": 0.30520076595712453
+      }
+    },
+    "sat": {
+      "event_counts": {
+        "initial_task": 1,
+        "run_begin": 199,
+        "fork_child": 434,
+        "run_return finished": 199,
+        "task_done": 198
+      },
+      "main_forks": 434,
+      "main_run_returned": 199,
+      "main_collector_done": 198,
+      "outstanding_queue_plus_active": 237,
+      "active": 1,
+      "queued_estimate": 236,
+      "aux_initial_tasks": 0,
+      "aux_forks": 0,
+      "aux_run_returned": 0,
+      "aux_collector_done": 0,
+      "aux_outstanding_queue_plus_active": 0,
+      "aux_active": 0,
+      "queries_begun": 16952,
+      "queries_finished": 16951,
+      "phase_queries": {
+        "executor": {
+          "checks": 8338,
+          "seconds": 2900.641318705008,
+          "max_seconds": 4.819379389
+        },
+        "collector": {
+          "checks": 8613,
+          "seconds": 4195.808639596007,
+          "max_seconds": 4.7694628
+        },
+        "other": {
+          "checks": 0,
+          "seconds": 0.0,
+          "max_seconds": 0.0
+        }
+      },
+      "path_times": {
+        "executor": {
+          "completed_intervals": 199,
+          "total_s": 2914.857271821471,
+          "median_s": 8.956212365999818,
+          "max_s": 107.36501261300873
+        },
+        "collector": {
+          "completed_intervals": 198,
+          "total_s": 4262.412422609632,
+          "median_s": 13.982853661524132,
+          "max_s": 103.41329007199965
+        }
+      },
+      "active_phase": "collector",
+      "first_event": [
+        532760.254907711,
+        "initial_task"
+      ],
+      "last_event": [
+        539938.417956709,
+        "run_return finished"
+      ],
+      "time": {
+        "wall_s": 7200.16,
+        "user_s": 7098.98,
+        "sys_s": 77.25,
+        "maxrss_kb": 471028.0
+      },
+      "cpu_time_fraction_of_wall": 0.9966764627452723,
+      "exit_code": 124,
+      "json_paths": [],
+      "seed_log": [
+        "parameter=random_seed original=363795619 fixed=17"
+      ],
+      "query_status": {
+        "sat": 11287,
+        "unsat": 5664,
+        "unknown": 0
+      },
+      "pending_query": {
+        "id": 16952,
+        "kind": "assuming",
+        "begin_monotonic": 539950.145897471,
+        "launch_plus_wall_minus_begin_s": 0.11696599598508328
+      }
+    }
+  }
+}

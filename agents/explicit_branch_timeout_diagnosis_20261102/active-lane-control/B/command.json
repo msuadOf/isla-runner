@@ -1,0 +1,41 @@
+{
+  "arm": "B",
+  "cpu": 99,
+  "utc_start": "2026-11-02T03:56:02.426508+00:00",
+  "command": [
+    "/usr/bin/time",
+    "-f",
+    "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+    "-o",
+    "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/active-lane-control/B/time.txt",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "99",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/active-lane-control/B.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_timeout_diagnosis_20261102/active-lane-control/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=VFUNARY0"
+  ],
+  "cwd": "agents/explicit_branch_timeout_diagnosis_20261102/active-lane-control/B",
+  "sha256": {
+    "ir": "a7640fce596177f66cff8a6963f40d840ca277e6df258f524ce48e43ccc644b4",
+    "config": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+    "isarch": "c9c5bb8b32289006b1af621f71f03537aecf4a1b0b9ed9b51bc68e573785e2f2",
+    "probe": "8ffa94f257465ad87094cd2a1e0c665f3d88dfc5b9486a66e4018392b09431b5",
+    "seed_control": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+  },
+  "pid": 242310
+}

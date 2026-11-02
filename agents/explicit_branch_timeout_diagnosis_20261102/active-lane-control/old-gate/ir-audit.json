@@ -1,0 +1,45 @@
+{
+  "source_changed_files": [
+    "extensions/V/vext_fp_insts.sail"
+  ],
+  "original_ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+  "gate_ir_sha256": "39860ed4f57f838be2e2fa78ed092ba124b83406843572c90e926eaa0d257068",
+  "helper_byte_equal": true,
+  "pre_zexecute_ir_byte_equal": true,
+  "function_count": 2053,
+  "raw_changed_functions": [
+    "zexecute",
+    "zis_CSR_accessible",
+    "zwrite_CSR",
+    "zext_pre_step_hook",
+    "zext_post_step_hook",
+    "zext_reset",
+    "zrvfi_fetch",
+    "zfetch",
+    "zloop",
+    "zcheck_privs",
+    "zcheck_mmu_config",
+    "zcheck_vlen_elen",
+    "zcheck_vext_config",
+    "zcheck_mem_layout",
+    "zcheck_pmp",
+    "zcheck_misc_extension_dependencies",
+    "zcheck_extension_param_constraints",
+    "zcheck_stateen_config",
+    "zconfig_is_valid",
+    "zreset",
+    "ztest_mstatus_sxl_uxl_reset_values",
+    "zmain",
+    "zinitializze_registers"
+  ],
+  "other_changed_functions_alpha_equivalent": 22,
+  "gate_pc": 25898,
+  "active_target_pc": 25901,
+  "inactive_next_pc": 25899,
+  "conversion_call_pcs": [
+    26002,
+    26297
+  ],
+  "conversion_calls_dominated_by_gate": true,
+  "inactive_path_bypasses_calls": true
+}
