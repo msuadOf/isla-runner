@@ -1,0 +1,466 @@
+{
+  "provenance": {
+    "mode": "semantic",
+    "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+    "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+    "ldd": "\tlinux-vdso.so.1 (0x0000704bce44e000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000704bcba00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000704bcdfab000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000704bcb600000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000704bce450000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000704bcb200000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000704bcb8da000)\n",
+    "ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+    "special_harness_sha256": "a1516ab7aad7942d026f0feadf3d0e0df098cf1847a3e1da155a5dd8aa0c098a",
+    "check_json_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+    "base_config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "oracle_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+    "cpu": 103
+  },
+  "results": [
+    {
+      "name": "fleq-H-sNaN",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.71,
+      "user_s": 2.23,
+      "sys_s": 0.39
+    },
+    {
+      "name": "fleq-H-qNaN",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.71,
+      "user_s": 2.24,
+      "sys_s": 0.41
+    },
+    {
+      "name": "fleq-S-sNaN",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.12,
+      "sys_s": 0.29
+    },
+    {
+      "name": "fleq-S-qNaN",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.72,
+      "user_s": 2.23,
+      "sys_s": 0.46
+    },
+    {
+      "name": "fleq-D-sNaN",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.81,
+      "user_s": 2.22,
+      "sys_s": 0.51
+    },
+    {
+      "name": "fleq-D-qNaN",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.81,
+      "user_s": 2.24,
+      "sys_s": 0.53
+    },
+    {
+      "name": "sqrt-H",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 10.52,
+      "user_s": 8.7,
+      "sys_s": 1.74
+    },
+    {
+      "name": "sqrt-D",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 6.42,
+      "user_s": 5.29,
+      "sys_s": 1.05
+    },
+    {
+      "name": "gate-VFUNARY0-mask1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.91,
+      "user_s": 1.66,
+      "sys_s": 0.2
+    },
+    {
+      "name": "gate-VFUNARY0-mask2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.01,
+      "user_s": 1.66,
+      "sys_s": 0.28
+    },
+    {
+      "name": "gate-FVVMTYPE-mask1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.91,
+      "user_s": 1.56,
+      "sys_s": 0.31
+    },
+    {
+      "name": "gate-FVVMTYPE-mask2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.01,
+      "user_s": 1.65,
+      "sys_s": 0.29
+    },
+    {
+      "name": "gate-FVFMTYPE-mask1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.81,
+      "user_s": 1.48,
+      "sys_s": 0.29
+    },
+    {
+      "name": "gate-FVFMTYPE-mask2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.81,
+      "user_s": 1.52,
+      "sys_s": 0.23
+    },
+    {
+      "name": "gate-RFWVVTYPE-mask1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.0,
+      "user_s": 1.71,
+      "sys_s": 0.22
+    },
+    {
+      "name": "gate-RFWVVTYPE-mask2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.9,
+      "user_s": 1.56,
+      "sys_s": 0.23
+    },
+    {
+      "name": "bf16-VV-fused-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.08,
+      "sys_s": 0.27
+    },
+    {
+      "name": "bf16-VV-fused-rm1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.16,
+      "sys_s": 0.23
+    },
+    {
+      "name": "bf16-VV-fused-rm2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.2,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VV-fused-rm3",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.11,
+      "sys_s": 0.25
+    },
+    {
+      "name": "bf16-VV-fused-rm4",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.15,
+      "sys_s": 0.27
+    },
+    {
+      "name": "bf16-VV-tiny-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.2,
+      "sys_s": 0.27
+    },
+    {
+      "name": "bf16-VV-tiny-rm1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.5,
+      "user_s": 2.16,
+      "sys_s": 0.24
+    },
+    {
+      "name": "bf16-VV-tiny-rm2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.11,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VV-tiny-rm3",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.19,
+      "sys_s": 0.24
+    },
+    {
+      "name": "bf16-VV-tiny-rm4",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.61,
+      "user_s": 2.26,
+      "sys_s": 0.31
+    },
+    {
+      "name": "bf16-VV-vector-snan-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.31,
+      "user_s": 2.03,
+      "sys_s": 0.27
+    },
+    {
+      "name": "bf16-VV-other-snan-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.31,
+      "user_s": 2.04,
+      "sys_s": 0.24
+    },
+    {
+      "name": "bf16-VV-acc-snan-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.15,
+      "sys_s": 0.31
+    },
+    {
+      "name": "bf16-VV-vl0-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.11,
+      "user_s": 1.75,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VV-multi-mask1-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.11,
+      "user_s": 1.76,
+      "sys_s": 0.26
+    },
+    {
+      "name": "bf16-VV-multi-mask2-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.21,
+      "user_s": 1.83,
+      "sys_s": 0.3
+    },
+    {
+      "name": "bf16-VV-multi-mask3-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.2,
+      "sys_s": 0.3
+    },
+    {
+      "name": "bf16-VV-multi-mask0-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.0,
+      "user_s": 1.65,
+      "sys_s": 0.27
+    },
+    {
+      "name": "bf16-VF-fused-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.05,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VF-fused-rm1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.04,
+      "sys_s": 0.28
+    },
+    {
+      "name": "bf16-VF-fused-rm2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.08,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VF-fused-rm3",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.51,
+      "user_s": 2.12,
+      "sys_s": 0.3
+    },
+    {
+      "name": "bf16-VF-fused-rm4",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.4,
+      "user_s": 2.08,
+      "sys_s": 0.3
+    },
+    {
+      "name": "bf16-VF-tiny-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.05,
+      "sys_s": 0.3
+    },
+    {
+      "name": "bf16-VF-tiny-rm1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.12,
+      "sys_s": 0.23
+    },
+    {
+      "name": "bf16-VF-tiny-rm2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.06,
+      "sys_s": 0.3
+    },
+    {
+      "name": "bf16-VF-tiny-rm3",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.05,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VF-tiny-rm4",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.07,
+      "sys_s": 0.23
+    },
+    {
+      "name": "bf16-VF-vector-snan-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.08,
+      "sys_s": 0.26
+    },
+    {
+      "name": "bf16-VF-other-snan-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.21,
+      "user_s": 1.88,
+      "sys_s": 0.28
+    },
+    {
+      "name": "bf16-VF-acc-snan-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.04,
+      "sys_s": 0.29
+    },
+    {
+      "name": "bf16-VF-vl0-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.81,
+      "user_s": 1.59,
+      "sys_s": 0.19
+    },
+    {
+      "name": "bf16-VF-multi-mask1-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.01,
+      "user_s": 1.68,
+      "sys_s": 0.24
+    },
+    {
+      "name": "bf16-VF-multi-mask2-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.21,
+      "user_s": 1.85,
+      "sys_s": 0.28
+    },
+    {
+      "name": "bf16-VF-multi-mask3-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 2.41,
+      "user_s": 2.03,
+      "sys_s": 0.28
+    },
+    {
+      "name": "bf16-VF-multi-mask0-rm0",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.81,
+      "user_s": 1.54,
+      "sys_s": 0.25
+    },
+    {
+      "name": "bf16-VFNCVTBF16_F_F_W-mask1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.91,
+      "user_s": 1.59,
+      "sys_s": 0.25
+    },
+    {
+      "name": "bf16-VFNCVTBF16_F_F_W-mask2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.91,
+      "user_s": 1.64,
+      "sys_s": 0.19
+    },
+    {
+      "name": "bf16-VFWCVTBF16_F_F_V-mask1",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.81,
+      "user_s": 1.55,
+      "sys_s": 0.2
+    },
+    {
+      "name": "bf16-VFWCVTBF16_F_F_V-mask2",
+      "pass": true,
+      "exit_code": 0,
+      "wall_s": 1.91,
+      "user_s": 1.67,
+      "sys_s": 0.2
+    }
+  ],
+  "complete": true,
+  "all_pass": true
+}

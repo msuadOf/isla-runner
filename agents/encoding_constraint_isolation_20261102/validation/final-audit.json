@@ -1,0 +1,142 @@
+{
+  "recorded_utc": "2026-11-02T12:29:24.388362+00:00",
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "batch": "initial",
+      "job": "old_flags",
+      "ok": true,
+      "exit": 0,
+      "wall_s": 2884.43,
+      "user_s": 2834.45,
+      "sys_s": 45.8,
+      "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab"
+    },
+    {
+      "batch": "initial",
+      "job": "old_sat",
+      "ok": true,
+      "exit": 124,
+      "wall_s": 7200.2,
+      "user_s": 7119.08,
+      "sys_s": 71.91,
+      "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab"
+    },
+    {
+      "batch": "initial",
+      "job": "new_flags",
+      "ok": true,
+      "exit": 0,
+      "wall_s": 1615.96,
+      "user_s": 1603.37,
+      "sys_s": 10.6,
+      "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab"
+    },
+    {
+      "batch": "initial",
+      "job": "new_sat",
+      "ok": true,
+      "exit": 0,
+      "wall_s": 37.16,
+      "user_s": 33.98,
+      "sys_s": 3.09,
+      "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab"
+    },
+    {
+      "batch": "initial",
+      "job": "semantic",
+      "ok": true,
+      "completed": 56
+    },
+    {
+      "batch": "initial",
+      "job": "representations",
+      "ok": true,
+      "completed": 3
+    },
+    {
+      "batch": "initial",
+      "job": "make-smoke",
+      "ok": true,
+      "wall_s": 3.51
+    },
+    {
+      "batch": "selective",
+      "job": "old_flags",
+      "ok": true,
+      "exit": 0,
+      "wall_s": 2626.07,
+      "user_s": 2582.16,
+      "sys_s": 40.43,
+      "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a"
+    },
+    {
+      "batch": "selective",
+      "job": "new_flags",
+      "ok": true,
+      "exit": 0,
+      "wall_s": 1127.51,
+      "user_s": 1118.55,
+      "sys_s": 7.71,
+      "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a"
+    },
+    {
+      "batch": "selective",
+      "job": "new_sat",
+      "ok": true,
+      "exit": 0,
+      "wall_s": 22.33,
+      "user_s": 18.59,
+      "sys_s": 3.68,
+      "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a"
+    },
+    {
+      "batch": "selective",
+      "job": "semantic",
+      "ok": true,
+      "completed": 56
+    },
+    {
+      "batch": "selective",
+      "job": "representations",
+      "ok": true,
+      "completed": 3
+    },
+    {
+      "batch": "selective",
+      "job": "make-smoke",
+      "ok": true,
+      "wall_s": 3.19
+    },
+    {
+      "batch": "cross-version",
+      "job": "old_flags",
+      "ok": true,
+      "count": 328
+    },
+    {
+      "batch": "cross-version",
+      "job": "new_flags",
+      "ok": true,
+      "count": 728
+    },
+    {
+      "batch": "cross-version",
+      "job": "new_sat",
+      "ok": true,
+      "count": 46
+    },
+    {
+      "batch": "cross-version",
+      "job": "semantic",
+      "ok": true,
+      "count": 156
+    },
+    {
+      "batch": "runtime",
+      "job": "old_sat_no_residual",
+      "ok": true,
+      "active": []
+    }
+  ]
+}

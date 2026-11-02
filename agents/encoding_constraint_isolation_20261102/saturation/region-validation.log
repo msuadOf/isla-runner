@@ -1,0 +1,2 @@
+警告：79 份配置的基准 IR 哈希与 isla/rv64d.ir 不一致；例如 masktypei.toml: 基准 IR 哈希与 isla/rv64d.ir 不一致
+通过：79 份非严格配置、132 个源码 region、22 处注释锚点，IR SHA-256 23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048

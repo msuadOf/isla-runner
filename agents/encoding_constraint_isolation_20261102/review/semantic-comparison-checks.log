@@ -1,0 +1,11 @@
+{
+  "semantic_jobs": 56,
+  "semantic_records": 156,
+  "full_clause_records": {
+    "new_sat": 46,
+    "new_flags": 728,
+    "old_flags": 328
+  },
+  "total_records_per_version": 1258,
+  "all_same_multiset": true
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "same IR, config, seed17; compare multiset of instruction, encoding, complete initial state, post state, return value",
+  "fields": [
+    "test-ins",
+    "test-ins-encdec",
+    "isa-state-complete",
+    "isa-state-post",
+    "ret_val"
+  ],
+  "initial_source_json_sha256": "d6ba28ead96e7dc171cf3a4b251c47fdc899df33aaa7fe3e5785219d9b8a9cc0",
+  "selective_source_json_sha256": "51977d8c17d087a1564a7873fbe8cfe0677e553f8a1b80cd544357848eebf66d",
+  "initial_count": 46,
+  "selective_count": 46,
+  "intersection_count": 46,
+  "initial_only": 0,
+  "selective_only": 0,
+  "same_multiset": true
+}

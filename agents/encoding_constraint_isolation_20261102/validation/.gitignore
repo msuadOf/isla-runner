@@ -1,0 +1,12 @@
+# 由冻结模型 IR 和脚本重建的大体积包装 IR 留在本机；命令记录保存 SHA。
+*.ir
+bin/
+__pycache__/
+
+# make 验收使用的源码与目标目录链接，以及汇编中间产物。
+make-smoke/scripts
+make-smoke/target
+**/make-smoke/scripts
+**/make-smoke/target
+*.o
+*.bin

@@ -1,0 +1,95 @@
+{
+  "source_head": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "rustflags": "-L native=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib -C link-arg=-Wl,-rpath,/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib",
+  "features": "default (empty)",
+  "profile": "release",
+  "cpu": 122,
+  "sibling_cpu": 58,
+  "cargo_build_jobs": 1,
+  "binaries": {
+    "isla_lib": {
+      "path": "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d",
+      "sha256": "bc052086db88317876989c1fa008813c2e8d9b029991fba9f6cbd69bedd2e570",
+      "z3_path": "/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0",
+      "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+      "ldd": "\tlinux-vdso.so.1 (0x000077b54c217000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000077b549600000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000077b54c1ba000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000077b549200000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000077b54c219000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000077b548e00000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000077b54c092000)\n"
+    },
+    "isla": {
+      "path": "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla-d7184cd15581d6ee",
+      "sha256": "3092eace9c098b489d5d90e487aa141474e9d9fa01095bd6097e3f98562d83fd",
+      "z3_path": "/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0",
+      "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+      "ldd": "\tlinux-vdso.so.1 (0x0000744495e30000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000744493400000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007444959d2000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000744493000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000744495e32000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000744492c00000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007444932da000)\n"
+    }
+  },
+  "cases": {
+    "checkpoint_old": {
+      "command": [
+        "taskset",
+        "-c",
+        "122",
+        "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d",
+        "smt::tests::isolated_checkpoint_preserves_definitions_and_rebases_only_new_constraints",
+        "--test-threads=1",
+        "--exact"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.12145313504152,
+      "test_result_line": "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 273 filtered out; finished in 0.10s"
+    },
+    "checkpoint_new": {
+      "command": [
+        "taskset",
+        "-c",
+        "122",
+        "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d",
+        "smt::tests::instruction_checkpoint_keeps_only_instruction_derived_assertions",
+        "--test-threads=1",
+        "--exact"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.0775401369901374,
+      "test_result_line": "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 273 filtered out; finished in 0.06s"
+    },
+    "encoding": {
+      "command": [
+        "taskset",
+        "-c",
+        "122",
+        "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla-d7184cd15581d6ee",
+        "isarch::encoding::tests",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.17861226003151387,
+      "test_result_line": "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 101 filtered out; finished in 0.16s"
+    },
+    "collector": {
+      "command": [
+        "taskset",
+        "-c",
+        "122",
+        "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla-d7184cd15581d6ee",
+        "collector_",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.2841148069128394,
+      "test_result_line": "test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 92 filtered out; finished in 1.26s"
+    },
+    "enum_context": {
+      "command": [
+        "taskset",
+        "-c",
+        "122",
+        "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d",
+        "smt::tests::get_multi_member_enum_const_after_checkpoint_replay",
+        "--test-threads=1",
+        "--exact"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.040171780972741544,
+      "test_result_line": null
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "semantic_jobs": 56,
+  "semantic_gen": 156,
+  "semantic_assertions_repeated": 3518,
+  "initial_values_verified": 9272,
+  "representation_jobs": [
+    {
+      "job": "bf16-vl0",
+      "gen": 6,
+      "checks": 36,
+      "json_sha256": "7abcda0ed6e35ab54219c16a2cbc35fdb3069330a4fc12cff577e713b2cda95c"
+    },
+    {
+      "job": "bf16-vl1",
+      "gen": 6,
+      "checks": 36,
+      "json_sha256": "7310c8967d2a46e0b7d89aa0004566240b56e55762145aeef32bead3c62208e4"
+    },
+    {
+      "job": "c-addi4spn",
+      "gen": 1,
+      "checks": 6,
+      "json_sha256": "7ef4e9398fa9a4cb85a30909053f764d8d31a6159bd09df9de5a83e05b7d4e02"
+    },
+    {
+      "job": "make-smoke",
+      "gen": 8,
+      "checks": 48,
+      "json_sha256": "7416460ad782c98b81b7e1520037cafa3c6bef26cdc5b411ef9c718f91586dc4"
+    }
+  ],
+  "toolchain_checks": 126,
+  "expected_illegal_clang_rejections": 4,
+  "pass": true
+}

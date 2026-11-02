@@ -1,0 +1,17 @@
+[
+  {
+    "mutation": "zero_extend",
+    "rejected": true,
+    "reason": "zero_extend: 溢出分支条件变化"
+  },
+  {
+    "mutation": "inverted_guard",
+    "rejected": true,
+    "reason": "inverted_guard: 饱和分支未判断转换值能否由低16位符号扩展恢复"
+  },
+  {
+    "mutation": "wrong_arm",
+    "rejected": true,
+    "reason": "wrong_arm: NV计算没有仅受溢出真分支控制"
+  }
+]

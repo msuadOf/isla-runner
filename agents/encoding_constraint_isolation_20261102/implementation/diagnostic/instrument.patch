@@ -1,0 +1,157 @@
+diff --git a/isla-lib/src/executor.rs b/isla-lib/src/executor.rs
+index b3a8123..0b7ed06 100644
+--- a/isla-lib/src/executor.rs
++++ b/isla-lib/src/executor.rs
+@@ -1620,8 +1620,18 @@ fn run_loop<'ir, 'task, B: BV, S: ForkSink<'ir, 'task, B>>(
+                         let test_true = Var(v);
+                         let test_false = Not(Box::new(Var(v)));
+ 
+-                        let can_be_true = solver.check_sat_with(&test_true, *info).is_sat()?;
+-                        let can_be_false = solver.check_sat_with(&test_false, *info).is_sat()?;
++                        let can_be_true = if diagnostic_aux_phase() {
++                            diagnostic_check("aux_jump_true", || solver.check_sat_with(&test_true, *info))
++                        } else {
++                            solver.check_sat_with(&test_true, *info)
++                        }
++                        .is_sat()?;
++                        let can_be_false = if diagnostic_aux_phase() {
++                            diagnostic_check("aux_jump_false", || solver.check_sat_with(&test_false, *info))
++                        } else {
++                            solver.check_sat_with(&test_false, *info)
++                        }
++                        .is_sat()?;
+ 
+                         if can_be_true && can_be_false {
+                             let decision = match limit_handler.as_ref() {
+diff --git a/isla-lib/src/smt.rs b/isla-lib/src/smt.rs
+index eb4f288..69db429 100644
+--- a/isla-lib/src/smt.rs
++++ b/isla-lib/src/smt.rs
+@@ -67,6 +67,45 @@ use std::path::Path;
+ use std::ptr;
+ use std::sync::{Arc, OnceLock};
+ 
++thread_local! {
++    static DIAGNOSTIC_AUX_PHASE: std::cell::Cell<bool> = std::cell::Cell::new(false);
++}
++
++pub fn diagnostic_set_aux_phase(value: bool) -> bool {
++    DIAGNOSTIC_AUX_PHASE.with(|phase| {
++        let previous = phase.get();
++        phase.set(value);
++        previous
++    })
++}
++
++pub fn diagnostic_aux_phase() -> bool {
++    DIAGNOSTIC_AUX_PHASE.with(|phase| phase.get())
++}
++
++pub fn diagnostic_timed<T, F: FnOnce() -> T>(stage: &str, f: F) -> T {
++    static NEXT_ID: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(1);
++    let id = NEXT_ID.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
++    eprintln!("ENC_DIAG start id={id} stage={stage}");
++    let started = Instant::now();
++    let value = f();
++    eprintln!("ENC_DIAG end id={id} stage={stage} wall_s={:.6}", started.elapsed().as_secs_f64());
++    value
++}
++
++pub fn diagnostic_check<F: FnOnce() -> SmtResult>(stage: &str, f: F) -> SmtResult {
++    static NEXT_ID: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(1);
++    let id = NEXT_ID.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
++    eprintln!("ENC_DIAG check_start id={id} stage={stage}");
++    let started = Instant::now();
++    let result = f();
++    eprintln!(
++        "ENC_DIAG check_end id={id} stage={stage} result={result:?} wall_s={:.6}",
++        started.elapsed().as_secs_f64()
++    );
++    result
++}
++
+ use crate::bitvector::BV;
+ use crate::error::{ExecError, SmtError};
+ use crate::ir::{Loc, Name, Symtab, Val};
+diff --git a/src/isarch/encoding.rs b/src/isarch/encoding.rs
+index 9ad9ad5..6c7e26a 100644
+--- a/src/isarch/encoding.rs
++++ b/src/isarch/encoding.rs
+@@ -27,6 +27,7 @@ fn mapping_paths<B: BV>(
+     isolated: &Checkpoint<B>,
+ ) -> Result<MappingPaths<B>, ExecError> {
+     let paths = Mutex::new(MappingPaths { encoded: Vec::new(), rejected: Vec::new(), error: None });
++    let previous_phase = isla_lib::smt::diagnostic_set_aux_phase(true);
+     execute_ir_function_with_checkpoint(
+         function_name,
+         &[instruction.clone()],
+@@ -52,8 +53,12 @@ fn mapping_paths<B: BV>(
+             let candidate = checkpoint(&mut solver);
+             let combined = execution.with_suffix_from(isolated, &candidate);
+             let ctx = Context::new(Config::new());
+-            let mut verified = Solver::from_checkpoint(&ctx, combined.clone());
+-            let viability = match verified.check_sat(SourceLoc::unknown()) {
++            let mut verified = isla_lib::smt::diagnostic_timed("candidate_full_replay", || {
++                Solver::from_checkpoint(&ctx, combined.clone())
++            });
++            let viability = match isla_lib::smt::diagnostic_check("candidate_full_sat", || {
++                verified.check_sat(SourceLoc::unknown())
++            }) {
+                 SmtResult::Sat => Ok(()),
+                 SmtResult::Unsat => return,
+                 SmtResult::Unknown => Err(ExecError::Z3Unknown),
+@@ -98,6 +103,7 @@ fn mapping_paths<B: BV>(
+         start,
+         None,
+     );
++    isla_lib::smt::diagnostic_set_aux_phase(previous_phase);
+     let mut paths = paths.into_inner().expect("编码收集器锁中毒");
+     match paths.error.take() {
+         Some(error) => Err(error),
+diff --git a/src/isarch/exec.rs b/src/isarch/exec.rs
+index c95f019..cb12f1c 100644
+--- a/src/isarch/exec.rs
++++ b/src/isarch/exec.rs
+@@ -814,7 +814,8 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+                         println!("assembly:{:#?}", assembly); */
+                         // isarch::get_assembly_name(Val::Unit /* ??? */, &shared_state, regs, lets);
+ 
+-                        match solver.check_sat(SourceLoc::unknown()) {
++                        match isla_lib::smt::diagnostic_check("main_pre_sat", || solver.check_sat(SourceLoc::unknown()))
++                        {
+                             isla_lib::smt::SmtResult::Sat => (),
+                             isla_lib::smt::SmtResult::Unsat => return,
+                             other => {
+@@ -857,7 +858,9 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+                             let mut cfg = Config::new();
+                             cfg.set_param_value("model", "true");
+                             let ctx = Context::new(cfg);
+-                            let mut solver = Solver::from_checkpoint(&ctx, encoding_checkpoint);
++                            let mut solver = isla_lib::smt::diagnostic_timed("output_full_replay", || {
++                                Solver::from_checkpoint(&ctx, encoding_checkpoint)
++                            });
+                             if instruction_name.strip_prefix('z').is_some_and(|name| {
+                                 include_str!("official_float77.txt").lines().any(|entry| entry == name)
+                             }) {
+@@ -890,7 +893,9 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+                                     Box::new(smtlib::bits64(3, 2)),
+                                 );
+                                 let preferred = Exp::And(Box::new(fs_enabled), Box::new(vs_enabled));
+-                                match solver.check_sat_with(&preferred, SourceLoc::unknown()) {
++                                match isla_lib::smt::diagnostic_check("fs_vs_preference", || {
++                                    solver.check_sat_with(&preferred, SourceLoc::unknown())
++                                }) {
+                                     isla_lib::smt::SmtResult::Sat => solver.assert(preferred),
+                                     isla_lib::smt::SmtResult::Unsat | isla_lib::smt::SmtResult::Unknown => (),
+                                     isla_lib::smt::SmtResult::Error(error) => {
+@@ -942,7 +947,9 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+                             }
+                             // 获取ISA状态（寄存器、lets变量等）
+                             // 首先检查solver是否可满足
+-                            let smt_result = solver.check_sat(SourceLoc::unknown());
++                            let smt_result = isla_lib::smt::diagnostic_check("final_model_sat", || {
++                                solver.check_sat(SourceLoc::unknown())
++                            });
+                             if let isla_lib::smt::SmtResult::Error(error) = &smt_result {
+                                 let error = ExecError::Smt(error.clone());
+                                 trace_diagnostics = error_recorder.record_error_diagnostic(&error, frame, shared_state);

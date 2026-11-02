@@ -1,0 +1,29 @@
+{
+  "target_categories": {
+    "new_invalid": 4,
+    "no_new_invalid": 6,
+    "other_opcode": 12
+  },
+  "examples": {
+    "no_new_invalid": {
+      "test_ins": "vfcvt.rtz.x.f.v v16, v26, v0.t",
+      "encoding": "32'h49a3_9857",
+      "ret_val": "Retire_Success(())"
+    },
+    "other_opcode": {
+      "test_ins": "vfcvt.xu.f.v v0, v0",
+      "encoding": "32'h4a00_1057",
+      "ret_val": "Retire_Success(())"
+    },
+    "new_invalid": {
+      "test_ins": "vfcvt.x.f.v v8, v2, v0.t",
+      "encoding": "32'h4820_9457",
+      "ret_val": "Retire_Success(())"
+    }
+  },
+  "gen": 46,
+  "summary_status": "finished",
+  "job": "new_sat",
+  "source_json_sha256": "d6ba28ead96e7dc171cf3a4b251c47fdc899df33aaa7fe3e5785219d9b8a9cc0",
+  "coverage_parser_sha256": "9c2ca4c1606afcfdb363657fbb726c22709d3d83b09d4d5855c63411e665dc57"
+}

@@ -1,0 +1,120 @@
+{
+  "batch": "selective",
+  "source_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+  "wall_s": 22.33,
+  "json_sha256": "51977d8c17d087a1564a7873fbe8cfe0677e553f8a1b80cd544357848eebf66d",
+  "gen": 46,
+  "checks": 662,
+  "counts": {
+    "illegal": 24,
+    "retired": 22,
+    "in-range": 4,
+    "positive-overflow": 2,
+    "inactive": 2,
+    "negative-overflow": 2
+  },
+  "f16_to_i16_rows": [
+    {
+      "index": 6,
+      "instruction": "vfcvt.rtz.x.f.v v16, v26, v0.t",
+      "active": true,
+      "input": "0x3dcc",
+      "rounding_mode": 1,
+      "category": "in-range",
+      "expected": "0x1",
+      "flags_added": 1
+    },
+    {
+      "index": 25,
+      "instruction": "vfcvt.x.f.v v8, v2, v0.t",
+      "active": true,
+      "input": "0x781b",
+      "rounding_mode": 2,
+      "category": "positive-overflow",
+      "expected": "0x7fff",
+      "flags_added": 16
+    },
+    {
+      "index": 28,
+      "instruction": "vfcvt.rtz.x.f.v v8, v0, v0.t",
+      "active": false,
+      "input": "0x0",
+      "rounding_mode": 1,
+      "category": "inactive",
+      "expected": "0x0",
+      "flags_added": 0
+    },
+    {
+      "index": 30,
+      "instruction": "vfcvt.x.f.v v1, v0, v0.t",
+      "active": false,
+      "input": "0x0",
+      "rounding_mode": 0,
+      "category": "inactive",
+      "expected": "0x0",
+      "flags_added": 0
+    },
+    {
+      "index": 39,
+      "instruction": "vfcvt.rtz.x.f.v v4, v8, v0.t",
+      "active": true,
+      "input": "0xfb53",
+      "rounding_mode": 1,
+      "category": "negative-overflow",
+      "expected": "0x8000",
+      "flags_added": 16
+    },
+    {
+      "index": 40,
+      "instruction": "vfcvt.rtz.x.f.v v0, v19",
+      "active": true,
+      "input": "0xfa47",
+      "rounding_mode": 1,
+      "category": "negative-overflow",
+      "expected": "0x8000",
+      "flags_added": 16
+    },
+    {
+      "index": 41,
+      "instruction": "vfcvt.x.f.v v0, v10",
+      "active": true,
+      "input": "0x78d8",
+      "rounding_mode": 0,
+      "category": "positive-overflow",
+      "expected": "0x7fff",
+      "flags_added": 16
+    },
+    {
+      "index": 42,
+      "instruction": "vfcvt.x.f.v v8, v3, v0.t",
+      "active": true,
+      "input": "0x37af",
+      "rounding_mode": 1,
+      "category": "in-range",
+      "expected": "0x0",
+      "flags_added": 1
+    },
+    {
+      "index": 44,
+      "instruction": "vfcvt.x.f.v v0, v31",
+      "active": true,
+      "input": "0x8000",
+      "rounding_mode": 1,
+      "category": "in-range",
+      "expected": "0x0",
+      "flags_added": 0
+    },
+    {
+      "index": 45,
+      "instruction": "vfcvt.rtz.x.f.v v0, v9",
+      "active": true,
+      "input": "0x0",
+      "rounding_mode": 1,
+      "category": "in-range",
+      "expected": "0x0",
+      "flags_added": 0
+    }
+  ],
+  "pass": true
+}

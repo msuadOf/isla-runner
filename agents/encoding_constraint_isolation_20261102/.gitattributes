@@ -1,0 +1,3 @@
+# 原始实验补丁与运行日志保留空白，不改写已校验的证据。
+*.patch -whitespace
+*.log -whitespace

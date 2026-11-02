@@ -1,0 +1,30 @@
+{
+  "rv64d_v128_e64": {
+    "baseline_ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+    "ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+    "outside_helper_normalized_equal": true,
+    "helper_normalized_equal_to_measured_explicit_arm": true,
+    "model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a"
+  },
+  "rv32d": {
+    "baseline_ir_sha256": "4b28eca3954490e08eebd9c0974a8101f3fc34bb93174133ce776bc2e7d472c8",
+    "ir_sha256": "76c06fd44a738e05add3333acb1437f45db53047e2895fd9f256495317873943",
+    "outside_helper_normalized_equal": true,
+    "helper_normalized_equal_to_measured_explicit_arm": true,
+    "model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a"
+  },
+  "rv64d_v256_e64": {
+    "baseline_ir_sha256": "95223fc356812c60ce87b67f2aa0c40154152f32a127cba3d7ee6386e8b23eb4",
+    "ir_sha256": "a55fb2fb224bc06baed5d1f29808011d39c14a3e7cfe7fd7c5b4120363a517b2",
+    "outside_helper_normalized_equal": true,
+    "helper_normalized_equal_to_measured_explicit_arm": true,
+    "model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a"
+  },
+  "rv64d_v512_e64": {
+    "baseline_ir_sha256": "b81b8a83f3758b7ef4e7d9e99ce37122a1207986e13c4913f172c201fbab6963",
+    "ir_sha256": "d674159a1635834cf201b9064b424beacf44f0fd85e3266ecdfff185268c29e0",
+    "outside_helper_normalized_equal": true,
+    "helper_normalized_equal_to_measured_explicit_arm": true,
+    "model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a"
+  }
+}

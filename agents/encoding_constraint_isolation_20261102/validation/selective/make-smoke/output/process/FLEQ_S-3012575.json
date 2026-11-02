@@ -1,0 +1,41 @@
+{
+  "clause": "FLEQ_S",
+  "cwd": "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/validation/selective/make-smoke",
+  "supervisor_pid": 3012575,
+  "timeout_pid": 3012582,
+  "process_group": 3012582,
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "./target/release/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/saturation/generation/rv64d_v128_e64/rv64d_v128_e64.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/validation/selective/semantic/fleq-S-qNaN/config.toml",
+    "--verbose",
+    "--debug=fmlgcsra",
+    "--probe-all",
+    "--trace-all",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=FLEQ_S"
+  ],
+  "supervisor_signals": [],
+  "child_wait": {
+    "exit_code": 0,
+    "signal": null
+  },
+  "waitid_code": 1,
+  "waitid_status": 0,
+  "return_code": 0,
+  "remaining_group_cleanup": false,
+  "sent_sigkill": false,
+  "elapsed_seconds": 3.104104405036196
+}

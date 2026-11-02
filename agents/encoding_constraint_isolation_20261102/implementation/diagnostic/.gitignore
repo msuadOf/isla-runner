@@ -1,0 +1,10 @@
+/isla-src/
+/isla-baseline/
+/isla-official-tests/
+/target/
+/baseline-target/
+/official-target/
+**/output/
+/*.ir
+/isarch
+/current-test-bin

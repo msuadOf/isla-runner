@@ -1707,3 +1707,8 @@ flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱
 flags已完成SMT查询约94.5%时间在collector，最长单次1038.658s SAT；sat最长4.819s、16951次已返回查询累积，兼旧8lane溢出组合。两项已返回check无UNKNOWN，外限截断时各一条刚开始的pending。旧源只加活动gate、保留overflow-if，同seed17三次57–64秒完整finished，确认不活动lane过早转换是重要原因。flags干净同具体FDIV_S编码诊断：原路径约束36.50秒，隔离后0.04–0.05秒，同机器码；不能据此直接删除生产约束。
 
 独立review发现并修正计数混合、旧探针残留同核竞争、check边界误归属；先前240/455秒性能值撤回为受干扰诊断。未微观定位原17分钟query为何跨轮变动，不宣称tactic普遍无影响或会话历史bug。生产源码/模型/策略未改。完整证据见[确认报告](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)。
+
+
+## 2026-11-02：指令字段断言保留与完整域验证
+
+Isla `cf1aa14` 复用 `Val::symbolic_variables` 与 `Exp::modify`，原序传播 DeclareConst/DefineConst 的指令依赖，只保留原 Assert 子集；含状态或未知 App 的断言移开。声明、定义、枚举、事件与 next_var 均保留，候选增量最终接回完整 checkpoint。完整域蕴含辅助域，全部原可达编码仍可探索，UNKNOWN/error 不转为丢弃或后备。独立 Sol 复杂输入探针、官方 Z3 下 15 项测试和三完整 Clause 均通过。两版各1258条实际见证五字段多重集合一致，不等于全域覆盖证明。模型6202e23的overflow分支与原公式等价，flags changed尚未纳入本轮恢复。[证据](encoding_constraint_isolation_20261102/status.md)。

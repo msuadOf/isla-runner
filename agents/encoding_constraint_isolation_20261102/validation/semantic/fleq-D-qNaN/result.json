@@ -1,0 +1,87 @@
+{
+  "name": "fleq-D-qNaN",
+  "command": [
+    "/usr/bin/time",
+    "-f",
+    "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+    "-o",
+    "time.txt",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "103",
+    "/data1/baiyifan/workplace/isla-runner/isla/target/release/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/saturation/generation/rv64d_v128_e64/rv64d_v128_e64.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/validation/semantic/fleq-D-qNaN/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=FLEQ_D"
+  ],
+  "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+  "ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+  "config_sha256": "caf976f1aa8c2d76e22b3374f9d8304e5b8f95769f53eb19bd43b229f4873967",
+  "cpu": 103,
+  "started_utc": "2026-11-02T10:28:03.573360+00:00",
+  "exit_code": 0,
+  "elapsed_s": 3.322,
+  "finished_utc": "2026-11-02T10:28:06.895921+00:00",
+  "run_log_sha256": "a8a1d9f915e2b7f0fecc54e68a404a47694fc6ec65a21bf7f0e4448bc22452c9",
+  "wall_s": 3.31,
+  "user_s": 2.67,
+  "sys_s": 0.6,
+  "maxrss_kb": 243120,
+  "output_sha256": "3becae56f0ca30dc6793fe7a02d62386c9f38ed5ce59d77a17690977103aabf2",
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zFLEQ_D"
+  },
+  "pass_complete": true,
+  "semantic_pass": true,
+  "semantic_detail": {
+    "x0_result_not_observable": 4,
+    "pairs": {
+      "normal/qNaN": 2,
+      "qNaN/qNaN": 2,
+      "normal/normal": 2,
+      "qNaN/normal": 2
+    },
+    "required_pairs": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ]
+    ],
+    "check_count": 15,
+    "failed_checks": 0
+  },
+  "pass": true
+}

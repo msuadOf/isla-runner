@@ -1,0 +1,3 @@
+
+running 1 test
+test smt::tests::get_multi_member_enum_const_after_checkpoint_replay ... Error: enumeration sort name is already declared

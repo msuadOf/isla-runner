@@ -1,0 +1,13 @@
+{
+  "source_json_sha256": "5555cb0361941e8e825705c44b51ef6c32c2c539e3e998d7b15839a98075ac92",
+  "coverage_json_sha256": "dee5e56fc1f16bb9a4caff08f414e7dd3fb319d2b74e0cfa5b0748b9b8f44fb4",
+  "provided_comparison_json_sha256": "32fb57a159c50a5ce71c5a79aaac79778c28c87f4ca297252a80fbb8c48b7837",
+  "categories_recomputed": {
+    "fflags:same:NVFalse": 160,
+    "fflags:changed:NVTrue": 103,
+    "fflags:changed:NVFalse": 17
+  },
+  "NV_label_meaning": "本指令新增NV位，按post & ~pre计算；不是后态NV绝对值",
+  "coverage_examples_found": 3,
+  "pass": true
+}

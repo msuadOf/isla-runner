@@ -1,0 +1,18 @@
+[
+  {
+    "case": "old-ite",
+    "ir": "isla/rv64d.ir",
+    "ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+    "script_sha256": "73435d6254e8a3ceae7f7b67adf9968cc22439edcc1885cd2ecdab161595c790",
+    "exit_code": 1,
+    "expected_exit": 1
+  },
+  {
+    "case": "active-if",
+    "ir": "agents/explicit_branch_timeout_diagnosis_20261102/active-lane-control/B.ir",
+    "ir_sha256": "a7640fce596177f66cff8a6963f40d840ca277e6df258f524ce48e43ccc644b4",
+    "script_sha256": "73435d6254e8a3ceae7f7b67adf9968cc22439edcc1885cd2ecdab161595c790",
+    "exit_code": 0,
+    "expected_exit": 0
+  }
+]

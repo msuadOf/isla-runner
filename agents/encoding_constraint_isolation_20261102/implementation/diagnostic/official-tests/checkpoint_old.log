@@ -1,0 +1,6 @@
+
+running 1 test
+test smt::tests::isolated_checkpoint_preserves_definitions_and_rebases_only_new_constraints ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 273 filtered out; finished in 0.10s
+

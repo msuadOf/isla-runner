@@ -1,0 +1,18 @@
+{
+  "batch": "selective",
+  "source_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+  "wall_s": 22.33,
+  "json_sha256": "51977d8c17d087a1564a7873fbe8cfe0677e553f8a1b80cd544357848eebf66d",
+  "gen": 46,
+  "checks": 662,
+  "counts": {
+    "illegal": 24,
+    "retired": 22,
+    "in-range": 4,
+    "positive-overflow": 2,
+    "inactive": 2,
+    "negative-overflow": 2
+  },
+  "pass": true
+}

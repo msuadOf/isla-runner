@@ -1,0 +1,4 @@
+# 大体积可重建IR、工具二进制及中间缓存留在本机。
+*.ir
+sail_smt_cache*
+__pycache__/

@@ -1,0 +1,197 @@
+   3077136:	find library=libselinux.so.1 [0]; searching
+   3077136:	 search cache=/etc/ld.so.cache
+   3077136:	  trying file=/usr/lib/x86_64-linux-gnu/libselinux.so.1
+   3077136:	
+   3077136:	find library=libgcc_s.so.1 [0]; searching
+   3077136:	 search cache=/etc/ld.so.cache
+   3077136:	  trying file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+   3077136:	
+   3077136:	find library=libm.so.6 [0]; searching
+   3077136:	 search cache=/etc/ld.so.cache
+   3077136:	  trying file=/usr/lib/x86_64-linux-gnu/libm.so.6
+   3077136:	
+   3077136:	find library=libc.so.6 [0]; searching
+   3077136:	 search cache=/etc/ld.so.cache
+   3077136:	  trying file=/usr/lib/x86_64-linux-gnu/libc.so.6
+   3077136:	
+   3077136:	find library=libpcre2-8.so.0 [0]; searching
+   3077136:	 search cache=/etc/ld.so.cache
+   3077136:	  trying file=/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0
+   3077136:	
+   3077136:	
+   3077136:	calling init: /lib64/ld-linux-x86-64.so.2
+   3077136:	
+   3077136:	
+   3077136:	calling init: /usr/lib/x86_64-linux-gnu/libc.so.6
+   3077136:	
+   3077136:	
+   3077136:	calling init: /usr/lib/x86_64-linux-gnu/libpcre2-8.so.0
+   3077136:	
+   3077136:	
+   3077136:	calling init: /usr/lib/x86_64-linux-gnu/libm.so.6
+   3077136:	
+   3077136:	
+   3077136:	calling init: /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+   3077136:	
+   3077136:	
+   3077136:	calling init: /usr/lib/x86_64-linux-gnu/libselinux.so.1
+   3077136:	
+   3077136:	
+   3077136:	initialize program: timeout
+   3077136:	
+   3077136:	
+   3077136:	transferring control: timeout
+   3077136:	
+   3077137:	find library=libc.so.6 [0]; searching
+   3077137:	 search path=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib:/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current:/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib:/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/ncurses/lib:/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/readline/lib:/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib:/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/sqlite/lib:/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/lib		(RPATH from file taskset)
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/ncurses/lib/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/readline/lib/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/sqlite/lib/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/lib/libc.so.6
+   3077137:	 search cache=/home/linuxbrew/.linuxbrew/etc/ld.so.cache
+   3077137:	  trying file=/home/linuxbrew/.linuxbrew/opt/glibc/lib/libc.so.6
+   3077137:	
+   3077137:	
+   3077137:	calling init: /home/linuxbrew/.linuxbrew/lib/ld.so
+   3077137:	
+   3077137:	
+   3077137:	calling init: /home/linuxbrew/.linuxbrew/opt/glibc/lib/libc.so.6
+   3077137:	
+   3077137:	
+   3077137:	initialize program: taskset
+   3077137:	
+   3077137:	
+   3077137:	transferring control: taskset
+   3077137:	
+   3077137:	find library=libz3.so.5.3 [0]; searching
+   3077137:	 search path=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/glibc-hwcaps/x86-64-v3:/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/glibc-hwcaps/x86-64-v2:/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib		(RUNPATH from file /data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/glibc-hwcaps/x86-64-v3/libz3.so.5.3
+   3077137:	    (no such file)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/glibc-hwcaps/x86-64-v2/libz3.so.5.3
+   3077137:	    (no such file)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3
+   3077137:	
+   3077137:	find library=libgcc_s.so.1 [0]; searching
+   3077137:	 search path=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib		(RUNPATH from file /data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libgcc_s.so.1
+   3077137:	    (no such file)
+   3077137:	 search cache=/etc/ld.so.cache
+   3077137:	  trying file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+   3077137:	
+   3077137:	find library=libc.so.6 [0]; searching
+   3077137:	 search path=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib		(RUNPATH from file /data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libc.so.6
+   3077137:	    (no such file)
+   3077137:	 search cache=/etc/ld.so.cache
+   3077137:	  trying file=/usr/lib/x86_64-linux-gnu/libc.so.6
+   3077137:	
+   3077137:	find library=libstdc++.so.6 [0]; searching
+   3077137:	 search path=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib/glibc-hwcaps/x86-64-v3:/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib/glibc-hwcaps/x86-64-v2:/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib		(RUNPATH from file /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib/glibc-hwcaps/x86-64-v3/libstdc++.so.6
+   3077137:	    (no such file)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib/glibc-hwcaps/x86-64-v2/libstdc++.so.6
+   3077137:	    (no such file)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib/libstdc++.so.6
+   3077137:	    (no such file)
+   3077137:	 search cache=/etc/ld.so.cache
+   3077137:	  trying file=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+   3077137:	
+   3077137:	find library=libm.so.6 [0]; searching
+   3077137:	 search path=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib		(RUNPATH from file /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3)
+   3077137:	  trying file=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/../lib/libm.so.6
+   3077137:	    (no such file)
+   3077137:	 search cache=/etc/ld.so.cache
+   3077137:	  trying file=/usr/lib/x86_64-linux-gnu/libm.so.6
+   3077137:	
+   3077137:	
+   3077137:	calling init: /lib64/ld-linux-x86-64.so.2
+   3077137:	
+   3077137:	
+   3077137:	calling init: /usr/lib/x86_64-linux-gnu/libc.so.6
+   3077137:	
+   3077137:	
+   3077137:	calling init: /usr/lib/x86_64-linux-gnu/libm.so.6
+   3077137:	
+   3077137:	
+   3077137:	calling init: /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+   3077137:	
+   3077137:	
+   3077137:	calling init: /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+   3077137:	
+   3077137:	
+   3077137:	calling init: /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3
+   3077137:	
+   3077137:	
+   3077137:	initialize program: /data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d
+   3077137:	
+   3077137:	
+   3077137:	transferring control: /data1/baiyifan/workplace/isla-runner/agents/encoding_constraint_isolation_20261102/implementation/diagnostic/official-target/release/deps/isla_lib-40254dc657f5900d
+   3077137:	
+
+running 1 test
+test smt::tests::isolated_checkpoint_preserves_definitions_and_rebases_only_new_constraints ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 273 filtered out; finished in 0.11s
+
+   3077137:	
+   3077137:	calling fini:  [0]
+   3077137:	
+   3077137:	
+   3077137:	calling fini: /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 [0]
+   3077137:	
+   3077137:	
+   3077137:	calling fini: /usr/lib/x86_64-linux-gnu/libstdc++.so.6 [0]
+   3077137:	
+   3077137:	
+   3077137:	calling fini: /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 [0]
+   3077137:	
+   3077137:	
+   3077137:	calling fini: /usr/lib/x86_64-linux-gnu/libm.so.6 [0]
+   3077137:	
+   3077137:	
+   3077137:	calling fini: /usr/lib/x86_64-linux-gnu/libc.so.6 [0]
+   3077137:	
+   3077137:	
+   3077137:	calling fini: /lib64/ld-linux-x86-64.so.2 [0]
+   3077137:	
+   3077136:	
+   3077136:	calling fini:  [0]
+   3077136:	
+   3077136:	
+   3077136:	calling fini: /usr/lib/x86_64-linux-gnu/libselinux.so.1 [0]
+   3077136:	
+   3077136:	
+   3077136:	calling fini: /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 [0]
+   3077136:	
+   3077136:	
+   3077136:	calling fini: /usr/lib/x86_64-linux-gnu/libm.so.6 [0]
+   3077136:	
+   3077136:	
+   3077136:	calling fini: /usr/lib/x86_64-linux-gnu/libpcre2-8.so.0 [0]
+   3077136:	
+   3077136:	
+   3077136:	calling fini: /usr/lib/x86_64-linux-gnu/libc.so.6 [0]
+   3077136:	
+   3077136:	
+   3077136:	calling fini: /lib64/ld-linux-x86-64.so.2 [0]
+   3077136:	

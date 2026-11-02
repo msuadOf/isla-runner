@@ -1,0 +1,9 @@
+{
+  "enum_test_body_equal": true,
+  "enum_test_body_sha256": "ae2a61dc23e8a5a73393753d605daa7631e2ae312255ec99fab30740d526bb86",
+  "system_library_sha256": "eff8f0f91482d0809aae7aa0ed54cb52ff5ee9b5fe1ed1d2bfa9153c4a2fcfaf",
+  "baseline_system_error_logged": true,
+  "current_system_error_logged": true,
+  "official_current_error_independently_repeated": true,
+  "official_baseline_runtime_tested": false
+}

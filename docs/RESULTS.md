@@ -212,3 +212,12 @@ flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱
 flags已完成SMT查询约94.5%时间在collector，最长单次1038.658s SAT；sat最长4.819s、16951次已返回查询累积，兼旧8lane溢出组合。两项已返回check无UNKNOWN，外限截断时各一条刚开始的pending。旧源只加活动gate、保留overflow-if，同seed17三次57–64秒完整finished，确认不活动lane过早转换是重要原因。flags干净同具体FDIV_S编码诊断：原路径约束36.50秒，隔离后0.04–0.05秒，同机器码；不能据此直接删除生产约束。
 
 独立review发现并修正计数混合、旧探针残留同核竞争、check边界误归属；先前240/455秒性能值撤回为受干扰诊断。未微观定位原17分钟query为何跨轮变动，不宣称tactic普遍无影响或会话历史bug。生产源码/模型/策略未改。完整证据见[确认报告](../agents/explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)。
+
+
+## 2026-11-02：编码候选约束分离与活动 lane 饱和分支（完成／限定验收）
+
+Isla `cf1aa14`、模型 `6202e23`：辅助编码仅保留指令字段原断言，所有候选仍在完整执行约束下验证；恢复活动 lane 内 f16→i16 overflow 显式分支。独立 GPT-6.1 Sol 源码、四配置 IR、实际 JSON 和官方库 Rust 回归签收通过。
+
+完整旧显式 flags B / 当前正式浮点算术 / 新 VFUNARY0 分别 2626.07 / 1127.51 / 22.33 秒 finished，均 T1/qffp/seed17、Clause 与单次 SMT 各 7200 秒，原配置未缩域；错误及 partial 均零。56 项定向、126 项双工具链、15 项官方库 Rust 回归及真实 Make 入口通过。两版各 1258 条实际见证的指令、编码、完整前后态、返回值多重集合相同；不推断全域覆盖或严格加速比。
+
+五 IR/四配置严格生成和 25 步回归通过；flags changed 与其他未验窄转换仍维持现实现。既有枚举同 Context 重放单测失败单列，不计入通过数。旧 eager lane 饱和 B 初版诊断7200.20秒外限exit124、无完整JSON，不替代新模型验收。根 float 更新组件与证据，本轮未推送。详见[本轮状态](../agents/encoding_constraint_isolation_20261102/status.md)。
