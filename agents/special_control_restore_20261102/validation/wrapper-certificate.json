@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "base_ir_sha256": "0e7a9bfd9bb0655e48fbb02097c31a83f97b59d0eb3fbbf4b048c606eee7a85f",
+  "wrapper_sha256": "cd245b5ac00a7ce6b9365975109b718a02905a0d4a85f1fb85fb6ae596606e22",
+  "original_execute_body_unchanged": true,
+  "original_cfg_jump_targets_unchanged": true,
+  "constraints": "仅对原symbolic instruction payload字段等值assume，之后执行原body；不改变数值公式/flags/FMA",
+  "probe_limitation": "旧probe仅mask0包装可执行性验证，不计融合/新模型PASS"
+}

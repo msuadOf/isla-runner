@@ -5,6 +5,10 @@
 涉及 IR 生成或严格 workaround 时，还需阅读 [specs/ir-workflow.md](specs/ir-workflow.md)。
 涉及源码版本、子模块或提交边界时，阅读 [GIT.md](GIT.md)。
 
+中英文术语对照统一以 [TRANSLATOR.md](TRANSLATOR.md) 为准；提交说明、代码注释、文档和技术解释均遵循该文件。
+
+CODEX / GPT 的回答、解释、问题说明、方案讨论和进展汇报统一遵循 [GPT_SAY.md](GPT_SAY.md)：先简短说清问题，再按需给具体例子和影响，降低用户的阅读负担。
+
 ## 项目与局部规则
 
 本仓库组织特定版本的 Sail、Sail-RISC-V 和 Isla，用于 RISC-V 模型 IR 生成、符号分析和相关差异测试。根目录 `isla/` 与 `sail-riscv/` 是由父仓库 gitlink 固定的子模块。`sail/`、Ara 与 XiangShan 等工具或上游 checkout 按各自边界管理；不得因文档迁移重置它们的工作树。
@@ -22,6 +26,8 @@
 | 议题计划、状态摘要、调查与协作记录 | `agents/<topic>/` | 对应议题变化 |
 | 已核实、可复用的代码发现 | `agents/findings.md` | 发现确立或被修订 |
 | 使用者可执行的命令 | `README.md` | 公共入口或已验证用法变化 |
+| 中英文术语对照及翻译约定 | `TRANSLATOR.md` | 术语新增、翻译确认或修订 |
+| CODEX / GPT 的表达方式与解释示例 | `GPT_SAY.md` | 用户确认或修订表达要求 |
 
 `agents/` 保持原有协作记录目录。`agents/overview.md` 是议题入口，`agents/<topic>/status.md` 是该议题的摘要和详细文件导航，`plan.md` 保存实施方案。`specs/TODOs.md` 汇总全仓当前状态，`docs/RESULTS.md` 汇总逐次验证；更新议题细节后同步议题摘要及全仓状态，不要在多处复制长篇过程。
 

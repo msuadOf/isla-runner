@@ -1,0 +1,44 @@
+{
+  "p3": {
+    "new": {
+      "same_all_183_registers": true,
+      "initialized": 145,
+      "uninitialized": 38,
+      "all_callback_log_lines": [
+        "FM_STORE_PROBE_HELPER_OUTCOME function=zext_decode outcome=Ok(Some(Poison)) exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+      ],
+      "result": "Err(\"zext_decode 译码回环返回非具体值: Poison\")",
+      "pins": 141
+    },
+    "old": {
+      "same_all_183_registers": true,
+      "initialized": 145,
+      "uninitialized": 38,
+      "all_callback_log_lines": [
+        "FM_STORE_PROBE_HELPER_RESULT function=zext_decode result=<poison> sat=Sat exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+      ],
+      "result": "Err(\"zext_decode 译码结果不是指令构造子: Poison\")",
+      "pins": 141
+    }
+  },
+  "cld": {
+    "new": {
+      "same_all_102_prestate": true,
+      "same_original_C_LD_ctor": true,
+      "same_exception": true,
+      "sat": "Sat",
+      "cur_privilege": "VirtualSupervisor",
+      "mstatus": "64'h0000_0000_0002_1000",
+      "pins": 102
+    },
+    "old": {
+      "same_all_102_prestate": true,
+      "same_original_C_LD_ctor": true,
+      "same_exception": true,
+      "sat": "Sat",
+      "cur_privilege": "VirtualSupervisor",
+      "mstatus": "64'h0000_0000_0002_1000",
+      "pins": 102
+    }
+  }
+}

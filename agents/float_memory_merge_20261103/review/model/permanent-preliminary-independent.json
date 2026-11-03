@@ -1,0 +1,316 @@
+{
+  "status": "PASS preliminary 26/26 only",
+  "scope": "core源码仍在修改，正式冻结后须重跑；不替代最终生产签收",
+  "checks_sha256": "c37f834b8b6f8addd8c178e42bdddb5a19902a07d7893b6a8565a70c3e3653bb",
+  "steps": [
+    {
+      "label": "build",
+      "command": [
+        "cargo",
+        "build",
+        "--offline",
+        "-q",
+        "--manifest-path",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/runner/Cargo.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "migration-conflicts",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/test_migration.py"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "nan-unbox-branches",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/check_nan_unbox_branches.py"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "explicit-semantic-branches",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/check_explicit_semantic_branches.py"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "special-semantic-branches",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/check_special_semantic_branches.py"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "float-closure-branches",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/check_float_closure_branches.py"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d-wrap",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/softfloat_legacy/wrap.py",
+        "--ir",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+        "--cases",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d.tsv",
+        "--output",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d-wrapped.ir"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d-helpers",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-helpers",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d-wrapped.ir",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d.tsv"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d-state",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+        "state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d-guard",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+        "guard",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv32d-wrap",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/softfloat_legacy/wrap.py",
+        "--ir",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/rv32d.ir",
+        "--cases",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv32d.tsv",
+        "--output",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv32d-wrapped.ir"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv32d-helpers",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-helpers",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv32d-wrapped.ir",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv32d.tsv"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv32d-state",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/rv32d.ir",
+        "state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/rv32_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv32d-guard",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/rv32d.ir",
+        "guard",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/rv32_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v128_e64-wrap",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/softfloat_legacy/wrap.py",
+        "--ir",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "--cases",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v128_e64.tsv",
+        "--output",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v128_e64-wrapped.ir"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v128_e64-helpers",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-helpers",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v128_e64-wrapped.ir",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v128_e64.tsv"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v128_e64-state",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v128_e64-guard",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "guard",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v256_e64-wrap",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/softfloat_legacy/wrap.py",
+        "--ir",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v256_e64.ir",
+        "--cases",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v256_e64.tsv",
+        "--output",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v256_e64-wrapped.ir"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v256_e64-helpers",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-helpers",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v256_e64-wrapped.ir",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v256_e64.tsv"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v256_e64-state",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v256_e64.ir",
+        "state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v256_e64-guard",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v256_e64.ir",
+        "guard",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v512_e64-wrap",
+      "command": [
+        "python3",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/test/softfloat_legacy/wrap.py",
+        "--ir",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v512_e64.ir",
+        "--cases",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v512_e64.tsv",
+        "--output",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v512_e64-wrapped.ir"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v512_e64-helpers",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-helpers",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v512_e64-wrapped.ir",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/integration/preliminary2-float-ir-all/rv64d_v512_e64.tsv"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v512_e64-state",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v512_e64.ir",
+        "state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "rv64d_v512_e64-guard",
+      "command": [
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/debug/float-ir-state",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v512_e64.ir",
+        "guard",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+      ],
+      "exit": 0
+    }
+  ],
+  "helper_case_counts": {
+    "rv64d": 327,
+    "rv32d": 307,
+    "rv64d_v128_e64": 327,
+    "rv64d_v256_e64": 327,
+    "rv64d_v512_e64": 327
+  },
+  "state_and_guard_all_failures_zero": true,
+  "log_sha256": {
+    "rv64d-wrap.log": "c1c47857d7cd3611cd40ac2cc1d94278aa5d17bb5aed9aa4c20d89967d0f6d77",
+    "rv64d-helpers.log": "b50040b94de18dea03bb63984e4560d715482f40c1cb1f81e702e0e58ccb49e6",
+    "rv64d-state.log": "6de21baaa9bc5a751e3ea01a877a4f8dd50cb190ab3f9a8eb7962d6f2347263d",
+    "rv64d-guard.log": "9274de1e96584c828ad9b22379253a2d3bca939ab0ec6022d532dfc698c8be88",
+    "rv32d-wrap.log": "5fc75182f0f3b186613586ee6536a552201b58969a8dcf31f7d8aaed308391b2",
+    "rv32d-helpers.log": "934c57c331a6d1dcfe24cb893f12911a2e16f92721e732e7862a1679cc903ac3",
+    "rv32d-state.log": "c79f11c5da605d98683b710cde7090fd2d169ee33bce66e9598ed41e6f42524a",
+    "rv32d-guard.log": "601b69c597b5d5616d50c510ae24f896c1e176f531fd661b370b1ecc4bc1defa",
+    "rv64d_v128_e64-wrap.log": "c1c47857d7cd3611cd40ac2cc1d94278aa5d17bb5aed9aa4c20d89967d0f6d77",
+    "rv64d_v128_e64-helpers.log": "b50040b94de18dea03bb63984e4560d715482f40c1cb1f81e702e0e58ccb49e6",
+    "rv64d_v128_e64-state.log": "6de21baaa9bc5a751e3ea01a877a4f8dd50cb190ab3f9a8eb7962d6f2347263d",
+    "rv64d_v128_e64-guard.log": "9274de1e96584c828ad9b22379253a2d3bca939ab0ec6022d532dfc698c8be88",
+    "rv64d_v256_e64-wrap.log": "c1c47857d7cd3611cd40ac2cc1d94278aa5d17bb5aed9aa4c20d89967d0f6d77",
+    "rv64d_v256_e64-helpers.log": "34c483453123dd84a6c9774c48a1c1a7807bcaed039efa8810d76732b1c877a9",
+    "rv64d_v256_e64-state.log": "a0d5d76aa761d59c5ce18c505c34c2eba12f30b289ee89203ea760ce91524eb6",
+    "rv64d_v256_e64-guard.log": "832c974c79252c23a0ecf5271acd95024e0a8f35e47dd78a95d3cb65b145def5",
+    "rv64d_v512_e64-wrap.log": "c1c47857d7cd3611cd40ac2cc1d94278aa5d17bb5aed9aa4c20d89967d0f6d77",
+    "rv64d_v512_e64-helpers.log": "34c483453123dd84a6c9774c48a1c1a7807bcaed039efa8810d76732b1c877a9",
+    "rv64d_v512_e64-state.log": "a0d5d76aa761d59c5ce18c505c34c2eba12f30b289ee89203ea760ce91524eb6",
+    "rv64d_v512_e64-guard.log": "832c974c79252c23a0ecf5271acd95024e0a8f35e47dd78a95d3cb65b145def5"
+  },
+  "programs": {
+    "float-ir-helpers": {
+      "sha256": "20c2389b871054f7c0d5f7a2ad6f8af84dff41a2ffbb5ec65dc0a25080aac824",
+      "z3_path": "user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3",
+      "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+    },
+    "float-ir-state": {
+      "sha256": "3e17a294e2bc61cb05fa193ba7b4850ea4879bde104669df285f370a76eda1d2",
+      "z3_path": "user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3",
+      "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+    }
+  }
+}

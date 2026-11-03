@@ -1,0 +1,67 @@
+{
+  "status": "PASS generation provenance only",
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "inputs_sha256": "25a1a624cb5dcac76a2261c470e198c64a75b20259322a1c7ee5d0572b83ec24",
+  "tracked_model_inputs": 166,
+  "verified_tool_files": 149,
+  "actual_sail_binary_sha256": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+  "compile_z3": {
+    "role": "Sail strict type constraints only; not Isla runtime Z3",
+    "observed_live_grandchild": {
+      "sail_pid": 383376,
+      "shell_pid": 491738,
+      "z3_pid": 491739,
+      "exe": "/home/linuxbrew/.linuxbrew/Cellar/z3/4.16.0/bin/z3"
+    },
+    "actual_z3_sha256": "a7eac84c5493ac5766c2179620c3a4628b151198af9e6e9c488163c84561b3e9",
+    "version": "Z3 version 4.16.0 - 64 bit",
+    "ctime_precedes_generation_start": true,
+    "runtime_official_z3_library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+    "source_manifest_sha256": "d0f6cb55c00437062807431907ff5b3fb59d3ace9e75db093f7adab7859923ff"
+  },
+  "generated": [
+    {
+      "kind": "ordinary-strict",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "ir_sha256": null,
+      "seconds": 217.071
+    },
+    {
+      "kind": "rv64d_v128_e64",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+      "seconds": 498.501
+    },
+    {
+      "kind": "rv32d",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "ir_sha256": "df3dfd02cecd184e8ed2adfcdab4c4d3a4e15afba274ab51c0c2d63041744eb0",
+      "seconds": 623.558
+    },
+    {
+      "kind": "rv64d_v256_e64",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "ir_sha256": "fbc1f8953810f63b1f092929e26802f816bc7f5e354e170afae35a51d71c2922",
+      "seconds": 491.953
+    },
+    {
+      "kind": "rv64d_v512_e64",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "ir_sha256": "a699d34c4c9c52da15d6924f6788d641880b2c7f331b0f55fce42bddc576bbdc",
+      "seconds": 625.654
+    }
+  ],
+  "five_ir_hashes": {
+    "rv64-v128": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+    "rv64-v256": "fbc1f8953810f63b1f092929e26802f816bc7f5e354e170afae35a51d71c2922",
+    "rv64-v512": "a699d34c4c9c52da15d6924f6788d641880b2c7f331b0f55fce42bddc576bbdc",
+    "rv64-default": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+    "rv32-default": "df3dfd02cecd184e8ed2adfcdab4c4d3a4e15afba274ab51c0c2d63041744eb0"
+  },
+  "scope": "严格生成和来源通过，不包含永久CFG检查器或动态结果。"
+}

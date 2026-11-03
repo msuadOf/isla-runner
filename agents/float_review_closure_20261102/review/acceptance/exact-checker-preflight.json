@@ -1,0 +1,52 @@
+{
+  "scope": "Consumer contract preflight only; old actual JSON must remain red until canonical RM0 production fix",
+  "checker_sha256": "11ed4d4def5b6a56d0540243d67cd95faff1e0153add28a1ef9a7fae2d7678d8",
+  "rows": [
+    {
+      "job": "sqrt-H",
+      "all_pass": false,
+      "contract_errors": [
+        {
+          "index": 3,
+          "reason": "exact RM0 must omit RM",
+          "text": "fcvt.d.h f0, f0, rne"
+        },
+        {
+          "index": 3,
+          "reason": "gcc exact RM0 mnemonic failed",
+          "text": "fcvt.d.h f0, f0, rne"
+        },
+        {
+          "index": 27,
+          "reason": "exact RM0 must omit RM",
+          "text": "fcvt.s.h f0, f0, rne"
+        },
+        {
+          "index": 27,
+          "reason": "gcc exact RM0 mnemonic failed",
+          "text": "fcvt.s.h f0, f0, rne"
+        }
+      ],
+      "raw_failures": 12,
+      "accepted_gnu_exact_fallbacks": 10
+    },
+    {
+      "job": "sqrt-D",
+      "all_pass": false,
+      "contract_errors": [
+        {
+          "index": 16,
+          "reason": "exact RM0 must omit RM",
+          "text": "fcvt.d.s f0, f0, rne"
+        },
+        {
+          "index": 16,
+          "reason": "gcc exact RM0 mnemonic failed",
+          "text": "fcvt.d.s f0, f0, rne"
+        }
+      ],
+      "raw_failures": 6,
+      "accepted_gnu_exact_fallbacks": 5
+    }
+  ]
+}

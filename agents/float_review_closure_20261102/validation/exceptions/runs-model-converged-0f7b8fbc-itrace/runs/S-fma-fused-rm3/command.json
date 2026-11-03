@@ -1,0 +1,88 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "29",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/S-fma-fused-rm3/constrained.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/S-fma-fused-rm3/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_MADD_TYPE_S"
+  ],
+  "job": {
+    "name": "S-fma-fused-rm3",
+    "family": "scalar",
+    "clause": "F_MADD_TYPE_S",
+    "fields": [
+      2,
+      1,
+      0,
+      "zRM_RUP",
+      3,
+      "zFMADD_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff3f800001",
+      "f1": "0xffffffff3f800001",
+      "f2": "0xffffffffbf800002",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-fma-fused-rm3",
+      "family": "scalar",
+      "width": 32,
+      "op": "fma",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 3,
+      "a": "0x3f800001",
+      "b": "0x3f800001",
+      "c": "0xbf800002",
+      "reason": "single fused multiply-add witness",
+      "expected_bits": "0x28800000",
+      "oracle_raw_bits": "0x28800000",
+      "expected_flags": "0x0",
+      "oracle_argv": [
+        "--op",
+        "fma",
+        "--fmt",
+        "f32",
+        "--rm",
+        "3",
+        "--a",
+        "0x3f800001",
+        "--b",
+        "0x3f800001",
+        "--c",
+        "0xbf800002"
+      ],
+      "split_bits": "0x34000000",
+      "split_accumulated_flags": "0x1"
+    },
+    "expected_full_bits": "0xffffffff28800000"
+  },
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "base_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "constrained_ir_sha256": "eaa89c66d75c1abca976cb393a3b5f90e547c337a44f9ae30e7e27d28e19e894",
+  "config_sha256": "fafbb17492952af0f55ae2296e434e28ab7f80f2cd224e0319e4e3ed1003d55f",
+  "cpu": 29,
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/S-fma-fused-rm3/seed-intercept.log"
+  }
+}

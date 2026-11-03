@@ -1,0 +1,19 @@
+{
+  "files": {
+    "prepare.py": "e33c1ba937eea3d6de480ef3c1a66f9595248594459c261601974eee6874c7b8",
+    "check_fixture.py": "25912a6f0272b8e4234b7c6f7133602adb5e2c64139e77739b5956ed0aa33468",
+    "build_runners.py": "bfdd8151de5c777ffb246cb6606d42c37a46c2ee9335379b4b31e9f8358f6245",
+    "run.py": "1a7e5ed98e27a6b37f92b03f80a6d29187a6417ba2d7f726883f34cb6d805e08",
+    "fixture-manifest.json": "28b616a4bcd045770fca166612c11c16a594212160d20283866762b6e43e1b62",
+    "oracle-rows.json": "e546a84067ace4b2ff0db4fe7794cdd35ec6e414360330bae7cf4f5308082836",
+    "helpers.tsv": "3512ca8c609d6fecc2072345a35cda23ec4eee6d9f385b4f6f2b5746d7583eaf",
+    "scalar-cases.json": "2dfea5b620da7562b893347e19e9d719b5e3d8b314c0ed155ca655d15f389e65",
+    "vector-cases.json": "bf295aed5758529a8847ed13ede9da086039b240014ab5aa853f503accb9b0b4",
+    "runner-build.json": "a704dce1077f475e6ccbd9bf7e85b98b5a3612a6392fe7e6480d522e7ca09242",
+    "helper_runner/Cargo.toml": "ef13e17edcc18780a704a8aee2c313f2a07f90f54be4886f973ab2e9af3765f0",
+    "instruction_runner/Cargo.toml": "29fe81622e0ecf54866870703e71e300de922b6273368279efda215f9be58701",
+    "instruction_runner/src/main.rs": "1f721ab350f6024fcf4c7c50815f2434dc400d159fc962edfcefaa4c41bbb935",
+    "helper_runner/src/main.rs": "0b85a0a53e656474c2e5a3d101a55424f5afb31fdc2104b6e11dc555b7c449ca"
+  },
+  "scope": "e9d69d2 direct conversion inputs; original root-level run.py copied into version-specific frozen directory, with ROOT depth and model-tree argument adjusted; dynamic command separately recorded"
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "实际init_masked_source helper四nat边界独立算mask及来源/seed/官方Z3；helper按launcher的LD_LIBRARY_PATH运行，不替代指令入口",
+  "binary_sha256": "c3b8177930fa5295247a6c1ce7bbc2234add3aee2389aaaf1ae4a2879dbff194",
+  "result_sha256": "e294e523192fe9b47e4b2f05d50cd5323fe5bb44cd571697f71d12dadd7bf7a8",
+  "run_log_sha256": "db4524f382c27842b8423341d171f0b6c66b0547440784d1fec62e2c7bd6091c",
+  "inputs_sha256": "30f6847f904ea22b8c7dd355cda988bf35bc9938ec46e7b564c408801365d5e2",
+  "ld_library_path": "user-home:/.local/opt/z3-official-1fd1d3613/lib",
+  "rows": [
+    {
+      "label": "active",
+      "start": "0x0",
+      "vl": 1,
+      "actual_mask": "0x1",
+      "expected_mask": "0x1"
+    },
+    {
+      "label": "equal",
+      "start": "0x1",
+      "vl": 1,
+      "actual_mask": "0x0",
+      "expected_mask": "0x0"
+    },
+    {
+      "label": "greater",
+      "start": "0x2",
+      "vl": 1,
+      "actual_mask": "0x0",
+      "expected_mask": "0x0"
+    },
+    {
+      "label": "large",
+      "start": "0xffffffffffffffff",
+      "vl": 1,
+      "actual_mask": "0x0",
+      "expected_mask": "0x0"
+    }
+  ],
+  "pass": true
+}

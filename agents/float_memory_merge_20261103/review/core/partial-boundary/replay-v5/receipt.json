@@ -1,0 +1,131 @@
+{
+  "files": {
+    "replay-p3-new-v5/decode.json": {
+      "bytes": 16315,
+      "sha256": "5b93a646a205055ec433dc43c770bfe41e4957799259093587f7026a5f70015d"
+    },
+    "replay-p3-new-v5/input.json": {
+      "bytes": 13778,
+      "sha256": "18d5d756ece706f581bbfd3b3c40b2645850121a0bd54a4f5841420487438048"
+    },
+    "replay-p3-new-v5/run.log": {
+      "bytes": 950,
+      "sha256": "2f22ec6e434a093272e570fcb54ca81e5d930e78ba2b16665916824efb88eb00"
+    },
+    "replay-p3-new-v5/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "94357f63ecbc9f2a794d70f4d95b4a0db358191b6ae02fe472d240e367467503"
+    },
+    "replay-p3-old-v5/decode.json": {
+      "bytes": 16318,
+      "sha256": "09f721b8ceefd0c1b4607287c812c2d5808d8ffac5087014cea12086ad66b986"
+    },
+    "replay-p3-old-v5/input.json": {
+      "bytes": 13824,
+      "sha256": "8c67fbb3ec3e259aa99458e34c8c480f997c1ab967d77de855cf0de10a9fc910"
+    },
+    "replay-p3-old-v5/run.log": {
+      "bytes": 727,
+      "sha256": "a280a2afe645745ca500331eda3c7c84120063c54b76873e296efb0021abdad3"
+    },
+    "replay-p3-old-v5/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "94357f63ecbc9f2a794d70f4d95b4a0db358191b6ae02fe472d240e367467503"
+    },
+    "replay-cld-new-v5/main-poison.json": {
+      "bytes": 5106,
+      "sha256": "85faec737c82ef98963abd6f450b27094736dac15bbc8629067e84ffe3281384"
+    },
+    "replay-cld-new-v5/input.json": {
+      "bytes": 10166,
+      "sha256": "10d89d240b3997a4c958fc6fda5860106572843f12be0467e29dc1f7ff024433"
+    },
+    "replay-cld-new-v5/run.log": {
+      "bytes": 1963,
+      "sha256": "639de0571af418217a4ca9c9b72d78128325bb1597bbbbc736749124ae3e72af"
+    },
+    "replay-cld-new-v5/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c"
+    },
+    "replay-cld-old-v5/main-poison.json": {
+      "bytes": 5106,
+      "sha256": "54ae96eb3b498c04d572c032db9a32c1355700961f56d64d0a64294007c4e50c"
+    },
+    "replay-cld-old-v5/input.json": {
+      "bytes": 10212,
+      "sha256": "7cff7b4c44fda70a3a338396f16ee61a973dff0fd63cb02c9667434f73edc19e"
+    },
+    "replay-cld-old-v5/run.log": {
+      "bytes": 1955,
+      "sha256": "8fd3f7658f539702120eb0fbe7b6ca555fd85770e27c0e48e3395270fc5e289e"
+    },
+    "replay-cld-old-v5/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c"
+    },
+    "run_replay.py": {
+      "bytes": 4168,
+      "sha256": "eee1a486cd9a4c43ba35839741762fc2746d121092b38f47620b72c342abe274"
+    },
+    "run-cld-main/main-poison.json": {
+      "bytes": 5124,
+      "sha256": "5ac02147d2af5fede516f8c472a3a9545df8e2c62284b4861c8d121805b8f8c0"
+    },
+    "run-cld-main/run.log": {
+      "bytes": 5873,
+      "sha256": "851e5896f9315d1003144e1ca25d29cbb6fc1da496c19ea653381fda1060ea0d"
+    },
+    "run-cld-main/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c"
+    },
+    "build.log": {
+      "bytes": 16933,
+      "sha256": "b3096b4d105f2f25640b6b1e0f4c19c17ef2c05955f4a7ca815bf477953ef23d"
+    },
+    "build-bdd.log": {
+      "bytes": 16076,
+      "sha256": "5ac56002869f788b39099123e81a0836c37d835db23aaac8dc3a88ea4f2c9cbc"
+    },
+    "probe-new.patch": {
+      "bytes": 16396,
+      "sha256": "b6a8c39afea81c3fb2405db153556452d673cbceda331d56fa94a884d53f8467"
+    },
+    "probe-old.patch": {
+      "bytes": 9160,
+      "sha256": "2ff8bda2a2bb0753ebc9f6c077034c67537a044bab1ce0a2be2d989e749cbf9a"
+    }
+  },
+  "identities": {
+    "new": {
+      "binary": {
+        "path": ".worktree/fm-store-probe-20261104/target/release/isarch",
+        "sha256": "789a136940436e0a9a9e054f46ab8b0c66a5481113cdeaa39e3d085dba9bd983"
+      },
+      "ir": {
+        "path": ".worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+      },
+      "config": {
+        "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+        "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+      }
+    },
+    "old": {
+      "binary": {
+        "path": ".worktree/fm-store-probe-20261104/target-bdd/release/isarch",
+        "sha256": "f0d2d8a3f90a698f0f0afd25801581e529de352019f899acd8073465d6e0ab84"
+      },
+      "ir": {
+        "path": "agents/float_memory_merge_20261103/validation/dynamic/baseline-bdd/source/rv64d.ir",
+        "sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9"
+      },
+      "config": {
+        "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+        "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+      }
+    }
+  },
+  "scope": "v5 P3与C_LD两类代表；STORE main对应先前v4收据，不将重编译后的v5 binary hash改署旧main。"
+}

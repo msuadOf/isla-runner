@@ -1,0 +1,54 @@
+{
+  "scope": "实际普通strict+四配置生成退出、合并提交全部模型文件、工具/配置和五安装IR独立哈希核对",
+  "model_commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+  "model_files": 166,
+  "tool_files": 149,
+  "compile_z3": "Z3 version 4.16.0 - 64 bit",
+  "compile_z3_sha256": "a7eac84c5493ac5766c2179620c3a4628b151198af9e6e9c488163c84561b3e9",
+  "sail_binary_sha256": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+  "manifest_sha256": "8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b",
+  "source_sha256": "80e785592b232c579ef2486663fcdd1870a0358f115ec469746bd935f5323c7c",
+  "rows": [
+    {
+      "kind": "ordinary-strict",
+      "exit": 0,
+      "seconds": 147.687,
+      "driver_sha256": "2410ca5a9a215c8a7b330b4500ae82cc91a74b0bb597ba772ac79b25c3d66a3c",
+      "log_sha256": "c0f4da7bbe623179c2ec7156a490776f85361e0262038e4e5c996907bbe76df1",
+      "ir_sha256": null
+    },
+    {
+      "kind": "rv64d_v128_e64",
+      "exit": 0,
+      "seconds": 350.845,
+      "driver_sha256": "0689f8b9bd8a0c3b2419203a8630bfc406f241dd6e58e45ffa6779b7ee50d83f",
+      "log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+      "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+    },
+    {
+      "kind": "rv32d",
+      "exit": 0,
+      "seconds": 351.109,
+      "driver_sha256": "6cca06f60df5b1797def325757d2dfdc9fb5bb038ec6302f62d6b2fba6748441",
+      "log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+      "ir_sha256": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66"
+    },
+    {
+      "kind": "rv64d_v256_e64",
+      "exit": 0,
+      "seconds": 353.465,
+      "driver_sha256": "e0e566cee42dfe24bbd247d754145ee9c7c707d82b6509326768e9a57b20cdb3",
+      "log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+      "ir_sha256": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9"
+    },
+    {
+      "kind": "rv64d_v512_e64",
+      "exit": 0,
+      "seconds": 353.474,
+      "driver_sha256": "a051b6c8db941be6cbb78332affa836c76309964082333585a7c531ea16fdabe",
+      "log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+      "ir_sha256": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1"
+    }
+  ],
+  "pass": true
+}

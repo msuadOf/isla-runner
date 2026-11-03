@@ -1,0 +1,2424 @@
+{
+  "scope": "Actual machine-word/pre-state numerical replay; no owner expected fixture read",
+  "oracle_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "files": 56,
+  "checked_entries": 60,
+  "skipped_entries": 96,
+  "failures": 0,
+  "rows": [
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-acc-snan-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000007fc00000",
+          "expected": "0x3f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-fused-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-fused-rm1/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x20",
+          "expected": "0x20",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-fused-rm2/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x40",
+          "expected": "0x40",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-fused-rm3/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x60",
+          "expected": "0x60",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-fused-rm4/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x80",
+          "expected": "0x80",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-multi-mask0-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-multi-mask1-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7fc00000",
+          "expected": "0x7fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-multi-mask2-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7f80000000000000",
+          "expected": "0x7f80000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x5",
+          "expected": "0x5",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-multi-mask3-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7f8000007fc00000",
+          "expected": "0x7f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x15",
+          "expected": "0x15",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-other-snan-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7fc000007fc00000",
+          "expected": "0x7fc000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-tiny-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-tiny-rm1/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x20",
+          "expected": "0x20",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-tiny-rm2/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x40",
+          "expected": "0x40",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-tiny-rm3/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000013f800001",
+          "expected": "0x3f8000013f800001",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x60",
+          "expected": "0x60",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-tiny-rm4/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x80",
+          "expected": "0x80",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-vector-snan-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000007fc00000",
+          "expected": "0x3f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VF-vl0-rm0/output/rv64_zVFWMACCBF16_VF.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vf v8, f4, v2, v0.t",
+      "word": "0xec225457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7f8000017f800001",
+          "expected": "0x7f8000017f800001",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-acc-snan-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000007fc00000",
+          "expected": "0x3f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-fused-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-fused-rm1/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x20",
+          "expected": "0x20",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-fused-rm2/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x40",
+          "expected": "0x40",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-fused-rm3/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x60",
+          "expected": "0x60",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-fused-rm4/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7380000073800000",
+          "expected": "0x7380000073800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x80",
+          "expected": "0x80",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-multi-mask0-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-multi-mask1-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7fc00000",
+          "expected": "0x7fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-multi-mask2-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7f80000000000000",
+          "expected": "0x7f80000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x5",
+          "expected": "0x5",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-multi-mask3-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7f8000007fc00000",
+          "expected": "0x7f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x15",
+          "expected": "0x15",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-other-snan-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000007fc00000",
+          "expected": "0x3f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-tiny-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-tiny-rm1/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x20",
+          "expected": "0x20",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-tiny-rm2/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x40",
+          "expected": "0x40",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-tiny-rm3/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000013f800001",
+          "expected": "0x3f8000013f800001",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x60",
+          "expected": "0x60",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-tiny-rm4/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000003f800000",
+          "expected": "0x3f8000003f800000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x1",
+          "expected": "0x1",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x80",
+          "expected": "0x80",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-vector-snan-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x3f8000007fc00000",
+          "expected": "0x3f8000007fc00000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VV-vl0-rm0/output/rv64_zVFWMACCBF16_VV.json",
+      "index": 0,
+      "instruction": "vfwmaccbf16.vv v8, v4, v2, v0.t",
+      "word": "0xec221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7f8000017f800001",
+          "expected": "0x7f8000017f800001",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 1,
+      "instruction": "fsqrt.d f0, f0, rne",
+      "word": "0x5a000053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 2,
+      "instruction": "fsqrt.d f0, f31, dyn",
+      "word": "0x5a0ff053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 4,
+      "instruction": "fsqrt.d f0, f0, dyn",
+      "word": "0x5a007053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 8,
+      "instruction": "fsqrt.d f0, f31, rup",
+      "word": "0x5a0fb053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 9,
+      "instruction": "fsqrt.d f0, f31, rmm",
+      "word": "0x5a0fc053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 11,
+      "instruction": "fsqrt.d f0, f0, rtz",
+      "word": "0x5a001053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 13,
+      "instruction": "fsqrt.d f0, f0, rmm",
+      "word": "0x5a004053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 14,
+      "instruction": "fsqrt.d f0, f31, rne",
+      "word": "0x5a0f8053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 18,
+      "instruction": "fsqrt.d f0, f0, rdn",
+      "word": "0x5a002053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 19,
+      "instruction": "fsqrt.d f0, f31, rdn",
+      "word": "0x5a0fa053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 22,
+      "instruction": "fsqrt.d f0, f0, rup",
+      "word": "0x5a003053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 23,
+      "instruction": "fsqrt.d f0, f31, rtz",
+      "word": "0x5a0f9053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 1,
+      "instruction": "fsqrt.h f0, f0, rne",
+      "word": "0x5c000053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff7e00",
+          "expected": "0xffffffffffff7e00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 2,
+      "instruction": "fsqrt.h f0, f31, dyn",
+      "word": "0x5c0ff053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff3c00",
+          "expected": "0xffffffffffff3c00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 5,
+      "instruction": "fsqrt.h f0, f0, dyn",
+      "word": "0x5c007053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff7e00",
+          "expected": "0xffffffffffff7e00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 9,
+      "instruction": "fsqrt.h f0, f31, rup",
+      "word": "0x5c0fb053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff3c00",
+          "expected": "0xffffffffffff3c00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 14,
+      "instruction": "fsqrt.h f0, f31, rmm",
+      "word": "0x5c0fc053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff3c00",
+          "expected": "0xffffffffffff3c00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 17,
+      "instruction": "fsqrt.h f0, f0, rtz",
+      "word": "0x5c001053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff7e00",
+          "expected": "0xffffffffffff7e00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 20,
+      "instruction": "fsqrt.h f0, f0, rmm",
+      "word": "0x5c004053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff7e00",
+          "expected": "0xffffffffffff7e00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 21,
+      "instruction": "fsqrt.h f0, f31, rne",
+      "word": "0x5c0f8053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff3c00",
+          "expected": "0xffffffffffff3c00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 25,
+      "instruction": "fsqrt.h f0, f0, rdn",
+      "word": "0x5c002053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff7e00",
+          "expected": "0xffffffffffff7e00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 28,
+      "instruction": "fsqrt.h f0, f31, rdn",
+      "word": "0x5c0fa053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff3c00",
+          "expected": "0xffffffffffff3c00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 33,
+      "instruction": "fsqrt.h f0, f0, rup",
+      "word": "0x5c003053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff7e00",
+          "expected": "0xffffffffffff7e00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 35,
+      "instruction": "fsqrt.h f0, f31, rtz",
+      "word": "0x5c0f9053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0xffffffffffff3c00",
+          "expected": "0xffffffffffff3c00",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "skipped": [
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VFNCVTBF16_F_F_W-mask1/output/rv64_zVFNCVTBF16_F_F_W.json",
+      "index": 0,
+      "instruction": "vfncvtbf16.f.f.w v8, v2, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VFNCVTBF16_F_F_W-mask2/output/rv64_zVFNCVTBF16_F_F_W.json",
+      "index": 0,
+      "instruction": "vfncvtbf16.f.f.w v8, v2, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VFWCVTBF16_F_F_V-mask1/output/rv64_zVFWCVTBF16_F_F_V.json",
+      "index": 0,
+      "instruction": "vfwcvtbf16.f.f.v v8, v2, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/bf16-VFWCVTBF16_F_F_V-mask2/output/rv64_zVFWCVTBF16_F_F_V.json",
+      "index": 0,
+      "instruction": "vfwcvtbf16.f.f.v v8, v2, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 0,
+      "instruction": "fleq.d x0, f0, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 1,
+      "instruction": "fleq.d x1, f0, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 2,
+      "instruction": "fleq.d x1, f20, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 3,
+      "instruction": "fleq.d x1, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 4,
+      "instruction": "fleq.d x0, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 5,
+      "instruction": "fleq.d x0, f22, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 6,
+      "instruction": "fleq.d x1, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-qNaN/output/rv64_zFLEQ_D.json",
+      "index": 7,
+      "instruction": "fleq.d x0, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 0,
+      "instruction": "fleq.d x0, f0, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 1,
+      "instruction": "fleq.d x1, f0, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 2,
+      "instruction": "fleq.d x1, f20, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 3,
+      "instruction": "fleq.d x1, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 4,
+      "instruction": "fleq.d x0, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 5,
+      "instruction": "fleq.d x0, f22, f23",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 6,
+      "instruction": "fleq.d x1, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-D-sNaN/output/rv64_zFLEQ_D.json",
+      "index": 7,
+      "instruction": "fleq.d x0, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 0,
+      "instruction": "fleq.h x0, f0, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 1,
+      "instruction": "fleq.h x1, f0, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 2,
+      "instruction": "fleq.h x1, f21, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 3,
+      "instruction": "fleq.h x1, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 4,
+      "instruction": "fleq.h x0, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 5,
+      "instruction": "fleq.h x0, f22, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 6,
+      "instruction": "fleq.h x1, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-qNaN/output/rv64_zFLEQ_H.json",
+      "index": 7,
+      "instruction": "fleq.h x0, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 0,
+      "instruction": "fleq.h x0, f0, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 1,
+      "instruction": "fleq.h x1, f0, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 2,
+      "instruction": "fleq.h x1, f20, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 3,
+      "instruction": "fleq.h x1, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 4,
+      "instruction": "fleq.h x0, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 5,
+      "instruction": "fleq.h x0, f22, f29",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 6,
+      "instruction": "fleq.h x1, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-H-sNaN/output/rv64_zFLEQ_H.json",
+      "index": 7,
+      "instruction": "fleq.h x0, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 0,
+      "instruction": "fleq.s x0, f0, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 1,
+      "instruction": "fleq.s x1, f0, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 2,
+      "instruction": "fleq.s x1, f20, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 3,
+      "instruction": "fleq.s x1, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 4,
+      "instruction": "fleq.s x0, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 5,
+      "instruction": "fleq.s x0, f23, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 6,
+      "instruction": "fleq.s x1, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/output/rv64_zFLEQ_S.json",
+      "index": 7,
+      "instruction": "fleq.s x0, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 0,
+      "instruction": "fleq.s x0, f0, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 1,
+      "instruction": "fleq.s x1, f0, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 2,
+      "instruction": "fleq.s x1, f20, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 3,
+      "instruction": "fleq.s x1, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 4,
+      "instruction": "fleq.s x0, f0, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 5,
+      "instruction": "fleq.s x0, f22, f27",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 6,
+      "instruction": "fleq.s x1, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/fleq-S-sNaN/output/rv64_zFLEQ_S.json",
+      "index": 7,
+      "instruction": "fleq.s x0, f16, f0",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-FVFMTYPE-mask1/output/rv64_zFVFMTYPE.json",
+      "index": 0,
+      "instruction": "vmfeq.vf v8, v2, f4, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-FVFMTYPE-mask2/output/rv64_zFVFMTYPE.json",
+      "index": 0,
+      "instruction": "vmfeq.vf v8, v2, f4, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-FVVMTYPE-mask1/output/rv64_zFVVMTYPE.json",
+      "index": 0,
+      "instruction": "vmfeq.vv v8, v2, v4, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-FVVMTYPE-mask2/output/rv64_zFVVMTYPE.json",
+      "index": 0,
+      "instruction": "vmfeq.vv v8, v2, v4, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-RFWVVTYPE-mask1/output/rv64_zRFWVVTYPE.json",
+      "index": 0,
+      "instruction": "vfwredosum.vs v8, v2, v4, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-RFWVVTYPE-mask2/output/rv64_zRFWVVTYPE.json",
+      "index": 0,
+      "instruction": "vfwredosum.vs v8, v2, v4, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-VFUNARY0-mask1/output/rv64_zVFUNARY0.json",
+      "index": 0,
+      "instruction": "vfcvt.x.f.v v8, v2, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/gate-VFUNARY0-mask2/output/rv64_zVFUNARY0.json",
+      "index": 0,
+      "instruction": "vfcvt.x.f.v v8, v2, v0.t",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 0,
+      "instruction": "fcvt.s.d f0, f0, rne",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 3,
+      "instruction": "fcvt.d.s f0, f0, rdn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 5,
+      "instruction": "fcvt.s.d f0, f0, rmm",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 6,
+      "instruction": "fcvt.d.s f0, f0, dyn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 7,
+      "instruction": "fcvt.s.d f0, f0, rdn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 10,
+      "instruction": "fcvt.d.s f0, f0, rup",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 12,
+      "instruction": "fcvt.s.d f0, f0, dyn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 15,
+      "instruction": "fcvt.s.d f0, f0, rup",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 16,
+      "instruction": "fcvt.d.s f0, f0, rne",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 17,
+      "instruction": "fcvt.s.d f0, f0, rtz",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 20,
+      "instruction": "fcvt.d.s f0, f0, rmm",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-D/output/rv64_zF_UN_RM_FF_TYPE_D.json",
+      "index": 21,
+      "instruction": "fcvt.d.s f0, f0, rtz",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 0,
+      "instruction": "fcvt.h.s f0, f0, rne",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 3,
+      "instruction": "fcvt.d.h f0, f0, rne",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 4,
+      "instruction": "fcvt.d.h f0, f0, rdn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 6,
+      "instruction": "fcvt.h.s f0, f0, rmm",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 7,
+      "instruction": "fcvt.h.s f0, f0, rdn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 8,
+      "instruction": "fcvt.s.h f0, f0, rtz",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 10,
+      "instruction": "fcvt.s.h f0, f0, rdn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 11,
+      "instruction": "fcvt.d.h f0, f0, rmm",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 12,
+      "instruction": "fcvt.d.h f0, f0, rtz",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 13,
+      "instruction": "fcvt.h.d f0, f0, dyn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 15,
+      "instruction": "fcvt.d.h f0, f0, dyn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 16,
+      "instruction": "fcvt.h.d f0, f0, rup",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 18,
+      "instruction": "fcvt.d.h f0, f0, rup",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 19,
+      "instruction": "fcvt.h.s f0, f0, dyn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 22,
+      "instruction": "fcvt.h.s f0, f0, rup",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 23,
+      "instruction": "fcvt.s.h f0, f0, dyn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 24,
+      "instruction": "fcvt.h.s f0, f0, rtz",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 26,
+      "instruction": "fcvt.s.h f0, f0, rup",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 27,
+      "instruction": "fcvt.s.h f0, f0, rne",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 29,
+      "instruction": "fcvt.h.d f0, f0, rmm",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 30,
+      "instruction": "fcvt.h.d f0, f0, rtz",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 31,
+      "instruction": "fcvt.h.d f0, f0, rdn",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 32,
+      "instruction": "fcvt.h.d f0, f0, rne",
+      "ret_val": "Retire_Success(())"
+    },
+    {
+      "file": "agents/special_control_restore_20261102/validation/runs/sqrt-H/output/rv64_zF_UN_RM_FF_TYPE_H.json",
+      "index": 34,
+      "instruction": "fcvt.s.h f0, f0, rmm",
+      "ret_val": "Retire_Success(())"
+    }
+  ]
+}

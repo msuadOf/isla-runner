@@ -1,0 +1,326 @@
+{
+  "flags-arithmetic": {
+    "a_path_events": {
+      "aux_initial_task": 1068,
+      "aux_run_begin": 1312,
+      "aux_run_return finished": 896,
+      "aux_task_done": 1312,
+      "run_begin": 172,
+      "initial_task": 1,
+      "fork_child": 171,
+      "run_return finished": 172,
+      "aux_fork_child": 244,
+      "aux_run_return error": 416,
+      "task_done": 172
+    },
+    "a_returns": {
+      "Retire_Success(())": 160,
+      "Illegal_Instruction(())": 12
+    },
+    "a_summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zF_BIN_RM_TYPE_S"
+    },
+    "changed_functions_raw": [
+      "zaccrue_fflags"
+    ],
+    "changed_functions_after_parameter_renaming": [
+      "zaccrue_fflags"
+    ],
+    "strategy_comparison": [
+      {
+        "round": "0",
+        "position": "0",
+        "tactic": "qffp",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "23.212334081",
+        "reason": ""
+      },
+      {
+        "round": "0",
+        "position": "1",
+        "tactic": "default",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "29.029313113",
+        "reason": ""
+      },
+      {
+        "round": "0",
+        "position": "2",
+        "tactic": "smt",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "262.629274039",
+        "reason": ""
+      },
+      {
+        "round": "1",
+        "position": "0",
+        "tactic": "smt",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "121.391333076",
+        "reason": ""
+      },
+      {
+        "round": "1",
+        "position": "1",
+        "tactic": "qffp",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "56.491491503",
+        "reason": ""
+      },
+      {
+        "round": "1",
+        "position": "2",
+        "tactic": "default",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "34.879896956",
+        "reason": ""
+      },
+      {
+        "round": "2",
+        "position": "0",
+        "tactic": "default",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "42.196906138",
+        "reason": ""
+      },
+      {
+        "round": "2",
+        "position": "1",
+        "tactic": "smt",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "121.984583433",
+        "reason": ""
+      },
+      {
+        "round": "2",
+        "position": "2",
+        "tactic": "qffp",
+        "assertions": "14",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "36.191797331",
+        "reason": ""
+      },
+      {
+        "round": "original",
+        "position": "0",
+        "tactic": "qffp-incremental",
+        "assertions": "0",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "0",
+        "reason": ""
+      }
+    ],
+    "a_log_sha256": "4997b9ffa26f6cbda43898600522755a7c10b20e08bbf63a79c5315368fce80e"
+  },
+  "sat": {
+    "a_path_events": {
+      "aux_initial_task": 347,
+      "aux_run_begin": 378,
+      "aux_run_return finished": 326,
+      "aux_task_done": 378,
+      "initial_task": 1,
+      "run_begin": 13,
+      "fork_child": 12,
+      "run_return finished": 13,
+      "aux_fork_child": 31,
+      "aux_run_return error": 52,
+      "task_done": 13
+    },
+    "a_returns": {
+      "Illegal_Instruction(())": 1,
+      "Retire_Success(())": 12
+    },
+    "a_summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zVFUNARY0"
+    },
+    "changed_functions_raw": [
+      "zriscv_f16ToI16_pure",
+      "zvmvr_layout_forwards",
+      "zvext_layout_forwards",
+      "zread_seed_csr",
+      "zwrite_seed_csr",
+      "zundefined_HpmEvent",
+      "zundefined_Srmcfg",
+      "zis_CSR_accessible",
+      "zwrite_CSR",
+      "zext_pre_step_hook",
+      "zext_post_step_hook",
+      "zext_reset",
+      "zrvfi_fetch",
+      "zfetch",
+      "zloop",
+      "zcheck_privs",
+      "zcheck_mmu_config",
+      "zcheck_vlen_elen",
+      "zcheck_vext_config",
+      "zcheck_mem_layout",
+      "zcheck_pmp",
+      "zcheck_misc_extension_dependencies",
+      "zcheck_extension_param_constraints",
+      "zcheck_stateen_config",
+      "zconfig_is_valid",
+      "zreset",
+      "ztest_mstatus_sxl_uxl_reset_values",
+      "zmain",
+      "zinitializze_registers"
+    ],
+    "changed_functions_after_parameter_renaming": [
+      "zriscv_f16ToI16_pure"
+    ],
+    "strategy_comparison": [
+      {
+        "round": "probe",
+        "position": "0",
+        "tactic": "is-qffp-after-simplify",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "0",
+        "reason": ""
+      },
+      {
+        "round": "0",
+        "position": "0",
+        "tactic": "qffp",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "2.791629440",
+        "reason": ""
+      },
+      {
+        "round": "0",
+        "position": "1",
+        "tactic": "default",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "1.456206271",
+        "reason": ""
+      },
+      {
+        "round": "0",
+        "position": "2",
+        "tactic": "smt",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "26.131769477",
+        "reason": ""
+      },
+      {
+        "round": "1",
+        "position": "0",
+        "tactic": "smt",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "19.557994222",
+        "reason": ""
+      },
+      {
+        "round": "1",
+        "position": "1",
+        "tactic": "qffp",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "2.779933459",
+        "reason": ""
+      },
+      {
+        "round": "1",
+        "position": "2",
+        "tactic": "default",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "3.052842130",
+        "reason": ""
+      },
+      {
+        "round": "2",
+        "position": "0",
+        "tactic": "default",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "2.648947277",
+        "reason": ""
+      },
+      {
+        "round": "2",
+        "position": "1",
+        "tactic": "smt",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "26.971305169",
+        "reason": ""
+      },
+      {
+        "round": "2",
+        "position": "2",
+        "tactic": "qffp",
+        "assertions": "52",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "2.934760065",
+        "reason": ""
+      },
+      {
+        "round": "original",
+        "position": "0",
+        "tactic": "qffp-incremental",
+        "assertions": "0",
+        "assumptions": "1",
+        "result": "1",
+        "seconds": "0",
+        "reason": ""
+      }
+    ],
+    "a_log_sha256": "22b4156e9c6ca8710ffabf9eab571796eccbbec37dcf1b027b6da28e7313bc2c"
+  }
+}

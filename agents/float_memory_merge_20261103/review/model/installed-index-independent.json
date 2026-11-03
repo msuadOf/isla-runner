@@ -1,0 +1,12 @@
+{
+  "model_commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+  "staged_paths": {
+    "rv64d.ir": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+    "ir/rv64d_v128_e64.ir": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+    "rv32d.ir": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66",
+    "ir/rv64d_v256_e64.ir": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9",
+    "ir/rv64d_v512_e64.ir": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1",
+    "ir/provenance/manifest.json": "8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b"
+  },
+  "status": "PASS 五IR与manifest索引身份"
+}

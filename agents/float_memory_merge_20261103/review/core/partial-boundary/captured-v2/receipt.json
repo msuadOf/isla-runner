@@ -1,0 +1,35 @@
+{
+  "source": ".worktree/fm-store-probe-20261104",
+  "files": {
+    "run-p3-v2/p3-poison.json": {
+      "bytes": 25914,
+      "sha256": "2a4d4b044fb9133586ccb92cbc52f1f9c22c85b65f4bc438b16113f95524295f"
+    },
+    "run-p3-v2/run.log": {
+      "bytes": 2830,
+      "sha256": "24d8f2bc25976281f6253f5dcae5c4a4d4c4b11b89219f3da9b28be8a4043f67"
+    },
+    "run-p3-v2/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "816c83d0ac08a94e91547a30df27dbbe88c7643cfa3c99d33120fd361173759a"
+    },
+    "run-main-v2/main-poison.json": {
+      "bytes": 5238,
+      "sha256": "1f1ca9f7a06b2e5cdddbf0fe43c9213cf5365dcd2943334dedbd62078ca258c9"
+    },
+    "run-main-v2/run.log": {
+      "bytes": 3321,
+      "sha256": "e3f2e17879b31ba7965a5e199f02c081ef8593ccb0eec9ed9638a429631b1a84"
+    },
+    "run-main-v2/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c"
+    }
+  },
+  "register_accounting": {
+    "total": 183,
+    "uninitialized": 38,
+    "full_prestate": 102
+  },
+  "scope": "只保存实际捕获；新旧完整同输入动态复放尚待完成。"
+}

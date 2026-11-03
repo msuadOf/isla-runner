@@ -1,0 +1,6 @@
+workload,query,captured_ast_sha256,solver_kind,tactic,assertions,assumptions,z3_lbool,seconds,process_relation
+flags-arithmetic,685,3e4d53372dc7add4e561265881ed46649111f44bb0a23f1af629af570ad72aa4,fresh,qffp,19,1,1,8.668855233,independent process per tactic
+flags-arithmetic,685,3e4d53372dc7add4e561265881ed46649111f44bb0a23f1af629af570ad72aa4,fresh,default,19,1,1,8.405530943,independent process per tactic
+flags-arithmetic,685,3e4d53372dc7add4e561265881ed46649111f44bb0a23f1af629af570ad72aa4,fresh,smt,19,1,1,18.548628653,independent process per tactic
+flags-arithmetic,685,3e4d53372dc7add4e561265881ed46649111f44bb0a23f1af629af570ad72aa4,fresh,qffp,19,1,1,7.475243328,same process as paired incremental-original
+flags-arithmetic,685,3e4d53372dc7add4e561265881ed46649111f44bb0a23f1af629af570ad72aa4,incremental-original,qffp,19,1,1,7.243219472,same process as paired fresh

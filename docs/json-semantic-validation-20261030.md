@@ -2,7 +2,10 @@
 
 本记录只覆盖本次固定版本的定向验收，不宣称Sail源码控制流全覆盖。
 
-本分支：memory；Isla `bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57`；Sail-RISC-V `c70482a73be2a67c5a89d88b1e6c2bbea224940c`。IR及工具哈希见`isla/ir/provenance/manifest.json`。
+以下为 2026-10-30 两个独立分支的历史定向结果；合流候选须另行复验。下列 IR 及工具哈希应从各自历史提交读取，当前合流候选的 manifest 不代表这些旧版本。
+
+- 历史 memory：Isla `bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57`；Sail-RISC-V `c70482a73be2a67c5a89d88b1e6c2bbea224940c`。IR及工具哈希见`isla/ir/provenance/manifest.json`。
+- 历史 float：Isla `8fae36a90e77ec51a2ef165c79d60b3377ce18b2`；Sail-RISC-V `afff3822cdaca206b325a39dfe114e28d5c63bf6`。IR及工具哈希见`isla/ir/provenance/manifest.json`。
 
 - float：`cargo test --release -p isla --lib isarch::` 95项通过；五份IR的`test/float_ir/run.py`全部22步通过，helper合计1615例、状态180例、guard20例。helper数量不是源码分支覆盖率。
 - memory：同组isarch测试149项通过，含30项数组内存测试；执行限制测试42项通过。部分符号化和错误策略保持原抽象。

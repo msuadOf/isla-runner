@@ -1,0 +1,89 @@
+{
+  "source_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "source_sha256": "2c6042a67c1798e746178725ab42a3cf2ff9c1df5b4552a18bcb1e1757ec3564",
+  "z3_version": "Z3 version 5.3.4 - 64 bit - build hashcode 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b",
+  "scope": "All 2^32 candidate sig32 values and all 2^5 incoming flag values per adapter. Upstream FP-to-I32/Ui32 behavior is outside this proof.",
+  "rows": [
+    {
+      "name": "f16ToI16",
+      "width": 16,
+      "signed": true,
+      "checks": {
+        "old_vs_new": "unsat",
+        "new_vs_ordinary": "unsat",
+        "positive_overflow": "sat",
+        "negative_overflow": "sat",
+        "positive_boundary": "sat",
+        "negative_boundary": "sat"
+      },
+      "smt2_sha256": "2a42930c4d5867b621e052c66b49796e185b5bc53db24b69b9ce5830bac7b279"
+    },
+    {
+      "name": "f16ToI8",
+      "width": 8,
+      "signed": true,
+      "checks": {
+        "old_vs_new": "unsat",
+        "new_vs_ordinary": "unsat",
+        "positive_overflow": "sat",
+        "negative_overflow": "sat",
+        "positive_boundary": "sat",
+        "negative_boundary": "sat"
+      },
+      "smt2_sha256": "25b3381054038ab8912e9f81a544d353481c4d9e9fe8e8018b13ad4c53d171b0"
+    },
+    {
+      "name": "f32ToI16",
+      "width": 16,
+      "signed": true,
+      "checks": {
+        "old_vs_new": "unsat",
+        "new_vs_ordinary": "unsat",
+        "positive_overflow": "sat",
+        "negative_overflow": "sat",
+        "positive_boundary": "sat",
+        "negative_boundary": "sat"
+      },
+      "smt2_sha256": "2a42930c4d5867b621e052c66b49796e185b5bc53db24b69b9ce5830bac7b279"
+    },
+    {
+      "name": "f16ToUi16",
+      "width": 16,
+      "signed": false,
+      "checks": {
+        "old_vs_new": "unsat",
+        "new_vs_ordinary": "unsat",
+        "positive_overflow": "sat",
+        "upper_boundary": "sat",
+        "zero": "sat"
+      },
+      "smt2_sha256": "0156bee3edd1db07193ce18f288d09fb418200e43cf7b0277f8df1883a5a523f"
+    },
+    {
+      "name": "f16ToUi8",
+      "width": 8,
+      "signed": false,
+      "checks": {
+        "old_vs_new": "unsat",
+        "new_vs_ordinary": "unsat",
+        "positive_overflow": "sat",
+        "upper_boundary": "sat",
+        "zero": "sat"
+      },
+      "smt2_sha256": "d383165b697f62e0b106c069613bc23d8fb5072d9ae323025c1d6ceb82dd18aa"
+    },
+    {
+      "name": "f32ToUi16",
+      "width": 16,
+      "signed": false,
+      "checks": {
+        "old_vs_new": "unsat",
+        "new_vs_ordinary": "unsat",
+        "positive_overflow": "sat",
+        "upper_boundary": "sat",
+        "zero": "sat"
+      },
+      "smt2_sha256": "0156bee3edd1db07193ce18f288d09fb418200e43cf7b0277f8df1883a5a523f"
+    }
+  ]
+}

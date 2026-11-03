@@ -1,0 +1,12 @@
+{
+  "scope": "Authorized two full-domain entry harness preparation; no actual Clause PASS inferred",
+  "harness_sha256": "74a642d9c1223aef1ac287a2451fc54d4f00787ed4779a6f5a2643f27a7bda8e",
+  "inverse_to_old_77_harness_sha256": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1",
+  "inputs_sha256": "0a29115104b44f25924ddb37961b4dfd5967a42a8035bf9b33ac56cdecb7ae18",
+  "changes": "Script depth and exactly two authorized jobs only; all original domain/solver/budget/trace verification retained",
+  "dryrun_jobs": [
+    "FLEQ_S",
+    "C_ADDI4SPN"
+  ],
+  "pass": true
+}

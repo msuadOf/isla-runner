@@ -1,0 +1,52 @@
+{
+  "zfp_min_pure": {
+    "baseline": 2,
+    "candidate": 8,
+    "increased": true
+  },
+  "zfp_max_pure": {
+    "baseline": 2,
+    "candidate": 8,
+    "increased": true
+  },
+  "zfp_minm_pure": {
+    "baseline": 0,
+    "candidate": 1,
+    "increased": true
+  },
+  "zfp_maxm_pure": {
+    "baseline": 0,
+    "candidate": 1,
+    "increased": true
+  },
+  "zriscv_f32_symbolic_bits": {
+    "baseline": 0,
+    "candidate": 1,
+    "increased": true
+  },
+  "zvalid_fp_op": {
+    "baseline": 0,
+    "candidate": 3,
+    "increased": true
+  },
+  "zillegal_fp_normal": {
+    "baseline": 0,
+    "candidate": 3,
+    "increased": true
+  },
+  "zillegal_fp_reduction": {
+    "baseline": 0,
+    "candidate": 3,
+    "increased": true
+  },
+  "zfp_class_onehot_pure": {
+    "baseline": 8,
+    "candidate": 17,
+    "increased": true
+  },
+  "zexecute": {
+    "baseline": 2081,
+    "candidate": 2083,
+    "increased": true
+  }
+}

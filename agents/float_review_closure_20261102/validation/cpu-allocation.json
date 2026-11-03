@@ -1,0 +1,30 @@
+{
+  "scope": "本轮任务内部互斥，不能保证外部任务不迁入；不修改其他人的affinity",
+  "generation": [
+    31,
+    60
+  ],
+  "full_clause_pool": [
+    35,
+    38,
+    49,
+    54
+  ],
+  "full_clause_initial_parallel": 2,
+  "exceptions": [
+    17,
+    29
+  ],
+  "conversions": [
+    7,
+    9
+  ],
+  "flags": [
+    15
+  ],
+  "representations_make": [
+    36
+  ],
+  "smt_siblings_offset": 64,
+  "rule": "owner运行前记录负载；如CPU不可用，先向主agent申请重新分配，勿与本表其他owner抢核；这不是性能隔离承诺"
+}

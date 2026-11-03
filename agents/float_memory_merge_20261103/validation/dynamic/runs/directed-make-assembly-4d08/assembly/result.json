@@ -1,0 +1,96 @@
+{
+  "scope": "GCC/Clang mnemonic, .insn, .byte for new mixed JSON",
+  "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+  "runner_sha256": "ba3c1726cf1548faf9c00b0d060f634d7d2aa611b11a8263083bd16225284e0e",
+  "toolchains": {
+    "gcc": {
+      "binary": "/usr/bin/riscv64-unknown-elf-gcc",
+      "sha256": "4310e64944572c23d75e4d49e828eeb073894a9ad8746bac30636085c32cd126",
+      "arguments": [
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d"
+      ]
+    },
+    "clang": {
+      "binary": "linuxbrew-home:/.linuxbrew/Cellar/llvm/22.1.8/bin/clang-22",
+      "sha256": "ab50a44e219c787b1a6ba0b8e07172080a4b3619c3f619b801ef058a7bdfad2a",
+      "arguments": [
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "case": "C_LD",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "source_sha256": "3428c0cd991cd8d47d87db357a5e2b87f817877d341dd7493cd3fb3287f5424a",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+        "sha256": "3428c0cd991cd8d47d87db357a5e2b87f817877d341dd7493cd3fb3287f5424a",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "FLEQ_S",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "source_sha256": "9cb484f46eaa869f5c7c1fb3863902fc34b2365fb72bff57db4acba8ca8689ff",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+        "sha256": "9cb484f46eaa869f5c7c1fb3863902fc34b2365fb72bff57db4acba8ca8689ff",
+        "gen": 24,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 144,
+      "pass": true
+    },
+    {
+      "case": "LOAD_FP",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/LOAD_FP/output/rv64_zLOAD_FP.json",
+      "source_sha256": "7073f9b2346c104a7d45b5cc210fb1cd896b5ee4d20c96cb3bf19ca97280e140",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/LOAD_FP/output/rv64_zLOAD_FP.json",
+        "sha256": "7073f9b2346c104a7d45b5cc210fb1cd896b5ee4d20c96cb3bf19ca97280e140",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "STORE",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "source_sha256": "3a5939e283a8c9cf753d8c097c5b45bc3236d4b0f91b02e0444b32667298a83e",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/directed-make-4d08/make/STORE/output/rv64_zSTORE.json",
+        "sha256": "3a5939e283a8c9cf753d8c097c5b45bc3236d4b0f91b02e0444b32667298a83e",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

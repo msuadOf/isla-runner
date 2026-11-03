@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py", line 43, in <module>
+    main()
+    ~~~~^^
+  File "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_explicit_semantic_branches.py", line 34, in main
+    assert count >= minimum, f'{path}: {name}仅有{count}个Jump，预期至少{minimum}'
+           ^^^^^^^^^^^^^^^^
+AssertionError: isla/rv64d.ir: zfp_min_pure仅有2个Jump，预期至少8

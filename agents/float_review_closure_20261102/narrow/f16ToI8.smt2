@@ -1,0 +1,37 @@
+(set-logic QF_BV)
+(declare-fun sig32 () (_ BitVec 32))
+(declare-fun flags () (_ BitVec 5))
+(define-fun neg () Bool (= ((_ extract 31 31) sig32) #b1))
+(define-fun ov () Bool (not (= sig32 ((_ sign_extend 24) ((_ extract 7 0) sig32)))))
+(define-fun above () Bool (bvsgt sig32 (_ bv127 32)))
+(define-fun below () Bool (bvslt sig32 (_ bv4294967168 32)))
+; old_vs_new
+(push 1)
+(assert (not (= (concat (ite ov (_ bv16 5) flags) (ite ov (ite neg (_ bv128 8) (_ bv127 8)) ((_ extract 7 0) sig32))) (ite ov (concat (_ bv16 5) (ite neg (_ bv128 8) (_ bv127 8))) (concat flags ((_ extract 7 0) sig32))))))
+(check-sat)
+(pop 1)
+; new_vs_ordinary
+(push 1)
+(assert (not (= (ite ov (concat (_ bv16 5) (ite neg (_ bv128 8) (_ bv127 8))) (concat flags ((_ extract 7 0) sig32))) (concat (ite (or above below) (_ bv16 5) flags) (ite above (_ bv127 8) (ite below (_ bv128 8) ((_ extract 7 0) sig32)))))))
+(check-sat)
+(pop 1)
+; positive_overflow
+(push 1)
+(assert (and ov (not neg) (= sig32 (_ bv128 32))))
+(check-sat)
+(pop 1)
+; negative_overflow
+(push 1)
+(assert (and ov neg (= sig32 (_ bv4294967167 32))))
+(check-sat)
+(pop 1)
+; positive_boundary
+(push 1)
+(assert (and (not ov) (= sig32 (_ bv127 32))))
+(check-sat)
+(pop 1)
+; negative_boundary
+(push 1)
+(assert (and (not ov) (= sig32 (_ bv4294967168 32))))
+(check-sat)
+(pop 1)

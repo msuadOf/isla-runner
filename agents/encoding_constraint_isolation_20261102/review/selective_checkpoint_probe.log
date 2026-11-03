@@ -1,0 +1,1 @@
+PASS: 嵌套Struct/Vector、MixedBits字段、SymbolicCtor tag、枚举、两级定义、派生状态输入、ground App、原事件/表达式不变、完整约束恢复

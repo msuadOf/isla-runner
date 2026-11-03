@@ -1,0 +1,6 @@
+{
+  "scope": "Exact rational independent expected-value check only; new IR not executed",
+  "input_sha256": "e546a84067ace4b2ff0db4fe7794cdd35ec6e414360330bae7cf4f5308082836",
+  "rows": 819,
+  "failures": []
+}

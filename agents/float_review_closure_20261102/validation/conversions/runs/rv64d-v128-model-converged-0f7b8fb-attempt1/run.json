@@ -1,0 +1,156 @@
+{
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "model_tree": ".worktree/sail-riscv-float-converged-20261103",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "model_source": {
+    "manifest_sha256": "dbf02e10b453483a9e53cd267db06544982847eeb9608af498162d59fc75689d",
+    "commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+    "verified_files": 166
+  },
+  "isla_source": {
+    "manifest_sha256": "8aba2ee239e602d615e970bf03b45490947fe4ef7e0912c149bf2b20c2c80c00",
+    "commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+    "verified_files": 1021
+  },
+  "generation_driver_sha256": "338c3634431700aab38fadfe463b509fc213149feb5a7981e1e874fbb88ef73d",
+  "runner_build_manifest_sha256": "a704dce1077f475e6ccbd9bf7e85b98b5a3612a6392fe7e6480d522e7ca09242",
+  "inputs": {
+    "ir": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786"
+    },
+    "config": {
+      "path": "agents/float_support_review/tools/e_nonmem/inputs/rv64-e.toml",
+      "sha256": "8247c8d467489111656f6953660670e96097a029fea458b660fe42579f86f987"
+    },
+    "helper_bin": {
+      "path": "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-helpers",
+      "sha256": "669c727ec92a61a5bd97d4f9b84f646f7c642f81ac579fffc2344fd3902afcf5"
+    },
+    "instruction_bin": {
+      "path": "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-instructions",
+      "sha256": "9e1bc98f358d926abf8ac320521746840dd8370d13a113270ac26ca1d986716a"
+    }
+  },
+  "tactic": "Qfaufbv (fixed in both imported direct runners)",
+  "scope": "direct helper and zexecute/decode runner; not isarch solve-state JSON or full Clause",
+  "seed_preload": {
+    "path": "agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+  },
+  "fixture_manifest_sha256": "28b616a4bcd045770fca166612c11c16a594212160d20283866762b6e43e1b62",
+  "source_sha256": {
+    "prepare.py": "e33c1ba937eea3d6de480ef3c1a66f9595248594459c261601974eee6874c7b8",
+    "check_fixture.py": "25912a6f0272b8e4234b7c6f7133602adb5e2c64139e77739b5956ed0aa33468",
+    "run.py": "1a7e5ed98e27a6b37f92b03f80a6d29187a6417ba2d7f726883f34cb6d805e08",
+    "helper_runner/Cargo.toml": "ef13e17edcc18780a704a8aee2c313f2a07f90f54be4886f973ab2e9af3765f0",
+    "helper_runner/src/main.rs": "0b85a0a53e656474c2e5a3d101a55424f5afb31fdc2104b6e11dc555b7c449ca",
+    "instruction_runner/Cargo.toml": "29fe81622e0ecf54866870703e71e300de922b6273368279efda215f9be58701",
+    "instruction_runner/src/main.rs": "1f721ab350f6024fcf4c7c50815f2434dc400d159fc962edfcefaa4c41bbb935"
+  },
+  "imported_runner_source_sha256": {
+    "helper": "35346316349fda13b6f2527f90f4218ca64b3a03beec8eaae5ce9ad94926840d",
+    "instruction": "c09e84a2390fc9b9788667b8d453948a519f09d191c7e640a0842cf695092ac0"
+  },
+  "stages": [
+    {
+      "label": "fixture-check",
+      "command": [
+        "python3",
+        "agents/float_review_closure_20261102/validation/conversions/frozen-inputs-converged-20261103/check_fixture.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "9a427af83d60ab2db2ca9f3bcaaa2a70fd6e33561d2d35bb037b94e608616cc6"
+    },
+    {
+      "label": "wrap",
+      "command": [
+        "python3",
+        "isla/test/softfloat_legacy/wrap.py",
+        "--ir",
+        "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v128_e64/rv64d_v128_e64.ir",
+        "--cases",
+        "agents/float_review_closure_20261102/validation/conversions/frozen-inputs-converged-20261103/helpers.tsv",
+        "--output",
+        "agents/float_review_closure_20261102/validation/conversions/runs/rv64d-v128-model-converged-0f7b8fb-attempt1/wrapped.ir"
+      ],
+      "exit_code": 0,
+      "log_sha256": "169af2419f4995fa0e3ab4434dff857c8bbba6712c3a1cc931ef33931aacff9c"
+    },
+    {
+      "label": "helpers",
+      "command": [
+        "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-helpers",
+        "agents/float_review_closure_20261102/validation/conversions/runs/rv64d-v128-model-converged-0f7b8fb-attempt1/wrapped.ir",
+        "agents/float_review_closure_20261102/validation/conversions/frozen-inputs-converged-20261103/helpers.tsv"
+      ],
+      "exit_code": 0,
+      "log_sha256": "f0279e0098e2a89f77d9d14be67911b9a7267fdb7089faad93b3384944ce2fad",
+      "seed": 17,
+      "seed_intercepted": true,
+      "seed_log_sha256": "e5dba37dcdafcaaf20ca844cfa82bc0b14f40a93187776537ee0843ceb214f0d"
+    },
+    {
+      "label": "scalar",
+      "command": [
+        "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-instructions",
+        "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v128_e64/rv64d_v128_e64.ir",
+        "agents/float_support_review/tools/e_nonmem/inputs/rv64-e.toml",
+        "agents/float_review_closure_20261102/validation/conversions/frozen-inputs-converged-20261103/scalar-cases.json",
+        "agents/float_review_closure_20261102/validation/conversions/runs/rv64d-v128-model-converged-0f7b8fb-attempt1/scalar-results.json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "3dc3a6e84d693b77b63c4f829e0dae7179fa19bb6fa08711444304b608a6d96d",
+      "seed": 17,
+      "seed_intercepted": true,
+      "seed_log_sha256": "2efda5543b874f9e06341fb6503102dfc22481e759c06c3e699e1562e2a1c019"
+    },
+    {
+      "label": "vector",
+      "command": [
+        "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-instructions",
+        "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v128_e64/rv64d_v128_e64.ir",
+        "agents/float_support_review/tools/e_nonmem/inputs/rv64-e.toml",
+        "agents/float_review_closure_20261102/validation/conversions/frozen-inputs-converged-20261103/vector-cases.json",
+        "agents/float_review_closure_20261102/validation/conversions/runs/rv64d-v128-model-converged-0f7b8fb-attempt1/vector-results.json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "3dc3a6e84d693b77b63c4f829e0dae7179fa19bb6fa08711444304b608a6d96d",
+      "seed": 17,
+      "seed_intercepted": true,
+      "seed_log_sha256": "cc36c29a4b3dae169791c7f6de107b8272eb797e167a0fdde359b5f61d0fb598"
+    }
+  ],
+  "linked_z3": [
+    {
+      "binary": "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-helpers",
+      "linked_z3": "libz3.so.5.3.4.0",
+      "linked_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+      "ldd_sha256": "13ebccc4a18805d724616ee145e86dcb39d6c809b351590fbb8c38faffbab153"
+    },
+    {
+      "binary": "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-instructions",
+      "linked_z3": "libz3.so.5.3.4.0",
+      "linked_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+      "ldd_sha256": "db15bc1dd69f223cd83cf33f45b7b649de62f083dea9abc8ecc26d447c09a9c2"
+    }
+  ],
+  "wrapped_ir_sha256": "4f82ff8a2e14f8adb3428c7053432f11cc5e83c247c30daa57558c834637f03d",
+  "helpers": {
+    "expected_cases": 819,
+    "pass_lines": 819
+  },
+  "scalar": {
+    "cases": 282,
+    "sat": 282,
+    "difference_unsat": 282,
+    "results_sha256": "7f6078af2196d8d9a41d526eb0339177a48b652e575a0fafbca6d4acfc81642a"
+  },
+  "vector": {
+    "cases": 183,
+    "sat": 183,
+    "difference_unsat": 183,
+    "results_sha256": "e9e90b0bac48d5951dd7d8831fb5d230f641442d77ed150572820a568782b619"
+  },
+  "status": "PASS_DIRECTED_ONLY"
+}

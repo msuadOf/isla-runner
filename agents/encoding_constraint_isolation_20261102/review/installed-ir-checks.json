@@ -1,0 +1,12 @@
+{
+  "manifest_sha256": "250e24f316f792d30e3afd405ba06e7db82781f2feebdf10ce2995f4a0a873da",
+  "paths": {
+    "rv64d.ir": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+    "ir/rv64d_v128_e64.ir": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+    "rv32d.ir": "76c06fd44a738e05add3333acb1437f45db53047e2895fd9f256495317873943",
+    "ir/rv64d_v256_e64.ir": "a55fb2fb224bc06baed5d1f29808011d39c14a3e7cfe7fd7c5b4120363a517b2",
+    "ir/rv64d_v512_e64.ir": "d674159a1635834cf201b9064b424beacf44f0fd85e3266ecdfff185268c29e0"
+  },
+  "model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "sail_binary_verified": true
+}

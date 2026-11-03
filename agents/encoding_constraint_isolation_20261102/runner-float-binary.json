@@ -1,0 +1,8 @@
+{
+  "source": "isla/target/release/isarch",
+  "destination": ".worktree/runner-float/isla/target/release/isarch",
+  "previous_sha256": "36c01b03636d70b91c7c16c8e83859846b43f019dce4124dadce205cc19c13c2",
+  "new_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+  "method": "复制已验Release到临时文件，再原子替换目标；不改原硬链接的其他名称",
+  "version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613\n"
+}

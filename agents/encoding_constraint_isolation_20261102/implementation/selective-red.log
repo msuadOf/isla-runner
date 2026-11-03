@@ -1,0 +1,76 @@
+   Compiling isla-lib v0.2.0 (/data1/baiyifan/workplace/isla-runner/isla/isla-lib)
+warning: unnecessary parentheses around type
+   --> isla-lib/src/memory.rs:833:17
+    |
+833 |     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+    |                 ^                             ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+833 -     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+833 +     generator: &dyn Fn(&mut Solver<B>) -> Sym,
+    |
+
+warning: unused import: `OnceLock`
+    --> isla-lib/src/smt.rs:2758:26
+     |
+2758 |     use std::sync::{Arc, OnceLock};
+     |                          ^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+error[E0599]: no method named `with_instruction_assertions` found for struct `smt::Checkpoint<B>` in the current scope
+    --> isla-lib/src/smt.rs:3189:29
+     |
+ 201 | pub struct Checkpoint<B> {
+     | ------------------------ method `with_instruction_assertions` not found for this struct
+...
+3189 |         let isolated = full.with_instruction_assertions(&instruction);
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+help: there is a method `without_assertions` with a similar name, but with different arguments
+    --> isla-lib/src/smt.rs:219:5
+     |
+ 219 |     pub fn without_assertions(&self) -> Self {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: variable does not need to be mutable
+    --> isla-lib/src/config.rs:1481:13
+     |
+1481 |         let mut default_registers = get_default_registers(&config, symtab, type_info)?;
+     |             ----^^^^^^^^^^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `chars`
+   --> isla-lib/src/dprint.rs:467:13
+    |
+467 |         let chars: Vec<char> = s.chars().collect();
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_chars`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `member_part`
+   --> isla-lib/src/dprint.rs:686:21
+    |
+686 |                 let member_part = &s[double_colon_pos + 2..paren_pos];
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_member_part`
+
+warning: unused variable: `res`
+   --> isla-lib/src/dprint.rs:801:9
+    |
+801 |     let res = match instr {
+    |         ^^^ help: if this is intentional, prefix it with an underscore: `_res`
+
+warning: unused variable: `enum_size`
+   --> isla-lib/src/smt.rs:165:29
+    |
+165 |             .map(|&(member, enum_size, enum_name)| EnumMember { enum_id: EnumId::from_name(enum_name), member })
+    |                             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_enum_size`
+
+For more information about this error, try `rustc --explain E0599`.
+warning: `isla-lib` (lib test) generated 7 warnings
+error: could not compile `isla-lib` (lib test) due to 1 previous error; 7 warnings emitted

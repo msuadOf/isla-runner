@@ -1,0 +1,4 @@
+wall_s=56.66
+user_s=48.92
+sys_s=7.07
+maxrss_kb=268808

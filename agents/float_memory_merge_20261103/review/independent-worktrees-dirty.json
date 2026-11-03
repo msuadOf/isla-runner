@@ -1,0 +1,137 @@
+{
+  "worktrees": {
+    "float": {
+      "root": {
+        "head": "0665526d7e14a207eb9928e282e627584b5635fe",
+        "status": []
+      },
+      "/isla": {
+        "head": "591693df2bc32019ea300511509ed683df09522e",
+        "status": []
+      },
+      "/sail-riscv": {
+        "head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+        "status": []
+      },
+      "gitlinks": [
+        "160000 commit 591693df2bc32019ea300511509ed683df09522e\tisla",
+        "160000 commit 0f7b8fbc6724103f91f929ef6918f123df75d6c9\tsail-riscv"
+      ]
+    },
+    "memory": {
+      "root": {
+        "head": "31ef3b9a8aa3a9db4c03a1d99c191cadf1aadaef",
+        "status": [
+          " M isla"
+        ]
+      },
+      "/isla": {
+        "head": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+        "status": [
+          " M README.md",
+          " M scripts/run.mk"
+        ]
+      },
+      "/sail-riscv": {
+        "head": "c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+        "status": []
+      },
+      "gitlinks": [
+        "160000 commit bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57\tisla",
+        "160000 commit c70482a73be2a67c5a89d88b1e6c2bbea224940c\tsail-riscv"
+      ]
+    }
+  },
+  "dirty_files": {
+    "README.md": {
+      "dirty_sha256": "ac4003d412be230cc1efd2b853495b5ac7fce450924c26359a479a07a449225c",
+      "head_sha256": "597fc4ce6d48043eaa2527cc7e0c2b756abbd67db09e3d16356343d0816c1167",
+      "float_sha256": "cc4cc9c7c1617ceca756313a61833dc356451345fb3d64dfa7e0237ccae6d972",
+      "dirty_added_lines_in_float": [
+        {
+          "line": "### Make求解策略",
+          "exact_line_in_float": false
+        },
+        {
+          "line": "直接运行 `isarch` 不传 `--tastic` 时使用 `default`。",
+          "exact_line_in_float": false
+        },
+        {
+          "line": "`scripts/run.mk` 为 `ALL` 中各 Clause 指定具体策略：非访存浮点 Clause 用 `qffp`，其余（含浮点访存）用 `qfaufbv`。",
+          "exact_line_in_float": false
+        },
+        {
+          "line": "例如 `make solve-FLEQ_S` 传 `--tastic qffp`，`make solve-LOAD` 传 `--tastic qfaufbv`；可用 `TASTIC=smt` 临时覆盖。",
+          "exact_line_in_float": false
+        },
+        {
+          "line": "### 本工作区的官方 Z3 链接版本",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "`make build-isarch` 和 `make solve-*` 默认使用用户前缀",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "`~/.local/opt/z3-official-1fd1d3613` 中的官方 Z3，源码提交为",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "`1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b`。需先将该官方构建安装到此前缀，",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "或用 `make build-isarch Z3_PREFIX=/path/to/installed/z3` 指定实际安装位置。",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "Make 同时设置链接搜索路径和运行时 RPATH；直接检查 `target/release/isarch --version`",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "可确认实际加载版本。CLI 的默认策略和 Make 的各 Clause 策略保持独立。",
+          "exact_line_in_float": true
+        }
+      ]
+    },
+    "scripts/run.mk": {
+      "dirty_sha256": "683c2b49ffee648ab38a303e2f3db7b7e0b89ea08d3c6d670607d29e11fb318c",
+      "head_sha256": "d311cb606feee53667d5f3de092731a2ac0839e7748425c4a800a52329298bda",
+      "float_sha256": "cce7dc2526f443ec100a10b05da4c68e635574c54c91c561f9beeb1a10bd3752",
+      "dirty_added_lines_in_float": [
+        {
+          "line": "# 使用官方 Z3 提交 1fd1d3613；构建和运行时均链接该版本，可用 Z3_PREFIX 覆盖。",
+          "exact_line_in_float": false
+        },
+        {
+          "line": "Z3_PREFIX ?= $(HOME)/.local/opt/z3-official-1fd1d3613",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "Z3_RUSTFLAGS = -L native=$(Z3_PREFIX)/lib -C link-arg=-Wl,-rpath,$(Z3_PREFIX)/lib",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "# 命令行不传 --tastic 时由 Isla 使用 default；make 为已有 Clause 写明具体策略。",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "# 浮点计算使用 qffp；其余（含浮点访存）保留 qfaufbv。命令行 TASTIC=... 可覆盖。",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "$(addprefix solve-,$(ALL)): TASTIC = qfaufbv",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "$(addprefix solve-,$(filter-out $(MEMORY),$(FD_FLOAT))): TASTIC = qffp",
+          "exact_line_in_float": true
+        },
+        {
+          "line": "\tRUSTFLAGS=\"$(RUSTFLAGS) $(Z3_RUSTFLAGS)\" cargo build --release --bin isarch $(CARGO_ITRACE_FEATURE) $(CARGO_SMT_FEATURE)",
+          "exact_line_in_float": false
+        }
+      ]
+    }
+  }
+}

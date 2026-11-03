@@ -1,0 +1,182 @@
+No primop parse_hex_bits (Name { id: 2552 })
+No primop emulator_write_tag (Name { id: 2965 })
+No primop emulator_read_tag (Name { id: 2964 })
+No primop valid_reservation (Name { id: 4459 })
+PATH_ACCOUNT 535896.380960392 initial_task
+PATH_ACCOUNT 535896.381294844 run_begin
+PATH_ACCOUNT 535897.011804752 fork_child
+PATH_ACCOUNT 535897.638902645 fork_child
+PATH_ACCOUNT 535897.957733803 fork_child
+PATH_ACCOUNT 535898.570419213 fork_child
+PATH_ACCOUNT 535899.193520370 fork_child
+PATH_ACCOUNT 535899.830541475 fork_child
+PATH_ACCOUNT 535900.543572115 fork_child
+PATH_ACCOUNT 535901.189373265 fork_child
+PATH_ACCOUNT 535901.744889241 fork_child
+PATH_ACCOUNT 535902.288927180 fork_child
+PATH_ACCOUNT 535902.731418638 fork_child
+PATH_ACCOUNT 535902.995718019 fork_child
+PATH_ACCOUNT 535903.271323758 fork_child
+PATH_ACCOUNT 536058.991470218 fork_child
+PATH_ACCOUNT 536059.023075697 run_return finished
+COLLECTOR_PHASE 536059.02 main_finished_begin
+COLLECTOR_PHASE 536059.02 main_initial_check_begin
+COLLECTOR_PHASE 536158.03 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=540 skipped_asserts=15
+COLLECTOR_PHASE 536158.15 control_fresh_context_1_begin
+COLLECTOR_PHASE 536158.89 control_fresh_context_1_end
+COLLECTOR_PHASE 536158.89 control_fresh_context_2_begin
+COLLECTOR_PHASE 536159.60 control_fresh_context_2_end
+COLLECTOR_PHASE 536159.60 control_fresh_context_3_begin
+COLLECTOR_PHASE 536160.32 control_fresh_context_3_end
+COLLECTOR_PHASE 536160.32 control_original_checkpoint_begin
+COLLECTOR_PHASE 536615.28 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 421490771, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "5|zRM_DYN" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 30, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 17, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 })})) original=["Bits(B129 { tag: false, bits: 421490771, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 421490771, len: 32 })"] equal=true
+COLLECTOR_PHASE 536615.28 control_only_return
+PATH_ACCOUNT 536615.304751317 task_done
+PATH_ACCOUNT 536615.369076697 run_begin
+PATH_ACCOUNT 536615.579808998 fork_child
+PATH_ACCOUNT 536615.638224334 fork_child
+PATH_ACCOUNT 536615.761323491 fork_child
+PATH_ACCOUNT 536615.897651352 fork_child
+PATH_ACCOUNT 536616.035222864 fork_child
+PATH_ACCOUNT 536616.173158148 fork_child
+PATH_ACCOUNT 536616.334550011 fork_child
+PATH_ACCOUNT 536616.490189845 fork_child
+PATH_ACCOUNT 536616.641442555 fork_child
+PATH_ACCOUNT 536616.749924853 fork_child
+PATH_ACCOUNT 536616.821855622 fork_child
+PATH_ACCOUNT 536616.892064524 fork_child
+PATH_ACCOUNT 536617.012124812 fork_child
+PATH_ACCOUNT 536617.014156118 run_return finished
+COLLECTOR_PHASE 536617.01 main_finished_begin
+COLLECTOR_PHASE 536617.01 main_initial_check_begin
+COLLECTOR_PHASE 536617.06 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=470 skipped_asserts=15
+COLLECTOR_PHASE 536617.12 control_fresh_context_1_begin
+COLLECTOR_PHASE 536617.41 control_fresh_context_1_end
+COLLECTOR_PHASE 536617.42 control_fresh_context_2_begin
+COLLECTOR_PHASE 536617.68 control_fresh_context_2_end
+COLLECTOR_PHASE 536617.68 control_fresh_context_3_begin
+COLLECTOR_PHASE 536617.94 control_fresh_context_3_end
+COLLECTOR_PHASE 536617.94 control_original_checkpoint_begin
+COLLECTOR_PHASE 536618.54 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 435253331, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 2, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "5|zRM_DYN" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" })})) original=["Bits(B129 { tag: false, bits: 435253331, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 435253331, len: 32 })"] equal=true
+COLLECTOR_PHASE 536618.54 control_only_return
+PATH_ACCOUNT 536618.552674951 task_done
+PATH_ACCOUNT 536618.591298548 run_begin
+PATH_ACCOUNT 536618.692619680 fork_child
+PATH_ACCOUNT 536618.834662158 fork_child
+PATH_ACCOUNT 536618.979959653 fork_child
+PATH_ACCOUNT 536619.110126551 fork_child
+PATH_ACCOUNT 536619.255522019 fork_child
+PATH_ACCOUNT 536619.393270115 fork_child
+PATH_ACCOUNT 536619.537114182 fork_child
+PATH_ACCOUNT 536619.680683240 fork_child
+PATH_ACCOUNT 536619.786686236 fork_child
+PATH_ACCOUNT 536619.858274463 fork_child
+PATH_ACCOUNT 536619.933508260 fork_child
+PATH_ACCOUNT 536620.062422257 fork_child
+PATH_ACCOUNT 536620.068300510 run_return finished
+COLLECTOR_PHASE 536620.06 main_finished_begin
+COLLECTOR_PHASE 536620.06 main_initial_check_begin
+COLLECTOR_PHASE 536620.11 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=470 skipped_asserts=15
+COLLECTOR_PHASE 536620.14 control_fresh_context_1_begin
+COLLECTOR_PHASE 536620.31 control_fresh_context_1_end
+COLLECTOR_PHASE 536620.31 control_fresh_context_2_begin
+COLLECTOR_PHASE 536620.47 control_fresh_context_2_end
+COLLECTOR_PHASE 536620.47 control_fresh_context_3_begin
+COLLECTOR_PHASE 536620.63 control_fresh_context_3_end
+COLLECTOR_PHASE 536620.63 control_original_checkpoint_begin
+COLLECTOR_PHASE 536621.09 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 420474963, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 16, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "5|zRM_DYN" })})) original=["Bits(B129 { tag: false, bits: 420474963, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 420474963, len: 32 })"] equal=true
+COLLECTOR_PHASE 536621.09 control_only_return
+PATH_ACCOUNT 536621.106723728 task_done
+PATH_ACCOUNT 536621.107449292 run_begin
+PATH_ACCOUNT 536621.203218342 fork_child
+PATH_ACCOUNT 536621.285669295 fork_child
+PATH_ACCOUNT 536621.356349043 fork_child
+PATH_ACCOUNT 536621.437684159 fork_child
+PATH_ACCOUNT 536621.585655431 fork_child
+PATH_ACCOUNT 536621.664372332 fork_child
+PATH_ACCOUNT 536621.742448502 fork_child
+PATH_ACCOUNT 536685.623201500 fork_child
+PATH_ACCOUNT 536685.636254116 run_return finished
+COLLECTOR_PHASE 536685.63 main_finished_begin
+COLLECTOR_PHASE 536685.63 main_initial_check_begin
+COLLECTOR_PHASE 536718.47 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=533 skipped_asserts=13
+COLLECTOR_PHASE 536718.54 control_fresh_context_1_begin
+COLLECTOR_PHASE 536718.77 control_fresh_context_1_end
+COLLECTOR_PHASE 536718.77 control_fresh_context_2_begin
+COLLECTOR_PHASE 536718.99 control_fresh_context_2_end
+COLLECTOR_PHASE 536718.99 control_fresh_context_3_begin
+COLLECTOR_PHASE 536719.20 control_fresh_context_3_end
+COLLECTOR_PHASE 536719.20 control_original_checkpoint_begin
+COLLECTOR_PHASE 536976.82 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 426262611, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "4|zRM_RMM" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 16, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 22, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 })})) original=["Bits(B129 { tag: false, bits: 426262611, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 426262611, len: 32 })"] equal=true
+COLLECTOR_PHASE 536976.83 control_only_return
+PATH_ACCOUNT 536976.859667962 task_done
+PATH_ACCOUNT 536976.908048478 run_begin
+PATH_ACCOUNT 536977.049741375 run_return finished
+COLLECTOR_PHASE 536977.04 main_finished_begin
+COLLECTOR_PHASE 536977.04 main_initial_check_begin
+COLLECTOR_PHASE 536977.12 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=251 skipped_asserts=5
+COLLECTOR_PHASE 536977.15 control_fresh_context_1_begin
+COLLECTOR_PHASE 536977.40 control_fresh_context_1_end
+COLLECTOR_PHASE 536977.40 control_fresh_context_2_begin
+COLLECTOR_PHASE 536977.60 control_fresh_context_2_end
+COLLECTOR_PHASE 536977.60 control_fresh_context_3_begin
+COLLECTOR_PHASE 536977.80 control_fresh_context_3_end
+COLLECTOR_PHASE 536977.80 control_original_checkpoint_begin
+COLLECTOR_PHASE 536978.23 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "5|zRM_DYN" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" })})) original=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"] equal=true
+COLLECTOR_PHASE 536978.23 control_only_return
+PATH_ACCOUNT 536978.244884623 task_done
+PATH_ACCOUNT 536978.249057638 run_begin
+PATH_ACCOUNT 536978.294795379 run_return finished
+COLLECTOR_PHASE 536978.29 main_finished_begin
+COLLECTOR_PHASE 536978.29 main_initial_check_begin
+COLLECTOR_PHASE 536978.33 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=252 skipped_asserts=6
+COLLECTOR_PHASE 536978.34 control_fresh_context_1_begin
+COLLECTOR_PHASE 536978.45 control_fresh_context_1_end
+COLLECTOR_PHASE 536978.45 control_fresh_context_2_begin
+COLLECTOR_PHASE 536978.55 control_fresh_context_2_end
+COLLECTOR_PHASE 536978.55 control_fresh_context_3_begin
+COLLECTOR_PHASE 536978.64 control_fresh_context_3_end
+COLLECTOR_PHASE 536978.64 control_original_checkpoint_begin
+COLLECTOR_PHASE 536978.93 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "5|zRM_DYN" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" })})) original=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"] equal=true
+COLLECTOR_PHASE 536978.94 control_only_return
+PATH_ACCOUNT 536978.944799469 task_done
+PATH_ACCOUNT 536978.945308076 run_begin
+PATH_ACCOUNT 536978.982558632 run_return finished
+COLLECTOR_PHASE 536978.98 main_finished_begin
+COLLECTOR_PHASE 536978.98 main_initial_check_begin
+COLLECTOR_PHASE 536979.04 main_initial_check_end_encoding_begin
+COLLECTOR_CONTROL replayed_defs=253 skipped_asserts=7
+COLLECTOR_PHASE 536979.07 control_fresh_context_1_begin
+COLLECTOR_PHASE 536979.46 control_fresh_context_1_end
+COLLECTOR_PHASE 536979.46 control_fresh_context_2_begin
+COLLECTOR_PHASE 536979.73 control_fresh_context_2_end
+COLLECTOR_PHASE 536979.73 control_fresh_context_3_begin
+COLLECTOR_PHASE 536980.22 control_fresh_context_3_end
+COLLECTOR_PHASE 536980.22 control_original_checkpoint_begin
+COLLECTOR_PHASE 536980.78 control_original_checkpoint_end
+COLLECTOR_CONTROL original_values=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"]
+COLLECTOR_CONTROL concrete_arg=Ctor(Name("zF_BIN_RM_TYPE_S"), Struct({Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S0"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S2"): Enum(EnumMember { enum_id: EnumId { id: Name("zrounding_mode") }, member: "5|zRM_DYN" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S4"): Enum(EnumMember { enum_id: EnumId { id: Name("zf_bin_rm_op_S") }, member: "3|zFDIV_S" }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S3"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv5_z5enumz0zzrounding_mode_z5bv5_z5enumz0zzf_bin_rm_op_S1"): Bits(B129 { tag: false, bits: 31, len: 5 })})) original=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"] fresh=["Bits(B129 { tag: false, bits: 436203603, len: 32 })"] equal=true
+COLLECTOR_PHASE 536980.78 control_only_return
+PATH_ACCOUNT 536980.793558691 task_done
+PATH_ACCOUNT 536980.794036167 run_begin
+PATH_ACCOUNT 536980.908911585 fork_child
+PATH_ACCOUNT 536980.984737790 fork_child
+PATH_ACCOUNT 536981.064441830 fork_child

@@ -1,0 +1,19 @@
+{
+  "status": "PASS schema separation; no numerical-invalid inference from these rejections",
+  "rows": [
+    {
+      "checker_sha256": "48f80379dc69ba376febc3e373a6abd5c44d59ce39513015598529f02e5ba886",
+      "ir_batch": "model-e9d69d2",
+      "ir_sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+      "expected_schema_rejection": true,
+      "reason": "zieee_rod32_to_16: finite/inexact目标Jump变化"
+    },
+    {
+      "checker_sha256": "053b48b3b588c58f87d74a72c7a5d5097a610ccea37700d94380142fede5ad16",
+      "ir_batch": "model-21418d0",
+      "ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+      "expected_schema_rejection": true,
+      "reason": "zieee_rod32_to_16: finite目标Jump变化"
+    }
+  ]
+}

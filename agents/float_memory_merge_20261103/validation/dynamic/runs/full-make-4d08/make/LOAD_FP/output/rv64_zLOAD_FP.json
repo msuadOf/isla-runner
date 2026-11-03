@@ -1,0 +1,80 @@
+{
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 4,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 1,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "partial",
+    "model-coverage": "not-measured",
+    "target-clause": "zLOAD_FP"
+  },
+  "diagnostics": [
+    {
+      "status": "incomplete",
+      "reason": "path-error",
+      "path-signature": 10051126666406672375,
+      "error": "Unreachable: zext_decode 译码回环返回非具体值: Poison"
+    },
+    {
+      "status": "incomplete",
+      "reason": "path-error",
+      "path-signature": 14750807778342407915,
+      "error": "Symbolic (bit)vector length in zeros"
+    },
+    {
+      "status": "incomplete",
+      "reason": "path-error",
+      "path-signature": 2351379190916918689,
+      "error": "Unreachable: zext_decode 译码回环返回非具体值: Poison"
+    },
+    {
+      "status": "incomplete",
+      "reason": "path-error",
+      "path-signature": 8357968215788014430,
+      "error": "Symbolic (bit)vector length in zeros"
+    }
+  ],
+  "gen": [],
+  "state-domain": {
+    "status": "not-applicable"
+  },
+  "provenance": {
+    "command": [
+      "./target/release/isarch",
+      "-A",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+      "-C",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml",
+      "--verbose",
+      "--debug=fmlgcsra",
+      "--probe-all",
+      "--trace-all",
+      "-T",
+      "1",
+      "--timeout",
+      "7200s",
+      "--smt-timeout",
+      "7200s",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=LOAD_FP"
+    ],
+    "inputs": {
+      "-A": {
+        "path": "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+      },
+      "-C": {
+        "path": "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml",
+        "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+      }
+    }
+  }
+}

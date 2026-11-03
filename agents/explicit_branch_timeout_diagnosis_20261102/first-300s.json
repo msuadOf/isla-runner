@@ -1,0 +1,110 @@
+{
+  "budget_s": 300,
+  "production_smt_budget_s": 7200,
+  "runs": {
+    "flags-arithmetic-A": {
+      "checks_begun": 6748,
+      "checks_finished": 6748,
+      "check_kinds": {
+        "assuming": 4864,
+        "check": 1884
+      },
+      "completed_z3_s": 44.15723823,
+      "max_completed_check_s": 0.028836079,
+      "last_begin_monotonic": 507888.022187014,
+      "pending_query": null,
+      "fork_events": null,
+      "fork_events_by_location": {},
+      "explicit_saturation_forks": null,
+      "jsons": [
+        {
+          "path": "flags-arithmetic-A/output/rv64_zF_BIN_RM_TYPE_S.json",
+          "gen": 208,
+          "summary": {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_RM_TYPE_S"
+          }
+        }
+      ]
+    },
+    "flags-arithmetic-B": {
+      "checks_begun": 256,
+      "checks_finished": 255,
+      "check_kinds": {
+        "assuming": 228,
+        "check": 28
+      },
+      "completed_z3_s": 297.440614201,
+      "max_completed_check_s": 22.268101439,
+      "last_begin_monotonic": 508117.445182848,
+      "pending_query": 256,
+      "fork_events": null,
+      "fork_events_by_location": {},
+      "explicit_saturation_forks": null,
+      "jsons": []
+    },
+    "sat-A": {
+      "checks_begun": 1993,
+      "checks_finished": 1993,
+      "check_kinds": {
+        "assuming": 1781,
+        "check": 212
+      },
+      "completed_z3_s": 3.235522012,
+      "max_completed_check_s": 0.00859484,
+      "last_begin_monotonic": 507827.708526873,
+      "pending_query": null,
+      "fork_events": null,
+      "fork_events_by_location": {},
+      "explicit_saturation_forks": null,
+      "jsons": [
+        {
+          "path": "sat-A/output/rv64_zVFUNARY0.json",
+          "gen": 18,
+          "summary": {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zVFUNARY0"
+          }
+        }
+      ]
+    },
+    "sat-B": {
+      "checks_begun": 1669,
+      "checks_finished": 1668,
+      "check_kinds": {
+        "assuming": 1488,
+        "check": 181
+      },
+      "completed_z3_s": 292.047832361,
+      "max_completed_check_s": 1.547132887,
+      "last_begin_monotonic": 508117.886407839,
+      "pending_query": 1669,
+      "fork_events": null,
+      "fork_events_by_location": {},
+      "explicit_saturation_forks": null,
+      "jsons": []
+    }
+  }
+}

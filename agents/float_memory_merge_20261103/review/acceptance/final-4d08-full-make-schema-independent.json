@@ -1,0 +1,2735 @@
+{
+  "scope": "实际JSON并集与顺序访存/选定机器字语义；partial单列，不推断全域覆盖",
+  "instruction_semantics": false,
+  "files": 4,
+  "entries": 267,
+  "failures": [],
+  "partial": [
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 7,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "partial",
+        "model-coverage": "not-measured",
+        "target-clause": "zC_LD"
+      }
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/LOAD_FP/output/rv64_zLOAD_FP.json",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 4,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 1,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "partial",
+        "model-coverage": "not-measured",
+        "target-clause": "zLOAD_FP"
+      }
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 922,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 112,
+        "assertion-filtered-paths": 1,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "partial",
+        "model-coverage": "not-measured",
+        "target-clause": "zSTORE"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 0,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 1,
+      "word": "0x7760",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 2,
+      "word": "0x7d00",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 3,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 4,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 5,
+      "word": "0x7760",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 6,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 7,
+      "word": "0x72c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 8,
+      "word": "0x6f40",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 9,
+      "word": "0x6b80",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 10,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 11,
+      "word": "0x6760",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 12,
+      "word": "0x6f40",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 13,
+      "word": "0x6f40",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 14,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 15,
+      "word": "0x7d00",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 16,
+      "word": "0x6a80",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 17,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 18,
+      "word": "0x6f40",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 19,
+      "word": "0x7b60",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 20,
+      "word": "0x6f40",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 21,
+      "word": "0x7b60",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 22,
+      "word": "0x7760",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 23,
+      "word": "0x6a80",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 24,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 25,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 26,
+      "word": "0x6300",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 27,
+      "word": "0x7d00",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 28,
+      "word": "0x7e60",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 29,
+      "word": "0x72c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 30,
+      "word": "0x6b80",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 31,
+      "word": "0x6760",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 32,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 33,
+      "word": "0x7e60",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 34,
+      "word": "0x7360",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 35,
+      "word": "0x7b60",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 36,
+      "word": "0x7e60",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 37,
+      "word": "0x7760",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 38,
+      "word": "0x7e60",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 39,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 40,
+      "word": "0x7e60",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 41,
+      "word": "0x7fe0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 42,
+      "word": "0x7b60",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 43,
+      "word": "0x7760",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 44,
+      "word": "0x7fa0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 45,
+      "word": "0x7fa0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 46,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 47,
+      "word": "0x73c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 48,
+      "word": "0x6760",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 49,
+      "word": "0x77c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 50,
+      "word": "0x6000",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 51,
+      "word": "0x67c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 52,
+      "word": "0x7fe0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 53,
+      "word": "0x6a80",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 54,
+      "word": "0x77c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 55,
+      "word": "0x6680",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 56,
+      "word": "0x7360",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 57,
+      "word": "0x6ca0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 58,
+      "word": "0x6760",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 59,
+      "word": "0x77c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 60,
+      "word": "0x7b60",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 61,
+      "word": "0x6760",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 62,
+      "word": "0x6780",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 63,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 64,
+      "word": "0x77c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 65,
+      "word": "0x7b60",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 66,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 67,
+      "word": "0x7d00",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 68,
+      "word": "0x77c0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 69,
+      "word": "0x7d00",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 70,
+      "word": "0x63c0",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 71,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 72,
+      "word": "0x7760",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 73,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 74,
+      "word": "0x7fa0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 75,
+      "word": "0x7d00",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 76,
+      "word": "0x6a80",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 77,
+      "word": "0x6760",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 78,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 79,
+      "word": "0x7e60",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 80,
+      "word": "0x7320",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 81,
+      "word": "0x7fa0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 82,
+      "word": "0x73e0",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 83,
+      "word": "0x6a80",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 84,
+      "word": "0x7fa0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 85,
+      "word": "0x7fa0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 86,
+      "word": "0x6a80",
+      "bits": 16,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 87,
+      "word": "0x6b80",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/C_LD/output/rv64_zC_LD.json",
+      "sha256": "39c217c781a818cf481dd6f55e152929ec91c2ba4041e7e27f1aa7785ad494e4",
+      "index": 88,
+      "word": "0x6380",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 0,
+      "word": "0xa1efc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 1,
+      "word": "0xa01fc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 2,
+      "word": "0xa1f0c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 3,
+      "word": "0xa000c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 4,
+      "word": "0xa1ffc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 5,
+      "word": "0xa1ffc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 6,
+      "word": "0xa0104053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 7,
+      "word": "0xa01fc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 8,
+      "word": "0xa0104053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 9,
+      "word": "0xa1ffc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 10,
+      "word": "0xa1f0c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 11,
+      "word": "0xa1f0c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 12,
+      "word": "0xa1efc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 13,
+      "word": "0xa0104053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 14,
+      "word": "0xa000c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 15,
+      "word": "0xa010c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 16,
+      "word": "0xa1ff40d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 17,
+      "word": "0xa01040d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 18,
+      "word": "0xa1efc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 19,
+      "word": "0xa1f0c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 20,
+      "word": "0xa1ffc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 21,
+      "word": "0xa1ff4053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 22,
+      "word": "0xa010c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 23,
+      "word": "0xa1ff40d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 24,
+      "word": "0xa1f0c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 25,
+      "word": "0xa1ff4053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 26,
+      "word": "0xa1ff4053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 27,
+      "word": "0xa000c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 28,
+      "word": "0xa1ffc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 29,
+      "word": "0xa1f0c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 30,
+      "word": "0xa01040d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 31,
+      "word": "0xa1efc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 32,
+      "word": "0xa000c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 33,
+      "word": "0xa1cfc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 34,
+      "word": "0xa01040d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 35,
+      "word": "0xa000c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 36,
+      "word": "0xa1efc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 37,
+      "word": "0xa1efc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 38,
+      "word": "0xa1ff4053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 39,
+      "word": "0xa1ff40d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 40,
+      "word": "0xa1f0c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 41,
+      "word": "0xa1f0c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 42,
+      "word": "0xa1ffc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 43,
+      "word": "0xa000c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 44,
+      "word": "0xa1f0c053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 45,
+      "word": "0xa1ffc053",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 46,
+      "word": "0xa1f0c0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "608054b1c12858bb00f75551d36d99378fd44c6fcc74a6289214e3999d1d5fae",
+      "index": 47,
+      "word": "0xa1ffc0d3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 0,
+      "word": "0x3a05b7a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 1,
+      "word": "0x7a0fb423",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 8
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 2,
+      "word": "0x9c0f1523",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 3,
+      "word": "0x840f2223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 4,
+      "word": "0x400fa0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 5,
+      "word": "0x6e0f9d23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 6,
+      "word": "0x7ffaa523",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 7,
+      "word": "0x1ff90a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 8,
+      "word": "0xf9023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 9,
+      "word": "0x55fe3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 10,
+      "word": "0x81ff8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 11,
+      "word": "0x720f9ba3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 2
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 12,
+      "word": "0x9c0933a3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 8
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 13,
+      "word": "0xd40da223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 14,
+      "word": "0x41ff81a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 15,
+      "word": "0x5fff9ea3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 16,
+      "word": "0x400f1c23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 17,
+      "word": "0x1ff1023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 18,
+      "word": "0x840e2223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 19,
+      "word": "0x601f2ba3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 20,
+      "word": "0x820f2123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 21,
+      "word": "0x5dff9923",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 22,
+      "word": "0x400fb023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 23,
+      "word": "0xc3f6b0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 24,
+      "word": "0xc3f6b0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 25,
+      "word": "0x580fae23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 26,
+      "word": "0x9dff81a3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 1
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 27,
+      "word": "0xc206b0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 28,
+      "word": "0x43ff1da3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 29,
+      "word": "0xf90a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 30,
+      "word": "0x85ff2223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 31,
+      "word": "0x51ff2023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 32,
+      "word": "0x61ffa2a3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 4
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 33,
+      "word": "0x7fffbd23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 34,
+      "word": "0x1ff8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 35,
+      "word": "0x407e3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 36,
+      "word": "0x57ff12a3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 2
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 37,
+      "word": "0x700faa23",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 4
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 38,
+      "word": "0x400fa0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 39,
+      "word": "0x1ff9023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 40,
+      "word": "0x7e0f8f23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 41,
+      "word": "0x85ff80a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 42,
+      "word": "0x3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 43,
+      "word": "0x87ffa423",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 4
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 44,
+      "word": "0xfe0faea3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 45,
+      "word": "0x95ff82a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 46,
+      "word": "0x1023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 47,
+      "word": "0x8b123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 48,
+      "word": "0x5e0d3e23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 49,
+      "word": "0x40f8123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 50,
+      "word": "0x81fcbc23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 51,
+      "word": "0xb00ab023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 52,
+      "word": "0x420f1da3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 53,
+      "word": "0x73ff8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 54,
+      "word": "0xf1023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 55,
+      "word": "0x81ffb3a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 56,
+      "word": "0xf00fac23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 57,
+      "word": "0x9023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 58,
+      "word": "0x800ab023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 59,
+      "word": "0x1c0f9923",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 60,
+      "word": "0x1f01023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 61,
+      "word": "0x1f8b0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 62,
+      "word": "0x80fb423",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 63,
+      "word": "0x5ff8123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 64,
+      "word": "0xaf3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 65,
+      "word": "0x23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 66,
+      "word": "0x1f02023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 67,
+      "word": "0x3a05b7a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 68,
+      "word": "0x580fae23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 69,
+      "word": "0x400fb023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 70,
+      "word": "0x7e0aa323",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 71,
+      "word": "0x5c0f80a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 72,
+      "word": "0x407e3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 73,
+      "word": "0x41ff9223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 74,
+      "word": "0xbff08fa3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 75,
+      "word": "0x800f81a3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 1
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 76,
+      "word": "0x55fe3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 77,
+      "word": "0x2023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 78,
+      "word": "0x1f00023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 79,
+      "word": "0x800fa423",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 4
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 80,
+      "word": "0x601f2ba3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 81,
+      "word": "0x3e0f26a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 82,
+      "word": "0xe7ff2c23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 83,
+      "word": "0xf80a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 84,
+      "word": "0x101fa023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 85,
+      "word": "0x41f7b023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 86,
+      "word": "0x59ffae23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 87,
+      "word": "0x400f9223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 88,
+      "word": "0x41ff2223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 89,
+      "word": "0x800f90a3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 2
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 90,
+      "word": "0xffffaf23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 91,
+      "word": "0x600800a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 92,
+      "word": "0x1f03023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 93,
+      "word": "0xaf3023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 94,
+      "word": "0x63ffb423",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 8
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 95,
+      "word": "0x1f0b423",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 96,
+      "word": "0x4e0fb723",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 97,
+      "word": "0x85f93e23",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 8
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 98,
+      "word": "0x800f8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 99,
+      "word": "0x240fa123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 100,
+      "word": "0x59ffae23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 101,
+      "word": "0x9dff1523",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 102,
+      "word": "0xb9ff0a23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 103,
+      "word": "0xb80f8a23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 104,
+      "word": "0xf00fac23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 105,
+      "word": "0x41ff2223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 106,
+      "word": "0x101fa023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 107,
+      "word": "0x85fe2223",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 108,
+      "word": "0x81ff9623",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 2
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 109,
+      "word": "0x80f9123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 110,
+      "word": "0x25ffa0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 111,
+      "word": "0x3e0fa6a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 112,
+      "word": "0xc1fc10a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 113,
+      "word": "0x81ff8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 114,
+      "word": "0x940f0aa3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 115,
+      "word": "0x63ff8823",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 1
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 116,
+      "word": "0x9200a823",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 117,
+      "word": "0xf8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 118,
+      "word": "0x800f8023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 119,
+      "word": "0x41ff1c23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 120,
+      "word": "0xffffaa23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 121,
+      "word": "0x400f81a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 122,
+      "word": "0x7e0f8ba3",
+      "bits": 32,
+      "events": 1,
+      "semantic_check": null,
+      "pre_null_bytes": 1
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 123,
+      "word": "0xe7ff2c23",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 124,
+      "word": "0x83ff2123",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 125,
+      "word": "0xc206b0a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 126,
+      "word": "0x9df0a8a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 127,
+      "word": "0x81f090a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 128,
+      "word": "0x51ff2023",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    },
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/STORE/output/rv64_zSTORE.json",
+      "sha256": "7d80450d239c1a3ce49425b6031c94d41bf4c12c0815370fc2c53af793f9f8a0",
+      "index": 129,
+      "word": "0x29ff88a3",
+      "bits": 32,
+      "events": 0,
+      "semantic_check": null,
+      "pre_null_bytes": 0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "isla_commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+  "isla_tree": "3d852a5fac6a07ae906e502a430a8ee14a65c075",
+  "inputs_sha256": "30f6847f904ea22b8c7dd355cda988bf35bc9938ec46e7b564c408801365d5e2",
+  "source_files": 1042,
+  "source_manifest_sha256": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05",
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "model_commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+  "manifest_sha256": "8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b",
+  "five_irs": {
+    "rv64d.ir": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+    "ir/rv64d_v128_e64.ir": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+    "rv32d.ir": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66",
+    "ir/rv64d_v256_e64.ir": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9",
+    "ir/rv64d_v512_e64.ir": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1",
+    "ir/provenance/manifest.json": "8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b"
+  },
+  "runner_defaults_preserved": true,
+  "working_tree_clean": true,
+  "status": "PASS 最终commit输入身份；永久回归待另审"
+}

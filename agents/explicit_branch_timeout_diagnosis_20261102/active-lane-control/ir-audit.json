@@ -1,0 +1,29 @@
+{
+  "only_changed_function": "fn zriscv_f16ToI16_pure(zrm, zv) {",
+  "outside_function_byte_equal": true,
+  "helper_prefix_byte_equal": true,
+  "arms": {
+    "A": {
+      "gate_pc": 25878,
+      "active_target_pc": 25881,
+      "inactive_next_pc": 25879,
+      "conversion_call_pcs": [
+        25982,
+        26277
+      ],
+      "conversion_calls_dominated_by_gate": true,
+      "inactive_path_bypasses_calls": true
+    },
+    "B": {
+      "gate_pc": 25878,
+      "active_target_pc": 25881,
+      "inactive_next_pc": 25879,
+      "conversion_call_pcs": [
+        25982,
+        26277
+      ],
+      "conversion_calls_dominated_by_gate": true,
+      "inactive_path_bypasses_calls": true
+    }
+  }
+}

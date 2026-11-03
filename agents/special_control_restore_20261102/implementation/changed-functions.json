@@ -1,0 +1,318 @@
+{
+  "extensions/FD/softfloat_symbolic_f16.sail": [
+    {
+      "name": "riscv_f16Add(rm_bits : bits_rm, a : bits_H, b : bits_H) -> (bits_fflags, bits_H)",
+      "instance": 0
+    },
+    {
+      "name": "riscv_f16Sub(rm_bits : bits_rm, a : bits_H, b : bits_H) -> (bits_fflags, bits_H)",
+      "instance": 1
+    },
+    {
+      "name": "riscv_f16Mul(rm_bits : bits_rm, a : bits_H, b : bits_H) -> (bits_fflags, bits_H)",
+      "instance": 2
+    },
+    {
+      "name": "riscv_f16Div(rm_bits : bits_rm, a : bits_H, b : bits_H) -> (bits_fflags, bits_H)",
+      "instance": 3
+    },
+    {
+      "name": "riscv_f16MulAdd(rm_bits : bits_rm, a : bits_H, b : bits_H, c : bits_H) -> (bits_fflags, bits_H)",
+      "instance": 4
+    },
+    {
+      "name": "riscv_f16Sqrt(rm_bits : bits_rm, a : bits_H) -> (bits_fflags, bits_H)",
+      "instance": 5
+    },
+    {
+      "name": "riscv_f16roundToInt(rm_bits : bits_rm, a : bits_H, raise_inexact : bool) -> (bits_fflags, bits_H)",
+      "instance": 14
+    },
+    {
+      "name": "riscv_f16ToF32(rm_bits : bits_rm, a : bits_H) -> (bits_fflags, bits_S)",
+      "instance": 15
+    },
+    {
+      "name": "riscv_f16ToF64(rm_bits : bits_rm, a : bits_H) -> (bits_fflags, bits_D)",
+      "instance": 16
+    }
+  ],
+  "extensions/FD/softfloat_symbolic_f32.sail": [
+    {
+      "name": "riscv_f32ToF64(rm_bits : bits_rm, a : bits_S) -> (bits_fflags, bits_D)",
+      "instance": 22
+    },
+    {
+      "name": "riscv_f32ToF16(rm_bits : bits_rm, a : bits_S) -> (bits_fflags, bits_H)",
+      "instance": 23
+    },
+    {
+      "name": "riscv_f32ToBF16(rm_bits : bits_rm, a : bits_S) -> (bits_fflags, bits_BF16)",
+      "instance": 24
+    }
+  ],
+  "extensions/FD/softfloat_symbolic_f64.sail": [
+    {
+      "name": "riscv_f64_result_bits(result : float64) -> bits_D",
+      "instance": 0
+    },
+    {
+      "name": "riscv_f64ToF16(rm : bits_rm, a : bits_D) -> (bits_fflags, bits_H)",
+      "instance": 21
+    },
+    {
+      "name": "riscv_f64ToF32(rm : bits_rm, a : bits_D) -> (bits_fflags, bits_S)",
+      "instance": 22
+    }
+  ],
+  "core/ieee_fp_exceptions.sail": [
+    {
+      "name": "ieee_is_finite(raw)",
+      "instance": 4
+    },
+    {
+      "name": "ieee_operand_invalid(signaling, raw)",
+      "instance": 5
+    },
+    {
+      "name": "ieee_eq32_exceptions(a : bits(32), b : bits(32)) -> ieee_fp_exceptions",
+      "instance": 14
+    },
+    {
+      "name": "ieee_lt32_exceptions(signaling : bool, a : bits(32), b : bits(32)) -> ieee_fp_exceptions",
+      "instance": 15
+    },
+    {
+      "name": "ieee_add32_exceptions(rm : float_rounding_mode, a : bits(32), b : bits(32), result : float32) -> ieee_fp_exceptions",
+      "instance": 17
+    },
+    {
+      "name": "ieee_sub32_exceptions(rm : float_rounding_mode, a : bits(32), b : bits(32), result : float32) -> ieee_fp_exceptions",
+      "instance": 18
+    },
+    {
+      "name": "ieee_eq16_exceptions(a : bits(16), b : bits(16)) -> ieee_fp_exceptions",
+      "instance": 19
+    },
+    {
+      "name": "ieee_lt16_exceptions(signaling : bool, a : bits(16), b : bits(16)) -> ieee_fp_exceptions",
+      "instance": 20
+    },
+    {
+      "name": "ieee_add16_exceptions(rm : float_rounding_mode, a : bits(16), b : bits(16), result : float16) -> ieee_fp_exceptions",
+      "instance": 22
+    },
+    {
+      "name": "ieee_sub16_exceptions(rm : float_rounding_mode, a : bits(16), b : bits(16), result : float16) -> ieee_fp_exceptions",
+      "instance": 23
+    },
+    {
+      "name": "ieee_eq64_exceptions(a : bits(64), b : bits(64)) -> ieee_fp_exceptions",
+      "instance": 24
+    },
+    {
+      "name": "ieee_lt64_exceptions(signaling : bool, a : bits(64), b : bits(64)) -> ieee_fp_exceptions",
+      "instance": 25
+    },
+    {
+      "name": "ieee_add64_exceptions(rm : float_rounding_mode, a : bits(64), b : bits(64), result : float64) -> ieee_fp_exceptions",
+      "instance": 27
+    },
+    {
+      "name": "ieee_sub64_exceptions(rm : float_rounding_mode, a : bits(64), b : bits(64), result : float64) -> ieee_fp_exceptions",
+      "instance": 28
+    },
+    {
+      "name": "ieee_mul16_exceptions(rm : float_rounding_mode, a : bits(16), b : bits(16), result : float16) -> ieee_fp_exceptions",
+      "instance": 29
+    },
+    {
+      "name": "ieee_div16_exceptions(rm : float_rounding_mode, a : bits(16), b : bits(16), result : float16) -> ieee_fp_exceptions",
+      "instance": 30
+    },
+    {
+      "name": "ieee_sqrt16_exceptions(rm : float_rounding_mode, a : bits(16), result : float16) -> ieee_fp_exceptions",
+      "instance": 31
+    },
+    {
+      "name": "ieee_fma16_exceptions(rm : float_rounding_mode, a : bits(16), b : bits(16), c : bits(16), result : float16) -> ieee_fp_exceptions",
+      "instance": 32
+    },
+    {
+      "name": "ieee_mul32_exceptions(rm : float_rounding_mode, a : bits(32), b : bits(32), result : float32) -> ieee_fp_exceptions",
+      "instance": 33
+    },
+    {
+      "name": "ieee_div32_exceptions(rm : float_rounding_mode, a : bits(32), b : bits(32), result : float32) -> ieee_fp_exceptions",
+      "instance": 34
+    },
+    {
+      "name": "ieee_sqrt32_exceptions(rm : float_rounding_mode, a : bits(32), result : float32) -> ieee_fp_exceptions",
+      "instance": 35
+    },
+    {
+      "name": "ieee_fma32_exceptions(rm : float_rounding_mode, a : bits(32), b : bits(32), c : bits(32), result : float32) -> ieee_fp_exceptions",
+      "instance": 36
+    },
+    {
+      "name": "ieee_mul64_exceptions(rm : float_rounding_mode, a : bits(64), b : bits(64), result : float64) -> ieee_fp_exceptions",
+      "instance": 37
+    },
+    {
+      "name": "ieee_div64_exceptions(rm : float_rounding_mode, a : bits(64), b : bits(64), result : float64) -> ieee_fp_exceptions",
+      "instance": 38
+    },
+    {
+      "name": "ieee_sqrt64_exceptions(rm : float_rounding_mode, a : bits(64), result : float64) -> ieee_fp_exceptions",
+      "instance": 39
+    },
+    {
+      "name": "ieee_fma64_exceptions(rm : float_rounding_mode, a : bits(64), b : bits(64), c : bits(64), result : float64) -> ieee_fp_exceptions",
+      "instance": 40
+    },
+    {
+      "name": "ieee_round16_exceptions(a : bits(16), result : float16, raise_inexact : bool) -> ieee_fp_exceptions",
+      "instance": 50
+    },
+    {
+      "name": "ieee_round32_exceptions(a : bits(32), result : float32, raise_inexact : bool) -> ieee_fp_exceptions",
+      "instance": 54
+    },
+    {
+      "name": "ieee_round64_exceptions(a : bits(64), result : float64, raise_inexact : bool) -> ieee_fp_exceptions",
+      "instance": 58
+    },
+    {
+      "name": "ieee_convert32_to_16_exceptions(rm : float_rounding_mode, a : bits(32), result : float16) -> ieee_fp_exceptions",
+      "instance": 62
+    },
+    {
+      "name": "ieee_convert64_to_16_exceptions(rm : float_rounding_mode, a : bits(64), result : float16) -> ieee_fp_exceptions",
+      "instance": 63
+    },
+    {
+      "name": "ieee_convert64_to_32_exceptions(rm : float_rounding_mode, a : bits(64), result : float32) -> ieee_fp_exceptions",
+      "instance": 64
+    },
+    {
+      "name": "ieee_widen16_to_32_exceptions(a : bits(16)) -> ieee_fp_exceptions",
+      "instance": 65
+    },
+    {
+      "name": "ieee_widen16_to_64_exceptions(a : bits(16)) -> ieee_fp_exceptions",
+      "instance": 66
+    },
+    {
+      "name": "ieee_widen32_to_64_exceptions(a : bits(32)) -> ieee_fp_exceptions",
+      "instance": 67
+    },
+    {
+      "name": "ieee_bf16_from_f32_exceptions(rm : float_rounding_mode, a : bits(32), result_bits : bits(16)) -> ieee_fp_exceptions",
+      "instance": 68
+    },
+    {
+      "name": "ieee_rod32_to_16(a : bits(32)) -> (ieee_fp_exceptions, bits(16))",
+      "instance": 69
+    },
+    {
+      "name": "ieee_rod64_to_32(a : bits(64)) -> (ieee_fp_exceptions, bits(32))",
+      "instance": 70
+    }
+  ],
+  "extensions/bfloat16/zfbfmin_utils.sail": [
+    {
+      "name": "bf16_to_f32 (v : bits(16)) -> (bits_fflags, bits(32))",
+      "instance": 2
+    }
+  ],
+  "extensions/V/vext_fp_insts.sail": [
+    {
+      "name": "clause execute FVVMATYPE(funct6, vm, vs2, vs1, vd)",
+      "instance": 2
+    },
+    {
+      "name": "clause execute FWVVTYPE(funct6, vm, vs2, vs1, vd)",
+      "instance": 4
+    },
+    {
+      "name": "clause execute FWVVMATYPE(funct6, vm, vs1, vs2, vd)",
+      "instance": 6
+    },
+    {
+      "name": "clause execute FWVTYPE(funct6, vm, vs2, vs1, vd)",
+      "instance": 8
+    },
+    {
+      "name": "clause execute VFUNARY0(vm, vs2, vfunary0, vd)",
+      "instance": 14
+    },
+    {
+      "name": "clause execute VFWUNARY0(vm, vs2, vfwunary0, vd)",
+      "instance": 20
+    },
+    {
+      "name": "clause execute VFNUNARY0(vm, vs2, vfnunary0, vd)",
+      "instance": 26
+    },
+    {
+      "name": "clause execute VFUNARY1(vm, vs2, vfunary1, vd)",
+      "instance": 32
+    },
+    {
+      "name": "clause execute FVFTYPE(funct6, vm, vs2, rs1, vd)",
+      "instance": 35
+    },
+    {
+      "name": "clause execute FVFMATYPE(funct6, vm, vs2, rs1, vd)",
+      "instance": 37
+    },
+    {
+      "name": "clause execute FWVFTYPE(funct6, vm, vs2, rs1, vd)",
+      "instance": 39
+    },
+    {
+      "name": "clause execute FWVFMATYPE(funct6, vm, rs1, vs2, vd)",
+      "instance": 41
+    },
+    {
+      "name": "clause execute FWFTYPE(funct6, vm, vs2, rs1, vd)",
+      "instance": 43
+    }
+  ],
+  "extensions/V/vext_fp_vm_insts.sail": [
+    {
+      "name": "clause execute FVVMTYPE(funct6, vm, vs2, vs1, vd)",
+      "instance": 0
+    },
+    {
+      "name": "clause execute FVFMTYPE(funct6, vm, vs2, rs1, vd)",
+      "instance": 2
+    }
+  ],
+  "extensions/V/vext_fp_red_insts.sail": [
+    {
+      "name": "clause execute RFWVVTYPE(_funct6, vm, vs2, vs1, vd)",
+      "instance": 2
+    }
+  ],
+  "extensions/bfloat16/zvfbfmin_insts.sail": [
+    {
+      "name": "clause execute (VFNCVTBF16_F_F_W(vm, vs2, vd))",
+      "instance": 1
+    },
+    {
+      "name": "clause execute (VFWCVTBF16_F_F_V(vm, vs2, vd))",
+      "instance": 3
+    }
+  ],
+  "extensions/bfloat16/zvfbfwma_insts.sail": [
+    {
+      "name": "clause execute VFWMACCBF16_VV(vm, vs2, vs1, vd)",
+      "instance": 1
+    },
+    {
+      "name": "clause execute VFWMACCBF16_VF(vm, vs2, rs1, vd)",
+      "instance": 3
+    }
+  ]
+}

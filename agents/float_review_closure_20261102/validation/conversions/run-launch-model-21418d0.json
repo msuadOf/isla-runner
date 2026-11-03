@@ -1,0 +1,26 @@
+{
+  "pid": 1161094,
+  "cpu": 9,
+  "model_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "output": "agents/float_review_closure_20261102/validation/conversions/runs/rv64d-v128-model-21418d0-attempt1",
+  "ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+  "direct_config_sha256": "8247c8d467489111656f6953660670e96097a029fea458b660fe42579f86f987",
+  "formal_inputs_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+  "pre_run_fixture_snapshot_sha256": "36828c58e6a7a12a63980e6805c84e41c336b6e2f12b18a798804b11c15bdb0f",
+  "started_epoch": 1793636516.7877285,
+  "argv_relative": [
+    "taskset",
+    "-c",
+    "9",
+    "python3",
+    "agents/float_review_closure_20261102/validation/conversions/run.py",
+    "--ir",
+    "agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v128_e64/rv64d_v128_e64.ir",
+    "--config",
+    "agents/float_support_review/tools/e_nonmem/inputs/rv64-e.toml",
+    "--output",
+    "agents/float_review_closure_20261102/validation/conversions/runs/rv64d-v128-model-21418d0-attempt1",
+    "--other-hashed-inputs-in-run-json"
+  ]
+}

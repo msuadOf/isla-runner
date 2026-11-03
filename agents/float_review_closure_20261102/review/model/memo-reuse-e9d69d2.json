@@ -1,0 +1,86 @@
+{
+  "scope": "同工具/配置下独立核e9成功生成memo二进制完整记录；每配置仅复制，不共享写入",
+  "source_model": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "rows": [
+    {
+      "config": "ordinary-strict",
+      "path": "agents/float_review_closure_20261102/validation/generation/model-e9d69d2/ordinary-strict/sail_smt_cache",
+      "sha256": "cabd53abc37aa1db33b2e0d2a9a02830e7ccc021ea575df89250a04563f64cae",
+      "bytes": 161874,
+      "records": 9522,
+      "result_tags": {
+        "0": 46,
+        "1": 2809,
+        "2": 6667,
+        "3": 0,
+        "4": 0
+      },
+      "format_valid_and_complete": true,
+      "source_generation_exit": 0
+    },
+    {
+      "config": "rv64d_v128_e64",
+      "path": "agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/sail_smt_cache",
+      "sha256": "260f0fc87b41b90ae150d3b73f3d6069ac963f55cea83e9c732e8e65961952f0",
+      "bytes": 318954,
+      "records": 18762,
+      "result_tags": {
+        "0": 134,
+        "1": 7043,
+        "2": 11585,
+        "3": 0,
+        "4": 0
+      },
+      "format_valid_and_complete": true,
+      "source_generation_exit": 0
+    },
+    {
+      "config": "rv32d",
+      "path": "agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv32d/sail_smt_cache",
+      "sha256": "a64d81a650efb402fa8714877b7c58850856a521ea6db519ba88bfa121757fbb",
+      "bytes": 319124,
+      "records": 18772,
+      "result_tags": {
+        "0": 137,
+        "1": 6986,
+        "2": 11649,
+        "3": 0,
+        "4": 0
+      },
+      "format_valid_and_complete": true,
+      "source_generation_exit": 0
+    },
+    {
+      "config": "rv64d_v256_e64",
+      "path": "agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v256_e64/sail_smt_cache",
+      "sha256": "40d958d719e02a11442976255e10798d73ffbc855c4bd1ecf729fe33fe3495ec",
+      "bytes": 320569,
+      "records": 18857,
+      "result_tags": {
+        "0": 134,
+        "1": 7048,
+        "2": 11675,
+        "3": 0,
+        "4": 0
+      },
+      "format_valid_and_complete": true,
+      "source_generation_exit": 0
+    },
+    {
+      "config": "rv64d_v512_e64",
+      "path": "agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v512_e64/sail_smt_cache",
+      "sha256": "09bfd2610fcce407e3047c36b8d7eb5763ae35bbc9c08bc84a82f63dc01b2c87",
+      "bytes": 320688,
+      "records": 18864,
+      "result_tags": {
+        "0": 135,
+        "1": 7053,
+        "2": 11676,
+        "3": 0,
+        "4": 0
+      },
+      "format_valid_and_complete": true,
+      "source_generation_exit": 0
+    }
+  ]
+}

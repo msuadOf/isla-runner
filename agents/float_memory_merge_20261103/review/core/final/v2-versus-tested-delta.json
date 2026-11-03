@@ -1,0 +1,10 @@
+{
+  "test/float_ir/runner/src/state.rs": {
+    "tested": "d896bc886716f4250aaa19447d9cdad4f264653af5b1cce31d8a8c62127718ab",
+    "v2": "cb20dd432f0410aa34e34ef7d657af3d9ade2305f2fd77ccf4c43f852bbfd351"
+  },
+  "test/softfloat_legacy/runner/src/main.rs": {
+    "tested": "35346316349fda13b6f2527f90f4218ca64b3a03beec8eaae5ce9ad94926840d",
+    "v2": "28fc45a0ccaaff2051ab59560e43d6b050f9c44c022a33f05b9fd6856a88222c"
+  }
+}

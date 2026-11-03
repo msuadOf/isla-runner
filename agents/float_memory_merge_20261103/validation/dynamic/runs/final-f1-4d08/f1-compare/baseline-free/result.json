@@ -1,0 +1,75 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "38",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/baseline-bdd/target/release/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/baseline-bdd/source/rv64d.ir",
+    "-C",
+    "workspace:/agents/coordinated_memory_fixes_20261102/red-integration/concrete.toml",
+    "-T",
+    "1",
+    "--timeout",
+    "600s",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qfaufbv",
+    "--instruction-bits",
+    "0xa020b1af",
+    "--prestate",
+    "cur_privilege=Machine",
+    "--prestate",
+    "mstatus={bits=0x0000000a00000000}",
+    "--prestate",
+    "x2=0x0000000000000000",
+    "solve-state",
+    "--clause=AMO"
+  ],
+  "exit": 0,
+  "seconds": 1.607,
+  "output_count": 1,
+  "binary_sha256": "70d3fa13152b6041faa5c8b1deebc3d5b2076a7f8b733c7835bb83ee340b7b09",
+  "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+  "config_sha256": "f382caf83192fa1b73f7777ebe0cd6360cfcc9fc6112ad3fe27585c055950926",
+  "seed_log_sha256": "c43ae71f7474861d6a79c143d523c37903a7433abe46c1dbf62c3dde751ae364",
+  "seed_fixed_17": true,
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zAMO"
+  },
+  "output_sha256": "53394f7f01048ad0e25e5dc199a04a936023001c5d7ea18f26cfbcecd43c5be9",
+  "gen": 5,
+  "finished": true,
+  "same_address_reads": [
+    18446744073709551615,
+    0
+  ],
+  "concrete_region_reads": [
+    {
+      "address": "0x80000000",
+      "value": "0xffffffffffffffff"
+    },
+    {
+      "address": "0x80000000",
+      "value": "0x0"
+    }
+  ],
+  "zero_snapshot_only": false
+}

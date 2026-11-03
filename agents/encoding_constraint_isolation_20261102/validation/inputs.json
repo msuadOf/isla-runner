@@ -1,0 +1,32 @@
+{
+  "old_flags": {
+    "ir": "agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+    "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+    "config": "agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "clause": "F_BIN_RM_TYPE_S",
+    "cpu": 100
+  },
+  "old_sat": {
+    "ir": "agents/branch_ablation_official_z3_20261102/inputs/sat/B.ir",
+    "ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+    "config": "agents/branch_ablation_official_z3_20261102/inputs/sat/config.toml",
+    "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+    "clause": "VFUNARY0",
+    "cpu": 101
+  },
+  "new_sat": {
+    "config": "agents/branch_ablation_official_z3_20261102/inputs/sat/config.toml",
+    "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+    "clause": "VFUNARY0",
+    "cpu": 102
+  },
+  "new_flags": {
+    "config": "agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "clause": "F_BIN_RM_TYPE_S",
+    "cpu": 102
+  },
+  "seed_preload": "agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+  "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+}

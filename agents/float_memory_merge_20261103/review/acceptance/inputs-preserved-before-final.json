@@ -1,0 +1,39 @@
+{
+  "scope": "限定验收后再次核六原输入HEAD+diff及dirty原文件均保持，尚未移动原memory",
+  "repositories": {
+    "float-root": {
+      "head": "0665526d7e14a207eb9928e282e627584b5635fe",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_file_sha256": {}
+    },
+    "float-isla": {
+      "head": "591693df2bc32019ea300511509ed683df09522e",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_file_sha256": {}
+    },
+    "float-model": {
+      "head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_file_sha256": {}
+    },
+    "memory-root": {
+      "head": "31ef3b9a8aa3a9db4c03a1d99c191cadf1aadaef",
+      "diff_sha256": "5dbbb5dcf1fd2c7a123c41a2a687e3f6adf4a155574929cf805f71b9e746b14e",
+      "dirty_file_sha256": {}
+    },
+    "memory-isla": {
+      "head": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+      "diff_sha256": "e67728f312f49c5505cd651be547c5514064a5709e78432df865b06dbc93e5d8",
+      "dirty_file_sha256": {
+        "README.md": "ac4003d412be230cc1efd2b853495b5ac7fce450924c26359a479a07a449225c",
+        "scripts/run.mk": "683c2b49ffee648ab38a303e2f3db7b7e0b89ea08d3c6d670607d29e11fb318c"
+      }
+    },
+    "memory-model": {
+      "head": "c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_file_sha256": {}
+    }
+  },
+  "pass": true
+}

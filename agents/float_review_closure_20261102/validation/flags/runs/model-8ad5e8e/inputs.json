@@ -1,0 +1,82 @@
+{
+  "scope": "direct concrete zaccrue_fflags helper; not whole Clause",
+  "probe_binary_role": "independent Rust helper runner, separate from frozen isarch",
+  "batch": "model-8ad5e8e",
+  "cpu": 15,
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "inputs_sha256": "25a1a624cb5dcac76a2261c470e198c64a75b20259322a1c7ee5d0572b83ec24",
+  "runner_source_sha256": "26225f7c0cf463078e821db7c87ba0a1885c62f15e0f4fd3824bc52cf88843ab",
+  "runner_manifest_sha256": "5ec277d90a0c966da70a7b43c89ff55e5a144800b7f44499934af0c1904c1fdc",
+  "oracle_sha256": "ebf9424c3471c7589eb1546e1fd4731fedc2416ad0a0ef7061a8062d5e642665",
+  "ir_sha256": {
+    "rv64-v128": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+    "rv64-v256": "fbc1f8953810f63b1f092929e26802f816bc7f5e354e170afae35a51d71c2922",
+    "rv64-v512": "a699d34c4c9c52da15d6924f6788d641880b2c7f331b0f55fce42bddc576bbdc",
+    "rv64-default": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+    "rv32-default": "df3dfd02cecd184e8ed2adfcdab4c4d3a4e15afba274ab51c0c2d63041744eb0"
+  },
+  "config_sha256": {
+    "rv64": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "rv32": "d31bc7e7402412899d4998ca6882b4528052762d089e411118038f8a0d585a4f"
+  },
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "frozen_isarch_sha256": "fe4bdcebd1d970d6f026c0f81ccd22f807f5cb4729da27ef67e20b2c08d09d80",
+  "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "seed": 17,
+  "tactic": "qffp",
+  "build": [
+    "taskset",
+    "-c",
+    "15",
+    "cargo",
+    "build",
+    "--offline",
+    "--release",
+    "--manifest-path",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/Cargo.toml"
+  ],
+  "commands": {
+    "rv64-v128": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v256": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv64d_v256_e64/rv64d_v256_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v512": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv64d_v512_e64/rv64d_v512_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-default": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv32-default": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv32d/rv32d.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/test/float_ir/rv32_fd.toml"
+    ]
+  },
+  "cwd": "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla"
+}

@@ -1,0 +1,7 @@
+workload,tactic,cpu,seed,exit_code,observed_wall_s,wall_precision_s,cpu_user_s_approx,cpu_sys_s_approx,cpu_total_s_approx,cpu_utilization_approx,json_present,seed_intercepted
+flags-arithmetic,qffp,100,17,124,7200.433,0.2,7083.41,90.04,7173.45,0.99625,False,True
+flags-arithmetic,default,101,17,124,7200.339,0.2,7074.63,94.53,7169.16,0.99567,False,True
+flags-arithmetic,smt,102,17,124,7200.188,0.2,7162.58,12.74,7175.32,0.99655,False,True
+sat,qffp,103,17,124,7200.255,0.2,7085.8,87.77,7173.57,0.99629,False,True
+sat,default,104,17,124,7200.299,0.2,7090.31,75.4,7165.71,0.9952,False,True
+sat,smt,105,17,124,7200.167,0.2,7160.33,7.93,7168.26,0.99557,False,True

@@ -1,0 +1,5238 @@
+{
+  "tree": "3d852a5fac6a07ae906e502a430a8ee14a65c075",
+  "files": {
+    ".envrc": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".github/workflows/ubuntu_22_04.yml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/encodings.xml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/isla2.iml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/modules.xml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/runConfigurations/Run_ARM.xml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/runConfigurations/Run_RV64.xml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/runConfigurations/Run_RV64_list_instructions.xml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".idea/vcs.xml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".mailmap": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".vscode/launch.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    ".vscode/settings.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "AGENTS.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "CLAUDE.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "Cargo.lock": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "LICENSE": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "Report.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "THIRD_PARTY_FILES.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "TRANSLATOR.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/enum_fix.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/exponential_only_branch_limit/plan.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/exponential_only_branch_limit/status.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/findings.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/float_support.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/guides.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/illegal_case_quota/plan.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/memory_support_baseline.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/start_multi_inline_spawn/plan.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/start_multi_inline_spawn/run_cpu_profile.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/start_multi_inline_spawn/status.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/v_ext_solve_status.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/V\u6269\u5c55issue\u6838\u9a8c\u4e0ePoC\u6570\u636e.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/XiangShan-V\u6269\u5c55-Issue\u4e0ePoC\u5206\u6790-\u6587\u6863\u66f4\u65b020260918.pptx": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/XiangShan-V\u6269\u5c55-Issue\u4e0ePoC\u5206\u6790-\u91cd\u505a\u7248-20260917.pptx": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/XiangShan-V\u6269\u5c55issue\u4e0ePoC\u63d0\u53d6.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/XiangShan-V\u6269\u5c55issue\u4e0emutation\u7b56\u7565.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/01-input-json/isla-solve-success-all.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/01-input-json/rv64_trap_entries.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/02-results-baseline-7bf51a8/results-baseline-7bf51a8.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/02-results-baseline-7bf51a8/results-baseline-7bf51a8.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/monitor.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/success-shard0.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/success-shard1.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/success-shard2.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/success-shard3.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/trap-shard0.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/trap-shard1.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/trap-shard2.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/03-results-c8d7b3a/trap-shard3.ndjson": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/link.ld": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/poc1_vector_hang.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/poc1_vector_hang.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/poc4_vsm_mtval.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/poc4_vsm_mtval.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/poc5_vreg_sync.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/04-poc/poc5_vreg_sync.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/bug-cases-\u590d\u6838\u7ed3\u679c.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/bug-cases-\u6e05\u5355.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/issue\u8349\u7a3f-\u539f\u521bbug.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/trap-entries-\u539f\u521b\u6027\u6838\u67e5.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/trap-entries-\u7ed3\u679c.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/\u4e0a\u6e38\u6700\u65b0\u590d\u6d4b-c8d7b3a.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/\u65b0\u57fa\u7ebf\u56de\u5f52-\u9010\u6761\u6838\u67e5.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/05-docs/\u9a8c\u8bc1\u62a5\u544a.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/06-scripts/analyze_trap_results.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/06-scripts/pipeline.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/06-scripts/rerun_shard.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/06-scripts/test_pipeline.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/stats-final.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/stats.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/archive-20260919/\u5168\u91cfbug\u7edf\u8ba1\u8868.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/bug-cases-\u590d\u6838\u7ed3\u679c.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/bug-cases-\u6e05\u5355.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/isla-solve-success-all.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/issue\u8349\u7a3f-\u539f\u521bbug.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMASKTYPEI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMASKTYPEV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMASKTYPEX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMMTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMOVETYPEI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMOVETYPEV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMOVETYPEX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMRET.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMVVCOMPRESS.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMVVMATYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMVVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMVXMATYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zMVXTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zNISTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zNITYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zNVSTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zNVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zNXSTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zNXTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zRIVVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zRMVVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVABS_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESDF.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESDM.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESEF.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESEM.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESKF1_VI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESKF2_VI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVAESZ_VS.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVANDN_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVANDN_VX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVBREV8_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVBREV_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCLMULH_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCLMULH_VX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCLMUL_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCLMUL_VX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCLZ_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCPOP_M.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCPOP_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVCTZ_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVEXTTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVFIRST_M.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVFMERGE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVFMV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVFMVFS.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVFMVSF.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVGHSH_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVGMUL_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVICMPTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVID_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVIMCTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVIMSTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVIMTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVIOTA_M.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVISG.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVITYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMSBF_M.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMSIF_M.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMSOF_M.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMVRTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMVSX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVMVXS.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVREV8_V.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVROL_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVROL_VX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVROR_VI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVROR_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVROR_VX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSETIVLI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSETVL.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSETVLI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSHA2MS_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSM3C_VI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSM3ME_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVSM4K_VI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVVCMPTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVVMCTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVVMSTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVVMTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVWSLL_VI.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVWSLL_VV.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVWSLL_VX.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVXCMPTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVXMCTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVXMSTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVXMTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVXSG.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zVXTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zWMVVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zWMVXTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zWVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zWVVTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zWVXTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zWXTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zZVABDTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zZVKSHA2TYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zZVKSM4RTYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/make-solve-json/rv64_zZVWABDATYPE.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-086/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-086/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-086/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-086/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-086/verify-diff-trace.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-088/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-088/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-088/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-088/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-089/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-089/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-089/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-089/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-091/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-091/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-091/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-091/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-092/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-092/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-092/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-092/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-099/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-099/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-099/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-099/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-104/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-104/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-104/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-104/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-107/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-107/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-107/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-107/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-115/case.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-115/difftest.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-115/program.S": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/poc/case-115/program.elf": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/results-scalar-contexts.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/test-generator\u8986\u76d6\u7f3a\u53e3\u8c03\u67e5.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/trap-entries-\u539f\u521b\u6027\u6838\u67e5.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/trap-entries-\u7ed3\u679c.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/\u4e0a\u6e38\u6700\u65b0\u590d\u6d4b-c8d7b3a.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/\u5df2\u6709V\u6269\u5c55Bug\u6d4b\u8bd5\u7528\u4f8b\u5f62\u6001\u603b\u7ed3.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/\u65b0\u57fa\u7ebf\u56de\u5f52-\u9010\u6761\u6838\u67e5.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "agents/validation/Vext-test-9-16-difftest-xiangshan/\u9a8c\u8bc1\u62a5\u544a.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "build.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/armv8p5.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/armv8p5_mmu_on.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/armv9p3.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/armv9p3_mmu_on.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/armv9p4.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/armv9p4_mmu_on.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/memory_bad_overlap.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/memory_sym.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/plain.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/pma_bad_overlap.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv32.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_fd.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_csr_sym.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_csr_sym_vs.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_csr_sym_vs_t2.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_csr_sym_vs_vctx.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_csr_sym_vs_vh.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_sym.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_mem_excluded_pma_vh.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_difftest_vabs_v.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_memory_coverage.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/riscv64_ubuntu.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "configs/test.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/LB.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/MP.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/arm_init.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/artifact.adoc": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/artifact/Exclusives_herd.model_logs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/artifact/herd_compare.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/axiomatic.adoc": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/built_doc/axiomatic.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/built_doc/manual.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/built_doc/memory_model_language.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/built_doc/translation.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/cav_exclusives.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/cav_exhaustive_dmbld.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/cav_herd_table.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/litmus_readme.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/manual.adoc": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/memory_model_language.adoc": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/translation.adoc": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/translation.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/ui.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/vm1.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/vm2.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/web_vmsa_arch.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/web_vmsa_library.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "doc/web_vmsa_options.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "docs/json-results.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/CHANGELOG.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/LICENSE.txt": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/images/cat_icon.eps": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/images/cat_icon.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/language-configuration.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/package-lock.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/package.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/cat/syntaxes/herd7cat.tmLanguage.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/.vscodeignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/LICENSE.txt": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/images/litmus_icon.eps": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/images/litmus_icon.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/language-configuration.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/package-lock.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/package.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/syntaxes/litmus.tmLanguage.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "editors/vscode/litmus/syntaxes/litmusinit.tmLanguage.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "etc/mml-mode.el": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "flake.lock": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "flake.nix": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "headers.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "inrange.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "ir/provenance/rv32d.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "ir/provenance/rv64d.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "ir/provenance/rv64d_v256_e64.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "ir/provenance/rv64d_v512_e64.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/build.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/axiomatic.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/footprint_analysis.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/graph.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/graph/ascii_backend.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/graph/graph_events.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/graph/graph_opts.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/graph/grid_layout.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/graph/gv_backend.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/ifetch.smt2": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/last_write_to.smt2": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/litmus.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/litmus/exp.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/litmus/exp_lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/litmus/exp_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/litmus/format.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/page_table.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/page_table/setup.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/page_table/setup_lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/page_table/setup_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/run_litmus.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/sandbox.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/sexp.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/sexp_lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/sexp_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/smt_events.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/smt_events.smt2": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/smt_model.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-axiomatic/src/smt_relations.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/build.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/catlib/cos.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/catlib/stdlib.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/src/cat.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/src/cat_lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/src/cat_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/src/smt.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/aarch64.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/aarch64fences.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/parse_cats.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/ppc.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/riscv-defs.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/riscv.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-cat/tests/x86tso.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/src/arch.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/src/arch/aarch64.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/src/elf.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-elf/src/relocation_types.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/build.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/bitvector.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/bitvector/b129.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/bitvector/b64.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/cache.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/config.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/dprint.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/error.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/executor.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/executor/execution_limits.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/executor/frame.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/executor/path_timing.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/executor/task.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/fmtval.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/fraction.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/init.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir/linearize.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir/partial_linearize.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir/serialize.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir/ssa.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir_lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/ir_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/log.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/memory.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/primop.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/primop/float.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/primop/memory.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/primop_util.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/probe.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/register.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/simplify.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/smt.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/smt/dump.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/smt/smtlib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/smt/tactic.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/smt/z3_timeout.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/smt_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/source_loc.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/timeout.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/timing.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/trace.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/btrace.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/common.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/ftrace.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/itrace.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/ptrace.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/sequence.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/tests.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/tracetool/writer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/value_parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/src/zencode.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/fixtures/ir_cache_assumption.ir": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/fixtures/source_region_foreach_match.ir": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/mixed_bits_consumers.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/mixed_bits_float_consumers.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/mixed_bits_memory.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/model_concretization.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/smt_init.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/smt_tactic.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-lib/tests/test_itrace.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/GenericHGenArch.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/GenericHGenBase.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/GenericHGenLexer.mll": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/GenericHGenParser.mly": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/THIRD_PARTY.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/dune": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/dune-project": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/Archs.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/CType.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/CType.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/IntMap.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/IntMap.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/IntSet.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/IntSet.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/PPMode.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/StringMap.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/StringMap.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/StringRel.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/StringRel.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/StringSet.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/StringSet.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/archBase.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/archExtra_litmus.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/arch_litmus.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/constant.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/constrGen.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/constrGen.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/dune": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/genParser.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/genParser.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/innerRel.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/innerRel.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/intOrd.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/intOrd.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/intRel.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/intRel.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/label.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/label.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/lexMisc.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/lexOutMapping.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/lexOutMapping.mll": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/lexUtils.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/lexUtils.mll": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/location.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/machSize.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/machSize.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/memory.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/memory.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/misc.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/misc.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/miscParser.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/miscParser.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/modelOption.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/modelOption.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/myMap.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/mySet.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/mySet.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/mySys.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/mySys.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/name.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/op.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/op.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/outMapping.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/outMapping.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/outUtils.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/parsedConstant.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/pos.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/pos.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/pos_extra.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/pos_extra.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/pseudo.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/rel.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/rel.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/scalar.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/splitter.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/splitter.mll": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/stateLexer.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/stateLexer.mll": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/stateParser.mly": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/symbConstant.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/symbConstant.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/target.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/template.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/testHash.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/testHash.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/warn.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/herd/warn.mli": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/litmus_test.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/main.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-litmus/output.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/build.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/arm-v8.5-a/barriers.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/arm-v8.5-a/cache_op.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/arm-v8.5-a/eret.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/arm-v8.5-a/tlbi.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/arm-v8.5-a/translation.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/cos.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/lib/stdlib.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/src/accessor.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/src/lexer.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/src/memory_model.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/src/parser.lalrpop": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-mml/src/smt.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/LICENCE": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/dune": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/dune-project": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/isla-sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/jib_ir.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sail/sail_plugin_isla.ml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sexp/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "isla-sexp/src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "itrace": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "oob.log": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "plans/Tree_API_\u62a5\u544a.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "profiles/riscv/args.yaml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "profiles/riscv/test.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.14_test_solve_all/error_report.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.14_test_solve_all/report.6.14.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.16_test_solve_all/error_report.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.16_test_solve_all/report.6.16.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.18_explain_fix/review_report.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.28_v_ext_solve/read_vmask_compare.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.28_v_ext_solve/report.6.28.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/6.28_v_ext_solve/vector-access-findings.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/profiling/itrace_vvtype_20260717/summary.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "reports/profiling/noitrace_vvtype_20260717/summary.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/migrate_float_ir.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/regenerate_ir.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/run.mk": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/run_ctrl_c.mk": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/solve_process.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/test_solve_cleanup.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "scripts/test_workaround_integration.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "spec/smt_timeout.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "specs/isarch-cli.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/axiomatic.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/client.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/execute-function.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/footprint.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/args.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/args_yaml.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/clause.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/encoding.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/encoding_slices.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/exec.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/memory_builder.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/memory_model.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/mod.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/official_float77.txt": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/representation.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/solve_summary.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/target.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/timeout_report.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch/value_hints.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/isarch_main.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/lib.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/litmus-dump.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/opts.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/preprocess.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/preprocess129.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/property.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/property129.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "src/zencode.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/assembly_roundtrip.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/2+2W+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/2+2W+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/2+2W.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+ctrl+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+ctrls.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+data+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+data+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+datas.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+fence.rw.rw+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+fence.rw.rw+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LB.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/LICENCE": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+fence.rw.rw+addr.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+fence.rw.rw+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+po+addr.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+po+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP+po+fence.rw.rw.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/MP.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/R+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/R+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/R+po+fence.rw.rw.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/R.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+fence.rw.rw+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+fence.rw.rw+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+po+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+po+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S+po+fence.rw.rw.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/S.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/SB+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/SB+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/SB.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/refs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/axiomatic/tests": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/cav2021/results.model_logs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/cav2021/run_tests.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/check_explicit_semantic_branches.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/check_float_closure_branches.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/check_nan_unbox_branches.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/check_special_semantic_branches.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/helpers.tsv": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/run.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/runner/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/runner/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/runner/src/state.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/rv32_fd.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/float_ir/test_migration.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/lb.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/lb.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/two_read.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/two_read.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/two_read_barrier1.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/two_read_barrier1.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/write_read.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/interface/shapes/write_read.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/_bootstrap_data.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected/assembly_names.txt": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected/clause_names.txt": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/__init__.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/a.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/b.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/bfloat16.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/c.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/cfi.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/fd.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/i.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/k.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/m.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/svinval.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/sys.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/v.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/vector_crypto.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zawrs.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zcmop.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zibi.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zicbom.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zicbop.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zicboz.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zicond.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zicsr.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zifencei.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zihintntl.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zihintpause.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zimop.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/expected_data/zvabd.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/extract_sail_clauses.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/test_isarch_cli_list-instructions.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/list-instructions/update_expected.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/solve-state/test_isarch_cli_solve-state.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/cli/test_isarch_cli.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/isarch/test_isarch.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abs_int.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abstract_always_some.sat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abstract_always_some.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abstract_always_some.sat.sail_opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abstract_always_some.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abstract_always_some.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/abstract_always_some.unsat.sail_opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/align_bits.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/all_enum.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/all_enum.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/and_bits.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/and_bits_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/and_bits_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/ccheri_regression1.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/choice.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/choice_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/choice_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/clz128.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/clz132.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/clz32.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/clz5.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/foreach_simple.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/fp_add_non_assoc.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/fp_lteq_max.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/fp_nan_is_nan.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/generic_vector_access.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/include/config.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_2.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_2.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_ch.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_ch.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_fdiv.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_fdiv.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_off.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_phi_chain.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_phi_chain.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_slice.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_slice.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_ssa.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_ssa.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_tuple.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/linearize_tuple.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/list_literal.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_branch_explosion.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_carryless_mul.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_carryless_mul.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_if_chain.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_if_chain.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_loop_64.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_loop_if.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_loop_sym.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_multi_branch.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_multi_branch.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_nested_if.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_nested_if.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_nested_loop.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_serial_fork.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_serial_fork.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/looplimit_timeout_2loop.timeout.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/lt_int_irrefl.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/lt_int_trans.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/lteq_int_antisym.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/lteq_int_def.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/lteq_int_refl.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/lteq_int_trans.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_cap.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_cond_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_cond_0.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_cond_1.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/mono_twice.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/nested_struct.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/nested_struct.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/option.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/option_unknown.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/option_unknown.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/or_bits.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/partial_linearize1.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/partial_linearize1.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/partial_linearize1_no_opt.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/partial_linearize1_var.unsat.opts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/partial_linearize1_var.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/reg_deref.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/reg_vector_read.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/reg_vector_read.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/reg_write.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/set_slice.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/set_slice_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/set_slice_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/set_slice_int.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_bits_left.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_bits_right.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_or_concat.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_or_concat128.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_or_concat4.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_or_concat4_2.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_or_concat_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shift_or_concat_2.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shiftr_zero_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/shiftr_zero_1.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/sign_extend.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/sign_extend_2.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/slice.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/source_region_foreach_match.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/string_take_drop.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/struct.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/sub_nat.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/trivial.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/trivial.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/trivial_funcall.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/trivial_return.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/trivial_return.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/tuple_return.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_bit.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_enum.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_enum.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_nat.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_nat_zero.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_nat_zero_2.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_range.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_range.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_range_2.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_range_2.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_range_3.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_vector.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/undefined_vector.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_ctor3.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_ctor3.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_ctor3_assoc.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_ctor4.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_ctor4.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_ctor4_same.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_different_ctor.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/union_ite_same_ctor.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/unknown_struct_ite.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/unknown_struct_ite.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/unknown_union.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_access.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_access_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_access_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_access_2.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_access_3.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_update_subrange.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_update_subrange_0.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/vector_update_subrange_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_1.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_1.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_2.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_2.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_3.sat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_3.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/property/zeros_4.unsat.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/run_tests.rb": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/smt/contract.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/smt/thread_interrupt.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/cases.tsv": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/generate.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/mapping.tsv": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/runner/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/runner/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/runner/src/main.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/softfloat_legacy/wrap.py": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/testarch/arch.sail": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/translation/results.model_logs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test/translation/run_tests.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test_args.yaml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test_litmus_aarch64.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test_litmus_esop2020.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "test_litmus_riscv64.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "vendor.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "vibecoding/notes.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "vibecoding/plan.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "vibecoding/prompt.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "vibecoding/rv64d.ir \u4e2d MRET \u6307\u4ee4\u5206\u6790\u62a5\u544a.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/README.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/THIRD_PARTY.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dev.config.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/LB+addr+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64-vmsa-strong.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64-vmsa.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64-vmsa/W.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/2+2W+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/2+2W.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/CoRR1.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/CoRW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/CoRW1.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/CoWR.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/CoWW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/IRIW+addrs.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/IRIW+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/IRIW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/ISA2+dmb.sy+addr+addr.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/ISA2.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+addrs+RW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+addrs+WW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+addrs.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+ctrls.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+datas+WW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+datas.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB+rs.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/LB.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+dmb.sy+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+dmb.sy+ctrlisb.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+dmb.sy+fri-rfi-ctrlisb.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+dmb.sy+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+dmb.sy+rs.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP+nondep+dmb.sy.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/MP_e.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/PPOAA.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/PPOCA.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/R+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/R.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/RDW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/RDWI.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/RSW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/RWC+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/RWC.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/S+dmb.sy+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/S+dmb.sy+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/S+dmb.sy+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/S+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/S.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/SB+dmb.sys.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/SB.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/WRC+addrs.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/WRC+dmb.sy+addr.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/aarch64/WRC.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/esop2020.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/esop2020.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/favicon.ico": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/help.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/help.md": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/help_standalone.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/CoRF.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/FOW.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/MP.R.RF+addr-cachesync+dmb+ctrl-isb.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/MP.RF+dc+ctrl-isb-isb.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/SM+cachesync-isb.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/SM.F+ic.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ifetch/SM.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/index.html": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/isla.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/2+2W+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/2+2W+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/2+2W.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+ctrl+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+ctrls.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+data+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+data+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+datas.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+fence.rw.rw+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+fence.rw.rw+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/LB.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+fence.rw.rw+addr.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+fence.rw.rw+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+po+addr.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+po+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP+po+fence.rw.rw.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/MP.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/R+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/R+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/R+po+fence.rw.rw.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/R.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+fence.rw.rw+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+fence.rw.rw+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+po+ctrl.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+po+data.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S+po+fence.rw.rw.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/S.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/SB+fence.rw.rw+po.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/SB+fence.rw.rws.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv64/SB.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/riscv_amo.cat": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/dist/ui.png": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/package-lock.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/package.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/prod.config.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/common.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/codemirror.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/goldenlayout-base.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/goldenlayout-dark-theme.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/goldenlayout-light-theme.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/goldenlayout-soda-theme.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/goldenlayout-translucent-theme.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/midnight.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/scheme.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/css/style.css": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/index.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/ast.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/gas.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/herd.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/ocaml.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/panzoom.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/placeholder.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/js/toml.js": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/location.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/model.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/tabs.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/ui.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/util.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/view.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/src/widget.ts": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/client/tsconfig.json": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/gather_tests.sh": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/.gitignore": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/Cargo.lock": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/Cargo.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/Makefile": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/build.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/rustfmt.toml": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/src/request.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/src/server.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    },
+    "web/server/src/worker.rs": {
+      "sha_match": true,
+      "stage_match": true,
+      "stage": "0"
+    }
+  },
+  "delta_from_7cce7834": {
+    "src/isarch/exec.rs": {
+      "entire_sha256": "4cedc597496412daee0697e85830503e9cbe6938d39fa09dde986c5c65530a15",
+      "production_prefix_sha256": "bfffe253a235681d22214ab6bc337e223c1eebc88e22d141789e4f5bf982e769",
+      "production_prefix_same": true
+    },
+    "src/isarch/memory_model.rs": {
+      "entire_sha256": "f21e338cc676b74b67b6644ef353e7ce947cc4dc3598c430c131ed6e88108c04",
+      "production_prefix_sha256": "2a14589e67f90c92c2a9c84e95237d8e9c051f0e23d156478c34f1d6e7dccde0",
+      "production_prefix_same": true
+    },
+    "src/isarch/mod.rs": {
+      "entire_sha256": "3db81dd16c3107ff308fea42cba8c387b3d41544c14447ff4d718a628ed97a3b",
+      "production_prefix_sha256": "cdf3ce773dd153cb7c5a383373c69e44a65cfc0fe487ccbda24bf88447f44bfb",
+      "production_prefix_same": true
+    },
+    "src/isarch/target.rs": {
+      "entire_sha256": "a151e0fa2bced848442afcd24194627714ae53e68155d90d1a674a48763b0844",
+      "production_prefix_sha256": "f07df0e57bcc5a24c2b9d4b8554fbf745b6a9d2b3e0bcf8917865544dafc5a85",
+      "production_prefix_same": true
+    }
+  },
+  "count": 1042
+}

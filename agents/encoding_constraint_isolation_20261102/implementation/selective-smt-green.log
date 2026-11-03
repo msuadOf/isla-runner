@@ -1,0 +1,101 @@
+   Compiling isla-lib v0.2.0 (/data1/baiyifan/workplace/isla-runner/isla/isla-lib)
+warning: unnecessary parentheses around type
+   --> isla-lib/src/memory.rs:833:17
+    |
+833 |     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+    |                 ^                             ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+833 -     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+833 +     generator: &dyn Fn(&mut Solver<B>) -> Sym,
+    |
+
+warning: unused import: `OnceLock`
+    --> isla-lib/src/smt.rs:2804:26
+     |
+2804 |     use std::sync::{Arc, OnceLock};
+     |                          ^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+    --> isla-lib/src/config.rs:1481:13
+     |
+1481 |         let mut default_registers = get_default_registers(&config, symtab, type_info)?;
+     |             ----^^^^^^^^^^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `chars`
+   --> isla-lib/src/dprint.rs:467:13
+    |
+467 |         let chars: Vec<char> = s.chars().collect();
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_chars`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `member_part`
+   --> isla-lib/src/dprint.rs:686:21
+    |
+686 |                 let member_part = &s[double_colon_pos + 2..paren_pos];
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_member_part`
+
+warning: unused variable: `res`
+   --> isla-lib/src/dprint.rs:801:9
+    |
+801 |     let res = match instr {
+    |         ^^^ help: if this is intentional, prefix it with an underscore: `_res`
+
+warning: unused variable: `enum_size`
+   --> isla-lib/src/smt.rs:165:29
+    |
+165 |             .map(|&(member, enum_size, enum_name)| EnumMember { enum_id: EnumId::from_name(enum_name), member })
+    |                             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_enum_size`
+
+warning: variant `Interrupted` is never constructed
+  --> isla-lib/src/smt/z3_timeout.rs:27:5
+   |
+26 | pub(super) enum Z3TimeoutError {
+   |                 -------------- variant in this enum
+27 |     Interrupted,
+   |     ^^^^^^^^^^^
+   |
+   = note: `Z3TimeoutError` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `print_instr_toString` should have a snake case name
+   --> isla-lib/src/dprint.rs:794:8
+    |
+794 | pub fn print_instr_toString<'a, B>(f: &'a mut String, instr: &'a Instr<Name, B>, symtab: &Symtab) -> &'a mut String {
+    |        ^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `print_instr_to_string`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> isla-lib/src/ir.rs:1306:21
+     |
+1306 |     pub fn typedefs(&self) -> Typedefs {
+     |                     ^^^^^     ^^^^^^^^ the same lifetime is hidden here
+     |                     |
+     |                     the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+1306 |     pub fn typedefs(&self) -> Typedefs<'_> {
+     |                                       ++++
+
+warning: `isla-lib` (lib test) generated 10 warnings (run `cargo fix --lib -p isla-lib --tests` to apply 8 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.70s
+     Running unittests src/lib.rs (target/debug/deps/isla_lib-8323dc2929242d05)
+
+running 1 test
+test smt::tests::instruction_checkpoint_keeps_only_instruction_derived_assertions ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 273 filtered out; finished in 0.04s
+

@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "domain": "directed-315",
+  "seed": 17,
+  "tactic": "qffp",
+  "threads": 1,
+  "model_tree": "workspace:/.worktree/merge-float-memory-20261104/sail-riscv",
+  "isla_tree": "workspace:/.worktree/merge-float-memory-20261104/isla",
+  "model_commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+  "isla_commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+  "isla_stage_tree": "3d852a5fac6a07ae906e502a430a8ee14a65c075",
+  "model_source_manifest": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/generation/merge-bf861b3e-20261104/model_source_manifest.json",
+    "sha256": "84ad731176807cd15bcc8e8e041851a332c51d412c478137f12c72f3dfdaa137"
+  },
+  "isla_source_manifest": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/isla-source-4d085b14.json",
+    "sha256": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05"
+  },
+  "binary": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/release/isarch",
+    "sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e"
+  },
+  "ir": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+    "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+  },
+  "irs": {
+    "rv64-default": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+      "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+    },
+    "rv32-default": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/rv32d.ir",
+      "sha256": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66"
+    },
+    "rv64-v128": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+      "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+    },
+    "rv64-v256": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v256_e64.ir",
+      "sha256": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9"
+    },
+    "rv64-v512": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v512_e64.ir",
+      "sha256": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1"
+    }
+  },
+  "config": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml",
+    "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "domain": "full-rv64-fd"
+  },
+  "configs": {
+    "rv64": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml",
+      "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "domain": "full-rv64-fd"
+    },
+    "rv32": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/rv32_fd.toml",
+      "sha256": "d31bc7e7402412899d4998ca6882b4528052762d089e411118038f8a0d585a4f",
+      "domain": "directed-rv32-fd"
+    },
+    "fd": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml",
+      "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "domain": "full-rv64-fd"
+    },
+    "memory": {
+      "path": "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+      "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105",
+      "domain": "full-rv64-memory-fd-disabled"
+    }
+  },
+  "z3": {
+    "path": "user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0",
+    "sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+  },
+  "seed_preload": {
+    "path": "workspace:/agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+  },
+  "ir_provenance_manifest": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/isla/ir/provenance/manifest.json",
+    "sha256": "8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b"
+  },
+  "release_build_log": {
+    "path": "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/release-4d085b14.log",
+    "sha256": "6cca7c92125c782dec756bd4198c2a8a1ef255fef697d32fa01d00777a62fe8a"
+  }
+}

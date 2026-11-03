@@ -1,0 +1,28 @@
+{
+  "time_utc": "2026-11-03T18:28:48.142855+00:00",
+  "force": false,
+  "components": [
+    {
+      "url": "https://github.com/msuadOf/sail-riscv.git",
+      "ref": "refs/heads/feat/sail-riscv-memory-by-model-20261022",
+      "before": null,
+      "commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+      "push_exit": 0,
+      "ls_remote_exit": 0,
+      "readback": "bf861b3e687894480aec701a886a38d4e50b8a99"
+    },
+    {
+      "url": "https://github.com/ariscv/isla.git",
+      "ref": "refs/heads/feat/memory-consistency",
+      "before": null,
+      "commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+      "push_exit": 0,
+      "ls_remote_exit": 0,
+      "readback": "4d085b14aa0f987436b86d72f41fab1df9e9a132"
+    }
+  ],
+  "root_memory_before": "8b24dc8909b0a17af8212e45a3646845d559d908",
+  "root_push_status": "not-run",
+  "original_memory_update_status": "not-run",
+  "note": "两个组件均经正式URL正常新建分支并独立ls-remote逐SHA回读；父仓尚未提交/发布，原memory未更新。"
+}

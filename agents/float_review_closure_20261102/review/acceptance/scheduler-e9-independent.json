@@ -1,0 +1,63 @@
+{
+  "scope": "Mock scheduler failure/identity/disk accounting plus real read-only input closure; zero Isla or real Clause executions",
+  "scheduler_sha256": "3ecd0ebc27db2e365b5d74fb49f8daceebc7a9ca29a3a87dddffb69d8650cf5b",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "affected_manifest_sha256": "7b3c98bc0052c8894c68fea73ded1e97dd6748e7b90394d06a61c1f04ab930e3",
+  "real_job_counts": [
+    77,
+    64,
+    13
+  ],
+  "duplicate_supervisor_refused": true,
+  "max_parallel_16_accepted_17_rejected": true,
+  "checks": [
+    {
+      "scenario": "failure-accounting",
+      "total": 6,
+      "completed": 6,
+      "passed": 1,
+      "failed": 5,
+      "blocked": 0,
+      "batch_complete": true,
+      "disk_guard_seen": false,
+      "disk_guard_with_active": false,
+      "conservation": true
+    },
+    {
+      "scenario": "drift-blocking",
+      "total": 5,
+      "completed": 2,
+      "passed": 2,
+      "failed": 0,
+      "blocked": 3,
+      "batch_complete": false,
+      "disk_guard_seen": false,
+      "disk_guard_with_active": false,
+      "conservation": true
+    },
+    {
+      "scenario": "disk-empty-resume",
+      "total": 3,
+      "completed": 3,
+      "passed": 3,
+      "failed": 0,
+      "blocked": 0,
+      "batch_complete": true,
+      "disk_guard_seen": true,
+      "disk_guard_with_active": false,
+      "conservation": true
+    },
+    {
+      "scenario": "growth-pause-resume",
+      "total": 3,
+      "completed": 3,
+      "passed": 3,
+      "failed": 0,
+      "blocked": 0,
+      "batch_complete": true,
+      "disk_guard_seen": true,
+      "disk_guard_with_active": true,
+      "conservation": true
+    }
+  ]
+}

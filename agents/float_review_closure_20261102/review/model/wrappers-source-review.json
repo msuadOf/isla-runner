@@ -1,0 +1,27 @@
+{
+  "stage": "source only",
+  "status": "PASS",
+  "baseline": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "sha256": {
+    "model/extensions/FD/softfloat_symbolic_f16.sail": "63c22bc512222b9697a5d7bf544f4260074eb5cbd2b62cbd716e7cd8917a5877",
+    "model/extensions/FD/softfloat_symbolic_f32.sail": "eb9d4883a239700a78f1969c879ac3857f7b8cb2d9290098c4d06ca769d94ac1",
+    "model/extensions/FD/softfloat_symbolic_f64.sail": "0cd758949af3ed2b13bc519087aff3fa87cf9c080d79b53efe1bebc7108b14ed"
+  },
+  "checks": [
+    "Twelve invalid/NaN/sign return choices manually matched to baseline",
+    "Negative NaN selects maximum before sign check",
+    "Rounded value, exception call, candidate and flags packing unchanged",
+    "Both ROD wrappers branch modes before calling ordinary native RM decoder; flags and bits share arm",
+    "ROD RTZ implementation and ordinary arithmetic are unchanged; canonical NaN rules retained",
+    "Owner selection proof independently rerun; finite-domain and no dynamic claims retained",
+    "Normal RM helper restored unchanged for existing test/symbolic_fp/f32_c.sail probe; only explanatory comment changed, wrapper still branches modes"
+  ],
+  "not_signed": [
+    "final commit",
+    "strict generation",
+    "IR CFG",
+    "dynamic oracle",
+    "full Clause budget"
+  ],
+  "revision": "Supersedes intermediate f32 hash43f74365: reviewer searched production model references only; owner found existing test probe reference and restored helper. Whole model repository reference search now checked."
+}

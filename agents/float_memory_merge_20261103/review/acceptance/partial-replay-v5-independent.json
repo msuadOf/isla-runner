@@ -1,0 +1,83 @@
+{
+  "scope": "v5完整callback记录P3与C_LD代表同输入继承复证；STORE main另按v4原binary收据，不改署",
+  "core_receipt_sha256": "8d55adc4f679f1f536dc0dc71514532180b66dc2523ba7886a102daf9c51c411",
+  "identities": {
+    "new": {
+      "binary": {
+        "path": ".worktree/fm-store-probe-20261104/target/release/isarch",
+        "sha256": "789a136940436e0a9a9e054f46ab8b0c66a5481113cdeaa39e3d085dba9bd983"
+      },
+      "ir": {
+        "path": ".worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+      },
+      "config": {
+        "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+        "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+      }
+    },
+    "old": {
+      "binary": {
+        "path": ".worktree/fm-store-probe-20261104/target-bdd/release/isarch",
+        "sha256": "f0d2d8a3f90a698f0f0afd25801581e529de352019f899acd8073465d6e0ab84"
+      },
+      "ir": {
+        "path": "agents/float_memory_merge_20261103/validation/dynamic/baseline-bdd/source/rv64d.ir",
+        "sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9"
+      },
+      "config": {
+        "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+        "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+      }
+    }
+  },
+  "rows": [
+    {
+      "run": "replay-p3-new-v5",
+      "result_sha256": "5b93a646a205055ec433dc43c770bfe41e4957799259093587f7026a5f70015d",
+      "input_sha256": "18d5d756ece706f581bbfd3b3c40b2645850121a0bd54a4f5841420487438048",
+      "log_sha256": "2f22ec6e434a093272e570fcb54ca81e5d930e78ba2b16665916824efb88eb00",
+      "same_registers": 183,
+      "uninitialized": 38,
+      "callback_count": 1,
+      "termination": "FM_STORE_PROBE_HELPER_OUTCOME function=zext_decode outcome=Ok(Some(Poison)) exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+    },
+    {
+      "run": "replay-cld-new-v5",
+      "result_sha256": "85faec737c82ef98963abd6f450b27094736dac15bbc8629067e84ffe3281384",
+      "input_sha256": "10d89d240b3997a4c958fc6fda5860106572843f12be0467e29dc1f7ff024433",
+      "log_sha256": "639de0571af418217a4ca9c9b72d78128325bb1597bbbbc736749124ae3e72af",
+      "same_prestate": 102,
+      "same_ctor": "C_LD three zero fields",
+      "exception": [
+        "Error_internal_error(\"core/types.sail:78: Invalid privilege level or virtual mode\")",
+        "prelude/errors.sail:21.41-21.106"
+      ],
+      "sat": "Sat"
+    },
+    {
+      "run": "replay-p3-old-v5",
+      "result_sha256": "09f721b8ceefd0c1b4607287c812c2d5808d8ffac5087014cea12086ad66b986",
+      "input_sha256": "8c67fbb3ec3e259aa99458e34c8c480f997c1ab967d77de855cf0de10a9fc910",
+      "log_sha256": "a280a2afe645745ca500331eda3c7c84120063c54b76873e296efb0021abdad3",
+      "same_registers": 183,
+      "uninitialized": 38,
+      "callback_count": 1,
+      "termination": "FM_STORE_PROBE_HELPER_RESULT function=zext_decode result=<poison> sat=Sat exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+    },
+    {
+      "run": "replay-cld-old-v5",
+      "result_sha256": "54ae96eb3b498c04d572c032db9a32c1355700961f56d64d0a64294007c4e50c",
+      "input_sha256": "7cff7b4c44fda70a3a338396f16ee61a973dff0fd63cb02c9667434f73edc19e",
+      "log_sha256": "8fd3f7658f539702120eb0fbe7b6ca555fd85770e27c0e48e3395270fc5e289e",
+      "same_prestate": 102,
+      "same_ctor": "C_LD three zero fields",
+      "exception": [
+        "Error_internal_error(\"core/types.sail:78: Invalid privilege level or virtual mode\")",
+        "prelude/errors.sail:21.41-21.106"
+      ],
+      "sat": "Sat"
+    }
+  ],
+  "representatives_reproduced_in_both": true
+}

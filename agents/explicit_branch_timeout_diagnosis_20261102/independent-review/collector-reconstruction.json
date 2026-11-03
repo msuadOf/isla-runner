@@ -1,0 +1,10 @@
+{
+  "src/isarch/exec.rs": {
+    "base_match": true,
+    "probe_match": true
+  },
+  "isla-lib/src/smt.rs": {
+    "base_match": true,
+    "probe_match": true
+  }
+}

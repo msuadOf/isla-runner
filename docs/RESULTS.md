@@ -4,6 +4,7 @@
 
 | 日期 / 范围 | 原记录的结果 | 证据入口与限制 |
 | --- | --- | --- |
+| 2026-11-04，float→memory 联合限定验收 | 最终 Isla `4d085b14`／模型 `bf861b3e`／Release `3e44cdd6…`：来源、源码、定向315/300、Schema Union、nat/ExecuteAs、三表示、四 Make 入口获独立 `limited-pass`，无新增实现阻断。原域 FLEQ_S finished/gen48；LOAD_FP、C_LD、STORE partial，不计完整 PASS。P3、STORE、C_LD 三条代表旧/新同状态复放同异常，仅解释代表。 | [限定签收](../agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md)、[核心分类 v5](../agents/float_memory_merge_20261103/review/core/partial-boundary/report.md)、[原域边界](../agents/float_memory_merge_20261103/validation/dynamic/full-boundary.md)。F1继承缺陷与STORE/C_LD全域无退化未证；旧基线长尾、float77全预算、OPEN、全控制流和硬件重放未签。两个组件正式远端逐 SHA 回读见[收据](../agents/float_memory_merge_20261103/publication/components.json)；父仓提交/发布未执行。 |
 | 2026-09-29，bughunt F 线验收战役 | 四签名：#6475 自动级 155 例（片内含 vsseg3e32+自由批 43）、#6486 自动级 295 例含 41 例 data/mask/addr 级真分歧（错元素 mask 0x10↔0x01、错地址±0x10；vsseg2e16×24/vse32×27）、T3b 未复现（nf=2 错位 PASS/nf=3 转触 #6475，疑依赖定向载体）、#6605 出新候选；三族新 DUT bug 候选自动发现：NC-1 vstart 保留区 vsseg DUT 死锁 15000 周期（5 例）、NC-2 vstart≥vl 仍访存 mcause7@垃圾地址（3+ 例，P2 mstatus/mepc/mcause 同根）、NC-3 locked-PMP 段 store mtval+0x10（2 例）；P3 收口：zAMO 88 reject、AMO 过滤后全量重放 0 失败、preclass 可见化 144 例；VSSEG 自由批 0 命中→分片每片必出、zSTORE 错位 0→256+。结论：P1-P3 改造达标 | [findings](../agents/findings.md)、[议题状态](../agents/memsolve_branch_coverage/status.md)、产物根仓 `.tmp/accept1-20260929-124451/`（gitignored）。受限：a1 盒杀于 nf=6、a2 用 P1 冻结 JSON 代用、P1 hint 批前置待办（VSSEGTYPE 自由批税 4×1800s）、T3b 待原载体复验、A4 需 PMP 前导可配置化；上游上报包 7 项（E 线四草稿+NC-1/2/3）。 |
 | 2026-09-29，catalog观测范围收缩 | `323021b`：先确认旧错误升级/完整性门槛红例；最终精确64库＋24bin、暂存组合82＋24、未暂存组合83＋24、默认3项定向/编译/fmt PASS | [版本、命令与证据](../agents/float_support_review/catalog-commit-review-20260929.md#catalog限于观测信息2026-09-29)。原错误退出策略恢复，complete仅报告；原27文件暂存和exec.rs未暂存浮点层保持。过滤已知x0旧失败，未跑全量solve/完整Sail/硬件重放。 |
 | 2026-09-29，XiangShan GitHub 浮点 issue 逐条索引 | GitHub Search 取得 898/898 条公开 issue；每条标题／正文／公开时间线全读，37 条首屏不全者补第二页，最终 898/898 时间线完整。五批逐条记录 180/180/180/180/178，编号无重漏。表格含 27 条直接相关 XiangShan 浮点报告（12 open／15 closed）、17 条参考模型／重复／被否定等报告、7 条性能／FP 代码配置／构建交集；新补 #2890 `vfmacc.vf` 工作负载、#3735 FP 调度参数笔误、#4980 MMIO `fld` DiffTest 同步，#6410 FP 影响仍只是推论。 | [表格](../agents/float_support_review/xiangshan-github-float-issues.md)、[总审计](../agents/float_support_review/github-issue-audit/summary.json) SHA `491c2e30…af5cbb`、[全量快照](../agents/float_support_review/github-issues-all-20260929.json) SHA `b6af07e4…0c15e`、[完整公开时间线](../agents/float_support_review/github-issue-details-20260929.json) SHA `af17f7dc…990e29`。只做 GitHub 身份、评论和上游状态调查，无求解／emu 新验证；截图／附件中独有信息未逐个下载。 |
@@ -186,3 +187,56 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 ## 2026-10-30 根仓memory版本更新
 
 固定isla 47ac90cd、sail-riscv 1fa93117；核对manifest、gitlink、实际checkout与IR SHA256，`./init.sh --submodules-only`通过。仅版本管理验证，未重生IR/编译/运行成套功能或硬件测试。来源和局限见[版本说明](../specs/topic-versions.md)。
+
+## 2026-10-30 根仓float版本更新
+
+固定isla b0138b7c、sail-riscv 18389a89；核对manifest、gitlink、实际checkout与IR SHA256，`./init.sh --submodules-only`通过。仅版本管理验证，未重生IR/编译/运行成套功能或硬件测试。来源和局限见[版本说明](../specs/topic-versions.md)。
+
+
+**显式分支恢复（2026-11-02）**：四配置生成/普通strict重跑/五IR24步骤/make-FMINM_S12条/GCC+Clang72项通过，GPT-6.1 Sol源码和IR独审无阻断；组合验证仅已完成项为PASS，源配置/版本/日志见[专题](../agents/explicit_branch_restore_20261102/status.md)。首轮ordinary缓存目录包装错误失败已保留；未全Clause/硬件验收。
+
+
+## 2026-11-02 最终后台验证结果
+
+七项新组合Clause全部退出0、finished、无错误或超时。FVVTYPE 3121.758秒（329条），VFUNARY1 1880.107秒（520条），RFVVTYPE 290.252秒（184条），其余四项15.471–150.914秒；均低于完整Clause7200秒预算。以validation/report.md和summary.json的最终记录为准，旧“运行中”记录仅适用于提交时快照。
+
+单变量消融84/84已结束。flags算术和转换饱和的显式分支B各三次均触及7200秒外限，故不符合本轮恢复条件，保留ITE；不能写成这些情况不需要控制流或覆盖已经完整。其他格式/循环、右源独立NaN、BF16融合及多lane异常等仍有覆盖验证义务。
+
+
+## 2026-11-02：独立源NaN与活动lane分支
+
+模型四分类提交350a072/f263774/eb17b05/a9fd947，Isla对应IR提交99a83bb9；四配置严格生成、普通严格检查、五IR25步回归通过。独立GPT-6.1 Sol源码、实际CFG、56项定向结果复核通过。156条JSON、3518断言、正式make solve及GCC/Clang60项编码检查通过。固定域与vl≤2，不代表全域完整覆盖。
+
+flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱和实验对不活动lane提前计算，导致额外分叉，新的活动gate已纠正。饱和overflow显式化仍需重新预算实验；flags changed及其余特殊异常分界未全部恢复。见[本轮状态](../agents/special_control_restore_20261102/status.md)和[超时定位](../agents/explicit_branch_timeout_diagnosis_20261102/report.md)。未推送。
+
+
+## 2026-11-02：flags/sat超时完整归因确认
+
+六臂冻结B的qffp/default/smt完整Clause对照均7200s外限exit124，无完整JSON；CPU约99.5–99.7%，更换这两策略未使本轮负载完成。插桩主路径2h账：flags结构上界332、创建256、执行返回150/收集返回149、排队106+collector中1；sat上界1033、创建435、执行返回199/收集返回198、排队236+collector中1。主树/编码辅助树/JSON分别计数。
+
+flags已完成SMT查询约94.5%时间在collector，最长单次1038.658s SAT；sat最长4.819s、16951次已返回查询累积，兼旧8lane溢出组合。两项已返回check无UNKNOWN，外限截断时各一条刚开始的pending。旧源只加活动gate、保留overflow-if，同seed17三次57–64秒完整finished，确认不活动lane过早转换是重要原因。flags干净同具体FDIV_S编码诊断：原路径约束36.50秒，隔离后0.04–0.05秒，同机器码；不能据此直接删除生产约束。
+
+独立review发现并修正计数混合、旧探针残留同核竞争、check边界误归属；先前240/455秒性能值撤回为受干扰诊断。未微观定位原17分钟query为何跨轮变动，不宣称tactic普遍无影响或会话历史bug。生产源码/模型/策略未改。完整证据见[确认报告](../agents/explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)。
+
+
+## 2026-11-02：编码候选约束分离与活动 lane 饱和分支（完成／限定验收）
+
+Isla `cf1aa14`、模型 `6202e23`：辅助编码仅保留指令字段原断言，所有候选仍在完整执行约束下验证；恢复活动 lane 内 f16→i16 overflow 显式分支。独立 GPT-6.1 Sol 源码、四配置 IR、实际 JSON 和官方库 Rust 回归签收通过。
+
+完整旧显式 flags B / 当前正式浮点算术 / 新 VFUNARY0 分别 2626.07 / 1127.51 / 22.33 秒 finished，均 T1/qffp/seed17、Clause 与单次 SMT 各 7200 秒，原配置未缩域；错误及 partial 均零。56 项定向、126 项双工具链、15 项官方库 Rust 回归及真实 Make 入口通过。两版各 1258 条实际见证的指令、编码、完整前后态、返回值多重集合相同；不推断全域覆盖或严格加速比。
+
+五 IR/四配置严格生成和 25 步回归通过；flags changed 与其他未验窄转换仍维持现实现。既有枚举同 Context 重放单测失败单列，不计入通过数。旧 eager lane 饱和 B 初版诊断7200.20秒外限exit124、无完整JSON，不替代新模型验收。根 float 更新组件与证据，本轮未推送。详见[本轮状态](../agents/encoding_constraint_isolation_20261102/status.md)。
+
+
+## 2026-11-03 float收敛交付
+
+模型0f7b8fbc、Isla591693d：回退77处纯数据选择，保持NaN/trap和OPEN实现。源码/四配置strict与IR、安装版26步、新300flags/819+282+183转换/315异常oracle、GCC/Clang及Make、FLEQ_S与C_ADDI4SPN两完整域入口均由GPT-6.1 Sol独立限定签收。OPEN与通用策略配置延期memory合流，无本轮新增正确性阻断；不宣称全77预算、全控制流覆盖或硬件验收。详见[交付报告](../agents/float_review_closure_20261102/final-report.md)及[memory交接](../agents/float_review_closure_20261102/handoff-to-memory.md)。
+
+
+## 2026-11-04 float→memory 合流候选
+
+父仓 `31ef3b9` 与 `0665526d` 已进入未提交合流。模型双亲提交 `bf861b3e` 的普通严格检查及 RV32、RV64 VLEN128/256/512 四配置生成均退出 0，五入口已安装；79 配置、130 区域、22 锚点核对通过。实际命令、输入/工具/配置与四 IR SHA-256 见[生成记录](../agents/float_memory_merge_20261103/validation/generation/report.md)，独立来源与索引复核见[IR 审查](../agents/float_memory_merge_20261103/review/model/ir-review.md)。Isla 双亲合流 `7cce7834` 后追加仅测试初始化兼容提交 `4d085b14`；最新 tree `3d852a5f` 获[源码独立签收](../agents/float_memory_merge_20261103/review/core-final-report.md)。最终 Release 二进制 `3e44cdd6…`、冻结输入 `30f6847f…` 的 workspace `--lib` 610/610、`--tests` 665/665、永久 IR 26/26 步及负变异104/104拒绝，实际命令与结果见[验证记录](../agents/float_memory_merge_20261103/validation/report.md)。这一组只签来源、源码、库/集成与永久 IR 回归；定向动态结果见下段，STORE/C_LD 原域 partial 分类仍待完成。旧二进制结果和上方历史 float/memory PASS 均不迁记本版。
+
+同一 `4d085b14`/`3e44cdd6…` 定向批次的异常315/315、状态300/300、混合访存9/9、nat指令8/8与helper4/4、GCC/Clang三表示54/54及四个定向真实 Make 入口已实际完成并获独立复算。原始结果、命令与配置见[动态索引](../agents/float_memory_merge_20261103/validation/dynamic/index.md)，独立复核与输入边界见[审查进度](../agents/float_memory_merge_20261103/review/acceptance/progress.md)。混合配置显式钉 Machine/mstatus、RAM缩至4KiB；Make wrapper只追加固定机器字及前态。F1同输入复证仍为继承缺陷，不能写修复 PASS；STORE/C_LD 原域 partial 和旧基线长尾尚未分类，本轮不宣称完整原域验收。
+
+同一最终程序的真实 Make 原域：FLEQ_S finished/gen48；LOAD_FP exit2、partial/errors4/gen0；C_LD exit0、partial/unfinished7/gen89；STORE exit2、partial/errors922/unfinished112/gen130。访存错误类别已有旧 memory 同类观察，但 STORE/C_LD 旧基线仍在7200秒预算内，不能据已见片段断言全域无退化。[逐类边界](../agents/float_memory_merge_20261103/validation/dynamic/full-boundary.md)保留新旧配置与进程状态；partial 均不计 PASS。

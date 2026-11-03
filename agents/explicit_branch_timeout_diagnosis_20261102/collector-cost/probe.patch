@@ -1,0 +1,213 @@
+--- a/src/isarch/exec.rs
++++ b/src/isarch/exec.rs
+@@ -658,6 +658,12 @@
+     symbolic(ctor_ty, shared_state, solver, SourceLoc::unknown())
+ }
+ 
++fn collector_probe(stage: &str) {
++    let uptime = std::fs::read_to_string("/proc/uptime").expect("uptime");
++    let stamp = uptime.split_whitespace().next().expect("uptime field");
++    eprintln!("COLLECTOR_PHASE {} {}", stamp, stage);
++}
++
+ fn run_symbolic_execute_with_target<'ir, B: BV>(
+     target: &mut dyn RISCV<B>,
+     instruction_name: &str,
+@@ -762,6 +768,7 @@
+                         log!(log::SYM_EXEC, &format!("警告: {}这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_", instruction_name))
+                     }
+                     Run::Finished(ret_val) => {
++                        collector_probe("main_finished_begin");
+                         let ret_val_str = ret_val.to_str(shared_state).to_string();
+                         log!(
+                             log::PATH_RESULT,
+@@ -796,6 +803,7 @@
+                         println!("assembly:{:#?}", assembly); */
+                         // isarch::get_assembly_name(Val::Unit /* ??? */, &shared_state, regs, lets);
+ 
++                        collector_probe("main_initial_check_begin");
+                         match solver.check_sat(SourceLoc::unknown()) {
+                             isla_lib::smt::SmtResult::Sat => (),
+                             isla_lib::smt::SmtResult::Unsat => return,
+@@ -807,6 +815,62 @@
+                                 };
+                                 trace_diagnostics = error_recorder.record_error_diagnostic(&error, frame, shared_state);
+                                 submit_trace(frame, &mut trace_diagnostics);
++                                return;
++                            }
++                        }
++                        collector_probe("main_initial_check_end_encoding_begin");
++                        if std::env::var_os("ISLA_COLLECTOR_CONTROL").is_some() {
++                            let concrete_arg = {
++                                let mut model = Model::new(&solver);
++                                model.set_complete_model(true);
++                                model.get_val(&fun_args[0]).expect("control concrete instruction")
++                            };
++                            let mut fresh_cfg = Config::new();
++                            fresh_cfg.set_param_value("model", "true");
++                            let fresh_ctx = Context::new(fresh_cfg);
++                            let mut fresh_solver = Solver::new(&fresh_ctx);
++                            let mut replayed_defs = 0;
++                            let mut skipped_asserts = 0;
++                            for event in solver.trace().to_vec().into_iter().rev() {
++                                if let isla_lib::smt::Event::Smt(def, _, _) = event {
++                                    if matches!(def, isla_lib::smt::smtlib::Def::Assert(_)) {
++                                        skipped_asserts += 1;
++                                    } else {
++                                        fresh_solver.add(def.clone());
++                                        replayed_defs += 1;
++                                    }
++                                }
++                            }
++                            fresh_solver.probe_inherit_next_var(&solver);
++                            eprintln!("COLLECTOR_CONTROL replayed_defs={} skipped_asserts={}", replayed_defs, skipped_asserts);
++                            let fresh_cp = checkpoint(&mut fresh_solver);
++                            let mut fresh_paths = Vec::new();
++                            for repeat in 1..=3 {
++                                collector_probe(&format!("control_fresh_context_{}_begin", repeat));
++                                fresh_paths = encoding_paths(
++                                    &concrete_arg, shared_state, &symbolic_regs, lets, fresh_cp.clone()
++                                ).expect("control fresh context encoding");
++                                collector_probe(&format!("control_fresh_context_{}_end", repeat));
++                            }
++                            if std::env::var_os("ISLA_COLLECTOR_CONTROL_FRESH_ONLY").is_some() {
++                                eprintln!("COLLECTOR_CONTROL concrete_arg={:?} fresh={:?}", concrete_arg,
++                                    fresh_paths.iter().map(|(value, _)| format!("{:?}", value)).collect::<Vec<_>>());
++                                collector_probe("control_fresh_only_return");
++                                return;
++                            }
++                            collector_probe("control_original_checkpoint_begin");
++                            let original_paths = encoding_paths(
++                                &concrete_arg, shared_state, &symbolic_regs, lets, checkpoint(&mut solver)
++                            ).expect("control original checkpoint encoding");
++                            collector_probe("control_original_checkpoint_end");
++                            eprintln!("COLLECTOR_CONTROL original_values={:?}",
++                                original_paths.iter().map(|(value, _)| format!("{:?}", value)).collect::<Vec<_>>());
++                            let original_values: Vec<_> = original_paths.iter().map(|(value, _)| format!("{:?}", value)).collect();
++                            let fresh_values: Vec<_> = fresh_paths.iter().map(|(value, _)| format!("{:?}", value)).collect();
++                            eprintln!("COLLECTOR_CONTROL concrete_arg={:?} original={:?} fresh={:?} equal={}",
++                                concrete_arg, original_values, fresh_values, original_values == fresh_values);
++                            if std::env::var_os("ISLA_COLLECTOR_CONTROL_ONLY").is_some() {
++                                collector_probe("control_only_return");
+                                 return;
+                             }
+                         }
+@@ -835,7 +899,9 @@
+                             submit_trace(frame, &mut trace_diagnostics);
+                             return;
+                         }
++                        collector_probe("main_encoding_end");
+                         for (symbolic_encoding, encoding_checkpoint) in encodings {
++                            collector_probe("candidate_begin");
+                             let mut cfg = Config::new();
+                             cfg.set_param_value("model", "true");
+                             let ctx = Context::new(cfg);
+@@ -872,6 +938,7 @@
+                                     Box::new(smtlib::bits64(3, 2)),
+                                 );
+                                 let preferred = Exp::And(Box::new(fs_enabled), Box::new(vs_enabled));
++                                collector_probe("fs_vs_check_begin");
+                                 match solver.check_sat_with(&preferred, SourceLoc::unknown()) {
+                                     isla_lib::smt::SmtResult::Sat => solver.assert(preferred),
+                                     isla_lib::smt::SmtResult::Unsat | isla_lib::smt::SmtResult::Unknown => (),
+@@ -924,7 +991,9 @@
+                             }
+                             // 获取ISA状态（寄存器、lets变量等）
+                             // 首先检查solver是否可满足
++                            collector_probe("final_check_begin");
+                             let smt_result = solver.check_sat(SourceLoc::unknown());
++                            collector_probe("final_check_end");
+                             if let isla_lib::smt::SmtResult::Error(error) = &smt_result {
+                                 let error = ExecError::Smt(error.clone());
+                                 trace_diagnostics = error_recorder.record_error_diagnostic(&error, frame, shared_state);
+@@ -949,6 +1018,7 @@
+                                     // 这样所有主动符号化的 pre-state 寄存器都能输出（与 testgen 一致）。
+                                     // model.set_complete_model(true);
+                                     // pre-state 取值：通过 target 和 setup 阶段生成的 PreStateCtx 查询具体解。
++                                    collector_probe("pre_state_begin");
+                                     match target.solve_pre_state(&mut model, shared_state) {
+                                         Ok(state) => isa_state.extend(state),
+                                         Err(error) => {
+@@ -965,6 +1035,7 @@
+                                             return;
+                                         }
+                                     }
++                                    collector_probe("pre_state_end");
+                                     model.set_complete_model(true);
+                                     log!(log::PATH_RESULT, &format!("2. === ISA State (Thread {}) ===", thread));
+                                     let test = Sym::from_u32(6);
+@@ -990,6 +1061,7 @@
+                                                 };
+                                                 concrete_regs.assign(*name, concrete, shared_state);
+                                             }
++                                            collector_probe("assembly_name_begin");
+                                             let asm_opt = match try_get_assembly_name(
+                                                 arg_val.clone(),
+                                                 shared_state,
+@@ -1011,11 +1083,13 @@
+                                                     return;
+                                                 }
+                                             };
++                                            collector_probe("assembly_name_end");
+                                             log!(log::PATH_RESULT, &format!("当前汇编：{:?}", asm_opt));
+                                             match asm_opt {
+                                                 Some(asm) => test_ins = asm,
+                                                 None => continue,
+                                             }
++                                            collector_probe("assembly_encoding_begin");
+                                             let asm_encdec_opt = match try_get_assembly_encdec(
+                                                 arg_val.clone(),
+                                                 shared_state,
+@@ -1057,6 +1131,7 @@
+                                                     return;
+                                                 }
+                                             };
++                                            collector_probe("assembly_encoding_end");
+                                             let expected_encoding =
+                                                 match FmtVal::from_val(&symbolic_encoding, &mut model) {
+                                                     Ok(value) => value.to_str(shared_state),
+@@ -1183,6 +1258,7 @@
+                                             _ => println!(" [event] {:?}", event),
+                                         }
+                                     } */
++                                    collector_probe("complete_state_begin");
+                                     isa_state_complete = match target.solve_pre_state_complete(&mut model, shared_state)
+                                     {
+                                         Ok(value) => value,
+@@ -1193,6 +1269,7 @@
+                                             return;
+                                         }
+                                     };
++                                    collector_probe("post_state_begin");
+                                     isa_state_post =
+                                         match target.solve_post_state(frame.regs(), &mut model, shared_state) {
+                                             Ok(value) => value,
+@@ -1203,6 +1280,7 @@
+                                                 return;
+                                             }
+                                         };
++                                    collector_probe("ret_val_begin");
+                                     concrete_ret_val_str = match model.get_val(ret_val) {
+                                         Ok(value) => value.to_str(shared_state),
+                                         Err(error) => {
+@@ -1215,6 +1293,7 @@
+                                     log!(log::PATH_RESULT, "3. ==============================");
+                                 }
+                             }
++                            collector_probe("candidate_end");
+                             let single_instruction_json = AssemGenJsonItem::new(
+                                 target,
+                                 test_ins,
+--- a/isla-lib/src/smt.rs
++++ b/isla-lib/src/smt.rs
+@@ -2572,6 +2572,10 @@
+         self.trace.tail = trace
+     }
+ 
++    pub fn probe_inherit_next_var(&mut self, other: &Self) {
++        self.next_var = other.next_var;
++    }
++
+     pub fn from_checkpoint(ctx: &'ctx Context, Checkpoint { num, next_var, trace }: Checkpoint<B>) -> Self {
+         let mut solver = Solver::new(ctx);
+         solver.replay(num, trace);

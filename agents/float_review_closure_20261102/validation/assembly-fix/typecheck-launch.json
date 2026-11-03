@@ -1,0 +1,14 @@
+{
+  "pid": 1047037,
+  "cpus": [
+    7,
+    9
+  ],
+  "command": [
+    "python3",
+    "typecheck.py",
+    "--output",
+    "typecheck-attempt1"
+  ],
+  "started_epoch": 1793636027.991588
+}

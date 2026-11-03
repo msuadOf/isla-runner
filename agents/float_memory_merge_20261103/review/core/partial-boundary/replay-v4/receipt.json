@@ -1,0 +1,123 @@
+{
+  "scope": "两类代表P3与main；非全量922/112/7分类，非Make PASS",
+  "files": {
+    "replay-p3-new-v4/decode.json": {
+      "bytes": 16315,
+      "sha256": "5668c81cdf2b3beaefedda7fb39350db6ebe829d3f89bbc22f911f8c4c42f1e0"
+    },
+    "replay-p3-old-v4/decode.json": {
+      "bytes": 16318,
+      "sha256": "3c9bbbd6e7416fa5a20d4597f00bdc792a67bdaeda7b5b2bd941c30f2473360f"
+    },
+    "run_replay.py": {
+      "bytes": 3885,
+      "sha256": "b138af5cd8c98e7ea3171023d049357dd0d9600fd03f26ead6262bdf41aaa32d"
+    },
+    "replay-p3-new-v4/input.json": {
+      "bytes": 13778,
+      "sha256": "dfb97b96c77e5bba32aeea2e4a86218e1ebe6a15afe4ec510cfcb4131d174e58"
+    },
+    "replay-p3-new-v4/run.log": {
+      "bytes": 950,
+      "sha256": "2f22ec6e434a093272e570fcb54ca81e5d930e78ba2b16665916824efb88eb00"
+    },
+    "replay-p3-new-v4/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "94357f63ecbc9f2a794d70f4d95b4a0db358191b6ae02fe472d240e367467503"
+    },
+    "replay-p3-old-v4/input.json": {
+      "bytes": 13824,
+      "sha256": "6359d77f2bb83ef8c7337e457bc192fd3241334e13c9d2271b2eb111c2255ad7"
+    },
+    "replay-p3-old-v4/run.log": {
+      "bytes": 727,
+      "sha256": "a280a2afe645745ca500331eda3c7c84120063c54b76873e296efb0021abdad3"
+    },
+    "replay-p3-old-v4/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "94357f63ecbc9f2a794d70f4d95b4a0db358191b6ae02fe472d240e367467503"
+    },
+    "replay-main-new/input.json": {
+      "bytes": 10168,
+      "sha256": "a2728c909cc746cb5aa700d7a7d7df02305371b3418faef4b9f7b163e814c125"
+    },
+    "replay-main-new/run.log": {
+      "bytes": 2124,
+      "sha256": "e13e232da865b74878d5b1350406c5821e3a3acac58ac874cc0ff5c9126c82c0"
+    },
+    "replay-main-new/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c"
+    },
+    "replay-main-old/input.json": {
+      "bytes": 10214,
+      "sha256": "b2c334720fe4d1d26a547264e768e163e536f27baae6924e163eeb849de3438c"
+    },
+    "replay-main-old/run.log": {
+      "bytes": 1981,
+      "sha256": "514351885622a7f13ea73abc0948d131886446589f396e825b4c17dc50189305"
+    },
+    "replay-main-old/exit-code.txt": {
+      "bytes": 3,
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c"
+    },
+    "replay-main-new/main-poison.json": {
+      "bytes": 5184,
+      "sha256": "6a1004aa0d3f5a541f94b9293c6bf4abb50f1133e2ec36e326bbb33d62231f26"
+    },
+    "replay-main-old/main-poison.json": {
+      "bytes": 5184,
+      "sha256": "d7800822acab14e813421146646a07627d49b563ab8b3b8405f2377743a52989"
+    },
+    "build.log": {
+      "bytes": 16829,
+      "sha256": "5c12f1efff537db37a36ff69ad9a1b1cc3e5c6692ee286d87e104b8e72f51a2d"
+    },
+    "build-bdd.log": {
+      "bytes": 15972,
+      "sha256": "b5ec50f4fee632d6ca28ae8dc99cfd8826171eeb89dce137c0877d8a4db58911"
+    },
+    "probe-new.patch": {
+      "bytes": 14528,
+      "sha256": "773bbb26a38394e7b5a1de82a429d901ef27a2897ef45642e579ad5df1164a5a"
+    },
+    "probe-old.patch": {
+      "bytes": 7631,
+      "sha256": "8a8f3ffd5e5bbc10b849e89679798891edf4c1c086ead268033df67551b91315"
+    }
+  },
+  "identities": {
+    "new": {
+      "binary": {
+        "path": ".worktree/fm-store-probe-20261104/target/release/isarch",
+        "sha256": "608108416656c08d7dbc9e6c12e59d54620d225e76b2611d2963de4da622c146"
+      },
+      "ir": {
+        "path": ".worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+        "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9"
+      },
+      "config": {
+        "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+        "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+      },
+      "ldd": "\tlinux-vdso.so.1 (0x000076ae6360f000)\n\tlibz3.so.5.3 => user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000076ae60a00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000076ae635b2000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000076ae60600000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000076ae63611000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000076ae60200000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000076ae608da000)\n",
+      "prestate_pin_count": 141
+    },
+    "old": {
+      "binary": {
+        "path": ".worktree/fm-store-probe-20261104/target-bdd/release/isarch",
+        "sha256": "2e052caec7226e6316bc7a350165993d51a967de230cd04fd6c25e874ac2b0b4"
+      },
+      "ir": {
+        "path": "agents/float_memory_merge_20261103/validation/dynamic/baseline-bdd/source/rv64d.ir",
+        "sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9"
+      },
+      "config": {
+        "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+        "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+      },
+      "ldd": "\tlinux-vdso.so.1 (0x00007da273167000)\n\tlibz3.so.5.3 => user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x00007da270600000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007da27310a000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007da270200000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007da273169000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007da26fe00000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007da2704da000)\n",
+      "prestate_pin_count": 141
+    }
+  }
+}

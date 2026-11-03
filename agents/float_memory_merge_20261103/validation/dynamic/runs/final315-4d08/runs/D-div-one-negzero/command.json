@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "22",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-div-one-negzero/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-div-one-negzero/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_D"
+  ],
+  "job": {
+    "name": "D-div-one-negzero",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_D",
+    "fields": [
+      1,
+      0,
+      "zRM_RNE",
+      3,
+      "zFDIV_D"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0x3ff0000000000000",
+      "f1": "0x8000000000000000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "D-div-one-negzero",
+      "family": "scalar",
+      "width": 64,
+      "op": "div",
+      "fmt": "f64",
+      "dst": null,
+      "rm": 0,
+      "a": "0x3ff0000000000000",
+      "b": "0x8000000000000000",
+      "c": null,
+      "reason": "finite nonzero over negative zero",
+      "expected_bits": "0xfff0000000000000",
+      "oracle_raw_bits": "0xfff0000000000000",
+      "expected_flags": "0x8",
+      "oracle_argv": [
+        "--op",
+        "div",
+        "--fmt",
+        "f64",
+        "--rm",
+        "0",
+        "--a",
+        "0x3ff0000000000000",
+        "--b",
+        "0x8000000000000000"
+      ]
+    },
+    "expected_full_bits": "0xfff0000000000000"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "c2efdbcc536f45cf5af2540e80a34680f4b66da548dfd27d8f4c1ec11b7fe4c2",
+  "config_sha256": "1a0c12849f40b51e62cc016f7463372f5894c0e7e5339a50fbcb99223e0ebb52",
+  "cpu": 22,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-div-one-negzero/seed-intercept.log"
+  }
+}

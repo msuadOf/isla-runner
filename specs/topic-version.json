@@ -3,42 +3,54 @@
   "topic": "memory",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "IR来源与定向语义验证通过；GCC和Clang汇编编码往返通过；完整源码控制流覆盖和硬件重放未验收",
+  "status": "float→memory合流限定验收通过：来源、源码、定向Schema Union/数值/Make已签；原域访存partial、F1和全域未证仍保留；发布待完成",
   "components": {
     "isla": {
-      "commit": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+      "commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
       "source_branch": "feat/memory-consistency",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
       "source_branch": "feat/sail-riscv-memory-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
-    "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
+    "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+    "provenance": "最终bf861b3e模型经普通严格检查及四配置SYMBOLIC生成；五入口、源/工具/配置哈希见isla/ir/provenance/manifest.json（SHA-256 8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b）"
   },
   "excluded_isla_branches": [
-    "feat/float-only-20261008",
-    "refactor/general-support-20261007",
     "feat/witness-randomization"
   ],
   "publication": {
-    "pushed_this_round": false,
-    "remote_reachability": "本轮仅从本机源仓获取，未重新核实正式远端"
+    "pushed_this_round": true,
+    "status": "components-published-root-pending",
+    "component_remote_reachability": "Isla与Sail-RISC-V最终提交已从正式URL目标分支逐SHA回读一致；见agents/float_memory_merge_20261103/publication/components.json",
+    "root_push_status": "not-run"
   },
-  "updated": "2026-10-30",
+  "updated": "2026-11-04",
   "validation": {
-    "date": "2026-10-30",
-    "report": "docs/json-semantic-validation-20261030.md",
-    "assembly_required": [
-      "gcc",
-      "clang"
-    ],
+    "status": "limited-pass",
+    "report": "agents/float_memory_merge_20261103/final-report.md",
+    "memory_history": "docs/json-semantic-validation-20261030.md",
+    "float_history": "agents/float_review_closure_20261102/final-report.md",
+    "float_scope": "精确77纯data选择回退的限定收敛验收，非全77预算或全控制流覆盖",
     "full_model_control_flow_coverage": "not-measured",
-    "hardware_replay": "not-run"
+    "hardware_replay": "not-run",
+    "source_review": "agents/float_memory_merge_20261103/review/core-final-report.md",
+    "ir_review": "agents/float_memory_merge_20261103/review/model/ir-review.md",
+    "independent_review": "agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md",
+    "date": "2026-11-04",
+    "scope": "最终4d085b14/3e44cdd6程序：严格生成/IR来源、Rust与永久回归、315/300定向、9例Schema Union、nat/ExecuteAs、定向Make与汇编；不含全部Clause预算或全域无退化",
+    "limitations": [
+      "F1具体/符号内存后端不一致仍在",
+      "LOAD_FP/C_LD/STORE原域Make为partial，不计完整PASS",
+      "STORE/C_LD旧memory完整预算长尾未完成，不能证明全域无退化",
+      "仅三条Poison代表已新旧同输入复放，不外推全部922/112/7",
+      "float全部77项预算、全控制流覆盖、硬件重放未验",
+      "OPEN策略与通用ITE/符号化配置冻结未研究"
+    ]
   }
 }

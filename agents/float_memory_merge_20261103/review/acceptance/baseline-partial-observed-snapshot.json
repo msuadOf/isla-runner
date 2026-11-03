@@ -1,0 +1,57 @@
+{
+  "scope": "在途bdd完整域日志当时实际失败类发生事实；不证明完整退出、最终总数或与候选全域等价",
+  "rows": [
+    {
+      "clause": "STORE",
+      "bytes": 1997670,
+      "sha256": "c122883ada084c6d1648e7fc978c2fc18dac43845a13949832a822d2c7775a08",
+      "snapshot_utc": "2026-11-03T18:02:36.871684+00:00",
+      "mtime_ns": 1793728956783955158,
+      "top_poison_lines": 43,
+      "decoder_poison_lines": 0,
+      "still_running_without_result": true,
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/merge-baseline-full-v1/baseline-full/STORE/run.log",
+      "hash_scope": "first bytes bytes from append-only original log at snapshot",
+      "representative_poison_lines": [
+        {
+          "line": 31,
+          "text": "[SYM_EXEC]: 警告: zSTORE这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_"
+        },
+        {
+          "line": 44,
+          "text": "[SYM_EXEC]: 警告: zSTORE这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_"
+        },
+        {
+          "line": 59,
+          "text": "[SYM_EXEC]: 警告: zSTORE这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_"
+        }
+      ]
+    },
+    {
+      "clause": "C_LD",
+      "bytes": 1384009,
+      "sha256": "9e46a310e49ba2eef2b51fe791502a584052f7f0670128d3676742733ee7a0b8",
+      "snapshot_utc": "2026-11-03T18:02:36.881082+00:00",
+      "mtime_ns": 1793728956677952911,
+      "top_poison_lines": 12,
+      "decoder_poison_lines": 0,
+      "still_running_without_result": true,
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/runs/merge-baseline-full-v1/baseline-full/C_LD/run.log",
+      "hash_scope": "first bytes bytes from append-only original log at snapshot",
+      "representative_poison_lines": [
+        {
+          "line": 23,
+          "text": "[SYM_EXEC]: 警告: zC_LD这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_"
+        },
+        {
+          "line": 32,
+          "text": "[SYM_EXEC]: 警告: zC_LD这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_"
+        },
+        {
+          "line": 286,
+          "text": "[SYM_EXEC]: 警告: zC_LD这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_"
+        }
+      ]
+    }
+  ]
+}

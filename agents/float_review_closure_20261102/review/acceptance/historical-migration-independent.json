@@ -1,0 +1,28 @@
+{
+  "scope": "Migration links/exact file sets/all sizes/all metadata+JSON+logs SHA checked; large trace SHA already checked by migration owner, not rehashed here",
+  "batches": [
+    {
+      "batch": "float-closure-21418d0-42000be-20261103",
+      "migration_record_sha256": "362d4debc2059f3cb50fda5cac3c7793d401cc226ec7da32bbc94ea838672c94",
+      "source_manifest_sha256": "e3936b505af314adfcc37d3713075dba4791606ad9a0d3f8b28b8d84b7c3da94",
+      "logical_path_symlink_correct": true,
+      "files_and_sizes_checked": 511,
+      "total_file_bytes": 14711932406,
+      "all_non_trace_files_sha256_verified": 434,
+      "trace_files_size_and_presence_only": 77,
+      "pre_migration_failed_results_sha256_preserved": 28
+    },
+    {
+      "batch": "float-closure-e9d69d2-42000be-20261103-pool16",
+      "migration_record_sha256": "da0807df15f59e240eac4bb52af2fc03a08daa9e4c74a19cff23853d7d9fd3f8",
+      "source_manifest_sha256": "b529c3a25197c8444188ddf50b24d3552396ccc2c398a155ca820b9d87a87b17",
+      "logical_path_symlink_correct": true,
+      "files_and_sizes_checked": 514,
+      "total_file_bytes": 14670350678,
+      "all_non_trace_files_sha256_verified": 437,
+      "trace_files_size_and_presence_only": 77,
+      "pre_migration_failed_results_sha256_preserved": 25
+    }
+  ],
+  "pass": true
+}

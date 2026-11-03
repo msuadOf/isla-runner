@@ -1,0 +1,84 @@
+{
+  "scope": "direct accrue_fflags state probe; not whole Clause",
+  "input_sha256": "30f6847f904ea22b8c7dd355cda988bf35bc9938ec46e7b564c408801365d5e2",
+  "isla_commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+  "isla_tree": "workspace:/.worktree/merge-float-memory-20261104/isla",
+  "cpu": 24,
+  "seed": 17,
+  "hashes": {
+    "source": "26225f7c0cf463078e821db7c87ba0a1885c62f15e0f4fd3824bc52cf88843ab",
+    "manifest": "7cf2df7d09448fda62b5fd09b4ef236c6b6fe98b7eda0710202c1244354f7e2c",
+    "lock": "db779813f1e6c02913587300737abbe0e183b92c4cd9ab151a7622baeddbde9e",
+    "oracle": "ebf9424c3471c7589eb1546e1fd4731fedc2416ad0a0ef7061a8062d5e642665",
+    "z3": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+    "preload": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+    "isarch": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+    "model_source_manifest": "84ad731176807cd15bcc8e8e041851a332c51d412c478137f12c72f3dfdaa137",
+    "isla_source_manifest": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05",
+    "rv64_config": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "rv32_config": "d31bc7e7402412899d4998ca6882b4528052762d089e411118038f8a0d585a4f",
+    "irs": {
+      "rv64-v128": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "rv64-v256": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9",
+      "rv64-v512": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1",
+      "rv64-default": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "rv32-default": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66"
+    }
+  },
+  "build": [
+    "taskset",
+    "-c",
+    "24",
+    "cargo",
+    "build",
+    "--offline",
+    "--locked",
+    "--release",
+    "--bin",
+    "float-flags-state-probe",
+    "--manifest-path",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/Cargo.toml"
+  ],
+  "commands": {
+    "rv64-v128": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v256": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v256_e64.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v512": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v512_e64.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-default": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv32-default": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/rv32d.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/rv32_fd.toml"
+    ]
+  }
+}

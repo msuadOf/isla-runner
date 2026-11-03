@@ -1,0 +1,251 @@
+{
+  "verdict": "PASS_LIMITED_USER_AUTHORIZED_FLOAT_CLOSURE",
+  "blocking_findings": [],
+  "scope_authority": "User explicitly authorized final 77 data-flow reversions, frozen/deferred OPEN, and the two-entry exit matrix; final-exit-scope.md",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "integrated_isla_commit": "591693df2bc32019ea300511509ed683df09522e",
+  "integrated_isla_tree_sha1": "8ea0df2093dcd379b408154057ca391ee8ceb7cd",
+  "runtime_isla_source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "runtime_isarch_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "runtime_source_relation": "Integrated Isla changes only six generated artifacts plus four tests; 146 tracked Rust/Cargo/.cargo files byte-identical to runtime source420. No runtime rebuild or historical source-manifest relabel claimed.",
+  "final315_completed_before_clone_integration": true,
+  "parent_gitlinks_refseal": "Pending main-agent final parent commit; does not alter sealed component/IR/test contents",
+  "inputs_sha256": {
+    "directed": "5147af93ecd9cfb5cd6c0607d8073fa997b608dc9993f8c81dee8e739f1e631e",
+    "two_full_entries": "0a29115104b44f25924ddb37961b4dfd5967a42a8035bf9b33ac56cdecb7ae18"
+  },
+  "installed_manifest_sha256": "6caab4ef6b1a2b95b2e78691dc6b23e6acecca708fca41f4f036834c866a7093",
+  "exact_ten_integrated_files": [
+    {
+      "path": "ir/provenance/manifest.json",
+      "sha256": "6caab4ef6b1a2b95b2e78691dc6b23e6acecca708fca41f4f036834c866a7093",
+      "git_mode": "100644",
+      "git_blob": "62ee8f7ef0ea7238c0722ab42376c699de72b2b0"
+    },
+    {
+      "path": "ir/rv64d_v128_e64.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "git_mode": "100644",
+      "git_blob": "42e849c87a25c8bbd8e2e18229ac88f45c893ecb"
+    },
+    {
+      "path": "ir/rv64d_v256_e64.ir",
+      "sha256": "47ba73418d6dcb1b1e86db7680ce4df9508e7885a02096e25e213c2c3b2c05e1",
+      "git_mode": "100644",
+      "git_blob": "a93ffdc53246929c2c7422cdb4935656c116aece"
+    },
+    {
+      "path": "ir/rv64d_v512_e64.ir",
+      "sha256": "2bdea17d36c64545254f50cc5a6902e570a1fea682de3f7c062bf641a85a62a9",
+      "git_mode": "100644",
+      "git_blob": "e588967a628d12f6234112f3357fa52b803fe8d6"
+    },
+    {
+      "path": "rv32d.ir",
+      "sha256": "e17c4fe18552f8ce219b35f846c4c1a2c530dcad0ac9fc8f10d0da2604c3fa4e",
+      "git_mode": "100644",
+      "git_blob": "80af30ecccfb3ee7f802769b79337ba01fc008cc"
+    },
+    {
+      "path": "rv64d.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "git_mode": "100644",
+      "git_blob": "42e849c87a25c8bbd8e2e18229ac88f45c893ecb"
+    },
+    {
+      "path": "test/float_ir/README.md",
+      "sha256": "d22a5f296534f4fbd44151dabbcb337eac7c1b9e766c653881c3c63caf010b87",
+      "git_mode": "100644",
+      "git_blob": "921708c6a77ee75fd61efe7052c9008e4b5de3d6"
+    },
+    {
+      "path": "test/float_ir/check_float_closure_branches.py",
+      "sha256": "9ebd0d937edc805e49103984bffbb507470115d349d7262553b6943b9e2763cf",
+      "git_mode": "100644",
+      "git_blob": "2dadd511fc7a805a83b33239d86f08c27a2e6f73"
+    },
+    {
+      "path": "test/float_ir/check_special_semantic_branches.py",
+      "sha256": "af14d3cbd4762bbaba5b6c80e16ea093c9ddba83e3d8e8d9364bea6db52e9d93",
+      "git_mode": "100644",
+      "git_blob": "8a2b4d89a3b942e201fd2246a63ea73fe9c0b284"
+    },
+    {
+      "path": "test/float_ir/run.py",
+      "sha256": "d78fe01d66a542d26b531dfda4214d8a8a460c92bc0932c571d1c8a4332092cb",
+      "git_mode": "100644",
+      "git_blob": "3aa4cd1e913cf9db269759b96d33304c76f3d6a7"
+    }
+  ],
+  "results": {
+    "source_data_condition_reversions": 77,
+    "strict": "ordinary plus four SYMBOLIC configurations",
+    "independent_ir_return_cases": 276672,
+    "permanent_positive_checks": 8,
+    "permanent_negative_mutations_rejected": 104,
+    "installed_ir_entries": 5,
+    "integration_all_checks": 26,
+    "flags_helper_cases": 300,
+    "conversion_helper_cases": 819,
+    "conversion_scalar_cases": 282,
+    "conversion_vector_cases": 183,
+    "exception_actual_json_cases": 315,
+    "assembly_forward_cases": 1104,
+    "assembly_instruction_byte_checks": 5824,
+    "make_json": 8,
+    "make_byte_checks": 48,
+    "full_FLEQ_S": {
+      "gen": 48,
+      "elapsed_s": 27.67,
+      "domain": "full",
+      "outer_s": 7200,
+      "smt_s": 7200
+    },
+    "full_C_ADDI4SPN": {
+      "gen": 1,
+      "elapsed_s": 2.038,
+      "domain": "full",
+      "outer_s": 7200,
+      "smt_s": 7200
+    }
+  },
+  "deferred_open_accepted_by_user": {
+    "changed_outer": 1,
+    "finite_valid_gates": 29,
+    "rod_mode_guards": 2,
+    "legacy_f16_i16_outer_overflow": 1,
+    "other_policy_choices": "Frozen/deferred to later memory configuration/version discussion, not permanent architectural approval",
+    "not_a_float_closure_blocker": true
+  },
+  "historical_full77": {
+    "model214": {
+      "pass": 49,
+      "wall_timeout124_no_complete_json": 28
+    },
+    "modele9": {
+      "pass": 52,
+      "wall_timeout124_no_complete_json": 25
+    },
+    "new_full77_pass_claimed": false,
+    "failure_evidence_preserved_after_archive_migration": true
+  },
+  "not_claimed": [
+    "All77 full-domain budget success",
+    "All inputs or callers",
+    "All vector configurations or FMA variants",
+    "Zfinx",
+    "Hardware differential validation",
+    "Dynamic Sail string reverse parsing",
+    "Unmeasured performance improvement"
+  ],
+  "evidence": [
+    {
+      "path": "review/acceptance/final-exit-scope.md",
+      "sha256": "bf0a409ecda4550f62c9fde34647acb3f1491fce0680eae4e8dfafbb89a529f2"
+    },
+    {
+      "path": "review/acceptance/converged-source-binding-independent.json",
+      "sha256": "ddbc10725cd0d05bcf181bee21e9ea9d93b76cac3e65effdd993add253c307c6"
+    },
+    {
+      "path": "review/acceptance/input-converged-independent.json",
+      "sha256": "249b2432fde91c3f9e3dae787a246390b8a4e7d0cb5cb7e9f20fc2da73ab19f9"
+    },
+    {
+      "path": "review/acceptance/flags-converged-independent.json",
+      "sha256": "7bd107f035f2c09c0e8f1f8c3ad51e581673e81364143b4b471f376b3ab2872e"
+    },
+    {
+      "path": "review/acceptance/flags-converged-provenance-independent.json",
+      "sha256": "dceef31c2f4586fc6584cec5df2655e1ff3089c5db7403a10ac3cf6921c4d318"
+    },
+    {
+      "path": "review/acceptance/conversions-converged-independent.json",
+      "sha256": "4bd113a0e62929eb6e9cd4f55d95a4bf5c87a35ae785d7426cfd33f2248c6495"
+    },
+    {
+      "path": "review/acceptance/conversions-converged-provenance-independent.json",
+      "sha256": "e52ee12c154fd6bc1e8b1b411ee82d52fe3994abc45209137bb8431b152fe0e9"
+    },
+    {
+      "path": "review/acceptance/exceptions-converged-independent.json",
+      "sha256": "22b1a7962dd9f703d3c0e39151d2d1b12f53c94edbcfb0fb2a3d22b074dae7bf"
+    },
+    {
+      "path": "review/acceptance/exceptions-converged-evidence-independent.json",
+      "sha256": "f4a3ecc9fd041ad6209a418bf16c7506869cbf05c992460f73c76dcbe5f675cf"
+    },
+    {
+      "path": "review/acceptance/assembly-converged-probe-independent.json",
+      "sha256": "0d050d38c99799bcf4ba4d5a96140963af4f505dc5fbea9c647e41a5c7a69f23"
+    },
+    {
+      "path": "review/acceptance/assembly-toolchains-converged-independent.json",
+      "sha256": "398f4c0b513178cc621135dcffb419246403a6e70b1f45aa4c71353831394ee1"
+    },
+    {
+      "path": "review/acceptance/assembly-converged-records-independent.json",
+      "sha256": "f1f4ede7ec4bb0ad540ee8ede1021f489024a69d190c27db355de232dd8f0d2b"
+    },
+    {
+      "path": "review/acceptance/make-converged-independent.json",
+      "sha256": "2bd02a946155dede58cef361e52999b538e6d4f32a457edaa3f660ff59f78bca"
+    },
+    {
+      "path": "review/acceptance/final-harness-independent.json",
+      "sha256": "0cb793082360f3797f20cb5516a85cf6c40b543bba929c1e7018fdf4f4f3d40b"
+    },
+    {
+      "path": "review/acceptance/clause-FLEQ_S-converged-independent.json",
+      "sha256": "f8f21d9fbdad9c5ac5f03bbd11de3c3e1e329ea025c76ce923420b79645094fc"
+    },
+    {
+      "path": "review/acceptance/clause-C_ADDI4SPN-converged-independent.json",
+      "sha256": "c999ed0480471af8674ee5c61ff72c6a9133c8b68113aa6105afb2c900f9428c"
+    },
+    {
+      "path": "review/acceptance/final-integration-independent.json",
+      "sha256": "e5f2695b097cff2dfbe9525416d59bd7656e03304f3993aecc6d93d22bc9fcd6"
+    },
+    {
+      "path": "review/acceptance/final-execution-timeline-independent.json",
+      "sha256": "8473de6def169ed7c3eebcb378f2ab61685e7b21e57221d34b7a082b8c12b99c"
+    },
+    {
+      "path": "review/acceptance/historical-full77-failures-independent.json",
+      "sha256": "be738fa82480f4baed19d954774eb866c7bf37f4183cda2c37ab36f647b379f5"
+    },
+    {
+      "path": "review/acceptance/historical-migration-independent.json",
+      "sha256": "1d13bd50d0f93a0f747464ef58313ab78d90fd31a38a9868145e4526540418e0"
+    },
+    {
+      "path": "baseline-0008fae/converged-source-review-20261103.json",
+      "sha256": "4c8fecdd731b0653b87c90d605d40c3534e75f604e6a93f3e708502dbff9e656"
+    },
+    {
+      "path": "baseline-0008fae/converged-provenance-review-20261103.json",
+      "sha256": "476925539bab2adae5aea23e0fa6bca4723073d30bd0edeece96acff5782720c"
+    },
+    {
+      "path": "baseline-0008fae/converged-ir-review-20261103.json",
+      "sha256": "7ad6e64b8683b01ea4aa83cd805eb8adbf0edb5d069a843f6a36e761dc763eac"
+    },
+    {
+      "path": "baseline-0008fae/converged-ir-values-20261103.json",
+      "sha256": "8c8e99c963615de41fc2f6f40583b2b4b2a81e19f3d8ec6472e3948762962fe6"
+    },
+    {
+      "path": "baseline-0008fae/converged-checker-positive-20261103.json",
+      "sha256": "890c3e3f1e9a6aa7122c9050a4a05a8b88d21cdebb856c8cc2da28d66fe3ca1d"
+    },
+    {
+      "path": "baseline-0008fae/converged-checker-negative-20261103.json",
+      "sha256": "bcddc4e42631d8037185b4d0b28a14e4f8215a1be3d1a3948cfaf6b9a423bce4"
+    },
+    {
+      "path": "baseline-0008fae/converged-checker-installed-20261103.json",
+      "sha256": "c15f3c78fea7c11692f047881a41619da061f00adf11f838e8406ee3a536261e"
+    }
+  ]
+}

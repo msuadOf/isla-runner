@@ -1,0 +1,40 @@
+{
+  "source_model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "source_isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "reviewers": [
+    {
+      "agent": "/root/float_closure_model_review",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "scope": "模型源码、生成来源、IR控制关系、永久CFG测试",
+      "evidence": "review/model/"
+    },
+    {
+      "agent": "/root/float_closure_enum_review",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "scope": "枚举API/生命周期、正式程序与完整域runner冻结",
+      "evidence": "review/enum/"
+    },
+    {
+      "agent": "/root/float_closure_acceptance_review",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "scope": "最终动态脚本、独立oracle、实际JSON/状态/双工具链/Make及完整域结果",
+      "evidence": "review/acceptance/"
+    }
+  ],
+  "rule": "各阶段独立签收；源码通过不代表IR和动态通过；源码或配置变化后不可继承旧PASS",
+  "stages": [
+    {
+      "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+      "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+      "scope": "0008fae最小性收敛：源码双独审已完成，IR/动态待分别签收",
+      "source_reviews": [
+        "baseline-0008fae/model-review.candidate.md",
+        "baseline-0008fae/control-candidate-review.md"
+      ],
+      "source_sha256": "866f85a607b112d57a0ea8c6d9a85c1befb36ef11ea39b7058a252606df257cd"
+    }
+  ]
+}

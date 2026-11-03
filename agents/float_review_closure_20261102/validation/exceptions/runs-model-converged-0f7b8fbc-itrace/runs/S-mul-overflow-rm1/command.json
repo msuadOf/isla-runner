@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "17",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/S-mul-overflow-rm1/constrained.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/S-mul-overflow-rm1/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "job": {
+    "name": "S-mul-overflow-rm1",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_S",
+    "fields": [
+      1,
+      0,
+      "zRM_RTZ",
+      3,
+      "zFMUL_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff7f7fffff",
+      "f1": "0xffffffff40000000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-mul-overflow-rm1",
+      "family": "scalar",
+      "width": 32,
+      "op": "mul",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 1,
+      "a": "0x7f7fffff",
+      "b": "0x40000000",
+      "c": null,
+      "reason": "finite rounded overflow",
+      "expected_bits": "0x7f7fffff",
+      "oracle_raw_bits": "0x7f7fffff",
+      "expected_flags": "0x5",
+      "oracle_argv": [
+        "--op",
+        "mul",
+        "--fmt",
+        "f32",
+        "--rm",
+        "1",
+        "--a",
+        "0x7f7fffff",
+        "--b",
+        "0x40000000"
+      ]
+    },
+    "expected_full_bits": "0xffffffff7f7fffff"
+  },
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "base_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "constrained_ir_sha256": "ca7580a94e1ab2de1daac8e80d79f474d95494be2b4a439014f172a2966aecf2",
+  "config_sha256": "c0fb57231b8893ca35a81f68c1dd22084152ffa32f1f4181a49a8afc69cd0b09",
+  "cpu": 17,
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/S-mul-overflow-rm1/seed-intercept.log"
+  }
+}

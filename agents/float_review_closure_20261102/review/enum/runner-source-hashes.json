@@ -1,0 +1,10 @@
+{
+  "validation/run_clause.py": "7b126047f6f380601e9132cc9a82b6c96fef0b64c364d6e4056cee6e6a69eae5",
+  "validation/freeze_source.py": "3f553e4775c18b3d8b8d9719ff983f3550be5a6ca1d91e943372032c31c892c9",
+  "validation/procedure.md": "117d5071d1a4eafd5342ad5797301c2e8a245ff1797fc69fa939a19bfabffa1e",
+  "validation/inputs.template.json": "da4595cf3f719fa4219043982fd238551fa13cd0740cc79beef7661ce6f40874",
+  "validation/bin/manifest-interrupt.json": "0371cfa2106dcf55fe8e8cc3081e11265a37640b188e9620284c555dadab10bc",
+  "validation/bin/fingerprint-isarch-interrupt.json": "c9b33f5d24db74252867b939747214d27930310134fa0c20c4857714634cb347",
+  "validation/bin/fingerprint-isla-lib-interrupt.json": "d1da726cc6eb50b8995d14b8686a51eb1f3130aba3a415a9ede5857f18dcc235",
+  "inventory/affected-clauses.json": "6f3fc71ea2c9c6ebea3e21a1bdbf76db144db8464e0313e9f00655c8c7ad603c"
+}

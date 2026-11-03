@@ -1,0 +1,5 @@
+/seed_probe
+/watchdog_probe
+/watchdog_probe_itrace
+/watchdog_delay.so
+/harness-smoke-itrace/output/

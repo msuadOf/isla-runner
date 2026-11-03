@@ -1,0 +1,50 @@
+{
+  "scope": "同配置/同机器字/同实际地址具体与自由输入的F1缺陷继承复证；不是正确性PASS或修复",
+  "baseline_source_files_checked": 810,
+  "receipt_sha256": "f83cd92a448d445d1ec24bde46e1c9c030235a6625086b8f33da5d9ce7aa3319",
+  "rows": [
+    {
+      "name": "baseline-fixed",
+      "same_address": "0x80000000",
+      "read_values": [
+        "0x0"
+      ],
+      "json_sha256": "0dc0e1b07bc4bea394bc3dc816906b938df917ca3eff53198f4191078a942ce9",
+      "binary_sha256": "70d3fa13152b6041faa5c8b1deebc3d5b2076a7f8b733c7835bb83ee340b7b09",
+      "gen": 1
+    },
+    {
+      "name": "baseline-free",
+      "same_address": "0x80000000",
+      "read_values": [
+        "0xffffffffffffffff",
+        "0x0"
+      ],
+      "json_sha256": "53394f7f01048ad0e25e5dc199a04a936023001c5d7ea18f26cfbcecd43c5be9",
+      "binary_sha256": "70d3fa13152b6041faa5c8b1deebc3d5b2076a7f8b733c7835bb83ee340b7b09",
+      "gen": 5
+    },
+    {
+      "name": "candidate-fixed",
+      "same_address": "0x80000000",
+      "read_values": [
+        "0x0"
+      ],
+      "json_sha256": "17d36b3fc09dfa587be5d41224fb6465229aaaff232e76a8ab2f2470da1a3a6e",
+      "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+      "gen": 1
+    },
+    {
+      "name": "candidate-free",
+      "same_address": "0x80000000",
+      "read_values": [
+        "0xffffffffffffffff",
+        "0x0"
+      ],
+      "json_sha256": "10d3f45023239f6f8dc1d7d86c985eb1424bbef2d1a40555554de249a197b030",
+      "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+      "gen": 5
+    }
+  ],
+  "known_defect_reproduced_in_both": true
+}

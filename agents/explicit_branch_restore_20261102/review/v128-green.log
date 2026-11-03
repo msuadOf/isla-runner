@@ -1,0 +1,3 @@
+PASS agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir: FVVTYPE mask Jump支配6处纯运算，非活动lane绕过运算
+PASS agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir: RFVVTYPE mask Jump支配4处纯运算，非活动lane绕过运算
+PASS agents/explicit_branch_restore_20261102/implementation/generation/rv64d_v128_e64/rv64d_v128_e64.ir: 已恢复行为分界保留显式Jump

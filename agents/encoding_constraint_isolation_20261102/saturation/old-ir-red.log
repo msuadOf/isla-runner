@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_special_semantic_branches.py", line 196, in <module>
+    main()
+    ~~~~^^
+  File "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_special_semantic_branches.py", line 192, in main
+    check(path.read_text(), path)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/isla/test/float_ir/check_special_semantic_branches.py", line 96, in check
+    assert len(conditions) == 1, f'{path}: f16转i16缺少唯一溢出控制分支'
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: isla/rv64d.ir: f16转i16缺少唯一溢出控制分支

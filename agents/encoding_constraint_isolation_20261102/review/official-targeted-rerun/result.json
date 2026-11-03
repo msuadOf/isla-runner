@@ -1,0 +1,50 @@
+{
+  "source_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "binaries": {
+    "isla_lib": {
+      "sha256": "bc052086db88317876989c1fa008813c2e8d9b029991fba9f6cbd69bedd2e570",
+      "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+      "soname": "libz3.so.5.3"
+    },
+    "isla": {
+      "sha256": "3092eace9c098b489d5d90e487aa141474e9d9fa01095bd6097e3f98562d83fd",
+      "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+      "soname": "libz3.so.5.3"
+    }
+  },
+  "cases": {
+    "checkpoint_old": {
+      "exit_code": 0,
+      "elapsed_s": 0.21223302802536637,
+      "log_sha256": "4555e13eb022950750805286abc454b8c103bb138ba88a1c408091bd7d6ba5ff",
+      "tests_passed": 1,
+      "actual_runtime_official_z3_loaded": true
+    },
+    "checkpoint_new": {
+      "exit_code": 0,
+      "elapsed_s": 0.11465239292010665,
+      "log_sha256": "8959fb61db8500ab6f431a03330bc39c66f4b840b77c3b289da0a2889f8436fb",
+      "tests_passed": 1
+    },
+    "encoding": {
+      "exit_code": 0,
+      "elapsed_s": 0.41405239095911384,
+      "log_sha256": "62772b6a88ae59e767ce70ca5d2d9fdced1a08b32941f809998b3fdb929b320b",
+      "tests_passed": 2,
+      "actual_runtime_official_z3_loaded": true
+    },
+    "collector": {
+      "exit_code": 0,
+      "elapsed_s": 1.8148188539780676,
+      "log_sha256": "d0dd193855dae33a9e5f10d4dafe35167789499df7481f007b2e4d18b9903e87",
+      "tests_passed": 11
+    },
+    "enum_context": {
+      "exit_code": 1,
+      "elapsed_s": 0.1140498819295317,
+      "log_sha256": "dbc34146f213de12326846f70eb16415535ad017229b107f37af649f68bf57b0",
+      "scope": "当前官方库单列失败；未在官方库复跑旧基线，不计入15项通过"
+    }
+  },
+  "required_tests_passed": 15
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "Diagnostic interpreter reverse-mapping probe, not acceptance PASS",
+  "command": [
+    "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+    "--is",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-interpreter.commands",
+    "--memo-z3-path",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-interpreter.memo",
+    "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/sail-riscv/model/prelude/prelude.sail",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-interpreter-probe.sail"
+  ],
+  "exit_code": 0,
+  "probe_sha256": "a83d92ff665d9aeb25200cc1501532cfa565fa74701e4d23ce1b422f7fad8608",
+  "log_sha256": "5fcf1127911d015a3018497335aae8bcd7c89160c2b938e655d827f66d9ad006"
+}

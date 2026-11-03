@@ -1,0 +1,148 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "23",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/BF16-VF-snan-a-rm0/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/BF16-VF-snan-a-rm0/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=VFWMACCBF16_VF"
+  ],
+  "job": {
+    "name": "BF16-VF-snan-a-rm0",
+    "family": "bf16",
+    "clause": "VFWMACCBF16_VF",
+    "fields": [
+      0,
+      2,
+      4,
+      8
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "vtype": "0x8",
+      "vl": "0x2",
+      "vstart": "0x0",
+      "vr0": "0x00000000000000000000000000000003",
+      "vr1": "0x00000000000000000000000000000000",
+      "vr2": "0x0000000000000000000000003f807f81",
+      "vr3": "0x00000000000000000000000000000000",
+      "vr4": "0x0000000000000000000000003f803f80",
+      "vr5": "0x00000000000000000000000000000000",
+      "vr6": "0x00000000000000000000000000000000",
+      "vr7": "0x00000000000000000000000000000000",
+      "vr8": "0x00000000000000000000000000000000",
+      "vr9": "0x00000000000000000000000000000000",
+      "vr10": "0x00000000000000000000000000000000",
+      "vr11": "0x00000000000000000000000000000000",
+      "vr12": "0x00000000000000000000000000000000",
+      "vr13": "0x00000000000000000000000000000000",
+      "vr14": "0x00000000000000000000000000000000",
+      "vr15": "0x00000000000000000000000000000000",
+      "vr16": "0x00000000000000000000000000000000",
+      "vr17": "0x00000000000000000000000000000000",
+      "vr18": "0x00000000000000000000000000000000",
+      "vr19": "0x00000000000000000000000000000000",
+      "vr20": "0x00000000000000000000000000000000",
+      "vr21": "0x00000000000000000000000000000000",
+      "vr22": "0x00000000000000000000000000000000",
+      "vr23": "0x00000000000000000000000000000000",
+      "vr24": "0x00000000000000000000000000000000",
+      "vr25": "0x00000000000000000000000000000000",
+      "vr26": "0x00000000000000000000000000000000",
+      "vr27": "0x00000000000000000000000000000000",
+      "vr28": "0x00000000000000000000000000000000",
+      "vr29": "0x00000000000000000000000000000000",
+      "vr30": "0x00000000000000000000000000000000",
+      "vr31": "0x00000000000000000000000000000000",
+      "f4": "0xffffffffffff3f80"
+    },
+    "expected": {
+      "name": "BF16-VF-snan-a-rm0",
+      "form": "VF",
+      "case": "snan-a",
+      "rm": 0,
+      "a": [
+        "0x7f81",
+        "0x3f80"
+      ],
+      "b": [
+        "0x3f80",
+        "0x3f80"
+      ],
+      "acc": [
+        "0x0",
+        "0x0"
+      ],
+      "vl": 2,
+      "mask": 3,
+      "lanes": [
+        {
+          "lane": 0,
+          "active": true,
+          "bits": "0x7fc00000",
+          "flags": "0x10",
+          "oracle_argv": [
+            "--op",
+            "fma",
+            "--fmt",
+            "f32",
+            "--rm",
+            "0",
+            "--a",
+            "0x7f810000",
+            "--b",
+            "0x3f800000",
+            "--c",
+            "0x0"
+          ]
+        },
+        {
+          "lane": 1,
+          "active": true,
+          "bits": "0x3f800000",
+          "flags": "0x0",
+          "oracle_argv": [
+            "--op",
+            "fma",
+            "--fmt",
+            "f32",
+            "--rm",
+            "0",
+            "--a",
+            "0x3f800000",
+            "--b",
+            "0x3f800000",
+            "--c",
+            "0x0"
+          ]
+        }
+      ],
+      "expected_flags": "0x10"
+    }
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "41e31087d4c9d6f136dcf3ab4e5b8b6c909ece254754a8109af1cb917b51cd83",
+  "config_sha256": "864126830d63bd8a91d7399115406cb0c920b97d4c806f423c4ff0b28b57899c",
+  "cpu": 23,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/BF16-VF-snan-a-rm0/seed-intercept.log"
+  }
+}

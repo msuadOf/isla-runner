@@ -4,8 +4,9 @@
 
 | 根仓分支 | Isla | Sail-RISC-V | 当前定位 |
 | --- | --- | --- | --- |
-| float | 8fae36a9，通用＋浮点与JSON修复 | afff3822，模型与汇编修复 | IR同步、双工具链定向验收 |
-| memory | bdd047bc，内存与JSON修复 | c70482a7，内存模型与预算坐标 | IR同步、定向内存语义验收 |
+| float | 591693df，77处纯数据回退收敛 | 0f7b8fbc，模型收敛 | 2026-11-03 限定验收；合流后须复验 |
+| memory（合流前） | bdd047bc，内存与JSON修复 | c70482a7，内存模型与预算坐标 | 2026-10-30 历史定向验收 |
+| memory（合流候选） | 4d085b14，双亲合流后的测试兼容提交 | bf861b3e，双亲合流 | 来源与已测定向范围限定签收；原域 partial 单列 |
 
 每条分支的 `specs/topic-version.json` 是本分支的组件记录，gitlink是实际检出依据。float包含已合并通用支持、初态位模式配置、浮点支持及返回值具体化修复，不包含独立见证随机化分支；memory含PMA/CSR、value hints和encoding slices等已提交策略，新增SC双结果覆盖配置与不完整诊断。创建版本分支不代表接纳全部策略或完成联合功能验收。
 
@@ -25,7 +26,7 @@ git diff float memory -- isla sail-riscv specs/topic-version.json
 
 根仓分支和子模块分支是两层历史。更新子模块代码时先在对应子仓形成提交，再在对应根仓分支显式更新gitlink、manifest与证据，最后提交根仓。`git fetch` 只获取引用，不自动移动gitlink；不要用 `git submodule update --remote` 隐式换版本。
 
-线上发布前，须先将manifest引用的精确子模块提交推送到 `.gitmodules` 中正式远端的可获取分支，再推根仓float/memory。当前版本已在本机形成根仓提交；本轮只从本机源仓获取子模块对象，未重新核实正式远端可获取性，也未推送。尚不能把本机成功初始化当作其他机器可从GitHub复现。
+线上发布前，须先将manifest引用的精确子模块提交推送到 `.gitmodules` 中正式远端的可获取分支，再推根仓议题分支。合流前 memory 版本只从本机源仓获取子模块对象，未重新核实正式远端可获取性；float 版本的远端回读证据见[发布记录](../agents/float_review_closure_20261102/publication/final-components.json)。本次合流候选的两个最终子模块提交已从正式目标分支逐 SHA 回读一致，见[组件发布收据](../agents/float_memory_merge_20261103/publication/components.json)；根仓议题分支仍待提交与发布。
 
 发布完成后的根仓更新流程如下（以float为例，memory替换分支名与目录）：
 
@@ -39,12 +40,19 @@ git -C .worktree/runner-float merge --ff-only origin/float
 
 ## 构建与验证边界
 
-两套版本的全部五个IR文件均从当前固定模型完整生成，配置、模型文件与工具哈希见`isla/ir/provenance/manifest.json`。工具链为浮点扩展Sail0.20.1快照；普通同版本发行版不能替代，快照的完整源码树未重新核验。源码预算区域已分别迁移到当前模型。
+合流前两套版本的全部五个IR文件均从各自固定模型完整生成，配置、模型文件与工具哈希见`isla/ir/provenance/manifest.json`。工具链为浮点扩展Sail0.20.1快照；普通同版本发行版不能替代，快照的完整源码树未重新核验。源码预算区域在各自历史版本完成迁移；合流版须重新核对。
 
-定向JSON、GCC/Clang文本编码往返、浮点helper/状态和内存数组测试通过，具体范围见[验证记录](../docs/json-semantic-validation-20261030.md)。JSON明确记录采样、错误、未完成和裁剪；`finished`也不宣称源码控制流全覆盖。没有完成全部77浮点clause、全部访存/异常域或硬件重放验收。
+合流前两套版本的定向JSON、GCC/Clang文本编码往返、浮点helper/状态和内存数组测试结果见[历史验证记录](../docs/json-semantic-validation-20261030.md)。JSON明确记录采样、错误、未完成和裁剪；`finished`也不宣称源码控制流全覆盖。没有完成全部77浮点clause、全部访存/异常域或硬件重放验收。
 
 ## 版本更新记录
 
 2026-10-30：float从Isla be1296b／模型3ea3cbaf更新为b0138b7／18389a89；memory保留Isla47ac90c，模型从4f2ac293更新为1fa93117。同步manifest、gitlink及独立子模块检出，版本核对与`./init.sh --submodules-only`通过。本轮未重新生成IR、编译组件或执行联合功能/硬件测试；旧组件测试不自动转记为当前根仓成套验收。
 
 2026-10-30复审修复：同步当前两套模型IR、迁移workaround坐标，补JSON结果合同及SC覆盖配置；汇编要求GCC与Clang双通过。当前组件版本及定向验收见上文，前一次未重生IR的结论保留为历史版本记录。
+
+2026-10-31：float更新Isla80231ce9／模型9c339044，恢复nan_unbox原Sail if并完整重生IR；两侧见证与数值回归见[本次记录](../docs/nan-unbox-branch-restore-20261031.md)。没有由局部Jump减少推断整Clause提速。memory版本不变，其他独立review问题未在本轮修复。
+
+
+## 2026-11-04 float→memory 合流
+
+根仓以 `31ef3b9a8aa3a9db4c03a1d99c191cadf1aadaef` 为 memory 父提交，纳入 float `0665526d7e14a207eb9928e282e627584b5635fe`。保留 `topic=memory`；模型已形成双亲合流提交，Isla 双亲合流提交之后另有测试初始化兼容提交 `4d085b14`，父仓 gitlink 已暂存指向最终候选。组合 IR SHA-256 和来源见 `topic-version.json`、`isla/ir/provenance/manifest.json`；新二进制的已测定向范围获[限定签收](../agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md)，原域 partial 与全域无退化未证单列，父仓提交/发布仍待完成。旧两分支的 PASS 不迁记。float 的77处纯数据回退、NaN/trap 保留与 OPEN 范围见[交接](../agents/float_review_closure_20261102/handoff-to-memory.md)；本轮不新增通用配置、不研究 OPEN。`feat/witness-randomization` 继续排除；旧 memory 清单中的 float/general 分支在合流后成为祖先，不再列作排除项。

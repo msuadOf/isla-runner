@@ -1,0 +1,394 @@
+{
+  "scope": "Read-only failure category audit of historical 214/e9 full77 batches; no new-candidate PASS inferred",
+  "batches": [
+    {
+      "batch": "float-closure-21418d0-42000be-20261103",
+      "summary_sha256": "1e9f51df6f44a8677bbc767affdde020b228e75c1c682a5ed80a86241e8bce7d",
+      "passed": 49,
+      "failed": 28,
+      "classification": "All failed jobs are outer wall timeout124 without complete JSON; no evidence here of semantic result mismatch",
+      "failures": [
+        {
+          "job": "F_BIN_RM_TYPE_S",
+          "exit_code": 124,
+          "elapsed_s": 7200.447,
+          "json_count": 0,
+          "result_sha256": "6702754375e821c8d670d1a043ae30de4659aae64f799b27a449b9ad740aed95"
+        },
+        {
+          "job": "VFUNARY0",
+          "exit_code": 124,
+          "elapsed_s": 7200.322,
+          "json_count": 0,
+          "result_sha256": "88a84daf9f98cf9bb1ff757af0fcea8dfe0acc6791784f8470e022b6ec770bb4"
+        },
+        {
+          "job": "VFNUNARY0",
+          "exit_code": 124,
+          "elapsed_s": 7200.24,
+          "json_count": 0,
+          "result_sha256": "17ec833957494921ac32cb8e4fba28c5c49d356861a316c902f16be79da2750e"
+        },
+        {
+          "job": "VFUNARY1",
+          "exit_code": 124,
+          "elapsed_s": 7200.247,
+          "json_count": 0,
+          "result_sha256": "cc01d7982f8672cc45cd1f38b771625f633ca0ab3224019880225af4f8737891"
+        },
+        {
+          "job": "RFVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.313,
+          "json_count": 0,
+          "result_sha256": "69f3e79baff094df20fee48da06fc88af658229cda85f3f54226939af5befe70"
+        },
+        {
+          "job": "RFWVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.258,
+          "json_count": 0,
+          "result_sha256": "b6d3099df947b659bf39d84a2fe830637c74b43baaff0adb34196d79c8acbd89"
+        },
+        {
+          "job": "VFWMACCBF16_VV",
+          "exit_code": 124,
+          "elapsed_s": 7200.826,
+          "json_count": 0,
+          "result_sha256": "57c0886e34043365c3674cca8f8223652ddf18dd9dab154f12e394e95f182248"
+        },
+        {
+          "job": "VFWMACCBF16_VF",
+          "exit_code": 124,
+          "elapsed_s": 7200.39,
+          "json_count": 0,
+          "result_sha256": "7f4307cf200ff9dc9d397043db67c7b0efab4ef0aa9284947898106feeb3cbae"
+        },
+        {
+          "job": "VFNCVTBF16_F_F_W",
+          "exit_code": 124,
+          "elapsed_s": 7200.214,
+          "json_count": 0,
+          "result_sha256": "2fcd28849041a66987e1dad1b2c14083178976a58b35a6e456d8fb9e72db3924"
+        },
+        {
+          "job": "VFWCVTBF16_F_F_V",
+          "exit_code": 124,
+          "elapsed_s": 7200.217,
+          "json_count": 0,
+          "result_sha256": "12e420c7ef04882e5d4e63a2f5999ceda13bf8eb6e5424298d912d774076bf5f"
+        },
+        {
+          "job": "FVFMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.254,
+          "json_count": 0,
+          "result_sha256": "05de9d1db4a5f76976e70a06bdf31b0c6d5121dc467641d36bf8f311addd91e8"
+        },
+        {
+          "job": "FVFMTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.251,
+          "json_count": 0,
+          "result_sha256": "f575f2d0904debcc1f0bc6a9a0dd167039d2bae0006ca1de70eabf8e3e400780"
+        },
+        {
+          "job": "FVFTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.213,
+          "json_count": 0,
+          "result_sha256": "258ee29941606f1a320424d61526004d5bf2d5b3e864979b152e7558a9b23f6f"
+        },
+        {
+          "job": "FVVMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.298,
+          "json_count": 0,
+          "result_sha256": "5c64b95ff8271df8041e58aa2e3864ea36b7cdd82086a0f5f083bd3b8a4be855"
+        },
+        {
+          "job": "FVVMTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.304,
+          "json_count": 0,
+          "result_sha256": "d9f47ccd8ef19a3533947a57fd0e929175d64e8b99572b934a21a94bd0c507dc"
+        },
+        {
+          "job": "FVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.31,
+          "json_count": 0,
+          "result_sha256": "62f7566a2b1580cfe532475ee470ba18dc120d587986239bffda2f100260357c"
+        },
+        {
+          "job": "FWFTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.276,
+          "json_count": 0,
+          "result_sha256": "1445147e9c215f17b11fe03070ec61046818d9f72949902bfe8a6ab891acbbf8"
+        },
+        {
+          "job": "FWVFMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.331,
+          "json_count": 0,
+          "result_sha256": "66c738a6d9c8b5005d70408b52cfe2dc9b345d0b06f4c87631ca1194efdef935"
+        },
+        {
+          "job": "FWVFTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.25,
+          "json_count": 0,
+          "result_sha256": "3de8bc1848f90987b47ee1b1628f2a5f4541a37ee2d9ee5694b82aeb1bcfe0a4"
+        },
+        {
+          "job": "FWVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.231,
+          "json_count": 0,
+          "result_sha256": "4e227784308a4377080322803f307b41ab8e1123b140397db72bb8bb0b60e2a9"
+        },
+        {
+          "job": "FWVVMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.363,
+          "json_count": 0,
+          "result_sha256": "7b3741affdace4896c9fb65ea1411bda5b5e73dea503129e3eb1f4f947531594"
+        },
+        {
+          "job": "FWVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.417,
+          "json_count": 0,
+          "result_sha256": "a6812d0677fab93080dc3d02ebc5bae629a3f9c456d3b12a7af51e6ea67c2788"
+        },
+        {
+          "job": "F_BIN_RM_TYPE_D",
+          "exit_code": 124,
+          "elapsed_s": 7200.281,
+          "json_count": 0,
+          "result_sha256": "12e98fe4c9da16fddc9fac8f94345478df904781093a5892a4f2151144c2bd3c"
+        },
+        {
+          "job": "F_MADD_TYPE_D",
+          "exit_code": 124,
+          "elapsed_s": 7200.267,
+          "json_count": 0,
+          "result_sha256": "55b83fb67b7607aa4bc8c6fdae20cb4b7c2f136b92b7e2a1205dcaeb95a735dd"
+        },
+        {
+          "job": "F_MADD_TYPE_H",
+          "exit_code": 124,
+          "elapsed_s": 7200.251,
+          "json_count": 0,
+          "result_sha256": "a7aa58332148e1a6486a109ff9910cf2d0ce9e3628d88c2b39b8f6908ebe7868"
+        },
+        {
+          "job": "F_MADD_TYPE_S",
+          "exit_code": 124,
+          "elapsed_s": 7200.266,
+          "json_count": 0,
+          "result_sha256": "7185fb8665830ceeeedaa5b351f490ec402975ed6fd465a6a5a49abd5dd2d25d"
+        },
+        {
+          "job": "F_UN_RM_FF_TYPE_D",
+          "exit_code": 124,
+          "elapsed_s": 7202.092,
+          "json_count": 0,
+          "result_sha256": "0407749d672c17796d307fc4570188ace929ce9acb3fb6012c55a2d90714dc3f"
+        },
+        {
+          "job": "VFWUNARY0",
+          "exit_code": 124,
+          "elapsed_s": 7200.243,
+          "json_count": 0,
+          "result_sha256": "077d1ecc5062601b76b1a79a8c0cfd0b112357025515a32a653ead2dbae5eabf"
+        }
+      ]
+    },
+    {
+      "batch": "float-closure-e9d69d2-42000be-20261103-pool16",
+      "summary_sha256": "9fc66d70d4b79e93682339d611d01228ff808084aa53a4cd54cd0b5cbbe9fb26",
+      "passed": 52,
+      "failed": 25,
+      "classification": "All failed jobs are outer wall timeout124 without complete JSON; no evidence here of semantic result mismatch",
+      "failures": [
+        {
+          "job": "VFUNARY0",
+          "exit_code": 124,
+          "elapsed_s": 7200.326,
+          "json_count": 0,
+          "result_sha256": "4020326a50e1c556e6dbc3ff6ed689a708ff1735c3131f58c21fd617309c7370"
+        },
+        {
+          "job": "VFNUNARY0",
+          "exit_code": 124,
+          "elapsed_s": 7200.33,
+          "json_count": 0,
+          "result_sha256": "80f7031dd42119292d861f96e77f6b332ade1b4247236a362049c8d2b1267ce1"
+        },
+        {
+          "job": "VFUNARY1",
+          "exit_code": 124,
+          "elapsed_s": 7200.321,
+          "json_count": 0,
+          "result_sha256": "bae87f0377bc4d90b4d588d9f771ea9c4c19180e05e8916ef65d7e17ab0cd294"
+        },
+        {
+          "job": "RFVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.453,
+          "json_count": 0,
+          "result_sha256": "71a8c934b4e2b0f2e5e5065ee3a27480c830e38da15bc956ea0928a964f4fdd6"
+        },
+        {
+          "job": "RFWVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.371,
+          "json_count": 0,
+          "result_sha256": "c485d31267f264a530d6ed0301493e17c79896b1d385db78b446cb02f7d54aee"
+        },
+        {
+          "job": "VFWMACCBF16_VV",
+          "exit_code": 124,
+          "elapsed_s": 7201.206,
+          "json_count": 0,
+          "result_sha256": "315f3fe6ef6d5dfcfd46af0ee2f0cd99a3804141305045804e124faf9fba635b"
+        },
+        {
+          "job": "VFWMACCBF16_VF",
+          "exit_code": 124,
+          "elapsed_s": 7200.354,
+          "json_count": 0,
+          "result_sha256": "772fa2459d5ea7cddece7402e99afbc7fc5afaf41c5ac0f263adf44f3bd8f668"
+        },
+        {
+          "job": "VFNCVTBF16_F_F_W",
+          "exit_code": 124,
+          "elapsed_s": 7200.218,
+          "json_count": 0,
+          "result_sha256": "c9092712a305916360c775f94e06d196ea54a425d0a2caa7ca40662d180703be"
+        },
+        {
+          "job": "VFWCVTBF16_F_F_V",
+          "exit_code": 124,
+          "elapsed_s": 7200.331,
+          "json_count": 0,
+          "result_sha256": "0e3398add030d8c210cd20430cf67e414a63f70463200163635a64203bf206a7"
+        },
+        {
+          "job": "FVFMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.277,
+          "json_count": 0,
+          "result_sha256": "4c3aac2d8f662f0316499ea19517d62fd8ab4be9d8a6454ad3f6adf29da5e6f6"
+        },
+        {
+          "job": "FVFMTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.289,
+          "json_count": 0,
+          "result_sha256": "306c6e8ec9d2dff5f5996a8c8938b88ffd2de8e7edc6b4b7b4138c3d5ccf92ed"
+        },
+        {
+          "job": "FVFTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.212,
+          "json_count": 0,
+          "result_sha256": "c62621178f45a7ef25b9c37bbe816dcb88342ae9fe27054807758fac890b7edc"
+        },
+        {
+          "job": "FVVMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.241,
+          "json_count": 0,
+          "result_sha256": "7d6cad4f7de55b8c78a84cc9280e5844193df07e17d0082810a39bb8172d3652"
+        },
+        {
+          "job": "FVVMTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.341,
+          "json_count": 0,
+          "result_sha256": "d64d353a0ec3923374bdba87440d5a557afaf8cfe56cec48c173db6f8e077ad3"
+        },
+        {
+          "job": "FVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.247,
+          "json_count": 0,
+          "result_sha256": "ee1ae62b72fddffdf8db6b18a4be09ada61809690c39fcd458924d66d4684809"
+        },
+        {
+          "job": "FWFTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.264,
+          "json_count": 0,
+          "result_sha256": "f85ac823eebf600ac0b94c72bc4295ca5a62cfa015d11ae8a5f747fc48b64c19"
+        },
+        {
+          "job": "FWVFMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.277,
+          "json_count": 0,
+          "result_sha256": "b065c6eacf51c91dad8f29d74458003bdfc1f3cb8d9491bab6d62c2b9ab9ea23"
+        },
+        {
+          "job": "FWVFTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.264,
+          "json_count": 0,
+          "result_sha256": "a117eb6c168e594fa9818bc9f5b06460fb01665d25f1fab74cc598cef4cfb77d"
+        },
+        {
+          "job": "FWVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.383,
+          "json_count": 0,
+          "result_sha256": "908125112b786c7e1b33000e493a9e4b346c3df1fdb08a9dda0e61e1eb1bbe4d"
+        },
+        {
+          "job": "FWVVMATYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.472,
+          "json_count": 0,
+          "result_sha256": "84afaac83c6a86352d34a175f5d1e109d24c4d3741a11df0f78085015df4e3d3"
+        },
+        {
+          "job": "FWVVTYPE",
+          "exit_code": 124,
+          "elapsed_s": 7200.387,
+          "json_count": 0,
+          "result_sha256": "bff496373273d2dda27e0d5a8ad36f376b878b3a3a2382c2d029746a65ba6b92"
+        },
+        {
+          "job": "F_BIN_RM_TYPE_D",
+          "exit_code": 124,
+          "elapsed_s": 7200.3,
+          "json_count": 0,
+          "result_sha256": "604511fe6bce2b28700b3ad753f0d1803ffbd8e09d28f7fea59eaa271b59d039"
+        },
+        {
+          "job": "F_MADD_TYPE_D",
+          "exit_code": 124,
+          "elapsed_s": 7200.204,
+          "json_count": 0,
+          "result_sha256": "c9bbe284c710b2e651d4ec1e35cc64a2ec5edff30205d803d3d2188c8ca603a7"
+        },
+        {
+          "job": "F_MADD_TYPE_S",
+          "exit_code": 124,
+          "elapsed_s": 7200.216,
+          "json_count": 0,
+          "result_sha256": "c44188b4169cc8fdf31605542151b2dcb7ffc9229117ce786f54f9941fd14ac0"
+        },
+        {
+          "job": "VFWUNARY0",
+          "exit_code": 124,
+          "elapsed_s": 7200.244,
+          "json_count": 0,
+          "result_sha256": "17833bc63b28936f85e94af3c3c5e0b6264c650b3626e0388cc6ada7ecc47bf6"
+        }
+      ]
+    }
+  ]
+}

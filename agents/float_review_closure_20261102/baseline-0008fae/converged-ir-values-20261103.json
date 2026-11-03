@@ -1,0 +1,604 @@
+{
+  "status": "PASS independent old/new IR selected value-flow execution",
+  "model": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "rows": [
+    {
+      "config": "rv64d_v128_e64",
+      "old_ir_sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+      "new_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "checks": [
+        {
+          "function": "zieee_add16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt16_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma16_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt32_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma32_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt64_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma64_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zriscv_f16ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi64",
+          "cases": 1152
+        }
+      ]
+    },
+    {
+      "config": "rv32d",
+      "old_ir_sha256": "c619a2b803ba719505118793d72bb906d74f85acb06d457f8dc687680fdc1e88",
+      "new_ir_sha256": "e17c4fe18552f8ce219b35f846c4c1a2c530dcad0ac9fc8f10d0da2604c3fa4e",
+      "checks": [
+        {
+          "function": "zieee_add16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt16_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma16_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt32_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma32_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt64_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma64_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zriscv_f16ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi64",
+          "cases": 1152
+        }
+      ]
+    },
+    {
+      "config": "rv64d_v256_e64",
+      "old_ir_sha256": "76d658edb9bb92ade750161a9f782bb4f908aec9a2ff3951a82a1b476126dc71",
+      "new_ir_sha256": "47ba73418d6dcb1b1e86db7680ce4df9508e7885a02096e25e213c2c3b2c05e1",
+      "checks": [
+        {
+          "function": "zieee_add16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt16_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma16_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt32_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma32_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt64_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma64_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zriscv_f16ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi64",
+          "cases": 1152
+        }
+      ]
+    },
+    {
+      "config": "rv64d_v512_e64",
+      "old_ir_sha256": "44657bfff823e33c66326cff0b7a6b27f4fd1715440653299462135fd9880006",
+      "new_ir_sha256": "2bdea17d36c64545254f50cc5a6902e570a1fea682de3f7c062bf641a85a62a9",
+      "checks": [
+        {
+          "function": "zieee_add16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div16_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt16_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma16_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div32_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt32_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma32_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zieee_add64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sub64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_mul64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_div64_exceptions",
+          "cases": 1152
+        },
+        {
+          "function": "zieee_sqrt64_exceptions",
+          "cases": 96
+        },
+        {
+          "function": "zieee_fma64_exceptions",
+          "cases": 13824
+        },
+        {
+          "function": "zriscv_f16ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi8_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToI16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f32ToUi16_pure",
+          "cases": 56
+        },
+        {
+          "function": "zriscv_f16ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f16ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f32ToUi64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi32",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToI64",
+          "cases": 1152
+        },
+        {
+          "function": "zriscv_f64ToUi64",
+          "cases": 1152
+        }
+      ]
+    }
+  ],
+  "total_cases": 276672,
+  "scope": "不导入永久checker；异常穷举每源12分类及任意OF/UF/NX八组合；窄化边界及0/1/16/31四种上游flags；包装穷举源12分类/全部五flags/三candidate。原生FP作为相同不透明值，数值表达式另有DAG签名证明；有限采样不等于全数值证明。"
+}

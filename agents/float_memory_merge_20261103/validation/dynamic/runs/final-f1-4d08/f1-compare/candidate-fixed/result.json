@@ -1,0 +1,72 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "38",
+    "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/release/isarch",
+    "-A",
+    "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+    "-C",
+    "workspace:/agents/coordinated_memory_fixes_20261102/red-integration/concrete.toml",
+    "-T",
+    "1",
+    "--timeout",
+    "600s",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qfaufbv",
+    "--instruction-bits",
+    "0xa020b1af",
+    "--prestate",
+    "cur_privilege=Machine",
+    "--prestate",
+    "mstatus={bits=0x0000000a00000000}",
+    "--prestate",
+    "x2=0x0000000000000000",
+    "--prestate",
+    "x1=0x0000000080000000",
+    "solve-state",
+    "--clause=AMO"
+  ],
+  "exit": 0,
+  "seconds": 1.109,
+  "output_count": 1,
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "config_sha256": "f382caf83192fa1b73f7777ebe0cd6360cfcc9fc6112ad3fe27585c055950926",
+  "seed_log_sha256": "631dee903e08de002b4f4ac8ed8676e47ca1759a4ff53521759ca4aaf4af6098",
+  "seed_fixed_17": true,
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zAMO"
+  },
+  "output_sha256": "17d36b3fc09dfa587be5d41224fb6465229aaaff232e76a8ab2f2470da1a3a6e",
+  "gen": 1,
+  "finished": true,
+  "same_address_reads": [
+    0
+  ],
+  "concrete_region_reads": [
+    {
+      "address": "0x80000000",
+      "value": "0x0"
+    }
+  ],
+  "zero_snapshot_only": true
+}

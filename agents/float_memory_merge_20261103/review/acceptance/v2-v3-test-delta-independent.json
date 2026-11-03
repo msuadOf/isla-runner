@@ -1,0 +1,41 @@
+{
+  "scope": "v2→v3逐文件差异精确反构：只在cfg(test)既有14测试加初始化；不据此宣称binary字节等价",
+  "v2_manifest_sha256": "cdfc857291988ca8a48d3da5ca581df72f889de74d6bb67ac310dd809e3fd5b4",
+  "v3_manifest_sha256": "6e236a26158f5aecaff27944977dcc52352de7feb02b650028786f1a21c91b9f",
+  "unchanged_files": 1040,
+  "rows": [
+    {
+      "path": "isla-lib/src/executor.rs",
+      "only_added_cfg_test_lines": 5,
+      "tests": [
+        "multi_thread_entry_injects_initial_memory",
+        "multi_thread_entry_none_keeps_default_memory",
+        "multi_thread_read_mem_event_survives_fork",
+        "multi_thread_read_mem_symbolic_region_event",
+        "symbolic_pma_region_size_forks_matching_range"
+      ],
+      "v2_sha256": "daedc766f8783f41ae3b95d187d89dd465b50d3829838924114ec7a622b056b1",
+      "v3_sha256": "21f1cac8fd97baf3150ef1791296cf60729f1f528a98a001b8c336233446a634",
+      "reverse_reconstructs_v2_sha256": true
+    },
+    {
+      "path": "isla-lib/src/primop.rs",
+      "only_added_cfg_test_lines": 9,
+      "tests": [
+        "bits_compare_64_equivalent_to_int_roundtrip",
+        "bits_compare_amo_min_shape_128_symbolic",
+        "bits_compare_length_mismatch_is_type_error",
+        "bits_compare_mixed_concrete_symbolic",
+        "bits_compare_s_128_cross_sign_boundary",
+        "bits_compare_symbolic_128_no_panic_and_concretizes",
+        "bits_compare_u_128_boundary_values",
+        "sail_signed_symbolic_128_is_identity",
+        "sail_unsigned_symbolic_128_still_panics"
+      ],
+      "v2_sha256": "5c85b2072c22624ed78eea9ed948aa86a923aefab709c89a425ad39f97b19a9f",
+      "v3_sha256": "fda38a5d166135855c56f5787e340247561e6137de4f7d3d8c1dd363bef0bd71",
+      "reverse_reconstructs_v2_sha256": true
+    }
+  ],
+  "pass": true
+}

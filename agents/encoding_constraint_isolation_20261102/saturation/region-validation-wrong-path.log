@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/agents/v_symbolic_ir_workarounds/verify.py", line 68, in <module>
+    main()
+    ~~~~^^
+  File "/data1/baiyifan/workplace/isla-runner/agents/v_symbolic_ir_workarounds/verify.py", line 39, in main
+    lines = source.read_text().splitlines()
+            ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '.worktree/runner-float/sail-riscv/extensions/V/vext_arith_insts.sail'

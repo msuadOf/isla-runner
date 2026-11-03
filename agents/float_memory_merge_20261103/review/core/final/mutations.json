@@ -1,0 +1,30 @@
+[
+  {
+    "mutation": "schema-omission",
+    "sha256": "10d7100725c8ce56a0e603b171efa397f0ebf8db901c3878e8d6f58ec47ea141",
+    "returncode": 101,
+    "compile_failed": false,
+    "rejected_by_assertion": true
+  },
+  {
+    "mutation": "solver-split",
+    "sha256": "db408df609e1d141307b96d6f2d5b360d36227903a8ad008b97728b4faf98f14",
+    "returncode": 101,
+    "compile_failed": false,
+    "rejected_by_assertion": true
+  },
+  {
+    "mutation": "swallow-required-field-error",
+    "sha256": "be141894f8b5c22ea906f0026d118dc8410a333521197abefe23ec664a291fa7",
+    "returncode": 101,
+    "compile_failed": false,
+    "rejected_by_assertion": true
+  },
+  {
+    "mutation": "executeas-register-reset",
+    "sha256": "163773af54908b7c1701daf7eb95b41af9b596ce886189c7724bf7c99708a5e1",
+    "returncode": 101,
+    "compile_failed": false,
+    "rejected_by_assertion": true
+  }
+]

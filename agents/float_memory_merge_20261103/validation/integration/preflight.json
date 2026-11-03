@@ -1,0 +1,58 @@
+{
+  "model_commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+  "model_tree": "sail-riscv",
+  "stage": "agents/float_memory_merge_20261103/validation/generation/merge-bf861b3e-20261104",
+  "source_sha256": "80e785592b232c579ef2486663fcdd1870a0358f115ec469746bd935f5323c7c",
+  "audit_sha256": "457532b696b585307b5ca4313951a2e2e66a670de33252ef1159cd70b499263b",
+  "model_files": 166,
+  "tool_files": 149,
+  "ordinary_strict": "PASS",
+  "inputs": {
+    "rv64d_v128_e64": {
+      "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "config_sha256": "89923ebff21718bb382df38bf246207cbb1eb5ae0cd314d078d87c0ab2b9f625",
+      "paths": [
+        "rv64d.ir",
+        "ir/rv64d_v128_e64.ir"
+      ],
+      "driver_sha256": "0689f8b9bd8a0c3b2419203a8630bfc406f241dd6e58e45ffa6779b7ee50d83f",
+      "generation_sha256": "7657c92aa88695e090bbf7a7b652b8555680c492a6662b8de3d9a88b1302730f"
+    },
+    "rv32d": {
+      "ir_sha256": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66",
+      "config_sha256": "bf36f1d84bc96d1229d546eefe3cae0b7282a03cea5064ade904eb1d90a23b30",
+      "paths": [
+        "rv32d.ir"
+      ],
+      "driver_sha256": "6cca06f60df5b1797def325757d2dfdc9fb5bb038ec6302f62d6b2fba6748441",
+      "generation_sha256": "d353ae888656459b74e5502b1b3b8f43ca18aa1c38af5ef8096f3aa909f2c6c0"
+    },
+    "rv64d_v256_e64": {
+      "ir_sha256": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9",
+      "config_sha256": "e28ac77273be6a31c544db6b196914dfb55b3b9fb72295ae7ef6cfc7b99dfc47",
+      "paths": [
+        "ir/rv64d_v256_e64.ir"
+      ],
+      "driver_sha256": "e0e566cee42dfe24bbd247d754145ee9c7c707d82b6509326768e9a57b20cdb3",
+      "generation_sha256": "2072f6eabf7996af5bf31f97f071752af0194b115e59433367af2f863a579afc"
+    },
+    "rv64d_v512_e64": {
+      "ir_sha256": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1",
+      "config_sha256": "9b32561d0d880d01732da669769237d8fc881e5de3e4b6384073c928ef3c3ff1",
+      "paths": [
+        "ir/rv64d_v512_e64.ir"
+      ],
+      "driver_sha256": "a051b6c8db941be6cbb78332affa836c76309964082333585a7c531ea16fdabe",
+      "generation_sha256": "ec45bf40f9a71b9a3359a50573b3caa32e9b7a8e863dd5ce9dfb7c513caad559"
+    }
+  },
+  "workarounds": {
+    "configs": 79,
+    "regions": 130,
+    "anchors": 22,
+    "old_ir_hash_warnings": 79
+  },
+  "old_manifest_sha256": "c389712a283b79b48d947cecfe2fadbe7f35d89534a76c24c3bd83c5f6bc9eec",
+  "candidate_manifest_sha256": "8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b",
+  "installed": false
+}

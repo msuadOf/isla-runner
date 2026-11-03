@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "sha256": {
+    "agents/encoding_constraint_isolation_20261102/review/selective_checkpoint_probe.rs": "6f4c42d2f1588f9d5d21c355a18f47512bdbeb2518acf01ef7d1ef6cb588efd9",
+    "isla/target/debug/deps/libisla_lib-2ee33fe3406dc3cf.rlib": "251f3f3703bbac86ce2b543a8ce91b9d61a83c9efc3269228c45a7e8d4fddf32"
+  },
+  "pass": true,
+  "binary_sha256": "e9387adbf14ff042ca79b468278f9ef4f4a6ba71d5e32368bd898d7188c78114",
+  "runtime_z3_soname": "libz3.so.5.3",
+  "runtime_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+}

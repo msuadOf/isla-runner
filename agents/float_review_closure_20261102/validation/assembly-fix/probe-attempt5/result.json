@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "baseline",
+    "stage": "run",
+    "exit": 1,
+    "cases": 1104,
+    "passed_cases": 0,
+    "probe_sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c",
+    "mapping_typecheck_probe_sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c",
+    "mapping_typecheck_log_sha256": "ed63d7649648a515ec1526ae2c6bec3ff58f89b2c28990d096debee0b6da214c",
+    "log_sha256": "abcd5e96d4cee4597029a5623c0bb1ef28bc88c47aac1c2b1260c8ccf5572076",
+    "source_sha256": {
+      "dext": "f7eb57c2f3532eb11ec1f76df9c0fb4cbcd1e34e5540308b5b3ec2193dab3081",
+      "zfh": "7a532ec1e53ea3b33f0bff2ba1c41b725a54df19539e5ca4682858325b57b61c",
+      "fext": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d",
+      "types": "27f8138a53154ade9f4ce2ea3c0cd146b5f57d1d03a72b5d61f293eccc242590"
+    }
+  },
+  {
+    "mode": "current",
+    "stage": "mapping-typecheck",
+    "exit": 1,
+    "source_sha256": {
+      "dext": "84fb27565de45366aa652f47f1914f7f694a762a735eae995d228036df90eb14",
+      "zfh": "f5776c0e59f9693c0707c3b57c7bbe25c98a2704fe6c15cb1819b67276e7b4b6",
+      "fext": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d",
+      "types": "27f8138a53154ade9f4ce2ea3c0cd146b5f57d1d03a72b5d61f293eccc242590"
+    }
+  }
+]

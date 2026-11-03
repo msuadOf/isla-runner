@@ -1,0 +1,12 @@
+{
+  "scope": "最终正式程序seed17固定word ExecuteAs正确性定向；120s限时样例，不替代完整域预算证明",
+  "result_sha256": "477040628f9ce49940c3a5a7124ff6e239a3f4378acbbf0209eb39bb16e1aba9",
+  "json_sha256": "dfccbaeb77c3f2df2373d6d7a2c0171560e5f62b9b8e19d38b56bf0dcf3fdd7d",
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "word": "0x1fe0",
+  "pre_x2": 7,
+  "immediate": 1020,
+  "post_x8": 1027,
+  "seed17_actual": true,
+  "pass": true
+}

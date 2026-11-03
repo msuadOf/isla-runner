@@ -1,0 +1,25 @@
+{
+  "old_model": "e9d69d2",
+  "new_model": "0f7b8fb",
+  "scope": "same fixed cases; compare semantic fields, exclude elapsed_ms and source-specific logs",
+  "families": {
+    "scalar": {
+      "cases": 282,
+      "different_semantic_fields": [],
+      "old_sha256": "060b013eee462f18e73f947c8d7e3c7e23232fb1af14f8ff81f7b42eb2cf3780",
+      "new_sha256": "7f6078af2196d8d9a41d526eb0339177a48b652e575a0fafbca6d4acfc81642a"
+    },
+    "vector": {
+      "cases": 183,
+      "different_semantic_fields": [],
+      "old_sha256": "7e93d9f89289068c54bbef5c3db3ec641bc97967f19cce7fa6cfa7e6e5f41383",
+      "new_sha256": "e9e90b0bac48d5951dd7d8831fb5d230f641442d77ed150572820a568782b619"
+    }
+  },
+  "helpers": {
+    "cases": 819,
+    "pass_sequence_equal": true,
+    "old_log_sha256": "33307304345edc161ba1880a66741db451853fda670ba9a006b814e86431a65d",
+    "new_log_sha256": "f0279e0098e2a89f77d9d14be67911b9a7267fdb7089faad93b3384944ce2fad"
+  }
+}

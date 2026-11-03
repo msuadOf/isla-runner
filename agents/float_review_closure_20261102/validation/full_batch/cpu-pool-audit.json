@@ -1,0 +1,75 @@
+{
+  "observed_utc": "2026-11-02T15:30:19.039763+00:00",
+  "old_pool": [
+    20,
+    26,
+    43,
+    46
+  ],
+  "proposed_pool": [
+    45,
+    52,
+    98,
+    120
+  ],
+  "status": "rejected_after_second_sample; see cpu-pool-selection.json",
+  "reason": "当前原池20与46同胞忙碌偏高；新池45/52为较低忙碌的前两并行核，98/120作RSS核准后可选扩容；外部emu可能迁入，非隔离保证",
+  "one_second_samples": [
+    {
+      "cpu": 45,
+      "siblings": [
+        45,
+        109
+      ],
+      "max_busy": 0.51,
+      "external_emu_thread_rows": 9
+    },
+    {
+      "cpu": 52,
+      "siblings": [
+        52,
+        116
+      ],
+      "max_busy": 1.0,
+      "external_emu_thread_rows": 13
+    },
+    {
+      "cpu": 98,
+      "siblings": [
+        34,
+        98
+      ],
+      "max_busy": 0.71,
+      "external_emu_thread_rows": 79
+    },
+    {
+      "cpu": 120,
+      "siblings": [
+        56,
+        120
+      ],
+      "max_busy": 0.92,
+      "external_emu_thread_rows": 25
+    }
+  ],
+  "other_owner_cpus": {
+    "generation": [
+      31,
+      60
+    ],
+    "exceptions": [
+      17,
+      29
+    ],
+    "conversions": [
+      7,
+      9
+    ],
+    "flags": [
+      15
+    ],
+    "representations_make": [
+      36
+    ]
+  }
+}

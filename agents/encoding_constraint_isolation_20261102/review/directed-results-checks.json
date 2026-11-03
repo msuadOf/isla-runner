@@ -1,0 +1,373 @@
+{
+  "semantic_jobs": 56,
+  "semantic_gen": 156,
+  "semantic_assertions_repeated": 3518,
+  "initial_values_verified": 9272,
+  "representation_jobs": [
+    {
+      "job": "bf16-vl0",
+      "gen": 6,
+      "checks": 36,
+      "json_sha256": "7abcda0ed6e35ab54219c16a2cbc35fdb3069330a4fc12cff577e713b2cda95c"
+    },
+    {
+      "job": "bf16-vl1",
+      "gen": 6,
+      "checks": 36,
+      "json_sha256": "7310c8967d2a46e0b7d89aa0004566240b56e55762145aeef32bead3c62208e4"
+    },
+    {
+      "job": "c-addi4spn",
+      "gen": 1,
+      "checks": 6,
+      "json_sha256": "7ef4e9398fa9a4cb85a30909053f764d8d31a6159bd09df9de5a83e05b7d4e02"
+    },
+    {
+      "job": "make-smoke",
+      "gen": 8,
+      "checks": 48,
+      "json_sha256": "7416460ad782c98b81b7e1520037cafa3c6bef26cdc5b411ef9c718f91586dc4"
+    }
+  ],
+  "toolchain_checks": 126,
+  "expected_illegal_clang_rejections": 4,
+  "semantic_rows": [
+    {
+      "job": "fleq-H-sNaN",
+      "gen": 8,
+      "semantic_checks": 15,
+      "json_sha256": "ff7c73b1f3b76962bf340c604306db56acdabe74f5c87c2ee8e59e597b095eca"
+    },
+    {
+      "job": "fleq-H-qNaN",
+      "gen": 8,
+      "semantic_checks": 15,
+      "json_sha256": "2fea23f9760c13b8c8919c38561441f3755932ab0aca638d0acf88c397a15dd1"
+    },
+    {
+      "job": "fleq-S-sNaN",
+      "gen": 8,
+      "semantic_checks": 15,
+      "json_sha256": "6fec03abf0c8e05e2df4a96c03ca8f3d67a63acd35b057d32fa4c756ea2a1dd9"
+    },
+    {
+      "job": "fleq-S-qNaN",
+      "gen": 8,
+      "semantic_checks": 15,
+      "json_sha256": "40b45970ad275b78b0b882d7454539548640842061b2e3744a4400ffb8207977"
+    },
+    {
+      "job": "fleq-D-sNaN",
+      "gen": 8,
+      "semantic_checks": 15,
+      "json_sha256": "ef405bf318c0fe76b86bc58e00ac71dafc29d29fe54b731d6f7b1a0edbea4736"
+    },
+    {
+      "job": "fleq-D-qNaN",
+      "gen": 8,
+      "semantic_checks": 15,
+      "json_sha256": "3becae56f0ca30dc6793fe7a02d62386c9f38ed5ce59d77a17690977103aabf2"
+    },
+    {
+      "job": "sqrt-H",
+      "gen": 36,
+      "semantic_checks": 26,
+      "json_sha256": "1a38d69633ef30f538db71bd92b847b0252887d55f767ff05f7a810a1ddf780e"
+    },
+    {
+      "job": "sqrt-D",
+      "gen": 24,
+      "semantic_checks": 26,
+      "json_sha256": "9b9f62f9389cc801ab3c0a2f4c9a0cd189caf85985f7830064b522dea5e0f097"
+    },
+    {
+      "job": "gate-VFUNARY0-mask1",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "a5fe3bdc288befa645dcd8f1bcdf2c56f8affcddca81574b11a8d275f509b458"
+    },
+    {
+      "job": "gate-VFUNARY0-mask2",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "c322aa96baee1ece4b94939468a5cccf5b85080120d77dcfc354da44a3054891"
+    },
+    {
+      "job": "gate-FVVMTYPE-mask1",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "a23f53742a99921e9f4a7efae87488f8a4f6d28947695f0acf9928ad49761d32"
+    },
+    {
+      "job": "gate-FVVMTYPE-mask2",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "76e3aeaae8adec8c6c24671b8466521aba360562e37c56201194296e97619436"
+    },
+    {
+      "job": "gate-FVFMTYPE-mask1",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "a7aee56456dab1779f694f5df58c0e218bea1f7d5d1f33e2085f837d91c07132"
+    },
+    {
+      "job": "gate-FVFMTYPE-mask2",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "48db364f1eee15394207bd7fa587e2a92ae1f7e8abd14150125dc24ee0ffb8bc"
+    },
+    {
+      "job": "gate-RFWVVTYPE-mask1",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "6322b2ff6aa7ad942baa41cbdf55e168f849d4f7b3a78286ef9bce75b8b979a2"
+    },
+    {
+      "job": "gate-RFWVVTYPE-mask2",
+      "gen": 1,
+      "semantic_checks": 43,
+      "json_sha256": "3b6c8a61134f1926cbbbb5c81017670220be4f627f58ba9fee71ee87e6f94dae"
+    },
+    {
+      "job": "bf16-VV-fused-rm0",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "36ae4bcb9942af7f3e0b185adba8fddbe9d9e5e4125b48c19d99ea64d4714070"
+    },
+    {
+      "job": "bf16-VV-fused-rm1",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "adebf949bb69a1ea585263ff56bbca7f8b51fc0487f0822e87e16f26cec7fd4e"
+    },
+    {
+      "job": "bf16-VV-fused-rm2",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "ba6d0ea66680defc8b7d8c7cc15104ad62af0e893686f4bb41d0122997643635"
+    },
+    {
+      "job": "bf16-VV-fused-rm3",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "4a1462bda183111c8a91048da3aca7a6f25bcd04fc2d72e7a0d6b8c49d9d030e"
+    },
+    {
+      "job": "bf16-VV-fused-rm4",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "c965280a1b125d26ac396820f673422d911946968830b55dd0d2ad15a8270ada"
+    },
+    {
+      "job": "bf16-VV-tiny-rm0",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "9c6fca7efa9daa7cd2733a4c41ee984bf7c5c8d271944d0f242959a5d06119fd"
+    },
+    {
+      "job": "bf16-VV-tiny-rm1",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "0e5c0c68e178167fa194d8b3f06bd961632c895ffd7d11ec91fba12f4328727d"
+    },
+    {
+      "job": "bf16-VV-tiny-rm2",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "395e6c39967a5bff14eb9011c26545fce8cdb3734d910197236daf2e719c0dd4"
+    },
+    {
+      "job": "bf16-VV-tiny-rm3",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "d29c1b56f257393a493ae5f29eca3e070175ed8bb934992c485e13ec63066a5d"
+    },
+    {
+      "job": "bf16-VV-tiny-rm4",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "dd1fa8a96071699f8a2cbe2c24c8dfb52fa8b90d6c0cd1dc857d18b475efd818"
+    },
+    {
+      "job": "bf16-VV-vector-snan-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "2c0764e6523d69fd9717cac120c66588cfcb7f05fd3eb78aa08fee4d6ee50a2b"
+    },
+    {
+      "job": "bf16-VV-other-snan-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "4a94209ad1c6ef21312b9d8fa56af384a795856e73ea8f255a7637d3d1f1f22f"
+    },
+    {
+      "job": "bf16-VV-acc-snan-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "6dfbfcd8216337325f2e6c151c2fbacef289633096e7f83ef69247c7e54af2e9"
+    },
+    {
+      "job": "bf16-VV-vl0-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "765049a85be0e940dc31eb38115c668a126ef30c129cc2e1944c59b698d1f34e"
+    },
+    {
+      "job": "bf16-VV-multi-mask1-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "37a56a1953fdfa618e6ef9ac67e4122b3dccb995508fdca7bc3ac8d777b85baa"
+    },
+    {
+      "job": "bf16-VV-multi-mask2-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "cc9d2f264560148b87e2491103d7258a4dfe0444ff416bc3db874792a05c05c5"
+    },
+    {
+      "job": "bf16-VV-multi-mask3-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "7d8585a5775a35687e117391a1ba3d8724c6f1643d86b1a61ed3cad0f6bc7d28"
+    },
+    {
+      "job": "bf16-VV-multi-mask0-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "9fd5f4702e15d5eb582375a30b2d3f7c6c52bcc4da4ea7ac4f9e6c7b5d01a2dc"
+    },
+    {
+      "job": "bf16-VF-fused-rm0",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "f516c94bf560212efa6bb0e17975754abf485a060e8350e2b9ae22fc81b73d05"
+    },
+    {
+      "job": "bf16-VF-fused-rm1",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "a6554d688774c3ff27a374047db7c28c0a3a4fb44e467d5734549a231b708453"
+    },
+    {
+      "job": "bf16-VF-fused-rm2",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "0bf1d3a193b12914010dc7c4e849aab1c78b4dad570e1d25084bb56263cb06cd"
+    },
+    {
+      "job": "bf16-VF-fused-rm3",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "576e6def6fd0fae36557ea3f3d556426abd0f4fa51626ca0503d55e42d6a5dd5"
+    },
+    {
+      "job": "bf16-VF-fused-rm4",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "d9082c33621cb54131b04e574c056902f0d426df5d05b4715178e0e2ff988a15"
+    },
+    {
+      "job": "bf16-VF-tiny-rm0",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "e558a2171f5336a63757304ba8572cd76628ba1d35d8fe30b3eb28ab6cfc2a7e"
+    },
+    {
+      "job": "bf16-VF-tiny-rm1",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "940b74b63c66d9127ba6dfbaddc5e65abdfb9f6a0d61af0625f405569ca175fb"
+    },
+    {
+      "job": "bf16-VF-tiny-rm2",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "1d9dbe0372d4382f27152fadebb9ff9af4777736d9d4919c57160e8dddbdae1a"
+    },
+    {
+      "job": "bf16-VF-tiny-rm3",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "1d5a58a5d883aafd4bfb7fdbc6b452c247d03d0287b6df8f46ffef6462e4ad6a"
+    },
+    {
+      "job": "bf16-VF-tiny-rm4",
+      "gen": 1,
+      "semantic_checks": 80,
+      "json_sha256": "b0cd8d4b4df2630524dc5a5843dbe5c7cbd2e788ef3128a6d3e64e28edd83f0e"
+    },
+    {
+      "job": "bf16-VF-vector-snan-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "11b9bb8636929630a79b0b8fefe56dee28cccf70783ba291b445e89ae3cf5884"
+    },
+    {
+      "job": "bf16-VF-other-snan-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "1056c424982a895f79c820d7fd75db4494eda70c30ec18e7aa709899f998a55b"
+    },
+    {
+      "job": "bf16-VF-acc-snan-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "fbde58d75b0364a3aa1b4d84fa5f1e4e5b38c9a9ffe94586d156101e0d59b94e"
+    },
+    {
+      "job": "bf16-VF-vl0-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "139a4ecabcf57b993f7cde86022326b0318ff5053a3a6bc37f84bcc5e127a55f"
+    },
+    {
+      "job": "bf16-VF-multi-mask1-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "32fbb844609f6938beb4edffda333bef3e0e56130126141f5e6958243c8e4dae"
+    },
+    {
+      "job": "bf16-VF-multi-mask2-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "4ddda4989995a2c3abcc54947d11e33161b4fb640b2a11055f413f29918ead35"
+    },
+    {
+      "job": "bf16-VF-multi-mask3-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "b1c2bb239879d133ef4c8e724ff24a8ed8214bcdfb63dcb7a1370095fecaa20c"
+    },
+    {
+      "job": "bf16-VF-multi-mask0-rm0",
+      "gen": 1,
+      "semantic_checks": 79,
+      "json_sha256": "c1b34b3bdf472a49b1955d4296d88f8863bec81c993fc7fc8ac549d07be102c2"
+    },
+    {
+      "job": "bf16-VFNCVTBF16_F_F_W-mask1",
+      "gen": 1,
+      "semantic_checks": 42,
+      "json_sha256": "acb13e2afab86895c0adc94e11af90e2abe35140500129c981b8f247d114e5f9"
+    },
+    {
+      "job": "bf16-VFNCVTBF16_F_F_W-mask2",
+      "gen": 1,
+      "semantic_checks": 42,
+      "json_sha256": "0ed5a7f2b91f530a152ec3e18685c124ac8cec91b47df17801fe8c7f22fe8c4e"
+    },
+    {
+      "job": "bf16-VFWCVTBF16_F_F_V-mask1",
+      "gen": 1,
+      "semantic_checks": 42,
+      "json_sha256": "df8a40ba7376f765b1f7881a4114017364702ee126e834192aaf499d06c77ac1"
+    },
+    {
+      "job": "bf16-VFWCVTBF16_F_F_V-mask2",
+      "gen": 1,
+      "semantic_checks": 42,
+      "json_sha256": "96fb9f521d7deb4e767a20b54eaa1d64d4a3a01125edb71a3a965490add5cada"
+    }
+  ],
+  "pass": true
+}

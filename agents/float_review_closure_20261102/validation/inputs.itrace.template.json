@@ -1,0 +1,461 @@
+{
+  "domain": "full",
+  "seed": 17,
+  "tactic": "qffp",
+  "threads": 1,
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "model_tree": {
+    "path": ".worktree/runner-float/sail-riscv",
+    "manifest": {
+      "path": "<最终模型源码清单路径>",
+      "sha256": "<最终SHA-256>"
+    }
+  },
+  "isla_tree": {
+    "path": ".worktree/runner-float/isla",
+    "manifest": {
+      "path": "<最终Isla源码清单路径>",
+      "sha256": "<最终SHA-256>"
+    }
+  },
+  "binary": {
+    "path": "agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace",
+    "sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d"
+  },
+  "z3": {
+    "path": "<官方Z3动态库路径>",
+    "sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+  },
+  "seed_preload": {
+    "path": "agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+  },
+  "irs": {
+    "rv64-v128": {
+      "path": "<最终rv64-v128.ir路径>",
+      "sha256": "<最终SHA-256>"
+    },
+    "rv64-v256": {
+      "path": "<最终rv64-v256.ir路径>",
+      "sha256": "<最终SHA-256>"
+    },
+    "rv64-v512": {
+      "path": "<最终rv64-v512.ir路径>",
+      "sha256": "<最终SHA-256>"
+    },
+    "rv64-default": {
+      "path": "<最终rv64d.ir路径>",
+      "sha256": "<最终SHA-256>"
+    },
+    "rv32-default": {
+      "path": "<最终rv32d.ir路径>",
+      "sha256": "<最终SHA-256>"
+    }
+  },
+  "configs": {
+    "rv64-fd-full": {
+      "path": "<最终完整域FD配置路径>",
+      "sha256": "<最终SHA-256>"
+    }
+  },
+  "jobs": {
+    "FCVTMOD_W_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FCVT_BF16_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FCVT_S_BF16": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLEQ_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLEQ_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLEQ_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLI_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "FLI_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "FLI_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "FLTQ_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLTQ_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLTQ_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMAXM_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMAXM_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMAXM_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMINM_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMINM_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMINM_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUNDNX_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUNDNX_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUNDNX_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUND_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUND_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUND_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVFMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVFMTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVFTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVVMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVVMTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWFTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVFMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVFTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVVMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_F_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_F_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_RM_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_RM_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_RM_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_TYPE_F_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_TYPE_X_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_X_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_X_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_MADD_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_MADD_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_MADD_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_F_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_F_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_RM_FF_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FF_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FF_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FX_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FX_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FX_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_XF_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_XF_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_XF_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_TYPE_F_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_TYPE_X_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_X_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_X_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "RFVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "RFWVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFMERGE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFMV": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFMVFS": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFMVSF": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFNCVTBF16_F_F_W": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFNUNARY0": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFUNARY0": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFUNARY1": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWCVTBF16_F_F_V": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWMACCBF16_VF": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWMACCBF16_VV": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWUNARY0": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    }
+  },
+  "affected_manifest": {
+    "path": "agents/float_review_closure_20261102/inventory/affected-clauses.json",
+    "sha256": "6f3fc71ea2c9c6ebea3e21a1bdbf76db144db8464e0313e9f00655c8c7ad603c"
+  },
+  "binary_manifest": {
+    "path": "agents/float_review_closure_20261102/validation/bin/manifest-interrupt-itrace.json",
+    "sha256": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6"
+  },
+  "watchdog_evidence": {
+    "path": "agents/float_review_closure_20261102/review/enum/watchdog-itrace-result.json",
+    "sha256": "2bd0a0e7c20f83c6a412f53cf9305ffd78c2d1b7a91e5ca9ff39e512df0b6809"
+  }
+}

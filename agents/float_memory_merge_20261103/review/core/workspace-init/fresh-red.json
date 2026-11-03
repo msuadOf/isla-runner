@@ -1,0 +1,17 @@
+[
+  {
+    "test": "isarch::memory_model::tests::\u540c\u5730\u5740\u4e24\u6b21\u8bfb\u6a21\u578b\u503c\u4e00\u81f4",
+    "returncode": 101,
+    "uninitialized": true
+  },
+  {
+    "test": "isarch::target::tests::setup_pre_state\u56fa\u5b9a\u503c\u8986\u76d6\u5bc4\u5b58\u5668\u4e14\u540c\u6b65\u8f93\u51fa",
+    "returncode": 101,
+    "uninitialized": true
+  },
+  {
+    "test": "isarch::exec::tests::materialize_le_bytes_\u7269\u5316\u7b26\u53f7\u4e0e\u5177\u4f53\u503c",
+    "returncode": 101,
+    "uninitialized": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "scope": "Two explicitly authorized full-domain entries only; no float77 whole-domain claim",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "inputs_sha256": "0a29115104b44f25924ddb37961b4dfd5967a42a8035bf9b33ac56cdecb7ae18",
+  "result_sha256": "b7feb3a8b6266d69f617f8a212f0777b415fc7fd3937f2d334049fcabce5bbe0",
+  "output_sha256": "00132d9df3afae26545eaa8d03ff3076227ac402353c8bc0482514fdc84c03ec",
+  "job": "C_ADDI4SPN",
+  "gen": 1,
+  "observable_destinations": 1,
+  "return_kinds": {
+    "Retire_Success": 1
+  },
+  "trace_bytes": 28608,
+  "trace_sha256": "1d01f3ed02a8c5e9474e2758c859749be3f36eb16b2547ba1501e8e148e98f65",
+  "elapsed_s": 2.038,
+  "rows": [
+    {
+      "index": 0,
+      "word": "0x40",
+      "retire": true,
+      "destination": "x8",
+      "computed_fields": {
+        "x8": "0x4"
+      },
+      "pass": true
+    }
+  ],
+  "pass": true
+}

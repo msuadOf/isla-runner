@@ -1,0 +1,27 @@
+{
+  "scope": "mixed memory/FP directed; not whole Clause",
+  "input_sha256": "fdf0c6b42350c220205607d396a0a624c8a32d18f700a6c476f7e75e0212f4f1",
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "config_sha256": "65f5b45f980ece32148feb2caebc6ad246b6ab30faf6eb921a386f9fc0561d52",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "ldd": "\tlinux-vdso.so.1 (0x000073a44bf75000)\n\tlibz3.so.5.3 => user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000073a449400000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000073a44bf18000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000073a449000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000073a44bf77000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000073a448c00000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000073a4492da000)\n",
+  "directed_config_provenance_sha256": "5ee0ef3c60904ba5c085a5eb7b12f19a4d38b46d63325103b090cbc69b2c0390",
+  "model_source_manifest_sha256": "84ad731176807cd15bcc8e8e041851a332c51d412c478137f12c72f3dfdaa137",
+  "isla_source_manifest_sha256": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05",
+  "runner_sha256": "89166ad79d968c3a948f912d66538af3bc1399c925b5f03106c47354ec7771db",
+  "cpu": 25,
+  "timeout_seconds": 7200,
+  "cases": [
+    "fld",
+    "fsd",
+    "flw",
+    "fsw",
+    "ld",
+    "sd",
+    "amo",
+    "c_ld",
+    "c_sd"
+  ]
+}

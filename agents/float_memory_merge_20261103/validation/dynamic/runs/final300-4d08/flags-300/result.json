@@ -1,0 +1,225 @@
+{
+  "scope": "direct accrue_fflags state probe; not whole Clause",
+  "input_sha256": "30f6847f904ea22b8c7dd355cda988bf35bc9938ec46e7b564c408801365d5e2",
+  "isla_commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+  "isla_tree": "workspace:/.worktree/merge-float-memory-20261104/isla",
+  "cpu": 24,
+  "seed": 17,
+  "hashes": {
+    "source": "26225f7c0cf463078e821db7c87ba0a1885c62f15e0f4fd3824bc52cf88843ab",
+    "manifest": "7cf2df7d09448fda62b5fd09b4ef236c6b6fe98b7eda0710202c1244354f7e2c",
+    "lock": "db779813f1e6c02913587300737abbe0e183b92c4cd9ab151a7622baeddbde9e",
+    "oracle": "ebf9424c3471c7589eb1546e1fd4731fedc2416ad0a0ef7061a8062d5e642665",
+    "z3": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+    "preload": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+    "isarch": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+    "model_source_manifest": "84ad731176807cd15bcc8e8e041851a332c51d412c478137f12c72f3dfdaa137",
+    "isla_source_manifest": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05",
+    "rv64_config": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "rv32_config": "d31bc7e7402412899d4998ca6882b4528052762d089e411118038f8a0d585a4f",
+    "irs": {
+      "rv64-v128": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "rv64-v256": "598ed3a004b609b7dd5821af84f1ef56fa6a9085e08947aab26fb6b0a3a486d9",
+      "rv64-v512": "c5fed455a865bcc7ac481395a784cf20b7dc231d46185335c20e3a65be842bf1",
+      "rv64-default": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "rv32-default": "2387c44ed3890816c8373b9fd63c797642ea3a8d09f8b5dbe3d6c2c0b278bc66"
+    }
+  },
+  "build": [
+    "taskset",
+    "-c",
+    "24",
+    "cargo",
+    "build",
+    "--offline",
+    "--locked",
+    "--release",
+    "--bin",
+    "float-flags-state-probe",
+    "--manifest-path",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/Cargo.toml"
+  ],
+  "commands": {
+    "rv64-v128": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v256": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v256_e64.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v512": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v512_e64.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-default": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv32-default": [
+      "taskset",
+      "-c",
+      "24",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/float-flags-state-probe",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/rv32d.ir",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/test/float_ir/rv32_fd.toml"
+    ]
+  },
+  "build_exit": 0,
+  "binary_sha256": "b05f3f9802ab176b0e3e0c2b13f14effc52a1ca575e8b017341262c08380218c",
+  "ldd": "\tlinux-vdso.so.1 (0x000079da96554000)\n\tlibz3.so.5.3 => user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000079da93a00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000079da964f7000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000079da93600000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000079da96556000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000079da93200000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000079da938da000)\n",
+  "runs": {
+    "rv64-v128": {
+      "exit": 0,
+      "oracle": {
+        "pass": true,
+        "rows": 60,
+        "labels": [
+          "new_multiple",
+          "new_nv",
+          "old_nx_new_nv",
+          "same_nv",
+          "zero"
+        ],
+        "ordinary_callback_counts": {
+          "mstatus": 36,
+          "fflags": 60,
+          "fcsr": 60
+        },
+        "symbolic_callback_contract": [
+          "fflags",
+          "fcsr"
+        ],
+        "scope": "ordinary/SYMBOLIC state equivalence for Ext_F configs; ordinary mstatus callback differs"
+      },
+      "log_sha256": "53d681c55c5e97dd83b685b15e5901556112489475cf4cb96a195880f09bc879",
+      "seed_log_sha256": "475bd996827ea80c74e0f3efe3f8c3549cbe7aa13a37c7f58ced0b12d58afaf8",
+      "seed_fixed_17": true
+    },
+    "rv64-v256": {
+      "exit": 0,
+      "oracle": {
+        "pass": true,
+        "rows": 60,
+        "labels": [
+          "new_multiple",
+          "new_nv",
+          "old_nx_new_nv",
+          "same_nv",
+          "zero"
+        ],
+        "ordinary_callback_counts": {
+          "mstatus": 36,
+          "fflags": 60,
+          "fcsr": 60
+        },
+        "symbolic_callback_contract": [
+          "fflags",
+          "fcsr"
+        ],
+        "scope": "ordinary/SYMBOLIC state equivalence for Ext_F configs; ordinary mstatus callback differs"
+      },
+      "log_sha256": "e6ac45a3fd102823b45c565c7dbb993473e476526b4f89ffaf044dc071539a3b",
+      "seed_log_sha256": "bd485567900a9767fd2b1527b4cf6f1d4219cb5f73958c43ff99b8961a6274e2",
+      "seed_fixed_17": true
+    },
+    "rv64-v512": {
+      "exit": 0,
+      "oracle": {
+        "pass": true,
+        "rows": 60,
+        "labels": [
+          "new_multiple",
+          "new_nv",
+          "old_nx_new_nv",
+          "same_nv",
+          "zero"
+        ],
+        "ordinary_callback_counts": {
+          "mstatus": 36,
+          "fflags": 60,
+          "fcsr": 60
+        },
+        "symbolic_callback_contract": [
+          "fflags",
+          "fcsr"
+        ],
+        "scope": "ordinary/SYMBOLIC state equivalence for Ext_F configs; ordinary mstatus callback differs"
+      },
+      "log_sha256": "e6ac45a3fd102823b45c565c7dbb993473e476526b4f89ffaf044dc071539a3b",
+      "seed_log_sha256": "ea28ed8ae637e1e88691518477b69d9cd9e3690bbc1f45cc1e0202d3b9bac9a6",
+      "seed_fixed_17": true
+    },
+    "rv64-default": {
+      "exit": 0,
+      "oracle": {
+        "pass": true,
+        "rows": 60,
+        "labels": [
+          "new_multiple",
+          "new_nv",
+          "old_nx_new_nv",
+          "same_nv",
+          "zero"
+        ],
+        "ordinary_callback_counts": {
+          "mstatus": 36,
+          "fflags": 60,
+          "fcsr": 60
+        },
+        "symbolic_callback_contract": [
+          "fflags",
+          "fcsr"
+        ],
+        "scope": "ordinary/SYMBOLIC state equivalence for Ext_F configs; ordinary mstatus callback differs"
+      },
+      "log_sha256": "53d681c55c5e97dd83b685b15e5901556112489475cf4cb96a195880f09bc879",
+      "seed_log_sha256": "0310e472d837c4b45e2e5a6fe1357dc46e4df7316f507db36ef37a1918fc36fe",
+      "seed_fixed_17": true
+    },
+    "rv32-default": {
+      "exit": 0,
+      "oracle": {
+        "pass": true,
+        "rows": 60,
+        "labels": [
+          "new_multiple",
+          "new_nv",
+          "old_nx_new_nv",
+          "same_nv",
+          "zero"
+        ],
+        "ordinary_callback_counts": {
+          "mstatus": 36,
+          "fflags": 60,
+          "fcsr": 60
+        },
+        "symbolic_callback_contract": [
+          "fflags",
+          "fcsr"
+        ],
+        "scope": "ordinary/SYMBOLIC state equivalence for Ext_F configs; ordinary mstatus callback differs"
+      },
+      "log_sha256": "5738d9543a8f65dad31839cbc5de9022803cd960f2242a2657a2f089b0331f9b",
+      "seed_log_sha256": "c130fe5333e90c04435e3646f21b3f127bd0b99d19261190afa66e19dba24d2b",
+      "seed_fixed_17": true
+    }
+  },
+  "pass": true
+}

@@ -1,0 +1,171 @@
+   Compiling isla-lib v0.2.0 (tmp:/fm-core-sol-probe-20261104-3/isla-lib)
+warning: unnecessary parentheses around type
+   --> isla-lib/src/memory.rs:972:17
+    |
+972 |     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+    |                 ^                             ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+972 -     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+972 +     generator: &dyn Fn(&mut Solver<B>) -> Sym,
+    |
+
+warning: variable does not need to be mutable
+    --> isla-lib/src/config.rs:2352:13
+     |
+2352 |         let mut default_registers = get_default_registers(&config, symtab, type_info)?;
+     |             ----^^^^^^^^^^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `chars`
+   --> isla-lib/src/dprint.rs:467:13
+    |
+467 |         let chars: Vec<char> = s.chars().collect();
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_chars`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `member_part`
+   --> isla-lib/src/dprint.rs:686:21
+    |
+686 |                 let member_part = &s[double_colon_pos + 2..paren_pos];
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_member_part`
+
+warning: unused variable: `res`
+   --> isla-lib/src/dprint.rs:801:9
+    |
+801 |     let res = match instr {
+    |         ^^^ help: if this is intentional, prefix it with an underscore: `_res`
+
+warning: unused variable: `enum_size`
+   --> isla-lib/src/smt.rs:164:29
+    |
+164 |             .map(|&(member, enum_size, enum_name)| EnumMember { enum_id: EnumId::from_name(enum_name), member })
+    |                             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_enum_size`
+
+warning: method `render_text` is never used
+   --> isla-lib/src/tracetool/common.rs:222:8
+    |
+202 | impl TracePerPath {
+    | ----------------- method in this implementation
+...
+222 |     fn render_text(&self, handler: &TraceHandler, symtab: &Symtab) -> Option<String> {
+    |        ^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `submit_path` is never used
+   --> isla-lib/src/tracetool/common.rs:279:19
+    |
+277 | impl TraceHandler {
+    | ----------------- method in this implementation
+278 |     /// 提交已完成路径；公共层组合输出并交给共享 writer。
+279 |     pub(crate) fn submit_path(&self, path: &TracePerPath, symtab: &Symtab) {
+    |                   ^^^^^^^^^^^
+
+warning: methods `record_count` and `record` are never used
+  --> isla-lib/src/tracetool/itrace.rs:37:12
+   |
+22 | impl TracePerPath {
+   | ----------------- methods in this implementation
+...
+37 |     pub fn record_count(&self) -> usize {
+   |            ^^^^^^^^^^^^
+...
+41 |     pub fn record(&mut self, function_name: Name, backtrace: Backtrace, pc: u64) {
+   |            ^^^^^^
+
+warning: method `len` is never used
+  --> isla-lib/src/tracetool/sequence.rs:83:19
+   |
+71 | impl<T> SharedSequence<T> {
+   | ------------------------- method in this implementation
+...
+83 |     pub(super) fn len(&self) -> usize {
+   |                   ^^^
+
+warning: function `print_instr_toString` should have a snake case name
+   --> isla-lib/src/dprint.rs:794:8
+    |
+794 | pub fn print_instr_toString<'a, B>(f: &'a mut String, instr: &'a Instr<Name, B>, symtab: &Symtab) -> &'a mut String {
+    |        ^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `print_instr_to_string`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> isla-lib/src/ir.rs:1306:21
+     |
+1306 |     pub fn typedefs(&self) -> Typedefs {
+     |                     ^^^^^     ^^^^^^^^ the same lifetime is hidden here
+     |                     |
+     |                     the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+1306 |     pub fn typedefs(&self) -> Typedefs<'_> {
+     |                                       ++++
+
+warning: `isla-lib` (lib) generated 12 warnings (run `cargo fix --lib -p isla-lib` to apply 7 suggestions)
+    Finished `test` profile [unoptimized] target(s) in 8.15s
+     Running tests/mixed_bits_consumers.rs (tmp:/fm-core-sol-target-20261104/debug/deps/mixed_bits_consumers-657326797a3f3cd7)
+
+running 8 tests
+test add_bits_int_prefix_symbolic_integer ... ok
+test add_bits_int_suffix_concrete_integer ... ok
+test add_bits_int_prefix_concrete_integer ... ok
+test add_bits_int_suffix_symbolic_integer ... ok
+test sub_bits_int_prefix_concrete_integer ... ok
+test sub_bits_int_suffix_concrete_integer ... ok
+test sub_bits_int_prefix_symbolic_integer ... ok
+test sub_bits_int_suffix_symbolic_integer ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/mixed_bits_float_consumers.rs (tmp:/fm-core-sol-target-20261104/debug/deps/mixed_bits_float_consumers-b7837f39738af8e1)
+
+running 2 tests
+test appended_integer_bits_can_be_converted_to_float ... ok
+test appended_ieee_bits_keep_their_value_in_each_format ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/mixed_bits_memory.rs (tmp:/fm-core-sol-target-20261104/debug/deps/mixed_bits_memory-0d23f156cee4ed94)
+
+running 2 tests
+test append_memory_write_address ... ok
+test append_memory_read_address ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/model_concretization.rs (tmp:/fm-core-sol-target-20261104/debug/deps/model_concretization-700f84e689f94b48)
+
+running 3 tests
+test wide_arbitrary_values_keep_zero_choice_without_completing_model ... ok
+test model_concretizes_wide_values_with_b64 ... ok
+test model_concretizes_wide_values_with_b129 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/smt_init.rs (tmp:/fm-core-sol-target-20261104/debug/deps/smt_init-352509e850781099)
+
+running 2 tests
+test default_and_explicit_tactics ... ok
+test smt_initialization ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/smt_tactic.rs (tmp:/fm-core-sol-target-20261104/debug/deps/smt_tactic-9586f582a8f1bf54)
+
+running 2 tests
+test tactic_choices_are_explicit ... ok
+test default_tactic_can_solve ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

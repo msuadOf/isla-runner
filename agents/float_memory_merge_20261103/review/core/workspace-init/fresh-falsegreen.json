@@ -1,0 +1,12 @@
+[
+  {
+    "test": "isarch::target::tests::symbolic_csrs_derive_bit_rejects_out_of_width_bits",
+    "returncode": 0,
+    "uninitialized_caught_as_success": true
+  },
+  {
+    "test": "isarch::target::tests::symbolic_csrs_rejects_unsupported_shapes",
+    "returncode": 0,
+    "uninitialized_caught_as_success": true
+  }
+]

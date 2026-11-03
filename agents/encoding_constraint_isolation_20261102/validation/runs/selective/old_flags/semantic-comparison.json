@@ -1,0 +1,18 @@
+{
+  "scope": "same frozen old B IR, config, seed17; compare multiset of instruction, encoding, complete initial state, post state, return value",
+  "fields": [
+    "test-ins",
+    "test-ins-encdec",
+    "isa-state-complete",
+    "isa-state-post",
+    "ret_val"
+  ],
+  "initial_source_json_sha256": "f57e8ab8c579b131c484c3501a51a04211d12d5fb61907778e9db267f6728f68",
+  "selective_source_json_sha256": "5555cb0361941e8e825705c44b51ef6c32c2c539e3e998d7b15839a98075ac92",
+  "initial_count": 328,
+  "selective_count": 328,
+  "intersection_count": 328,
+  "initial_only": 0,
+  "selective_only": 0,
+  "same_multiset": true
+}

@@ -1,0 +1,21 @@
+{
+  "active_gates": {
+    "V/vext_fp_insts.sail": 13,
+    "V/vext_fp_vm_insts.sail": 2,
+    "V/vext_fp_red_insts.sail": 1,
+    "bfloat16/zvfbfmin_insts.sail": 2,
+    "bfloat16/zvfbfwma_insts.sail": 2
+  },
+  "source_files": [
+    "extensions/FD/softfloat_symbolic_f16.sail",
+    "extensions/FD/softfloat_symbolic_f32.sail",
+    "extensions/FD/softfloat_symbolic_f64.sail",
+    "core/ieee_fp_exceptions.sail",
+    "extensions/bfloat16/zfbfmin_utils.sail",
+    "extensions/V/vext_fp_insts.sail",
+    "extensions/V/vext_fp_vm_insts.sail",
+    "extensions/V/vext_fp_red_insts.sail",
+    "extensions/bfloat16/zvfbfmin_insts.sail",
+    "extensions/bfloat16/zvfbfwma_insts.sail"
+  ]
+}

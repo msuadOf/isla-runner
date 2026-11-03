@@ -1,0 +1,56 @@
+{
+  "source_audit": {
+    "old": {
+      "baseline_commit": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+      "file_count": 810,
+      "differences": [
+        {
+          "path": "src/isarch/exec.rs",
+          "expected_sha256": "e06799e523c845a64ed09590b7831d0f61c9cebef8dd0728f9d54ea0cb72c2b1",
+          "actual_sha256": "9dd1211e300a901bed0c82442674644582ddded5c91671293279b2ad5a2e4b70"
+        }
+      ]
+    }
+  },
+  "p3": {
+    "new": {
+      "captured_register_count": 183,
+      "replayed_register_count": 183,
+      "differences": {},
+      "initialized": 145,
+      "uninitialized": 38,
+      "terminal_log_lines": [
+        "FM_STORE_PROBE_HELPER_OUTCOME function=zext_decode outcome=Ok(Some(Poison)) exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+      ],
+      "result": "Err(\"zext_decode 译码回环返回非具体值: Poison\")"
+    },
+    "old": {
+      "captured_register_count": 183,
+      "replayed_register_count": 183,
+      "differences": {},
+      "initialized": 145,
+      "uninitialized": 38,
+      "terminal_log_lines": [
+        "FM_STORE_PROBE_HELPER_RESULT function=zext_decode result=<poison> sat=Sat exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+      ],
+      "result": "Err(\"zext_decode 译码结果不是指令构造子: Poison\")"
+    }
+  },
+  "main": {
+    "new": {
+      "same_102_prestate_as_capture": true,
+      "prestate_count": 102,
+      "same_exception": true,
+      "sat": "Sat",
+      "raw_requested_instruction": "Ok(Ctor(Name(\"zSTORE\"), Struct({Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i643\"): I64(1), Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i641\"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i642\"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i640\"): Bits(B129 { tag: false, bits: 0, len: 12 })})))"
+    },
+    "old": {
+      "same_102_prestate_as_capture": true,
+      "prestate_count": 102,
+      "same_exception": true,
+      "sat": "Sat",
+      "raw_requested_instruction": "Ok(Ctor(Name(\"zSTORE\"), Struct({Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i641\"): Bits(B129 { tag: false, bits: 31, len: 5 }), Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i643\"): I64(1), Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i640\"): Bits(B129 { tag: false, bits: 0, len: 12 }), Name(\"ztuplez3z5bv12_z5bv5_z5bv5_z5i642\"): Bits(B129 { tag: false, bits: 31, len: 5 })})))"
+    }
+  },
+  "scope": "两类代表；不外推全部922/112/7。"
+}

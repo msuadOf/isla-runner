@@ -1,0 +1,13 @@
+{
+  "batch": "selective",
+  "source_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "representation_requested": false,
+  "semantic_jobs": 56,
+  "semantic_gen": 156,
+  "semantic_assertions_repeated": 3518,
+  "initial_values_verified": 9272,
+  "representation_jobs": [],
+  "toolchain_checks": 0,
+  "expected_illegal_clang_rejections": 0,
+  "pass": true
+}

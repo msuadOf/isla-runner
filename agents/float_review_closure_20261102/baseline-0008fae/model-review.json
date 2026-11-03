@@ -1,0 +1,546 @@
+{
+  "scope": "只读最小性复审；不改变生产/IR/inputs，不作性能或动态PASS",
+  "isla_common_base": "0008fae76f4cff86dae1a036d889f0414c228e9d",
+  "model_original_base": "4f2ac293654a02db26dac5055be7f93fd6e3141e",
+  "model_this_round_base": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "model_frozen_head": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "changed_model_files": [
+    {
+      "path": "model/core/ieee_fp_exceptions.sail",
+      "base_sha256": "fdb105f1bf911b5d13fef2bfa2ee1f46b66a4ccca3c6d878bc31063937cedbc6",
+      "head_sha256": "23fda9824c2280609062bbe2b9766597681c29af13a1e9cf1be045d9106757a8"
+    },
+    {
+      "path": "model/extensions/FD/dext_insts.sail",
+      "base_sha256": "f7eb57c2f3532eb11ec1f76df9c0fb4cbcd1e34e5540308b5b3ec2193dab3081",
+      "head_sha256": "1e0397fbc2988383a064a6cfc26f8870464122cd136fc62537e0612ab07ee688"
+    },
+    {
+      "path": "model/extensions/FD/fdext_regs.sail",
+      "base_sha256": "5cc769261a4716a4238c3446a36bbba9692a5ac74fe2a9615ca0c3d5eb5c1fa2",
+      "head_sha256": "252002bb29d17da842bfacc2ac5733baec7eeada2d84dce29c233a1a8dafb3b5"
+    },
+    {
+      "path": "model/extensions/FD/softfloat_symbolic_f16.sail",
+      "base_sha256": "715795790c0efb100806c0a82195e137c4de66c4a9614baac9ee2b0b333a0646",
+      "head_sha256": "63c22bc512222b9697a5d7bf544f4260074eb5cbd2b62cbd716e7cd8917a5877"
+    },
+    {
+      "path": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "base_sha256": "ce65c868e34c3e5a1d9b1806bef3f48d7bba7b5ff18cd7cfdfe584975b716b65",
+      "head_sha256": "eb9d4883a239700a78f1969c879ac3857f7b8cb2d9290098c4d06ca769d94ac1"
+    },
+    {
+      "path": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "base_sha256": "eeb3de73c0bc6de5f07e582db5390b673e28c7c0f3d04a077a85e279695c30b5",
+      "head_sha256": "0cd758949af3ed2b13bc519087aff3fa87cf9c080d79b53efe1bebc7108b14ed"
+    },
+    {
+      "path": "model/extensions/FD/zfh_insts.sail",
+      "base_sha256": "7a532ec1e53ea3b33f0bff2ba1c41b725a54df19539e5ca4682858325b57b61c",
+      "head_sha256": "f5e7311bc490c2cb728fc8702d0491be263dee0cb822e32648bc33c405f9512e"
+    },
+    {
+      "path": "model/extensions/V/vext_fp_utils_insts.sail",
+      "base_sha256": "34191de93086708b44f552606b39878e1ad68be07c67fb2321eb7bec1b1172e1",
+      "head_sha256": "2c6042a67c1798e746178725ab42a3cf2ff9c1df5b4552a18bcb1e1757ec3564"
+    }
+  ],
+  "production_function_additions_this_round": [],
+  "production_function_deletions_this_round": [],
+  "changed_semantic_functions": 54,
+  "categories": {
+    "ROD_mode_wrapper": 2,
+    "finite_conversion_gate": 4,
+    "finite_invalid_then_numeric_NX": 1,
+    "finite_then_numeric_NX": 3,
+    "finite_then_numeric_jam": 2,
+    "integer_wrapper": 12,
+    "narrow_saturation": 6,
+    "numeric_flag_categories": 4,
+    "redundant_constant_true_mask": 1,
+    "special_cause_and_finite": 18,
+    "state_changed": 1
+  },
+  "functions": [
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_f32_rounded_exceptions",
+      "line": 101,
+      "category": "numeric_flag_categories",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_add32_exceptions",
+      "line": 142,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_sub32_exceptions",
+      "line": 168,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_f16_rounded_exceptions",
+      "line": 205,
+      "category": "numeric_flag_categories",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_add16_exceptions",
+      "line": 246,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_sub16_exceptions",
+      "line": 272,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_f64_rounded_exceptions",
+      "line": 310,
+      "category": "numeric_flag_categories",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_add64_exceptions",
+      "line": 351,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_sub64_exceptions",
+      "line": 377,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_mul16_exceptions",
+      "line": 402,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_div16_exceptions",
+      "line": 428,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 4
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_sqrt16_exceptions",
+      "line": 460,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_fma16_exceptions",
+      "line": 483,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 4
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_mul32_exceptions",
+      "line": 525,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_div32_exceptions",
+      "line": 551,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 4
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_sqrt32_exceptions",
+      "line": 583,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_fma32_exceptions",
+      "line": 606,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 4
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_mul64_exceptions",
+      "line": 648,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_div64_exceptions",
+      "line": 674,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 4
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_sqrt64_exceptions",
+      "line": 706,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_fma64_exceptions",
+      "line": 729,
+      "category": "special_cause_and_finite",
+      "old_if_tokens": 0,
+      "new_if_tokens": 4
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_exact_threshold_exceptions",
+      "line": 772,
+      "category": "numeric_flag_categories",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_mask_exact_exceptions",
+      "line": 841,
+      "category": "redundant_constant_true_mask",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_fp_to_int_core",
+      "line": 853,
+      "category": "finite_invalid_then_numeric_NX",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_round16_exceptions",
+      "line": 879,
+      "category": "finite_then_numeric_NX",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_round32_exceptions",
+      "line": 929,
+      "category": "finite_then_numeric_NX",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_round64_exceptions",
+      "line": 979,
+      "category": "finite_then_numeric_NX",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_convert32_to_16_exceptions",
+      "line": 1029,
+      "category": "finite_conversion_gate",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_convert64_to_16_exceptions",
+      "line": 1041,
+      "category": "finite_conversion_gate",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_convert64_to_32_exceptions",
+      "line": 1053,
+      "category": "finite_conversion_gate",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_bf16_from_f32_exceptions",
+      "line": 1074,
+      "category": "finite_conversion_gate",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_rod32_to_16",
+      "line": 1086,
+      "category": "finite_then_numeric_jam",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "function": "ieee_rod64_to_32",
+      "line": 1104,
+      "category": "finite_then_numeric_jam",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/extensions/FD/fdext_regs.sail",
+      "function": "accrue_fflags",
+      "line": 542,
+      "category": "state_changed",
+      "old_if_tokens": 1,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f16.sail",
+      "function": "riscv_f16ToI32",
+      "line": 51,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f16.sail",
+      "function": "riscv_f16ToUi32",
+      "line": 64,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f16.sail",
+      "function": "riscv_f16ToI64",
+      "line": 77,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f16.sail",
+      "function": "riscv_f16ToUi64",
+      "line": 90,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "function": "riscv_f32ToI32",
+      "line": 98,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "function": "riscv_f32ToUi32",
+      "line": 111,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "function": "riscv_f32ToI64",
+      "line": 124,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "function": "riscv_f32ToUi64",
+      "line": 137,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "function": "riscv_f32ToF16",
+      "line": 186,
+      "category": "ROD_mode_wrapper",
+      "old_if_tokens": 2,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "function": "riscv_f64ToI32",
+      "line": 86,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "function": "riscv_f64ToUi32",
+      "line": 99,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "function": "riscv_f64ToI64",
+      "line": 112,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "function": "riscv_f64ToUi64",
+      "line": 125,
+      "category": "integer_wrapper",
+      "old_if_tokens": 0,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "function": "riscv_f64ToF32",
+      "line": 174,
+      "category": "ROD_mode_wrapper",
+      "old_if_tokens": 1,
+      "new_if_tokens": 3
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "function": "riscv_f16ToI16_pure",
+      "line": 546,
+      "category": "narrow_saturation",
+      "old_if_tokens": 1,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "function": "riscv_f16ToI8_pure",
+      "line": 555,
+      "category": "narrow_saturation",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "function": "riscv_f32ToI16_pure",
+      "line": 564,
+      "category": "narrow_saturation",
+      "old_if_tokens": 0,
+      "new_if_tokens": 2
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "function": "riscv_f16ToUi16_pure",
+      "line": 573,
+      "category": "narrow_saturation",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "function": "riscv_f16ToUi8_pure",
+      "line": 579,
+      "category": "narrow_saturation",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "function": "riscv_f32ToUi16_pure",
+      "line": 585,
+      "category": "narrow_saturation",
+      "old_if_tokens": 0,
+      "new_if_tokens": 1
+    }
+  ],
+  "algebra_checks": {
+    "arbitrary_OF_UF_NX_tuples": 8,
+    "finite_exact_mask_replacement": 8,
+    "8bit_jam_cases": 512,
+    "arbitrary_invalid_NX_tuples": 4
+  },
+  "recommended_numeric_if_to_dataflow_count": 18,
+  "constant_true_mask_if_has_new_symbolic_fork": false,
+  "performance_measurement": null,
+  "mask_reference_audit": {
+    "active_model_all_tracked_files": [
+      "model/core/ieee_fp_exceptions.sail:841:function ieee_mask_exact_exceptions(invalid : bool, finite : bool, rounded : ieee_fp_exceptions) -> ieee_fp_exceptions =",
+      "model/core/ieee_fp_exceptions.sail:1036:    ieee_mask_exact_exceptions(invalid_nan, true, facts)",
+      "model/core/ieee_fp_exceptions.sail:1048:    ieee_mask_exact_exceptions(invalid_nan, true, facts)",
+      "model/core/ieee_fp_exceptions.sail:1060:    ieee_mask_exact_exceptions(invalid_nan, true, facts)",
+      "model/core/ieee_fp_exceptions.sail:1081:    ieee_mask_exact_exceptions(invalid_nan, true, facts)",
+      "model/core/ieee_fp_exceptions.sail:1096:    ieee_mask_exact_exceptions(invalid_nan, true, facts)",
+      "model/core/ieee_fp_exceptions.sail:1114:    ieee_mask_exact_exceptions(invalid_nan, true, facts)"
+    ],
+    "model_test_or_preserve_literal_references": [],
+    "active_isla_checker_references": [
+      "isla/test/float_ir/check_float_closure_branches.py:541:assert any(line.startswith(flags + ' = zieee_mask_exact_exceptions(') and i in reachable(lines, finite)",
+      "isla/test/float_ir/check_float_closure_branches.py:696:masked = [i for i, line in enumerate(lines) if 'return = zieee_mask_exact_exceptions(' in line]",
+      "isla/test/float_ir/check_float_closure_branches.py:737:results['zieee_mask_exact_exceptions'] = check_mask_exact(f['zieee_mask_exact_exceptions'])"
+    ],
+    "search_scope": [
+      "active model entire git tree including test and scripts",
+      "active model rg hidden non-IR/log generated files",
+      "isla/test, isla/configs, isla/scripts, isla/ir/provenance",
+      "parent active non-history source dirs"
+    ],
+    "historical_evidence_policy": "旧IR/生成记录/检查器快照保留，不为新candidate静默修改；新candidate更新正式checker三处依赖。"
+  },
+  "final_decision": {
+    "remove_numeric_output_ifs": 18,
+    "remove_mask_definition_and_six_calls": true,
+    "retain_special_cause_finite_saturation_changed_and_ROD_mode": true,
+    "revised_prior_design": "不启用FP trap的flags/bits构造是数据流；此前把最终异常分类都强制fork属于过度实现。"
+  },
+  "proof_obligations": [
+    "OF/UF/NX任意8元组保持，不使用OF=>NX或OF/UF排斥假设",
+    "round/FPint的NX返回值保持，原raise_inexact/eq条件不动",
+    "有限输入必非NaN，因此operand_invalid(false,a)=false；exact facts NV=DZ=false；6处mask恒为原facts",
+    "ROD仅将if改回原ite，flags、RTZ base和base|1逐字保留",
+    "NaN/Inf/零/invalid原因、finite/valid、饱和、changed与ROD模式控制不删除",
+    "新named候选重新普通/SYMBOLIC strict和IR及受影响动态验证，不迁移214 PASS"
+  ]
+}

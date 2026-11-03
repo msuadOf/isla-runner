@@ -1,0 +1,20 @@
+{
+  "pass": false,
+  "failures": [
+    "缺少独立操作数NaN行为分类",
+    "eq16缺独立两源分类",
+    "lt16缺独立两源分类",
+    "eq32缺独立两源分类",
+    "lt32缺独立两源分类",
+    "eq64缺独立两源分类",
+    "lt64缺独立两源分类",
+    "V/vext_fp_insts.sail仍以ITE聚合活动异常",
+    "V/vext_fp_vm_insts.sail仍以ITE聚合活动异常",
+    "V/vext_fp_red_insts.sail仍以ITE聚合活动异常",
+    "bfloat16/zvfbfmin_insts.sail仍以ITE聚合活动异常",
+    "bfloat16/zvfbfwma_insts.sail仍以ITE聚合活动异常",
+    "f16仍以ITE规范化NaN",
+    "f32仍以ITE规范化NaN",
+    "f64仍以ITE规范化NaN"
+  ]
+}

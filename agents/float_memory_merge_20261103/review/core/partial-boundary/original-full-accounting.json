@@ -1,0 +1,96 @@
+{
+  "STORE": {
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 922,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 112,
+      "assertion-filtered-paths": 1,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "partial",
+      "model-coverage": "not-measured",
+      "target-clause": "zSTORE"
+    },
+    "gen": 130,
+    "diagnostic_error_counts": {
+      "Unreachable: zext_decode \u8bd1\u7801\u56de\u73af\u8fd4\u56de\u975e\u5177\u4f53\u503c: Poison": 922
+    },
+    "terminal_log_counts": {
+      "top_level_poison_log": 112,
+      "run_exit_log": 0,
+      "run_suspended_log": 0
+    },
+    "log_sha256": "f96756e902224b460fde6844e3da708fb75fbf33a8a9683e3e6e75d00116c6af",
+    "json_sha256": "288bac977de54eade0a5a75a32c09f934986aa1c60bd450fc8c370512198a945",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "make",
+      "-C",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/merge-make-full-v2/make/STORE",
+      "-f",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/scripts/run.mk",
+      "-o",
+      "build-isarch",
+      "solve-STORE",
+      "IR_FILE=workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+      "SOLVE_CONFIG=workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+      "THREADS=1",
+      "OUTER_TIMEOUT=7200s",
+      "SOLVE_TIMEOUT=7200s",
+      "SMT_TIMEOUT=7200s",
+      "ITRACE=0"
+    ]
+  },
+  "C_LD": {
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 7,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "partial",
+      "model-coverage": "not-measured",
+      "target-clause": "zC_LD"
+    },
+    "gen": 89,
+    "diagnostic_error_counts": {},
+    "terminal_log_counts": {
+      "top_level_poison_log": 7,
+      "run_exit_log": 0,
+      "run_suspended_log": 0
+    },
+    "log_sha256": "f4895e4757450f1f7f2ae4ef3ec149d6c94cb51ffa81ddf83159e0728dc16af9",
+    "json_sha256": "3ce13869161db2aa64013660466a7e416e16dbd99b988a66fd1fc7ade985d9c6",
+    "command": [
+      "taskset",
+      "-c",
+      "30",
+      "make",
+      "-C",
+      "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/merge-make-full-v2/make/C_LD",
+      "-f",
+      "workspace:/.worktree/merge-float-memory-20261104/isla/scripts/run.mk",
+      "-o",
+      "build-isarch",
+      "solve-C_LD",
+      "IR_FILE=workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+      "SOLVE_CONFIG=workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+      "THREADS=1",
+      "OUTER_TIMEOUT=7200s",
+      "SOLVE_TIMEOUT=7200s",
+      "SMT_TIMEOUT=7200s",
+      "ITRACE=0"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "test": "primop::tests::bits_compare_u_128_boundary_values",
+    "returncode": 101,
+    "uninitialized": true
+  },
+  {
+    "test": "executor::tests::multi_thread_entry_none_keeps_default_memory",
+    "returncode": 101,
+    "uninitialized": true
+  }
+]

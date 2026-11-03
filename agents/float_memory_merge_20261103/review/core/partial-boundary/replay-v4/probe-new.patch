@@ -1,0 +1,200 @@
+diff --git a/src/isarch/exec.rs b/src/isarch/exec.rs
+index b998f0c..ef46a7b 100644
+--- a/src/isarch/exec.rs
++++ b/src/isarch/exec.rs
+@@ -186,6 +186,33 @@ fn decode_fixed_instruction<'ir, B: BV + Send + Sync>(
+     regs: &RegisterBindings<'ir, B>,
+     lets: &Bindings<'ir, B>,
+ ) -> Result<Val<B>, String> {
++    if let Ok(out) = std::env::var("FM_STORE_DIRECT_DECODE_OUT") {
++        let value = Val::Bits(B::new(fixed.bits, fixed.width));
++        let expected = shared_state.symtab.lookup(instruction_name);
++        let snapshot: BTreeMap<String, String> = regs
++            .iter()
++            .map(|(name, register)| {
++                let name = zencode::decode(shared_state.symtab.to_str(*name));
++                let value = register
++                    .read_last_if_initialized()
++                    .map(|value| format!("Ok({:?})", value))
++                    .unwrap_or_else(|| "uninitialized".to_string());
++                (name, value)
++            })
++            .collect();
++        let result = encdec_guard_roundtrip_ok(expected, &value, shared_state, regs, lets);
++        let evidence = serde_json::json!({
++            "probe_only": true,
++            "exit_code": 88,
++            "function": if fixed.width == 16 { "zext_decode_compressed" } else { "zext_decode" },
++            "instruction_name": instruction_name,
++            "word": format!("0x{:08x}", fixed.bits),
++            "registers": snapshot,
++            "result": format!("{:?}", result),
++        });
++        std::fs::write(&out, serde_json::to_vec_pretty(&evidence).unwrap()).unwrap();
++        std::process::exit(88);
++    }
+     let compressed = fixed.width == 16;
+     let decoded = concrete_function_result(
+         if compressed { "zext_decode_compressed" } else { "zext_decode" },
+@@ -271,6 +298,16 @@ pub(crate) fn encdec_guard_roundtrip_ok<B: BV>(
+                     sink.lock().expect("回环译码收集器 mutex poisoned").push(Err(error.to_string()));
+                 }
+                 Ok((Run::Finished(ret), frame)) => {
++                    if matches!(ret, Val::Poison) {
++                        eprintln!(
++                            "FM_STORE_PROBE_HELPER_POISON function={} exception={:?} path_signature={}",
++                            function,
++                            frame
++                                .get_exception()
++                                .map(|(value, location)| (value.to_str(shared_state).to_string(), location)),
++                            frame.path_signature()
++                        );
++                    }
+                     let outcome = if frame.has_sampled_branch() {
+                         Err("译码回环经过分支采样".to_string())
+                     } else {
+@@ -280,6 +317,17 @@ pub(crate) fn encdec_guard_roundtrip_ok<B: BV>(
+                             other => Err(format!("译码回环 SMT 未得到 Sat/Unsat: {:?}", other)),
+                         }
+                     };
++                    if std::env::var("FM_STORE_DIRECT_DECODE_OUT").is_ok() {
++                        eprintln!(
++                            "FM_STORE_PROBE_HELPER_OUTCOME function={} outcome={:?} exception={:?} path_signature={}",
++                            function,
++                            outcome,
++                            frame
++                                .get_exception()
++                                .map(|(value, location)| (value.to_str(shared_state).to_string(), location)),
++                            frame.path_signature()
++                        );
++                    }
+                     sink.lock().expect("回环译码收集器 mutex poisoned").push(outcome);
+                 }
+                 Ok((_, _)) => {
+@@ -1702,7 +1750,7 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+         target.apply_symbolic_pmp_to_registers(&shared_state.symtab, &mut symbolic_regs, shared_state, &mut solver)?;
+     } */
+ 
+-    let instruction = if let Some(fixed) = fixed_inputs.instruction {
++    let mut instruction = if let Some(fixed) = fixed_inputs.instruction {
+         decode_fixed_instruction(
+             fixed,
+             instruction_name,
+@@ -1720,6 +1768,21 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+             Box::new(symbolic_args_from_types(instruction_name, shared_state, &symbolic_regs, lets, &mut solver)?),
+         )
+     };
++    if let Ok(width) = std::env::var("FM_STORE_DIRECT_CTOR_WIDTH") {
++        let width: i64 = width.parse().expect("诊断STORE宽度应为整数");
++        let Val::Ctor(_, payload) = &mut instruction else { panic!("诊断STORE应为构造子") };
++        let Val::Struct(fields) = payload.as_mut() else { panic!("诊断STORE应为结构载荷") };
++        for (&name, value) in fields.iter_mut() {
++            let field = shared_state.symtab.to_str(name);
++            *value = match field.chars().last().expect("载荷字段名非空") {
++                '0' => Val::Bits(B::new(0, 12)),
++                '1' | '2' => Val::Bits(B::new(31, 5)),
++                '3' => Val::I64(width),
++                other => panic!("未知诊断STORE字段: {}", other),
++            };
++        }
++        eprintln!("FM_STORE_DIRECT_CTOR width={} instruction={:?}", width, instruction);
++    }
+     let fun_args = vec![instruction];
+     log!(log::SYM_EXEC, &format!("fun_args:{:?}", fun_args));
+     log!(log::ARCH_INFO, &format!("{:?}", state_regs));
+@@ -1796,6 +1859,31 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+             match &exec_result {
+                 Ok((run, frame)) => match run {
+                     Run::Finished(Val::Poison) => {
++                        if let Ok(out) = std::env::var("FM_STORE_MAIN_POISON_PROBE_OUT") {
++                            let sat = solver.check_sat(SourceLoc::unknown());
++                            let (prestate, requested_instruction) = if sat == isla_lib::smt::SmtResult::Sat {
++                                let mut model = solver.take_stashed_model().expect("诊断Sat路径必须有模型");
++                                model.set_complete_model(true);
++                                let prestate = target.solve_pre_state_complete(&mut model, shared_state);
++                                let instruction = model.get_val(&fun_args[0]);
++                                (format!("{:?}", prestate), format!("{:?}", instruction))
++                            } else {
++                                ("unavailable".to_string(), "unavailable".to_string())
++                            };
++                            let evidence = serde_json::json!({
++                                "probe_only": true,
++                                "exit_code": 87,
++                                "path_signature": frame.path_signature(),
++                                "exception": frame.get_exception().map(|(value, location)|
++                                    (value.to_str(shared_state).to_string(), location)),
++                                "prestate": prestate,
++                                "requested_instruction": requested_instruction,
++                                "sat": format!("{:?}", sat),
++                            });
++                            std::fs::write(&out, serde_json::to_vec_pretty(&evidence).unwrap()).unwrap();
++                            eprintln!("FM_STORE_MAIN_POISON_CAPTURED {}", out);
++                            std::process::exit(87);
++                        }
+                         log!(log::SYM_EXEC, &format!("警告: {}这个Ctor返回值是Poison，可能是相关扩展（如H扩展）造成的，因此产生了sail的_inner_error_", instruction_name))
+                     }
+                     Run::Finished(ret_val) => {
+@@ -2118,6 +2206,63 @@ fn run_symbolic_execute_with_target<'ir, B: BV>(
+                                                                         continue;
+                                                                     }
+                                                                     Err(message) => {
++                                                                        if message
++                                                                            .contains("译码回环返回非具体值: Poison")
++                                                                            && std::env::var(
++                                                                                "FM_STORE_POISON_PROBE_OUT",
++                                                                            )
++                                                                            .is_ok()
++                                                                        {
++                                                                            let registers: BTreeMap<String, String> =
++                                                                                concrete_regs
++                                                                                    .iter()
++                                                                                    .map(|(name, register)| {
++                                                                                        let name = zencode::decode(
++                                                                                            shared_state
++                                                                                                .symtab
++                                                                                                .to_str(*name),
++                                                                                        );
++                                                                                        let value = match register
++                                                                                            .read_last_if_initialized()
++                                                                                        {
++                                                                                            Some(value) => match FmtVal::from_val(value, &mut model) {
++                                                                                                Ok(value) => value.to_str(shared_state),
++                                                                                                Err(error) => format!("error:{:?}", error),
++                                                                                            },
++                                                                                            None => "uninitialized"
++                                                                                                .to_string(),
++                                                                                        };
++                                                                                        (name, value)
++                                                                                    })
++                                                                                    .collect();
++                                                                            let evidence = serde_json::json!({
++                                                                                "probe_only": true,
++                                                                                "exit_code": 86,
++                                                                                "path_signature": frame.path_signature(),
++                                                                                "requested_instruction": requested_instruction,
++                                                                                "test_ins": test_ins,
++                                                                                "encoding_value": format!("{:?}", val),
++                                                                                "encoding_fmt": format!("{:?}", FmtVal::from_val(&val, &mut model).map(|value| value.to_str(shared_state))),
++                                                                                "prestate": isa_state,
++                                                                                "full_prestate": target.solve_pre_state_complete(&mut model, shared_state).expect("诊断模型应具化完整前态"),
++                                                                                "concrete_registers": registers,
++                                                                                "ret_val": format!("{:?}", model.get_val(ret_val)),
++                                                                                "error": message,
++                                                                            });
++                                                                            let out = std::env::var("FM_STORE_POISON_PROBE_OUT")
++                                                                                .expect("FM_STORE_POISON_PROBE_OUT 必须指定独立证据路径");
++                                                                            std::fs::write(
++                                                                                &out,
++                                                                                serde_json::to_vec_pretty(&evidence)
++                                                                                    .unwrap(),
++                                                                            )
++                                                                            .unwrap();
++                                                                            eprintln!(
++                                                                                "FM_STORE_PROBE_CAPTURED {}",
++                                                                                out
++                                                                            );
++                                                                            std::process::exit(86);
++                                                                        }
+                                                                         let error = ExecError::Unreachable(message);
+                                                                         trace_diagnostics = error_recorder
+                                                                             .record_error_diagnostic(

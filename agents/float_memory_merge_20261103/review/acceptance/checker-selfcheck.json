@@ -1,0 +1,39 @@
+{
+  "scope": "只验证独立检查器；不是候选生产验收",
+  "rows": [
+    {
+      "test": "enriched historical AMO fixture only",
+      "result": {
+        "word": "0x60b1af",
+        "bits": 32,
+        "events": 2,
+        "semantic_check": "amo/lr/sc",
+        "pre_null_bytes": 0
+      }
+    },
+    {
+      "test": "missing FPR",
+      "rejected": true
+    },
+    {
+      "test": "wrong final GPR",
+      "rejected": true
+    },
+    {
+      "test": "bad representation",
+      "rejected": true
+    },
+    {
+      "test": "bad read",
+      "rejected": true
+    },
+    {
+      "test": "bad post-memory",
+      "rejected": true
+    },
+    {
+      "test": "unresolved return",
+      "rejected": true
+    }
+  ]
+}

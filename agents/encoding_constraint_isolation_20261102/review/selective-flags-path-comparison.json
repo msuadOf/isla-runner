@@ -1,0 +1,12 @@
+{
+  "same_ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+  "initial_binary": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+  "selective_binary": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+  "initial_gen": 728,
+  "selective_gen": 728,
+  "signature_return_multiset_equal": true,
+  "initial_distinct_signatures": 692,
+  "selective_distinct_signatures": 692,
+  "initial_only_multiplicity": 0,
+  "selective_only_multiplicity": 0
+}

@@ -1,0 +1,88 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "17",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/D-fma-fused-rm4/constrained.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/D-fma-fused-rm4/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_MADD_TYPE_D"
+  ],
+  "job": {
+    "name": "D-fma-fused-rm4",
+    "family": "scalar",
+    "clause": "F_MADD_TYPE_D",
+    "fields": [
+      2,
+      1,
+      0,
+      "zRM_RMM",
+      3,
+      "zFMADD_D"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0x3ff0000000000001",
+      "f1": "0x3ff0000000000001",
+      "f2": "0xbff0000000000002",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "D-fma-fused-rm4",
+      "family": "scalar",
+      "width": 64,
+      "op": "fma",
+      "fmt": "f64",
+      "dst": null,
+      "rm": 4,
+      "a": "0x3ff0000000000001",
+      "b": "0x3ff0000000000001",
+      "c": "0xbff0000000000002",
+      "reason": "single fused multiply-add witness",
+      "expected_bits": "0x3970000000000000",
+      "oracle_raw_bits": "0x3970000000000000",
+      "expected_flags": "0x0",
+      "oracle_argv": [
+        "--op",
+        "fma",
+        "--fmt",
+        "f64",
+        "--rm",
+        "4",
+        "--a",
+        "0x3ff0000000000001",
+        "--b",
+        "0x3ff0000000000001",
+        "--c",
+        "0xbff0000000000002"
+      ],
+      "split_bits": "0x0",
+      "split_accumulated_flags": "0x1"
+    },
+    "expected_full_bits": "0x3970000000000000"
+  },
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "base_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "constrained_ir_sha256": "c57748c3c34950c14c6ca41e735b2fdd3ac3879d87d55c6180a7f277252e97be",
+  "config_sha256": "4eed0bd969d4c2724212bc0d8ccaea58fbec26c7489b9e3b003aa5a35cc83c27",
+  "cpu": 17,
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/D-fma-fused-rm4/seed-intercept.log"
+  }
+}

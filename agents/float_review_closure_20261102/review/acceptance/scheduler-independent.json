@@ -1,0 +1,27 @@
+{
+  "scope": "Mock job scheduler control tests only; zero Isla or real Clause executions",
+  "scheduler_sha256": "b478384ce3be9873bfa669c327b5723ebcbb53516e03a4c451aa4310ae42d690",
+  "duplicate_supervisor_refused": true,
+  "checks": [
+    {
+      "name": "failure-accounting",
+      "total": 4,
+      "completed": 4,
+      "passed": 1,
+      "failed": 3,
+      "blocked": 0,
+      "conservation": true,
+      "batch_complete": true
+    },
+    {
+      "name": "drift-blocking",
+      "total": 5,
+      "completed": 2,
+      "passed": 2,
+      "failed": 0,
+      "blocked": 3,
+      "conservation": true,
+      "batch_complete": false
+    }
+  ]
+}

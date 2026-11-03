@@ -1,0 +1,45 @@
+{
+  "review_scope": "只读静态预检，不是构建或语义PASS",
+  "checks": [
+    {
+      "repo": "root",
+      "fixed_inputs_match": true,
+      "base_matches": true,
+      "memory_paths_match": true,
+      "float_paths_match": true,
+      "overlap_matches": true,
+      "stdout_sha256_verified": true,
+      "stderr_sha256_verified": true,
+      "exit": 1,
+      "conflicts": 9
+    },
+    {
+      "repo": "isla",
+      "fixed_inputs_match": true,
+      "base_matches": true,
+      "memory_paths_match": true,
+      "float_paths_match": true,
+      "overlap_matches": true,
+      "stdout_sha256_verified": true,
+      "stderr_sha256_verified": true,
+      "exit": 1,
+      "conflicts": 15
+    },
+    {
+      "repo": "model",
+      "fixed_inputs_match": true,
+      "base_matches": true,
+      "memory_paths_match": true,
+      "float_paths_match": true,
+      "overlap_matches": true,
+      "stdout_sha256_verified": true,
+      "stderr_sha256_verified": true,
+      "exit": 1,
+      "conflicts": 19
+    }
+  ],
+  "original_memory_files_unchanged": {
+    "README.md": true,
+    "scripts/run.mk": true
+  }
+}

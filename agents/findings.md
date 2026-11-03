@@ -1691,3 +1691,27 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 ### XiangShan 浮点 DiffTest 的结果续跑按 case ID 跳过所有已记录条目
 
 `difftest-xiangshan/pipeline.py::run`从`results.ndjson`取得已有ID时不区分success/failure，后续同目录运行会跳过旧失败；`run_case`首跑超时后另以`--dump-commit-trace`重跑，重跑即使打印GOODTRAP，原记录仍为failure/returncode=null。对版本SHA `8099715d…22390c`的本地1344输入批次，30秒24路首轮135条有104成功/31超时（25条trace GOODTRAP），120秒24路第二轮1322条中1317成功/5超时（5条trace GOODTRAP），独立低并发重跑5条才取得5个正常退出。复跑须封存原日志并建立新结果目录，最终PASS只计对应case的GOODTRAP且returncode=0；[当前工作区逐例核账](../difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json)绑定IR `73dfb2e1…671d2a`、Isla `4e315e9a…59ae0`、FD配置 `20851fdb…723d0`、XiangShan `a13efc8`／emu `8714169…a85ee`／NEMU `9188e7d…ef43`。
+
+
+## 2026-11-02：独立源NaN与活动lane分支
+
+模型四分类提交350a072/f263774/eb17b05/a9fd947，Isla对应IR提交99a83bb9；四配置严格生成、普通严格检查、五IR25步回归通过。独立GPT-6.1 Sol源码、实际CFG、56项定向结果复核通过。156条JSON、3518断言、正式make solve及GCC/Clang60项编码检查通过。固定域与vl≤2，不代表全域完整覆盖。
+
+flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱和实验对不活动lane提前计算，导致额外分叉，新的活动gate已纠正。饱和overflow显式化仍需重新预算实验；flags changed及其余特殊异常分界未全部恢复。见[本轮状态](special_control_restore_20261102/status.md)和[超时定位](explicit_branch_timeout_diagnosis_20261102/report.md)。未推送。
+
+
+## 2026-11-02：flags/sat超时完整归因确认
+
+六臂冻结B的qffp/default/smt完整Clause对照均7200s外限exit124，无完整JSON；CPU约99.5–99.7%，更换这两策略未使本轮负载完成。插桩主路径2h账：flags结构上界332、创建256、执行返回150/收集返回149、排队106+collector中1；sat上界1033、创建435、执行返回199/收集返回198、排队236+collector中1。主树/编码辅助树/JSON分别计数。
+
+flags已完成SMT查询约94.5%时间在collector，最长单次1038.658s SAT；sat最长4.819s、16951次已返回查询累积，兼旧8lane溢出组合。两项已返回check无UNKNOWN，外限截断时各一条刚开始的pending。旧源只加活动gate、保留overflow-if，同seed17三次57–64秒完整finished，确认不活动lane过早转换是重要原因。flags干净同具体FDIV_S编码诊断：原路径约束36.50秒，隔离后0.04–0.05秒，同机器码；不能据此直接删除生产约束。
+
+独立review发现并修正计数混合、旧探针残留同核竞争、check边界误归属；先前240/455秒性能值撤回为受干扰诊断。未微观定位原17分钟query为何跨轮变动，不宣称tactic普遍无影响或会话历史bug。生产源码/模型/策略未改。完整证据见[确认报告](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)。
+
+
+## 2026-11-02：指令字段断言保留与完整域验证
+
+Isla `cf1aa14` 复用 `Val::symbolic_variables` 与 `Exp::modify`，原序传播 DeclareConst/DefineConst 的指令依赖，只保留原 Assert 子集；含状态或未知 App 的断言移开。声明、定义、枚举、事件与 next_var 均保留，候选增量最终接回完整 checkpoint。完整域蕴含辅助域，全部原可达编码仍可探索，UNKNOWN/error 不转为丢弃或后备。独立 Sol 复杂输入探针、官方 Z3 下 15 项测试和三完整 Clause 均通过。两版各1258条实际见证五字段多重集合一致，不等于全域覆盖证明。模型6202e23的overflow分支与原公式等价，flags changed尚未纳入本轮恢复。[证据](encoding_constraint_isolation_20261102/status.md)。
+# float→memory 父仓合流的版本边界（2026-11-04）
+
+根仓 `31ef3b9` 与 `0665526d` 的共同基线为 `a85d6df`。两分支的 `specs/topic-version.json` 均记录各自的两个子模块提交与 IR SHA；合流后的 gitlink 与组合 IR 必须另行取得，旧任一 manifest 不能代表合流版本。`make solve-<clause>` 目标在 `isla/scripts/run.mk`，根仓 `Makefile` 没有该目标；从根目录须用 `make -C isla solve-<clause>`。本次父仓 `-s resolve` 合流留下两个 gitlink 冲突，子仓最终提交前不选取任一旧 gitlink。具体实施见[合流记录](float_memory_merge_20261103/implementation/root-merge.md)。

@@ -1,0 +1,33 @@
+{
+  "query": 685,
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "1800s",
+    "taskset",
+    "-c",
+    "106",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "started_monotonic": 535897.609586078,
+  "note": "1800s external bound is only for reaching the check; capture exits before Z3 solves query 685",
+  "exit_code": 0,
+  "elapsed_s": 953.6281948729884,
+  "captured": true,
+  "raw_sha256": "3e4d53372dc7add4e561265881ed46649111f44bb0a23f1af629af570ad72aa4",
+  "raw_bytes": 28245,
+  "seed_log": "parameter=random_seed original=49313933 fixed=17\n"
+}

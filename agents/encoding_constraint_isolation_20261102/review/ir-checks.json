@@ -1,0 +1,40 @@
+{
+  "rv64d_v128_e64": {
+    "ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+    "source_files_verified": 166,
+    "normalized_changed_functions": [
+      "zriscv_f16ToI16_pure"
+    ],
+    "permanent_cfg_checks": "passed"
+  },
+  "rv32d": {
+    "ir_sha256": "76c06fd44a738e05add3333acb1437f45db53047e2895fd9f256495317873943",
+    "source_files_verified": 166,
+    "normalized_changed_functions": [
+      "zriscv_f16ToI16_pure"
+    ],
+    "permanent_cfg_checks": "passed"
+  },
+  "rv64d_v256_e64": {
+    "ir_sha256": "a55fb2fb224bc06baed5d1f29808011d39c14a3e7cfe7fd7c5b4120363a517b2",
+    "source_files_verified": 166,
+    "normalized_changed_functions": [
+      "zriscv_f16ToI16_pure"
+    ],
+    "permanent_cfg_checks": "passed"
+  },
+  "rv64d_v512_e64": {
+    "ir_sha256": "d674159a1635834cf201b9064b424beacf44f0fd85e3266ecdfff185268c29e0",
+    "source_files_verified": 166,
+    "normalized_changed_functions": [
+      "zriscv_f16ToI16_pure"
+    ],
+    "permanent_cfg_checks": "passed"
+  },
+  "ordinary": {
+    "exit_code": 0,
+    "source_files_verified": 166,
+    "note": "检查以a9fd947+未提交补丁启动；全部源码字节与最终6202e23提交一致，初始记录已保留"
+  },
+  "regression_script_sha256": "73435d6254e8a3ceae7f7b67adf9968cc22439edcc1885cd2ecdab161595c790"
+}

@@ -1,0 +1,65 @@
+{
+  "model_head": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+  "patch_sha256": "b58119f9d277056f1384368cd0bf630b1acaa35e2d3a2a99a078d404e5a857c9",
+  "source_sha256": {
+    "model/extensions/FD/fp_minmax.sail": "1901242ab35381cce48614b408547a0ff84514999bf0342686c5a6f13ce3138c",
+    "model/extensions/FD/softfloat_symbolic_f32.sail": "7eff7bac6bf57a577db6528351e241ce34196a41a24348a4ab12cff56558b79a",
+    "model/extensions/V/vext_fp_insts.sail": "dd72ff849f928aab8e1eb2780d9e1e0bb40c0d868ccfbdeda2162f628989bcfc",
+    "model/extensions/V/vext_fp_red_insts.sail": "91e8ef18a1a82c3f35721b1159f9666e08b25090247e399a68631bcfec130214",
+    "model/extensions/V/vext_fp_utils_insts.sail": "2e8d080c4d10f715c9e38ca15395aa80e698fe87de685dfceb1309f61073d578"
+  },
+  "class_checked_formats": {
+    "16": {
+      "inputs": 65536,
+      "classes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "oracle_agrees": true
+    },
+    "32": {
+      "inputs": 40,
+      "classes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "oracle_agrees": true
+    },
+    "64": {
+      "inputs": 40,
+      "classes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "oracle_agrees": true
+    }
+  },
+  "notes": [
+    "本文件为独立静态审阅辅助枚举，不是Sail或IR功能测试。"
+  ],
+  "guard_truth_table_inputs": 640
+}

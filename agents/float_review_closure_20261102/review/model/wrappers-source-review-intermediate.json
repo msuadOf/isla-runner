@@ -1,0 +1,26 @@
+{
+  "stage": "source only",
+  "status": "PASS",
+  "baseline": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "sha256": {
+    "model/extensions/FD/softfloat_symbolic_f16.sail": "63c22bc512222b9697a5d7bf544f4260074eb5cbd2b62cbd716e7cd8917a5877",
+    "model/extensions/FD/softfloat_symbolic_f32.sail": "43f74365c402c02b743dfd3b699be5a1a8c95cc2c2955bd2e2aac65b430d7f4c",
+    "model/extensions/FD/softfloat_symbolic_f64.sail": "0cd758949af3ed2b13bc519087aff3fa87cf9c080d79b53efe1bebc7108b14ed"
+  },
+  "checks": [
+    "Twelve invalid/NaN/sign return choices manually matched to baseline",
+    "Negative NaN selects maximum before sign check",
+    "Rounded value, exception call, candidate and flags packing unchanged",
+    "Both ROD wrappers branch modes before calling ordinary native RM decoder; flags and bits share arm",
+    "ROD RTZ implementation and ordinary arithmetic are unchanged; canonical NaN rules retained",
+    "Deleted normal_rm helper has no remaining model reference",
+    "Owner selection proof independently rerun; finite-domain and no dynamic claims retained"
+  ],
+  "not_signed": [
+    "final commit",
+    "strict generation",
+    "IR CFG",
+    "dynamic oracle",
+    "full Clause budget"
+  ]
+}

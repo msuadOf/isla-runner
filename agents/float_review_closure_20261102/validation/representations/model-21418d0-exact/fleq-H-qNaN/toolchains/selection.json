@@ -1,0 +1,13 @@
+{
+  "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/fleq-H-qNaN/run/output/rv64_zFLEQ_H.json",
+  "source_sha256": "18aa0f8671826b37498e858c83827c75e385aa5ca0c6c28fe0cac06cbd246dc6",
+  "gen": 8,
+  "generic_checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+  "raw_all_pass": true,
+  "raw_failures": 0,
+  "accepted_gnu_exact_fallbacks": 0,
+  "selected": [],
+  "contract_errors": [],
+  "unhandled_failures": [],
+  "all_pass": true
+}

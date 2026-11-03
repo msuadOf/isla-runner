@@ -1,0 +1,9 @@
+# 可重建的大型程序、IR和缓存不纳入证据提交。
+*.ir
+*.irx
+*.so
+*.o
+__pycache__/
+**/target/
+**/sail_smt_cache*
+validation/bin/isarch-*

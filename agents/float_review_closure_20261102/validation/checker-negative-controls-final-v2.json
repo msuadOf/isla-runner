@@ -1,0 +1,176 @@
+{
+  "ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+  "checker_sha256": "cf9e9a0f04f561bdb6bc37b95a4aeb44ede7f4dc4628ef4dcb4851d8e65ab8bf",
+  "count": 18,
+  "all_rejected": true,
+  "cases": [
+    {
+      "case": "flags_old_vs_joined",
+      "function": "zaccrue_fflags",
+      "old": "zeq_anythingzIB5zK(zz40, zz41)",
+      "new": "zeq_anythingzIB5zK(zz41, zz41)",
+      "mutant_sha256": "ad54edf0be597afc8a185bdc005aecd3ac824be5f969834773c9aed0526d6d5b",
+      "rejected": true,
+      "reason": "flags: changed未比较old与old|flags"
+    },
+    {
+      "case": "flags_sd_zero",
+      "function": "zaccrue_fflags",
+      "old": "z_update_Mstatus_SD(zz423, 0b1)",
+      "new": "z_update_Mstatus_SD(zz423, 0b0)",
+      "mutant_sha256": "d476190941ffd3ba247ff8ce45dd341a601c2a4d36f082fcb233cbb0e85a6958",
+      "rejected": true,
+      "reason": "flags: SD未在FS更新后置1"
+    },
+    {
+      "case": "signed_self_compare",
+      "function": "zriscv_f16ToI16_pure",
+      "old": "zeq_anythingzIB32zK(zz43, zz46)",
+      "new": "zeq_anythingzIB32zK(zz43, zz43)",
+      "mutant_sha256": "fbd7b75c72253cfc6c380acd3c959b9a20ffae3cd6290951181d8d870463379c",
+      "rejected": true,
+      "reason": "zriscv_f16ToI16_pure: 不是低位符号扩展回比较"
+    },
+    {
+      "case": "signed_wrong_negative_limit",
+      "function": "zriscv_f16ToI16_pure",
+      "old": "0x8000",
+      "new": "0x0000",
+      "mutant_sha256": "2c3eb05492196800cc1ace5c2d31fe6f5fec006cefe2f9860dcbf3edfb8b5f8a",
+      "rejected": true,
+      "reason": "zriscv_f16ToI16_pure: 正/负饱和端点错误 {'0x0000', '0x7FFF'}"
+    },
+    {
+      "case": "div_zero_reason_lost",
+      "function": "zieee_div16_exceptions",
+      "old": "jump zz45 goto 106",
+      "new": "jump zz410 goto 106",
+      "mutant_sha256": "452a02a1eba975e5951b89df4688fb888a04b1a65619e8773310d99feffea9a9",
+      "rejected": true,
+      "reason": "zieee_div16_exceptions: 目标Jump谓词源角色错误 Counter({('inf', 'b'): 1, ('inf', 'a'): 1})"
+    },
+    {
+      "case": "div_finite_gate_lost",
+      "function": "zieee_div16_exceptions",
+      "old": "jump zz424 goto 72",
+      "new": "jump zz45 goto 72",
+      "mutant_sha256": "429917e9f2b12aad0289f48231c473e0b7748a5e5698ff9b40dae67f351632b2",
+      "rejected": true,
+      "reason": "zieee_div16_exceptions: 目标Jump谓词源角色错误 Counter({('zzero', 'b'): 1, ('zzero', 'a'): 1})"
+    },
+    {
+      "case": "rod_mode_five",
+      "function": "zriscv_f32ToF16",
+      "old": "zz42 = 0b110",
+      "new": "zz42 = 0b101",
+      "mutant_sha256": "804144ddb17c469fb3a2e18916da160f653096ee444c74b01717709505e8d351",
+      "rejected": true,
+      "reason": "zriscv_f32ToF16: ROD模式不是rm_bits==6"
+    },
+    {
+      "case": "rod_nx_gate_lost",
+      "function": "zieee_rod32_to_16",
+      "old": "jump zz414 goto 36",
+      "new": "jump zz42 goto 36",
+      "mutant_sha256": "67662332fd5f576dd3e9eea2a13dfdcbaad036c0a5563a5227d7655249bf242f",
+      "rejected": true,
+      "reason": "zieee_rod32_to_16: 奇数化未由NX控制"
+    },
+    {
+      "case": "of_exit_lost",
+      "function": "zieee_f16_rounded_exceptions",
+      "old": "zieee_exception_facts(false, false, true, zz450, zz45)",
+      "new": "zieee_exception_facts(false, false, false, zz450, zz45)",
+      "mutant_sha256": "00fdaa0ad1d376edd29b632568b5010dde9e6be5621925ef9fcd72382c050be8",
+      "rejected": true,
+      "reason": "zieee_f16_rounded_exceptions: 目标Jump未到达对应异常出口"
+    },
+    {
+      "case": "add_inf_sign_reversed",
+      "function": "zieee_add16_exceptions",
+      "old": "zz411 = znot_bool(zz412)",
+      "new": "zz411 = zz412",
+      "mutant_sha256": "512f3238e9fc6d7edb2d3ba022387c79bc98967211ab99276b065c7bb03d49e8",
+      "rejected": true,
+      "reason": "zieee_add16_exceptions: add异号Inf方向错误"
+    },
+    {
+      "case": "rounded_of_nx_swapped",
+      "function": "zieee_f16_rounded_exceptions",
+      "old": [
+        "jump zz440 goto 111",
+        "jump zz45 goto 107"
+      ],
+      "new": [
+        "jump zz45 goto 111",
+        "jump zz440 goto 107"
+      ],
+      "mutant_sha256": "034d1dc88904093d477a378680312f1b489e9a919d5834da36c0f3bf8f8307fd",
+      "rejected": true,
+      "reason": "zieee_f16_rounded_exceptions: OF条件未来自边界析取"
+    },
+    {
+      "case": "rod_jam_base_lost",
+      "function": "zieee_rod32_to_16",
+      "old": "zz418 = zor_vec(zz416, zz417)",
+      "new": "zz418 = zor_vec(zz417, zz417)",
+      "mutant_sha256": "760701452cf135c7b4192372288f4823e765af792829519c53d61ef56fdcddb5",
+      "rejected": true,
+      "reason": "zieee_rod32_to_16: jam未采用base|1"
+    },
+    {
+      "case": "fma_product_sign_reversed",
+      "function": "zieee_fma16_exceptions",
+      "old": "zz439 = znot_bool(zz440)",
+      "new": "zz439 = zz440",
+      "mutant_sha256": "28985aaad74ef99d297eb2b3ccde141b607a2c1e2730e97c5b72ef38f554e4be",
+      "rejected": true,
+      "reason": "zieee_fma16_exceptions: 特殊行为条件与ISA分类不符 ('0x3c00', '0x7c00', '0x7c00') (False, False, True, False) != (False, False, False, False)"
+    },
+    {
+      "case": "sqrt_negative_zero_reversed",
+      "function": "zieee_sqrt16_exceptions",
+      "old": "zz45 = znot_bool(zz46)",
+      "new": "zz45 = zz46",
+      "mutant_sha256": "12e2448af75cfbddfc91ab42912b23f7c76d977efbd31c0b40397ea3b403c681",
+      "rejected": true,
+      "reason": "zieee_sqrt16_exceptions: 特殊行为条件与ISA分类不符 ('0xbc00',) (False, True) != (True, False)"
+    },
+    {
+      "case": "add_nv_exit_lost",
+      "function": "zieee_add16_exceptions",
+      "old": "return = zieee_empty_exceptions(true) `43 254:4-254:31",
+      "new": "return = zieee_empty_exceptions(false) `43 254:4-254:31",
+      "mutant_sha256": "2f5d1bed82c20b3e8d785bed532c2daa4ecb12c863225e1eb45220e74fb1d78e",
+      "rejected": true,
+      "reason": "zieee_add16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "case": "mul_nv_exit_lost",
+      "function": "zieee_mul16_exceptions",
+      "old": "return = zieee_empty_exceptions(true) `43 408:4-408:31",
+      "new": "return = zieee_empty_exceptions(false) `43 408:4-408:31",
+      "mutant_sha256": "426f48f950eff15710930851308a42340cfc499c2793e673be2ab4b16249793a",
+      "rejected": true,
+      "reason": "zieee_mul16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "case": "sqrt_nv_exit_lost",
+      "function": "zieee_sqrt16_exceptions",
+      "old": "return = zieee_empty_exceptions(true) `43 466:4-466:31",
+      "new": "return = zieee_empty_exceptions(false) `43 466:4-466:31",
+      "mutant_sha256": "5b1ca1ceee54430779417a6edceddda2f43b23a8f45c08dd65a085888371edf0",
+      "rejected": true,
+      "reason": "zieee_sqrt16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "case": "fma_nv_exit_lost",
+      "function": "zieee_fma16_exceptions",
+      "old": "return = zieee_empty_exceptions(true) `43 502:4-502:31",
+      "new": "return = zieee_empty_exceptions(false) `43 502:4-502:31",
+      "mutant_sha256": "24fda52fb012499b4d4ed995cfe1ad9ed7a70dad1382f056b31510d6fb52645b",
+      "rejected": true,
+      "reason": "zieee_fma16_exceptions: NV/DZ原因出口顺序变化"
+    }
+  ]
+}

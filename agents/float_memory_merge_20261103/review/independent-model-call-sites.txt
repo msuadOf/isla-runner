@@ -1,0 +1,34 @@
+match get_start_element
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_fp_insts.sail:2591:  let start_element : nat = match get_start_element() {
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:429:  let start_element : nat = match get_start_element() {
+
+get_start_element()
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_arith_insts.sail:394:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_arith_insts.sail:898:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_arith_insts.sail:1377:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_arith_insts.sail:1533:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_arith_insts.sail:2181:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_fp_insts.sail:2591:  let start_element : nat = match get_start_element() {
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_fp_insts.sail:2629:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_mem_insts.sail:523:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_mem_insts.sail:581:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_mem_insts.sail:648:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:316:function get_start_element() -> nat = unsigned(vstart)
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:332:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:392:    let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:429:  let start_element : nat = match get_start_element() {
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:468:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:505:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:544:    let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:563:  let start_element : nat = get_start_element();
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:610:    let start_element : nat = get_start_element();
+
+illegal_store(
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_mem_insts.sail:240:  if illegal_store(vs3, nf, EEW, EMUL_pow) | not(valid_reg_group(vs3, EMUL_pow))
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_mem_insts.sail:367:  if illegal_store(vs3, nf, EEW, EMUL_pow) | not(valid_reg_group(vs3, EMUL_pow))
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:226:function illegal_store(vs3 : vregidx, nf : nfields, EEW : int, EMUL_pow : int) -> bool = {
+
+illegal_indexed_store(
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_mem_insts.sail:503:  if illegal_indexed_store(vs3, nf, 2 ^ EEW_index_pow, EMUL_index_pow, EMUL_data_pow) |
+58e9e61079336e250d6ac0892e83dba238f07fef:model/extensions/V/vext_utils_insts.sail:239:function illegal_indexed_store(vs3 : vregidx, nf : nfields, EEW_index : int, EMUL_pow_index : int, EMUL_pow_data : int) -> bool = {
+

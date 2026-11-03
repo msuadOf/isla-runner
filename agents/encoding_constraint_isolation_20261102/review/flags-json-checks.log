@@ -1,0 +1,54 @@
+{
+  "old_flags": {
+    "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+    "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "json_sha256": "f57e8ab8c579b131c484c3501a51a04211d12d5fb61907778e9db267f6728f68",
+    "wall_s": 2884.43,
+    "user_s": 2834.45,
+    "sys_s": 45.8,
+    "gen": 328,
+    "counts": {
+      "retired": 280,
+      "same": 160,
+      "invalid_box_input": 200,
+      "illegal": 48,
+      "changed": 120,
+      "NV_new": 103
+    },
+    "operations": {
+      "mul": 82,
+      "add": 82,
+      "div": 82,
+      "sub": 82
+    },
+    "checks": 12744,
+    "pass": true
+  },
+  "new_flags": {
+    "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+    "ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "json_sha256": "b9c6d30e8225f661449b71627da873c4b3d7246629fe7f792ccca22e5ef38011",
+    "wall_s": 1615.96,
+    "user_s": 1603.37,
+    "sys_s": 10.6,
+    "gen": 728,
+    "counts": {
+      "retired": 680,
+      "same": 342,
+      "invalid_box_input": 280,
+      "changed": 338,
+      "NV_new": 320,
+      "illegal": 48
+    },
+    "operations": {
+      "mul": 182,
+      "div": 182,
+      "add": 182,
+      "sub": 182
+    },
+    "checks": 28344,
+    "pass": true
+  }
+}

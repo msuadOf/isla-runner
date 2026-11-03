@@ -1,0 +1,28 @@
+{
+  "scope": "Actual fixed-state Make FLEQ.S only, not complete-domain Clause",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "result_sha256": "0a23dfee7cb55a87f84016f6c8e5791d2b0b427178ae93c37fdf01cb8cd7a878",
+  "output_sha256": "21179058ed1f8f97932e86febf0cc76c44d18f82fde4e4ad08c7e66f5feedcfb",
+  "gen": 8,
+  "observable_destinations": 4,
+  "source_pairs": {
+    "finite/qnan": 2,
+    "qnan/qnan": 2,
+    "finite/finite": 2,
+    "qnan/finite": 2
+  },
+  "elapsed_s": 3.305,
+  "byte_checks": {
+    "json_sha256": "21179058ed1f8f97932e86febf0cc76c44d18f82fde4e4ad08c7e66f5feedcfb",
+    "toolchain_results_sha256": "1674a92506e45b44ee67a238e175385ad25a35b6f060b80e6b97605e316faa7a",
+    "gen": 8,
+    "compiler_checks": 48,
+    "raw_failures": 0,
+    "exact_gnu_fallbacks": [],
+    "operation_rm_coverage": {},
+    "unexpected_failures": [],
+    "all_pass": true
+  },
+  "pass": true
+}

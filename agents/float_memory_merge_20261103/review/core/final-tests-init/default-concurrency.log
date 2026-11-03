@@ -1,0 +1,491 @@
+   Compiling isla-lib v0.2.0 (tmp:/fm-core-sol-probe-20261104-4/isla-lib)
+warning: unnecessary parentheses around type
+   --> isla-lib/src/memory.rs:972:17
+    |
+972 |     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+    |                 ^                             ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+972 -     generator: &(dyn Fn(&mut Solver<B>) -> Sym),
+972 +     generator: &dyn Fn(&mut Solver<B>) -> Sym,
+    |
+
+warning: unused import: `OnceLock`
+    --> isla-lib/src/smt.rs:2947:26
+     |
+2947 |     use std::sync::{Arc, OnceLock};
+     |                          ^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+    --> isla-lib/src/config.rs:2352:13
+     |
+2352 |         let mut default_registers = get_default_registers(&config, symtab, type_info)?;
+     |             ----^^^^^^^^^^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+    --> isla-lib/src/config.rs:3116:14
+     |
+3116 |         let (mut symtab, defaults) = symbolic_registers_fixture(&["mstatus", "satp"]);
+     |              ----^^^^^^
+     |              |
+     |              help: remove this `mut`
+
+warning: unused variable: `chars`
+   --> isla-lib/src/dprint.rs:467:13
+    |
+467 |         let chars: Vec<char> = s.chars().collect();
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_chars`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `member_part`
+   --> isla-lib/src/dprint.rs:686:21
+    |
+686 |                 let member_part = &s[double_colon_pos + 2..paren_pos];
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_member_part`
+
+warning: unused variable: `res`
+   --> isla-lib/src/dprint.rs:801:9
+    |
+801 |     let res = match instr {
+    |         ^^^ help: if this is intentional, prefix it with an underscore: `_res`
+
+warning: unused variable: `enum_size`
+   --> isla-lib/src/smt.rs:164:29
+    |
+164 |             .map(|&(member, enum_size, enum_name)| EnumMember { enum_id: EnumId::from_name(enum_name), member })
+    |                             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_enum_size`
+
+warning: function `print_instr_toString` should have a snake case name
+   --> isla-lib/src/dprint.rs:794:8
+    |
+794 | pub fn print_instr_toString<'a, B>(f: &'a mut String, instr: &'a Instr<Name, B>, symtab: &Symtab) -> &'a mut String {
+    |        ^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `print_instr_to_string`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> isla-lib/src/ir.rs:1306:21
+     |
+1306 |     pub fn typedefs(&self) -> Typedefs {
+     |                     ^^^^^     ^^^^^^^^ the same lifetime is hidden here
+     |                     |
+     |                     the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+1306 |     pub fn typedefs(&self) -> Typedefs<'_> {
+     |                                       ++++
+
+warning: `isla-lib` (lib test) generated 10 warnings (run `cargo fix --lib -p isla-lib --tests` to apply 9 suggestions)
+    Finished `test` profile [unoptimized] target(s) in 9.97s
+     Running unittests src/lib.rs (tmp:/fm-core-sol-target-20261104/debug/deps/isla_lib-e6c817e504c887eb)
+
+running 394 tests
+test bitvector::b129::tests::test_add ... ok
+test bitvector::b129::tests::test_arith_shiftr ... ok
+test bitvector::b129::tests::test_bitand ... ok
+test bitvector::b129::tests::test_bitor ... ok
+test bitvector::b129::tests::test_bitxor ... ok
+test bitvector::b129::tests::test_format_empty_bv ... ok
+test bitvector::b129::tests::test_cap_syntax ... ok
+test bitvector::b129::tests::test_from_str ... ok
+test bitvector::b129::tests::test_leading_zeros ... ok
+test bitvector::b129::tests::test_lower_hex ... ok
+test bitvector::b129::tests::test_not ... ok
+test bitvector::b129::tests::test_set_slice ... ok
+test bitvector::b129::tests::test_shl ... ok
+test bitvector::b129::tests::test_shr ... ok
+test bitvector::b129::tests::test_sign_extend ... ok
+test bitvector::b129::tests::test_signed ... ok
+test bitvector::b129::tests::test_sub ... ok
+test bitvector::b129::tests::test_to_bytes ... ok
+test bitvector::b129::tests::test_truncate_lsb ... ok
+test bitvector::b129::tests::test_upper_hex ... ok
+test bitvector::b64::tests::test_add ... ok
+test bitvector::b64::tests::test_append ... ok
+test bitvector::b64::tests::test_arith_shiftr ... ok
+test bitvector::b64::tests::test_extract ... ok
+test bitvector::b64::tests::test_format_empty_bv ... ok
+test bitvector::b64::tests::test_from_bytes ... ok
+test bitvector::b64::tests::test_leading_zeros ... ok
+test bitvector::b64::tests::test_neg ... ok
+test bitvector::b64::tests::test_from_str ... ok
+test bitvector::b64::tests::test_replicate ... ok
+test bitvector::b64::tests::test_set_slice ... ok
+test bitvector::b64::tests::test_set_slice_int ... ok
+test bitvector::b64::tests::test_shl ... ok
+test bitvector::b64::tests::test_shr ... ok
+test bitvector::b64::tests::test_sign_extend ... ok
+test bitvector::b64::tests::test_signed ... ok
+test bitvector::b64::tests::test_slice ... ok
+test bitvector::b64::tests::test_to_bytes ... ok
+test bitvector::b64::tests::test_trailing_zeros ... ok
+test bitvector::b64::tests::test_truncate_lsb ... ok
+test bitvector::b64::tests::test_unsigned ... ok
+test bitvector::b64::tests::test_write_bits64 ... ok
+test bitvector::b64::tests::test_zero_extend ... ok
+test bitvector::tests::test_bit_vector_from_str ... ok
+test bitvector::tests::test_bzhi_u128 ... ok
+test bitvector::tests::test_bzhi_u64 ... ok
+test bitvector::tests::test_required_index_bits ... ok
+test config::initial_state_tests::initial_state_mixed_bits ... ok
+test config::initial_state_tests::initial_state_whole_registers ... ok
+test config::initial_state_tests::initial_state_rejects_invalid_fields ... ok
+test config::tests::encoding_slices_parses ... ok
+test config::tests::execution_limits_config_parses_case_quota_including_zero ... ok
+test config::tests::encoding_slices_hard_fails ... ok
+test config::tests::execution_limits_config_parses_narrow_branch_region_limits ... ok
+test config::tests::execution_limits_config_parses_region_fork_limits ... ok
+test config::tests::execution_limits_config_rejects_empty_region_fork_limits ... ok
+test config::tests::execution_limits_config_parses_source_regions_and_overrides ... ok
+test config::tests::execution_limits_config_parses_region_scoped_branch_and_loop_limits ... ok
+test config::tests::execution_limits_config_rejects_empty_region_override ... ok
+test config::tests::execution_limits_config_rejects_invalid_strict_hash ... ok
+test config::tests::execution_limits_config_rejects_unknown_keys ... ok
+test config::tests::execution_limits_config_reads_standalone_toml_file ... ok
+test config::tests::execution_limits_config_strict_mode_requires_matching_ir_hash ... ok
+test config::tests::pma_regions_absent_returns_none ... ok
+test config::tests::memory_regions_parse_excluded_type ... ok
+test config::tests::pma_regions_alias_mapping ... ok
+test config::tests::pma_regions_detailed_fields_and_override ... ok
+test config::tests::pma_regions_symbolic_size_parsing ... ok
+test config::tests::symbolic_registers_absent_returns_empty ... ok
+test config::tests::symbolic_registers_conflicts_with_defaults ... ok
+test config::tests::pma_regions_symbolic_bounds_hard_fails ... ok
+test config::tests::pma_regions_validation_hard_fails ... ok
+test config::tests::symbolic_registers_parses_derive_bit ... ok
+test config::tests::symbolic_registers_parses_string_and_table_forms ... ok
+test config::tests::value_hints_parsing_dimensions_patterns_scope ... ok
+test dprint::tests::test_val_from_str_bool ... ok
+test config::tests::value_hints_hard_fails ... ok
+test dprint::tests::test_val_from_str_constructor_format ... ok
+test dprint::tests::test_val_from_str_i128 ... ok
+test config::tests::symbolic_registers_hard_fails ... ok
+test dprint::tests::test_val_from_str_i64 ... ok
+test dprint::tests::test_val_from_str_invalid ... ok
+test dprint::tests::test_val_from_str_list ... ok
+test dprint::tests::test_val_from_str_poison ... ok
+test config::tests::symbolic_registers_derive_bit_hard_fails ... ok
+test dprint::tests::test_val_from_str_string ... ok
+test dprint::tests::test_val_from_str_struct ... ok
+test dprint::tests::test_val_from_str_unit ... ok
+test executor::execution_limits::tests::branch_local_limit_only_applies_inside_selected_region ... ok
+test dprint::tests::test_val_from_str_vector ... ok
+test executor::execution_limits::tests::branch_percentage_check_delay_uses_current_path_total ... ok
+test executor::execution_limits::tests::branch_percentage_uses_only_current_path_counts ... ok
+test executor::execution_limits::tests::branch_percentage_uses_pre_fork_ratio_and_strict_greater_than ... ok
+test executor::execution_limits::tests::control_flow_scope_omits_call_context_when_disabled ... ok
+test executor::execution_limits::tests::configured_regions_replace_preconfigured_branch_region_limits ... ok
+test executor::execution_limits::tests::control_flow_scope_separates_function_and_call_context ... ok
+test executor::execution_limits::tests::default_handler_only_tracks_path_forks ... ok
+test executor::execution_limits::tests::execution_limits_default_and_builder_use_path_semantics ... ok
+test executor::execution_limits::tests::execution_limits_only_activate_when_a_limit_is_configured ... ok
+test executor::execution_limits::tests::explicitly_empty_region_filter_matches_no_source_location ... ok
+test executor::execution_limits::tests::goto_without_source_location_does_not_match_source_region ... ok
+test executor::execution_limits::tests::limit_region_uses_source_range_selection ... ok
+test executor::execution_limits::tests::fork_percentage_rejects_nan - should panic ... ok
+test executor::execution_limits::tests::monomorphize_forks_are_only_in_the_percentage_denominator ... ok
+test executor::execution_limits::tests::narrower_region_branch_budget_overrides_general_region_budget ... ok
+test executor::execution_limits::tests::path_depth_precedes_loop_limit_for_conditional_jump ... ok
+test executor::execution_limits::tests::only_repeated_forks_at_the_same_branch_point_are_limited ... ok
+test executor::execution_limits::tests::path_fork_limit_counts_branch_and_monomorphize_forks ... ok
+test executor::execution_limits::tests::path_state_reports_control_flow_steps ... ok
+test executor::execution_limits::tests::region_does_not_gate_path_fork_accounting ... ok
+test executor::execution_limits::tests::region_fork_budget_keeps_the_first_fork_of_each_branch_point ... ok
+test executor::execution_limits::tests::region_fork_budgets_are_path_local ... ok
+test executor::execution_limits::tests::sampling_is_path_local_pair_balanced_and_two_phase ... ok
+test executor::execution_limits::tests::sibling_loop_counts_are_path_local ... ok
+test executor::execution_limits::tests::sibling_branch_budgets_are_path_local ... ok
+test executor::execution_limits::tests::sibling_paths_sample_different_directions_after_they_fork ... ok
+test executor::frame::tests::freeze_unfreeze_independent_path_state ... ok
+test executor::frame::tests::itrace_fork_paths_grow_independently ... ok
+test executor::frame::tests::new_call_carries_trace_path ... ok
+test executor::frame::tests::new_frame_has_default_trace_path ... ok
+test executor::frame::timing_tests::dump_names_recover_ir_binding_names_from_shared_state ... ok
+test executor::frame::timing_tests::forked_frames_restore_the_path_smt_statistics_prefix ... ok
+test executor::path_timing::tests::active_wall_and_thread_cpu_are_accounted_independently ... ok
+test executor::frame::timing_tests::frozen_frames_store_only_settled_path_timing_totals ... ok
+test executor::path_timing::tests::forked_paths_share_only_the_settled_prefix ... ok
+test executor::path_timing::tests::pausing_without_an_active_slice_panics - should panic ... ok
+test executor::frame::tests::itrace_sharing_real_frame_fork_and_submission ... ok
+test executor::path_timing::tests::starting_two_active_slices_panics - should panic ... ok
+test executor::path_timing::tests::timeout_basis_none_zero_and_inclusive_boundary_are_stable ... ok
+test executor::path_timing::tests::unlimited_timeout_does_not_request_a_timing_snapshot ... ok
+test executor::task::tests::task_state_only_installs_active_execution_limits ... ok
+test executor::execution_limits::tests::sample_bias_only_applies_inside_its_own_region ... ok
+test executor::execution_limits::tests::sample_bias_skews_concretization_away_from_the_suppressed_side ... ok
+test executor::tests::itrace_branch_condition_macros_record_current_and_forked_paths ... ok
+test executor::tests::itrace_submit_for_frame_preserves_frozen_path_and_branch_conditions ... ok
+test executor::tests::itrace_submit_for_local_frame_writes_rendered_path_text ... ok
+test executor::tests::path_timeout_is_evaluated_from_path_local_totals ... ok
+test executor::tests::single_fork_sink_submits_the_child_task ... ok
+test executor::tests::operator_comparison_calls_rewrite_to_bits_primops ... ok
+test fmtval::tests::concrete_bitvectors_keep_every_bit_and_mask ... ok
+test primop::float::generic_float_tests::generic_interface_registers_outputs ... ok
+test fraction::tests::test_fraction_halve ... ok
+test executor::tests::multi_runtime_propagates_collector_panic ... ok
+test primop::tests::isla_init_mask_builds_symbolic_mask_with_fixed_width ... ok
+test executor::tests::itrace_reaching_a_failed_jump_does_not_claim_an_edge ... ok
+test executor::tests::completed_path_wins_over_zero_timeout_at_the_completion_boundary ... ok
+test executor::tests::branch_fork_count_is_inherited_by_both_successors ... ok
+test fmtval::tests::mixed_segments_keep_order_and_arbitrary_mask ... ok
+test executor::tests::monomorphize_path_limit_truncates_before_child_submission ... ok
+test executor::tests::repeated_runs_from_one_task_state_do_not_share_branch_budget ... ok
+test executor::tests::itrace_records_concrete_jump_direction_even_when_successors_match ... ok
+test init::tests::const_primop_can_override_same_named_top_level_let ... ok
+test primop::tests::isla_mask_from_low_bits_uses_source_width_for_symbolic_len_without_template ... ok
+test simplify::tests::break_forks_empty ... ok
+test simplify::tests::break_forks_simple ... ok
+test memory::tests::test_symbolic_overlap ... ok
+test executor::tests::start_single_timeout_none_is_unlimited ... ok
+test primop::tests::bits_compare_64_equivalent_to_int_roundtrip ... ok
+test executor::tests::multi_collector_can_queue_ir_frames_and_borrow_local_configuration ... ok
+test simplify::tests::remove_unused_in_one_branch ... ok
+test simplify::tests::remove_unnecessary_reg_assumptions ... ok
+test simplify::tests::remove_repeated_regs ... ok
+test primop::tests::vector_init_rejects_unconstrained_symbolic_length ... ok
+test smt::smtlib::tests::bits_to_i128_test ... ok
+test primop::float::generic_float_tests::from_ieee_accepts_concrete_and_mixed_bits ... ok
+test primop::tests::zeros_accepts_proven_symbolic_length ... ok
+test primop::tests::bits_compare_length_mismatch_is_type_error ... ok
+test primop::tests::isla_masktypev_result_merges_body_elements ... ok
+test smt::tests::array ... ok
+test smt::tests::define_enum_rejects_conflicting_member_count - should panic ... ok
+test smt::tests::bv_macro ... ok
+test primop::tests::append_keeps_concrete_segments_and_empty_slices ... ok
+test smt::tests::configured_tastic_is_used_by_solver ... ok
+test primop::float::generic_float_tests::mismatched_sorts_fail_as_type_errors ... ok
+test primop::float::generic_float_tests::from_integer_accepts_concrete_bits ... ok
+test smt::tests::deadline查询完成或中断后仍可重用 ... ok
+test smt::tests::different_enums_keep_distinct_sorts_when_members_share_symbols ... ok
+test primop::float::generic_float_tests::unsigned_conversion_and_bf16_result ... ok
+test primop::tests::zeros_rejects_unconstrained_symbolic_length ... ok
+test smt::tests::get_enum_rejects_conflicting_member_count - should panic ... ok
+test primop::tests::vector_init_panics_on_negative_proven_symbolic_length - should panic ... ok
+test primop::tests::isla_rev8_reverses_byte_order ... ok
+test smt::tests::get_enum_rejects_empty_enumeration - should panic ... ok
+test smt::tests::get_enum_rejects_conflicting_member_count_across_solvers - should panic ... ok
+test primop::tests::isla_pack_vreg_packs_elements_little_endian_per_register ... ok
+test primop::tests::expect_usize_or_symbolic_bound_panics_on_negative_proven_symbolic_value - should panic ... ok
+test smt::tests::local_model_debug_preserves_original_model_text_semantics ... ok
+test simplify::tests::evtree_add_events ... ok
+test primop::tests::zeros_panics_on_negative_proven_symbolic_length - should panic ... ok
+test executor::tests::multi_thread_read_mem_symbolic_region_event ... ok
+test executor::tests::multi_thread_entry_injects_initial_memory ... ok
+test primop::tests::isla_xperm4_symbolic_path_has_input_width ... ok
+test executor::tests::entry_function_timeout_returns_through_collector ... ok
+test executor::tests::itrace_integration_run_loop_collector_writes_executed_path ... ok
+test primop::tests::isla_read_vreg_allows_symbolic_num_elem ... ok
+test smt::tests::smt_timeout_result_preserves_error_artifact_identity ... ok
+test executor::tests::entry_function_respects_passed_task_state_limits ... ok
+test executor::tests::append_write_register_index ... ok
+test primop::tests::ones_panics_on_negative_proven_symbolic_length - should panic ... ok
+test primop::tests::isla_xperm8_handles_concrete_operands ... ok
+test smt::tests::get_enum_const ... ok
+test executor::tests::itrace_records_both_sides_of_symbolic_fork_before_completion ... ok
+test source_loc::tests::source_region_spec_missing_file_resolves_to_no_matching_region ... ok
+test source_loc::tests::source_region_spec_rejects_duplicate_file - should panic ... ok
+test source_loc::tests::source_region_spec_rejects_reversed_span - should panic ... ok
+test source_loc::tests::source_region_spec_resolves_exact_file_name ... ok
+test timeout::tests::cause_separates_smt_deadline_pressure_from_genuinely_slow_solving ... ok
+test timeout::tests::report_lines_carry_the_numbers_behind_the_verdict ... ok
+test timeout::tests::report_lines_handle_paths_that_never_called_the_solver ... ok
+test timeout::tests::slowest_call_and_timeout_totals_are_tracked ... ok
+test executor::tests::completed_frame_retains_final_smt_statistics_for_continuation ... ok
+test primop::tests::get_slice_int_panics_on_negative_concrete_length - should panic ... ok
+test primop::tests::bits_compare_u_128_boundary_values ... ok
+test smt::tests::get_const ... ok
+test executor::tests::append_read_register_index ... ok
+test primop::tests::isla_cpop_counts_full_register_or_low_word ... ok
+test smt::tests::smt_func ... ok
+test source_loc::tests::source_region_generated_ir_matches_fixture ... ok
+test executor::tests::depth_limit_reports_error_after_max_steps ... ok
+test smt::tests::model_get_var_does_not_cache_arbitrary_or_errors ... ok
+test primop::float::generic_float_tests::ieee_roundtrip_and_comparisons ... ok
+test executor::tests::multi_thread_entry_none_keeps_default_memory ... ok
+test source_loc::tests::source_region_overlaps_half_open_ranges_by_line_then_column ... ok
+test source_loc::tests::source_region_rejects_disjoint_or_enclosing_locations ... ok
+test primop::tests::isla_vector_access_or_default_handles_concrete_bounds ... ok
+test timing::tests::thread_cpu_clock_is_monotonic ... ok
+test tracetool::common::tests::btrace_rejects_inconsistent_executed_successor - should panic ... ok
+test tracetool::common::tests::branch_edges_keep_reentrant_call_contexts_separate ... ok
+test tracetool::common::tests::function_branch_trace_does_not_store_instruction_payloads ... ok
+test tracetool::common::tests::is_source_loc_accepts_supported_suffix_forms ... ok
+test tracetool::common::tests::ir_file_cache_from_file_builds_lookup_table_from_fixture ... ok
+test tracetool::common::tests::is_source_loc_rejects_empty_or_non_numeric_suffixes ... ok
+test tracetool::common::tests::ir_file_cache_from_file_strips_source_locations_and_keeps_function_boundaries ... ok
+test executor::tests::btrace_submits_executed_jump_and_path_signature ... ok
+test tracetool::common::tests::is_source_loc_rejects_malformed_ranges ... ok
+test tracetool::common::tests::completed_path_renders_path_wall_and_cpu_at_the_end ... ok
+test tracetool::common::tests::completed_path_renders_smt_timeout_metadata ... ok
+test source_loc::tests::source_region_selects_match_ir_and_excludes_enclosing_foreach_ir ... ok
+test smt::tests::get_multi_member_enum_const_after_checkpoint_replay ... ok
+test primop::tests::isla_fixed_rounding_incr_builds_symbolic_bit ... ok
+test tracetool::common::tests::completed_path_keeps_terminal_and_only_taken_branch_edges ... ok
+test source_loc::tests::source_region_rejects_reversed_range - should panic ... ok
+test tracetool::common::tests::btrace_lists_unexecuted_rewritten_branches_without_recording_edges ... ok
+test tracetool::common::tests::itrace_branch_title_formats_readable_conditions ... ok
+test tracetool::common::tests::ir_file_cache_from_file_skips_functions_missing_from_symtab ... ok
+test tracetool::common::tests::ir_file_cache_from_file_panics_with_path_when_file_is_missing ... ok
+test smt::dump::tests::checkpoint_dump_without_worker_uses_replayable_datatype_symbols ... ok
+test tracetool::common::tests::ir_file_cache_from_file_ignores_non_function_blocks ... ok
+test tracetool::common::tests::ir_file_cache_from_file_returns_none_for_unknown_function_and_out_of_range_pc ... ok
+test primop::tests::isla_init_mask_builds_concrete_b129_high_mask ... ok
+test tracetool::common::tests::itrace_handler_configure_panics_when_output_path_is_unwritable ... ok
+test tracetool::common::tests::itrace_handler_set_path_panics_when_output_path_is_unwritable ... ok
+test tracetool::common::tests::itrace_handler_submit_path_without_output_path_does_not_render_or_queue ... ok
+test tracetool::common::tests::itrace_handler_configure_resets_title_independently ... ok
+test primop::tests::mixed_append_matches_concat_for_unknown_inputs ... ok
+test tracetool::common::tests::itrace_handler_submits_trace_path_without_exposing_rendered_text ... ok
+test tracetool::common::tests::itrace_handler_writes_rendered_path_text ... ok
+test smt::tests::model_get_var_cache_is_local_and_cleared_on_completion_switch ... ok
+test tracetool::common::tests::itrace_handler_submits_multiple_rendered_paths ... ok
+test tracetool::common::tests::itrace_handler_lookup_ir_line ... ok
+test tracetool::common::tests::itrace_handler_writes_summary_record_text ... ok
+test executor::tests::execution_limit_concretize_records_itrace_summary ... ok
+test tracetool::common::tests::itrace_handler_default_no_thread ... ok
+test tracetool::common::tests::itrace_handler_lookup_ir_line_fallbacks ... ok
+test tracetool::common::tests::itrace_handler_lookup_ir_line_poisoned_cache_lock ... ok
+test tracetool::common::tests::itrace_handler_dump_propagates_writer_panic ... ok
+test tracetool::common::tests::itrace_handler_graceful_shutdown ... ok
+test tracetool::common::tests::itrace_handler_init_builds_ir_cache ... ok
+test timing::tests::wall_timer_measures_sleep ... ok
+test tracetool::common::tests::itrace_handler_init_creates_file_at_exact_user_path ... ok
+test tracetool::common::tests::itrace_per_path_record_stores_instruction_context_without_summary ... ok
+test tracetool::common::tests::itrace_per_path_record_summary_stores_timeout_context ... ok
+test tracetool::common::tests::itrace_handler_init_panics_when_output_path_is_unwritable ... ok
+test tracetool::common::tests::itrace_per_path_render_text_uses_lookup_and_fallback ... ok
+test tracetool::common::tests::itrace_per_path_render_text_matches_reference_itrace_shape ... ok
+test primop::tests::bool_to_bit_builds_one_bit_result ... ok
+test tracetool::common::tests::itrace_set_path_spawns_thread ... ok
+test tracetool::common::tests::strip_no_sourceloc ... ok
+test tracetool::common::tests::strip_source_loc_preserves_invalid_backtick_suffixes ... ok
+test tracetool::common::tests::itrace_sharing_chunks_and_multiple_forks_match_vec ... ok
+test tracetool::common::tests::strip_source_loc_range_without_semicolon ... ok
+test tracetool::common::tests::strip_source_loc_short ... ok
+test tracetool::common::tests::strip_source_loc_standard ... ok
+test tracetool::common::tests::strip_source_loc_uses_last_backtick ... ok
+test tracetool::common::tests::strip_source_loc_with_trailing_whitespace ... ok
+test tracetool::sequence::tests::trace_capacity_comparison_handles_boundaries_and_unlimited ... ok
+test tracetool::hierarchy_regression::shared_path_and_handler_belong_to_tracetool ... ok
+test zencode::tests::zdecode ... ok
+test zencode::tests::zencode ... ok
+test tracetool::sequence::tests::trace_capacity_preserves_exclusive_records ... ok
+test tracetool::common::tests::completed_path_renders_smtperf_summary ... ok
+test tracetool::common::tests::itrace_write_thread_writes_to_file ... ok
+test tracetool::common::tests::metadata_only_timeout_diagnostic_does_not_materialize_smt ... ok
+test tracetool::common::tests::itrace_sharing_parallel_read_and_drop_keep_all_payloads ... ok
+test timing::tests::thread_cpu_timer_excludes_most_sleep_time ... ok
+test tracetool::common::tests::trace_kinds_compose_without_losing_branch_evidence ... ok
+test primop::tests::isla_brev8_reverses_bits_inside_each_byte ... ok
+test tracetool::common::tests::itrace_sharing_snapshot_and_first_append_copy_no_payload ... ok
+test tracetool::common::tests::itrace_separate_handlers_write_independent_titles_and_files ... ok
+test tracetool::common::tests::itrace_configure_after_dump_rebuilds_writer_and_cache_for_new_path ... ok
+test primop::tests::i64_to_i128_accepts_bits_as_signed_i64 ... ok
+test executor::tests::loop_limit_reports_error_after_max_backjumps ... ok
+test primop::tests::isla_vector_select_uses_mask_bits ... ok
+test primop::tests::isla_read_vreg_splits_symbolic_registers ... ok
+test smt::tests::enum_checkpoint_replays_after_all_solvers_drop ... ok
+test primop::tests::isla_fixed_rounding_incr_handles_concrete_modes ... ok
+test primop::tests::extension_panics_on_negative_proven_symbolic_length - should panic ... ok
+test smt::dump::tests::checkpoint_dump_uses_shared_state_names_without_changing_local_symbols ... ok
+test primop::tests::sail_unsigned_symbolic_128_still_panics - should panic ... ok
+test primop::tests::isla_clmul_variants_extract_expected_product_bits ... ok
+test tracetool::common::tests::itrace_set_path_after_dump_writes_new_path_only ... ok
+test primop::tests::isla_vector_rev8_maps_each_element ... ok
+test primop::tests::isla_select_int_selects_concrete_and_symbolic_values ... ok
+test executor::tests::ftrace_reuses_call_events_and_includes_entry_function ... ok
+test executor::tests::loop_sampling_truncates_when_exit_direction_becomes_unsatisfiable ... ok
+test executor::tests::monomorphize_branch_local_limit_keeps_one_model_inside_selected_region ... ok
+test primop::tests::replicate_bits_accepts_proven_symbolic_count ... ok
+test smt::z3_timeout::tests::thread_timeout_waits_for_the_wrapped_call_to_return ... ok
+test smt::tests::get_single_member_enum_const_after_checkpoint_replay ... ok
+test executor::tests::append_monomorphize_enumerates_both_models ... ok
+test smt::tests::path_smt_stats_accumulate_protected_z3_calls_with_their_source_location ... ok
+test executor::tests::monomorphize_fork_count_is_inherited_by_both_successors ... ok
+test primop::tests::isla_init_mask_builds_concrete_active_mask ... ok
+test primop::tests::isla_mux2_selects_bitvector_operand ... ok
+test primop::tests::isla_xperm4_handles_concrete_operands ... ok
+test primop::tests::isla_masktypei_result_merges_body_elements ... ok
+test primop::tests::bits_compare_s_128_cross_sign_boundary ... ok
+test primop::tests::isla_read_vreg_splits_concrete_registers ... ok
+test smt::dump::tests::checkpoint_dump_preserves_temporary_assumption_as_replayable_command ... ok
+test primop::tests::isla_mask_from_low_bits_handles_concrete_fill_and_source ... ok
+test executor::tests::execution_limit_truncate_records_itrace_summary ... ok
+test primop::tests::isla_rev8_symbolic_path_preserves_width ... ok
+test primop::tests::isla_mask_from_low_bits_builds_symbolic_width_preserving_mask ... ok
+test primop::tests::ones_rejects_unconstrained_symbolic_length ... ok
+test primop::tests::extension_accepts_proven_symbolic_length ... ok
+test primop::tests::mixed_append_rejects_invalid_fixed_slices ... ok
+test primop::tests::isla_carryless_mul_symbolic_paths_have_double_width ... ok
+test primop::tests::pow2_panics_on_negative_proven_symbolic_exponent - should panic ... ok
+test primop::tests::sail_signed_symbolic_128_is_identity ... ok
+test primop::tests::count_trailing_zeros_symbolic_counts_from_low_bits ... ok
+test primop::tests::mixed_append_exceeds_concrete_host_width ... ok
+test primop::float::generic_float_tests::fma_rounds_only_once ... ok
+test primop::tests::isla_cpop_symbolic_path_has_register_width ... ok
+test primop::tests::isla_vector_access_or_default_builds_smt_array_select ... ok
+test executor::tests::monomorphize_path_limit_can_keep_current_model_without_forking ... ok
+test primop::tests::get_slice_int_accepts_proven_symbolic_length ... ok
+test primop::tests::replicate_bits_rejects_unconstrained_symbolic_count ... ok
+test tracetool::common::tests::itrace_sharing_deep_chain_drop_is_iterative_and_exact ... ok
+test primop::tests::replicate_bits_panics_on_negative_proven_symbolic_count - should panic ... ok
+test primop::tests::subrange_panics_on_negative_proven_symbolic_bounds - should panic ... ok
+test primop::float::generic_float_tests::symbolic_ite_selects_fp_rm_bv_and_bool ... ok
+test primop::tests::ones_accepts_proven_symbolic_length ... ok
+test primop::tests::extension_accepts_proven_symbolic_length_from_fallback_candidate ... ok
+test smt::tests::model_get_var_reuses_concrete_typed_values_and_mixed_segments ... ok
+test primop::tests::vector_init_accepts_proven_symbolic_length ... ok
+test primop::tests::get_slice_int_panics_on_negative_proven_symbolic_length - should panic ... ok
+test tracetool::common::tests::ftrace_projects_existing_events_in_execution_order_across_forks ... ok
+test primop::tests::replicate_bits_accepts_symbolic_bits_with_proven_symbolic_count ... ok
+test executor::tests::itrace_records_only_satisfiable_jump_direction ... ok
+test primop::tests::proven_symbolic_i128_uses_a_constant_number_of_queries ... ok
+test primop::tests::bits_compare_amo_min_shape_128_symbolic ... ok
+test primop::tests::proven_symbolic_i128_keeps_values_that_are_not_pinned_down ... ok
+test smt::tests::get_struct_with_enum_field_after_checkpoint_replay ... ok
+test primop::tests::proven_symbolic_i128_concretizes_values_outside_the_old_candidate_range ... ok
+test primop::tests::bits_compare_mixed_concrete_symbolic ... ok
+test primop::tests::subrange_accepts_proven_symbolic_bounds ... ok
+test smt::tests::模型缓存跟踪新增断言且不被unsat探测失效 ... ok
+test executor::tests::monomorphize_branch_local_limit_does_not_apply_outside_selected_region ... ok
+test primop::tests::mixed_bits ... ok
+test executor::tests::monomorphize_last_model_does_not_consume_path_fork_budget ... ok
+test primop::float::generic_float_tests::f128_and_integer_128_keep_their_widths ... ok
+test primop::tests::bits_compare_symbolic_128_no_panic_and_concretizes ... ok
+test primop::tests::mixed_append_dynamic_index_and_cross_segment_slices ... ok
+test executor::tests::monomorphize_does_not_submit_an_unsatisfiable_remainder_child ... ok
+test executor::tests::multi_thread_read_mem_event_survives_fork ... ok
+test primop::float::generic_float_tests::symbolic_rounding_mode_matches_all_five_concrete_modes ... ok
+test smt::tests::复用缓存模型与重解结果一致 ... ok
+test primop::tests::symbolic_integer_compare_uses_asserted_bounds_without_picking_candidate ... ok
+test primop::tests::subrange_accepts_symbolic_bounds_with_proven_width ... ok
+test executor::tests::path_fork_limit_truncates_serial_if_else_chain ... ok
+test executor::tests::branch_limit_truncate_reports_error_after_max_forks ... ok
+test executor::tests::monomorphize_enumerates_all_two_bit_models_with_three_path_forks ... ok
+test smt::tests::instruction_checkpoint_keeps_only_instruction_derived_assertions ... ok
+test executor::tests::symbolic_pma_region_size_forks_matching_range ... ok
+test executor::tests::branch_limit_concretize_finishes_without_error ... ok
+test executor::tests::path_fork_limit_concretize_finishes_serial_if_else_chain ... ok
+test smt::tests::isolated_checkpoint_preserves_definitions_and_rebases_only_new_constraints ... ok
+test executor::tests::real_ir_path_forks_limit_register_read_chain ... ok
+test executor::tests::real_ir_concretize_continues_register_read ... ok
+test smt::smtlib::tests::exp_eval_tests ... ok
+test tracetool::common::tests::writer_wakes_for_batches_drains_on_shutdown_and_restarts ... ok
+test executor::tests::real_ir_per_branch_cannot_detect_serial_chain ... ok
+test executor::tests::path_local_sampling_is_stable_across_worker_counts ... ok
+test executor::tests::execution_limits_have_identical_single_and_multi_worker_semantics ... ok
+
+test result: ok. 394 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.77s
+

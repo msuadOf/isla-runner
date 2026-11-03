@@ -1,0 +1,129 @@
+{
+  "stage": "STAGED_PRECOMMIT_VERIFIED",
+  "verdict": "PASS_STAGED_CONTENT_AUTHORIZED_FOR_ROOT_COMMIT",
+  "reviewed_utc": "2026-11-03T09:47:35.538598+00:00",
+  "root_topic_branch": "float",
+  "root_pre_commit": "a6b6ecd2f37f1ba3d81946a532df6d95aa23dfae",
+  "final_root_commit": null,
+  "submodules": {
+    "isla": {
+      "working_tree_head": "591693df2bc32019ea300511509ed683df09522e",
+      "working_tree_clean": true,
+      "index_gitlink": "591693df2bc32019ea300511509ed683df09522e"
+    },
+    "sail-riscv": {
+      "working_tree_head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "working_tree_clean": true,
+      "index_gitlink": "0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    }
+  },
+  "expected_final_gitlinks": {
+    "isla": "591693df2bc32019ea300511509ed683df09522e",
+    "sail-riscv": "0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+  },
+  "current_index_is_old_and_must_be_explicitly_staged": false,
+  "topic_manifest": {
+    "path": "specs/topic-version.json",
+    "sha256": "384fb9162f8e7ae52f1f282d745a9d2ec05068bd3d95f846e96497a3be18fb11",
+    "limited_scope_open_and_historical_timeout_counts_match_signoff": true
+  },
+  "isla_tree_sha1": "8ea0df2093dcd379b408154057ca391ee8ceb7cd",
+  "installed_manifest_sha256": "6caab4ef6b1a2b95b2e78691dc6b23e6acecca708fca41f4f036834c866a7093",
+  "exact_ten_isla_file_hashes_verified": true,
+  "runtime_rust_cargo_files_compared_to_420_blob": 146,
+  "runtime_source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "runtime_isarch_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "final_signoff_sha256": "38635f25ea39f25c836469a83e51b3352caf0884cb7d65fd03cd2d9e161a6b37",
+  "authorized_policy_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "dd09030fa53399ac468cf5b8fd867831f1ef713f26e3ca4bdfc373e540a6c5b9",
+      "matches_user_authorized_master_policy": true
+    },
+    {
+      "path": "GPT_SAY.md",
+      "sha256": "78a2002fd4ad031fbe025124023ee2fac46387ef10ec48fa5a7a07c3f2dfe098",
+      "matches_user_authorized_master_policy": true
+    },
+    {
+      "path": "TRANSLATOR.md",
+      "sha256": "06646c783d5b4c0a5e7303a275a4916568810007c800ebb0f302bb8b70d34dfa",
+      "matches_user_authorized_master_policy": true
+    },
+    {
+      "path": "GIT.md",
+      "sha256": "167984c8f2baa9e42cba039b373c2c9378bfcc0e7ba791397836af421950f178",
+      "matches_user_authorized_master_policy": true
+    },
+    {
+      "path": "specs/GOAL.md",
+      "sha256": "82a37337f94b3b1d80e594347e0e259890aead136a8d32b866a2bd50224f4ec3",
+      "matches_user_authorized_master_policy": true
+    }
+  ],
+  "component_publication_record_sha256": "2868a999c3b4bc12f122c912f520f7099b0777c01580bb18231be5d783c3c2ec",
+  "component_remote_readback_independent": {
+    "method": "Independent git ls-remote, both exit0; read back before staged review",
+    "repositories": [
+      {
+        "url": "https://github.com/msuadOf/sail-riscv.git",
+        "ref": "refs/heads/feat/sail-riscv-general-float-by-model-20261022",
+        "sha": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+        "matches": true
+      },
+      {
+        "url": "https://github.com/ariscv/isla.git",
+        "ref": "refs/heads/feat/float-support",
+        "sha": "591693df2bc32019ea300511509ed683df09522e",
+        "matches": true
+      }
+    ]
+  },
+  "staged_review": {
+    "status": "PASS",
+    "pre_refseal_changed_paths": 2171,
+    "exact_path_set_matches": true,
+    "curated_selected_files": 2157,
+    "curated_selected_bytes": 25557577,
+    "source_copy_and_index_blob_verified_each": true,
+    "selected_symlinks": 0,
+    "additional_paths": [
+      "AGENTS.md",
+      "GPT_SAY.md",
+      "TRANSLATOR.md",
+      "GIT.md",
+      "specs/GOAL.md",
+      "agents/overview.md",
+      "docs/RESULTS.md",
+      "specs/TODOs.md",
+      "specs/topic-version.json",
+      "agents/float_review_closure_20261102/publication/final-evidence-files.json",
+      "agents/float_review_closure_20261102/publication/final-evidence-files.md",
+      "agents/float_review_closure_20261102/publication/final-components.json",
+      "isla",
+      "sail-riscv"
+    ],
+    "evidence_index_sha256": "4d81b979fff0f911f70966e02e7edfa97a89fc0fee8b7e45b0e20715ef08542d",
+    "pre_refseal_index_tree_sha1": "d95f04206e1fa0ede2618125e7c5d4f9b9ef6833",
+    "final_315_payload_counts": {
+      "config.toml": 315,
+      "actual_output.json": 315,
+      "command.json": 315,
+      "result.json": 315
+    },
+    "policy_and_version_diff_check_exit": 0,
+    "float_status_root_docs_only_append_scoped_closure": true,
+    "anchors": {
+      "review/acceptance/final-signoff.json": "38635f25ea39f25c836469a83e51b3352caf0884cb7d65fd03cd2d9e161a6b37",
+      "review/acceptance/final-signoff.md": "261ae89a0c42dd089086edc98bc4ec7983254d00d6512330add33104e7461712",
+      "final-report.md": "8bc7b329278996af725ca7ef6926ee25d51819cd970b5e2cd451513a364bf06d",
+      "handoff-to-memory.md": "dbfc8da5a540b2ee6de2f475e758864fd944d797c63956b3f696a9f6294968c9"
+    },
+    "raw_patch_whitespace_policy": "Preserve signed raw/candidate evidence bytes; policy/version files checked independently",
+    "new_test_claim": false,
+    "blocking_findings": []
+  },
+  "committed_review": null,
+  "root_remote_readback": null,
+  "scope": "Precommit staged gitlinks, manifest, policies and curated evidence bytes verified. This seal is added after the audited 2171-path snapshot; it does not claim its own containing root commit or tree. Postpublication receipt is separate and local."
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS generation-script path design and old checker preservation",
+  "generate_sha256": "684cdc9d33306476acd883b00786c9f0590828add4ee8be48ad40a7bce78febe",
+  "audit_generation_sha256": "c4b563c2414c7e6df8edd7acb3f7e7d78cc91efe9db617c2540207e81bce39cb",
+  "checks": [
+    "--model resolves named tree before commit/clean/source hashing and remains fixed for worker threads",
+    "ordinary cwd and symbolic --model use same named path; model_tree recorded",
+    "output batch mkdir exist_ok=False and each config new directory",
+    "memo sources whitelist 8ad/214 reviewed hashes +149 tool/config hashes+compile Z3, independent per-config copyfiles",
+    "audit uses recorded source.model_tree and rejects mismatched explicit --model",
+    "actual e9 execution independently provenance-audited, default214 legacy audit path retained",
+    "old214 checker/special/run/README bytes independently match snapshot manifest"
+  ],
+  "scope": "测试/生成脚本设计与已发生来源审计；不含新版永久checker代码签收"
+}

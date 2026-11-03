@@ -1,0 +1,8 @@
+{
+  "source_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "source": "isla/target/release/isarch",
+  "destination": ".worktree/runner-float/isla/target/release/isarch",
+  "previous_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+  "new_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+  "method": "已验源码Release副本原子替换，不改原硬链接其它名称"
+}

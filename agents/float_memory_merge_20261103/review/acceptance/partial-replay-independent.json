@@ -1,0 +1,66 @@
+{
+  "scope": "新旧两个诊断runtime与各自IR对两类代表完整同输入复放的实际结果独核；不是正式solve PASS，不外推所有922/112/7",
+  "normalizer_sha256": "e7fb5504c6ab95e6802f4cc36bb20c6cee67083cea513cbc7ad7376da07931aa",
+  "captured_gate_sha256": "2a4d4b044fb9133586ccb92cbc52f1f9c22c85b65f4bc438b16113f95524295f",
+  "p3": [
+    {
+      "runtime": "new",
+      "binary_sha256": "608108416656c08d7dbc9e6c12e59d54620d225e76b2611d2963de4da622c146",
+      "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "input_sha256": "dfb97b96c77e5bba32aeea2e4a86218e1ebe6a15afe4ec510cfcb4131d174e58",
+      "result_sha256": "5668c81cdf2b3beaefedda7fb39350db6ebe829d3f89bbc22f911f8c4c42f1e0",
+      "log_sha256": "2f22ec6e434a093272e570fcb54ca81e5d930e78ba2b16665916824efb88eb00",
+      "registers_identical": 183,
+      "uninitialized": 38,
+      "terminal": [
+        "FM_STORE_PROBE_HELPER_OUTCOME function=zext_decode outcome=Ok(Some(Poison)) exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+      ],
+      "diagnostic_exit": 88
+    },
+    {
+      "runtime": "old",
+      "binary_sha256": "2e052caec7226e6316bc7a350165993d51a967de230cd04fd6c25e874ac2b0b4",
+      "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+      "input_sha256": "6359d77f2bb83ef8c7337e457bc192fd3241334e13c9d2271b2eb111c2255ad7",
+      "result_sha256": "3c9bbbd6e7416fa5a20d4597f00bdc792a67bdaeda7b5b2bd941c30f2473360f",
+      "log_sha256": "a280a2afe645745ca500331eda3c7c84120063c54b76873e296efb0021abdad3",
+      "registers_identical": 183,
+      "uninitialized": 38,
+      "terminal": [
+        "FM_STORE_PROBE_HELPER_RESULT function=zext_decode result=<poison> sat=Sat exception=Some((\"Error_internal_error(\\\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\\\")\", \"prelude/errors.sail:21.41-21.106\")) path_signature=0"
+      ],
+      "diagnostic_exit": 88
+    }
+  ],
+  "main": [
+    {
+      "runtime": "new",
+      "binary_sha256": "608108416656c08d7dbc9e6c12e59d54620d225e76b2611d2963de4da622c146",
+      "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+      "input_sha256": "a2728c909cc746cb5aa700d7a7d7df02305371b3418faef4b9f7b163e814c125",
+      "result_sha256": "6a1004aa0d3f5a541f94b9293c6bf4abb50f1133e2ec36e326bbb33d62231f26",
+      "prestate_identical": 102,
+      "sat": "Sat",
+      "exception": [
+        "Error_internal_error(\"core/types.sail:78: Invalid privilege level or virtual mode\")",
+        "prelude/errors.sail:21.41-21.106"
+      ],
+      "diagnostic_exit": 87
+    },
+    {
+      "runtime": "old",
+      "binary_sha256": "2e052caec7226e6316bc7a350165993d51a967de230cd04fd6c25e874ac2b0b4",
+      "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+      "input_sha256": "b2c334720fe4d1d26a547264e768e163e536f27baae6924e163eeb849de3438c",
+      "result_sha256": "d7800822acab14e813421146646a07627d49b563ab8b3b8405f2377743a52989",
+      "prestate_identical": 102,
+      "sat": "Sat",
+      "exception": [
+        "Error_internal_error(\"core/types.sail:78: Invalid privilege level or virtual mode\")",
+        "prelude/errors.sail:21.41-21.106"
+      ],
+      "diagnostic_exit": 87
+    }
+  ],
+  "classification": "所测P3与主执行Poison代表在旧/新均复现，限定为继承模型规则；新计错与final Model门为用户要求failclosed，原域仍partial。"
+}

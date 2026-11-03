@@ -1,0 +1,80 @@
+{
+  "scope": "实际VFMERGE和VLSEG指令8定向边界；不改变reduction非零vstart非法约定，不声称全域覆盖",
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "launch_sha256": "ace27f7e8b7d304183ba1c9d8097b896967dcbd3b7e420356df3f26f0544694a",
+  "rows": [
+    {
+      "family": "vfmerge",
+      "label": "active",
+      "start": "0x0",
+      "word": "0x5c005fd7",
+      "post_dest": "0x3f800000",
+      "events": 0,
+      "json_sha256": "b294f38519e3680c4bb44d4155615522f7980033b553a6e6758ac3a9f1ed6dba"
+    },
+    {
+      "family": "vfmerge",
+      "label": "equal",
+      "start": "0x1",
+      "word": "0x5c005fd7",
+      "post_dest": "0x12345678",
+      "events": 0,
+      "json_sha256": "2ae6cc8d6b5cc5b6b7dd4f7e05af7902514373bd456155a25825e788eeb25d3a"
+    },
+    {
+      "family": "vfmerge",
+      "label": "greater",
+      "start": "0x2",
+      "word": "0x5c005fd7",
+      "post_dest": "0x12345678",
+      "events": 0,
+      "json_sha256": "19c41b8883adcd6dc77d3b56d014504aaa906c2b2080f085830d72578c099df0"
+    },
+    {
+      "family": "vfmerge",
+      "label": "large",
+      "start": "0xffffffffffffffff",
+      "word": "0x5c005fd7",
+      "post_dest": "0x12345678",
+      "events": 0,
+      "json_sha256": "9d092506b9b3e17d0aa545df2d364f81099847c4eb7df3a7382be198b6654d64"
+    },
+    {
+      "family": "vector-load",
+      "label": "active",
+      "start": "0x0",
+      "word": "0x2008087",
+      "post_dest": "0x12345600",
+      "events": 1,
+      "json_sha256": "d3e4db732a93b3e00e2acdda0aaeb99b199712c76fe04a7028bcde001fad3adc"
+    },
+    {
+      "family": "vector-load",
+      "label": "equal",
+      "start": "0x1",
+      "word": "0x2008087",
+      "post_dest": "0x12345678",
+      "events": 0,
+      "json_sha256": "b43908e0b948651145c264c14aa9051b9ddab6f957f4fef886f29841cdd075be"
+    },
+    {
+      "family": "vector-load",
+      "label": "greater",
+      "start": "0x2",
+      "word": "0x2008087",
+      "post_dest": "0x12345678",
+      "events": 0,
+      "json_sha256": "a50ea9e3991f0e51390229446993e051ccfa23b555dc7bd7c40e661f4d29a828"
+    },
+    {
+      "family": "vector-load",
+      "label": "large",
+      "start": "0xffffffffffffffff",
+      "word": "0x2008087",
+      "post_dest": "0x12345678",
+      "events": 0,
+      "json_sha256": "2caddccdf4243cf2c2f64ab64e3a1f4cd5152ae59e6075864778b8b0ff87a6f9"
+    }
+  ],
+  "pass": true
+}

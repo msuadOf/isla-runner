@@ -1,0 +1,632 @@
+{
+  "checker_sha256": "9ebd0d937edc805e49103984bffbb507470115d349d7262553b6943b9e2763cf",
+  "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "count": 104,
+  "status": "PASS targeted negatives",
+  "rows": [
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_add16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x7c01') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_sub16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sub16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x7c01') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_mul16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_mul16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x7c01') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_div16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x7c01') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_sqrt16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sqrt16_exceptions: finite/NV/DZ事实错误 ('0xbc00',) (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_fma16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_fma16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x3c00', '0x7c01') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回DZ",
+      "function": "zieee_div16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: 除零事实丢失"
+    },
+    {
+      "mutation": "quiet源分类错误NV",
+      "function": "zieee_add16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add16_exceptions: finite/NV/DZ事实错误 ('0x7e00', '0x3c00') (False, True, False) != (False, False, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_add32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add32_exceptions: finite/NV/DZ事实错误 ('0x3f800000', '0x7f800001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_sub32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sub32_exceptions: finite/NV/DZ事实错误 ('0x3f800000', '0x7f800001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_mul32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_mul32_exceptions: finite/NV/DZ事实错误 ('0x3f800000', '0x7f800001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_div32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div32_exceptions: finite/NV/DZ事实错误 ('0x3f800000', '0x7f800001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_sqrt32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sqrt32_exceptions: finite/NV/DZ事实错误 ('0xbf800000',) (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_fma32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_fma32_exceptions: finite/NV/DZ事实错误 ('0x3f800000', '0x3f800000', '0x7f800001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回DZ",
+      "function": "zieee_div32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div32_exceptions: 除零事实丢失"
+    },
+    {
+      "mutation": "quiet源分类错误NV",
+      "function": "zieee_add32_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add32_exceptions: finite/NV/DZ事实错误 ('0x7fc00000', '0x3f800000') (False, True, False) != (False, False, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_add64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add64_exceptions: finite/NV/DZ事实错误 ('0x3ff0000000000000', '0x7ff0000000000001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_sub64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sub64_exceptions: finite/NV/DZ事实错误 ('0x3ff0000000000000', '0x7ff0000000000001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_mul64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_mul64_exceptions: finite/NV/DZ事实错误 ('0x3ff0000000000000', '0x7ff0000000000001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_div64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div64_exceptions: finite/NV/DZ事实错误 ('0x3ff0000000000000', '0x7ff0000000000001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_sqrt64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sqrt64_exceptions: finite/NV/DZ事实错误 ('0xbff0000000000000',) (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回NV",
+      "function": "zieee_fma64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_fma64_exceptions: finite/NV/DZ事实错误 ('0x3ff0000000000000', '0x3ff0000000000000', '0x7ff0000000000001') (False, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "清除返回DZ",
+      "function": "zieee_div64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div64_exceptions: 除零事实丢失"
+    },
+    {
+      "mutation": "quiet源分类错误NV",
+      "function": "zieee_add64_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add64_exceptions: finite/NV/DZ事实错误 ('0x7ff8000000000000', '0x3ff0000000000000') (False, True, False) != (False, False, False)"
+    },
+    {
+      "mutation": "FMA积符号反转",
+      "function": "zieee_fma16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_fma16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x7c00', '0x7c00') (False, True, False) != (False, False, False)"
+    },
+    {
+      "mutation": "sqrt误判负零",
+      "function": "zieee_sqrt16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sqrt16_exceptions: finite/NV/DZ事实错误 ('0xbc00',) (True, False, False) != (False, True, False)"
+    },
+    {
+      "mutation": "add Inf抵消符号反转",
+      "function": "zieee_add16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add16_exceptions: finite/NV/DZ事实错误 ('0x7c00', '0x7c00') (False, True, False) != (False, False, False)"
+    },
+    {
+      "mutation": "ROD jam丢base",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: jam未采用base|1"
+    },
+    {
+      "mutation": "changed old==old",
+      "function": "zaccrue_fflags",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "changed joined==joined",
+      "function": "zaccrue_fflags",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "SD写0",
+      "function": "zaccrue_fflags",
+      "result": "rejected",
+      "detail": "flags: SD未在FS更新后置1"
+    },
+    {
+      "mutation": "mul零Inf原因AND变OR",
+      "function": "zieee_mul16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_mul16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x7c00') (False, True, False) != (False, False, False)"
+    },
+    {
+      "mutation": "div gate恒真",
+      "function": "zieee_div16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x0') (True, False, True) != (False, False, True)"
+    },
+    {
+      "mutation": "div DZ谓词AND变OR",
+      "function": "zieee_div16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x3c00') (True, False, True) != (True, False, False)"
+    },
+    {
+      "mutation": "overflow自比较",
+      "function": "zriscv_f16ToI16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI16_pure: 不是低位符号扩展回比较"
+    },
+    {
+      "mutation": "正负端点互换",
+      "function": "zriscv_f16ToI16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI16_pure: signed端点选择变化"
+    },
+    {
+      "mutation": "overflow自比较",
+      "function": "zriscv_f16ToI8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: 不是低位符号扩展回比较"
+    },
+    {
+      "mutation": "flags两臂互换",
+      "function": "zriscv_f16ToI8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: flags未按overflow选择NV或原值"
+    },
+    {
+      "mutation": "bits两臂互换",
+      "function": "zriscv_f16ToI8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: 数值未按overflow选择端点或原低位"
+    },
+    {
+      "mutation": "正负端点互换",
+      "function": "zriscv_f16ToI8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: signed端点选择变化"
+    },
+    {
+      "mutation": "overflow自比较",
+      "function": "zriscv_f16ToUi8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi8_pure: unsigned零扩展位宽错误"
+    },
+    {
+      "mutation": "flags两臂互换",
+      "function": "zriscv_f16ToUi8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi8_pure: flags未按overflow选择NV或原值"
+    },
+    {
+      "mutation": "bits两臂互换",
+      "function": "zriscv_f16ToUi8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi8_pure: 数值未按overflow选择端点或原低位"
+    },
+    {
+      "mutation": "overflow自比较",
+      "function": "zriscv_f16ToUi16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi16_pure: unsigned零扩展位宽错误"
+    },
+    {
+      "mutation": "flags两臂互换",
+      "function": "zriscv_f16ToUi16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi16_pure: flags未按overflow选择NV或原值"
+    },
+    {
+      "mutation": "bits两臂互换",
+      "function": "zriscv_f16ToUi16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi16_pure: 数值未按overflow选择端点或原低位"
+    },
+    {
+      "mutation": "overflow自比较",
+      "function": "zriscv_f32ToI16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI16_pure: 不是低位符号扩展回比较"
+    },
+    {
+      "mutation": "flags两臂互换",
+      "function": "zriscv_f32ToI16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI16_pure: flags未按overflow选择NV或原值"
+    },
+    {
+      "mutation": "bits两臂互换",
+      "function": "zriscv_f32ToI16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI16_pure: 数值未按overflow选择端点或原低位"
+    },
+    {
+      "mutation": "正负端点互换",
+      "function": "zriscv_f32ToI16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI16_pure: signed端点选择变化"
+    },
+    {
+      "mutation": "overflow自比较",
+      "function": "zriscv_f32ToUi16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi16_pure: unsigned零扩展位宽错误"
+    },
+    {
+      "mutation": "flags两臂互换",
+      "function": "zriscv_f32ToUi16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi16_pure: flags未按overflow选择NV或原值"
+    },
+    {
+      "mutation": "bits两臂互换",
+      "function": "zriscv_f32ToUi16_pure",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi16_pure: 数值未按overflow选择端点或原低位"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f16ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f16ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI32: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f16ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f16ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f16ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi32: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f16ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f16ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f16ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI64: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f16ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f16ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f16ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi64: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f16ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f16ToUi64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f32ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f32ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI32: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f32ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f32ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f32ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi32: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f32ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f32ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f32ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI64: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f32ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f32ToI64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f32ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f32ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi64: 正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f32ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f32ToUi64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f64ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f64ToI32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f64ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f64ToI32: f64正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f64ToI32",
+      "result": "rejected",
+      "detail": "zriscv_f64ToI32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f64ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f64ToUi32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f64ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f64ToUi32: f64正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f64ToUi32",
+      "result": "rejected",
+      "detail": "zriscv_f64ToUi32: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f64ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f64ToI64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f64ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f64ToI64: f64正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f64ToI64",
+      "result": "rejected",
+      "detail": "zriscv_f64ToI64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "invalid最终两臂互换",
+      "function": "zriscv_f64ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f64ToUi64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "NaN/正负端点互换",
+      "function": "zriscv_f64ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f64ToUi64: f64正负端点变化"
+    },
+    {
+      "mutation": "invalid由inexact替代",
+      "function": "zriscv_f64ToUi64",
+      "result": "rejected",
+      "detail": "zriscv_f64ToUi64: invalid未在最终结果选择端点/候选值"
+    },
+    {
+      "mutation": "rounded OF/NX字段互换",
+      "function": "zieee_f16_rounded_exceptions",
+      "result": "rejected",
+      "detail": "zieee_f16_rounded_exceptions: OF条件未来自边界析取"
+    },
+    {
+      "mutation": "threshold OF/NX互换",
+      "function": "zieee_exact_threshold_exceptions",
+      "result": "rejected",
+      "detail": "exact_threshold: OF条件变化"
+    },
+    {
+      "mutation": "rounded比较lo==lo",
+      "function": "zieee_f16_rounded_exceptions",
+      "result": "rejected",
+      "detail": "zieee_f16_rounded_exceptions: NX未分别比较lo/hi与目标结果"
+    },
+    {
+      "mutation": "threshold比较x==x",
+      "function": "zieee_exact_threshold_exceptions",
+      "result": "rejected",
+      "detail": "exact_threshold: NX未比较精确值与结果"
+    },
+    {
+      "mutation": "rounded UF丢tiny",
+      "function": "zieee_f16_rounded_exceptions",
+      "result": "rejected",
+      "detail": "zieee_f16_rounded_exceptions: UF未结合独立tiny边界"
+    },
+    {
+      "mutation": "round比较x==x",
+      "function": "zieee_round16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_round16_exceptions: NX条件或出口变化"
+    },
+    {
+      "mutation": "fpint比较x==x",
+      "function": "zieee_fp_to_int_core",
+      "result": "rejected",
+      "detail": "fp_to_int_core: 合法舍入NX来源或返回字段变化"
+    },
+    {
+      "mutation": "ROD由NV选择jam",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: 奇数化未由合流flags的NX控制"
+    },
+    {
+      "mutation": "ROD精确臂也jam",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: NX条件或jam/base方向变化"
+    },
+    {
+      "mutation": "ROD非finite丢NV",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: 非有限NV未保留源分类"
+    },
+    {
+      "mutation": "ROD finite丢flags",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: 非有限flags来源变化"
+    },
+    {
+      "mutation": "convert非finite丢NV",
+      "function": "zieee_convert32_to_16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_convert32_to_16_exceptions: 非有限出口变化"
+    },
+    {
+      "mutation": "quiet分类误置signaling",
+      "function": "zieee_round16_exceptions",
+      "result": "rejected",
+      "detail": "源异常分类不再使用quiet=false和原始源"
+    },
+    {
+      "mutation": "quiet分类误置signaling",
+      "function": "zieee_convert32_to_16_exceptions",
+      "result": "rejected",
+      "detail": "源异常分类不再使用quiet=false和原始源"
+    },
+    {
+      "mutation": "quiet分类误置signaling",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "源异常分类不再使用quiet=false和原始源"
+    }
+  ]
+}

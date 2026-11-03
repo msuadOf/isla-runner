@@ -1,0 +1,16 @@
+{
+  "scope": "New direct-runner archived inputs/provenance only; Qfaufbv, different config/binaries from formal qffp Clause",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "run_sha256": "7a2a5e9bd0c72630ee3e2fcd13953696fc33bec4b71d60f2a23725a129c044f9",
+  "snapshot_sha256": "66639cfa23cf2c0415912ff3b951c5b4145fbf6e61ef9635426ffbc801d4372e",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "ir_sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+  "direct_config_sha256": "8247c8d467489111656f6953660670e96097a029fea458b660fe42579f86f987",
+  "direct_helper_binary_sha256": "669c727ec92a61a5bd97d4f9b84f646f7c642f81ac579fffc2344fd3902afcf5",
+  "direct_instruction_binary_sha256": "9e1bc98f358d926abf8ac320521746840dd8370d13a113270ac26ca1d986716a",
+  "archived_files_verified": 14,
+  "model_files_verified": 166,
+  "isla_manifest_source_files": 1021,
+  "pass": true
+}

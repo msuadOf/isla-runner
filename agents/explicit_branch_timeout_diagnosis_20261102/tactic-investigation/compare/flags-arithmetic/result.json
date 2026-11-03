@@ -1,0 +1,32 @@
+{
+  "workload": "flags-arithmetic",
+  "query": 47,
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "106",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "started_monotonic": 531728.699206148,
+  "exit_code": 0,
+  "elapsed_s": 816.3226335329236,
+  "captured": true,
+  "raw_sha256": "313d0e73224150596c33051cd4e6b84832e57e1fc78fcc6d86d14953b05ee7b7",
+  "seed_log": "parameter=random_seed original=747169135 fixed=17\n"
+}

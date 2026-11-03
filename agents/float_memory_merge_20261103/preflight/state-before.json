@@ -1,0 +1,80 @@
+{
+  "recorded_utc": "2026-11-03T13:56:03.893823+00:00",
+  "repositories": {
+    "float-root": {
+      "path": ".worktree/runner-float",
+      "head": "0665526d7e14a207eb9928e282e627584b5635fe",
+      "branch": "float",
+      "status": "",
+      "gitlinks": "160000 commit 591693df2bc32019ea300511509ed683df09522e\tisla\n160000 commit 0f7b8fbc6724103f91f929ef6918f123df75d6c9\tsail-riscv",
+      "patch_path": "agents/float_memory_merge_20261103/preflight/float-root.patch",
+      "patch_bytes": 0,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changed_regular_files": {}
+    },
+    "float-isla": {
+      "path": ".worktree/runner-float/isla",
+      "head": "591693df2bc32019ea300511509ed683df09522e",
+      "branch": "",
+      "status": "",
+      "gitlinks": "",
+      "patch_path": "agents/float_memory_merge_20261103/preflight/float-isla.patch",
+      "patch_bytes": 0,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changed_regular_files": {}
+    },
+    "float-model": {
+      "path": ".worktree/runner-float/sail-riscv",
+      "head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "branch": "",
+      "status": "",
+      "gitlinks": "",
+      "patch_path": "agents/float_memory_merge_20261103/preflight/float-model.patch",
+      "patch_bytes": 0,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changed_regular_files": {}
+    },
+    "memory-root": {
+      "path": ".worktree/runner-memory",
+      "head": "31ef3b9a8aa3a9db4c03a1d99c191cadf1aadaef",
+      "branch": "memory",
+      "status": "M isla",
+      "gitlinks": "160000 commit bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57\tisla\n160000 commit c70482a73be2a67c5a89d88b1e6c2bbea224940c\tsail-riscv",
+      "patch_path": "agents/float_memory_merge_20261103/preflight/memory-root.patch",
+      "patch_bytes": 185,
+      "patch_sha256": "5dbbb5dcf1fd2c7a123c41a2a687e3f6adf4a155574929cf805f71b9e746b14e",
+      "changed_regular_files": {}
+    },
+    "memory-isla": {
+      "path": ".worktree/runner-memory/isla",
+      "head": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+      "branch": "",
+      "status": "M README.md\n M scripts/run.mk",
+      "gitlinks": "",
+      "patch_path": "agents/float_memory_merge_20261103/preflight/memory-isla.patch",
+      "patch_bytes": 2888,
+      "patch_sha256": "e67728f312f49c5505cd651be547c5514064a5709e78432df865b06dbc93e5d8",
+      "changed_regular_files": {
+        "README.md": {
+          "bytes": 35511,
+          "sha256": "ac4003d412be230cc1efd2b853495b5ac7fce450924c26359a479a07a449225c"
+        },
+        "scripts/run.mk": {
+          "bytes": 10569,
+          "sha256": "683c2b49ffee648ab38a303e2f3db7b7e0b89ea08d3c6d670607d29e11fb318c"
+        }
+      }
+    },
+    "memory-model": {
+      "path": ".worktree/runner-memory/sail-riscv",
+      "head": "c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "branch": "",
+      "status": "",
+      "gitlinks": "",
+      "patch_path": "agents/float_memory_merge_20261103/preflight/memory-model.patch",
+      "patch_bytes": 0,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changed_regular_files": {}
+    }
+  }
+}

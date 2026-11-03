@@ -1,0 +1,22 @@
+{
+  "pid": 850592,
+  "argv": [
+    "nohup",
+    "/home/baiyifan/miniconda3/bin/python3",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/run_directed.py",
+    "--inputs",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-converged-0f7b8fb-itrace.json",
+    "--output",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace",
+    "--workers",
+    "2",
+    "--cpus",
+    "17,29"
+  ],
+  "cwd": "/data1/baiyifan/workplace/isla-runner",
+  "started_epoch": 1793696931.1523368,
+  "launcher_log": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/launcher-model-converged-0f7b8fbc-itrace.log",
+  "inputs_sha256": "5147af93ecd9cfb5cd6c0607d8073fa997b608dc9993f8c81dee8e739f1e631e",
+  "script_sha256": "12ea69e349660ccdb79d129f41968d35657a67502c70b028082a2053c9325cf7",
+  "expected_sha256": "6ed44d0afba816a709fe6f4f18f0e34505c8b3202aaed6e1ad306e5aea135891"
+}

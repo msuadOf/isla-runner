@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "rows": 60,
+  "labels": [
+    "new_multiple",
+    "new_nv",
+    "old_nx_new_nv",
+    "same_nv",
+    "zero"
+  ],
+  "ordinary_callback_counts": {
+    "mstatus": 36,
+    "fflags": 60,
+    "fcsr": 60
+  },
+  "symbolic_callback_contract": [
+    "fflags",
+    "fcsr"
+  ],
+  "scope": "ordinary/SYMBOLIC state equivalence for Ext_F configs; ordinary mstatus callback differs"
+}

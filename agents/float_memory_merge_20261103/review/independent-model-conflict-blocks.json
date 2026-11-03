@@ -1,0 +1,447 @@
+{
+  "configs/isla/workarounds/masktypei.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# Sail start 1361:        if i < start_element then {",
+      "# Sail end   1371:        }",
+      "=======",
+      "# Sail start 1367:        if i < start_element then {",
+      "# Sail end   1377:        }",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/masktypev.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# Sail start 418:    foreach (i from 0 to (num_elem - 1)) {",
+      "# ...",
+      "# Sail end   430:    };",
+      "=======",
+      "# Sail start 421:    foreach (i from 0 to (num_elem - 1)) {",
+      "# ...",
+      "# Sail end   433:    };",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/masktypex.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# Sail start 922:    foreach (i from 0 to (num_elem - 1)) {",
+      "# Sail end   934:    };",
+      "=======",
+      "# Sail start 928:    foreach (i from 0 to (num_elem - 1)) {",
+      "# Sail end   940:    };",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/mvvcompress.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 2080",
+      "start_column = 4",
+      "end_line = 2087",
+      "=======",
+      "start_line = 2222",
+      "start_column = 4",
+      "end_line = 2229",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/mvvtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# Sail start 1563:    foreach (i from 0 to (num_elem - 1)) {",
+      "# Sail end   1620:    };",
+      "[[execution_limits.region_fork_limits]]",
+      "max_forks_per_region = 1",
+      "file = \"extensions/V/vext_arith_insts.sail\"",
+      "start_line = 1563",
+      "start_column = 2",
+      "end_line = 1620",
+      "=======",
+      "# Sail start 1635:    foreach (i from 0 to (num_elem - 1)) {",
+      "# Sail end   1692:    };",
+      "[[execution_limits.region_fork_limits]]",
+      "max_forks_per_region = 1",
+      "file = \"extensions/V/vext_arith_insts.sail\"",
+      "start_line = 1635",
+      "start_column = 2",
+      "end_line = 1692",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1592",
+      "start_column = 40",
+      "end_line = 1592",
+      "=======",
+      "start_line = 1664",
+      "start_column = 40",
+      "end_line = 1664",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1600",
+      "start_column = 40",
+      "end_line = 1600",
+      "=======",
+      "start_line = 1672",
+      "start_column = 40",
+      "end_line = 1672",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1608",
+      "start_column = 40",
+      "end_line = 1608",
+      "=======",
+      "start_line = 1680",
+      "start_column = 40",
+      "end_line = 1680",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1615",
+      "start_column = 40",
+      "end_line = 1615",
+      "=======",
+      "start_line = 1687",
+      "start_column = 40",
+      "end_line = 1687",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1602",
+      "start_column = 41",
+      "end_line = 1602",
+      "=======",
+      "start_line = 1674",
+      "start_column = 41",
+      "end_line = 1674",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 634",
+      "start_column = 4",
+      "end_line = 639",
+      "=======",
+      "start_line = 669",
+      "start_column = 4",
+      "end_line = 674",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/mvxmatype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 2297",
+      "start_column = 2",
+      "end_line = 2305",
+      "=======",
+      "start_line = 2439",
+      "start_column = 2",
+      "end_line = 2447",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/mvxtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 2164",
+      "start_column = 2",
+      "end_line = 2231",
+      "=======",
+      "start_line = 2306",
+      "start_column = 2",
+      "end_line = 2373",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/nitype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/nvtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 634",
+      "start_column = 4",
+      "end_line = 639",
+      "=======",
+      "start_line = 669",
+      "start_column = 4",
+      "end_line = 674",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/nxtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 634",
+      "start_column = 4",
+      "end_line = 639",
+      "=======",
+      "start_line = 669",
+      "start_column = 4",
+      "end_line = 674",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/rivvtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 434",
+      "start_column = 2",
+      "end_line = 451",
+      "=======",
+      "start_line = 456",
+      "start_column = 2",
+      "end_line = 473",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/rmvvtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 434",
+      "start_column = 2",
+      "end_line = 451",
+      "=======",
+      "start_line = 456",
+      "start_column = 2",
+      "end_line = 473",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vexttype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 201",
+      "start_column = 2",
+      "end_line = 202",
+      "=======",
+      "start_line = 186",
+      "start_column = 2",
+      "end_line = 187",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# get_start_element已改为直接读取vstart，无旧陷阱分支需要限制。",
+      "[[execution_limits.region_fork_limits]]",
+      "max_forks_per_region = 1",
+      "file = \"extensions/V/vext_arith_insts.sail\"",
+      "start_line = 1986",
+      "start_column = 2",
+      "end_line = 1995",
+      "=======",
+      "# get_start_element：中间验证累计 fork 77 次。",
+      "[[execution_limits.region_fork_limits]]",
+      "max_forks_per_region = 1",
+      "file = \"extensions/V/vext_utils_insts.sail\"",
+      "start_line = 284",
+      "start_column = 2",
+      "end_line = 286",
+      "end_column = 24",
+      "",
+      "# execute 内按 num_elem 展开的逐 lane 循环。",
+      "[[execution_limits.region_fork_limits]]",
+      "max_forks_per_region = 1",
+      "file = \"extensions/V/vext_arith_insts.sail\"",
+      "start_line = 2125",
+      "start_column = 2",
+      "end_line = 2134",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vfmerge.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1359",
+      "start_column = 2",
+      "end_line = 1371",
+      "=======",
+      "start_line = 2656",
+      "start_column = 2",
+      "end_line = 2668",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vfmv.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1415",
+      "start_column = 2",
+      "end_line = 1417",
+      "=======",
+      "start_line = 2746",
+      "start_column = 2",
+      "end_line = 2748",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vitype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vmvrtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 1496",
+      "start_column = 16",
+      "end_line = 1496",
+      "=======",
+      "start_line = 1568",
+      "start_column = 16",
+      "end_line = 1568",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vvtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# Sail start 620:    if shift_amount == 0 then 0b0",
+      "# ...",
+      "# Sail end   640:    }",
+      "=======",
+      "# Sail start 655:    if shift_amount == 0 then 0b0",
+      "# ...",
+      "# Sail end   675:    }",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "# Sail end   85:    } else true;",
+      "=======",
+      "# Sail end   87:    } else true;",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ],
+  "configs/isla/workarounds/vxtype.toml": [
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "=======",
+      "file = \"extensions/V/vext_utils_insts.sail\"",
+      "start_line = 284",
+      "start_column = 2",
+      "end_line = 286",
+      "end_column = 24",
+      "",
+      "# VX_VSADDU 逐 lane mask/saturation 分支；60 秒基线累计 31 次 fork。",
+      "[[execution_limits.region_fork_limits]]",
+      "max_forks_per_region = 1",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 620",
+      "start_column = 2",
+      "end_line = 642",
+      "=======",
+      "start_line = 655",
+      "start_column = 2",
+      "end_line = 677",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 633",
+      "start_column = 28",
+      "end_line = 633",
+      "=======",
+      "start_line = 668",
+      "start_column = 28",
+      "end_line = 668",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 632",
+      "start_column = 11",
+      "end_line = 632",
+      "=======",
+      "start_line = 667",
+      "start_column = 11",
+      "end_line = 667",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ],
+    [
+      "<<<<<<< c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "start_line = 636",
+      "start_column = 26",
+      "end_line = 636",
+      "=======",
+      "start_line = 671",
+      "start_column = 26",
+      "end_line = 671",
+      ">>>>>>> 0f7b8fbc6724103f91f929ef6918f123df75d6c9"
+    ]
+  ]
+}

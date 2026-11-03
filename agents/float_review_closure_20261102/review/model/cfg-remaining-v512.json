@@ -1,0 +1,137 @@
+{
+  "status": "PASS remaining CFG relationships",
+  "ir_sha256": "a699d34c4c9c52da15d6924f6788d641880b2c7f331b0f55fce42bddc576bbdc",
+  "checks": [
+    {
+      "function": "zriscv_f16ToI16_pure",
+      "exact_predicate_and_width": true,
+      "true_NV_and_limits_false_original_pair": true
+    },
+    {
+      "function": "zriscv_f16ToI8_pure",
+      "exact_predicate_and_width": true,
+      "true_NV_and_limits_false_original_pair": true
+    },
+    {
+      "function": "zriscv_f32ToI16_pure",
+      "exact_predicate_and_width": true,
+      "true_NV_and_limits_false_original_pair": true
+    },
+    {
+      "function": "zriscv_f16ToUi16_pure",
+      "exact_predicate_and_width": true,
+      "true_NV_and_limits_false_original_pair": true
+    },
+    {
+      "function": "zriscv_f16ToUi8_pure",
+      "exact_predicate_and_width": true,
+      "true_NV_and_limits_false_original_pair": true
+    },
+    {
+      "function": "zriscv_f32ToUi16_pure",
+      "exact_predicate_and_width": true,
+      "true_NV_and_limits_false_original_pair": true
+    },
+    {
+      "function": "zriscv_f16ToI32",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f16ToUi32",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f16ToI64",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f16ToUi64",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f32ToI32",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f32ToUi32",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f32ToI64",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f32ToUi64",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f64ToI32",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f64ToUi32",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f64ToI64",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zriscv_f64ToUi64",
+      "invalid_NaN_sign_priority_and_constants": true
+    },
+    {
+      "function": "zieee_mask_exact_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_round16_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_round32_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_round64_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_convert32_to_16_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_convert64_to_16_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_convert64_to_32_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_bf16_from_f32_exceptions",
+      "finite_gate_dominates_exception_work": true
+    },
+    {
+      "function": "zieee_fp_to_int_core",
+      "finite_and_range_NV_or_valid_NX_hierarchy": true
+    },
+    {
+      "function": "zriscv_f32ToF16",
+      "mode_true_ROD_false_native_and_pair_arms": true
+    },
+    {
+      "function": "zieee_rod32_to_16",
+      "finite_exact_work_and_same_flags_plain_or_jam": true
+    },
+    {
+      "function": "zriscv_f64ToF32",
+      "mode_true_ROD_false_native_and_pair_arms": true
+    },
+    {
+      "function": "zieee_rod64_to_32",
+      "finite_exact_work_and_same_flags_plain_or_jam": true
+    }
+  ],
+  "scope": "不证明SMT可达性或动态预算；ROD字段同臂另结合源码与目标IR差异核实"
+}

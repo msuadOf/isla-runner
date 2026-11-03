@@ -1,0 +1,18 @@
+{
+  "domain": "directed",
+  "fd": {
+    "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml",
+    "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+  },
+  "memory": {
+    "path": ".worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_mem.toml",
+    "sha256": "f05ab1ce95e776222e0f8f24b65757bdee4341ad084b150b00e7b71b45c73105"
+  },
+  "output": {
+    "path": "agents/float_memory_merge_20261103/validation/dynamic/fixtures/combined-fd-memory-directed.toml",
+    "sha256": "65f5b45f980ece32148feb2caebc6ad246b6ab30faf6eb921a386f9fc0561d52"
+  },
+  "ram_size": "0x1000",
+  "ram_region_type": "symbolic",
+  "runner_sha256": "460dde25c18b77e0ab9dab9fbf0af15a02e259c783f07343010bc5a15a933c7f"
+}

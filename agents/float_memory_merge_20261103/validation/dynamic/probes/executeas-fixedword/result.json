@@ -1,0 +1,70 @@
+{
+  "scope": "fixed C_ADDI4SPN ExecuteAs, seed17/T1/qfaufbv",
+  "command": [
+    "timeout",
+    "120s",
+    "taskset",
+    "-c",
+    "34",
+    "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/release/isarch",
+    "-A",
+    "workspace:/.worktree/merge-float-memory-20261104/isla/rv64d.ir",
+    "-C",
+    "workspace:/agents/independent_topic_review_20261030/float/c-addi4spn/config.toml",
+    "-T",
+    "1",
+    "--timeout",
+    "120s",
+    "--smt-timeout",
+    "120s",
+    "--tastic",
+    "qfaufbv",
+    "--instruction-bits",
+    "0x1fe0",
+    "--prestate",
+    "cur_privilege=Machine",
+    "--prestate",
+    "x2=0x0000000000000007",
+    "solve-state",
+    "--clause=C_ADDI4SPN"
+  ],
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/probes/executeas-fixedword/seed.log"
+  },
+  "hashes": {
+    "binary": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+    "ir": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+    "config": "f90b927cbf728e3f016e894bf633ccaeddcf4eea623923442e121611f9c85d06",
+    "preload": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+    "seed_log": "cad0be028c6cb9b7107ff1606a62748a83d25cf00eb12685c6fa92ea6e128803",
+    "output": "dfccbaeb77c3f2df2373d6d7a2c0171560e5f62b9b8e19d38b56bf0dcf3fdd7d",
+    "run_log": "5d11009f11a53a0a5546d99de5ad425c97d4be81877ae8b33a1530c86db95e99"
+  },
+  "seed_lines": [
+    "parameter=random_seed original=690903185 fixed=17"
+  ],
+  "seed_fixed_17": true,
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zC_ADDI4SPN"
+  },
+  "gen": 1,
+  "encoding": "16'h1fe0",
+  "x2_pre": "64'h0000_0000_0000_0007",
+  "x8_post": "64'h0000_0000_0000_0403",
+  "ret_val": "Retire_Success(())",
+  "pass": true
+}

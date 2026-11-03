@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "21",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-mul-negzero-neginf/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-mul-negzero-neginf/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "job": {
+    "name": "S-mul-negzero-neginf",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_S",
+    "fields": [
+      1,
+      0,
+      "zRM_RNE",
+      3,
+      "zFMUL_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff80000000",
+      "f1": "0xffffffffff800000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-mul-negzero-neginf",
+      "family": "scalar",
+      "width": 32,
+      "op": "mul",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 0,
+      "a": "0x80000000",
+      "b": "0xff800000",
+      "c": null,
+      "reason": "negative zero times negative infinity",
+      "expected_bits": "0x7fc00000",
+      "oracle_raw_bits": "0x7fc00000",
+      "expected_flags": "0x10",
+      "oracle_argv": [
+        "--op",
+        "mul",
+        "--fmt",
+        "f32",
+        "--rm",
+        "0",
+        "--a",
+        "0x80000000",
+        "--b",
+        "0xff800000"
+      ]
+    },
+    "expected_full_bits": "0xffffffff7fc00000"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "755394f0d12f39f9c9583d21db33746d97157e0a9eaa3ba4c821ab2e37663048",
+  "config_sha256": "31b883c0a5d1288e6138ebdfe6af0581496929eddea1f2b4d412bd6806a3dad5",
+  "cpu": 21,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-mul-negzero-neginf/seed-intercept.log"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "scope": "真实run.mk+solve_process定向入口，wrapper仅附固定word/前态；不是原域Make完成证明",
+  "rows": [
+    {
+      "clause": "FLEQ_S",
+      "json_sha256": "9cb484f46eaa869f5c7c1fb3863902fc34b2365fb72bff57db4acba8ca8689ff",
+      "records": 24,
+      "tactic": "qffp",
+      "wrapper_argv_sha256": "9f81fa5e8b56d7021a796b72fbbfc549b2ba45d668e425bbd2b76dceddf4d678",
+      "finished": true,
+      "machine_word": "0xa1b04053"
+    },
+    {
+      "clause": "LOAD_FP",
+      "json_sha256": "7073f9b2346c104a7d45b5cc210fb1cd896b5ee4d20c96cb3bf19ca97280e140",
+      "records": 1,
+      "tactic": "qfaufbv",
+      "wrapper_argv_sha256": "eb619e1e1459ffcff839888b5070e6b1a002f130b3ef5ebde85395d04bb6ab0d",
+      "finished": true,
+      "machine_word": "0x0000b187"
+    },
+    {
+      "clause": "STORE",
+      "json_sha256": "3a5939e283a8c9cf753d8c097c5b45bc3236d4b0f91b02e0444b32667298a83e",
+      "records": 1,
+      "tactic": "qfaufbv",
+      "wrapper_argv_sha256": "806229bad284ab538a0ada97811adc2d17ac61a1f40c55578075e7ef6dd0f045",
+      "finished": true,
+      "machine_word": "0x0020b023"
+    },
+    {
+      "clause": "C_LD",
+      "json_sha256": "3428c0cd991cd8d47d87db357a5e2b87f817877d341dd7493cd3fb3287f5424a",
+      "records": 1,
+      "tactic": "qfaufbv",
+      "wrapper_argv_sha256": "5de5444317dd7065b983927d5e240f9f3c8577e1c30ee0aa91a08cbf47dbaf09",
+      "finished": true,
+      "machine_word": "0x6000"
+    }
+  ],
+  "records": 27,
+  "pass": true
+}

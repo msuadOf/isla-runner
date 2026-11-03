@@ -1,0 +1,131 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "21",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/VS-div-nv-dz-mask2/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/VS-div-nv-dz-mask2/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=FVVTYPE"
+  ],
+  "job": {
+    "name": "VS-div-nv-dz-mask2",
+    "family": "vector",
+    "clause": "FVVTYPE",
+    "fields": [
+      "zFVV_VDIV",
+      0,
+      2,
+      4,
+      8
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "vtype": "0x10",
+      "vl": "0x2",
+      "vstart": "0x0",
+      "vr0": "0x00000000000000000000000000000002",
+      "vr1": "0x00000000000000000000000000000000",
+      "vr2": "0x00000000000000003f80000000000000",
+      "vr3": "0x00000000000000000000000000000000",
+      "vr4": "0x00000000000000000000000000000000",
+      "vr5": "0x00000000000000000000000000000000",
+      "vr6": "0x00000000000000000000000000000000",
+      "vr7": "0x00000000000000000000000000000000",
+      "vr8": "0x00000000000000000000000000000000",
+      "vr9": "0x00000000000000000000000000000000",
+      "vr10": "0x00000000000000000000000000000000",
+      "vr11": "0x00000000000000000000000000000000",
+      "vr12": "0x00000000000000000000000000000000",
+      "vr13": "0x00000000000000000000000000000000",
+      "vr14": "0x00000000000000000000000000000000",
+      "vr15": "0x00000000000000000000000000000000",
+      "vr16": "0x00000000000000000000000000000000",
+      "vr17": "0x00000000000000000000000000000000",
+      "vr18": "0x00000000000000000000000000000000",
+      "vr19": "0x00000000000000000000000000000000",
+      "vr20": "0x00000000000000000000000000000000",
+      "vr21": "0x00000000000000000000000000000000",
+      "vr22": "0x00000000000000000000000000000000",
+      "vr23": "0x00000000000000000000000000000000",
+      "vr24": "0x00000000000000000000000000000000",
+      "vr25": "0x00000000000000000000000000000000",
+      "vr26": "0x00000000000000000000000000000000",
+      "vr27": "0x00000000000000000000000000000000",
+      "vr28": "0x00000000000000000000000000000000",
+      "vr29": "0x00000000000000000000000000000000",
+      "vr30": "0x00000000000000000000000000000000",
+      "vr31": "0x00000000000000000000000000000000"
+    },
+    "expected": {
+      "name": "VS-div-nv-dz-mask2",
+      "format": "S",
+      "width": 32,
+      "op": "div",
+      "rm": 0,
+      "a": [
+        "0x0",
+        "0x3f800000"
+      ],
+      "b": [
+        "0x0",
+        "0x0"
+      ],
+      "vl": 2,
+      "mask": 2,
+      "lanes": [
+        {
+          "lane": 0,
+          "active": false,
+          "bits": "0x0",
+          "flags": null,
+          "oracle_argv": null
+        },
+        {
+          "lane": 1,
+          "active": true,
+          "bits": "0x7f800000",
+          "flags": "0x8",
+          "oracle_argv": [
+            "--op",
+            "div",
+            "--fmt",
+            "f32",
+            "--rm",
+            "0",
+            "--a",
+            "0x3f800000",
+            "--b",
+            "0x0"
+          ]
+        }
+      ],
+      "expected_flags": "0x8"
+    },
+    "dest_width": 32
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "9dfa170afd0e378dbbe7bbdbbd160b9f6930365f74d06bfc9b75476d54ab6b44",
+  "config_sha256": "00c9fc1c049098efe11e7261ca7392fc4254c48276452d926309db96bf83b4a8",
+  "cpu": 21,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/VS-div-nv-dz-mask2/seed-intercept.log"
+  }
+}

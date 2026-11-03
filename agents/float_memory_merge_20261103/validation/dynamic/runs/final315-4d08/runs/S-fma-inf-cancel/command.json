@@ -1,0 +1,86 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "20",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-fma-inf-cancel/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-fma-inf-cancel/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_MADD_TYPE_S"
+  ],
+  "job": {
+    "name": "S-fma-inf-cancel",
+    "family": "scalar",
+    "clause": "F_MADD_TYPE_S",
+    "fields": [
+      2,
+      1,
+      0,
+      "zRM_RNE",
+      3,
+      "zFMADD_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff7f800000",
+      "f1": "0xffffffff3f800000",
+      "f2": "0xffffffffff800000",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-fma-inf-cancel",
+      "family": "scalar",
+      "width": 32,
+      "op": "fma",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 0,
+      "a": "0x7f800000",
+      "b": "0x3f800000",
+      "c": "0xff800000",
+      "reason": "fma-inf-cancel",
+      "expected_bits": "0x7fc00000",
+      "oracle_raw_bits": "0x7fc00000",
+      "expected_flags": "0x10",
+      "oracle_argv": [
+        "--op",
+        "fma",
+        "--fmt",
+        "f32",
+        "--rm",
+        "0",
+        "--a",
+        "0x7f800000",
+        "--b",
+        "0x3f800000",
+        "--c",
+        "0xff800000"
+      ]
+    },
+    "expected_full_bits": "0xffffffff7fc00000"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "0ef5fbd66f59f1ad41fd153ad7ef671b1c782285b4de825e131cde83d4691f4a",
+  "config_sha256": "fca13466f68d2bc180300065ea25812344e37149ba5126803b9245defcfba83b",
+  "cpu": 20,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-fma-inf-cancel/seed-intercept.log"
+  }
+}

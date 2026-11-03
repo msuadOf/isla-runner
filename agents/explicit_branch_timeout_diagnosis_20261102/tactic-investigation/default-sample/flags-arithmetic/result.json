@@ -1,0 +1,71 @@
+{
+  "workload": "flags-arithmetic",
+  "tactic": "default",
+  "cpu": 114,
+  "seed": 17,
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "300s",
+    "taskset",
+    "-c",
+    "114",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "default",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "pid": 640787,
+  "started_monotonic": 533204.207343613,
+  "isarch_sha256": "c9c5bb8b32289006b1af621f71f03537aecf4a1b0b9ed9b51bc68e573785e2f2",
+  "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+  "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "probe_sha256": "8ffa94f257465ad87094cd2a1e0c665f3d88dfc5b9486a66e4018392b09431b5",
+  "exit_code": 124,
+  "elapsed_s": 300.27696442895103,
+  "user_s": 294.671722,
+  "sys_s": 4.4792629999999996,
+  "seed_log": "parameter=random_seed original=147159561 fixed=17\n",
+  "checks_begun": 60,
+  "checks_finished": 59,
+  "pending": [
+    60
+  ],
+  "max_completed": [
+    [
+      71.82539929,
+      49
+    ],
+    [
+      25.488832609,
+      46
+    ],
+    [
+      25.283578304,
+      57
+    ],
+    [
+      24.423497145,
+      59
+    ],
+    [
+      23.752166661,
+      51
+    ]
+  ],
+  "cumulative_completed_s": 287.009984295,
+  "result_codes": {
+    "1": 54,
+    "-1": 5
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "scope": "Independent frozen assets and source manifests; no generated-run PASS inferred",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "verified_assets": [
+    {
+      "entry": ".model_tree.manifest",
+      "sha256": "d8c7cec1c7ea84381922e80fd1053c1ede1adac44891e83c619bdf58cbd3aa91"
+    },
+    {
+      "entry": ".isla_tree.manifest",
+      "sha256": "8aba2ee239e602d615e970bf03b45490947fe4ef7e0912c149bf2b20c2c80c00"
+    },
+    {
+      "entry": ".binary",
+      "sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d"
+    },
+    {
+      "entry": ".z3",
+      "sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+    },
+    {
+      "entry": ".seed_preload",
+      "sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+    },
+    {
+      "entry": ".irs.rv64-v128",
+      "sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad"
+    },
+    {
+      "entry": ".irs.rv64-v256",
+      "sha256": "76d658edb9bb92ade750161a9f782bb4f908aec9a2ff3951a82a1b476126dc71"
+    },
+    {
+      "entry": ".irs.rv64-v512",
+      "sha256": "44657bfff823e33c66326cff0b7a6b27f4fd1715440653299462135fd9880006"
+    },
+    {
+      "entry": ".irs.rv64-default",
+      "sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad"
+    },
+    {
+      "entry": ".irs.rv32-default",
+      "sha256": "c619a2b803ba719505118793d72bb906d74f85acb06d457f8dc687680fdc1e88"
+    },
+    {
+      "entry": ".configs.rv64-fd-full",
+      "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+    },
+    {
+      "entry": ".affected_manifest",
+      "sha256": "7b3c98bc0052c8894c68fea73ded1e97dd6748e7b90394d06a61c1f04ab930e3"
+    },
+    {
+      "entry": ".binary_manifest",
+      "sha256": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6"
+    },
+    {
+      "entry": ".watchdog_evidence",
+      "sha256": "2bd0a0e7c20f83c6a412f53cf9305ffd78c2d1b7a91e5ca9ff39e512df0b6809"
+    }
+  ],
+  "source_trees": {
+    "model_tree": {
+      "commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+      "manifest_sha256": "d8c7cec1c7ea84381922e80fd1053c1ede1adac44891e83c619bdf58cbd3aa91",
+      "manifest_scope": "all-tracked",
+      "verified_files": 1011,
+      "unlisted_blobs": 0
+    },
+    "isla_tree": {
+      "commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+      "manifest_sha256": "8aba2ee239e602d615e970bf03b45490947fe4ef7e0912c149bf2b20c2c80c00",
+      "manifest_scope": "isla-source-excluding-generated-ir",
+      "verified_files": 1021,
+      "unlisted_blobs": 8
+    }
+  },
+  "pass": true
+}

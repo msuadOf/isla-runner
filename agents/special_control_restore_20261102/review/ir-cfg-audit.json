@@ -1,0 +1,3099 @@
+{
+  "configurations": {
+    "rv64d_v128_e64": {
+      "ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+      "mask_gates": [
+        {
+          "name": "FVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 208,
+          "end": 221,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 24716,
+          "active_pc": 24719,
+          "merge_pc": 24859,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz410420 = zfp_muladd_pure(zz410354, zz410421, zz410423, zz410425) `93 210:30-210:86;",
+            "zz410420 = zfp_nmulsub_pure(zz410354, zz410427, zz410429, zz410431) `93 211:30-211:87;",
+            "zz410420 = zfp_mulsub_pure(zz410354, zz410433, zz410435, zz410437) `93 212:30-212:86;",
+            "zz410420 = zfp_nmuladd_pure(zz410354, zz410439, zz410441, zz410443) `93 213:30-213:87;",
+            "zz410420 = zfp_muladd_pure(zz410354, zz410445, zz410447, zz410449) `93 214:30-214:86;",
+            "zz410420 = zfp_nmulsub_pure(zz410354, zz410451, zz410453, zz410455) `93 215:30-215:87;",
+            "zz410420 = zfp_mulsub_pure(zz410354, zz410457, zz410459, zz410461) `93 216:30-216:86;",
+            "zz410420 = zfp_nmuladd_pure(zz410354, zz410463, zz410465, zz410467) `93 217:30-217:87;"
+          ]
+        },
+        {
+          "name": "FWVVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 343,
+          "end": 353,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 25072,
+          "active_pc": 25075,
+          "merge_pc": 25144,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz410573 = zfp_widen_pure(zz410490, zz410574) `93 344:34-344:66;",
+            "zz410579 = zfp_widen_pure(zz410490, zz410580) `93 345:34-345:66;",
+            "zz410586 = zfp_add_pure(zz410490, zz410578, zz410584) `93 347:30-347:68;",
+            "zz410586 = zfp_sub_pure(zz410490, zz410578, zz410584) `93 348:30-348:68;",
+            "zz410586 = zfp_mul_pure(zz410490, zz410578, zz410584) `93 349:30-349:68;"
+          ]
+        },
+        {
+          "name": "FWVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 471,
+          "end": 482,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 25358,
+          "active_pc": 25361,
+          "merge_pc": 25449,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz410699 = zfp_widen_pure(zz410616, zz410700) `93 472:34-472:66;",
+            "zz410705 = zfp_widen_pure(zz410616, zz410706) `93 473:34-473:66;",
+            "zz410712 = zfp_muladd_pure(zz410616, zz410704, zz410710, zz410713) `93 475:30-475:82;",
+            "zz410712 = zfp_nmulsub_pure(zz410616, zz410704, zz410710, zz410715) `93 476:30-476:83;",
+            "zz410712 = zfp_mulsub_pure(zz410616, zz410704, zz410710, zz410717) `93 477:30-477:82;",
+            "zz410712 = zfp_nmuladd_pure(zz410616, zz410704, zz410710, zz410719) `93 478:30-478:83;"
+          ]
+        },
+        {
+          "name": "FWVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 599,
+          "end": 607,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 25661,
+          "active_pc": 25664,
+          "merge_pc": 25718,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz410832 = zfp_widen_pure(zz410750, zz410833) `93 600:34-600:66;",
+            "zz410839 = zfp_add_pure(zz410750, zz410840, zz410837) `93 602:30-602:70;",
+            "zz410839 = zfp_sub_pure(zz410750, zz410842, zz410837) `93 603:30-603:70;"
+          ]
+        },
+        {
+          "name": "VFUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 746,
+          "end": 799,
+          "source_calls": [
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui64ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i64ToF64",
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64"
+          ],
+          "branch_pc": 25878,
+          "active_pc": 25881,
+          "merge_pc": 26341,
+          "operation_count": 18,
+          "operation_calls": [
+            "zz410940 = zriscv_f16ToUi16_pure(zz410868, zz410937) `93 750:40-750:79;",
+            "zz410948 = zriscv_f32ToUi32(zz410868, zz410945) `93 751:40-751:74;",
+            "zz410952 = zriscv_f64ToUi64(zz410868, zz410949) `93 752:40-752:74;",
+            "zz410968 = zriscv_f16ToI16_pure(zz410868, zz410965) `93 758:40-758:78;",
+            "zz410976 = zriscv_f32ToI32(zz410868, zz410973) `93 759:40-759:73;",
+            "zz410980 = zriscv_f64ToI64(zz410868, zz410977) `93 760:40-760:73;",
+            "zz410998 = zriscv_ui32ToF16(zz410868, zz410993) `93 766:40-766:87;",
+            "zz411006 = zriscv_ui32ToF32(zz410868, zz411003) `93 767:40-767:74;",
+            "zz411010 = zriscv_ui64ToF64(zz410868, zz411007) `93 768:40-768:74;",
+            "zz411028 = zriscv_i32ToF16(zz410868, zz411023) `93 774:40-774:86;",
+            "zz411036 = zriscv_i32ToF32(zz410868, zz411033) `93 775:40-775:73;",
+            "zz411040 = zriscv_i64ToF64(zz410868, zz411037) `93 776:40-776:73;",
+            "zz411056 = zriscv_f16ToUi16_pure(0b001, zz411053) `93 782:40-782:79;",
+            "zz411064 = zriscv_f32ToUi32(0b001, zz411061) `93 783:40-783:74;",
+            "zz411068 = zriscv_f64ToUi64(0b001, zz411065) `93 784:40-784:74;",
+            "zz411084 = zriscv_f16ToI16_pure(0b001, zz411081) `93 790:40-790:78;",
+            "zz411092 = zriscv_f32ToI32(0b001, zz411089) `93 791:40-791:73;",
+            "zz411096 = zriscv_f64ToI64(0b001, zz411093) `93 792:40-792:73;"
+          ]
+        },
+        {
+          "name": "VFWUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1065,
+          "end": 1126,
+          "source_calls": [
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui32ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i32ToF64",
+            "riscv_f16ToF32",
+            "riscv_f32ToF64",
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64"
+          ],
+          "branch_pc": 26576,
+          "active_pc": 26579,
+          "merge_pc": 27124,
+          "operation_count": 16,
+          "operation_calls": [
+            "zz411232 = zriscv_f16ToUi32(zz411120, zz411229) `93 1070:40-1070:74;",
+            "zz411236 = zriscv_f32ToUi64(zz411120, zz411233) `93 1071:40-1071:74;",
+            "zz411261 = zriscv_f16ToI32(zz411120, zz411258) `93 1078:40-1078:73;",
+            "zz411265 = zriscv_f32ToI64(zz411120, zz411262) `93 1079:40-1079:73;",
+            "zz411283 = zriscv_ui32ToF16(zz411120, zz411278) `93 1085:40-1085:87;",
+            "zz411293 = zriscv_ui32ToF32(zz411120, zz411288) `93 1086:40-1086:87;",
+            "zz411297 = zriscv_ui32ToF64(zz411120, zz411294) `93 1087:40-1087:74;",
+            "zz411315 = zriscv_i32ToF16(zz411120, zz411310) `93 1093:40-1093:86;",
+            "zz411325 = zriscv_i32ToF32(zz411120, zz411320) `93 1094:40-1094:86;",
+            "zz411329 = zriscv_i32ToF64(zz411120, zz411326) `93 1095:40-1095:73;",
+            "zz411354 = zriscv_f16ToF32(zz411120, zz411351) `93 1102:40-1102:73;",
+            "zz411358 = zriscv_f32ToF64(zz411120, zz411355) `93 1103:40-1103:73;",
+            "zz411383 = zriscv_f16ToUi32(0b001, zz411380) `93 1110:40-1110:74;",
+            "zz411387 = zriscv_f32ToUi64(0b001, zz411384) `93 1111:40-1111:74;",
+            "zz411412 = zriscv_f16ToI32(0b001, zz411409) `93 1118:40-1118:73;",
+            "zz411416 = zriscv_f32ToI64(0b001, zz411413) `93 1119:40-1119:73;"
+          ]
+        },
+        {
+          "name": "VFNUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1418,
+          "end": 1487,
+          "source_calls": [
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32",
+            "riscv_ui32ToF16",
+            "riscv_ui64ToF32",
+            "riscv_i32ToF16",
+            "riscv_i64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32"
+          ],
+          "branch_pc": 27509,
+          "active_pc": 27512,
+          "merge_pc": 28112,
+          "operation_count": 20,
+          "operation_calls": [
+            "zz411630 = zriscv_f16ToUi8_pure(zz411537, zz411627) `93 1422:40-1422:78;",
+            "zz411638 = zriscv_f32ToUi16_pure(zz411537, zz411635) `93 1423:40-1423:79;",
+            "zz411642 = zriscv_f64ToUi32(zz411537, zz411639) `93 1424:40-1424:74;",
+            "zz411658 = zriscv_f16ToI8_pure(zz411537, zz411655) `93 1430:40-1430:77;",
+            "zz411666 = zriscv_f32ToI16_pure(zz411537, zz411663) `93 1431:40-1431:78;",
+            "zz411670 = zriscv_f64ToI32(zz411537, zz411667) `93 1432:40-1432:73;",
+            "zz411695 = zriscv_ui32ToF16(zz411537, zz411692) `93 1439:40-1439:74;",
+            "zz411699 = zriscv_ui64ToF32(zz411537, zz411696) `93 1440:40-1440:74;",
+            "zz411724 = zriscv_i32ToF16(zz411537, zz411721) `93 1447:40-1447:73;",
+            "zz411728 = zriscv_i64ToF32(zz411537, zz411725) `93 1448:40-1448:73;",
+            "zz411753 = zriscv_f32ToF16(zz411537, zz411750) `93 1455:40-1455:73;",
+            "zz411757 = zriscv_f64ToF32(zz411537, zz411754) `93 1456:40-1456:73;",
+            "zz411782 = zriscv_f32ToF16(0b110, zz411779) `93 1463:40-1463:73;",
+            "zz411786 = zriscv_f64ToF32(0b110, zz411783) `93 1464:40-1464:73;",
+            "zz411802 = zriscv_f16ToUi8_pure(0b001, zz411799) `93 1470:40-1470:78;",
+            "zz411810 = zriscv_f32ToUi16_pure(0b001, zz411807) `93 1471:40-1471:79;",
+            "zz411814 = zriscv_f64ToUi32(0b001, zz411811) `93 1472:40-1472:74;",
+            "zz411830 = zriscv_f16ToI8_pure(0b001, zz411827) `93 1478:40-1478:77;",
+            "zz411838 = zriscv_f32ToI16_pure(0b001, zz411835) `93 1479:40-1479:78;",
+            "zz411842 = zriscv_f64ToI32(0b001, zz411839) `93 1480:40-1480:73;"
+          ]
+        },
+        {
+          "name": "VFUNARY1",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1730,
+          "end": 1743,
+          "source_calls": [
+            "riscv_f16Sqrt",
+            "riscv_f32Sqrt",
+            "riscv_f64Sqrt",
+            "fp_class_onehot_pure"
+          ],
+          "branch_pc": 28496,
+          "active_pc": 28499,
+          "merge_pc": 28618,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz412050 = zriscv_f16Sqrt(zz411975, zz412047) `93 1733:16-1733:48;",
+            "zz412058 = zriscv_f32Sqrt(zz411975, zz412055) `93 1734:16-1734:48;",
+            "zz412062 = zriscv_f64Sqrt(zz411975, zz412059) `93 1735:16-1735:48;",
+            "zz412067 = zfp_class_onehot_pure(zz412068) `93 1737:44-1737:76;"
+          ]
+        },
+        {
+          "name": "FVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1955,
+          "end": 1973,
+          "source_calls": [
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_sub_pure",
+            "fp_min_pure",
+            "fp_max_pure",
+            "fp_mul_pure",
+            "fp_div_pure",
+            "fp_div_pure"
+          ],
+          "branch_pc": 29221,
+          "active_pc": 29224,
+          "merge_pc": 29519,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412338 = zfp_add_pure(zz412265, zz412339, zz412295) `93 1957:30-1957:69;",
+            "zz412338 = zfp_sub_pure(zz412265, zz412341, zz412295) `93 1958:30-1958:69;",
+            "zz412338 = zfp_sub_pure(zz412265, zz412295, zz412343) `93 1959:30-1959:69;",
+            "zz412338 = zfp_min_pure(zz412345, zz412295) `93 1960:30-1960:62;",
+            "zz412338 = zfp_max_pure(zz412347, zz412295) `93 1961:30-1961:62;",
+            "zz412338 = zfp_mul_pure(zz412265, zz412349, zz412295) `93 1962:30-1962:69;",
+            "zz412338 = zfp_div_pure(zz412265, zz412351, zz412295) `93 1963:30-1963:69;",
+            "zz412338 = zfp_div_pure(zz412265, zz412295, zz412353) `93 1964:30-1964:69;"
+          ]
+        },
+        {
+          "name": "FVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2119,
+          "end": 2132,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30034,
+          "active_pc": 30037,
+          "merge_pc": 30145,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412684 = zfp_muladd_pure(zz412621, zz412645, zz412685, zz412687) `93 2121:30-2121:83;",
+            "zz412684 = zfp_nmulsub_pure(zz412621, zz412645, zz412689, zz412691) `93 2122:30-2122:84;",
+            "zz412684 = zfp_mulsub_pure(zz412621, zz412645, zz412693, zz412695) `93 2123:30-2123:83;",
+            "zz412684 = zfp_nmuladd_pure(zz412621, zz412645, zz412697, zz412699) `93 2124:30-2124:84;",
+            "zz412684 = zfp_muladd_pure(zz412621, zz412645, zz412701, zz412703) `93 2125:30-2125:83;",
+            "zz412684 = zfp_nmulsub_pure(zz412621, zz412645, zz412705, zz412707) `93 2126:30-2126:84;",
+            "zz412684 = zfp_mulsub_pure(zz412621, zz412645, zz412709, zz412711) `93 2127:30-2127:83;",
+            "zz412684 = zfp_nmuladd_pure(zz412621, zz412645, zz412713, zz412715) `93 2128:30-2128:84;"
+          ]
+        },
+        {
+          "name": "FWVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2252,
+          "end": 2262,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 30347,
+          "active_pc": 30350,
+          "merge_pc": 30415,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz412817 = zfp_widen_pure(zz412738, zz412818) `93 2253:34-2253:66;",
+            "zz412823 = zfp_widen_pure(zz412738, zz412782) `93 2254:34-2254:63;",
+            "zz412828 = zfp_add_pure(zz412738, zz412822, zz412826) `93 2256:30-2256:68;",
+            "zz412828 = zfp_sub_pure(zz412738, zz412822, zz412826) `93 2257:30-2257:68;",
+            "zz412828 = zfp_mul_pure(zz412738, zz412822, zz412826) `93 2258:30-2258:68;"
+          ]
+        },
+        {
+          "name": "FWVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2378,
+          "end": 2389,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30618,
+          "active_pc": 30621,
+          "merge_pc": 30705,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz412937 = zfp_widen_pure(zz412858, zz412902) `93 2379:34-2379:63;",
+            "zz412941 = zfp_widen_pure(zz412858, zz412942) `93 2380:34-2380:66;",
+            "zz412948 = zfp_muladd_pure(zz412858, zz412940, zz412946, zz412949) `93 2382:30-2382:82;",
+            "zz412948 = zfp_nmulsub_pure(zz412858, zz412940, zz412946, zz412951) `93 2383:30-2383:83;",
+            "zz412948 = zfp_mulsub_pure(zz412858, zz412940, zz412946, zz412953) `93 2384:30-2384:82;",
+            "zz412948 = zfp_nmuladd_pure(zz412858, zz412940, zz412946, zz412955) `93 2385:30-2385:83;"
+          ]
+        },
+        {
+          "name": "FWFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2505,
+          "end": 2513,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 30917,
+          "active_pc": 30920,
+          "merge_pc": 30970,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz413068 = zfp_widen_pure(zz412986, zz413033) `93 2506:34-2506:63;",
+            "zz413073 = zfp_add_pure(zz412986, zz413074, zz413071) `93 2508:30-2508:70;",
+            "zz413073 = zfp_sub_pure(zz412986, zz413076, zz413071) `93 2509:30-2509:70;"
+          ]
+        },
+        {
+          "name": "RFWVVTYPE",
+          "source": "extensions/V/vext_fp_red_insts.sail",
+          "start": 195,
+          "end": 200,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure"
+          ],
+          "branch_pc": 37771,
+          "active_pc": 37774,
+          "merge_pc": 37813,
+          "operation_count": 2,
+          "operation_calls": [
+            "zz415988 = zfp_widen_pure(zz415919, zz415989) `99 196:36-196:68;",
+            "zz415994 = zfp_add_pure(zz415919, zz415970, zz415993) `99 197:41-197:74;"
+          ]
+        },
+        {
+          "name": "FVVMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 61,
+          "end": 70,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure"
+          ],
+          "branch_pc": 36608,
+          "active_pc": 36611,
+          "merge_pc": 36677,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz415496 = zfp_eq_pure(zz415497, zz415499) `97 63:30-63:64;",
+            "zz415496 = zfp_ne_pure(zz415501, zz415503) `97 64:30-64:64;",
+            "zz415496 = zfp_le_pure(zz415505, zz415507) `97 65:30-65:64;",
+            "zz415496 = zfp_lt_pure(zz415509, zz415511) `97 66:30-66:64;"
+          ]
+        },
+        {
+          "name": "FVFMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 183,
+          "end": 194,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure",
+            "fp_ge_pure",
+            "fp_gt_pure"
+          ],
+          "branch_pc": 36829,
+          "active_pc": 36832,
+          "merge_pc": 36896,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz415591 = zfp_eq_pure(zz415592, zz415555) `97 185:30-185:61;",
+            "zz415591 = zfp_ne_pure(zz415594, zz415555) `97 186:30-186:61;",
+            "zz415591 = zfp_le_pure(zz415596, zz415555) `97 187:30-187:61;",
+            "zz415591 = zfp_lt_pure(zz415598, zz415555) `97 188:30-188:61;",
+            "zz415591 = zfp_ge_pure(zz415600, zz415555) `97 189:30-189:61;",
+            "zz415591 = zfp_gt_pure(zz415602, zz415555) `97 190:30-190:61;"
+          ]
+        },
+        {
+          "name": "VFNCVTBF16_F_F_W",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 51,
+          "end": 55,
+          "source_calls": [
+            "riscv_f32ToBF16"
+          ],
+          "branch_pc": 51197,
+          "active_pc": 51200,
+          "merge_pc": 51229,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz422093 = zriscv_f32ToBF16(zz422018, zz422094) `136 52:31-52:65;"
+          ]
+        },
+        {
+          "name": "VFWCVTBF16_F_F_V",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 151,
+          "end": 155,
+          "source_calls": [
+            "bf16_to_f32"
+          ],
+          "branch_pc": 51420,
+          "active_pc": 51423,
+          "merge_pc": 51452,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz422192 = zbf16_to_f32(zz422193) `136 152:31-152:54;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VV",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 53,
+          "end": 60,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51664,
+          "active_pc": 51667,
+          "merge_pc": 51740,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422300 = zbf16_to_f32(zz422301) `137 54:34-54:57;",
+            "zz422307 = zbf16_to_f32(zz422308) `137 55:34-55:57;",
+            "zz422314 = zriscv_f32MulAdd(zz422217, zz422306, zz422313, zz422315) `137 56:29-56:82;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VF",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 157,
+          "end": 164,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51933,
+          "active_pc": 51936,
+          "merge_pc": 52005,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422422 = zbf16_to_f32(zz422423) `137 158:34-158:58;",
+            "zz422427 = zbf16_to_f32(zz422428) `137 159:34-159:57;",
+            "zz422434 = zriscv_f32MulAdd(zz422347, zz422433, zz422426, zz422435) `137 160:29-160:81;"
+          ]
+        }
+      ],
+      "operand_calls": {
+        "zieee_eq16_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 184:18-184:48;",
+          "= zieee_operand_invalid(false, zz43) `43 185:18-185:48;"
+        ],
+        "zieee_lt16_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 190:18-190:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 191:18-191:52;"
+        ],
+        "zieee_add16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 235:35-235:65;",
+          "= zieee_operand_invalid(false, zz44) `43 235:67-235:97;"
+        ],
+        "zieee_sub16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 257:35-257:65;",
+          "= zieee_operand_invalid(false, zz44) `43 257:67-257:97;"
+        ],
+        "zieee_mul16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 373:35-373:65;",
+          "= zieee_operand_invalid(false, zz44) `43 373:67-373:97;"
+        ],
+        "zieee_div16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 394:35-394:65;",
+          "= zieee_operand_invalid(false, zz44) `43 394:67-394:97;"
+        ],
+        "zieee_sqrt16_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 420:31-420:61;"
+        ],
+        "zieee_fma16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 436:35-436:65;",
+          "= zieee_operand_invalid(false, zz45) `43 436:82-436:112;",
+          "= zieee_operand_invalid(false, zz47) `43 436:114-436:144;"
+        ],
+        "zieee_eq32_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 87:18-87:48;",
+          "= zieee_operand_invalid(false, zz43) `43 88:18-88:48;"
+        ],
+        "zieee_lt32_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 94:18-94:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 95:18-95:52;"
+        ],
+        "zieee_add32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 141:35-141:65;",
+          "= zieee_operand_invalid(false, zz44) `43 141:67-141:97;"
+        ],
+        "zieee_sub32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 163:35-163:65;",
+          "= zieee_operand_invalid(false, zz44) `43 163:67-163:97;"
+        ],
+        "zieee_mul32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 472:35-472:65;",
+          "= zieee_operand_invalid(false, zz44) `43 472:67-472:97;"
+        ],
+        "zieee_div32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 493:35-493:65;",
+          "= zieee_operand_invalid(false, zz44) `43 493:67-493:97;"
+        ],
+        "zieee_sqrt32_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 519:31-519:61;"
+        ],
+        "zieee_fma32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 535:35-535:65;",
+          "= zieee_operand_invalid(false, zz45) `43 535:82-535:112;",
+          "= zieee_operand_invalid(false, zz47) `43 535:114-535:144;"
+        ],
+        "zieee_eq64_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 279:18-279:48;",
+          "= zieee_operand_invalid(false, zz43) `43 280:18-280:48;"
+        ],
+        "zieee_lt64_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 285:18-285:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 286:18-286:52;"
+        ],
+        "zieee_add64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 330:35-330:65;",
+          "= zieee_operand_invalid(false, zz44) `43 330:67-330:97;"
+        ],
+        "zieee_sub64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 352:35-352:65;",
+          "= zieee_operand_invalid(false, zz44) `43 352:67-352:97;"
+        ],
+        "zieee_mul64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 571:35-571:65;",
+          "= zieee_operand_invalid(false, zz44) `43 571:67-571:97;"
+        ],
+        "zieee_div64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 592:35-592:65;",
+          "= zieee_operand_invalid(false, zz44) `43 592:67-592:97;"
+        ],
+        "zieee_sqrt64_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 618:31-618:61;"
+        ],
+        "zieee_fma64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 634:35-634:65;",
+          "= zieee_operand_invalid(false, zz45) `43 634:82-634:112;",
+          "= zieee_operand_invalid(false, zz47) `43 634:114-634:144;"
+        ]
+      },
+      "operand_helper_jumps": 2,
+      "f32_fma_single_call": true,
+      "function_count": 2054,
+      "normalized_changed_functions_from_fd71c9a": [
+        "zbf16_to_f32",
+        "zexecute",
+        "zieee_add16_exceptions",
+        "zieee_add32_exceptions",
+        "zieee_add64_exceptions",
+        "zieee_bf16_from_f32_exceptions",
+        "zieee_convert32_to_16_exceptions",
+        "zieee_convert64_to_16_exceptions",
+        "zieee_convert64_to_32_exceptions",
+        "zieee_div16_exceptions",
+        "zieee_div32_exceptions",
+        "zieee_div64_exceptions",
+        "zieee_eq16_exceptions",
+        "zieee_eq32_exceptions",
+        "zieee_eq64_exceptions",
+        "zieee_fma16_exceptions",
+        "zieee_fma32_exceptions",
+        "zieee_fma64_exceptions",
+        "zieee_lt16_exceptions",
+        "zieee_lt32_exceptions",
+        "zieee_lt64_exceptions",
+        "zieee_mul16_exceptions",
+        "zieee_mul32_exceptions",
+        "zieee_mul64_exceptions",
+        "zieee_operand_invalid",
+        "zieee_rod32_to_16",
+        "zieee_rod64_to_32",
+        "zieee_round16_exceptions",
+        "zieee_round32_exceptions",
+        "zieee_round64_exceptions",
+        "zieee_sqrt16_exceptions",
+        "zieee_sqrt32_exceptions",
+        "zieee_sqrt64_exceptions",
+        "zieee_sub16_exceptions",
+        "zieee_sub32_exceptions",
+        "zieee_sub64_exceptions",
+        "zieee_widen16_to_32_exceptions",
+        "zieee_widen16_to_64_exceptions",
+        "zieee_widen32_to_64_exceptions",
+        "zriscv_f16Add",
+        "zriscv_f16Div",
+        "zriscv_f16Mul",
+        "zriscv_f16MulAdd",
+        "zriscv_f16Sqrt",
+        "zriscv_f16Sub",
+        "zriscv_f16ToF32",
+        "zriscv_f16ToF64",
+        "zriscv_f16roundToInt",
+        "zriscv_f32ToBF16",
+        "zriscv_f32ToF16",
+        "zriscv_f32ToF64",
+        "zriscv_f64ToF16",
+        "zriscv_f64ToF32",
+        "zriscv_f64_result_bits"
+      ],
+      "model_source_count": 166,
+      "command": [
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+        "-plugin",
+        "/data1/baiyifan/workplace/isla-runner/.tmp/float-full-trace-20260929/fvv-branch-candidate/sail_plugin_isla.cmxs",
+        "-isla",
+        "-D",
+        "SYMBOLIC",
+        "--strict-var",
+        "--strict-bitvector",
+        "--strict-exponentials",
+        "--require-version",
+        "0.20.1",
+        "--memo-z3-path",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv64d_v128_e64/sail_smt_cache",
+        "--all-modules",
+        "--isla-preserve",
+        "encdec_compressed_forwards",
+        "--isla-preserve",
+        "encdec_compressed_forwards_matches",
+        "--isla-preserve",
+        "encdec_compressed_backwards",
+        "--isla-preserve",
+        "encdec_compressed_backwards_matches",
+        "--isla-preserve",
+        "get_F",
+        "--isla-preserve",
+        "set_F",
+        "--isla-preserve",
+        "set_V",
+        "--isla-preserve",
+        "riscv_f16ToI16",
+        "--isla-preserve",
+        "riscv_f16ToUi16",
+        "--isla-preserve",
+        "riscv_f32ToI16",
+        "--isla-preserve",
+        "riscv_f32ToUi16",
+        "--isla-output-dir",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv64d_v128_e64",
+        "--config",
+        "/data1/baiyifan/workplace/isla-runner/isla/ir/provenance/rv64d.json",
+        "-o",
+        "rv64d_v128_e64",
+        "riscv.sail_project"
+      ],
+      "toolchain_sha256": {
+        "launcher": "2e89d5f5467195ea0a2fb4b072133a0ee73933db3e8808b8a6518c7ef59ec807",
+        "binary": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+        "jib_compile": "a5abdb65ac962b7cdddc56a5b127e69b96650b9bc947d618f39b8667152dfb9e"
+      },
+      "stdlib_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "config_sha256": "89923ebff21718bb382df38bf246207cbb1eb5ae0cd314d078d87c0ab2b9f625",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6"
+    },
+    "rv32d": {
+      "ir_sha256": "4b28eca3954490e08eebd9c0974a8101f3fc34bb93174133ce776bc2e7d472c8",
+      "mask_gates": [
+        {
+          "name": "FVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 208,
+          "end": 221,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 24103,
+          "active_pc": 24106,
+          "merge_pc": 24246,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz410167 = zfp_muladd_pure(zz410101, zz410168, zz410170, zz410172) `93 210:30-210:86;",
+            "zz410167 = zfp_nmulsub_pure(zz410101, zz410174, zz410176, zz410178) `93 211:30-211:87;",
+            "zz410167 = zfp_mulsub_pure(zz410101, zz410180, zz410182, zz410184) `93 212:30-212:86;",
+            "zz410167 = zfp_nmuladd_pure(zz410101, zz410186, zz410188, zz410190) `93 213:30-213:87;",
+            "zz410167 = zfp_muladd_pure(zz410101, zz410192, zz410194, zz410196) `93 214:30-214:86;",
+            "zz410167 = zfp_nmulsub_pure(zz410101, zz410198, zz410200, zz410202) `93 215:30-215:87;",
+            "zz410167 = zfp_mulsub_pure(zz410101, zz410204, zz410206, zz410208) `93 216:30-216:86;",
+            "zz410167 = zfp_nmuladd_pure(zz410101, zz410210, zz410212, zz410214) `93 217:30-217:87;"
+          ]
+        },
+        {
+          "name": "FWVVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 343,
+          "end": 353,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 24459,
+          "active_pc": 24462,
+          "merge_pc": 24531,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz410320 = zfp_widen_pure(zz410237, zz410321) `93 344:34-344:66;",
+            "zz410326 = zfp_widen_pure(zz410237, zz410327) `93 345:34-345:66;",
+            "zz410333 = zfp_add_pure(zz410237, zz410325, zz410331) `93 347:30-347:68;",
+            "zz410333 = zfp_sub_pure(zz410237, zz410325, zz410331) `93 348:30-348:68;",
+            "zz410333 = zfp_mul_pure(zz410237, zz410325, zz410331) `93 349:30-349:68;"
+          ]
+        },
+        {
+          "name": "FWVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 471,
+          "end": 482,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 24745,
+          "active_pc": 24748,
+          "merge_pc": 24836,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz410446 = zfp_widen_pure(zz410363, zz410447) `93 472:34-472:66;",
+            "zz410452 = zfp_widen_pure(zz410363, zz410453) `93 473:34-473:66;",
+            "zz410459 = zfp_muladd_pure(zz410363, zz410451, zz410457, zz410460) `93 475:30-475:82;",
+            "zz410459 = zfp_nmulsub_pure(zz410363, zz410451, zz410457, zz410462) `93 476:30-476:83;",
+            "zz410459 = zfp_mulsub_pure(zz410363, zz410451, zz410457, zz410464) `93 477:30-477:82;",
+            "zz410459 = zfp_nmuladd_pure(zz410363, zz410451, zz410457, zz410466) `93 478:30-478:83;"
+          ]
+        },
+        {
+          "name": "FWVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 599,
+          "end": 607,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 25048,
+          "active_pc": 25051,
+          "merge_pc": 25105,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz410579 = zfp_widen_pure(zz410497, zz410580) `93 600:34-600:66;",
+            "zz410586 = zfp_add_pure(zz410497, zz410587, zz410584) `93 602:30-602:70;",
+            "zz410586 = zfp_sub_pure(zz410497, zz410589, zz410584) `93 603:30-603:70;"
+          ]
+        },
+        {
+          "name": "VFUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 746,
+          "end": 799,
+          "source_calls": [
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui64ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i64ToF64",
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64"
+          ],
+          "branch_pc": 25265,
+          "active_pc": 25268,
+          "merge_pc": 25728,
+          "operation_count": 18,
+          "operation_calls": [
+            "zz410687 = zriscv_f16ToUi16_pure(zz410615, zz410684) `93 750:40-750:79;",
+            "zz410695 = zriscv_f32ToUi32(zz410615, zz410692) `93 751:40-751:74;",
+            "zz410699 = zriscv_f64ToUi64(zz410615, zz410696) `93 752:40-752:74;",
+            "zz410715 = zriscv_f16ToI16_pure(zz410615, zz410712) `93 758:40-758:78;",
+            "zz410723 = zriscv_f32ToI32(zz410615, zz410720) `93 759:40-759:73;",
+            "zz410727 = zriscv_f64ToI64(zz410615, zz410724) `93 760:40-760:73;",
+            "zz410745 = zriscv_ui32ToF16(zz410615, zz410740) `93 766:40-766:87;",
+            "zz410753 = zriscv_ui32ToF32(zz410615, zz410750) `93 767:40-767:74;",
+            "zz410757 = zriscv_ui64ToF64(zz410615, zz410754) `93 768:40-768:74;",
+            "zz410775 = zriscv_i32ToF16(zz410615, zz410770) `93 774:40-774:86;",
+            "zz410783 = zriscv_i32ToF32(zz410615, zz410780) `93 775:40-775:73;",
+            "zz410787 = zriscv_i64ToF64(zz410615, zz410784) `93 776:40-776:73;",
+            "zz410803 = zriscv_f16ToUi16_pure(0b001, zz410800) `93 782:40-782:79;",
+            "zz410811 = zriscv_f32ToUi32(0b001, zz410808) `93 783:40-783:74;",
+            "zz410815 = zriscv_f64ToUi64(0b001, zz410812) `93 784:40-784:74;",
+            "zz410831 = zriscv_f16ToI16_pure(0b001, zz410828) `93 790:40-790:78;",
+            "zz410839 = zriscv_f32ToI32(0b001, zz410836) `93 791:40-791:73;",
+            "zz410843 = zriscv_f64ToI64(0b001, zz410840) `93 792:40-792:73;"
+          ]
+        },
+        {
+          "name": "VFWUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1065,
+          "end": 1126,
+          "source_calls": [
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui32ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i32ToF64",
+            "riscv_f16ToF32",
+            "riscv_f32ToF64",
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64"
+          ],
+          "branch_pc": 25963,
+          "active_pc": 25966,
+          "merge_pc": 26511,
+          "operation_count": 16,
+          "operation_calls": [
+            "zz410979 = zriscv_f16ToUi32(zz410867, zz410976) `93 1070:40-1070:74;",
+            "zz410983 = zriscv_f32ToUi64(zz410867, zz410980) `93 1071:40-1071:74;",
+            "zz411008 = zriscv_f16ToI32(zz410867, zz411005) `93 1078:40-1078:73;",
+            "zz411012 = zriscv_f32ToI64(zz410867, zz411009) `93 1079:40-1079:73;",
+            "zz411030 = zriscv_ui32ToF16(zz410867, zz411025) `93 1085:40-1085:87;",
+            "zz411040 = zriscv_ui32ToF32(zz410867, zz411035) `93 1086:40-1086:87;",
+            "zz411044 = zriscv_ui32ToF64(zz410867, zz411041) `93 1087:40-1087:74;",
+            "zz411062 = zriscv_i32ToF16(zz410867, zz411057) `93 1093:40-1093:86;",
+            "zz411072 = zriscv_i32ToF32(zz410867, zz411067) `93 1094:40-1094:86;",
+            "zz411076 = zriscv_i32ToF64(zz410867, zz411073) `93 1095:40-1095:73;",
+            "zz411101 = zriscv_f16ToF32(zz410867, zz411098) `93 1102:40-1102:73;",
+            "zz411105 = zriscv_f32ToF64(zz410867, zz411102) `93 1103:40-1103:73;",
+            "zz411130 = zriscv_f16ToUi32(0b001, zz411127) `93 1110:40-1110:74;",
+            "zz411134 = zriscv_f32ToUi64(0b001, zz411131) `93 1111:40-1111:74;",
+            "zz411159 = zriscv_f16ToI32(0b001, zz411156) `93 1118:40-1118:73;",
+            "zz411163 = zriscv_f32ToI64(0b001, zz411160) `93 1119:40-1119:73;"
+          ]
+        },
+        {
+          "name": "VFNUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1418,
+          "end": 1487,
+          "source_calls": [
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32",
+            "riscv_ui32ToF16",
+            "riscv_ui64ToF32",
+            "riscv_i32ToF16",
+            "riscv_i64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32"
+          ],
+          "branch_pc": 26896,
+          "active_pc": 26899,
+          "merge_pc": 27499,
+          "operation_count": 20,
+          "operation_calls": [
+            "zz411377 = zriscv_f16ToUi8_pure(zz411284, zz411374) `93 1422:40-1422:78;",
+            "zz411385 = zriscv_f32ToUi16_pure(zz411284, zz411382) `93 1423:40-1423:79;",
+            "zz411389 = zriscv_f64ToUi32(zz411284, zz411386) `93 1424:40-1424:74;",
+            "zz411405 = zriscv_f16ToI8_pure(zz411284, zz411402) `93 1430:40-1430:77;",
+            "zz411413 = zriscv_f32ToI16_pure(zz411284, zz411410) `93 1431:40-1431:78;",
+            "zz411417 = zriscv_f64ToI32(zz411284, zz411414) `93 1432:40-1432:73;",
+            "zz411442 = zriscv_ui32ToF16(zz411284, zz411439) `93 1439:40-1439:74;",
+            "zz411446 = zriscv_ui64ToF32(zz411284, zz411443) `93 1440:40-1440:74;",
+            "zz411471 = zriscv_i32ToF16(zz411284, zz411468) `93 1447:40-1447:73;",
+            "zz411475 = zriscv_i64ToF32(zz411284, zz411472) `93 1448:40-1448:73;",
+            "zz411500 = zriscv_f32ToF16(zz411284, zz411497) `93 1455:40-1455:73;",
+            "zz411504 = zriscv_f64ToF32(zz411284, zz411501) `93 1456:40-1456:73;",
+            "zz411529 = zriscv_f32ToF16(0b110, zz411526) `93 1463:40-1463:73;",
+            "zz411533 = zriscv_f64ToF32(0b110, zz411530) `93 1464:40-1464:73;",
+            "zz411549 = zriscv_f16ToUi8_pure(0b001, zz411546) `93 1470:40-1470:78;",
+            "zz411557 = zriscv_f32ToUi16_pure(0b001, zz411554) `93 1471:40-1471:79;",
+            "zz411561 = zriscv_f64ToUi32(0b001, zz411558) `93 1472:40-1472:74;",
+            "zz411577 = zriscv_f16ToI8_pure(0b001, zz411574) `93 1478:40-1478:77;",
+            "zz411585 = zriscv_f32ToI16_pure(0b001, zz411582) `93 1479:40-1479:78;",
+            "zz411589 = zriscv_f64ToI32(0b001, zz411586) `93 1480:40-1480:73;"
+          ]
+        },
+        {
+          "name": "VFUNARY1",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1730,
+          "end": 1743,
+          "source_calls": [
+            "riscv_f16Sqrt",
+            "riscv_f32Sqrt",
+            "riscv_f64Sqrt",
+            "fp_class_onehot_pure"
+          ],
+          "branch_pc": 27883,
+          "active_pc": 27886,
+          "merge_pc": 28005,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz411797 = zriscv_f16Sqrt(zz411722, zz411794) `93 1733:16-1733:48;",
+            "zz411805 = zriscv_f32Sqrt(zz411722, zz411802) `93 1734:16-1734:48;",
+            "zz411809 = zriscv_f64Sqrt(zz411722, zz411806) `93 1735:16-1735:48;",
+            "zz411814 = zfp_class_onehot_pure(zz411815) `93 1737:44-1737:76;"
+          ]
+        },
+        {
+          "name": "FVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1955,
+          "end": 1973,
+          "source_calls": [
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_sub_pure",
+            "fp_min_pure",
+            "fp_max_pure",
+            "fp_mul_pure",
+            "fp_div_pure",
+            "fp_div_pure"
+          ],
+          "branch_pc": 28608,
+          "active_pc": 28611,
+          "merge_pc": 28906,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412085 = zfp_add_pure(zz412012, zz412086, zz412042) `93 1957:30-1957:69;",
+            "zz412085 = zfp_sub_pure(zz412012, zz412088, zz412042) `93 1958:30-1958:69;",
+            "zz412085 = zfp_sub_pure(zz412012, zz412042, zz412090) `93 1959:30-1959:69;",
+            "zz412085 = zfp_min_pure(zz412092, zz412042) `93 1960:30-1960:62;",
+            "zz412085 = zfp_max_pure(zz412094, zz412042) `93 1961:30-1961:62;",
+            "zz412085 = zfp_mul_pure(zz412012, zz412096, zz412042) `93 1962:30-1962:69;",
+            "zz412085 = zfp_div_pure(zz412012, zz412098, zz412042) `93 1963:30-1963:69;",
+            "zz412085 = zfp_div_pure(zz412012, zz412042, zz412100) `93 1964:30-1964:69;"
+          ]
+        },
+        {
+          "name": "FVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2119,
+          "end": 2132,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 29421,
+          "active_pc": 29424,
+          "merge_pc": 29532,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412431 = zfp_muladd_pure(zz412368, zz412392, zz412432, zz412434) `93 2121:30-2121:83;",
+            "zz412431 = zfp_nmulsub_pure(zz412368, zz412392, zz412436, zz412438) `93 2122:30-2122:84;",
+            "zz412431 = zfp_mulsub_pure(zz412368, zz412392, zz412440, zz412442) `93 2123:30-2123:83;",
+            "zz412431 = zfp_nmuladd_pure(zz412368, zz412392, zz412444, zz412446) `93 2124:30-2124:84;",
+            "zz412431 = zfp_muladd_pure(zz412368, zz412392, zz412448, zz412450) `93 2125:30-2125:83;",
+            "zz412431 = zfp_nmulsub_pure(zz412368, zz412392, zz412452, zz412454) `93 2126:30-2126:84;",
+            "zz412431 = zfp_mulsub_pure(zz412368, zz412392, zz412456, zz412458) `93 2127:30-2127:83;",
+            "zz412431 = zfp_nmuladd_pure(zz412368, zz412392, zz412460, zz412462) `93 2128:30-2128:84;"
+          ]
+        },
+        {
+          "name": "FWVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2252,
+          "end": 2262,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 29734,
+          "active_pc": 29737,
+          "merge_pc": 29802,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz412564 = zfp_widen_pure(zz412485, zz412565) `93 2253:34-2253:66;",
+            "zz412570 = zfp_widen_pure(zz412485, zz412529) `93 2254:34-2254:63;",
+            "zz412575 = zfp_add_pure(zz412485, zz412569, zz412573) `93 2256:30-2256:68;",
+            "zz412575 = zfp_sub_pure(zz412485, zz412569, zz412573) `93 2257:30-2257:68;",
+            "zz412575 = zfp_mul_pure(zz412485, zz412569, zz412573) `93 2258:30-2258:68;"
+          ]
+        },
+        {
+          "name": "FWVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2378,
+          "end": 2389,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30005,
+          "active_pc": 30008,
+          "merge_pc": 30092,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz412684 = zfp_widen_pure(zz412605, zz412649) `93 2379:34-2379:63;",
+            "zz412688 = zfp_widen_pure(zz412605, zz412689) `93 2380:34-2380:66;",
+            "zz412695 = zfp_muladd_pure(zz412605, zz412687, zz412693, zz412696) `93 2382:30-2382:82;",
+            "zz412695 = zfp_nmulsub_pure(zz412605, zz412687, zz412693, zz412698) `93 2383:30-2383:83;",
+            "zz412695 = zfp_mulsub_pure(zz412605, zz412687, zz412693, zz412700) `93 2384:30-2384:82;",
+            "zz412695 = zfp_nmuladd_pure(zz412605, zz412687, zz412693, zz412702) `93 2385:30-2385:83;"
+          ]
+        },
+        {
+          "name": "FWFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2505,
+          "end": 2513,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 30304,
+          "active_pc": 30307,
+          "merge_pc": 30357,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz412815 = zfp_widen_pure(zz412733, zz412780) `93 2506:34-2506:63;",
+            "zz412820 = zfp_add_pure(zz412733, zz412821, zz412818) `93 2508:30-2508:70;",
+            "zz412820 = zfp_sub_pure(zz412733, zz412823, zz412818) `93 2509:30-2509:70;"
+          ]
+        },
+        {
+          "name": "RFWVVTYPE",
+          "source": "extensions/V/vext_fp_red_insts.sail",
+          "start": 195,
+          "end": 200,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure"
+          ],
+          "branch_pc": 37182,
+          "active_pc": 37185,
+          "merge_pc": 37224,
+          "operation_count": 2,
+          "operation_calls": [
+            "zz415747 = zfp_widen_pure(zz415676, zz415748) `99 196:36-196:68;",
+            "zz415753 = zfp_add_pure(zz415676, zz415729, zz415752) `99 197:41-197:74;"
+          ]
+        },
+        {
+          "name": "FVVMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 61,
+          "end": 70,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure"
+          ],
+          "branch_pc": 36003,
+          "active_pc": 36006,
+          "merge_pc": 36072,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz415247 = zfp_eq_pure(zz415248, zz415250) `97 63:30-63:64;",
+            "zz415247 = zfp_ne_pure(zz415252, zz415254) `97 64:30-64:64;",
+            "zz415247 = zfp_le_pure(zz415256, zz415258) `97 65:30-65:64;",
+            "zz415247 = zfp_lt_pure(zz415260, zz415262) `97 66:30-66:64;"
+          ]
+        },
+        {
+          "name": "FVFMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 183,
+          "end": 194,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure",
+            "fp_ge_pure",
+            "fp_gt_pure"
+          ],
+          "branch_pc": 36224,
+          "active_pc": 36227,
+          "merge_pc": 36291,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz415342 = zfp_eq_pure(zz415343, zz415306) `97 185:30-185:61;",
+            "zz415342 = zfp_ne_pure(zz415345, zz415306) `97 186:30-186:61;",
+            "zz415342 = zfp_le_pure(zz415347, zz415306) `97 187:30-187:61;",
+            "zz415342 = zfp_lt_pure(zz415349, zz415306) `97 188:30-188:61;",
+            "zz415342 = zfp_ge_pure(zz415351, zz415306) `97 189:30-189:61;",
+            "zz415342 = zfp_gt_pure(zz415353, zz415306) `97 190:30-190:61;"
+          ]
+        },
+        {
+          "name": "VFNCVTBF16_F_F_W",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 51,
+          "end": 55,
+          "source_calls": [
+            "riscv_f32ToBF16"
+          ],
+          "branch_pc": 50579,
+          "active_pc": 50582,
+          "merge_pc": 50611,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz421834 = zriscv_f32ToBF16(zz421759, zz421835) `136 52:31-52:65;"
+          ]
+        },
+        {
+          "name": "VFWCVTBF16_F_F_V",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 151,
+          "end": 155,
+          "source_calls": [
+            "bf16_to_f32"
+          ],
+          "branch_pc": 50802,
+          "active_pc": 50805,
+          "merge_pc": 50834,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz421933 = zbf16_to_f32(zz421934) `136 152:31-152:54;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VV",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 53,
+          "end": 60,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51046,
+          "active_pc": 51049,
+          "merge_pc": 51122,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422041 = zbf16_to_f32(zz422042) `137 54:34-54:57;",
+            "zz422048 = zbf16_to_f32(zz422049) `137 55:34-55:57;",
+            "zz422055 = zriscv_f32MulAdd(zz421958, zz422047, zz422054, zz422056) `137 56:29-56:82;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VF",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 157,
+          "end": 164,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51315,
+          "active_pc": 51318,
+          "merge_pc": 51387,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422163 = zbf16_to_f32(zz422164) `137 158:34-158:58;",
+            "zz422168 = zbf16_to_f32(zz422169) `137 159:34-159:57;",
+            "zz422175 = zriscv_f32MulAdd(zz422088, zz422174, zz422167, zz422176) `137 160:29-160:81;"
+          ]
+        }
+      ],
+      "operand_calls": {
+        "zieee_eq16_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 184:18-184:48;",
+          "= zieee_operand_invalid(false, zz43) `43 185:18-185:48;"
+        ],
+        "zieee_lt16_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 190:18-190:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 191:18-191:52;"
+        ],
+        "zieee_add16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 235:35-235:65;",
+          "= zieee_operand_invalid(false, zz44) `43 235:67-235:97;"
+        ],
+        "zieee_sub16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 257:35-257:65;",
+          "= zieee_operand_invalid(false, zz44) `43 257:67-257:97;"
+        ],
+        "zieee_mul16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 373:35-373:65;",
+          "= zieee_operand_invalid(false, zz44) `43 373:67-373:97;"
+        ],
+        "zieee_div16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 394:35-394:65;",
+          "= zieee_operand_invalid(false, zz44) `43 394:67-394:97;"
+        ],
+        "zieee_sqrt16_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 420:31-420:61;"
+        ],
+        "zieee_fma16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 436:35-436:65;",
+          "= zieee_operand_invalid(false, zz45) `43 436:82-436:112;",
+          "= zieee_operand_invalid(false, zz47) `43 436:114-436:144;"
+        ],
+        "zieee_eq32_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 87:18-87:48;",
+          "= zieee_operand_invalid(false, zz43) `43 88:18-88:48;"
+        ],
+        "zieee_lt32_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 94:18-94:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 95:18-95:52;"
+        ],
+        "zieee_add32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 141:35-141:65;",
+          "= zieee_operand_invalid(false, zz44) `43 141:67-141:97;"
+        ],
+        "zieee_sub32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 163:35-163:65;",
+          "= zieee_operand_invalid(false, zz44) `43 163:67-163:97;"
+        ],
+        "zieee_mul32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 472:35-472:65;",
+          "= zieee_operand_invalid(false, zz44) `43 472:67-472:97;"
+        ],
+        "zieee_div32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 493:35-493:65;",
+          "= zieee_operand_invalid(false, zz44) `43 493:67-493:97;"
+        ],
+        "zieee_sqrt32_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 519:31-519:61;"
+        ],
+        "zieee_fma32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 535:35-535:65;",
+          "= zieee_operand_invalid(false, zz45) `43 535:82-535:112;",
+          "= zieee_operand_invalid(false, zz47) `43 535:114-535:144;"
+        ],
+        "zieee_eq64_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 279:18-279:48;",
+          "= zieee_operand_invalid(false, zz43) `43 280:18-280:48;"
+        ],
+        "zieee_lt64_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 285:18-285:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 286:18-286:52;"
+        ],
+        "zieee_add64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 330:35-330:65;",
+          "= zieee_operand_invalid(false, zz44) `43 330:67-330:97;"
+        ],
+        "zieee_sub64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 352:35-352:65;",
+          "= zieee_operand_invalid(false, zz44) `43 352:67-352:97;"
+        ],
+        "zieee_mul64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 571:35-571:65;",
+          "= zieee_operand_invalid(false, zz44) `43 571:67-571:97;"
+        ],
+        "zieee_div64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 592:35-592:65;",
+          "= zieee_operand_invalid(false, zz44) `43 592:67-592:97;"
+        ],
+        "zieee_sqrt64_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 618:31-618:61;"
+        ],
+        "zieee_fma64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 634:35-634:65;",
+          "= zieee_operand_invalid(false, zz45) `43 634:82-634:112;",
+          "= zieee_operand_invalid(false, zz47) `43 634:114-634:144;"
+        ]
+      },
+      "operand_helper_jumps": 2,
+      "f32_fma_single_call": true,
+      "function_count": 2045,
+      "normalized_changed_functions_from_fd71c9a": [
+        "zbf16_to_f32",
+        "zexecute",
+        "zieee_add16_exceptions",
+        "zieee_add32_exceptions",
+        "zieee_add64_exceptions",
+        "zieee_bf16_from_f32_exceptions",
+        "zieee_convert32_to_16_exceptions",
+        "zieee_convert64_to_16_exceptions",
+        "zieee_convert64_to_32_exceptions",
+        "zieee_div16_exceptions",
+        "zieee_div32_exceptions",
+        "zieee_div64_exceptions",
+        "zieee_eq16_exceptions",
+        "zieee_eq32_exceptions",
+        "zieee_eq64_exceptions",
+        "zieee_fma16_exceptions",
+        "zieee_fma32_exceptions",
+        "zieee_fma64_exceptions",
+        "zieee_lt16_exceptions",
+        "zieee_lt32_exceptions",
+        "zieee_lt64_exceptions",
+        "zieee_mul16_exceptions",
+        "zieee_mul32_exceptions",
+        "zieee_mul64_exceptions",
+        "zieee_operand_invalid",
+        "zieee_rod32_to_16",
+        "zieee_rod64_to_32",
+        "zieee_round16_exceptions",
+        "zieee_round32_exceptions",
+        "zieee_round64_exceptions",
+        "zieee_sqrt16_exceptions",
+        "zieee_sqrt32_exceptions",
+        "zieee_sqrt64_exceptions",
+        "zieee_sub16_exceptions",
+        "zieee_sub32_exceptions",
+        "zieee_sub64_exceptions",
+        "zieee_widen16_to_32_exceptions",
+        "zieee_widen16_to_64_exceptions",
+        "zieee_widen32_to_64_exceptions",
+        "zriscv_f16Add",
+        "zriscv_f16Div",
+        "zriscv_f16Mul",
+        "zriscv_f16MulAdd",
+        "zriscv_f16Sqrt",
+        "zriscv_f16Sub",
+        "zriscv_f16ToF32",
+        "zriscv_f16ToF64",
+        "zriscv_f16roundToInt",
+        "zriscv_f32ToBF16",
+        "zriscv_f32ToF16",
+        "zriscv_f32ToF64",
+        "zriscv_f64ToF16",
+        "zriscv_f64ToF32",
+        "zriscv_f64_result_bits"
+      ],
+      "model_source_count": 166,
+      "command": [
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+        "-plugin",
+        "/data1/baiyifan/workplace/isla-runner/.tmp/float-full-trace-20260929/fvv-branch-candidate/sail_plugin_isla.cmxs",
+        "-isla",
+        "-D",
+        "SYMBOLIC",
+        "--strict-var",
+        "--strict-bitvector",
+        "--strict-exponentials",
+        "--require-version",
+        "0.20.1",
+        "--memo-z3-path",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv32d/sail_smt_cache",
+        "--all-modules",
+        "--isla-preserve",
+        "encdec_compressed_forwards",
+        "--isla-preserve",
+        "encdec_compressed_forwards_matches",
+        "--isla-preserve",
+        "encdec_compressed_backwards",
+        "--isla-preserve",
+        "encdec_compressed_backwards_matches",
+        "--isla-preserve",
+        "get_F",
+        "--isla-preserve",
+        "set_F",
+        "--isla-preserve",
+        "set_V",
+        "--isla-preserve",
+        "riscv_f16ToI16",
+        "--isla-preserve",
+        "riscv_f16ToUi16",
+        "--isla-preserve",
+        "riscv_f32ToI16",
+        "--isla-preserve",
+        "riscv_f32ToUi16",
+        "--isla-output-dir",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv32d",
+        "--config",
+        "/data1/baiyifan/workplace/isla-runner/isla/ir/provenance/rv32d.json",
+        "-o",
+        "rv32d",
+        "riscv.sail_project"
+      ],
+      "toolchain_sha256": {
+        "launcher": "2e89d5f5467195ea0a2fb4b072133a0ee73933db3e8808b8a6518c7ef59ec807",
+        "binary": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+        "jib_compile": "a5abdb65ac962b7cdddc56a5b127e69b96650b9bc947d618f39b8667152dfb9e"
+      },
+      "stdlib_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "config_sha256": "bf36f1d84bc96d1229d546eefe3cae0b7282a03cea5064ade904eb1d90a23b30",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6"
+    },
+    "rv64d_v256_e64": {
+      "ir_sha256": "95223fc356812c60ce87b67f2aa0c40154152f32a127cba3d7ee6386e8b23eb4",
+      "mask_gates": [
+        {
+          "name": "FVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 208,
+          "end": 221,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 24716,
+          "active_pc": 24719,
+          "merge_pc": 24859,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz410420 = zfp_muladd_pure(zz410354, zz410421, zz410423, zz410425) `93 210:30-210:86;",
+            "zz410420 = zfp_nmulsub_pure(zz410354, zz410427, zz410429, zz410431) `93 211:30-211:87;",
+            "zz410420 = zfp_mulsub_pure(zz410354, zz410433, zz410435, zz410437) `93 212:30-212:86;",
+            "zz410420 = zfp_nmuladd_pure(zz410354, zz410439, zz410441, zz410443) `93 213:30-213:87;",
+            "zz410420 = zfp_muladd_pure(zz410354, zz410445, zz410447, zz410449) `93 214:30-214:86;",
+            "zz410420 = zfp_nmulsub_pure(zz410354, zz410451, zz410453, zz410455) `93 215:30-215:87;",
+            "zz410420 = zfp_mulsub_pure(zz410354, zz410457, zz410459, zz410461) `93 216:30-216:86;",
+            "zz410420 = zfp_nmuladd_pure(zz410354, zz410463, zz410465, zz410467) `93 217:30-217:87;"
+          ]
+        },
+        {
+          "name": "FWVVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 343,
+          "end": 353,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 25072,
+          "active_pc": 25075,
+          "merge_pc": 25144,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz410573 = zfp_widen_pure(zz410490, zz410574) `93 344:34-344:66;",
+            "zz410579 = zfp_widen_pure(zz410490, zz410580) `93 345:34-345:66;",
+            "zz410586 = zfp_add_pure(zz410490, zz410578, zz410584) `93 347:30-347:68;",
+            "zz410586 = zfp_sub_pure(zz410490, zz410578, zz410584) `93 348:30-348:68;",
+            "zz410586 = zfp_mul_pure(zz410490, zz410578, zz410584) `93 349:30-349:68;"
+          ]
+        },
+        {
+          "name": "FWVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 471,
+          "end": 482,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 25358,
+          "active_pc": 25361,
+          "merge_pc": 25449,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz410699 = zfp_widen_pure(zz410616, zz410700) `93 472:34-472:66;",
+            "zz410705 = zfp_widen_pure(zz410616, zz410706) `93 473:34-473:66;",
+            "zz410712 = zfp_muladd_pure(zz410616, zz410704, zz410710, zz410713) `93 475:30-475:82;",
+            "zz410712 = zfp_nmulsub_pure(zz410616, zz410704, zz410710, zz410715) `93 476:30-476:83;",
+            "zz410712 = zfp_mulsub_pure(zz410616, zz410704, zz410710, zz410717) `93 477:30-477:82;",
+            "zz410712 = zfp_nmuladd_pure(zz410616, zz410704, zz410710, zz410719) `93 478:30-478:83;"
+          ]
+        },
+        {
+          "name": "FWVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 599,
+          "end": 607,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 25661,
+          "active_pc": 25664,
+          "merge_pc": 25718,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz410832 = zfp_widen_pure(zz410750, zz410833) `93 600:34-600:66;",
+            "zz410839 = zfp_add_pure(zz410750, zz410840, zz410837) `93 602:30-602:70;",
+            "zz410839 = zfp_sub_pure(zz410750, zz410842, zz410837) `93 603:30-603:70;"
+          ]
+        },
+        {
+          "name": "VFUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 746,
+          "end": 799,
+          "source_calls": [
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui64ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i64ToF64",
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64"
+          ],
+          "branch_pc": 25878,
+          "active_pc": 25881,
+          "merge_pc": 26341,
+          "operation_count": 18,
+          "operation_calls": [
+            "zz410940 = zriscv_f16ToUi16_pure(zz410868, zz410937) `93 750:40-750:79;",
+            "zz410948 = zriscv_f32ToUi32(zz410868, zz410945) `93 751:40-751:74;",
+            "zz410952 = zriscv_f64ToUi64(zz410868, zz410949) `93 752:40-752:74;",
+            "zz410968 = zriscv_f16ToI16_pure(zz410868, zz410965) `93 758:40-758:78;",
+            "zz410976 = zriscv_f32ToI32(zz410868, zz410973) `93 759:40-759:73;",
+            "zz410980 = zriscv_f64ToI64(zz410868, zz410977) `93 760:40-760:73;",
+            "zz410998 = zriscv_ui32ToF16(zz410868, zz410993) `93 766:40-766:87;",
+            "zz411006 = zriscv_ui32ToF32(zz410868, zz411003) `93 767:40-767:74;",
+            "zz411010 = zriscv_ui64ToF64(zz410868, zz411007) `93 768:40-768:74;",
+            "zz411028 = zriscv_i32ToF16(zz410868, zz411023) `93 774:40-774:86;",
+            "zz411036 = zriscv_i32ToF32(zz410868, zz411033) `93 775:40-775:73;",
+            "zz411040 = zriscv_i64ToF64(zz410868, zz411037) `93 776:40-776:73;",
+            "zz411056 = zriscv_f16ToUi16_pure(0b001, zz411053) `93 782:40-782:79;",
+            "zz411064 = zriscv_f32ToUi32(0b001, zz411061) `93 783:40-783:74;",
+            "zz411068 = zriscv_f64ToUi64(0b001, zz411065) `93 784:40-784:74;",
+            "zz411084 = zriscv_f16ToI16_pure(0b001, zz411081) `93 790:40-790:78;",
+            "zz411092 = zriscv_f32ToI32(0b001, zz411089) `93 791:40-791:73;",
+            "zz411096 = zriscv_f64ToI64(0b001, zz411093) `93 792:40-792:73;"
+          ]
+        },
+        {
+          "name": "VFWUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1065,
+          "end": 1126,
+          "source_calls": [
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui32ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i32ToF64",
+            "riscv_f16ToF32",
+            "riscv_f32ToF64",
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64"
+          ],
+          "branch_pc": 26576,
+          "active_pc": 26579,
+          "merge_pc": 27124,
+          "operation_count": 16,
+          "operation_calls": [
+            "zz411232 = zriscv_f16ToUi32(zz411120, zz411229) `93 1070:40-1070:74;",
+            "zz411236 = zriscv_f32ToUi64(zz411120, zz411233) `93 1071:40-1071:74;",
+            "zz411261 = zriscv_f16ToI32(zz411120, zz411258) `93 1078:40-1078:73;",
+            "zz411265 = zriscv_f32ToI64(zz411120, zz411262) `93 1079:40-1079:73;",
+            "zz411283 = zriscv_ui32ToF16(zz411120, zz411278) `93 1085:40-1085:87;",
+            "zz411293 = zriscv_ui32ToF32(zz411120, zz411288) `93 1086:40-1086:87;",
+            "zz411297 = zriscv_ui32ToF64(zz411120, zz411294) `93 1087:40-1087:74;",
+            "zz411315 = zriscv_i32ToF16(zz411120, zz411310) `93 1093:40-1093:86;",
+            "zz411325 = zriscv_i32ToF32(zz411120, zz411320) `93 1094:40-1094:86;",
+            "zz411329 = zriscv_i32ToF64(zz411120, zz411326) `93 1095:40-1095:73;",
+            "zz411354 = zriscv_f16ToF32(zz411120, zz411351) `93 1102:40-1102:73;",
+            "zz411358 = zriscv_f32ToF64(zz411120, zz411355) `93 1103:40-1103:73;",
+            "zz411383 = zriscv_f16ToUi32(0b001, zz411380) `93 1110:40-1110:74;",
+            "zz411387 = zriscv_f32ToUi64(0b001, zz411384) `93 1111:40-1111:74;",
+            "zz411412 = zriscv_f16ToI32(0b001, zz411409) `93 1118:40-1118:73;",
+            "zz411416 = zriscv_f32ToI64(0b001, zz411413) `93 1119:40-1119:73;"
+          ]
+        },
+        {
+          "name": "VFNUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1418,
+          "end": 1487,
+          "source_calls": [
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32",
+            "riscv_ui32ToF16",
+            "riscv_ui64ToF32",
+            "riscv_i32ToF16",
+            "riscv_i64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32"
+          ],
+          "branch_pc": 27509,
+          "active_pc": 27512,
+          "merge_pc": 28112,
+          "operation_count": 20,
+          "operation_calls": [
+            "zz411630 = zriscv_f16ToUi8_pure(zz411537, zz411627) `93 1422:40-1422:78;",
+            "zz411638 = zriscv_f32ToUi16_pure(zz411537, zz411635) `93 1423:40-1423:79;",
+            "zz411642 = zriscv_f64ToUi32(zz411537, zz411639) `93 1424:40-1424:74;",
+            "zz411658 = zriscv_f16ToI8_pure(zz411537, zz411655) `93 1430:40-1430:77;",
+            "zz411666 = zriscv_f32ToI16_pure(zz411537, zz411663) `93 1431:40-1431:78;",
+            "zz411670 = zriscv_f64ToI32(zz411537, zz411667) `93 1432:40-1432:73;",
+            "zz411695 = zriscv_ui32ToF16(zz411537, zz411692) `93 1439:40-1439:74;",
+            "zz411699 = zriscv_ui64ToF32(zz411537, zz411696) `93 1440:40-1440:74;",
+            "zz411724 = zriscv_i32ToF16(zz411537, zz411721) `93 1447:40-1447:73;",
+            "zz411728 = zriscv_i64ToF32(zz411537, zz411725) `93 1448:40-1448:73;",
+            "zz411753 = zriscv_f32ToF16(zz411537, zz411750) `93 1455:40-1455:73;",
+            "zz411757 = zriscv_f64ToF32(zz411537, zz411754) `93 1456:40-1456:73;",
+            "zz411782 = zriscv_f32ToF16(0b110, zz411779) `93 1463:40-1463:73;",
+            "zz411786 = zriscv_f64ToF32(0b110, zz411783) `93 1464:40-1464:73;",
+            "zz411802 = zriscv_f16ToUi8_pure(0b001, zz411799) `93 1470:40-1470:78;",
+            "zz411810 = zriscv_f32ToUi16_pure(0b001, zz411807) `93 1471:40-1471:79;",
+            "zz411814 = zriscv_f64ToUi32(0b001, zz411811) `93 1472:40-1472:74;",
+            "zz411830 = zriscv_f16ToI8_pure(0b001, zz411827) `93 1478:40-1478:77;",
+            "zz411838 = zriscv_f32ToI16_pure(0b001, zz411835) `93 1479:40-1479:78;",
+            "zz411842 = zriscv_f64ToI32(0b001, zz411839) `93 1480:40-1480:73;"
+          ]
+        },
+        {
+          "name": "VFUNARY1",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1730,
+          "end": 1743,
+          "source_calls": [
+            "riscv_f16Sqrt",
+            "riscv_f32Sqrt",
+            "riscv_f64Sqrt",
+            "fp_class_onehot_pure"
+          ],
+          "branch_pc": 28496,
+          "active_pc": 28499,
+          "merge_pc": 28618,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz412050 = zriscv_f16Sqrt(zz411975, zz412047) `93 1733:16-1733:48;",
+            "zz412058 = zriscv_f32Sqrt(zz411975, zz412055) `93 1734:16-1734:48;",
+            "zz412062 = zriscv_f64Sqrt(zz411975, zz412059) `93 1735:16-1735:48;",
+            "zz412067 = zfp_class_onehot_pure(zz412068) `93 1737:44-1737:76;"
+          ]
+        },
+        {
+          "name": "FVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1955,
+          "end": 1973,
+          "source_calls": [
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_sub_pure",
+            "fp_min_pure",
+            "fp_max_pure",
+            "fp_mul_pure",
+            "fp_div_pure",
+            "fp_div_pure"
+          ],
+          "branch_pc": 29221,
+          "active_pc": 29224,
+          "merge_pc": 29519,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412338 = zfp_add_pure(zz412265, zz412339, zz412295) `93 1957:30-1957:69;",
+            "zz412338 = zfp_sub_pure(zz412265, zz412341, zz412295) `93 1958:30-1958:69;",
+            "zz412338 = zfp_sub_pure(zz412265, zz412295, zz412343) `93 1959:30-1959:69;",
+            "zz412338 = zfp_min_pure(zz412345, zz412295) `93 1960:30-1960:62;",
+            "zz412338 = zfp_max_pure(zz412347, zz412295) `93 1961:30-1961:62;",
+            "zz412338 = zfp_mul_pure(zz412265, zz412349, zz412295) `93 1962:30-1962:69;",
+            "zz412338 = zfp_div_pure(zz412265, zz412351, zz412295) `93 1963:30-1963:69;",
+            "zz412338 = zfp_div_pure(zz412265, zz412295, zz412353) `93 1964:30-1964:69;"
+          ]
+        },
+        {
+          "name": "FVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2119,
+          "end": 2132,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30034,
+          "active_pc": 30037,
+          "merge_pc": 30145,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412684 = zfp_muladd_pure(zz412621, zz412645, zz412685, zz412687) `93 2121:30-2121:83;",
+            "zz412684 = zfp_nmulsub_pure(zz412621, zz412645, zz412689, zz412691) `93 2122:30-2122:84;",
+            "zz412684 = zfp_mulsub_pure(zz412621, zz412645, zz412693, zz412695) `93 2123:30-2123:83;",
+            "zz412684 = zfp_nmuladd_pure(zz412621, zz412645, zz412697, zz412699) `93 2124:30-2124:84;",
+            "zz412684 = zfp_muladd_pure(zz412621, zz412645, zz412701, zz412703) `93 2125:30-2125:83;",
+            "zz412684 = zfp_nmulsub_pure(zz412621, zz412645, zz412705, zz412707) `93 2126:30-2126:84;",
+            "zz412684 = zfp_mulsub_pure(zz412621, zz412645, zz412709, zz412711) `93 2127:30-2127:83;",
+            "zz412684 = zfp_nmuladd_pure(zz412621, zz412645, zz412713, zz412715) `93 2128:30-2128:84;"
+          ]
+        },
+        {
+          "name": "FWVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2252,
+          "end": 2262,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 30347,
+          "active_pc": 30350,
+          "merge_pc": 30415,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz412817 = zfp_widen_pure(zz412738, zz412818) `93 2253:34-2253:66;",
+            "zz412823 = zfp_widen_pure(zz412738, zz412782) `93 2254:34-2254:63;",
+            "zz412828 = zfp_add_pure(zz412738, zz412822, zz412826) `93 2256:30-2256:68;",
+            "zz412828 = zfp_sub_pure(zz412738, zz412822, zz412826) `93 2257:30-2257:68;",
+            "zz412828 = zfp_mul_pure(zz412738, zz412822, zz412826) `93 2258:30-2258:68;"
+          ]
+        },
+        {
+          "name": "FWVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2378,
+          "end": 2389,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30618,
+          "active_pc": 30621,
+          "merge_pc": 30705,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz412937 = zfp_widen_pure(zz412858, zz412902) `93 2379:34-2379:63;",
+            "zz412941 = zfp_widen_pure(zz412858, zz412942) `93 2380:34-2380:66;",
+            "zz412948 = zfp_muladd_pure(zz412858, zz412940, zz412946, zz412949) `93 2382:30-2382:82;",
+            "zz412948 = zfp_nmulsub_pure(zz412858, zz412940, zz412946, zz412951) `93 2383:30-2383:83;",
+            "zz412948 = zfp_mulsub_pure(zz412858, zz412940, zz412946, zz412953) `93 2384:30-2384:82;",
+            "zz412948 = zfp_nmuladd_pure(zz412858, zz412940, zz412946, zz412955) `93 2385:30-2385:83;"
+          ]
+        },
+        {
+          "name": "FWFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2505,
+          "end": 2513,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 30917,
+          "active_pc": 30920,
+          "merge_pc": 30970,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz413068 = zfp_widen_pure(zz412986, zz413033) `93 2506:34-2506:63;",
+            "zz413073 = zfp_add_pure(zz412986, zz413074, zz413071) `93 2508:30-2508:70;",
+            "zz413073 = zfp_sub_pure(zz412986, zz413076, zz413071) `93 2509:30-2509:70;"
+          ]
+        },
+        {
+          "name": "RFWVVTYPE",
+          "source": "extensions/V/vext_fp_red_insts.sail",
+          "start": 195,
+          "end": 200,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure"
+          ],
+          "branch_pc": 37759,
+          "active_pc": 37762,
+          "merge_pc": 37801,
+          "operation_count": 2,
+          "operation_calls": [
+            "zz415988 = zfp_widen_pure(zz415919, zz415989) `99 196:36-196:68;",
+            "zz415994 = zfp_add_pure(zz415919, zz415970, zz415993) `99 197:41-197:74;"
+          ]
+        },
+        {
+          "name": "FVVMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 61,
+          "end": 70,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure"
+          ],
+          "branch_pc": 36596,
+          "active_pc": 36599,
+          "merge_pc": 36665,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz415496 = zfp_eq_pure(zz415497, zz415499) `97 63:30-63:64;",
+            "zz415496 = zfp_ne_pure(zz415501, zz415503) `97 64:30-64:64;",
+            "zz415496 = zfp_le_pure(zz415505, zz415507) `97 65:30-65:64;",
+            "zz415496 = zfp_lt_pure(zz415509, zz415511) `97 66:30-66:64;"
+          ]
+        },
+        {
+          "name": "FVFMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 183,
+          "end": 194,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure",
+            "fp_ge_pure",
+            "fp_gt_pure"
+          ],
+          "branch_pc": 36817,
+          "active_pc": 36820,
+          "merge_pc": 36884,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz415591 = zfp_eq_pure(zz415592, zz415555) `97 185:30-185:61;",
+            "zz415591 = zfp_ne_pure(zz415594, zz415555) `97 186:30-186:61;",
+            "zz415591 = zfp_le_pure(zz415596, zz415555) `97 187:30-187:61;",
+            "zz415591 = zfp_lt_pure(zz415598, zz415555) `97 188:30-188:61;",
+            "zz415591 = zfp_ge_pure(zz415600, zz415555) `97 189:30-189:61;",
+            "zz415591 = zfp_gt_pure(zz415602, zz415555) `97 190:30-190:61;"
+          ]
+        },
+        {
+          "name": "VFNCVTBF16_F_F_W",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 51,
+          "end": 55,
+          "source_calls": [
+            "riscv_f32ToBF16"
+          ],
+          "branch_pc": 51185,
+          "active_pc": 51188,
+          "merge_pc": 51217,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz422093 = zriscv_f32ToBF16(zz422018, zz422094) `136 52:31-52:65;"
+          ]
+        },
+        {
+          "name": "VFWCVTBF16_F_F_V",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 151,
+          "end": 155,
+          "source_calls": [
+            "bf16_to_f32"
+          ],
+          "branch_pc": 51408,
+          "active_pc": 51411,
+          "merge_pc": 51440,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz422192 = zbf16_to_f32(zz422193) `136 152:31-152:54;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VV",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 53,
+          "end": 60,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51652,
+          "active_pc": 51655,
+          "merge_pc": 51728,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422300 = zbf16_to_f32(zz422301) `137 54:34-54:57;",
+            "zz422307 = zbf16_to_f32(zz422308) `137 55:34-55:57;",
+            "zz422314 = zriscv_f32MulAdd(zz422217, zz422306, zz422313, zz422315) `137 56:29-56:82;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VF",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 157,
+          "end": 164,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51921,
+          "active_pc": 51924,
+          "merge_pc": 51993,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422422 = zbf16_to_f32(zz422423) `137 158:34-158:58;",
+            "zz422427 = zbf16_to_f32(zz422428) `137 159:34-159:57;",
+            "zz422434 = zriscv_f32MulAdd(zz422347, zz422433, zz422426, zz422435) `137 160:29-160:81;"
+          ]
+        }
+      ],
+      "operand_calls": {
+        "zieee_eq16_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 184:18-184:48;",
+          "= zieee_operand_invalid(false, zz43) `43 185:18-185:48;"
+        ],
+        "zieee_lt16_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 190:18-190:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 191:18-191:52;"
+        ],
+        "zieee_add16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 235:35-235:65;",
+          "= zieee_operand_invalid(false, zz44) `43 235:67-235:97;"
+        ],
+        "zieee_sub16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 257:35-257:65;",
+          "= zieee_operand_invalid(false, zz44) `43 257:67-257:97;"
+        ],
+        "zieee_mul16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 373:35-373:65;",
+          "= zieee_operand_invalid(false, zz44) `43 373:67-373:97;"
+        ],
+        "zieee_div16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 394:35-394:65;",
+          "= zieee_operand_invalid(false, zz44) `43 394:67-394:97;"
+        ],
+        "zieee_sqrt16_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 420:31-420:61;"
+        ],
+        "zieee_fma16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 436:35-436:65;",
+          "= zieee_operand_invalid(false, zz45) `43 436:82-436:112;",
+          "= zieee_operand_invalid(false, zz47) `43 436:114-436:144;"
+        ],
+        "zieee_eq32_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 87:18-87:48;",
+          "= zieee_operand_invalid(false, zz43) `43 88:18-88:48;"
+        ],
+        "zieee_lt32_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 94:18-94:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 95:18-95:52;"
+        ],
+        "zieee_add32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 141:35-141:65;",
+          "= zieee_operand_invalid(false, zz44) `43 141:67-141:97;"
+        ],
+        "zieee_sub32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 163:35-163:65;",
+          "= zieee_operand_invalid(false, zz44) `43 163:67-163:97;"
+        ],
+        "zieee_mul32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 472:35-472:65;",
+          "= zieee_operand_invalid(false, zz44) `43 472:67-472:97;"
+        ],
+        "zieee_div32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 493:35-493:65;",
+          "= zieee_operand_invalid(false, zz44) `43 493:67-493:97;"
+        ],
+        "zieee_sqrt32_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 519:31-519:61;"
+        ],
+        "zieee_fma32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 535:35-535:65;",
+          "= zieee_operand_invalid(false, zz45) `43 535:82-535:112;",
+          "= zieee_operand_invalid(false, zz47) `43 535:114-535:144;"
+        ],
+        "zieee_eq64_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 279:18-279:48;",
+          "= zieee_operand_invalid(false, zz43) `43 280:18-280:48;"
+        ],
+        "zieee_lt64_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 285:18-285:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 286:18-286:52;"
+        ],
+        "zieee_add64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 330:35-330:65;",
+          "= zieee_operand_invalid(false, zz44) `43 330:67-330:97;"
+        ],
+        "zieee_sub64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 352:35-352:65;",
+          "= zieee_operand_invalid(false, zz44) `43 352:67-352:97;"
+        ],
+        "zieee_mul64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 571:35-571:65;",
+          "= zieee_operand_invalid(false, zz44) `43 571:67-571:97;"
+        ],
+        "zieee_div64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 592:35-592:65;",
+          "= zieee_operand_invalid(false, zz44) `43 592:67-592:97;"
+        ],
+        "zieee_sqrt64_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 618:31-618:61;"
+        ],
+        "zieee_fma64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 634:35-634:65;",
+          "= zieee_operand_invalid(false, zz45) `43 634:82-634:112;",
+          "= zieee_operand_invalid(false, zz47) `43 634:114-634:144;"
+        ]
+      },
+      "operand_helper_jumps": 2,
+      "f32_fma_single_call": true,
+      "function_count": 2054,
+      "normalized_changed_functions_from_fd71c9a": [
+        "zbf16_to_f32",
+        "zexecute",
+        "zieee_add16_exceptions",
+        "zieee_add32_exceptions",
+        "zieee_add64_exceptions",
+        "zieee_bf16_from_f32_exceptions",
+        "zieee_convert32_to_16_exceptions",
+        "zieee_convert64_to_16_exceptions",
+        "zieee_convert64_to_32_exceptions",
+        "zieee_div16_exceptions",
+        "zieee_div32_exceptions",
+        "zieee_div64_exceptions",
+        "zieee_eq16_exceptions",
+        "zieee_eq32_exceptions",
+        "zieee_eq64_exceptions",
+        "zieee_fma16_exceptions",
+        "zieee_fma32_exceptions",
+        "zieee_fma64_exceptions",
+        "zieee_lt16_exceptions",
+        "zieee_lt32_exceptions",
+        "zieee_lt64_exceptions",
+        "zieee_mul16_exceptions",
+        "zieee_mul32_exceptions",
+        "zieee_mul64_exceptions",
+        "zieee_operand_invalid",
+        "zieee_rod32_to_16",
+        "zieee_rod64_to_32",
+        "zieee_round16_exceptions",
+        "zieee_round32_exceptions",
+        "zieee_round64_exceptions",
+        "zieee_sqrt16_exceptions",
+        "zieee_sqrt32_exceptions",
+        "zieee_sqrt64_exceptions",
+        "zieee_sub16_exceptions",
+        "zieee_sub32_exceptions",
+        "zieee_sub64_exceptions",
+        "zieee_widen16_to_32_exceptions",
+        "zieee_widen16_to_64_exceptions",
+        "zieee_widen32_to_64_exceptions",
+        "zriscv_f16Add",
+        "zriscv_f16Div",
+        "zriscv_f16Mul",
+        "zriscv_f16MulAdd",
+        "zriscv_f16Sqrt",
+        "zriscv_f16Sub",
+        "zriscv_f16ToF32",
+        "zriscv_f16ToF64",
+        "zriscv_f16roundToInt",
+        "zriscv_f32ToBF16",
+        "zriscv_f32ToF16",
+        "zriscv_f32ToF64",
+        "zriscv_f64ToF16",
+        "zriscv_f64ToF32",
+        "zriscv_f64_result_bits"
+      ],
+      "model_source_count": 166,
+      "command": [
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+        "-plugin",
+        "/data1/baiyifan/workplace/isla-runner/.tmp/float-full-trace-20260929/fvv-branch-candidate/sail_plugin_isla.cmxs",
+        "-isla",
+        "-D",
+        "SYMBOLIC",
+        "--strict-var",
+        "--strict-bitvector",
+        "--strict-exponentials",
+        "--require-version",
+        "0.20.1",
+        "--memo-z3-path",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv64d_v256_e64/sail_smt_cache",
+        "--all-modules",
+        "--isla-preserve",
+        "encdec_compressed_forwards",
+        "--isla-preserve",
+        "encdec_compressed_forwards_matches",
+        "--isla-preserve",
+        "encdec_compressed_backwards",
+        "--isla-preserve",
+        "encdec_compressed_backwards_matches",
+        "--isla-preserve",
+        "get_F",
+        "--isla-preserve",
+        "set_F",
+        "--isla-preserve",
+        "set_V",
+        "--isla-preserve",
+        "riscv_f16ToI16",
+        "--isla-preserve",
+        "riscv_f16ToUi16",
+        "--isla-preserve",
+        "riscv_f32ToI16",
+        "--isla-preserve",
+        "riscv_f32ToUi16",
+        "--isla-output-dir",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv64d_v256_e64",
+        "--config",
+        "/data1/baiyifan/workplace/isla-runner/isla/ir/provenance/rv64d_v256_e64.json",
+        "-o",
+        "rv64d_v256_e64",
+        "riscv.sail_project"
+      ],
+      "toolchain_sha256": {
+        "launcher": "2e89d5f5467195ea0a2fb4b072133a0ee73933db3e8808b8a6518c7ef59ec807",
+        "binary": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+        "jib_compile": "a5abdb65ac962b7cdddc56a5b127e69b96650b9bc947d618f39b8667152dfb9e"
+      },
+      "stdlib_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "config_sha256": "e28ac77273be6a31c544db6b196914dfb55b3b9fb72295ae7ef6cfc7b99dfc47",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6"
+    },
+    "rv64d_v512_e64": {
+      "ir_sha256": "b81b8a83f3758b7ef4e7d9e99ce37122a1207986e13c4913f172c201fbab6963",
+      "mask_gates": [
+        {
+          "name": "FVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 208,
+          "end": 221,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 24716,
+          "active_pc": 24719,
+          "merge_pc": 24859,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz410420 = zfp_muladd_pure(zz410354, zz410421, zz410423, zz410425) `93 210:30-210:86;",
+            "zz410420 = zfp_nmulsub_pure(zz410354, zz410427, zz410429, zz410431) `93 211:30-211:87;",
+            "zz410420 = zfp_mulsub_pure(zz410354, zz410433, zz410435, zz410437) `93 212:30-212:86;",
+            "zz410420 = zfp_nmuladd_pure(zz410354, zz410439, zz410441, zz410443) `93 213:30-213:87;",
+            "zz410420 = zfp_muladd_pure(zz410354, zz410445, zz410447, zz410449) `93 214:30-214:86;",
+            "zz410420 = zfp_nmulsub_pure(zz410354, zz410451, zz410453, zz410455) `93 215:30-215:87;",
+            "zz410420 = zfp_mulsub_pure(zz410354, zz410457, zz410459, zz410461) `93 216:30-216:86;",
+            "zz410420 = zfp_nmuladd_pure(zz410354, zz410463, zz410465, zz410467) `93 217:30-217:87;"
+          ]
+        },
+        {
+          "name": "FWVVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 343,
+          "end": 353,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 25072,
+          "active_pc": 25075,
+          "merge_pc": 25144,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz410573 = zfp_widen_pure(zz410490, zz410574) `93 344:34-344:66;",
+            "zz410579 = zfp_widen_pure(zz410490, zz410580) `93 345:34-345:66;",
+            "zz410586 = zfp_add_pure(zz410490, zz410578, zz410584) `93 347:30-347:68;",
+            "zz410586 = zfp_sub_pure(zz410490, zz410578, zz410584) `93 348:30-348:68;",
+            "zz410586 = zfp_mul_pure(zz410490, zz410578, zz410584) `93 349:30-349:68;"
+          ]
+        },
+        {
+          "name": "FWVVMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 471,
+          "end": 482,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 25358,
+          "active_pc": 25361,
+          "merge_pc": 25449,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz410699 = zfp_widen_pure(zz410616, zz410700) `93 472:34-472:66;",
+            "zz410705 = zfp_widen_pure(zz410616, zz410706) `93 473:34-473:66;",
+            "zz410712 = zfp_muladd_pure(zz410616, zz410704, zz410710, zz410713) `93 475:30-475:82;",
+            "zz410712 = zfp_nmulsub_pure(zz410616, zz410704, zz410710, zz410715) `93 476:30-476:83;",
+            "zz410712 = zfp_mulsub_pure(zz410616, zz410704, zz410710, zz410717) `93 477:30-477:82;",
+            "zz410712 = zfp_nmuladd_pure(zz410616, zz410704, zz410710, zz410719) `93 478:30-478:83;"
+          ]
+        },
+        {
+          "name": "FWVTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 599,
+          "end": 607,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 25661,
+          "active_pc": 25664,
+          "merge_pc": 25718,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz410832 = zfp_widen_pure(zz410750, zz410833) `93 600:34-600:66;",
+            "zz410839 = zfp_add_pure(zz410750, zz410840, zz410837) `93 602:30-602:70;",
+            "zz410839 = zfp_sub_pure(zz410750, zz410842, zz410837) `93 603:30-603:70;"
+          ]
+        },
+        {
+          "name": "VFUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 746,
+          "end": 799,
+          "source_calls": [
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui64ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i64ToF64",
+            "riscv_f16ToUi16_pure",
+            "riscv_f32ToUi32",
+            "riscv_f64ToUi64",
+            "riscv_f16ToI16_pure",
+            "riscv_f32ToI32",
+            "riscv_f64ToI64"
+          ],
+          "branch_pc": 25878,
+          "active_pc": 25881,
+          "merge_pc": 26341,
+          "operation_count": 18,
+          "operation_calls": [
+            "zz410940 = zriscv_f16ToUi16_pure(zz410868, zz410937) `93 750:40-750:79;",
+            "zz410948 = zriscv_f32ToUi32(zz410868, zz410945) `93 751:40-751:74;",
+            "zz410952 = zriscv_f64ToUi64(zz410868, zz410949) `93 752:40-752:74;",
+            "zz410968 = zriscv_f16ToI16_pure(zz410868, zz410965) `93 758:40-758:78;",
+            "zz410976 = zriscv_f32ToI32(zz410868, zz410973) `93 759:40-759:73;",
+            "zz410980 = zriscv_f64ToI64(zz410868, zz410977) `93 760:40-760:73;",
+            "zz410998 = zriscv_ui32ToF16(zz410868, zz410993) `93 766:40-766:87;",
+            "zz411006 = zriscv_ui32ToF32(zz410868, zz411003) `93 767:40-767:74;",
+            "zz411010 = zriscv_ui64ToF64(zz410868, zz411007) `93 768:40-768:74;",
+            "zz411028 = zriscv_i32ToF16(zz410868, zz411023) `93 774:40-774:86;",
+            "zz411036 = zriscv_i32ToF32(zz410868, zz411033) `93 775:40-775:73;",
+            "zz411040 = zriscv_i64ToF64(zz410868, zz411037) `93 776:40-776:73;",
+            "zz411056 = zriscv_f16ToUi16_pure(0b001, zz411053) `93 782:40-782:79;",
+            "zz411064 = zriscv_f32ToUi32(0b001, zz411061) `93 783:40-783:74;",
+            "zz411068 = zriscv_f64ToUi64(0b001, zz411065) `93 784:40-784:74;",
+            "zz411084 = zriscv_f16ToI16_pure(0b001, zz411081) `93 790:40-790:78;",
+            "zz411092 = zriscv_f32ToI32(0b001, zz411089) `93 791:40-791:73;",
+            "zz411096 = zriscv_f64ToI64(0b001, zz411093) `93 792:40-792:73;"
+          ]
+        },
+        {
+          "name": "VFWUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1065,
+          "end": 1126,
+          "source_calls": [
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64",
+            "riscv_ui32ToF16",
+            "riscv_ui32ToF32",
+            "riscv_ui32ToF64",
+            "riscv_i32ToF16",
+            "riscv_i32ToF32",
+            "riscv_i32ToF64",
+            "riscv_f16ToF32",
+            "riscv_f32ToF64",
+            "riscv_f16ToUi32",
+            "riscv_f32ToUi64",
+            "riscv_f16ToI32",
+            "riscv_f32ToI64"
+          ],
+          "branch_pc": 26576,
+          "active_pc": 26579,
+          "merge_pc": 27124,
+          "operation_count": 16,
+          "operation_calls": [
+            "zz411232 = zriscv_f16ToUi32(zz411120, zz411229) `93 1070:40-1070:74;",
+            "zz411236 = zriscv_f32ToUi64(zz411120, zz411233) `93 1071:40-1071:74;",
+            "zz411261 = zriscv_f16ToI32(zz411120, zz411258) `93 1078:40-1078:73;",
+            "zz411265 = zriscv_f32ToI64(zz411120, zz411262) `93 1079:40-1079:73;",
+            "zz411283 = zriscv_ui32ToF16(zz411120, zz411278) `93 1085:40-1085:87;",
+            "zz411293 = zriscv_ui32ToF32(zz411120, zz411288) `93 1086:40-1086:87;",
+            "zz411297 = zriscv_ui32ToF64(zz411120, zz411294) `93 1087:40-1087:74;",
+            "zz411315 = zriscv_i32ToF16(zz411120, zz411310) `93 1093:40-1093:86;",
+            "zz411325 = zriscv_i32ToF32(zz411120, zz411320) `93 1094:40-1094:86;",
+            "zz411329 = zriscv_i32ToF64(zz411120, zz411326) `93 1095:40-1095:73;",
+            "zz411354 = zriscv_f16ToF32(zz411120, zz411351) `93 1102:40-1102:73;",
+            "zz411358 = zriscv_f32ToF64(zz411120, zz411355) `93 1103:40-1103:73;",
+            "zz411383 = zriscv_f16ToUi32(0b001, zz411380) `93 1110:40-1110:74;",
+            "zz411387 = zriscv_f32ToUi64(0b001, zz411384) `93 1111:40-1111:74;",
+            "zz411412 = zriscv_f16ToI32(0b001, zz411409) `93 1118:40-1118:73;",
+            "zz411416 = zriscv_f32ToI64(0b001, zz411413) `93 1119:40-1119:73;"
+          ]
+        },
+        {
+          "name": "VFNUNARY0",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1418,
+          "end": 1487,
+          "source_calls": [
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32",
+            "riscv_ui32ToF16",
+            "riscv_ui64ToF32",
+            "riscv_i32ToF16",
+            "riscv_i64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f32ToF16",
+            "riscv_f64ToF32",
+            "riscv_f16ToUi8_pure",
+            "riscv_f32ToUi16_pure",
+            "riscv_f64ToUi32",
+            "riscv_f16ToI8_pure",
+            "riscv_f32ToI16_pure",
+            "riscv_f64ToI32"
+          ],
+          "branch_pc": 27509,
+          "active_pc": 27512,
+          "merge_pc": 28112,
+          "operation_count": 20,
+          "operation_calls": [
+            "zz411630 = zriscv_f16ToUi8_pure(zz411537, zz411627) `93 1422:40-1422:78;",
+            "zz411638 = zriscv_f32ToUi16_pure(zz411537, zz411635) `93 1423:40-1423:79;",
+            "zz411642 = zriscv_f64ToUi32(zz411537, zz411639) `93 1424:40-1424:74;",
+            "zz411658 = zriscv_f16ToI8_pure(zz411537, zz411655) `93 1430:40-1430:77;",
+            "zz411666 = zriscv_f32ToI16_pure(zz411537, zz411663) `93 1431:40-1431:78;",
+            "zz411670 = zriscv_f64ToI32(zz411537, zz411667) `93 1432:40-1432:73;",
+            "zz411695 = zriscv_ui32ToF16(zz411537, zz411692) `93 1439:40-1439:74;",
+            "zz411699 = zriscv_ui64ToF32(zz411537, zz411696) `93 1440:40-1440:74;",
+            "zz411724 = zriscv_i32ToF16(zz411537, zz411721) `93 1447:40-1447:73;",
+            "zz411728 = zriscv_i64ToF32(zz411537, zz411725) `93 1448:40-1448:73;",
+            "zz411753 = zriscv_f32ToF16(zz411537, zz411750) `93 1455:40-1455:73;",
+            "zz411757 = zriscv_f64ToF32(zz411537, zz411754) `93 1456:40-1456:73;",
+            "zz411782 = zriscv_f32ToF16(0b110, zz411779) `93 1463:40-1463:73;",
+            "zz411786 = zriscv_f64ToF32(0b110, zz411783) `93 1464:40-1464:73;",
+            "zz411802 = zriscv_f16ToUi8_pure(0b001, zz411799) `93 1470:40-1470:78;",
+            "zz411810 = zriscv_f32ToUi16_pure(0b001, zz411807) `93 1471:40-1471:79;",
+            "zz411814 = zriscv_f64ToUi32(0b001, zz411811) `93 1472:40-1472:74;",
+            "zz411830 = zriscv_f16ToI8_pure(0b001, zz411827) `93 1478:40-1478:77;",
+            "zz411838 = zriscv_f32ToI16_pure(0b001, zz411835) `93 1479:40-1479:78;",
+            "zz411842 = zriscv_f64ToI32(0b001, zz411839) `93 1480:40-1480:73;"
+          ]
+        },
+        {
+          "name": "VFUNARY1",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1730,
+          "end": 1743,
+          "source_calls": [
+            "riscv_f16Sqrt",
+            "riscv_f32Sqrt",
+            "riscv_f64Sqrt",
+            "fp_class_onehot_pure"
+          ],
+          "branch_pc": 28496,
+          "active_pc": 28499,
+          "merge_pc": 28618,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz412050 = zriscv_f16Sqrt(zz411975, zz412047) `93 1733:16-1733:48;",
+            "zz412058 = zriscv_f32Sqrt(zz411975, zz412055) `93 1734:16-1734:48;",
+            "zz412062 = zriscv_f64Sqrt(zz411975, zz412059) `93 1735:16-1735:48;",
+            "zz412067 = zfp_class_onehot_pure(zz412068) `93 1737:44-1737:76;"
+          ]
+        },
+        {
+          "name": "FVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 1955,
+          "end": 1973,
+          "source_calls": [
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_sub_pure",
+            "fp_min_pure",
+            "fp_max_pure",
+            "fp_mul_pure",
+            "fp_div_pure",
+            "fp_div_pure"
+          ],
+          "branch_pc": 29221,
+          "active_pc": 29224,
+          "merge_pc": 29519,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412338 = zfp_add_pure(zz412265, zz412339, zz412295) `93 1957:30-1957:69;",
+            "zz412338 = zfp_sub_pure(zz412265, zz412341, zz412295) `93 1958:30-1958:69;",
+            "zz412338 = zfp_sub_pure(zz412265, zz412295, zz412343) `93 1959:30-1959:69;",
+            "zz412338 = zfp_min_pure(zz412345, zz412295) `93 1960:30-1960:62;",
+            "zz412338 = zfp_max_pure(zz412347, zz412295) `93 1961:30-1961:62;",
+            "zz412338 = zfp_mul_pure(zz412265, zz412349, zz412295) `93 1962:30-1962:69;",
+            "zz412338 = zfp_div_pure(zz412265, zz412351, zz412295) `93 1963:30-1963:69;",
+            "zz412338 = zfp_div_pure(zz412265, zz412295, zz412353) `93 1964:30-1964:69;"
+          ]
+        },
+        {
+          "name": "FVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2119,
+          "end": 2132,
+          "source_calls": [
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30034,
+          "active_pc": 30037,
+          "merge_pc": 30145,
+          "operation_count": 8,
+          "operation_calls": [
+            "zz412684 = zfp_muladd_pure(zz412621, zz412645, zz412685, zz412687) `93 2121:30-2121:83;",
+            "zz412684 = zfp_nmulsub_pure(zz412621, zz412645, zz412689, zz412691) `93 2122:30-2122:84;",
+            "zz412684 = zfp_mulsub_pure(zz412621, zz412645, zz412693, zz412695) `93 2123:30-2123:83;",
+            "zz412684 = zfp_nmuladd_pure(zz412621, zz412645, zz412697, zz412699) `93 2124:30-2124:84;",
+            "zz412684 = zfp_muladd_pure(zz412621, zz412645, zz412701, zz412703) `93 2125:30-2125:83;",
+            "zz412684 = zfp_nmulsub_pure(zz412621, zz412645, zz412705, zz412707) `93 2126:30-2126:84;",
+            "zz412684 = zfp_mulsub_pure(zz412621, zz412645, zz412709, zz412711) `93 2127:30-2127:83;",
+            "zz412684 = zfp_nmuladd_pure(zz412621, zz412645, zz412713, zz412715) `93 2128:30-2128:84;"
+          ]
+        },
+        {
+          "name": "FWVFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2252,
+          "end": 2262,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure",
+            "fp_mul_pure"
+          ],
+          "branch_pc": 30347,
+          "active_pc": 30350,
+          "merge_pc": 30415,
+          "operation_count": 5,
+          "operation_calls": [
+            "zz412817 = zfp_widen_pure(zz412738, zz412818) `93 2253:34-2253:66;",
+            "zz412823 = zfp_widen_pure(zz412738, zz412782) `93 2254:34-2254:63;",
+            "zz412828 = zfp_add_pure(zz412738, zz412822, zz412826) `93 2256:30-2256:68;",
+            "zz412828 = zfp_sub_pure(zz412738, zz412822, zz412826) `93 2257:30-2257:68;",
+            "zz412828 = zfp_mul_pure(zz412738, zz412822, zz412826) `93 2258:30-2258:68;"
+          ]
+        },
+        {
+          "name": "FWVFMATYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2378,
+          "end": 2389,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_widen_pure",
+            "fp_muladd_pure",
+            "fp_nmulsub_pure",
+            "fp_mulsub_pure",
+            "fp_nmuladd_pure"
+          ],
+          "branch_pc": 30618,
+          "active_pc": 30621,
+          "merge_pc": 30705,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz412937 = zfp_widen_pure(zz412858, zz412902) `93 2379:34-2379:63;",
+            "zz412941 = zfp_widen_pure(zz412858, zz412942) `93 2380:34-2380:66;",
+            "zz412948 = zfp_muladd_pure(zz412858, zz412940, zz412946, zz412949) `93 2382:30-2382:82;",
+            "zz412948 = zfp_nmulsub_pure(zz412858, zz412940, zz412946, zz412951) `93 2383:30-2383:83;",
+            "zz412948 = zfp_mulsub_pure(zz412858, zz412940, zz412946, zz412953) `93 2384:30-2384:82;",
+            "zz412948 = zfp_nmuladd_pure(zz412858, zz412940, zz412946, zz412955) `93 2385:30-2385:83;"
+          ]
+        },
+        {
+          "name": "FWFTYPE",
+          "source": "extensions/V/vext_fp_insts.sail",
+          "start": 2505,
+          "end": 2513,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure",
+            "fp_sub_pure"
+          ],
+          "branch_pc": 30917,
+          "active_pc": 30920,
+          "merge_pc": 30970,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz413068 = zfp_widen_pure(zz412986, zz413033) `93 2506:34-2506:63;",
+            "zz413073 = zfp_add_pure(zz412986, zz413074, zz413071) `93 2508:30-2508:70;",
+            "zz413073 = zfp_sub_pure(zz412986, zz413076, zz413071) `93 2509:30-2509:70;"
+          ]
+        },
+        {
+          "name": "RFWVVTYPE",
+          "source": "extensions/V/vext_fp_red_insts.sail",
+          "start": 195,
+          "end": 200,
+          "source_calls": [
+            "fp_widen_pure",
+            "fp_add_pure"
+          ],
+          "branch_pc": 37759,
+          "active_pc": 37762,
+          "merge_pc": 37801,
+          "operation_count": 2,
+          "operation_calls": [
+            "zz415988 = zfp_widen_pure(zz415919, zz415989) `99 196:36-196:68;",
+            "zz415994 = zfp_add_pure(zz415919, zz415970, zz415993) `99 197:41-197:74;"
+          ]
+        },
+        {
+          "name": "FVVMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 61,
+          "end": 70,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure"
+          ],
+          "branch_pc": 36596,
+          "active_pc": 36599,
+          "merge_pc": 36665,
+          "operation_count": 4,
+          "operation_calls": [
+            "zz415496 = zfp_eq_pure(zz415497, zz415499) `97 63:30-63:64;",
+            "zz415496 = zfp_ne_pure(zz415501, zz415503) `97 64:30-64:64;",
+            "zz415496 = zfp_le_pure(zz415505, zz415507) `97 65:30-65:64;",
+            "zz415496 = zfp_lt_pure(zz415509, zz415511) `97 66:30-66:64;"
+          ]
+        },
+        {
+          "name": "FVFMTYPE",
+          "source": "extensions/V/vext_fp_vm_insts.sail",
+          "start": 183,
+          "end": 194,
+          "source_calls": [
+            "fp_eq_pure",
+            "fp_ne_pure",
+            "fp_le_pure",
+            "fp_lt_pure",
+            "fp_ge_pure",
+            "fp_gt_pure"
+          ],
+          "branch_pc": 36817,
+          "active_pc": 36820,
+          "merge_pc": 36884,
+          "operation_count": 6,
+          "operation_calls": [
+            "zz415591 = zfp_eq_pure(zz415592, zz415555) `97 185:30-185:61;",
+            "zz415591 = zfp_ne_pure(zz415594, zz415555) `97 186:30-186:61;",
+            "zz415591 = zfp_le_pure(zz415596, zz415555) `97 187:30-187:61;",
+            "zz415591 = zfp_lt_pure(zz415598, zz415555) `97 188:30-188:61;",
+            "zz415591 = zfp_ge_pure(zz415600, zz415555) `97 189:30-189:61;",
+            "zz415591 = zfp_gt_pure(zz415602, zz415555) `97 190:30-190:61;"
+          ]
+        },
+        {
+          "name": "VFNCVTBF16_F_F_W",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 51,
+          "end": 55,
+          "source_calls": [
+            "riscv_f32ToBF16"
+          ],
+          "branch_pc": 51185,
+          "active_pc": 51188,
+          "merge_pc": 51217,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz422093 = zriscv_f32ToBF16(zz422018, zz422094) `136 52:31-52:65;"
+          ]
+        },
+        {
+          "name": "VFWCVTBF16_F_F_V",
+          "source": "extensions/bfloat16/zvfbfmin_insts.sail",
+          "start": 151,
+          "end": 155,
+          "source_calls": [
+            "bf16_to_f32"
+          ],
+          "branch_pc": 51408,
+          "active_pc": 51411,
+          "merge_pc": 51440,
+          "operation_count": 1,
+          "operation_calls": [
+            "zz422192 = zbf16_to_f32(zz422193) `136 152:31-152:54;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VV",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 53,
+          "end": 60,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51652,
+          "active_pc": 51655,
+          "merge_pc": 51728,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422300 = zbf16_to_f32(zz422301) `137 54:34-54:57;",
+            "zz422307 = zbf16_to_f32(zz422308) `137 55:34-55:57;",
+            "zz422314 = zriscv_f32MulAdd(zz422217, zz422306, zz422313, zz422315) `137 56:29-56:82;"
+          ]
+        },
+        {
+          "name": "VFWMACCBF16_VF",
+          "source": "extensions/bfloat16/zvfbfwma_insts.sail",
+          "start": 157,
+          "end": 164,
+          "source_calls": [
+            "bf16_to_f32",
+            "bf16_to_f32",
+            "riscv_f32MulAdd"
+          ],
+          "branch_pc": 51921,
+          "active_pc": 51924,
+          "merge_pc": 51993,
+          "operation_count": 3,
+          "operation_calls": [
+            "zz422422 = zbf16_to_f32(zz422423) `137 158:34-158:58;",
+            "zz422427 = zbf16_to_f32(zz422428) `137 159:34-159:57;",
+            "zz422434 = zriscv_f32MulAdd(zz422347, zz422433, zz422426, zz422435) `137 160:29-160:81;"
+          ]
+        }
+      ],
+      "operand_calls": {
+        "zieee_eq16_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 184:18-184:48;",
+          "= zieee_operand_invalid(false, zz43) `43 185:18-185:48;"
+        ],
+        "zieee_lt16_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 190:18-190:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 191:18-191:52;"
+        ],
+        "zieee_add16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 235:35-235:65;",
+          "= zieee_operand_invalid(false, zz44) `43 235:67-235:97;"
+        ],
+        "zieee_sub16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 257:35-257:65;",
+          "= zieee_operand_invalid(false, zz44) `43 257:67-257:97;"
+        ],
+        "zieee_mul16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 373:35-373:65;",
+          "= zieee_operand_invalid(false, zz44) `43 373:67-373:97;"
+        ],
+        "zieee_div16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 394:35-394:65;",
+          "= zieee_operand_invalid(false, zz44) `43 394:67-394:97;"
+        ],
+        "zieee_sqrt16_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 420:31-420:61;"
+        ],
+        "zieee_fma16_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 436:35-436:65;",
+          "= zieee_operand_invalid(false, zz45) `43 436:82-436:112;",
+          "= zieee_operand_invalid(false, zz47) `43 436:114-436:144;"
+        ],
+        "zieee_eq32_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 87:18-87:48;",
+          "= zieee_operand_invalid(false, zz43) `43 88:18-88:48;"
+        ],
+        "zieee_lt32_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 94:18-94:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 95:18-95:52;"
+        ],
+        "zieee_add32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 141:35-141:65;",
+          "= zieee_operand_invalid(false, zz44) `43 141:67-141:97;"
+        ],
+        "zieee_sub32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 163:35-163:65;",
+          "= zieee_operand_invalid(false, zz44) `43 163:67-163:97;"
+        ],
+        "zieee_mul32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 472:35-472:65;",
+          "= zieee_operand_invalid(false, zz44) `43 472:67-472:97;"
+        ],
+        "zieee_div32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 493:35-493:65;",
+          "= zieee_operand_invalid(false, zz44) `43 493:67-493:97;"
+        ],
+        "zieee_sqrt32_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 519:31-519:61;"
+        ],
+        "zieee_fma32_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 535:35-535:65;",
+          "= zieee_operand_invalid(false, zz45) `43 535:82-535:112;",
+          "= zieee_operand_invalid(false, zz47) `43 535:114-535:144;"
+        ],
+        "zieee_eq64_exceptions": [
+          "= zieee_operand_invalid(false, zz41) `43 279:18-279:48;",
+          "= zieee_operand_invalid(false, zz43) `43 280:18-280:48;"
+        ],
+        "zieee_lt64_exceptions": [
+          "= zieee_operand_invalid(zsignaling, zz41) `43 285:18-285:52;",
+          "= zieee_operand_invalid(zsignaling, zz43) `43 286:18-286:52;"
+        ],
+        "zieee_add64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 330:35-330:65;",
+          "= zieee_operand_invalid(false, zz44) `43 330:67-330:97;"
+        ],
+        "zieee_sub64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 352:35-352:65;",
+          "= zieee_operand_invalid(false, zz44) `43 352:67-352:97;"
+        ],
+        "zieee_mul64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 571:35-571:65;",
+          "= zieee_operand_invalid(false, zz44) `43 571:67-571:97;"
+        ],
+        "zieee_div64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 592:35-592:65;",
+          "= zieee_operand_invalid(false, zz44) `43 592:67-592:97;"
+        ],
+        "zieee_sqrt64_exceptions": [
+          "= zieee_operand_invalid(false, zz414) `43 618:31-618:61;"
+        ],
+        "zieee_fma64_exceptions": [
+          "= zieee_operand_invalid(false, zz42) `43 634:35-634:65;",
+          "= zieee_operand_invalid(false, zz45) `43 634:82-634:112;",
+          "= zieee_operand_invalid(false, zz47) `43 634:114-634:144;"
+        ]
+      },
+      "operand_helper_jumps": 2,
+      "f32_fma_single_call": true,
+      "function_count": 2054,
+      "normalized_changed_functions_from_fd71c9a": [
+        "zbf16_to_f32",
+        "zexecute",
+        "zieee_add16_exceptions",
+        "zieee_add32_exceptions",
+        "zieee_add64_exceptions",
+        "zieee_bf16_from_f32_exceptions",
+        "zieee_convert32_to_16_exceptions",
+        "zieee_convert64_to_16_exceptions",
+        "zieee_convert64_to_32_exceptions",
+        "zieee_div16_exceptions",
+        "zieee_div32_exceptions",
+        "zieee_div64_exceptions",
+        "zieee_eq16_exceptions",
+        "zieee_eq32_exceptions",
+        "zieee_eq64_exceptions",
+        "zieee_fma16_exceptions",
+        "zieee_fma32_exceptions",
+        "zieee_fma64_exceptions",
+        "zieee_lt16_exceptions",
+        "zieee_lt32_exceptions",
+        "zieee_lt64_exceptions",
+        "zieee_mul16_exceptions",
+        "zieee_mul32_exceptions",
+        "zieee_mul64_exceptions",
+        "zieee_operand_invalid",
+        "zieee_rod32_to_16",
+        "zieee_rod64_to_32",
+        "zieee_round16_exceptions",
+        "zieee_round32_exceptions",
+        "zieee_round64_exceptions",
+        "zieee_sqrt16_exceptions",
+        "zieee_sqrt32_exceptions",
+        "zieee_sqrt64_exceptions",
+        "zieee_sub16_exceptions",
+        "zieee_sub32_exceptions",
+        "zieee_sub64_exceptions",
+        "zieee_widen16_to_32_exceptions",
+        "zieee_widen16_to_64_exceptions",
+        "zieee_widen32_to_64_exceptions",
+        "zriscv_f16Add",
+        "zriscv_f16Div",
+        "zriscv_f16Mul",
+        "zriscv_f16MulAdd",
+        "zriscv_f16Sqrt",
+        "zriscv_f16Sub",
+        "zriscv_f16ToF32",
+        "zriscv_f16ToF64",
+        "zriscv_f16roundToInt",
+        "zriscv_f32ToBF16",
+        "zriscv_f32ToF16",
+        "zriscv_f32ToF64",
+        "zriscv_f64ToF16",
+        "zriscv_f64ToF32",
+        "zriscv_f64_result_bits"
+      ],
+      "model_source_count": 166,
+      "command": [
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+        "-plugin",
+        "/data1/baiyifan/workplace/isla-runner/.tmp/float-full-trace-20260929/fvv-branch-candidate/sail_plugin_isla.cmxs",
+        "-isla",
+        "-D",
+        "SYMBOLIC",
+        "--strict-var",
+        "--strict-bitvector",
+        "--strict-exponentials",
+        "--require-version",
+        "0.20.1",
+        "--memo-z3-path",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv64d_v512_e64/sail_smt_cache",
+        "--all-modules",
+        "--isla-preserve",
+        "encdec_compressed_forwards",
+        "--isla-preserve",
+        "encdec_compressed_forwards_matches",
+        "--isla-preserve",
+        "encdec_compressed_backwards",
+        "--isla-preserve",
+        "encdec_compressed_backwards_matches",
+        "--isla-preserve",
+        "get_F",
+        "--isla-preserve",
+        "set_F",
+        "--isla-preserve",
+        "set_V",
+        "--isla-preserve",
+        "riscv_f16ToI16",
+        "--isla-preserve",
+        "riscv_f16ToUi16",
+        "--isla-preserve",
+        "riscv_f32ToI16",
+        "--isla-preserve",
+        "riscv_f32ToUi16",
+        "--isla-output-dir",
+        "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/implementation/generation/rv64d_v512_e64",
+        "--config",
+        "/data1/baiyifan/workplace/isla-runner/isla/ir/provenance/rv64d_v512_e64.json",
+        "-o",
+        "rv64d_v512_e64",
+        "riscv.sail_project"
+      ],
+      "toolchain_sha256": {
+        "launcher": "2e89d5f5467195ea0a2fb4b072133a0ee73933db3e8808b8a6518c7ef59ec807",
+        "binary": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+        "jib_compile": "a5abdb65ac962b7cdddc56a5b127e69b96650b9bc947d618f39b8667152dfb9e"
+      },
+      "stdlib_sha256": {
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/flow.sail": "f97e0003435061eac0c32c39f218fbd2f2d9f890e6a9918cd3840cf3f157e7d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/mapping.sail": "40a3d4fc8e3086636cb0dc2c826886065b9dafc82d75ded2f0920f483438b320",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/vector.sail": "26cc48ad311f5649c26df8322447bc1dca67a106ef37ffdae268969b4ea8dd01",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/generic_equality.sail": "bdf86b5381c81282d7930ddf7e4fd7d365aa34efebad8b6d6ea6de72a01e612f",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits.sail": "30864517f4df895366ed595d77405bd42948e89b129e629169742bc13fd8e8b1",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/hex_bits_signed.sail": "fb7c1914b6a5b208fd81351ec49093c97412f9edc57f11f2851253eb0b1fb3bc",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/dec_bits.sail": "e7451c5ed8016661d357a0261129e4b8e7302905c9d3bc08fb9016f74cc45ccb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/common.sail": "7b019ef910e6e6f53c3115ab71fd82ab4f0e349eb9ffb97328904870f9c44dd9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/nan.sail": "0b5e8517b3a0ad042c81774b170cb9777c7210d39c651f67cc019281c7ca65d8",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/inf.sail": "c4d31dbf4f9c011a3c171b142035923beedcde97af4b38a0707cec095b981d29",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/sign.sail": "37d148a02f3e8740c171cc609bb5b99951e74a65b5cc11a824926336aa6387c9",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/zero.sail": "c2306a3f048d72af15032e8aaa7752348d12e37a3c856c62c9ac18d9fb8bd420",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/normal.sail": "769c2fb37d1f18569d4be85a23923b1cf4e2f070e7d35852bd276fb63f8437bb",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/float/classify.sail": "5b73810b001aa95908dfec313172b8c3fbb4cbdd81e2a01556848b23522d8636",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/concurrency_interface/read_write_v1.sail": "e4c397d1ecc7b9a739398a4435ac0e1531ad8f6b69144fb8cd53ccc892561cdb"
+      },
+      "config_sha256": "9b32561d0d880d01732da669769237d8fc881e5de3e4b6384073c928ef3c3ff1",
+      "plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6"
+    }
+  },
+  "scope": "来源与静态CFG核查，不替代动态Clause",
+  "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3",
+  "reviewed_patch_sha256": "bc6008b1d05ad052cd3507cb81d432da1438644349833fb686aee61e177a154e",
+  "ordinary_strict": {
+    "exit_code": 0,
+    "source_count": 166
+  }
+}

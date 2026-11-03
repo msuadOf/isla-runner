@@ -1,0 +1,66 @@
+{
+  "official_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "physical_cpus": {
+    "100": {
+      "core_id": "4",
+      "physical_package_id": "1",
+      "thread_siblings_list": "36,100"
+    },
+    "101": {
+      "core_id": "5",
+      "physical_package_id": "1",
+      "thread_siblings_list": "37,101"
+    },
+    "102": {
+      "core_id": "6",
+      "physical_package_id": "1",
+      "thread_siblings_list": "38,102"
+    },
+    "103": {
+      "core_id": "7",
+      "physical_package_id": "1",
+      "thread_siblings_list": "39,103"
+    },
+    "104": {
+      "core_id": "8",
+      "physical_package_id": "1",
+      "thread_siblings_list": "40,104"
+    },
+    "105": {
+      "core_id": "9",
+      "physical_package_id": "1",
+      "thread_siblings_list": "41,105"
+    },
+    "106": {
+      "core_id": "10",
+      "physical_package_id": "1",
+      "thread_siblings_list": "42,106"
+    },
+    "107": {
+      "core_id": "11",
+      "physical_package_id": "1",
+      "thread_siblings_list": "43,107"
+    },
+    "108": {
+      "core_id": "12",
+      "physical_package_id": "1",
+      "thread_siblings_list": "44,108"
+    },
+    "109": {
+      "core_id": "13",
+      "physical_package_id": "1",
+      "thread_siblings_list": "45,109"
+    },
+    "110": {
+      "core_id": "14",
+      "physical_package_id": "1",
+      "thread_siblings_list": "46,110"
+    },
+    "111": {
+      "core_id": "15",
+      "physical_package_id": "1",
+      "thread_siblings_list": "47,111"
+    }
+  },
+  "same_physical_core_duplicates": false
+}

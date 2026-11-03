@@ -1,0 +1,80 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "21",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-sqrt-qnan/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-sqrt-qnan/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_UN_RM_FF_TYPE_S"
+  ],
+  "job": {
+    "name": "S-sqrt-qnan",
+    "family": "scalar",
+    "clause": "F_UN_RM_FF_TYPE_S",
+    "fields": [
+      0,
+      "zRM_RNE",
+      3,
+      "zFSQRT_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff7fc00000",
+      "f1": "0x0",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-sqrt-qnan",
+      "family": "scalar",
+      "width": 32,
+      "op": "sqrt",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 0,
+      "a": "0x7fc00000",
+      "b": null,
+      "c": null,
+      "reason": "sqrt-qnan",
+      "expected_bits": "0x7fc00000",
+      "oracle_raw_bits": "0x7fc00000",
+      "expected_flags": "0x0",
+      "oracle_argv": [
+        "--op",
+        "sqrt",
+        "--fmt",
+        "f32",
+        "--rm",
+        "0",
+        "--a",
+        "0x7fc00000"
+      ]
+    },
+    "expected_full_bits": "0xffffffff7fc00000"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "3de0f3829509c8aa2d3efed70c05e8d7d2de71ba049a679ce9abd552d8f98d5a",
+  "config_sha256": "97363f0da102c3b63a9cb36049adcceb4dbdca14bf2caa581a931b9ec69a9171",
+  "cpu": 21,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-sqrt-qnan/seed-intercept.log"
+  }
+}

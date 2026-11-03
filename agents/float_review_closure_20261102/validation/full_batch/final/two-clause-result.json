@@ -1,0 +1,90 @@
+{
+  "batch": "float-closure-final-0f7b8fb-two-clause-20261103",
+  "recorded_utc": "2026-11-03T09:15:15.546078+00:00",
+  "scope": "two full-domain Clause entrypoints, not full 77-Clause pass",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "harness_path": "agents/float_review_closure_20261102/validation/full_batch/final/run_two_clause.py",
+  "harness_sha256": "74a642d9c1223aef1ac287a2451fc54d4f00787ed4779a6f5a2643f27a7bda8e",
+  "inputs_path": "agents/float_review_closure_20261102/validation/inputs.model-converged-0f7b8fb-two-clause.json",
+  "inputs_sha256": "0a29115104b44f25924ddb37961b4dfd5967a42a8035bf9b33ac56cdecb7ae18",
+  "jobs": {
+    "FLEQ_S": {
+      "result_path": "agents/float_review_closure_20261102/validation/runs/float-closure-final-0f7b8fb-two-clause-20261103/FLEQ_S/result.json",
+      "result_sha256": "e5720d3dea872fa6c7d4fc7dd2e3ee80f4cec1d494ff49808679b8c01c4b7ec6",
+      "exit_code": 0,
+      "elapsed_s": 27.67,
+      "pass": true,
+      "gen_count": 48,
+      "return_kinds": {
+        "Retire_Success": 48,
+        "Illegal_Instruction": 0,
+        "other": 0
+      },
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFLEQ_S"
+      },
+      "seed_intercepted": true,
+      "itrace_bytes": 17956384,
+      "output_sha256": "87d9e4034be7236595674285e9c9a94676702937b9d30b192111418510dd373c",
+      "cpu": 26
+    },
+    "C_ADDI4SPN": {
+      "result_path": "agents/float_review_closure_20261102/validation/runs/float-closure-final-0f7b8fb-two-clause-20261103/C_ADDI4SPN/result.json",
+      "result_sha256": "b7feb3a8b6266d69f617f8a212f0777b415fc7fd3937f2d334049fcabce5bbe0",
+      "exit_code": 0,
+      "elapsed_s": 2.038,
+      "pass": true,
+      "gen_count": 1,
+      "return_kinds": {
+        "Retire_Success": 1,
+        "Illegal_Instruction": 0,
+        "other": 0
+      },
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zC_ADDI4SPN"
+      },
+      "seed_intercepted": true,
+      "itrace_bytes": 28608,
+      "output_sha256": "00132d9df3afae26545eaa8d03ff3076227ac402353c8bc0482514fdc84c03ec",
+      "cpu": 31
+    }
+  },
+  "historical_77": {
+    "21418d0": {
+      "completed": 77,
+      "passed": 49,
+      "outer_timeout_124": 28
+    },
+    "e9d69d2": {
+      "completed": 77,
+      "passed": 52,
+      "outer_timeout_124": 25
+    }
+  },
+  "note": "Historical 77 runs are superseded version evidence. All failed items reached outer 7200s without complete JSON; no semantic error or PASS inferred. Full-domain two-clause run does not establish all 77 or all control conditions."
+}

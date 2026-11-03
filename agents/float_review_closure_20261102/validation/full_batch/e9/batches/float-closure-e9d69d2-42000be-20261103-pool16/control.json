@@ -1,0 +1,4 @@
+{
+  "max_parallel": 10,
+  "note": "2026-11-02T17:24 UTC: CPU50/51 near idle; 10-job projected disk plus 20GiB reserve fits observed free space with >10GiB extra margin. Supervisor retains automatic disk pause; do not raise to 16 while projected horizon exceeds free disk."
+}

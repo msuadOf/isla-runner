@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "20",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/H-add-inf-cancel/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/H-add-inf-cancel/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_H"
+  ],
+  "job": {
+    "name": "H-add-inf-cancel",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_H",
+    "fields": [
+      1,
+      0,
+      "zRM_RNE",
+      3,
+      "zFADD_H"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffffffff7c00",
+      "f1": "0xfffffffffffffc00",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "H-add-inf-cancel",
+      "family": "scalar",
+      "width": 16,
+      "op": "add",
+      "fmt": "f16",
+      "dst": null,
+      "rm": 0,
+      "a": "0x7c00",
+      "b": "0xfc00",
+      "c": null,
+      "reason": "opposite infinities",
+      "expected_bits": "0x7e00",
+      "oracle_raw_bits": "0x7e00",
+      "expected_flags": "0x10",
+      "oracle_argv": [
+        "--op",
+        "add",
+        "--fmt",
+        "f16",
+        "--rm",
+        "0",
+        "--a",
+        "0x7c00",
+        "--b",
+        "0xfc00"
+      ]
+    },
+    "expected_full_bits": "0xffffffffffff7e00"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "6624b7002e6d09105b00a2c7c9c6e7f890a21fe973be243042476a083dd681da",
+  "config_sha256": "b64bd19169784b44f41baef478e0da979141f0db2b39b69bdac4895ef45c361b",
+  "cpu": 20,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/H-add-inf-cancel/seed-intercept.log"
+  }
+}

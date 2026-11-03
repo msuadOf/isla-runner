@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "22",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-mul-overflow-rm1/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-mul-overflow-rm1/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "job": {
+    "name": "S-mul-overflow-rm1",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_S",
+    "fields": [
+      1,
+      0,
+      "zRM_RTZ",
+      3,
+      "zFMUL_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff7f7fffff",
+      "f1": "0xffffffff40000000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-mul-overflow-rm1",
+      "family": "scalar",
+      "width": 32,
+      "op": "mul",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 1,
+      "a": "0x7f7fffff",
+      "b": "0x40000000",
+      "c": null,
+      "reason": "finite rounded overflow",
+      "expected_bits": "0x7f7fffff",
+      "oracle_raw_bits": "0x7f7fffff",
+      "expected_flags": "0x5",
+      "oracle_argv": [
+        "--op",
+        "mul",
+        "--fmt",
+        "f32",
+        "--rm",
+        "1",
+        "--a",
+        "0x7f7fffff",
+        "--b",
+        "0x40000000"
+      ]
+    },
+    "expected_full_bits": "0xffffffff7f7fffff"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "d81142d2ee9d6a4e74ec26cd6e198f96df75c32cef26bfc74b84200766fff549",
+  "config_sha256": "c0fb57231b8893ca35a81f68c1dd22084152ffa32f1f4181a49a8afc69cd0b09",
+  "cpu": 22,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-mul-overflow-rm1/seed-intercept.log"
+  }
+}

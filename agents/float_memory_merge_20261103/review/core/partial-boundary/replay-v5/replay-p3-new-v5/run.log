@@ -1,0 +1,10 @@
+Warning: Could not find register __isla_always_aligned when parsing registers.defaults in configuration
+No primop parse_hex_bits (Name { id: 2549 })
+No primop emulator_write_tag (Name { id: 2960 })
+No primop emulator_read_tag (Name { id: 2959 })
+No primop valid_reservation (Name { id: 4453 })
+[SYM_EXEC]: solve_state: 共 1 个 clause 待执行
+[SYM_EXEC]: solve_state: zSTORE 求解批 1/1: 自由批（无 hint）
+[MEMORY]: 数组内存模型已启用: memory_var=0 addr_size=64
+FM_STORE_PROBE_HELPER_POISON function=zext_decode exception=Some(("Error_internal_error(\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\")", "prelude/errors.sail:21.41-21.106")) path_signature=0
+FM_STORE_PROBE_HELPER_OUTCOME function=zext_decode outcome=Ok(Some(Poison)) exception=Some(("Error_internal_error(\"extensions/cfi/zicfilp_regs.sail:31: Hypervisor extension not supported\")", "prelude/errors.sail:21.41-21.106")) path_signature=0

@@ -1,0 +1,46 @@
+{
+  "status": "PASS source-only independent exact transformation",
+  "base": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "candidate_HEAD": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "candidate_status": [
+    " M model/core/ieee_fp_exceptions.sail"
+  ],
+  "candidate_file": "model/core/ieee_fp_exceptions.sail",
+  "source_sha256": "866f85a607b112d57a0ea8c6d9a85c1befb36ef11ea39b7058a252606df257cd",
+  "independent_expected_normalized_sha256": "de5dbd1e8e5c67f6467d1c3e1ea76fa01985d4c73adc74702e32076e55997553",
+  "actual_normalized_sha256": "de5dbd1e8e5c67f6467d1c3e1ea76fa01985d4c73adc74702e32076e55997553",
+  "changed_functions": [
+    "ieee_f32_rounded_exceptions",
+    "ieee_f16_rounded_exceptions",
+    "ieee_f64_rounded_exceptions",
+    "ieee_exact_threshold_exceptions",
+    "ieee_fp_to_int_core",
+    "ieee_round16_exceptions",
+    "ieee_round32_exceptions",
+    "ieee_round64_exceptions",
+    "ieee_convert32_to_16_exceptions",
+    "ieee_convert64_to_16_exceptions",
+    "ieee_convert64_to_32_exceptions",
+    "ieee_bf16_from_f32_exceptions",
+    "ieee_rod32_to_16",
+    "ieee_rod64_to_32"
+  ],
+  "removed_functions": [
+    "ieee_mask_exact_exceptions"
+  ],
+  "numeric_if_sites_removed": 18,
+  "constant_true_calls_removed": 6,
+  "other_tracked_model_files_unchanged": true,
+  "frozen_214_source_unchanged": true,
+  "frozen_tracked_model_files_verified": 166,
+  "boolean_tuples": 8,
+  "invalid_NX_tuples": 4,
+  "jam16_cases": 131072,
+  "source_contract": "除列出的facts/ite和mask删除，全部数值公式、NaN/Inf/零/invalid原因、finite/valid和其他控制逐字规范化保持",
+  "not_signed": [
+    "Sail strict compilation",
+    "new IR",
+    "new dynamic campaign",
+    "runtime performance"
+  ]
+}

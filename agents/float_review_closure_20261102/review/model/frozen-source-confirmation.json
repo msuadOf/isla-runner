@@ -1,0 +1,14 @@
+{
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "status": "",
+  "reviewed_file_hashes": {
+    "model/extensions/FD/fdext_regs.sail": "252002bb29d17da842bfacc2ac5733baec7eeada2d84dce29c233a1a8dafb3b5",
+    "model/extensions/V/vext_fp_utils_insts.sail": "2c6042a67c1798e746178725ab42a3cf2ff9c1df5b4552a18bcb1e1757ec3564",
+    "model/extensions/FD/softfloat_symbolic_f16.sail": "63c22bc512222b9697a5d7bf544f4260074eb5cbd2b62cbd716e7cd8917a5877",
+    "model/extensions/FD/softfloat_symbolic_f32.sail": "eb9d4883a239700a78f1969c879ac3857f7b8cb2d9290098c4d06ca769d94ac1",
+    "model/extensions/FD/softfloat_symbolic_f64.sail": "0cd758949af3ed2b13bc519087aff3fa87cf9c080d79b53efe1bebc7108b14ed",
+    "model/core/ieee_fp_exceptions.sail": "23fda9824c2280609062bbe2b9766597681c29af13a1e9cf1be045d9106757a8"
+  },
+  "source_review_matches_frozen_commit": true,
+  "scope": "Confirms source hash identity only; no IR or dynamic signoff"
+}

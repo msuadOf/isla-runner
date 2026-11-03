@@ -1,0 +1,13 @@
+{
+  "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/sqrt-S/run/output/rv64_zF_UN_RM_FF_TYPE_S.json",
+  "source_sha256": "e3e1edce9548d8e56a1b8c4764139be6db27317a5d11bf65d4b153c863811bc7",
+  "gen": 12,
+  "generic_checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+  "raw_all_pass": true,
+  "raw_failures": 0,
+  "accepted_gnu_exact_fallbacks": 0,
+  "selected": [],
+  "contract_errors": [],
+  "unhandled_failures": [],
+  "all_pass": true
+}

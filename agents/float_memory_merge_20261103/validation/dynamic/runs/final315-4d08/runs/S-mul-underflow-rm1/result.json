@@ -1,0 +1,507 @@
+{
+  "name": "S-mul-underflow-rm1",
+  "exit_code": 0,
+  "seconds": 1.407,
+  "status": "PASS",
+  "output_count": 1,
+  "seed": {
+    "valid": true,
+    "lines": [
+      "parameter=random_seed original=269663383 fixed=17"
+    ]
+  },
+  "seed_log_sha256": "385f8c456e81b8cd0dbb1ff132d308a6038655e0f4418f4bedd559489684aa84",
+  "output_sha256": "3af593839ce4672193b963e53a594b6fec9a88f4f5f1b2524c9e35d571bf312d",
+  "inspection": {
+    "pass": true,
+    "assertions": [
+      {
+        "name": "initial.mstatus",
+        "actual": "0x6600",
+        "expected": "0x6600",
+        "pass": true
+      },
+      {
+        "name": "initial.fcsr",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "initial.f0",
+        "actual": "0xffffffff00800000",
+        "expected": "0xffffffff00800000",
+        "pass": true
+      },
+      {
+        "name": "initial.f1",
+        "actual": "0xffffffff00800000",
+        "expected": "0xffffffff00800000",
+        "pass": true
+      },
+      {
+        "name": "initial.f2",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "initial.f3",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "mstatus.post",
+        "actual": "0x8000000000006600",
+        "expected": "0x8000000000006600",
+        "pass": true
+      },
+      {
+        "name": "mstatus.FS",
+        "actual": "0x3",
+        "expected": "0x3",
+        "pass": true
+      },
+      {
+        "name": "mstatus.VS",
+        "actual": "0x3",
+        "expected": "0x3",
+        "pass": true
+      },
+      {
+        "name": "fcsr.flags",
+        "actual": "0x3",
+        "expected": "0x3",
+        "pass": true
+      },
+      {
+        "name": "fcsr.rm",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "f3.full",
+        "actual": "0xffffffff00000000",
+        "expected": "0xffffffff00000000",
+        "pass": true
+      },
+      {
+        "name": "preserve.f0",
+        "actual": "0xffffffff00800000",
+        "expected": "0xffffffff00800000",
+        "pass": true
+      },
+      {
+        "name": "preserve.f1",
+        "actual": "0xffffffff00800000",
+        "expected": "0xffffffff00800000",
+        "pass": true
+      },
+      {
+        "name": "preserve.f2",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f4",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f5",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f6",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f7",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f8",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f9",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f10",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f11",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f12",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f13",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f14",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f15",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f16",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f17",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f18",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f19",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f20",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f21",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f22",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f23",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f24",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f25",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f26",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f27",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f28",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f29",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f30",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.f31",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "encoding.status",
+        "actual": "complete",
+        "expected": "complete",
+        "pass": true
+      },
+      {
+        "name": "encoding.bit-length",
+        "actual": "0x20",
+        "expected": "0x20",
+        "pass": true
+      },
+      {
+        "name": "preserve.x1",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x2",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x3",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x4",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x5",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x6",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x7",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x8",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x9",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x10",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x11",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x12",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x13",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x14",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x15",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x16",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x17",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x18",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x19",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x20",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x21",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x22",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x23",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x24",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x25",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x26",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x27",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x28",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x29",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x30",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      },
+      {
+        "name": "preserve.x31",
+        "actual": "0x0",
+        "expected": "0x0",
+        "pass": true
+      }
+    ],
+    "instruction": "fmul.s f3, f0, f1, rtz",
+    "representations": {
+      "mnemonic": "fmul.s f3, f0, f1, rtz",
+      "encoding": {
+        "status": "complete",
+        "bit-length": 32,
+        "bits": "00010000000100000001000111010011",
+        "hex": "0x101011d3",
+        "bytes-le": "d3111010"
+      },
+      "insn": {
+        "status": "complete",
+        "text": ".insn 4, 0x101011d3"
+      }
+    },
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zF_BIN_RM_TYPE_S"
+    },
+    "ret_val": "Retire_Success(())"
+  }
+}

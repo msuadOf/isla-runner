@@ -1,0 +1,503 @@
+{
+  "scope": "当前Make文件的21次只读dry-run；不是真实solve动态PASS",
+  "makefile_sha256": "ea775308708f9cd1f085dbea141eb47bc779e5fec42dd33ae62c4cbedea598fe",
+  "rows": [
+    {
+      "clause": "FLEQ_S",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest_fd.toml",
+      "expected_tactic": "qffp",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-FLEQ_S",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-FLEQ_S\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"FLEQ_S\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest_fd.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qffp   solve-state --clause=FLEQ_S \\\n\t> output/log/FLEQ_S.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "FLEQ_S",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qffp",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-FLEQ_S",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-FLEQ_S\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"FLEQ_S\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qffp   solve-state --clause=FLEQ_S \\\n\t> output/log/FLEQ_S.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "FLEQ_S",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qffp",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-FLEQ_S",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-FLEQ_S\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"FLEQ_S\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qffp   solve-state --clause=FLEQ_S \\\n\t> output/log/FLEQ_S.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "LOAD_FP",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest_fd.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-LOAD_FP",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-LOAD_FP\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"LOAD_FP\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest_fd.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD_FP \\\n\t> output/log/LOAD_FP.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "LOAD_FP",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-LOAD_FP",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-LOAD_FP\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"LOAD_FP\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD_FP \\\n\t> output/log/LOAD_FP.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "LOAD_FP",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-LOAD_FP",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-LOAD_FP\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"LOAD_FP\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD_FP \\\n\t> output/log/LOAD_FP.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "STORE_FP",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest_fd.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-STORE_FP",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-STORE_FP\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"STORE_FP\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest_fd.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=STORE_FP \\\n\t> output/log/STORE_FP.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "STORE_FP",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-STORE_FP",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-STORE_FP\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"STORE_FP\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=STORE_FP \\\n\t> output/log/STORE_FP.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "STORE_FP",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-STORE_FP",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-STORE_FP\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"STORE_FP\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=STORE_FP \\\n\t> output/log/STORE_FP.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "LOAD",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-LOAD",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-LOAD\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"LOAD\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD \\\n\t> output/log/LOAD.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "LOAD",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-LOAD",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-LOAD\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"LOAD\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD \\\n\t> output/log/LOAD.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "LOAD",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-LOAD",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-LOAD\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"LOAD\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD \\\n\t> output/log/LOAD.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "STORE",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-STORE",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-STORE\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"STORE\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=STORE \\\n\t> output/log/STORE.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "STORE",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-STORE",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-STORE\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"STORE\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=STORE \\\n\t> output/log/STORE.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "STORE",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-STORE",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-STORE\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"STORE\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=STORE \\\n\t> output/log/STORE.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "AMO",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-AMO",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-AMO\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"AMO\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=AMO \\\n\t> output/log/AMO.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "AMO",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-AMO",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-AMO\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"AMO\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=AMO \\\n\t> output/log/AMO.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "AMO",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-AMO",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-AMO\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"AMO\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=AMO \\\n\t> output/log/AMO.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "C_LD",
+      "overrides": [],
+      "expected_config": "./configs/riscv64_difftest.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-C_LD",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-C_LD\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"C_LD\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C ./configs/riscv64_difftest.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=C_LD \\\n\t> output/log/C_LD.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "C_LD",
+      "overrides": [
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-isa.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-C_LD",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-C_LD\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"C_LD\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-isa.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=C_LD \\\n\t> output/log/C_LD.log 2>&1\n",
+      "pass": true
+    },
+    {
+      "clause": "C_LD",
+      "overrides": [
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "expected_config": "chosen-solve.toml",
+      "expected_tactic": "qfaufbv",
+      "command": [
+        "make",
+        "-n",
+        "-o",
+        "build-isarch",
+        "-f",
+        "scripts/run.mk",
+        "solve-C_LD",
+        "THREADS=1",
+        "OUTER_TIMEOUT=7200s",
+        "SOLVE_TIMEOUT=7200s",
+        "SMT_TIMEOUT=7200s",
+        "SOLVE_CONFIG=chosen-solve.toml",
+        "ISA_CONFIG=chosen-isa.toml"
+      ],
+      "recipe": "mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter\nmkdir -p output/log output/trace outputs\nn=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \\\necho \"[$n/] solve-C_LD\"; \\\nRUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause \"C_LD\" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \\\n\t-A ./rv64d.ir -C chosen-solve.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=C_LD \\\n\t> output/log/C_LD.log 2>&1\n",
+      "pass": true
+    }
+  ]
+}

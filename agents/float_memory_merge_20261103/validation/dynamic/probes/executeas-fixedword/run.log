@@ -1,0 +1,4 @@
+No primop parse_hex_bits (Name { id: 2549 })
+No primop emulator_write_tag (Name { id: 2960 })
+No primop emulator_read_tag (Name { id: 2959 })
+No primop valid_reservation (Name { id: 4453 })

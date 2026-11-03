@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "20",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-div-inexact-rm4/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-div-inexact-rm4/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_S"
+  ],
+  "job": {
+    "name": "S-div-inexact-rm4",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_S",
+    "fields": [
+      1,
+      0,
+      "zRM_RMM",
+      3,
+      "zFDIV_S"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0xffffffff3f800000",
+      "f1": "0xffffffff40400000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "S-div-inexact-rm4",
+      "family": "scalar",
+      "width": 32,
+      "op": "div",
+      "fmt": "f32",
+      "dst": null,
+      "rm": 4,
+      "a": "0x3f800000",
+      "b": "0x40400000",
+      "c": null,
+      "reason": "finite inexact",
+      "expected_bits": "0x3eaaaaab",
+      "oracle_raw_bits": "0x3eaaaaab",
+      "expected_flags": "0x1",
+      "oracle_argv": [
+        "--op",
+        "div",
+        "--fmt",
+        "f32",
+        "--rm",
+        "4",
+        "--a",
+        "0x3f800000",
+        "--b",
+        "0x40400000"
+      ]
+    },
+    "expected_full_bits": "0xffffffff3eaaaaab"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "62498277bd5eb67d6f0984b48042df7bfbea52878547cfb89855eb6746d9c3d8",
+  "config_sha256": "4d4857d5b5fc3ce882b3c18527c8da26bfb4eca485eb70cb800e26b4e2b5b7ca",
+  "cpu": 20,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/S-div-inexact-rm4/seed-intercept.log"
+  }
+}

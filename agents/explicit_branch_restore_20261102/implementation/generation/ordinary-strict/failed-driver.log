@@ -1,0 +1,10 @@
+[93mWarning[0m: Deprecated [96mcore/regs.sail[0m:277.36-49:
+277[96m |[0mval get_X_bits : regidx -> xlenbits effect {rreg}
+   [91m |[0m                                    [91m^-----------^[0m
+   [91m |[0m 
+Explicit effect annotations are deprecated. They are no longer used and can be removed.
+
+[93mWarning[0m: 23 warnings have been suppressed. Use --all-warnings to display them.
+[93mError[0m:
+/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/ordinary-strict/memo/cache: No such file or directory
+Fatal error: exception Sys_error("/data1/baiyifan/workplace/isla-runner/agents/explicit_branch_restore_20261102/implementation/generation/ordinary-strict/memo/cache: No such file or directory")

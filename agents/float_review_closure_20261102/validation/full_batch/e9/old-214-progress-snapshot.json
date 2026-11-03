@@ -1,0 +1,160 @@
+{
+  "captured_utc": "2026-11-02T16:58:33.914683+00:00",
+  "batch": "float-closure-21418d0-42000be-20261103",
+  "summary": {
+    "batch": "float-closure-21418d0-42000be-20261103",
+    "updated_utc": "2026-11-02T16:58:05.244999+00:00",
+    "supervisor_pid": 1160803,
+    "inputs_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+    "total": 77,
+    "affected_total": 64,
+    "compatibility_total": 13,
+    "queued": 72,
+    "running": 4,
+    "completed": 1,
+    "blocked": 0,
+    "blocked_jobs": [],
+    "frozen_error": null,
+    "task_conservation_total": 77,
+    "task_conservation_valid": true,
+    "passed": 1,
+    "failed": 0,
+    "affected_completed": 1,
+    "affected_passed": 1,
+    "compatibility_completed": 0,
+    "compatibility_passed": 0,
+    "max_parallel_requested": 4,
+    "max_parallel_effective": 4,
+    "scale_guard": null,
+    "control_error": null,
+    "observed_peak_rss_kb": 1041012,
+    "mem_available_kb": 138417908,
+    "external_emu_threads": 0,
+    "external_emu_cpus": [],
+    "external_emu_threads_on_selected_siblings": 0,
+    "active": {
+      "F_BIN_RM_TYPE_S": {
+        "launcher_pid": 1161041,
+        "cpu": 35,
+        "started_utc": "2026-11-02T16:21:55.002257+00:00",
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+          "--inputs",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-21418d0-itrace.json",
+          "--batch",
+          "float-closure-21418d0-42000be-20261103",
+          "--job",
+          "F_BIN_RM_TYPE_S",
+          "--cpu",
+          "35"
+        ],
+        "descendant_pids": [
+          1161041,
+          1161077,
+          1161078,
+          1161079
+        ],
+        "rss_kb_current": 580432
+      },
+      "VFUNARY0": {
+        "launcher_pid": 1161042,
+        "cpu": 38,
+        "started_utc": "2026-11-02T16:21:55.004187+00:00",
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+          "--inputs",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-21418d0-itrace.json",
+          "--batch",
+          "float-closure-21418d0-42000be-20261103",
+          "--job",
+          "VFUNARY0",
+          "--cpu",
+          "38"
+        ],
+        "descendant_pids": [
+          1161042,
+          1161082,
+          1161083,
+          1161084
+        ],
+        "rss_kb_current": 889440
+      },
+      "VFNUNARY0": {
+        "launcher_pid": 1573867,
+        "cpu": 49,
+        "started_utc": "2026-11-02T16:33:57.879040+00:00",
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+          "--inputs",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-21418d0-itrace.json",
+          "--batch",
+          "float-closure-21418d0-42000be-20261103",
+          "--job",
+          "VFNUNARY0",
+          "--cpu",
+          "49"
+        ],
+        "descendant_pids": [
+          1573867,
+          1573930,
+          1573931,
+          1573932
+        ],
+        "rss_kb_current": 986108
+      },
+      "VFUNARY1": {
+        "launcher_pid": 2323032,
+        "cpu": 54,
+        "started_utc": "2026-11-02T16:49:13.476845+00:00",
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+          "--inputs",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-21418d0-itrace.json",
+          "--batch",
+          "float-closure-21418d0-42000be-20261103",
+          "--job",
+          "VFUNARY1",
+          "--cpu",
+          "54"
+        ],
+        "descendant_pids": [
+          2323032,
+          2323058,
+          2323059,
+          2323060
+        ],
+        "rss_kb_current": 745392
+      }
+    },
+    "results": {
+      "F_UN_RM_FX_TYPE_D": {
+        "harness_exit_code": 0,
+        "result_path": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/runs/float-closure-21418d0-42000be-20261103/F_UN_RM_FX_TYPE_D/result.json",
+        "result_error": null,
+        "identity_valid": true,
+        "pass": true,
+        "clause_exit_code": 0,
+        "status": "finished",
+        "gen_count": 1052,
+        "elapsed_s": 895.439,
+        "maxrss_kb": 536972,
+        "finished_utc": "2026-11-02T16:49:13.475426+00:00"
+      }
+    },
+    "path_accounting": {
+      "main_created": null,
+      "main_completed": null,
+      "main_queued": null,
+      "collector_pending": null,
+      "smt_check_pending": null,
+      "note": "正式harness尚无实时结构化路径/SMT阶段计数；留空，不从CPU或JSON缺失推断"
+    }
+  },
+  "supervisor_proc": "    PID STAT     ELAPSED   RSS CMD\n1160803 Ss         36:40 37888 /home/baiyifan/miniconda3/bin/python3 /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/full_batch/scheduler.py --supervise --batch float-closure-21418d0-42000be-20261103\n",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/bcache0    3.7T  3.5T  140G  97% /data1\n",
+  "old_runs_disk": "860M\tagents/float_review_closure_20261102/validation/runs/float-closure-21418d0-42000be-20261103\n"
+}

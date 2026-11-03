@@ -1,0 +1,158 @@
+{
+  "formal_binary_sha256": "fe4bdcebd1d970d6f026c0f81ccd22f807f5cb4729da27ef67e20b2c08d09d80",
+  "formal_imports_Z3_interrupt": true,
+  "formal_features": [
+    "default",
+    "smt-thread-interrupt"
+  ],
+  "isla_lib_fingerprint": {
+    "rustc": 1100337564441796057,
+    "features": "[\"default\", \"smt-thread-interrupt\"]",
+    "declared_features": "[\"btrace\", \"default\", \"ftrace\", \"itrace\", \"smt-thread-interrupt\", \"smtperf\", \"tracetool\"]",
+    "target": 4469061026014978100,
+    "profile": 4779578714841412878,
+    "path": 6495221235501800656,
+    "deps": [
+      [
+        65234016722529558,
+        "bincode",
+        false,
+        11392670109076894199
+      ],
+      [
+        81037599191491403,
+        "libc",
+        false,
+        10534324588659946021
+      ],
+      [
+        183743178354734862,
+        "serde",
+        false,
+        3429925042699459171
+      ],
+      [
+        2261069145551060541,
+        "lexgen",
+        false,
+        14536042274009838162
+      ],
+      [
+        4352886507220678900,
+        "serde_json",
+        false,
+        11144417099287528723
+      ],
+      [
+        5699833923477109200,
+        "serde_saphyr",
+        false,
+        13756930519151355484
+      ],
+      [
+        6087741167004821266,
+        "num_bigint",
+        false,
+        2488922761692184106
+      ],
+      [
+        6410652783710511802,
+        "build_script_build",
+        false,
+        15507880029806278373
+      ],
+      [
+        8295555699402941663,
+        "lexgen_util",
+        false,
+        1495166834828151244
+      ],
+      [
+        9045754397332874331,
+        "lazy_static",
+        false,
+        1868830195439592327
+      ],
+      [
+        9280368297895604912,
+        "toml",
+        false,
+        3824413296591536829
+      ],
+      [
+        9427794138962684440,
+        "petgraph",
+        false,
+        4447727230471944517
+      ],
+      [
+        10440780393564161852,
+        "regex",
+        false,
+        5404386584268431123
+      ],
+      [
+        10791833957791020630,
+        "ahash",
+        false,
+        4154300143695569495
+      ],
+      [
+        15679584174439244448,
+        "num_traits",
+        false,
+        15985757043460719107
+      ],
+      [
+        15697589218512452355,
+        "lalrpop_util",
+        false,
+        5613756721052654082
+      ],
+      [
+        17616194771923620328,
+        "z3_sys",
+        false,
+        11219619112813877068
+      ],
+      [
+        18279686519526496662,
+        "sha2",
+        false,
+        9797658039948673129
+      ],
+      [
+        18435991034043862239,
+        "crossbeam",
+        false,
+        16255395089543984697
+      ]
+    ],
+    "local": [
+      {
+        "CheckDepInfo": {
+          "dep_info": "release/.fingerprint/isla-lib-b4e99d5da1d30452/dep-lib-isla_lib",
+          "checksum": false
+        }
+      }
+    ],
+    "rustflags": [
+      "-L",
+      "native=/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib",
+      "-C",
+      "link-arg=-Wl,-rpath,/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib"
+    ],
+    "config": 2069994364910194474,
+    "compile_kind": 0
+  },
+  "rlib_sha256": "8b02a78d9d43a66b9812b152562e34e4016a213dc9bfff597e88f207b043bf27",
+  "probe_binary_sha256": "31e1493dbdc709c7b695cb803474c46e051215e6067c98004da52ca410dcfc3b",
+  "exit": 0,
+  "stdout": "watchdog_timeout=true limit_ms=10 wall_ms=81\n",
+  "Z3_interrupt_call_count": 1,
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "loaded": [
+    "323451:\tcalling init: /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3"
+  ],
+  "initial_compile_failure": "首次rustc默认panic=unwind与Release rlib panic=abort不兼容；加-C panic=abort后链接通过，未重复编译依赖。"
+}

@@ -1,0 +1,14 @@
+{
+  "json_sha256": "d6ba28ead96e7dc171cf3a4b251c47fdc899df33aaa7fe3e5785219d9b8a9cc0",
+  "gen": 46,
+  "checks": 662,
+  "counts": {
+    "illegal": 24,
+    "retired": 22,
+    "in-range": 4,
+    "positive-overflow": 2,
+    "inactive": 2,
+    "negative-overflow": 2
+  },
+  "pass": true
+}

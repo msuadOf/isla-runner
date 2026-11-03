@@ -1,0 +1,29 @@
+{
+  "scope": "Final five-specific-bidirectional-clauses-first candidate source review; not directional intermediate",
+  "base": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "files": [
+    {
+      "path": "model/extensions/FD/dext_insts.sail",
+      "baseline_sha256": "f7eb57c2f3532eb11ec1f76df9c0fb4cbcd1e34e5540308b5b3ec2193dab3081",
+      "reviewed_sha256": "1e0397fbc2988383a064a6cfc26f8870464122cd136fc62537e0612ab07ee688",
+      "only_added_canonical_mapping_clauses": 3,
+      "all_existing_bytes_including_generic_reverse_preserved": true
+    },
+    {
+      "path": "model/extensions/FD/zfh_insts.sail",
+      "baseline_sha256": "7a532ec1e53ea3b33f0bff2ba1c41b725a54df19539e5ca4682858325b57b61c",
+      "reviewed_sha256": "f5e7311bc490c2cb728fc8702d0491be263dee0cb822e32648bc33c405f9512e",
+      "only_added_canonical_mapping_clauses": 2,
+      "all_existing_bytes_including_generic_reverse_preserved": true
+    }
+  ],
+  "new_specific_cases": 5,
+  "original_generic_op_rm_pairs": 72,
+  "overlap_resolved_by_priority_for": 5,
+  "actual_forward_runtime_cases": 1104,
+  "backwards_dynamic_status": "UNTESTED: C NonExec; interpreter runtime type errors; source/typechecking only",
+  "reviewed_model_commit": "21418d0",
+  "ordinary_forward_cases": 1104,
+  "symbolic_forward_cases": 1104,
+  "toolchain_instruction_checks": 5824
+}

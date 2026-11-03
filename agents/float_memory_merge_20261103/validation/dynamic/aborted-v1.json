@@ -1,0 +1,25 @@
+{
+  "status": "ABORTED_INPUT_INVALIDATED",
+  "inputs_sha256": "d88996815d5ac60a4fa250070055d7c0dc9b084d072d12f61ab9f75e00bfa87b",
+  "reason": "Isla 测试 runner 的 8 行兼容修复在旧源码清单冻结后被覆盖；永久 IR all 验证出现 E0063。validation owner 宣布该输入清单作废，随后重新修复、冻结和构建。",
+  "runs": [
+    {
+      "batch": "merge315-v1",
+      "launcher_pid": 3665992,
+      "launcher_exit": 143,
+      "launcher_log": "merge315-launch.log",
+      "final_summary_exists": false,
+      "claim": "无新版本 PASS；运行中的子进程已终止，已有临时输出仅作中止过程证。"
+    },
+    {
+      "batch": "merge300-v1",
+      "launcher_pid": 3671244,
+      "launcher_exit": 143,
+      "launcher_log": "merge300-launch.log",
+      "final_result_exists": false,
+      "claim": "无新版本 PASS；构建进程已终止。"
+    }
+  ],
+  "process_audit": "pgrep 未发现 run_315.py、run_300.py、float-flags-state-probe 或受约束 IR 的 isarch 子进程。",
+  "next": "等待新源码逐文件清单、Release 二进制与统一 inputs；使用全新批次重跑。"
+}

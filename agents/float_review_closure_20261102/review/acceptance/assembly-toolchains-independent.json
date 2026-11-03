@@ -1,0 +1,121 @@
+{
+  "scope": "Actual isolated Sail forwards C output; architectural register spelling only; no complete model/JSON run",
+  "cases_sha256": "f7da0f446b0018cd22adeacf7324e14f9bab0513ce27b35dbca265b30a585275",
+  "forward_log_sha256": "60abc0c999a11eeb743c2899fc94416cd5e6da0df39fc7a6a81d8cbd04b5d3dc",
+  "sail_forward_cases": 1104,
+  "gnu_nonzero_exact_mnemonic_capability_exclusions": 800,
+  "toolchain_instruction_checks": 5824,
+  "results": [
+    {
+      "driver": "gcc",
+      "form": "mnemonic",
+      "instructions": 304,
+      "exit_code": 0,
+      "bytes_equal": true,
+      "source_sha256": "aef235d4c141413190c85b93263e6df705f341d113d56ef00fe697deb748b2c0",
+      "binary_sha256": "5935aae8d334516072400dc0f4c53b93ac68845e128ac581afd5152e4bac3c26",
+      "command": [
+        "/usr/bin/riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/gcc-mnemonic.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/gcc-mnemonic.o"
+      ]
+    },
+    {
+      "driver": "gcc",
+      "form": "insn",
+      "instructions": 1104,
+      "exit_code": 0,
+      "bytes_equal": true,
+      "source_sha256": "95d10cbdb22aa54a8c78328fd9b4a8d78d98589cd29a332d49dc929b15524d42",
+      "binary_sha256": "a8179d43c29276adbc6d1a21d0664e27ddd29f71ad933e963a24a6b010e312b1",
+      "command": [
+        "/usr/bin/riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/gcc-insn.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/gcc-insn.o"
+      ]
+    },
+    {
+      "driver": "gcc",
+      "form": "bytes",
+      "instructions": 1104,
+      "exit_code": 0,
+      "bytes_equal": true,
+      "source_sha256": "9e230ded99afd0641c38b3b11fd07de2eaa4612cd9a864b2007c0122dfdbda16",
+      "binary_sha256": "a8179d43c29276adbc6d1a21d0664e27ddd29f71ad933e963a24a6b010e312b1",
+      "command": [
+        "/usr/bin/riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/gcc-bytes.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/gcc-bytes.o"
+      ]
+    },
+    {
+      "driver": "clang",
+      "form": "mnemonic",
+      "instructions": 1104,
+      "exit_code": 0,
+      "bytes_equal": true,
+      "source_sha256": "ead47c24e01c17b8ce78414e245acb2f1f892f6d77baaafb72968aa2ce8d8e76",
+      "binary_sha256": "a8179d43c29276adbc6d1a21d0664e27ddd29f71ad933e963a24a6b010e312b1",
+      "command": [
+        "/home/linuxbrew/.linuxbrew/bin/clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/clang-mnemonic.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/clang-mnemonic.o"
+      ]
+    },
+    {
+      "driver": "clang",
+      "form": "insn",
+      "instructions": 1104,
+      "exit_code": 0,
+      "bytes_equal": true,
+      "source_sha256": "95d10cbdb22aa54a8c78328fd9b4a8d78d98589cd29a332d49dc929b15524d42",
+      "binary_sha256": "a8179d43c29276adbc6d1a21d0664e27ddd29f71ad933e963a24a6b010e312b1",
+      "command": [
+        "/home/linuxbrew/.linuxbrew/bin/clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/clang-insn.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/clang-insn.o"
+      ]
+    },
+    {
+      "driver": "clang",
+      "form": "bytes",
+      "instructions": 1104,
+      "exit_code": 0,
+      "bytes_equal": true,
+      "source_sha256": "9e230ded99afd0641c38b3b11fd07de2eaa4612cd9a864b2007c0122dfdbda16",
+      "binary_sha256": "a8179d43c29276adbc6d1a21d0664e27ddd29f71ad933e963a24a6b010e312b1",
+      "command": [
+        "/home/linuxbrew/.linuxbrew/bin/clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/clang-bytes.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-toolchains/clang-bytes.o"
+      ]
+    }
+  ]
+}

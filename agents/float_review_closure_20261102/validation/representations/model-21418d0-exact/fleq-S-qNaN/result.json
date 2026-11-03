@@ -1,0 +1,108 @@
+{
+  "name": "fleq-S-qNaN",
+  "kind": "directed",
+  "clause": "FLEQ_S",
+  "domain": "directed-fixed-state",
+  "command": [
+    "/usr/bin/time",
+    "-f",
+    "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+    "-o",
+    "time.txt",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "36",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v128_e64/rv64d_v128_e64.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/fleq-S-qNaN/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=FLEQ_S"
+  ],
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/fleq-S-qNaN/run/seed-intercept.log"
+  },
+  "model_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "inputs_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "source_ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+  "run_ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+  "config_sha256": "41e48e2f8129c16fa1ad62a3b054f8bb5baea01dd84461eb2c8031d623da78cf",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "cpu": 36,
+  "started_utc": "2026-11-02T16:27:20.843577+00:00",
+  "exit_code": 0,
+  "elapsed_s": 3.918,
+  "finished_utc": "2026-11-02T16:27:24.762011+00:00",
+  "run_log_sha256": "807eb141d4aa44e4a1e14eb4b3025a6726b13b6bf9706132751204e7a7804064",
+  "json_count": 1,
+  "seed_fixed_17": true,
+  "seed_log_sha256": "782d825e6e52a684a764f38e8ba1a94d98c410c4a4102fbb8a57cf4487e91c44",
+  "output_sha256": "22f13d751c40336c1a49cddc4899f941ff568099906f7bcadab2ff24257315cc",
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zFLEQ_S"
+  },
+  "gen": 8,
+  "representations": {
+    "source_sha256": "22f13d751c40336c1a49cddc4899f941ff568099906f7bcadab2ff24257315cc",
+    "gen": 8,
+    "raw_all_pass": true,
+    "raw_failures": 0,
+    "accepted_gnu_exact_fallbacks": 0,
+    "all_pass": true
+  },
+  "semantic_pass": true,
+  "semantic_detail": {
+    "x0_result_not_observable": 4,
+    "pairs": {
+      "normal/qNaN": 2,
+      "qNaN/qNaN": 2,
+      "normal/normal": 2,
+      "qNaN/normal": 2
+    },
+    "required_pairs": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ]
+    ],
+    "check_count": 15,
+    "failed_checks": 0
+  },
+  "pass": true
+}

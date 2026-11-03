@@ -1,0 +1,459 @@
+{
+  "scope": "9实际JSON × GCC/Clang × 三表示的54个ELF .text独立字节核对",
+  "receipt_sha256": "d3ae53fc0b0136563bd48df0d3c013b5cd8d4574ee2c589ba03ac8f1ea4ce84a",
+  "toolchains": {
+    "gcc": {
+      "binary": "/usr/bin/riscv64-unknown-elf-gcc",
+      "sha256": "4310e64944572c23d75e4d49e828eeb073894a9ad8746bac30636085c32cd126",
+      "arguments": [
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d"
+      ]
+    },
+    "clang": {
+      "binary": "linuxbrew-home:/.linuxbrew/Cellar/llvm/22.1.8/bin/clang-22",
+      "sha256": "ab50a44e219c787b1a6ba0b8e07172080a4b3619c3f619b801ef058a7bdfad2a",
+      "arguments": [
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "case": "amo",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "826a4d983fcea683350bd1717eb139015e1275463f6fb1b007df47d1adb1b7d5",
+      "json_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "text_bytes": "afb16000"
+    },
+    {
+      "case": "amo",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "826a4d983fcea683350bd1717eb139015e1275463f6fb1b007df47d1adb1b7d5",
+      "json_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "text_bytes": "afb16000"
+    },
+    {
+      "case": "amo",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "728019c45287eea066d42b1a360ae0c29d828400fa8c4b76f3661e4578d1daf5",
+      "json_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "text_bytes": "afb16000"
+    },
+    {
+      "case": "amo",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "09302450ab342f57f43f06536f25fff681420d780c4c7c4a2f88ea70e306833a",
+      "json_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "text_bytes": "afb16000"
+    },
+    {
+      "case": "amo",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "09302450ab342f57f43f06536f25fff681420d780c4c7c4a2f88ea70e306833a",
+      "json_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "text_bytes": "afb16000"
+    },
+    {
+      "case": "amo",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "ae95a3911057a0035ecb5d27e091c09c3ab01d544a60faa999a9fd8917aeb708",
+      "json_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "text_bytes": "afb16000"
+    },
+    {
+      "case": "c_ld",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "25dc42d173405ce654d30a79fb18576f18fa83d44eb4d27be5b5f6f63c41d7d3",
+      "json_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "text_bytes": "0060"
+    },
+    {
+      "case": "c_ld",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "25dc42d173405ce654d30a79fb18576f18fa83d44eb4d27be5b5f6f63c41d7d3",
+      "json_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "text_bytes": "0060"
+    },
+    {
+      "case": "c_ld",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "17a40db363fabfcd3979cd94acc9abad6b5375558c2ad245fae7ecafc50a50e1",
+      "json_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "text_bytes": "0060"
+    },
+    {
+      "case": "c_ld",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "33ec2521b130131db918876dbf06feaeaf5d4bfbfa7afaec4848279d1091aebd",
+      "json_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "text_bytes": "0060"
+    },
+    {
+      "case": "c_ld",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "33ec2521b130131db918876dbf06feaeaf5d4bfbfa7afaec4848279d1091aebd",
+      "json_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "text_bytes": "0060"
+    },
+    {
+      "case": "c_ld",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "10599308e6710ad12ee979681efe3101119def5219897f589658040b642392df",
+      "json_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "text_bytes": "0060"
+    },
+    {
+      "case": "c_sd",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "6cd9369df062ed48cb1bc4f4e56f5857f4bab0a94a1220170f2205e0ee30d3a9",
+      "json_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "text_bytes": "00e0"
+    },
+    {
+      "case": "c_sd",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "6cd9369df062ed48cb1bc4f4e56f5857f4bab0a94a1220170f2205e0ee30d3a9",
+      "json_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "text_bytes": "00e0"
+    },
+    {
+      "case": "c_sd",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "36dafe76a6761a2fe96e4f374933b92f5472116a5e7ea1a558e732b68158f926",
+      "json_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "text_bytes": "00e0"
+    },
+    {
+      "case": "c_sd",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "70c3fbaea7ff62058acd706bea6fae830251635d152eb522606b3f4c58160f19",
+      "json_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "text_bytes": "00e0"
+    },
+    {
+      "case": "c_sd",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "70c3fbaea7ff62058acd706bea6fae830251635d152eb522606b3f4c58160f19",
+      "json_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "text_bytes": "00e0"
+    },
+    {
+      "case": "c_sd",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "aaa8c1d3ccab91d9e24ae390fbd3f897f16e625236edacdb52ac656ef89cfda2",
+      "json_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "text_bytes": "00e0"
+    },
+    {
+      "case": "fld",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "3137403be4e554eb71c12abd37ba1fff992395c6e457d466776b968ff3f40108",
+      "json_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "text_bytes": "87b10000"
+    },
+    {
+      "case": "fld",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "3137403be4e554eb71c12abd37ba1fff992395c6e457d466776b968ff3f40108",
+      "json_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "text_bytes": "87b10000"
+    },
+    {
+      "case": "fld",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "ae041ff0edca5fea055ff8cefd6d36e52f7790e65779bd98e416b3f3b2f42dcb",
+      "json_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "text_bytes": "87b10000"
+    },
+    {
+      "case": "fld",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "6d6bb45b0067ec2621f118caf1a7e8a8d2e16e9cec5ad6c128ba37aa2cc003b3",
+      "json_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "text_bytes": "87b10000"
+    },
+    {
+      "case": "fld",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "6d6bb45b0067ec2621f118caf1a7e8a8d2e16e9cec5ad6c128ba37aa2cc003b3",
+      "json_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "text_bytes": "87b10000"
+    },
+    {
+      "case": "fld",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "9b1b1b7bebfbc868d4398b398e5fbf49a28a7a5f03f5f2c692f1e932818272d6",
+      "json_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "text_bytes": "87b10000"
+    },
+    {
+      "case": "flw",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "ca39fad824105cdd94e45e2be3e02e8b70a3433784c82648980d6d1f70a424d9",
+      "json_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "text_bytes": "87a10000"
+    },
+    {
+      "case": "flw",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "ca39fad824105cdd94e45e2be3e02e8b70a3433784c82648980d6d1f70a424d9",
+      "json_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "text_bytes": "87a10000"
+    },
+    {
+      "case": "flw",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "d5e6ec76d1d6fb2b439ebf30610f62c278c8253a744377ed973d2bfe30794540",
+      "json_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "text_bytes": "87a10000"
+    },
+    {
+      "case": "flw",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "2f9b494886386d5c13afcd4ef71a32cfa074bfdf7742162525dc7db38c360bf1",
+      "json_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "text_bytes": "87a10000"
+    },
+    {
+      "case": "flw",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "2f9b494886386d5c13afcd4ef71a32cfa074bfdf7742162525dc7db38c360bf1",
+      "json_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "text_bytes": "87a10000"
+    },
+    {
+      "case": "flw",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "6acaf8bbd72f543972f31f3414bc922e555ef178db275c2dae367fcfbc6ff16e",
+      "json_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "text_bytes": "87a10000"
+    },
+    {
+      "case": "fsd",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "494304479c5e7bf44c3b8031c31e2ccf0d8d876d04b79002658ed06f1e7e36cb",
+      "json_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "text_bytes": "27b02000"
+    },
+    {
+      "case": "fsd",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "494304479c5e7bf44c3b8031c31e2ccf0d8d876d04b79002658ed06f1e7e36cb",
+      "json_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "text_bytes": "27b02000"
+    },
+    {
+      "case": "fsd",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "717c6af751d7ecb36333d50b0f383f127710aba7f62b0814ed0320f9d9190509",
+      "json_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "text_bytes": "27b02000"
+    },
+    {
+      "case": "fsd",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "7f08a48baa0b400946dec2bab6450deb8ecfc7f41baa55c907483173ce19cc24",
+      "json_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "text_bytes": "27b02000"
+    },
+    {
+      "case": "fsd",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "7f08a48baa0b400946dec2bab6450deb8ecfc7f41baa55c907483173ce19cc24",
+      "json_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "text_bytes": "27b02000"
+    },
+    {
+      "case": "fsd",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "d66ae9696109260db5ba7225aced88f982367f99b0c7422a0f531882a1c6b712",
+      "json_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "text_bytes": "27b02000"
+    },
+    {
+      "case": "fsw",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "3b972c1c2c63f5df18fac4c018341cf95caf3f66596b18f22d1fab95e804a8e7",
+      "json_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "text_bytes": "27a02000"
+    },
+    {
+      "case": "fsw",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "3b972c1c2c63f5df18fac4c018341cf95caf3f66596b18f22d1fab95e804a8e7",
+      "json_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "text_bytes": "27a02000"
+    },
+    {
+      "case": "fsw",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "a9ba2508f2987c1966a13011e9d14c7d269b884d1f36d1c4a43d25c16d150db4",
+      "json_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "text_bytes": "27a02000"
+    },
+    {
+      "case": "fsw",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "f4c07302b88a6b0be591db0a81b2179bdc1436158bd7062f5c31e6b80a3a4263",
+      "json_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "text_bytes": "27a02000"
+    },
+    {
+      "case": "fsw",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "f4c07302b88a6b0be591db0a81b2179bdc1436158bd7062f5c31e6b80a3a4263",
+      "json_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "text_bytes": "27a02000"
+    },
+    {
+      "case": "fsw",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "cee7c512d87d12261b9bbe55feb0fa2c5a9fd14ce92a53404ef2e033aa6fc77e",
+      "json_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "text_bytes": "27a02000"
+    },
+    {
+      "case": "ld",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "6d2de76d31571b69bb2378a2b07aa60b939d416544b3f7493d85dd4ab342e32e",
+      "json_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "text_bytes": "83b10000"
+    },
+    {
+      "case": "ld",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "6d2de76d31571b69bb2378a2b07aa60b939d416544b3f7493d85dd4ab342e32e",
+      "json_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "text_bytes": "83b10000"
+    },
+    {
+      "case": "ld",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "a2e0f5f2f1ec8d79827aafe05d9bcffbd13fed3586167290fd62b54171c22f50",
+      "json_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "text_bytes": "83b10000"
+    },
+    {
+      "case": "ld",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "7167963759960587a3365f5ef0f1f2604e3f4f28260339d13d6d580a85a72e77",
+      "json_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "text_bytes": "83b10000"
+    },
+    {
+      "case": "ld",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "7167963759960587a3365f5ef0f1f2604e3f4f28260339d13d6d580a85a72e77",
+      "json_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "text_bytes": "83b10000"
+    },
+    {
+      "case": "ld",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "4729749446aa2a715a77f269e9071f033a4aa06fcf7e17390bae8f8ed286d81a",
+      "json_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "text_bytes": "83b10000"
+    },
+    {
+      "case": "sd",
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "object_sha256": "c6cb70d4bf34a8fe2ce59b8abdceb35250678bbeb9d18380bfc9cee9f285d371",
+      "json_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "text_bytes": "23b02000"
+    },
+    {
+      "case": "sd",
+      "driver": "gcc",
+      "kind": "insn",
+      "object_sha256": "c6cb70d4bf34a8fe2ce59b8abdceb35250678bbeb9d18380bfc9cee9f285d371",
+      "json_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "text_bytes": "23b02000"
+    },
+    {
+      "case": "sd",
+      "driver": "gcc",
+      "kind": "binary",
+      "object_sha256": "af488fa6f5a0f302a30c393f6f638e3a5f3803c4731ccf02f89b08df77823cdc",
+      "json_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "text_bytes": "23b02000"
+    },
+    {
+      "case": "sd",
+      "driver": "clang",
+      "kind": "mnemonic",
+      "object_sha256": "70eace5b667d28f15104957761d95cb41f9e06e3cec8ace5e888f4c5842cb4dd",
+      "json_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "text_bytes": "23b02000"
+    },
+    {
+      "case": "sd",
+      "driver": "clang",
+      "kind": "insn",
+      "object_sha256": "70eace5b667d28f15104957761d95cb41f9e06e3cec8ace5e888f4c5842cb4dd",
+      "json_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "text_bytes": "23b02000"
+    },
+    {
+      "case": "sd",
+      "driver": "clang",
+      "kind": "binary",
+      "object_sha256": "00cac73213f18cf9f5f71bc065dea1fa204bb7b362f323bf2d9e0ec9a177cd68",
+      "json_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "text_bytes": "23b02000"
+    }
+  ],
+  "pass": true
+}

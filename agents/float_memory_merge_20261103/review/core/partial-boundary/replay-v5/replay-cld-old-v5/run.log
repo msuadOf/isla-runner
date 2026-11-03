@@ -1,0 +1,13 @@
+Warning: Could not find register __isla_always_aligned when parsing registers.defaults in configuration
+No primop parse_hex_bits (Name { id: 2525 })
+No primop emulator_write_tag (Name { id: 2826 })
+No primop emulator_read_tag (Name { id: 2825 })
+No primop valid_reservation (Name { id: 4204 })
+[SYM_EXEC]: solve_state: 共 1 个 clause 待执行
+[SYM_EXEC]: solve_state: zC_LD 求解批 1/1: 自由批（无 hint）
+[MEMORY]: 数组内存模型已启用: memory_var=0 addr_size=64
+FM_CLD_DIRECT_CTOR instruction=Ctor(Name("zC_LD"), Struct({Name("ztuplez3z5bv5_z5bv3_z5bv30"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv3_z5bv32"): Bits(B129 { tag: false, bits: 0, len: 3 }), Name("ztuplez3z5bv5_z5bv3_z5bv31"): Bits(B129 { tag: false, bits: 0, len: 3 })}))
+[SYM_EXEC]: fun_args:[Ctor(Name("zC_LD"), Struct({Name("ztuplez3z5bv5_z5bv3_z5bv30"): Bits(B129 { tag: false, bits: 0, len: 5 }), Name("ztuplez3z5bv5_z5bv3_z5bv32"): Bits(B129 { tag: false, bits: 0, len: 3 }), Name("ztuplez3z5bv5_z5bv3_z5bv31"): Bits(B129 { tag: false, bits: 0, len: 3 })}))]
+[ARCH_INFO]: ["x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11", "x12", "x13", "x14", "x15", "x16", "x17", "x18", "x19", "x20", "x21", "x22", "x23", "x24", "x25", "x26", "x27", "x28", "x29", "x30", "x31", "f0", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15", "f16", "f17", "f18", "f19", "f20", "f21", "f22", "f23", "f24", "f25", "f26", "f27", "f28", "f29", "f30", "f31", "vr0", "vr1", "vr2", "vr3", "vr4", "vr5", "vr6", "vr7", "vr8", "vr9", "vr10", "vr11", "vr12", "vr13", "vr14", "vr15", "vr16", "vr17", "vr18", "vr19", "vr20", "vr21", "vr22", "vr23", "vr24", "vr25", "vr26", "vr27", "vr28", "vr29", "vr30", "vr31", "cur_privilege", "mstatus", "vl", "vstart", "vtype", "vcsr"]
+[SYM_EXEC]: zC_LD 返回 ExecuteAs，入队续执行转换后的指令
+[SYM_EXEC]: zC_LD 第 1 个 ExecuteAs 续执行任务开始执行

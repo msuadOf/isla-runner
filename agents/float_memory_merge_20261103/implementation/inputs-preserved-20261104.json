@@ -1,0 +1,42 @@
+{
+  "time_utc": "2026-11-03T16:57:32.633356+00:00",
+  "scope": "候选之外六原工作树保护快照",
+  "repositories": [
+    {
+      "path": ".worktree/runner-float",
+      "head": "0665526d7e14a207eb9928e282e627584b5635fe",
+      "status": "",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".worktree/runner-float/isla",
+      "head": "591693df2bc32019ea300511509ed683df09522e",
+      "status": "",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".worktree/runner-float/sail-riscv",
+      "head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "status": "",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".worktree/runner-memory",
+      "head": "31ef3b9a8aa3a9db4c03a1d99c191cadf1aadaef",
+      "status": "M isla",
+      "patch_sha256": "5dbbb5dcf1fd2c7a123c41a2a687e3f6adf4a155574929cf805f71b9e746b14e"
+    },
+    {
+      "path": ".worktree/runner-memory/isla",
+      "head": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+      "status": "M README.md\n M scripts/run.mk",
+      "patch_sha256": "e67728f312f49c5505cd651be547c5514064a5709e78432df865b06dbc93e5d8"
+    },
+    {
+      "path": ".worktree/runner-memory/sail-riscv",
+      "head": "c70482a73be2a67c5a89d88b1e6c2bbea224940c",
+      "status": "",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

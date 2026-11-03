@@ -1,0 +1,1897 @@
+{
+  "scope": "Final new-IR directed JSON evidence ledger; 305 first + 10 retry; source parse failures preserved",
+  "selected": 315,
+  "assertions": 33566,
+  "rows": [
+    {
+      "name": "BF16-VF-fused-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a5d76875e5bded26fd5121c1a8672b57de18b014f589e22a533ad16da44175e9",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-fused-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "37cb928b0c5a9f9e5d1d11ee56ed2474bcf27aa190061c70011b57ebcfd0c424",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-fused-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "eca24c0b3fea35743b6f305d113d68a3f26c5f10a13b791797bcc805f55956f6",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-fused-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5fb0e5cfba075518ca43e732070fd237b679931d0831261ce1b0847e73811a21",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-fused-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b02a6cfd9ec7e61cac2b6eb43fcb262cc9491ec07ee428fb2fb9cf74405da271",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-multi-mask0-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2fe3d93e74be622745e1018e51eea6e4cad432bcaecd84cf495f40c2ff5158a1",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-multi-mask1-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ed6e2fee5e33653e31dfa48f0e5db0c65952d932efef69799be43c2e78bb948c",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-multi-mask2-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1dda321846cbf5d77396943dd405694d35fb6f750a1026b1d1f8892a127315bc",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-multi-mask3-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "76419c3ffab18464e163fa39611fe965748cb698d11bfdd6a2f95af04551c02b",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-snan-a-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1a973ea35be272da3cf36ebd8ec8bc02b7bdc04f5c06097905e9fc46ce69f77c",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-snan-acc-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "66dc93a42fc85700bb605a93b6bc3d0c48ce3850bcd3e7cfa5c5b5923b321e6f",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-snan-b-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "560dae3689eb3b9eeeca2d15dca7226b4aaa98b46ff58d662659c27fcc3658ea",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VF-vl0-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a6d3e10bf9486d2790d07ef27daf9c261a9a823c203a8c96f8c2bfa8d11628c6",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-fused-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e174152af0b58ca5c3c7a4ada64cace0387f84f135e24f85bf91079cba76c84f",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-fused-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b4782dc2ae2017099b33b62778feb23b3edb5844ba63bbfaf98248b4b22e314a",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-fused-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3950a1e76d05265233b9f327685a6ab40f380456149cd5908851a9a371471e02",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-fused-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "196ab0bcace862d5d6f5d5cf96a6e1347335db82b6c484993c9ebe9749041865",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-fused-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2e3e3fcfbbeaee30bd1fb7655cbbc454a4e95ede5e2c0b6a2a55eb79461b63a1",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-multi-mask0-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "76eae1054163ff50d227e40ad14f0b1dd8169432600109bd2d01f3a8458077bf",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-multi-mask1-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "210e2e4087b340571d0d7f34d3c3e4b8b0d941cf88b9a3d84be3e11d90bc9695",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-multi-mask2-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f6f57a2a27046a102ef7988c5be4fc793dec39aff338bd8ca165f4387e3156da",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-multi-mask3-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "317248c3a2d2f9a56fa3f84a3ca18ca9f4977898aa529afc747f088b3ad2050d",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-snan-a-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f9f70a2c6a412be89bcb16fc32ba5e0a2e88519a3ed6f352a58de8b0e2c1a866",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-snan-acc-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "86322e264dd5ee438c388d62fe665283c546d346712103faacf075ab1613c711",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-snan-b-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "27cf9e33c708716e8cbd60009b18afc9436ee6c10167eb71781e9ebad494f99b",
+      "assertions": 141
+    },
+    {
+      "name": "BF16-VV-vl0-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a477047c898b74f0fea2a919eac8f1bb76ffc77f5d5ee67487fd82ac876c12b8",
+      "assertions": 141
+    },
+    {
+      "name": "D-add-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a40a262318eaecfa7895512ae352d15c2852b7700f0a592d40631ef574d1e526",
+      "assertions": 76
+    },
+    {
+      "name": "D-add-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9ecb0478a3f106095a4a3e96f52eefde052a308e76480f3ff22ada31215634c6",
+      "assertions": 76
+    },
+    {
+      "name": "D-add-qnan-left",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "04f60b505e360bc2f6031291db100d70ddd9ca5000ea18441804a305b3364e07",
+      "assertions": 76
+    },
+    {
+      "name": "D-add-qnan-right",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "fcc665aabc1e435080ccf271f3b16e1f60975c3a41fd7f4c343295cd1a732ba3",
+      "assertions": 76
+    },
+    {
+      "name": "D-add-snan-left",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "4de59184e78dd0bda1c25203bf4dccda3fb6529bd570c7941c78f837094ba322",
+      "assertions": 76
+    },
+    {
+      "name": "D-add-snan-right",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "500653739f8e17aaaac8c68ef2ae5a2f077ff53a62c9a852a2077d047e9c2dbb",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inexact-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "aec3aa8c991ef9b45c816aa0a8538081a3066754bf18dfcd987b2b734eac85ec",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inexact-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "33b36db327cd46c388fc4188a7ef3f7f3daee48e1eaedfc99a02072a3a912d9c",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inexact-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d4b7e3270febefb01a1ec9f2643c45fe9d753a57cb4fa05d6bc215adeade9138",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inexact-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "80727213092d9d1eeff54fe7d32134520c966d91bcdb3f0cc9da29ec6555ddf8",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inexact-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "52a26e325f79207e68734ddb4f6d0a469247e0394b0effb45af1b2fe41b3b00c",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inf-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "576b92ae64f076d8897e33e284a9a1f5c1a50e2d2e62976e3e0d95f0460a7c75",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inf-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7e04c9f3e6c4a83f459b284909de6862d56144e86dcce566c5905bf48e845188",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "55d293cdf363504d351637598211046b1efd96ea77dc5f79691f4528120946bd",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-one-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "870e6bcd67aad399863c6628138b2be3625e498e94e675ed70ec6c5bed09cb9e",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-one-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "92d173eb14211211f5c5a99122690ba0a34ab8bd0d39741e1dbe271fe08eb549",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-zero-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a39b0140a698dafce0f7ed3835aa9c3095180e74ba7665b7c3ee10d12a2c905d",
+      "assertions": 76
+    },
+    {
+      "name": "D-div-zero-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7ce8fd89e65a4f51a55d6f0b69333b3df860321e6608f1398ae39dbfd85b9130",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-fused-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d1a3e68a3e78313c6e9cb4a242876985f88aa6e9188bd3054140ebe32717401a",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-fused-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "68d65a5435d94ff6b7069dc46ab435276e2448492ead5664b44afabb07fa32de",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-fused-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ec12b696afdee86ec4fabafa2640253ff868ded50848c547fe5753a6d195ab4d",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-fused-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c2bdc8bbe85382c93002b7cbee3c95a446ab52be8d1eb77addc2acb0f9874439",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-fused-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3bfb7c8390330bf43fdd66bf176a420bfaa14fed8d4e1b4a29d1032cba70c023",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c462612fc3cb8af51dce1c6fb7b037ed68da962e107f4a8b9814c7b6f3c53c4b",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2ec2e8270e1af935e492e1ac981a6ab2add41dbd19b724ec790646ae285c7641",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "231a8e356eec42592d5e16e80f13c8a9e2c015778910dee3f2d0e44cd5a463e0",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-qnan-c",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a37e0808337789420a8f2b0efccbd48ee00cf5986082e6c963aecb3f55ac57bc",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-snan-a",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "919432c8ba0b1c175e66978b8c316f46c977ef1ae182bd0448772a9540d108aa",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-snan-b",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "4abca476d88cbbd323e9ea2779a363ce5ea14e2182895dc50e312df1612ad9c6",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-snan-c",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9a4b6b79c04a7c90dc4fc75b810a2af9bf5f668fd794840f16594e710ffd30fb",
+      "assertions": 76
+    },
+    {
+      "name": "D-fma-zero-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "eef6ce00e520fb3194885b9f02b3aae41d33da6b123c25e4dc2e249d9da1dc4f",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "53513ef8da7deff942c4ad32c47b6f2aaad83d60f56a6d2c906dffc8957d034e",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f51eeadbd7b07218f9afb83a83a15958377660e411249bb245b7613d70770e91",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-neginf-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c7a22b7e9a3a85da7a99ce8984043632fd10e4ce35c2c19aef3b614059a016dd",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-negzero-neginf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6d290cd431d00266ff3389f3516f1664b4ed409f499a977ed6db3b082b0ed62c",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-overflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f4945a7ebfdc5dbae8477ba7d55e0a126e72fe7a46f9ed9cd5773c743e1f6b28",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-overflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "afc5cec7389dde2f089618819493369d7c3df4f74758248cdec6baf2f5ea5dbc",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-overflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3d9c238f939b598f11a0c2f00855f6fc0246fca2320d57426f7922721f155f0d",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-overflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "28e34b2e57064ea5254803c1bbee88b07e3c0ea77a9891fb6855a7df62e3941c",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-overflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "32d0bc934a2ad65a5ef542ccbd1b97f63720bb5eb2e10723dfe09e68aedcc08e",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-underflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "56d31698c5fb852eb674365902e2efc0097c7aebf6e77321522e309de923ba31",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-underflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "cef8f6b2374952af72f5b86e2e93bc39985cfc372e7758bf1877251465f5cef8",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-underflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2c116d149faa828e989ab9553538d99ede882db967ee04a14e3cc6fa09778c5a",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-underflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "411c1619e4897491bdbc2de305e8efb2c1e13f0ae05791bcb0226edbe7e21bb4",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-underflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "eb3aec41dd6e00419a1c1a2d5b10fbe15cffd1d3ff36f84ae4e0894d8b1cae8c",
+      "assertions": 76
+    },
+    {
+      "name": "D-mul-zero-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e7a2dc4cd568fea5801f461fc7332865f30a4a1eae79abccf27ccec13f0d86e1",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-neginf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c166aca9c9f1ae43cf18a7fd9005119004dc1af77a9b902fb0637adb1f0a9a36",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-negone",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6bb12015ed007e92f331dc7345edf84bb02ee3ecb3bfaf91f7c8984834d446a8",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b36be477fdfd94f1341070ddb37ffc1ef43f3153b352531a7e7f98b29f9cb8ca",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "abccfb701f4a8835eee7797ac7a40bb58e2083a23fbdb1d9a429be43e9bd1783",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7e6dc95ae49d414c0b8bd61296c23da35a16ca1e83ceb6a2a4360ce85f37fdf1",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-qnan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "eaac0e78717f3c02284a3ff0e6eeaa6b6a750fe0cde8d365245133702737c8c9",
+      "assertions": 76
+    },
+    {
+      "name": "D-sqrt-snan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "cbbde1117b97e7cc0379f889236ff6e53aa703f21a70d0ae07e48d39cd73028b",
+      "assertions": 76
+    },
+    {
+      "name": "D-sub-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b865b433e6b5b8345f6ce4e401b01316a8012766bfeb84bda3f8bd27b4484ab3",
+      "assertions": 76
+    },
+    {
+      "name": "D-sub-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f3a4268cc27683751e6a2f2105d215ca6a036c5abb3d16b467eba6ce0cc58b1f",
+      "assertions": 76
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "abfff4b8da82a02297908373869048b16f34be3e060a5b18f78473c77fb0eb71",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "df63ff54e2bc2f91337379d0b69ee4aaf2d61e1395c3a0ac2631192e677bdb80",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b257619f4a1afbdc0a4b895df238a5c1bd40b1c45e0783536fb8347773c9354e",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "10e47d5a5c311bb954b606ae5b2c2a43195931cd3a6f35d91cbd4a6a0733820c",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "df54e0de069be4fdd047217aeb84b4f82f9aa8d4bfb7fbefdecfffea3c4a1963",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "850aa207e7a0dea6689d3341c38c95df93ddee659af2ef48be7bb127350a35cc",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "21b6fb80f4ae26e8c08a3c6d3c2a4fb8736c75d5895a0cd160fea3ef512e2e6c",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9e0409aafe5a1840fe9c41d5a3eccaaad2e1cf25976fbdc077fc0504ec7826d3",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3478c745bc71e77da83ec45bb77564637bcf34acdf3c2e9b9d014bcb86acc28e",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1ef677dcd029653d15ed25adf8533626cee09b3e72eb5988b0c55e3f1ec678fa",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b731fcbb6b612c024d749ef98775d048d1936c6dd6a93c08f4136d16aeda6b81",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "543ed3ed29785e09066373c43472aa1bddd6ef43796d13d701ef7053575e03ee",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "663397800c2cce6396bdfdb2ada3446e698f98dfcc080f78a9b0f147b1d75c16",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "00b9f921990d6ff909e20f2c414c5000e9b3f27081782f6e9a08f02e75367225",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b8a27575ca50015ccc116e55be2309b53345e30272fe559c1e69ff9f29df853f",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "02f880fc49d6c72c7bfd051e64d20b0ac1edf7c2c62db3571af0f57426fcd7dc",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "bb842a56d4ab33b7aae241893d99ec196fc3aa69acc7df2c288973d479cce966",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "dfe661a5cf72a3398b098e06d65243f62bbdfecb969244e2affe6700a9333276",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "185d5317da27f510216903c7677fc8f1748488976a1b8a2193eb7d35430742f8",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "edbf54ca26e12d30c56892735f2fc21d65f5fef338981a28e031ec6abe320fe8",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-inf-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e98668cfc471390384a0cdbd25e05465dab46826797907408b5c64076589f573",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-negzero-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5a7ef01f279fadc1ac3d1d87f45f279539630ada08a480b30b72e3330f9ca123",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "072387b19e3bce57aa14131d8f4a80898ebdfe497f6551a598d0d06dc8ab557f",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e017f8f3506e57c24c3c1ef00f9d8a2459d1948482355d8ec8642d64495ef316",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0fbe246db49bd4c968c31e37c5b57e71b13ef49bef24feb90f593ea9b78978e4",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3202ffd0215f0a53b34d03a43cab7b117f22fbcfa474fd2d232657c8ba336bf1",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1404423821937603e7d231f7e64698f53a746d2bc43953758a7aed525bb5816e",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-poszero-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f32fb23daad96eaec88ff9a347584de2f0d3874ffde2793648d14389b749b259",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-qnan-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "450d5f2f102bbcc72ffa35d5f4e4b279eeb614d1bb510abeea6139784d7cda5a",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-snan-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "14a0ba8990ec04899c5e289e1efcd717315930d4b953c0a6b5f015f608d40a3a",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d11f315462ab06a4d0208665f105a55cc927af6a81eb2f061761f1f0663cb419",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "47c2ddcaf8cbb9234e8476a211a6c172ac556cf93b4a53cf1490b12a37e32605",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3ef340a6a649559eba3cfabf9eb1acc1a19399cdb2434aac22f608873061cdf1",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1786d85eeb341d901cc456aad036a4268e3b2d91c7c16517cda542a9016a274c",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ba06d9643e69f08f82dd27e8794eaad9c3099fbccc5fc7aa8dc41f93d22ed384",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-exact-even",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ac70f5b3a72a3a8f3224d80b60bfe82d7d05a698913d0691cf4a133ebfd6654f",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-exact-odd",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a60f0cd02d77ec696afc4b8cdf6c94369384826d8ddec8339a2ea1367046629e",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-inexact-even",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "95ffced776db196c08106eb6bbcebe2f30a9f030bcf74e313a082c8ff90ba2c9",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-inexact-odd",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c40c97d474c05befe5d308fe9ba15853c891337bd15d2da3e6428d86479c7005",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "30c4d0e1a60db3772084954251223d0a1d31afb8d6d0c541d3c3bb4db024d6c3",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-negative-inexact",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "daa1762bb543db57b5a6a8f146f1f8bf274c6334618d254ceb22825371e4029a",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "496241533f5214a37a3dbb382a730e8aa965bd049792675384449ec1e607a6a6",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-overflow",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3a978bbf6067ac6e7734decc7f64aa5031bcc2267ec6c40a1adb428cc682d10a",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d1ad396dfac3399b216021a74b653d0c53a841d03eec427188259769cd528dfe",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-qnan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a68bb5a843ff1b327a0406fb23315c52653d7cb1be3a3fbd3bdb7b9d8b51f900",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-snan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5a0c63cdadc79a6b6078b7c08b80ed58aadcb3559f9784e511044716048fcc3a",
+      "assertions": 140
+    },
+    {
+      "name": "D-to-S-rod-tiny",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9a7130a51d29bd1e04f99c39b91556a530fc1a099a6fd6036b2d3ad6214d2c4f",
+      "assertions": 140
+    },
+    {
+      "name": "H-add-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6dd503a90862b060c1e94483ee3ad597a668b1ff117bea3f474176edfd1ea20a",
+      "assertions": 76
+    },
+    {
+      "name": "H-add-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2aa812c1102ea00fc641a57005f7bd1a32d09c16f62bfb05a363c0c03d2b6a2f",
+      "assertions": 76
+    },
+    {
+      "name": "H-add-qnan-left",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f3464af242b28b1b5c39de7e6ab29b7ace93c2bad53bbe53def93be295c7d6f9",
+      "assertions": 76
+    },
+    {
+      "name": "H-add-qnan-right",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9e825412ee708a2fda846bffe29920aa07526bab468812fed21d9f36ea3a5716",
+      "assertions": 76
+    },
+    {
+      "name": "H-add-snan-left",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b78d0a7e540ba711a492d93717c5a3666dbdfd2893feace105ee24ea601d3a00",
+      "assertions": 76
+    },
+    {
+      "name": "H-add-snan-right",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "995342905a6f7798b597eaa32d8b419da8f5d5555881f7349488d3d678771939",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inexact-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f61af2b607511e50b5fb96d19870138f7eb4e94d0ed4adc3b319691285b6a894",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inexact-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e9de4670651b6008bee1e4e5fa3635e52fab540e12a13fdf022ab8125e79b918",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inexact-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e1e394aea4ed941a92dcedc7bd6c6daee9314ec4b38c1303284e632bca6f4ba5",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inexact-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f9de94a29425a425b16a5e13f9a57c1fbf86b60e3ac042b8c895f85310883aba",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inexact-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2cc2253929add185648132b5b69c24a4014e6ff234820a82fe5dd513a199938c",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inf-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f9443692b520bf424fc3c7621bc5e30aba4f043924715f8f212760a2e13d9cf9",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inf-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1bfa0255dfd1979311daadd678cd5262609b2ba9742422c65b104e9b9a80c755",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "af3d78551c8e76b3f6fec122c4af24a60279ab2eae356a283a76fd77c6119cc7",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-one-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7f580620121d224ac5039e8954da87fac0d52c98926d74ef31fcbdbd222019cd",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-one-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "15252011f58bfe247b0db2744cf4f219f350511a5ec956110fb3032bab175504",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-zero-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0bb8d6a59693608a9ad2c7c0098e810f01e8845b64eec8177cb743e7f73da76f",
+      "assertions": 76
+    },
+    {
+      "name": "H-div-zero-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1b6ef42bab08bbc8d6d2a96be536d701a6532cf415b1a3048b53cb796d166efa",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-fused-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "899f0558433a61a160a69f1a5327ff66b3305ad7167e3804fa9f83fdebcebd46",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-fused-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "dce09b707fbbab13648b8eba2ea33f2423adb10600353cd85a6514db0e0bca35",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-fused-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "28f44591e14023f8dc0408f5d79bbc0ac00d92b64fe11be717f79cf8a0341b0c",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-fused-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0872e78a5344e9226b8d9782267fe921521aafbe835a35d692aae479f7e11bad",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-fused-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b399e24e9b819b01a31d1b6a5a8b51b797fa6b2c162e744b4d4111dac7d7d3f6",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e503b662b3382a9ff1c16612effcc29808a550acd3778444f569620b2aa2efd3",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e7479c17f8a873d37913f10d1aa862b1a9a44d1e673801f06803b59dc1a5189f",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e58a3c9b5dc048a86bc23e174c412463f35a939be8a37a5b66986cb9b788da45",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-qnan-c",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c14e94de02706076f1474d7507c8c935e99f4404f84a75af09442a9ca18971ca",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-snan-a",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7d641d77bc413b0da53c593ffd787cdb6e702eda6f4bd8df839a19ed0f62aaa6",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-snan-b",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1ca7d11277b33e9f8e7fe2e2384e1e39a0ff5e087e2845bac2eccab51a99bd07",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-snan-c",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6aaf2a7c788286562877c2edb7068e3e6ba32cc2c0429e52d8d1e9985e1c15f4",
+      "assertions": 76
+    },
+    {
+      "name": "H-fma-zero-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6c7aea9c356f4a371a6c9bae33dcfe3dacb0e97bc4435c7e4ebd18fefb3196ca",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d06a2106e88780e2b9b0e5535b020257da7d3d1abef83406dc5c0ce8b2bf9228",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5a100ab60bb9732ad90654e31b91a0c381d4973c3098efab902eb4798e3c3fdf",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-neginf-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "208cb81137e4220cfc890862d9e6d42a06395825d5029e98261ff252f1562cc3",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-negzero-neginf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0dfe2b8e95e5cb87df4b8f77c7417b39524b7e73436d28ad475b140c8aaf8be3",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-overflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0511e2c9466aaaa3af477d410be269e928df7e5e2b0f88d239b530a1b217b1a7",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-overflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e7f001cc0763d614f6969a103bf17227290433f32799fe60e1144e6b72afa474",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-overflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5419d907f74a7ab5d3bfa08de2483c97a019eb98e6906b22fbbdb533a8ec959d",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-overflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "29025f5972d647c0a0cbb02c889a2399eaefe593e626bf061c53176d0af59d60",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-overflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a3d4f45c124c0c74d8be023529495c993e9a181b252a3d880d64b363c68a9605",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-underflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "085f7a2277438dd1b27de9d8f72f681dc1485668f9cfdc9f305e8e5b36f5ba20",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-underflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "04bddb97955ba2208f7253c9fb890136a07f5031d54cee7ae925b7e0fa0db6e1",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-underflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "005791d68c3d2ff4e8afb1a04427aaca0a189123fac267c53ffbbbf4f6be031e",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-underflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1701a9e089e06c0557b46674d9e5fad473ae2230fc1a2bf2afc1443c649361bf",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-underflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e00af35ba395f8c9d29f9a3224aeda8439e5d14a6cfa054c0098afa501d50f14",
+      "assertions": 76
+    },
+    {
+      "name": "H-mul-zero-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "eeafa3f5994ed677b572d4bfee85d259d44eb14b50235b28752bc5ba08901fd0",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-neginf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9ae3a8507383a6733877a312978884e56a985f09743ae6f389b74b23b90844f5",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-negone",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f2798b6d8569ff0588f3e209508eaf62657abcf021d6116c0bad07d36b718b4f",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "95ae9082933c5425bd260e59e9a54049612bbca1804fd6ec6665efe4e6f6265c",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "8835e26a99b1cee4e31481bdd3e0fd8dd286be7cbfbcfbf562340935710ace17",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "4f37182ecdf13697abc994a5946d3be52334ab6449bae3045ccaa6c0c41c16f6",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-qnan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7ae9bcd0bde4aa68d73ce39c6388f84894141c11b8afebc0093d868c4795cbe9",
+      "assertions": 76
+    },
+    {
+      "name": "H-sqrt-snan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e77af89ab879333489d777a72f68a5e7ca59c9f2b0a60e17f53161bd887d32ab",
+      "assertions": 76
+    },
+    {
+      "name": "H-sub-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "02af71b21160c7a10675c918e625b1571549666b1ccb7d4d5868363fcc7b17fb",
+      "assertions": 76
+    },
+    {
+      "name": "H-sub-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7fc3cd61dc83c24c18ddcb12a915d5280b6b0d30b0265b2d0656a81427af3a63",
+      "assertions": 76
+    },
+    {
+      "name": "S-add-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "01718021ab65adf5327218bbf7a6b89cb2d6cfd21d7a85b667641f6cf72c6082",
+      "assertions": 76
+    },
+    {
+      "name": "S-add-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e6b5f8b931c85572c78a9adb60b76f6a8e20045dde71581e32d96657178aff3e",
+      "assertions": 76
+    },
+    {
+      "name": "S-add-qnan-left",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9a8284f1f36892ea0da8a022ceb7262b79db48b230a686e8d4e6b7c8ec640cfc",
+      "assertions": 76
+    },
+    {
+      "name": "S-add-qnan-right",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d1da7976c70389d5fc626d7fa0b0ad4efe2ffbce5ed26215e4789158429277e1",
+      "assertions": 76
+    },
+    {
+      "name": "S-add-snan-left",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "787ae7aae43917b07df31257fab7dbcd0f66543bd72e7c9bf673c50b54b484e1",
+      "assertions": 76
+    },
+    {
+      "name": "S-add-snan-right",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7ea0c015557fdeaf4795787ca7d591cff8630e8b75c5f786572f7f7834af09ef",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inexact-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "34ee082a58d09053c5ce24524de65c8b7b5f698c979c73d0de5eaeb72cec2a3a",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inexact-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "48f6da5ddb33490814ee9701dfa0c5b307ee6420d2f75d817bfb830cf7dc3e22",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inexact-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "11be7abc75abd358e042c0132d89b1ae4eecc1fe678fb0b46d0238bb18f6d7b6",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inexact-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e5470071a99603386ad52314da4f8e2ff03309fa6a4ebc8e7f324a0e8019a85b",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inexact-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "913596a1a9d6b6ed6c65a4b86e791c345504e485a93af17f4a32a3107fc47d62",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inf-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9baaef633ac258ce9a1510438cad5baf4228b531bde28e5d52591d53a50c12b0",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inf-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5afbd0b1fb02760868c718ca7cd41bbed567e0c746ffc26cb67a559c3ccfbd0c",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f2bde8198e3018565b6d1c93f8536fc7c76d1e2ab2142ebe4be8ffdc97c065d9",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-one-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "8b5bff59b99d1387bef4a7890a4be6380d54d68c91231be3a98183578538107e",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-one-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7baf24308c6411b6ff365177245b662d2b9d91a330eb97502be390124fb3c6f9",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-zero-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "53ffea98e61537906557cd6bdd77203ea7dac3fceafadd18886aed3553c215c3",
+      "assertions": 76
+    },
+    {
+      "name": "S-div-zero-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "cda3ac925c0dacc735a5e20952abca3141cdfe87f2ae1123fb71009a7400658e",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-fused-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f0c4cf98b780912ee9931dc26e89227c1ea73fe98d41433110e28d70dccdfb84",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-fused-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "47f1b3e07253b234020298dc9d18504055047055cd421d3ca55ec7645165fe7d",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-fused-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "82c281c6b66bdd9e593f6932ca4da3cbbda8bfd754db043c906405626ec4eed1",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-fused-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "1de4ef1727eca791721f516f23d43f04754c432b4ad3424055be179c03c5b80d",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-fused-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5cf96755abc4bab70ac074ab5ebac9d6dd21311b1b57f3ccdc14ebce9f74a3c6",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0e5381406f84f83aac4de11a74efcc75f5033e67a4010b04e88e7e773ef5cc19",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "470351d4e0ec42c873a4515a9d1993df817e1e71554ed3a9ba641d0a2860418d",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e23b81dc0f6b94dc348c3a1a03980c4b4c8fd6955ca6cbf6ed778457ebad3144",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-qnan-c",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c6883261d8cf12a803593193941c4220753284451b823d45b07bc92902a65d96",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-snan-a",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "165e9c998e48aa2843b8a7ef6e77e2cc4ec402dedabdecdfc754b8af8b352266",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-snan-b",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "39791cef1b17623e5f321afe5a608e61b1dfa2ac6bfbacc3a95f412d010fe0fe",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-snan-c",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "60e83d27601b973a908ad1299d9fca648899a8ebbfa4dbf149fde56538f635a4",
+      "assertions": 76
+    },
+    {
+      "name": "S-fma-zero-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "06821e49b5c56e738c0b413d8184b419211a0d3b6a53a8c533c2aa2e89519380",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7b51a82b84b46216fd90b41165cfffbaac0fafb85764032c990968ab8fb8e5aa",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-inf-zero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "710a1d263e5fb4eb3abc557dc6ee3e37caf8158ff39b69a1df7a70a8aa105932",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-neginf-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0666e3bf614deb4c46df7cc60e4f2b4720c6eff70c5f2e19e977ab45895adce6",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-negzero-neginf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9e4b76c3f23b17be5e25b4a44ea89ab7f2e93d58ff486b37ba2c589fe74093cb",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-overflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f4426e693c3a13e11bd6a1b1e160bf7bd753e76fe7261b948e32e84485f7654e",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-overflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9320017761090cd0fc902900e4873ef3a92e87c2d4ba08565316f34079d2a0e8",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-overflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "16777814b6b28881a158a58485348f39c323b192f11e0b271384b88a25f1cf08",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-overflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2123949ef4bc632817a9758af833c1176fbb04aec9c71d32a45c02c3c0bdde96",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-overflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "8d549b2547f1815250298a06de9dfb2f2604486b61aa8b3aa5d3d2831b1a186b",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-underflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d1b08d63331024bf09f80b37efe6ab6408828c0c4fb19cacfd417f97f02f71f5",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-underflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f939d389a55cc230a43150ecc204e44054ffc598b66de6e93fbfae15c26dc5d0",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-underflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2ad3dda8ffd5c5434938b6ec8becd9b605336d397a9e5cb79f421e483fab6c52",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-underflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9674f6960448faaee6ce46c9994b7abe81cd393e9a9977f1839273b2b71621f4",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-underflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "8784263d16ae6217668180072550082bb41195257427356f2c5a21bfa31176b2",
+      "assertions": 76
+    },
+    {
+      "name": "S-mul-zero-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3deb3af1a514843ea188c0470bee5477ebdf90d49468b9dd20105c02cb8704f3",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-neginf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "093e3c6542aed335c49b42f1af0bea7e5528a5d93376fe2099b79a1e5d4d468d",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-negone",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ae8aeab0ae1950c9de7f876ec24644e8a062124e79680187c8730a060ec5b8ec",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "25668bcd94627ce79140072e200d2c564353367ac121107d644bf2992a7e8fb1",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-one",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "10d99009ed8c29eea4977e894d44871341af3ab63161834968ab398f9755206e",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "51e3be479e50dbdd144884fdc100141e845f793b075c8cedcf213010ad786e1f",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-qnan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e5493f6762765ed484a53826d5d48f5dd30c0e98234121ebe45aa4c15d6b6c64",
+      "assertions": 76
+    },
+    {
+      "name": "S-sqrt-snan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "875966f5e661f172d0710898b231b31066baf9982f26302a016ff61293bab0e8",
+      "assertions": 76
+    },
+    {
+      "name": "S-sub-inf-cancel",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0366ec8fc1d5d849b34140371ab151b103d14de8115ba1765fa39f8608ecc0ba",
+      "assertions": 76
+    },
+    {
+      "name": "S-sub-inf-valid",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "60fbf182398180ebc5cc21a9918313e2a0634ab01f6c3faf72a724190ef57d41",
+      "assertions": 76
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b9721e535818253c0b687882d9f89b2d5f4e3b38b331c68083f5393fd67d88e4",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ad5cb57289f909473e1fca530bac475eee299042a6345c88b943c69bb8e3d1fb",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2a4a44a32b09ec5b1f5907a46d2213521ca535248fecf965a42d1a7e708240c5",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6f518a0c4ff8616f0243daca16acfa2d69daa1a67f175d737d2d52abff65693a",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "442f61bfe0ae47496ecd52ee9a2f4bb5c9b1c1aa68afe628ceaaa0a04a85adc6",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0e59fd316be4c33cad1dcbf9815fd656bd880503a4783612e4d040a63ca762f1",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ad2ce4a86d7d72d3c2f5f72b67be70b512f94211ebab3270334e3e91233e4113",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b91c616364fff90b7166bd0eb54e066e3468dbaae7f102d9a84e20321d12462b",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "a7e0af42a02434d401b4491631b75364f4682102ce9fe7eee05aae5d5b8d1e81",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "73760763f5b48d0d1e7ba5db9503d8c0544cb289948bb8b8a97da9568956cf8b",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6dac7a71208791199142195c42382d7f2ea4459b961cea2d3e439efbec0b529b",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f51deca8bbc32d2a7b3d7ed50f74fc9b48c58611d62174b0df275f82395fd9e3",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "64799c7c2b04225276b09ccdfc46025a34c51ad0d27006d224f1b0240e532359",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "97b5fff541395f1c69829336168f2a02dd55dd0709437ece1336136ac9432ab2",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "4a926bf11c50cbccb846bc66beaa1a09c04e2ffb2902bd390cde2b4d46984517",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7605e4fcf9a85b83757584fd76c082f88c43c3056ee6822dfb847305844a9ae5",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "01c167cb326b334958cfd18ba9f594023a1f13c11f65b370e006c87d958266c8",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c27f9a4b7819983492bf538d01935046dff5b4429db59f22ea9389687b2a3a2c",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f0bf9301d9a0508a4c696af22fe46e1ca4a7b1a039e987219b00847a27453755",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "4465f7a956fa60af43381fa92c017e9422a3854a96207d6f48bb4b2554eaf91d",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-inf-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6cbe9c84840d6de0a76bd8d9ac40c3b9603ac363f7689dd2efc20230845f00be",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-negzero-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "8523a98b7bbd4226a3999f7b0eb25b288a6d742b5a9b5a29374e5f4dc100bb67",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7b7d414dbe3fbba3b8224df29e20edbf0cda4490eaa98a73c37054a3a2f121ae",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ec80aa47552540fbe15a98b1b3c881c8702dd79013c0d43b6ad40ecce9c9ed6b",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "47240b61dc1d17e1c7f303c9742bddbc2866f0ea84198f708f19058cd0bda351",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5e34474a842ee0c3520f7a4adacbd89a16ed62cadbf5d6947b66b59931a6ec2a",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "270069a51f77588a533db3dcbc5a6cc1eb48f2142b1798f2cd49de754f730291",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-poszero-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "97fc590d3e371a5f95254821714a1e25ab8cb31cffcb4c808357f1dd9c2db4a2",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-qnan-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2e2ffd1a00cff49b9566737b42602c060df3838328468b33b482c388d8bc3d9e",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-snan-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2e75dc33b05d90d36250e859b54c47e34a8e2599f2a1c5d7ba793ffa57672c20",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ef13bfd6655240d05e746cc933361ab196e794cf64536d0efbd3b726d9b9d34f",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5afe6e57479e2c852eb68e3f9463fa898f147218d83e8f8e7367fb34c8ef8a02",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "11001ffa3a1fbc2d911ff9300dcbd24ac3507616806b08b08a8e5c0c8110f532",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f70a6e6cafa19766f9491198902a0c5fc89362b26eeb8ddd101120eb3a2bbe3d",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm4",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "9f68d6355057b425aaa9093596a60ca4a9ab9871fe3ddcf86423e047743e4d81",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-exact-even",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "dca843668576a16a1f5f94649cc5cf1d3ec3aaa679909958dc2da7003f97b3d3",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-exact-odd",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b6962e94dff8608cfee720a1383f9dbcaa107677ae1845e182fac301f947ac59",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-inexact-even",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "89bef7bf500bc1821d5c031385048338e7a0214a19aaa9da18cfb08157265dca",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-inexact-odd",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b7224cda864b15366eeb9bb70ba850ed992931f6e5c05882c0a233f5d1439c60",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-inf",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3e4a222a8d7d32e2109c131340aedd9667634420b4909feaafc38621bbe38e12",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-negative-inexact",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "7e63fb6a8a070eab5f058d9d067a9ace847392c331ff93c18839455245327a29",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-negzero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "847389f5409d71ae953b9dbc640f8bf11afa76ec7a4dced4e43a6687a15f5f1c",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-overflow",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "0355916b3110e1a1b09e21b4f49bb4aca951b2d69fdde5d4c30351d5ca9ecfd5",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-poszero",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ffe95938dc797f9c591e992c718a0be6762de8b48c48a37e06f7c9268814174e",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-qnan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6534085c4317620cfb2e73a0cf6537a370880188e5dd712dfc942f320f727311",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-snan",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "53724580c60498e90bb3813df954fc81a856d4d7fe78fca4ebc7076734fa7e1d",
+      "assertions": 140
+    },
+    {
+      "name": "S-to-H-rod-tiny",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c0c7059df4e33569bb4e05fd196c9eb6ee9fb3094bfe76f30cdc7ace22322c78",
+      "assertions": 140
+    },
+    {
+      "name": "VH-add-inf-cancel-mask1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ab411695b9f79f7f66511c12955fcfa4204d46a47a0eaae0dedbaa22c27b9b32",
+      "assertions": 140
+    },
+    {
+      "name": "VH-add-inf-cancel-mask2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "3aad69bcf6d3ec8c193bf31ee7108981acb604001a126d969d338c641565a7a3",
+      "assertions": 140
+    },
+    {
+      "name": "VH-add-inf-cancel-mask3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "e05a7b5d370e93f0c568dcf3869c22ac975d69b337f877370d18f2c16005c636",
+      "assertions": 140
+    },
+    {
+      "name": "VH-div-nv-dz-mask0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d7a0fcf4b9d43baf56dfe03912ebd3f0be33ecc2e2ffaf39c05b164a202bafc0",
+      "assertions": 140
+    },
+    {
+      "name": "VH-div-nv-dz-mask1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "45cd9841f2e720fc3da2db99ca5c285c216f72b218b7838436c51c307880e91f",
+      "assertions": 140
+    },
+    {
+      "name": "VH-div-nv-dz-mask2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "c48a278658b71b3c7d08642afc3017aaba25d19aba0376dbda3662e749321627",
+      "assertions": 140
+    },
+    {
+      "name": "VH-div-nv-dz-mask3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "2af3624901e4e51f19d6946deab4bb078d656057d7aba474cf9f7dc07b9fc5b3",
+      "assertions": 140
+    },
+    {
+      "name": "VH-mul-invalid-overflow-mask1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "6ee5ac2095f013ac89065b57aee66bef7cfafea2d9de456005ed4ab2850bc752",
+      "assertions": 140
+    },
+    {
+      "name": "VH-mul-invalid-overflow-mask2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "ae8c83eb13c8450de12a863ce08d648a4539b32fc1aa55b058e7e3c76d89ab79",
+      "assertions": 140
+    },
+    {
+      "name": "VH-mul-invalid-overflow-mask3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "cf49afeceffc4aa9fa1baa069fc4bb27e618b2c8028650379dd0094be98f5d5e",
+      "assertions": 140
+    },
+    {
+      "name": "VS-add-inf-cancel-mask1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "62f03afc0edd5e5d7de59ce4e987a8f6b0be8ae373cf22681b12fd57e260ddec",
+      "assertions": 140
+    },
+    {
+      "name": "VS-add-inf-cancel-mask2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "32995f5f48d0aeacc2d1d542aeae0821984a63cbcb4d94b1882aef1beb25b3e9",
+      "assertions": 140
+    },
+    {
+      "name": "VS-add-inf-cancel-mask3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "d4051601fc2543c4a5c0d4852b32f9ecbcfbeb98c1c0cbd70f8f3bcb500bc818",
+      "assertions": 140
+    },
+    {
+      "name": "VS-div-nv-dz-mask0",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "bc311fb25310316702c7d091bb6e370bfc3745fe667041736f3109f90827853b",
+      "assertions": 140
+    },
+    {
+      "name": "VS-div-nv-dz-mask1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b6ab5e4b86cd4196f5e73adf8de74191bd7feae3c26b957b9e92e7bdefbaaed4",
+      "assertions": 140
+    },
+    {
+      "name": "VS-div-nv-dz-mask2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5797a4c25a6553c926b91443a85e04c379c179cdc714456a262ee0160c1e0ae6",
+      "assertions": 140
+    },
+    {
+      "name": "VS-div-nv-dz-mask3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "33d8fddac17921f10d9332886f33dccc7732f0609ef1481d990d32f8db8f1ecf",
+      "assertions": 140
+    },
+    {
+      "name": "VS-mul-invalid-overflow-mask1",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "5a5a225ddf43a23522ee664400505ba67c646df727b92005194f08407f47ea87",
+      "assertions": 140
+    },
+    {
+      "name": "VS-mul-invalid-overflow-mask2",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "b8e5be793900081466e8b7aea0ed820ff88b6d136cf318694f33c8b5f738386f",
+      "assertions": 140
+    },
+    {
+      "name": "VS-mul-invalid-overflow-mask3",
+      "batch": "runs-model-8ad5e8e",
+      "output_sha256": "f82e6a743f0d7a70b5c532aadf609d14e401085274087d2315051eef0c2c2158",
+      "assertions": 140
+    },
+    {
+      "name": "VD-add-inf-cancel-mask1",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "38f51395034584532f6cff1ef4820c24aa0ec77de049f7f3e57b9430f30d7f38",
+      "assertions": 140
+    },
+    {
+      "name": "VD-add-inf-cancel-mask2",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "a7d195b46f916b0d932b1f61c73f2dddfd5d3b73e015497530effe5dc52154fc",
+      "assertions": 140
+    },
+    {
+      "name": "VD-add-inf-cancel-mask3",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "b6b6275123681eae34005a89391bc6489ae36d575f7cce8729a86c249822a834",
+      "assertions": 140
+    },
+    {
+      "name": "VD-div-nv-dz-mask0",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "33fd3b0178296edd417b318ab58c1008e5f2ab354b5e767b67a3ff1ced664e26",
+      "assertions": 140
+    },
+    {
+      "name": "VD-div-nv-dz-mask1",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "32e0b51f101c64709c929e50d5253b2e8e4bc5dc8695974cae7bc500ac00be5a",
+      "assertions": 140
+    },
+    {
+      "name": "VD-div-nv-dz-mask2",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "2503578e01e0c7daa9fb71f94e399136e8564b21139d4a47fcaccc27a57df4c9",
+      "assertions": 140
+    },
+    {
+      "name": "VD-div-nv-dz-mask3",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "f314b447259c7dbf8bd4f8a6e62e227bdcc32de3bb16d67b57b4978036d35299",
+      "assertions": 140
+    },
+    {
+      "name": "VD-mul-invalid-overflow-mask1",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "4437e17df76f02aa8f72a0616670c98b95b64d51233fa7a44cb056c2c6749553",
+      "assertions": 140
+    },
+    {
+      "name": "VD-mul-invalid-overflow-mask2",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "7deed80cf627db1ff672a91629f96c0854cb2d8abf4400008bd9509476b82ff4",
+      "assertions": 140
+    },
+    {
+      "name": "VD-mul-invalid-overflow-mask3",
+      "batch": "runs-model-8ad5e8e-vd-retry",
+      "output_sha256": "2b89ef4c71c3d17988e8ce07a82fcfb2db792e8ba4be1e26c79eeaf9afd74e42",
+      "assertions": 140
+    }
+  ]
+}

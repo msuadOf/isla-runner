@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "22",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-mul-underflow-rm1/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-mul-underflow-rm1/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_D"
+  ],
+  "job": {
+    "name": "D-mul-underflow-rm1",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_D",
+    "fields": [
+      1,
+      0,
+      "zRM_RTZ",
+      3,
+      "zFMUL_D"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0x10000000000000",
+      "f1": "0x10000000000000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "D-mul-underflow-rm1",
+      "family": "scalar",
+      "width": 64,
+      "op": "mul",
+      "fmt": "f64",
+      "dst": null,
+      "rm": 1,
+      "a": "0x10000000000000",
+      "b": "0x10000000000000",
+      "c": null,
+      "reason": "finite rounded underflow",
+      "expected_bits": "0x0",
+      "oracle_raw_bits": "0x0",
+      "expected_flags": "0x3",
+      "oracle_argv": [
+        "--op",
+        "mul",
+        "--fmt",
+        "f64",
+        "--rm",
+        "1",
+        "--a",
+        "0x10000000000000",
+        "--b",
+        "0x10000000000000"
+      ]
+    },
+    "expected_full_bits": "0x0"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "373e3f9a3ea01cde843cc3927f7ad92f6968b61a9701a373fb6b55ea4d9d6586",
+  "config_sha256": "686dd6ed2aebf41ceadf422d7019d9161ecea9dc1468b8fed47ffd60ba712cbc",
+  "cpu": 22,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-mul-underflow-rm1/seed-intercept.log"
+  }
+}

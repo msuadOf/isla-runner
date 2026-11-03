@@ -1,0 +1,237 @@
+[
+  {
+    "test": "isarch::exec::tests::concrete_function_result具体寄存器环境成功",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::exec::tests::concrete_function_result外部solver符号寄存器硬失败",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::exec::tests::materialize_le_bytes_宽混合位串不截断高位",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::exec::tests::materialize_le_bytes_物化符号与具体值",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::exec::tests::memory_events_chronological_段内恢复执行顺序",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::exec::tests::memory_events_chronological_跨段恢复执行顺序",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::exec::tests::真实memory回调事件可物化普通假返回写的前后态",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::克隆内存保留数组模型回调",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::克隆路径的写入不污染另一条路径",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::六十四位地址高位不与低位别名",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::具体地址写concrete区域不再被白名单拒绝",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::具体地址落在判死区域直接拒绝",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::写八字节后读同地址等于写数据",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::写四字节后读中间一字节等于对应字节",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死与symbolic声明并存时仅判死生效",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死区域不改变concrete区域具体读取",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死区域内符号写立即BadWrite无事件且Unsat",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死区域内符号读立即BadRead无事件且Unsat",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死区域外符号读Sat事件可见且边界精确",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死区域对ifetch读同样生效",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死约束与既有路径断言矛盾时符号写立即判死",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::判死约束与既有路径断言矛盾时符号读立即判死",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::同地址两次读模型值一致",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::多判死区域并集生效",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::数组模型下未约束符号读地址不被具体区域预检查拒绝",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::普通写返回布尔假仍提交数据",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::未配置区域时符号地址不受限",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::独占写事件按模型语义必已提交_bool钉为真",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::独占写失败分支在注入后不可表达",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::独占符号写提交后读值与先前读取解耦",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::零符号区域时符号写不被空or链判死",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::零配置全符号化读写不受区域约束且事件可见",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::默认内存保留具体区域重叠写入错误",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::默认分层下与PMA断言矛盾的读写不被判死",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::默认分层下配置sym_ram符号写不被区域圈定",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::默认分层下配置sym_ram符号读不被区域圈定",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::memory_model::tests::默认配置内存经装配后符号读写可满足且事件可见",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::pma_regions_symbolic_injection_assigns_register_and_records_syms",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::setup_pre_state固定值覆盖寄存器且同步输出",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::solve_pre_state_outputs_symbolic_csr_model_value",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::solve_pre_state_serializes_arbitrary_fpr_and_vpr_registers",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::symbolic_csrs_concretize_for_gate",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::symbolic_csrs_derive_bit_equivalence_is_bidirectional",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::symbolic_csrs_injection_shapes_and_constraints",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::tests::inline_mapping_match_failure_is_not_default_rejection",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::symbolic_csrs_derive_bit_rejects_out_of_width_bits",
+    "returncode": 0,
+    "uninitialized_seen": false
+  },
+  {
+    "test": "isarch::target::tests::symbolic_csrs_rejects_unsupported_shapes",
+    "returncode": 0,
+    "uninitialized_seen": false
+  }
+]

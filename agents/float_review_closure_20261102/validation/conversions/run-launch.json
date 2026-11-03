@@ -1,0 +1,16 @@
+{
+  "pid": 573796,
+  "cpu": 9,
+  "output": "runs/rv64d-v128-attempt1",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "config_sha256": "8247c8d467489111656f6953660670e96097a029fea458b660fe42579f86f987",
+  "started_epoch": 1793633504.6121247,
+  "command": [
+    "taskset",
+    "-c",
+    "9",
+    "python3",
+    "run.py",
+    "--frozen-inputs"
+  ]
+}

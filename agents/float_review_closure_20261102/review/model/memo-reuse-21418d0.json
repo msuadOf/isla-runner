@@ -1,0 +1,69 @@
+{
+  "status": "PASS provenance and independent memo copies",
+  "model_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "inputs_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+  "model_files": 166,
+  "tool_files": 149,
+  "actual_sail_binary_sha256": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+  "compile_z3_sha256": "a7eac84c5493ac5766c2179620c3a4628b151198af9e6e9c488163c84561b3e9",
+  "rows": [
+    {
+      "config": "ordinary-strict",
+      "exit_code": 0,
+      "memo_sha256": "cabd53abc37aa1db33b2e0d2a9a02830e7ccc021ea575df89250a04563f64cae",
+      "records": 9522,
+      "source_unchanged": true,
+      "different_inode": true,
+      "ir_sha256": null,
+      "seconds": 13.244
+    },
+    {
+      "config": "rv64d_v128_e64",
+      "exit_code": 0,
+      "memo_sha256": "260f0fc87b41b90ae150d3b73f3d6069ac963f55cea83e9c732e8e65961952f0",
+      "records": 18762,
+      "source_unchanged": true,
+      "different_inode": true,
+      "ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+      "seconds": 59.624
+    },
+    {
+      "config": "rv32d",
+      "exit_code": 0,
+      "memo_sha256": "a64d81a650efb402fa8714877b7c58850856a521ea6db519ba88bfa121757fbb",
+      "records": 18772,
+      "source_unchanged": true,
+      "different_inode": true,
+      "ir_sha256": "6e024d9a1ccae23bd0acb629ef661ac2a82976d3500bc8787692eaffc42fa368",
+      "seconds": 75.949
+    },
+    {
+      "config": "rv64d_v256_e64",
+      "exit_code": 0,
+      "memo_sha256": "40d958d719e02a11442976255e10798d73ffbc855c4bd1ecf729fe33fe3495ec",
+      "records": 18857,
+      "source_unchanged": true,
+      "different_inode": true,
+      "ir_sha256": "11b797025387cd9dc48a6334d67e5780ce0656c4e64391bcda619345da97cf64",
+      "seconds": 58.301
+    },
+    {
+      "config": "rv64d_v512_e64",
+      "exit_code": 0,
+      "memo_sha256": "09bfd2610fcce407e3047c36b8d7eb5763ae35bbc9c08bc84a82f63dc01b2c87",
+      "records": 18864,
+      "source_unchanged": true,
+      "different_inode": true,
+      "ir_sha256": "c847d0d4ef1d78ae9f80f67d4c1833717d9166c43be04921a1e7187511a0e1a9",
+      "seconds": 75.906
+    }
+  ],
+  "five_ir_hashes": {
+    "rv64-v128": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+    "rv64-v256": "11b797025387cd9dc48a6334d67e5780ce0656c4e64391bcda619345da97cf64",
+    "rv64-v512": "c847d0d4ef1d78ae9f80f67d4c1833717d9166c43be04921a1e7187511a0e1a9",
+    "rv64-default": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+    "rv32-default": "6e024d9a1ccae23bd0acb629ef661ac2a82976d3500bc8787692eaffc42fa368"
+  },
+  "scope": "严格生成与来源/memo复用审计；不包含动态验证或永久CFG检查器签字。"
+}

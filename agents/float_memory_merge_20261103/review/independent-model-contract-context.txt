@@ -1,0 +1,67 @@
+model/extensions/V/vext_fp_insts.sail
+2578: // ************************* OPFVF (Merge Instruction) **************************
+2579: // This instruction operates on all body elements regardless of mask value
+2580: union clause instruction = VFMERGE : (vregidx, fregidx, vregidx)
+2581: 
+2582: mapping clause encdec = VFMERGE(vs2, rs1, vd)
+2583:   <-> 0b010111 @ 0b0 @ encdec_vreg(vs2) @ encdec_freg(rs1) @ 0b101 @ encdec_vreg(vd) @ 0b1010111
+2584:   when (currentlyEnabled(Ext_Zvfh)   & get_sew() == 16)
+2585:      | (currentlyEnabled(Ext_Zve32f) & get_sew() == 32)
+2586:      | (currentlyEnabled(Ext_Zve64d) & get_sew() == 64)
+2587: 
+2588: $ifdef SYMBOLIC
+2589: function clause execute VFMERGE(vs2, rs1, vd) = {
+2590:   let rm_3b         = fcsr[FRM];
+2591:   let start_element : nat = match get_start_element() {
+2592:     Ok(v)   => v,
+2593:     Err(()) => return Illegal_Instruction()
+2594:   };
+2595:   let end_element   = get_end_element();
+2596:   let SEW           = get_sew();
+2597:   let LMUL_pow      = get_lmul_pow();
+2598:   let num_elem      = get_num_elem(LMUL_pow, SEW); // max(VLMAX,VLEN/SEW))
+2599:   let real_num_elem = if LMUL_pow >= 0 then num_elem else num_elem / (0 - LMUL_pow); // VLMAX
+2600: 
+2601:   if illegal_fp_vd_masked(vd, SEW, rm_3b) |
+2602:      not(valid_reg_group(vs2, LMUL_pow)) |
+2603:      not(valid_reg_group(vd, LMUL_pow))
+2604:   then return Illegal_Instruction();
+2605: 
+2606:   assert(SEW != 8);
+2607: 
+2608:   let 'n = num_elem;
+model/extensions/V/vext_utils_insts.sail
+416:   result
+417: }
+418: $endif
+419: 
+420: // For instructions like vector reduction and vector store,
+421: // masks on prestart, inactive and tail elements only affect the validation of source register elements
+422: // (vs3 for store and vs2 for reduction). There's no destination register to be masked.
+423: // In these cases, this function can be called to simply get the mask vector for vs (without the prepared vd result vector).
+424: val init_masked_source : forall 'n 'p, 'n > 0. (int('n), int('p), bits('n)) -> result(bits('n), unit)
+425: $ifdef SYMBOLIC
+426: function init_masked_source(num_elem, LMUL_pow, vm_val) = {
+427:   assert_vector_num_elem(num_elem);
+428:   assert_lmul_pow(LMUL_pow);
+429:   let start_element : nat = match get_start_element() {
+430:     Ok(v)   => v,
+431:     Err(()) => return Err(())
+432:   };
+433:   let end_element   = get_end_element();
+434:   var mask : bits('n) = undefined;
+435: 
+436:   // Determine the actual number of elements when lmul < 1
+437:   let real_num_elem = if LMUL_pow >= 0 then num_elem else num_elem / (2 ^ (0 - LMUL_pow));
+438:   assert(num_elem >= real_num_elem);
+439: 
+440:   if __isla_use_extra_ops then
+441:     return Ok(isla_init_mask(num_elem, start_element, end_element, real_num_elem, vm_val));
+442: 
+443:   foreach (i from 0 to (num_elem - 1)) {
+444:     if i < start_element then {
+445:       // Prestart elements defined by vstart
+446:       mask[i] = 0b0
+447:     } else if i > end_element then {
+448:       // Tail elements defined by vl
+449:       mask[i] = 0b0

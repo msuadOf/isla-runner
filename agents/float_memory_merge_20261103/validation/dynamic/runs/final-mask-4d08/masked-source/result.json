@@ -1,0 +1,50 @@
+{
+  "scope": "direct IR helper, not instruction/whole Clause",
+  "input_sha256": "30f6847f904ea22b8c7dd355cda988bf35bc9938ec46e7b564c408801365d5e2",
+  "model_source_manifest_sha256": "84ad731176807cd15bcc8e8e041851a332c51d412c478137f12c72f3dfdaa137",
+  "isla_source_manifest_sha256": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05",
+  "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "rust_source_sha256": "fedc93b46269df52f6db6f13167fdacf5d8c83b9aa8e6f9b9be6ab4ab40a5840",
+  "manifest_sha256": "7cf2df7d09448fda62b5fd09b4ef236c6b6fe98b7eda0710202c1244354f7e2c",
+  "runner_sha256": "03a94cb7e07346f089149361cac34d2fd6c39c6be0b59d88df7f20d35db386a8",
+  "build": [
+    "taskset",
+    "-c",
+    "24",
+    "cargo",
+    "build",
+    "--offline",
+    "--locked",
+    "--release",
+    "--bin",
+    "masked-source-probe",
+    "--manifest-path",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/Cargo.toml"
+  ],
+  "command": [
+    "taskset",
+    "-c",
+    "24",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/flags/target/release/masked-source-probe",
+    "workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir",
+    "workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml"
+  ],
+  "cpu": 24,
+  "build_exit": 0,
+  "binary_sha256": "c3b8177930fa5295247a6c1ce7bbc2234add3aee2389aaaf1ae4a2879dbff194",
+  "ldd": "\tlinux-vdso.so.1 (0x000075b09ce99000)\n\tlibz3.so.5.3 => user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000075b09a400000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000075b09ce3c000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000075b09a000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000075b09ce9b000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000075b099c00000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000075b09a2da000)\n",
+  "exit": 0,
+  "rows": [
+    "PASS active vstart=0x0 vl=1 mask=0x1",
+    "PASS equal vstart=0x1 vl=1 mask=0x0",
+    "PASS greater vstart=0x2 vl=1 mask=0x0",
+    "PASS large vstart=0xffffffffffffffff vl=1 mask=0x0",
+    "PASS total=4"
+  ],
+  "seed_log_sha256": "8dec2828b7d73724e1aaef059e95b9d1d317a84b656f25b32e18863d3560b70a",
+  "seed_fixed_17": true,
+  "pass": true
+}

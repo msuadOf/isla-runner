@@ -1,0 +1,11 @@
+{
+  "pid": 283669,
+  "started_utc": "2026-11-02T17:14:58.401142+00:00",
+  "command": [
+    "/home/baiyifan/miniconda3/bin/python3",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/full_batch/e9/scheduler.py",
+    "--supervise",
+    "--batch",
+    "float-closure-e9d69d2-42000be-20261103-pool16"
+  ]
+}

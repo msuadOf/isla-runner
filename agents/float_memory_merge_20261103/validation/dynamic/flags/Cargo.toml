@@ -1,0 +1,17 @@
+[package]
+name = "float-flags-state-probe"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[[bin]]
+name = "float-flags-state-probe"
+path = "main.rs"
+
+[[bin]]
+name = "masked-source-probe"
+path = "masked_source.rs"
+
+[dependencies]
+isla-lib = { path = "../../../../../.worktree/merge-float-memory-20261104/isla/isla-lib", features = ["smt-thread-interrupt"] }

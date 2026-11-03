@@ -11,3 +11,16 @@
 - Isla `origin/feat/memory-support` 内存支持调查见 [memory_support_review/status.md](memory_support_review/status.md)。
 - workaround 描述归属与运行配置生成见 [workaround_ownership/status.md](workaround_ownership/status.md)。
 - 内存 clause 分支覆盖对照（W19+G1-G8）见 [memsolve_branch_coverage/status.md](memsolve_branch_coverage/status.md)。
+
+- 显式语义分支恢复、预算与GPT-6.1 Sol独审：[状态](explicit_branch_restore_20261102/status.md)。
+
+- [剩余特殊值控制分支](special_control_restore_20261102/status.md)：每源NaN、其他格式及20个活动gate恢复，Sol及定向验收通过。
+- [显式分支超时定位](explicit_branch_timeout_diagnosis_20261102/status.md)：区分flags的SMT成本与旧饱和循环的额外分叉。
+
+- [flags/sat完整归因确认](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)：两小时主路径账、六策略臂、活动gate与collector因果诊断，生产未改。
+
+- 2026-11-02 编码辅助约束分离与活动lane饱和分支完成，Sol独审及三完整Clause预算验收通过；[版本/证据/边界](encoding_constraint_isolation_20261102/status.md)。
+
+
+- 2026-11-03 float纯数据回退收敛与Sol限定验收完成，OPEN冻结延期memory，见[最终交付](float_review_closure_20261102/final-report.md)。
+- 2026-11-04 float→memory 合流候选：父仓文档冲突已处理，子仓提交、组合 IR 与联合验证待完成；见[合流状态](float_memory_merge_20261103/status.md)。

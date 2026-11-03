@@ -1,0 +1,5 @@
+Command exited with non-zero status 87
+wall_s=59.94
+user_s=57.95
+sys_s=1.86
+maxrss_kb=879564

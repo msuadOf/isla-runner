@@ -1,0 +1,65 @@
+{
+  "ordinary_vector_bodies_byte_identical": [
+    "model/extensions/V/vext_fp_insts.sail",
+    "model/extensions/V/vext_fp_red_insts.sail",
+    "model/extensions/V/vext_fp_vm_insts.sail",
+    "model/extensions/bfloat16/zvfbfmin_insts.sail",
+    "model/extensions/bfloat16/zvfbfwma_insts.sail"
+  ],
+  "operand_truth": {
+    "16": {
+      "patterns": 65536,
+      "class_counts": {
+        "other": 63490,
+        "sNaN": 1022,
+        "qNaN": 1024
+      },
+      "signaling_modes": 2
+    },
+    "32": {
+      "patterns": 50,
+      "class_counts": {
+        "other": 42,
+        "sNaN": 4,
+        "qNaN": 4
+      },
+      "signaling_modes": 2
+    },
+    "64": {
+      "patterns": 50,
+      "class_counts": {
+        "other": 42,
+        "sNaN": 4,
+        "qNaN": 4
+      },
+      "signaling_modes": 2
+    }
+  },
+  "bf16_patterns": 65536,
+  "four_lane_flag_or_checks": 160000,
+  "scope": "独立字段真值与组合代数核算，不是Sail/IR执行测试",
+  "source_sha256": {
+    "model/core/ieee_fp_exceptions.sail": "fdb105f1bf911b5d13fef2bfa2ee1f46b66a4ccca3c6d878bc31063937cedbc6",
+    "model/extensions/FD/softfloat_symbolic_f16.sail": "715795790c0efb100806c0a82195e137c4de66c4a9614baac9ee2b0b333a0646",
+    "model/extensions/FD/softfloat_symbolic_f32.sail": "ce65c868e34c3e5a1d9b1806bef3f48d7bba7b5ff18cd7cfdfe584975b716b65",
+    "model/extensions/FD/softfloat_symbolic_f64.sail": "eeb3de73c0bc6de5f07e582db5390b673e28c7c0f3d04a077a85e279695c30b5",
+    "model/extensions/V/vext_fp_insts.sail": "5e70bb12875e9001e0539341e6ad4c2532b8f41e381a759e5c45b3e99789f55f",
+    "model/extensions/V/vext_fp_red_insts.sail": "c512f5707dac2a9c0513909239c97ade1b4b6eea5e742bbaf6dedb833bad5a12",
+    "model/extensions/V/vext_fp_vm_insts.sail": "cd2826b60aae53c59ba6d7edfb91baebaad6159dcee2b2e6e3cbc7a33989f4f8",
+    "model/extensions/bfloat16/zfbfmin_utils.sail": "e2cd0888969fce2d1249a472715e2ead5e41d7168ede0530bce80f8af12f7681",
+    "model/extensions/bfloat16/zvfbfmin_insts.sail": "c86b03c77d672ada95b29a41623172704696fa772219c109fc54945a9947929c",
+    "model/extensions/bfloat16/zvfbfwma_insts.sail": "3e04faa8a349a9db90a03ec10b5e75da00fc3b12735fbdb23ca8239789a443f3"
+  },
+  "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3",
+  "reviewed_patch_sha256": "bc6008b1d05ad052cd3507cb81d432da1438644349833fb686aee61e177a154e",
+  "ieee_core_original_functions": 70,
+  "ieee_core_remaining_diff_after_substituting_operand_invalid_false": [
+    "ieee_eq32_exceptions",
+    "ieee_lt32_exceptions",
+    "ieee_eq16_exceptions",
+    "ieee_lt16_exceptions",
+    "ieee_eq64_exceptions",
+    "ieee_lt64_exceptions"
+  ],
+  "ieee_core_other_functions_exact_after_substitution": 64
+}

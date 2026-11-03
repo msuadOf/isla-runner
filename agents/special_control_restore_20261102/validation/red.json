@@ -1,0 +1,15 @@
+{
+  "status": "RED_HISTORICAL_WITNESS",
+  "old_checks_sha256": "daa8d6f812a0100c7710459818a5e54c3e04ce531950c0bafdba074b1078b639",
+  "missing_scalar_pairs": [
+    [
+      "+normal",
+      "qNaN"
+    ],
+    [
+      "+normal",
+      "sNaN"
+    ]
+  ],
+  "limitations": "只标旧定向实验未生成右源独立NaN；不是证明未符号执行或不可达。source-red.json/原IRCFG结构另由主核对。"
+}

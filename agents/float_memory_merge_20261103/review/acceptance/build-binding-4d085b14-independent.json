@@ -1,0 +1,70 @@
+{
+  "scope": "实际源码快照/正式release feature指纹与依赖绑定/官方库/延迟真实check短探针触发watchdog；不证明所有查询性能",
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613",
+  "source_manifests": [
+    {
+      "manifest_sha256": "6717e0f6476d6b12a0a5b4701ef870ac97b279fd1d6134e99b59abc0164c8d05",
+      "head_at_build": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+      "actual_sealed_head": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
+      "all_snapshot_files_equal_actual_commit": true,
+      "files": 1042
+    },
+    {
+      "manifest_sha256": "84ad731176807cd15bcc8e8e041851a332c51d412c478137f12c72f3dfdaa137",
+      "head_at_build": "bf861b3e687894480aec701a886a38d4e50b8a99",
+      "actual_sealed_head": "bf861b3e687894480aec701a886a38d4e50b8a99",
+      "all_snapshot_files_equal_actual_commit": true,
+      "files": 1011
+    }
+  ],
+  "build_log_sha256": "6cca7c92125c782dec756bd4198c2a8a1ef255fef697d32fa01d00777a62fe8a",
+  "bin_fingerprint_sha256": "f67d86d635d936a5177d95ce791d31b4344ebb650ed46606a08dddbb6e94290e",
+  "lib_fingerprint_sha256": "db5f4c44bc2596385d69e89a4a0a1fb79f4e8fb8af9e221f39b589a6aab6575f",
+  "features": [
+    "default",
+    "smt-thread-interrupt",
+    "tracetool"
+  ],
+  "rlib_sha256": "1cef34f175018a116384c95d05b61b306e3bceb724ed13131a36a19ae9e1ca2e",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "ldd": "\tlinux-vdso.so.1 (0x0000789d5faab000)\n\tlibz3.so.5.3 => user-home:/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000789d5ce00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000789d5fa4e000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000789d5ca00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000789d5faad000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000789d5c600000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000789d5f926000)\n",
+  "watchdog": {
+    "probe_source_sha256": "210f960f257700867befe31f45b59efb8daf82ab2521874016c68f6bff428ca7",
+    "compile_probe": [
+      "rustc",
+      "--edition=2021",
+      "-C",
+      "panic=abort",
+      "workspace:/agents/float_memory_merge_20261103/review/acceptance/watchdog_probe.rs",
+      "--extern",
+      "isla_lib=workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/release/deps/libisla_lib-d393d2f2ca52491d.rlib",
+      "-L",
+      "dependency=workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/build/target/release/deps",
+      "-L",
+      "native=user-home:/.local/opt/z3-official-1fd1d3613/lib",
+      "-C",
+      "link-arg=-Wl,-rpath,user-home:/.local/opt/z3-official-1fd1d3613/lib",
+      "-o",
+      "tmp:/fm-acceptance-20261104/watchdog_probe"
+    ],
+    "compile_delay": [
+      "cc",
+      "-shared",
+      "-fPIC",
+      "-I",
+      "user-home:/.local/opt/z3-official-1fd1d3613/include",
+      "workspace:/agents/float_memory_merge_20261103/review/acceptance/watchdog_delay.c",
+      "-ldl",
+      "-o",
+      "tmp:/fm-acceptance-20261104/watchdog_delay.so"
+    ],
+    "delay_source_sha256": "2af583b7ab089f1303c2a2e007ea4021581d300a448efe78f141859a10b537c8",
+    "probe_binary_sha256": "0a999a3337e1c5cb6b0bf69a67ba718d321b39004b8306cd30b28b30cdf8591f",
+    "delay_binary_sha256": "9080015573c29e3d5ce86001836a95c10fb3678f678c0734087ce55ffa6bb28b",
+    "stdout": "watchdog_timeout=true limit_ms=10 wall_ms=80\n",
+    "stderr": "watchdog_called_Z3_interrupt\n",
+    "exit": 0
+  },
+  "pass": true
+}

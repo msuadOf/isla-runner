@@ -1,0 +1,38 @@
+[
+  {
+    "name": "FVVMATYPE",
+    "mutation": "把活动运算提前到mask判断之前",
+    "rejected": true,
+    "reason": "negative-FVVMATYPE: FVVMATYPE活动出口漏运算"
+  },
+  {
+    "name": "FVVMATYPE",
+    "mutation": "将非活动出口改到活动运算体",
+    "rejected": true,
+    "reason": "negative-FVVMATYPE: FVVMATYPE不活动出口仍执行运算"
+  },
+  {
+    "name": "FVVMTYPE",
+    "mutation": "把活动运算提前到mask判断之前",
+    "rejected": true,
+    "reason": "negative-FVVMTYPE: FVVMTYPE活动出口漏运算"
+  },
+  {
+    "name": "FVVMTYPE",
+    "mutation": "将非活动出口改到活动运算体",
+    "rejected": true,
+    "reason": "negative-FVVMTYPE: FVVMTYPE不活动出口仍执行运算"
+  },
+  {
+    "name": "VFWMACCBF16_VF",
+    "mutation": "把活动运算提前到mask判断之前",
+    "rejected": true,
+    "reason": "negative-VFWMACCBF16_VF: VFWMACCBF16_VF活动出口漏运算"
+  },
+  {
+    "name": "VFWMACCBF16_VF",
+    "mutation": "将非活动出口改到活动运算体",
+    "rejected": true,
+    "reason": "negative-VFWMACCBF16_VF: VFWMACCBF16_VF不活动出口仍执行运算"
+  }
+]

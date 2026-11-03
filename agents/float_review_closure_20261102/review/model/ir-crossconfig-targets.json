@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "comparison": "去源位置及空白后目标函数逐字一致；F1架构位宽单独审",
+  "rows": [
+    {
+      "config": "rv32d",
+      "ir_sha256": "df3dfd02cecd184e8ed2adfcdab4c4d3a4e15afba274ab51c0c2d63041744eb0",
+      "identical_non_flags_target_functions": 51,
+      "differences": [],
+      "absent_targets": [
+        "zriscv_f16ToI64",
+        "zriscv_f16ToUi64"
+      ]
+    },
+    {
+      "config": "rv64d_v256_e64",
+      "ir_sha256": "fbc1f8953810f63b1f092929e26802f816bc7f5e354e170afae35a51d71c2922",
+      "identical_non_flags_target_functions": 53,
+      "differences": [],
+      "absent_targets": []
+    },
+    {
+      "config": "rv64d_v512_e64",
+      "ir_sha256": "a699d34c4c9c52da15d6924f6788d641880b2c7f331b0f55fce42bddc576bbdc",
+      "identical_non_flags_target_functions": 53,
+      "differences": [],
+      "absent_targets": []
+    }
+  ]
+}

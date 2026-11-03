@@ -1,0 +1,186 @@
+{
+  "name": "exact-int-to-D",
+  "kind": "directed",
+  "clause": "F_UN_RM_XF_TYPE_D",
+  "domain": "directed-fixed-state",
+  "command": [
+    "/usr/bin/time",
+    "-f",
+    "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+    "-o",
+    "time.txt",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "36",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/constrained.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/config.toml",
+    "-T",
+    "1",
+    "--tastic",
+    "qffp",
+    "--smt-timeout",
+    "7200s",
+    "solve-state",
+    "--clause=F_UN_RM_XF_TYPE_D"
+  ],
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/seed-intercept.log"
+  },
+  "model_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "inputs_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "source_ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+  "run_ir_sha256": "4af6e3fc0aa5de2668af263c3ea49c17d109bf0e9b6f4ce646a6a0d1657a844f",
+  "config_sha256": "4c031c0eb2e0b041a0f6ed4fb5d90c61e830ccd90007b12d453a645bbb871515",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "cpu": 36,
+  "started_utc": "2026-11-02T16:28:37.077325+00:00",
+  "exit_code": 0,
+  "elapsed_s": 10.321,
+  "finished_utc": "2026-11-02T16:28:47.398390+00:00",
+  "run_log_sha256": "807eb141d4aa44e4a1e14eb4b3025a6726b13b6bf9706132751204e7a7804064",
+  "json_count": 1,
+  "seed_fixed_17": true,
+  "seed_log_sha256": "e4bf4fe636f0a6e6cdbcaf303e6eab95fb332330a3f41a39ab85c7823d07e54e",
+  "output_sha256": "d037fb68d39c5232d2f39bee501173f0dcf43d9b0039f55721ebcd15e3f8a5a2",
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zF_UN_RM_XF_TYPE_D"
+  },
+  "gen": 24,
+  "representations": {
+    "source_sha256": "d037fb68d39c5232d2f39bee501173f0dcf43d9b0039f55721ebcd15e3f8a5a2",
+    "gen": 24,
+    "raw_all_pass": false,
+    "raw_failures": 10,
+    "accepted_gnu_exact_fallbacks": 10,
+    "all_pass": true
+  },
+  "semantic_pass": true,
+  "semantic_detail": {
+    "seen": [
+      [
+        "fcvt.d.l",
+        0
+      ],
+      [
+        "fcvt.d.l",
+        1
+      ],
+      [
+        "fcvt.d.l",
+        2
+      ],
+      [
+        "fcvt.d.l",
+        3
+      ],
+      [
+        "fcvt.d.l",
+        4
+      ],
+      [
+        "fcvt.d.l",
+        7
+      ],
+      [
+        "fcvt.d.lu",
+        0
+      ],
+      [
+        "fcvt.d.lu",
+        1
+      ],
+      [
+        "fcvt.d.lu",
+        2
+      ],
+      [
+        "fcvt.d.lu",
+        3
+      ],
+      [
+        "fcvt.d.lu",
+        4
+      ],
+      [
+        "fcvt.d.lu",
+        7
+      ],
+      [
+        "fcvt.d.w",
+        0
+      ],
+      [
+        "fcvt.d.w",
+        1
+      ],
+      [
+        "fcvt.d.w",
+        2
+      ],
+      [
+        "fcvt.d.w",
+        3
+      ],
+      [
+        "fcvt.d.w",
+        4
+      ],
+      [
+        "fcvt.d.w",
+        7
+      ],
+      [
+        "fcvt.d.wu",
+        0
+      ],
+      [
+        "fcvt.d.wu",
+        1
+      ],
+      [
+        "fcvt.d.wu",
+        2
+      ],
+      [
+        "fcvt.d.wu",
+        3
+      ],
+      [
+        "fcvt.d.wu",
+        4
+      ],
+      [
+        "fcvt.d.wu",
+        7
+      ]
+    ],
+    "expected_modes_per_op": 6,
+    "assertions": 144,
+    "missing": []
+  },
+  "pass": true
+}

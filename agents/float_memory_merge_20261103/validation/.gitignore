@@ -1,0 +1,6 @@
+# 大型生成中间产物可由记录的命令和输入重建。
+*.ir
+*.irx
+**/sail_smt_cache*
+**/target/
+**/__pycache__/

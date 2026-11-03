@@ -1,0 +1,41 @@
+{
+  "source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "exit_code": 0,
+  "elapsed_s": 16.687,
+  "finished_utc": "2026-11-02T15:50:28.891907+00:00",
+  "json_count": 1,
+  "json_sha256": "e299bfe083aaaac18a3fe032038a9b3384458dbf42318c61ce9901455f434e6b",
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zFLEQ_S"
+  },
+  "summary_schema_valid": true,
+  "gen_count": 48,
+  "return_kinds": {
+    "Retire_Success": 48,
+    "Illegal_Instruction": 0,
+    "other": 0
+  },
+  "itrace_bytes": 17956369,
+  "itrace_sha256": "312c9771d0b12d5ce3c8a5909a6f1ab4754a770288a55b08720767177b6c41ba",
+  "seed_intercepted": true,
+  "seed_log_lines": [
+    "parameter=random_seed original=24578486 fixed=17"
+  ],
+  "pass": true
+}

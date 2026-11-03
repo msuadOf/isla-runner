@@ -1,0 +1,71 @@
+[
+  {
+    "name": "stock-compiler",
+    "argv": [
+      "sail",
+      "--no-color",
+      "--all-modules",
+      "--cpp",
+      "--c-no-main",
+      "--c-preserve",
+      "review_probe",
+      "--memo-z3-path",
+      "agents/sail_riscv_commit_review/independent-review-20261021/stock-cache",
+      "-o",
+      "agents/sail_riscv_commit_review/independent-review-20261021/stock-generated",
+      "agents/sail_riscv_commit_review/independent-review-20261021/stock-probe.sail_project"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "legality-fixture",
+    "argv": [
+      "python3",
+      ".worktree/sail-riscv-by-category-20261019/test/solve_fp_legality/build_probe.py",
+      "agents/sail_riscv_commit_review/independent-review-20261021/legality"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "old-compare-fixture",
+    "argv": [
+      "python3",
+      ".worktree/sail-riscv-by-category-20261019/test/solve_pure_compare/restore_before.py",
+      "agents/sail_riscv_commit_review/independent-review-20261021/old-compare"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "patched-compiler",
+    "argv": [
+      "isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+      "--no-color",
+      "--all-modules",
+      "--cpp",
+      "--c-no-main",
+      "--c-preserve",
+      "review_probe",
+      "--memo-z3-path",
+      "agents/sail_riscv_commit_review/independent-review-20261021/patched-cache",
+      "-o",
+      "agents/sail_riscv_commit_review/independent-review-20261021/patched-generated",
+      "agents/sail_riscv_commit_review/independent-review-20261021/stock-probe.sail_project"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "vector-helper",
+    "argv": [
+      "isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+      "--no-color",
+      "--all-modules",
+      "--just-check",
+      "-D",
+      "SYMBOLIC",
+      "--memo-z3-path",
+      "agents/sail_riscv_commit_review/independent-review-20261021/helper-cache",
+      "agents/sail_riscv_commit_review/independent-review-20261021/vector-helper/helper_probe.sail_project"
+    ],
+    "exit_code": 1
+  }
+]

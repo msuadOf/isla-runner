@@ -1,0 +1,354 @@
+{
+  "recorded_utc": "2026-11-02T16:37:08.655599+00:00",
+  "repository": "isla",
+  "base": "0008fae76f4cff86dae1a036d889f0414c228e9d",
+  "current_reviewed": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "base_is_ancestor": true,
+  "current_worktree_head": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "preserved_worktree_status": " M test/float_ir/README.md\n M test/float_ir/check_special_semantic_branches.py\n M test/float_ir/run.py\n?? test/float_ir/check_float_closure_branches.py\n",
+  "method": "只读比较提交对象；不读取未提交IR测试修改作为受测实现，不修改77条长跑源码/inputs/进程。文件增删含内联测试，不等于生产逻辑增删。",
+  "production_path_count": 45,
+  "files": [
+    {
+      "path": "Cargo.toml",
+      "added_including_inline_tests": 4,
+      "removed_including_inline_tests": 1,
+      "head_sha256": "eaeacb29f3f0ce2e1a505cb35d4d136ef5ce416b782047a2425d2a565871ecbc"
+    },
+    {
+      "path": "configs/riscv64_difftest.toml",
+      "added_including_inline_tests": 1,
+      "removed_including_inline_tests": 1,
+      "head_sha256": "71fb63e105331a0f329261c636e55446af42ba0367c96e45c9b49cb60332ad2d"
+    },
+    {
+      "path": "configs/riscv64_difftest_fd.toml",
+      "added_including_inline_tests": 106,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+    },
+    {
+      "path": "configs/riscv64_difftest_vabs_v.toml",
+      "added_including_inline_tests": 161,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "e874a6db65834eb9997048eeb6497c0014768649b67ddb5edd2e608fdf1f30ef"
+    },
+    {
+      "path": "configs/workarounds/vvtype.toml",
+      "added_including_inline_tests": 0,
+      "removed_including_inline_tests": 142,
+      "head_sha256": null
+    },
+    {
+      "path": "isla-axiomatic/src/page_table.rs",
+      "added_including_inline_tests": 1,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "2739129db3bb1b701c04f9f4bc605616822d04cc73f587a89b3bb516df8964b8"
+    },
+    {
+      "path": "isla-lib/Cargo.toml",
+      "added_including_inline_tests": 2,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "ad56bcfad6f973fe8d00637767bb53551dbeb974c5bae57bbee4bda74100ba78"
+    },
+    {
+      "path": "isla-lib/src/config.rs",
+      "added_including_inline_tests": 115,
+      "removed_including_inline_tests": 1,
+      "head_sha256": "7462eacaf140b5c7cb4702d72c097595f6bef19ec406b0d92d2959c36bfa0320"
+    },
+    {
+      "path": "isla-lib/src/error.rs",
+      "added_including_inline_tests": 1,
+      "removed_including_inline_tests": 1,
+      "head_sha256": "bec463f1e1d724f328d9dd3aaf99a911e39f5dc6618785d6ebea8e31306c31e6"
+    },
+    {
+      "path": "isla-lib/src/executor.rs",
+      "added_including_inline_tests": 597,
+      "removed_including_inline_tests": 95,
+      "head_sha256": "ccef81f00e205ab90af9b2abef12d4ddf08948ea305b2c52064b3a629d08e263"
+    },
+    {
+      "path": "isla-lib/src/executor/execution_limits.rs",
+      "added_including_inline_tests": 48,
+      "removed_including_inline_tests": 24,
+      "head_sha256": "3e7b1abe575234a58d1e078b60b36d47364f76a99bdae935e06e873de3da03d0"
+    },
+    {
+      "path": "isla-lib/src/executor/frame.rs",
+      "added_including_inline_tests": 109,
+      "removed_including_inline_tests": 38,
+      "head_sha256": "71ced98d0ac454771f46df65e92bdb6d771333811df1c1120daf69d355cab0cb"
+    },
+    {
+      "path": "isla-lib/src/fmtval.rs",
+      "added_including_inline_tests": 93,
+      "removed_including_inline_tests": 3,
+      "head_sha256": "43806138bf1f3981b198bdd1f35a611d650dac49cbef9537912a9ed6df7a679e"
+    },
+    {
+      "path": "isla-lib/src/init.rs",
+      "added_including_inline_tests": 81,
+      "removed_including_inline_tests": 12,
+      "head_sha256": "8d8a6839232bf2ab7e28d4636d911722581000acf956a2ada688ef675ede2682"
+    },
+    {
+      "path": "isla-lib/src/ir.rs",
+      "added_including_inline_tests": 27,
+      "removed_including_inline_tests": 23,
+      "head_sha256": "a7ecb4ff45256fa4ec3e18e8daf5bc7e8718b0fafac93e4c35ed4543f640238f"
+    },
+    {
+      "path": "isla-lib/src/memory.rs",
+      "added_including_inline_tests": 4,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "65137eb6c0f402d5929d3a79c5731189ce0b34909022304041a1c4d7cdf07efc"
+    },
+    {
+      "path": "isla-lib/src/primop.rs",
+      "added_including_inline_tests": 337,
+      "removed_including_inline_tests": 8,
+      "head_sha256": "bb26262631a6f43be94b6910b1726cc8763265ca27971a5d77cf49d0dc3db6ab"
+    },
+    {
+      "path": "isla-lib/src/primop/float.rs",
+      "added_including_inline_tests": 478,
+      "removed_including_inline_tests": 62,
+      "head_sha256": "1f10028a6556e12e288fe6fef52a4ef1e328c2c42c122428661c5ea98315d183"
+    },
+    {
+      "path": "isla-lib/src/simplify.rs",
+      "added_including_inline_tests": 1,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "a082b5a5d5214c830c90894f7d3d2a37002ef4b6f4faed13576a427ceae936b0"
+    },
+    {
+      "path": "isla-lib/src/smt.rs",
+      "added_including_inline_tests": 579,
+      "removed_including_inline_tests": 118,
+      "head_sha256": "aa3cb973102299707fc2d87c94369136daed8b88944e47b48ff3ee9e9ec1f9cc"
+    },
+    {
+      "path": "isla-lib/src/smt/dump.rs",
+      "added_including_inline_tests": 4,
+      "removed_including_inline_tests": 1,
+      "head_sha256": "f96ac8a19cd9730aaff7970ab2a98e03fa8301515f2c2d833f6d056dfefe7d4d"
+    },
+    {
+      "path": "isla-lib/src/smt/smtlib.rs",
+      "added_including_inline_tests": 7,
+      "removed_including_inline_tests": 3,
+      "head_sha256": "64b32f19b59b6535284c51d99fd5869495ede075abc32b1f4d5bcabf0fbb7ddd"
+    },
+    {
+      "path": "isla-lib/src/smt/tactic.rs",
+      "added_including_inline_tests": 39,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "df34cae482c05359b3263675c3325dc60f46306ebf4bafe3d50428053aa76f93"
+    },
+    {
+      "path": "isla-lib/src/smt/z3_timeout.rs",
+      "added_including_inline_tests": 4,
+      "removed_including_inline_tests": 1,
+      "head_sha256": "951934c4079b5e4284f2872448233774c3f6d563e9cba53f06a17ce361b78d19"
+    },
+    {
+      "path": "isla-lib/src/tracetool.rs",
+      "added_including_inline_tests": 41,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "2a3500f461e9bc5e5ed7a9457d2683a759cacff176ef86555eedafc59c909d5e"
+    },
+    {
+      "path": "isla-lib/src/tracetool/btrace.rs",
+      "added_including_inline_tests": 286,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "0761d160bbf81b33920dd3dc4a420b1aa01562b170dff935a4d07cbb46294c2a"
+    },
+    {
+      "path": "isla-lib/src/tracetool/common.rs",
+      "added_including_inline_tests": 292,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "0a6a277b5eda97c16edaa75d7eb43c82d67736c014edf407d3adc48df4824467"
+    },
+    {
+      "path": "isla-lib/src/tracetool/ftrace.rs",
+      "added_including_inline_tests": 31,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "e7508a3d6bbc80d7ffd018766ff6e2a4d295026ead68387ba7629d807c8fdb32"
+    },
+    {
+      "path": "isla-lib/src/tracetool/itrace.rs",
+      "added_including_inline_tests": 82,
+      "removed_including_inline_tests": 1666,
+      "head_sha256": "510f6f7d61ab4f7c3eb7bc43b4b11ffa25b3e17e5198891dd29a7bf401b297e2"
+    },
+    {
+      "path": "isla-lib/src/tracetool/sequence.rs",
+      "added_including_inline_tests": 178,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "27af57f26b7171fb0a9422f92917a4ab70d628ad34f17caef9d3950d4c34aa7c"
+    },
+    {
+      "path": "isla-lib/src/tracetool/tests.rs",
+      "added_including_inline_tests": 1413,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "6caa182aedaff03fc74443d2d37dda0daf25c75b84e709f10f03e344402d534c"
+    },
+    {
+      "path": "isla-lib/src/tracetool/writer.rs",
+      "added_including_inline_tests": 196,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "d75b2490827c3dbdbc79bc0848d65fcd18f74e59606be0bb43ad107515b3c13d"
+    },
+    {
+      "path": "scripts/run.mk",
+      "added_including_inline_tests": 120,
+      "removed_including_inline_tests": 24,
+      "head_sha256": "cce7dc2526f443ec100a10b05da4c68e635574c54c91c561f9beeb1a10bd3752"
+    },
+    {
+      "path": "scripts/run_ctrl_c.mk",
+      "added_including_inline_tests": 8,
+      "removed_including_inline_tests": 32,
+      "head_sha256": "8081d772609eae3ccfb93db21d92f7bdab3115d3ed12e6cfd96981abb88bd9f3"
+    },
+    {
+      "path": "scripts/solve_process.py",
+      "added_including_inline_tests": 168,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "48aedd3ed6a8e5d0f6c16fcd9ba265d236cd87a32551a904a608f071deafaf4b"
+    },
+    {
+      "path": "src/isarch/encoding.rs",
+      "added_including_inline_tests": 335,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "d978e2122ec7a70795f125cd7323ea4726de7e022cc27c3c04bcdec90e17cd9a"
+    },
+    {
+      "path": "src/isarch/exec.rs",
+      "added_including_inline_tests": 1372,
+      "removed_including_inline_tests": 255,
+      "head_sha256": "824a7a711ffb0e9d5e8a883d5039d9160a6553b0f39222337afaf632804782d8"
+    },
+    {
+      "path": "src/isarch/mod.rs",
+      "added_including_inline_tests": 357,
+      "removed_including_inline_tests": 87,
+      "head_sha256": "10524bc5551eaf30d5f1f73b8edb7b65b150d3cc119c9ab86fce77f45907a031"
+    },
+    {
+      "path": "src/isarch/representation.rs",
+      "added_including_inline_tests": 86,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "9bb59afe7a44a057b41ff77950944a0ee488bc1ef5f499a99ab93dc18f55ee96"
+    },
+    {
+      "path": "src/isarch/solve_summary.rs",
+      "added_including_inline_tests": 84,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "95314360b5882e895754c9a931aa1153220d77d40a3a0f9520912ad3752dee94"
+    },
+    {
+      "path": "src/isarch/target.rs",
+      "added_including_inline_tests": 890,
+      "removed_including_inline_tests": 18,
+      "head_sha256": "64c1ca76286b640fceedbfa82941401e7c10318a1128ee376e2f0620323b4800"
+    },
+    {
+      "path": "src/isarch/timeout_report.rs",
+      "added_including_inline_tests": 6,
+      "removed_including_inline_tests": 6,
+      "head_sha256": "6f93d3dbaf6ebec2908a566a1169e1c5fc1e8e280eedf60e6602176e2b5cd555"
+    },
+    {
+      "path": "src/isarch_main.rs",
+      "added_including_inline_tests": 141,
+      "removed_including_inline_tests": 23,
+      "head_sha256": "f72b3876b043818f85bbeb782eef38f276349a986c222b8449b5a293fa3b06cd"
+    },
+    {
+      "path": "src/opts.rs",
+      "added_including_inline_tests": 10,
+      "removed_including_inline_tests": 3,
+      "head_sha256": "20966551a2c7db3bcb0f9a0bfa662e763f2d8bd78d9a32dc3ff6a4f0047c17bb"
+    },
+    {
+      "path": "web/server/src/worker.rs",
+      "added_including_inline_tests": 2,
+      "removed_including_inline_tests": 0,
+      "head_sha256": "1713d76cca2b555e653a00c9b4e420df2036ced1f068363d551e7e24d19c83e6"
+    }
+  ],
+  "closure_round_delta": {
+    "base": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+    "head": "42000be47596ec088623881d03c0eadc5cf0ba27",
+    "changed_paths": [
+      "isla-lib/src/smt.rs"
+    ],
+    "smt_production_prefix_added": 66,
+    "smt_production_prefix_removed": 21,
+    "prefix_boundary": "smt.rs #[cfg(test)] mod tests 之前；末尾不变re-export不计入差异"
+  },
+  "evidence": {
+    "agents/float_review_closure_20261102/review/enum/baseline-independent.json": "562aa16be338083bb95878bf13174c3c66f433b2df166b4d3d72eba111205b3a",
+    "agents/float_review_closure_20261102/review/enum/green-independent.json": "5b05d3d726935635d289b46bf556c9ed84aea45e29208e95767d05eb651a388c",
+    "agents/float_review_closure_20261102/review/enum/old-binary-timeout-audit.json": "3ce76502ff304c25c1cda2727e04c1064359011b512c29de7fbd3513bcf19b5c",
+    "agents/float_review_closure_20261102/review/enum/watchdog-itrace-result.json": "2bd0a0e7c20f83c6a412f53cf9305ffd78c2d1b7a91e5ca9ff39e512df0b6809",
+    "agents/explicit_branch_timeout_diagnosis_20261102/collector-cost/report.md": "5816dcf2427bded789259f0764489b013688b059a01e52bc0fc5998233b5a4d7",
+    "agents/encoding_constraint_isolation_20261102/review/final-report.md": "de9fbb32da7b64fefacc4933c60f75589171bb5be42d22c8366e61c9f28de90b",
+    "agents/float_review_completion_20261102/executeas/status.md": "72551b741bb5c5af5238ba0dbdae69ccd85351d93c880e40701a931fd0541f62",
+    "agents/float_support_review/solve-fix-mixed-bits.md": "af968da8d66bf11fc351ae98dc797c35b6ba27ae68c2d6e45e77e55bd728d1f6",
+    "agents/float_support_review/solve-fix-model-cache.md": "01cfb971a7b8cf068738adf9917a67a8978da6d5d951cbf9d7dc4595159fe71c",
+    "agents/float_only_review/report.md": "a3f88112aa24c6d132e6c47d6e12359e38dcd037bd1517c588e9756acef9611d"
+  },
+  "new_dynamic_tests": false,
+  "recommended_no_immediate_mutation": true,
+  "documentation_correction_20261103": {
+    "date": "2026-11-03",
+    "source": "isla@42000be47596ec088623881d03c0eadc5cf0ba27",
+    "basis": [
+      "src/isarch/target.rs:124-156,631",
+      "src/isarch/exec.rs:861-904"
+    ],
+    "docs_before": {
+      "validation/procedure.md": "e43eef71832a56d6c5bb78f0d420d3c4b150b00ba1aea2232cc1e62d8ea06ca1",
+      "validation/matrix.md": "cefdb7b64fbaa5277b9036043536054b2ddff59b78fa6a6a3c8cad55a7df3b5c"
+    },
+    "protected_before": {
+      "validation/run_clause.py": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1",
+      "validation/freeze_source.py": "db7d2927980c6e723538c65a0915158d78e1758a07ac966d9f824199588ea339",
+      "validation/full_batch/scheduler.py": "b478384ce3be9873bfa669c327b5723ebcbb53516e03a4c451aa4310ae42d690",
+      "validation/inputs.template.json": "da4595cf3f719fa4219043982fd238551fa13cd0740cc79beef7661ce6f40874",
+      "validation/inputs.model-8ad5e8e.json": "25a1a624cb5dcac76a2261c470e198c64a75b20259322a1c7ee5d0572b83ec24",
+      "validation/inputs.itrace.template.json": "78abe1dacce1a0cdc04a630458ed2a435a9083b0a5d7de373337f8a058464ae5",
+      "validation/inputs.model-8ad5e8e-itrace.json": "0e57cf681917c9a3f05070c146b877b7ed30e108dc2135d3f31740966965f90c",
+      "validation/inputs.final.template.json": "2ae7980112f365b83369adf007eab04ef802b60608312d562ec6a0a8cdf48287",
+      "validation/inputs.model-21418d0-itrace.json": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+      "validation/bin/manifest-default.json": "9d557745bb77bf452b59ed0cc6b8a59c71fe8a86fd47d6a1fe57b4fcac706b14",
+      "validation/bin/manifest-interrupt.json": "0371cfa2106dcf55fe8e8cc3081e11265a37640b188e9620284c555dadab10bc",
+      "validation/bin/manifest-interrupt-itrace.json": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6"
+    },
+    "docs_after": {
+      "validation/procedure.md": "98ca740fa12fc8a95e49ffdd4c146fb86c6659040e45fb6503165a4360c5b1a0",
+      "validation/matrix.md": "d296148e1135a93f4781c02afb05346b3ae6c3cb73466f13c7a3b6124c967d1c"
+    },
+    "protected_after": {
+      "validation/run_clause.py": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1",
+      "validation/freeze_source.py": "db7d2927980c6e723538c65a0915158d78e1758a07ac966d9f824199588ea339",
+      "validation/full_batch/scheduler.py": "b478384ce3be9873bfa669c327b5723ebcbb53516e03a4c451aa4310ae42d690",
+      "validation/inputs.template.json": "da4595cf3f719fa4219043982fd238551fa13cd0740cc79beef7661ce6f40874",
+      "validation/inputs.model-8ad5e8e.json": "25a1a624cb5dcac76a2261c470e198c64a75b20259322a1c7ee5d0572b83ec24",
+      "validation/inputs.itrace.template.json": "78abe1dacce1a0cdc04a630458ed2a435a9083b0a5d7de373337f8a058464ae5",
+      "validation/inputs.model-8ad5e8e-itrace.json": "0e57cf681917c9a3f05070c146b877b7ed30e108dc2135d3f31740966965f90c",
+      "validation/inputs.final.template.json": "2ae7980112f365b83369adf007eab04ef802b60608312d562ec6a0a8cdf48287",
+      "validation/inputs.model-21418d0-itrace.json": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+      "validation/bin/manifest-default.json": "9d557745bb77bf452b59ed0cc6b8a59c71fe8a86fd47d6a1fe57b4fcac706b14",
+      "validation/bin/manifest-interrupt.json": "0371cfa2106dcf55fe8e8cc3081e11265a37640b188e9620284c555dadab10bc",
+      "validation/bin/manifest-interrupt-itrace.json": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6"
+    },
+    "protected_assets_unchanged": true,
+    "new_dynamic_pass": false,
+    "scope": "仅文档澄清初始化默认值、重新符号化和collector见证偏好；历史过宽表述以追加纠正记录保留。"
+  }
+}

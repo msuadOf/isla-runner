@@ -1,0 +1,9 @@
+make: Entering directory 'workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/LOAD_FP'
+mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter
+mkdir -p output/log output/trace outputs
+n=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \
+echo "[$n/] solve-LOAD_FP"; \
+RUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause "LOAD_FP" -- timeout --signal=TERM --kill-after=10s 7200s ./target/release/isarch \
+	-A workspace:/.worktree/merge-float-memory-20261104/isla/ir/rv64d_v128_e64.ir -C workspace:/.worktree/merge-float-memory-20261104/isla/configs/riscv64_difftest_fd.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 1 --timeout 7200s --smt-timeout 7200s --tastic qfaufbv   solve-state --clause=LOAD_FP \
+	> output/log/LOAD_FP.log 2>&1
+make: Leaving directory 'workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/full-make-4d08/make/LOAD_FP'

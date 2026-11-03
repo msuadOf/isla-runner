@@ -1,0 +1,48 @@
+{
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "inputs_path": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-8ad5e8e.json",
+  "inputs_sha256": "25a1a624cb5dcac76a2261c470e198c64a75b20259322a1c7ee5d0572b83ec24",
+  "source_paths": {
+    "ir": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv64d_v128_e64/rv64d_v128_e64.ir",
+    "binary": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt",
+    "base_config": "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml",
+    "seed_preload": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "z3": "/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0"
+  },
+  "frozen_hashes": {
+    "ir": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+    "binary": "fe4bdcebd1d970d6f026c0f81ccd22f807f5cb4729da27ef67e20b2c08d09d80",
+    "base_config": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "seed_preload": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+  },
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "ldd": "\tlinux-vdso.so.1 (0x0000715b15391000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000715b12800000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000715b15334000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000715b12400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000715b15393000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000715b12000000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000715b126da000)\n",
+  "expected_sha256": "6ed44d0afba816a709fe6f4f18f0e34505c8b3202aaed6e1ad306e5aea135891",
+  "oracle_binary_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "oracle_source_sha256": "c5067c9f3714012fff65b78257b8cf0449762ecf9f9635f84a4de08deb4c44b6",
+  "softfloat_archive_sha256": "1add1fbb8998f781899c183e838b8aba18ec0410da4c337ffaf19bcc25efaa07",
+  "script_sha256": "43c967d0e212aedfea1b50b97e144440598b2dec99ad328dd38cb1596c8f1752",
+  "expected_generator_sha256": "77d688bc84d901940afb3ffea0acc6ec3d453f0e4c7e48f7a55ebc1e945e5309",
+  "freeze_verifier_sha256": "7b126047f6f380601e9132cc9a82b6c96fef0b64c364d6e4056cee6e6a69eae5",
+  "jobs": [
+    "VD-add-inf-cancel-mask1",
+    "VD-add-inf-cancel-mask2",
+    "VD-add-inf-cancel-mask3",
+    "VD-mul-invalid-overflow-mask1",
+    "VD-mul-invalid-overflow-mask2",
+    "VD-mul-invalid-overflow-mask3",
+    "VD-div-nv-dz-mask0",
+    "VD-div-nv-dz-mask1",
+    "VD-div-nv-dz-mask2",
+    "VD-div-nv-dz-mask3"
+  ],
+  "timeout_seconds": 600,
+  "workers": 2,
+  "cpus": [
+    17,
+    29
+  ],
+  "tactic": "qffp",
+  "threads": 1
+}

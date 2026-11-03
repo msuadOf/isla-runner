@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "34",
+    "make",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/validation/make-smoke",
+    "-f",
+    "/data1/baiyifan/workplace/isla-runner/isla/scripts/run.mk",
+    "-o",
+    "build-isarch",
+    "solve-FLEQ_S",
+    "IR_FILE=/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/validation/inputs/model.ir",
+    "ISA_CONFIG=/data1/baiyifan/workplace/isla-runner/agents/special_control_restore_20261102/validation/runs/fleq-S-qNaN/config.toml",
+    "THREADS=1",
+    "SOLVE_TIMEOUT=",
+    "SMT_TIMEOUT=7200s",
+    "OUTER_TIMEOUT=7200s",
+    "TASTIC=qffp",
+    "ITRACE=0"
+  ],
+  "binary_sha256": "ce338b4cd6aee05f7d73789334443ff12a4eafea423f07eb2071da74cabff7df",
+  "ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048"
+}

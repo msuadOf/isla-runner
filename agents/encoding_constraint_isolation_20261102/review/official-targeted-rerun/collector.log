@@ -1,0 +1,16 @@
+
+running 11 tests
+test isarch::exec::tests::collector_concretizes_wide_vector_pre_and_post_state ... ok
+test isarch::exec::tests::collector_executes_execute_as_payload_without_resetting_state ... ok
+test isarch::exec::tests::collector_finds_encodable_alternative_pre_state ... ok
+test isarch::exec::tests::collector_keeps_other_encodings_after_assembly_rejection ... ok
+test isarch::exec::tests::collector_preserves_constrained_fs_vs_and_encoding_output ... ok
+test isarch::exec::tests::collector_preserves_finished_results_and_concretization_failures ... ok
+test isarch::exec::tests::collector_preserves_first_error_including_non_smt ... ok
+test isarch::exec::tests::collector_preserves_multiple_symbolic_encodings ... ok
+test isarch::exec::tests::collector_propagates_encoder_assertion_failure ... ok
+test isarch::exec::tests::collector_reports_fully_unencodable_retire_path ... ok
+test isarch::exec::tests::collector_uses_compressed_only_in_normal_rejection_domain ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 92 filtered out; finished in 1.75s
+

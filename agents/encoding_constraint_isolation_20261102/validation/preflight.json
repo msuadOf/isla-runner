@@ -1,0 +1,123 @@
+{
+  "recorded_utc": "2026-11-02T10:21:51.905361+00:00",
+  "inputs": [
+    {
+      "job": "old_flags",
+      "kind": "ir",
+      "path": "agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+      "expected_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "actual_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "size_bytes": 15702838
+    },
+    {
+      "job": "old_flags",
+      "kind": "config",
+      "path": "agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+      "expected_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "actual_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "size_bytes": 2810
+    },
+    {
+      "job": "old_sat",
+      "kind": "ir",
+      "path": "agents/branch_ablation_official_z3_20261102/inputs/sat/B.ir",
+      "expected_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+      "actual_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+      "size_bytes": 15702914
+    },
+    {
+      "job": "old_sat",
+      "kind": "config",
+      "path": "agents/branch_ablation_official_z3_20261102/inputs/sat/config.toml",
+      "expected_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+      "actual_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+      "size_bytes": 2867
+    },
+    {
+      "kind": "seed_preload",
+      "path": "agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+      "expected_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+      "actual_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+      "size_bytes": 16416
+    }
+  ],
+  "cpu_topology": [
+    [
+      "36",
+      "36",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "37",
+      "37",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "38",
+      "38",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "39",
+      "39",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "100",
+      "36",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "101",
+      "37",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "102",
+      "38",
+      "1",
+      "1",
+      "yes"
+    ],
+    [
+      "103",
+      "39",
+      "1",
+      "1",
+      "yes"
+    ]
+  ],
+  "historical_baseline": {
+    "old_flags": {
+      "exit_code": 124,
+      "outer_timeout": true,
+      "elapsed_s": 7200.756,
+      "wall_s": 7200.74,
+      "user_s": 7058.32,
+      "sys_s": 100.06,
+      "binary_sha256": null
+    },
+    "old_sat": {
+      "exit_code": 124,
+      "outer_timeout": true,
+      "elapsed_s": 7200.206,
+      "wall_s": 7200.2,
+      "user_s": 7062.75,
+      "sys_s": 94.06,
+      "binary_sha256": null
+    }
+  },
+  "note": "历史7200秒结果仅作旧版本参照；本轮PASS须等正式新Release独立运行。"
+}

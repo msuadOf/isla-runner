@@ -1,0 +1,29 @@
+{
+  "target_categories": {
+    "fflags:changed:NVFalse": 18,
+    "fflags:changed:NVTrue": 320,
+    "fflags:same:NVFalse": 342
+  },
+  "examples": {
+    "fflags:same:NVFalse": {
+      "test_ins": "fmul.s f0, f1, f1, dyn",
+      "encoding": "32'h1010_f053",
+      "ret_val": "Retire_Success(())"
+    },
+    "fflags:changed:NVTrue": {
+      "test_ins": "fdiv.s f0, f29, f31, dyn",
+      "encoding": "32'h19fe_f053",
+      "ret_val": "Retire_Success(())"
+    },
+    "fflags:changed:NVFalse": {
+      "test_ins": "fmul.s f0, f30, f28, rmm",
+      "encoding": "32'h11cf_4053",
+      "ret_val": "Retire_Success(())"
+    }
+  },
+  "gen": 728,
+  "summary_status": "finished",
+  "job": "new_flags",
+  "source_json_sha256": "b9c6d30e8225f661449b71627da873c4b3d7246629fe7f792ccca22e5ef38011",
+  "coverage_parser_sha256": "9c2ca4c1606afcfdb363657fbb726c22709d3d83b09d4d5855c63411e665dc57"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "ir": "rv64d.ir",
+    "exit": 1,
+    "last_error": "AssertionError: isla/rv64d.ir: 缺少独立源NaN行为helper"
+  },
+  {
+    "ir": "rv32d.ir",
+    "exit": 1,
+    "last_error": "AssertionError: isla/rv32d.ir: 缺少独立源NaN行为helper"
+  },
+  {
+    "ir": "ir/rv64d_v128_e64.ir",
+    "exit": 1,
+    "last_error": "AssertionError: isla/ir/rv64d_v128_e64.ir: 缺少独立源NaN行为helper"
+  },
+  {
+    "ir": "ir/rv64d_v256_e64.ir",
+    "exit": 1,
+    "last_error": "AssertionError: isla/ir/rv64d_v256_e64.ir: 缺少独立源NaN行为helper"
+  },
+  {
+    "ir": "ir/rv64d_v512_e64.ir",
+    "exit": 1,
+    "last_error": "AssertionError: isla/ir/rv64d_v512_e64.ir: 缺少独立源NaN行为helper"
+  }
+]

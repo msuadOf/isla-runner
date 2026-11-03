@@ -1,0 +1,62 @@
+[
+  {
+    "workload": "flags-arithmetic",
+    "query": 47,
+    "pid": 2396487,
+    "cpu": 104,
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "7200s",
+      "taskset",
+      "-c",
+      "104",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/B.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/flags-arithmetic/config.toml",
+      "-T",
+      "1",
+      "--tastic",
+      "qffp",
+      "--smt-timeout",
+      "7200s",
+      "solve-state",
+      "--clause=F_BIN_RM_TYPE_S",
+      "-D",
+      "f"
+    ]
+  },
+  {
+    "workload": "sat",
+    "query": 235,
+    "pid": 2396488,
+    "cpu": 105,
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "7200s",
+      "taskset",
+      "-c",
+      "105",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/sat/B.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/inputs/sat/config.toml",
+      "-T",
+      "1",
+      "--tastic",
+      "qffp",
+      "--smt-timeout",
+      "7200s",
+      "solve-state",
+      "--clause=VFUNARY0",
+      "-D",
+      "f"
+    ]
+  }
+]

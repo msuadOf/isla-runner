@@ -1,0 +1,41 @@
+[
+  {
+    "run": "control3",
+    "instruction": "F_BIN_RM_TYPE_S|S0=17|S1=30|S2=RM_DYN|S3=0|S4=FDIV_S",
+    "sha256": "fe16ed4e91f38c0ef2a2a544c2aa0f3cbfb4e9aa194b7eb224dbd51e65509837",
+    "encodings_hex": [
+      "0x191f7053",
+      "0x191f7053"
+    ],
+    "equal_marker": true
+  },
+  {
+    "run": "fresh3",
+    "instruction": "F_BIN_RM_TYPE_S|S0=17|S1=30|S2=RM_DYN|S3=0|S4=FDIV_S",
+    "sha256": "fe16ed4e91f38c0ef2a2a544c2aa0f3cbfb4e9aa194b7eb224dbd51e65509837",
+    "encodings_hex": [
+      "0x191f7053"
+    ],
+    "equal_marker": false
+  },
+  {
+    "run": "replicate",
+    "instruction": "F_BIN_RM_TYPE_S|S0=17|S1=30|S2=RM_DYN|S3=0|S4=FDIV_S",
+    "sha256": "fe16ed4e91f38c0ef2a2a544c2aa0f3cbfb4e9aa194b7eb224dbd51e65509837",
+    "encodings_hex": [
+      "0x191f7053",
+      "0x191f7053"
+    ],
+    "equal_marker": true
+  },
+  {
+    "run": "clean",
+    "instruction": "F_BIN_RM_TYPE_S|S0=17|S1=30|S2=RM_DYN|S3=0|S4=FDIV_S",
+    "sha256": "fe16ed4e91f38c0ef2a2a544c2aa0f3cbfb4e9aa194b7eb224dbd51e65509837",
+    "encodings_hex": [
+      "0x191f7053",
+      "0x191f7053"
+    ],
+    "equal_marker": true
+  }
+]

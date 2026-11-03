@@ -1,0 +1,57 @@
+{
+  "ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "checker_sha256": "9ebd0d937edc805e49103984bffbb507470115d349d7262553b6943b9e2763cf",
+  "count": 7,
+  "all_rejected": true,
+  "cases": [
+    {
+      "case": "mul_nv_lost",
+      "function": "zieee_mul16_exceptions",
+      "rejected": true,
+      "reason": "zieee_mul16_exceptions: NV/DZ在两臂不一致",
+      "mutant_sha256": "d5a2f54aedefedf2c69ce8eb53b861b0f8ca7963458789adf7561f63e71bfad8"
+    },
+    {
+      "case": "mul_gate_wrong",
+      "function": "zieee_mul16_exceptions",
+      "rejected": true,
+      "reason": "zieee_mul16_exceptions: finite/NV/DZ事实错误 ('0x3c00', '0x3c00') (False, False, False) != (True, False, False)",
+      "mutant_sha256": "4275e17223e5b857b5ba9037d68e4793df627271ba052bbaf67f27afd9fd89c6"
+    },
+    {
+      "case": "div_dz_lost",
+      "function": "zieee_div16_exceptions",
+      "rejected": true,
+      "reason": "zieee_div16_exceptions: NV/DZ在两臂不一致",
+      "mutant_sha256": "5d392ff38dcdd342ae592f48d4506bfd8e6eb1be960f84601f95ec0ce177b484"
+    },
+    {
+      "case": "narrow_flags_reversed",
+      "function": "zriscv_f16ToI8_pure",
+      "rejected": true,
+      "reason": "zriscv_f16ToI8_pure: flags未按overflow选择NV或原值",
+      "mutant_sha256": "435685d91f05c18531aee7b2ac21c447eeb8f9b87c9b60219b5ec6db539bf5b2"
+    },
+    {
+      "case": "narrow_value_reversed",
+      "function": "zriscv_f16ToI8_pure",
+      "rejected": true,
+      "reason": "zriscv_f16ToI8_pure: 数值未按overflow选择端点或原低位",
+      "mutant_sha256": "a08b18d77e5f19cd1d82ebb93605481078b7680f5158c433ffb88b053972de56"
+    },
+    {
+      "case": "integer_invalid_reversed",
+      "function": "zriscv_f16ToI32",
+      "rejected": true,
+      "reason": "zriscv_f16ToI32: invalid未在最终结果选择端点/候选值",
+      "mutant_sha256": "7210633dcfdd572eb03183490d6fa3971464fbb22515fb79d0251f73046cc9bc"
+    },
+    {
+      "case": "integer_nan_limit_lost",
+      "function": "zriscv_f16ToI32",
+      "rejected": true,
+      "reason": "zriscv_f16ToI32: NaN端点/来源变化",
+      "mutant_sha256": "6b02aea198e78196ca64f3137f2dcc5a8610246412421d90a9a0013295fa3281"
+    }
+  ]
+}

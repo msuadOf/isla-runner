@@ -1,0 +1,20 @@
+{
+  "scope": "实际JSON并集与顺序访存/选定机器字语义；partial单列，不推断全域覆盖",
+  "instruction_semantics": true,
+  "files": 1,
+  "entries": 1,
+  "failures": [],
+  "partial": [],
+  "rows": [
+    {
+      "path": "agents/float_memory_merge_20261103/validation/dynamic/probes/executeas-fixedword/output/rv64_zC_ADDI4SPN.json",
+      "sha256": "dfccbaeb77c3f2df2373d6d7a2c0171560e5f62b9b8e19d38b56bf0dcf3fdd7d",
+      "index": 0,
+      "word": "0x1fe0",
+      "bits": 16,
+      "events": 0,
+      "semantic_check": "c-addi4spn-executeas",
+      "pre_null_bytes": 0
+    }
+  ]
+}

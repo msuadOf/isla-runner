@@ -1,0 +1,30 @@
+{
+  "scope": "isolated objects + isolated temporary index; existing dirty patch represented as temporary commit; no original branch/index/worktree changed",
+  "memory_dirty_patch_sha256": "e67728f312f49c5505cd651be547c5514064a5709e78432df865b06dbc93e5d8",
+  "temporary_tree": "cf01be6b0ae14db68b527e7db09b66355b0baa34",
+  "temporary_commit": "bd1f70f529eb800988a286afa65dc306f9e22d1c",
+  "merged_tree": "d47273b490ead0c0b468b1da9e9fd89eccbc5b68",
+  "merge_tree_exit": 1,
+  "conflict_paths": [
+    "README.md",
+    "agents/findings.md",
+    "docs/json-results.md",
+    "ir/provenance/manifest.json",
+    "ir/rv64d_v128_e64.ir",
+    "ir/rv64d_v256_e64.ir",
+    "ir/rv64d_v512_e64.ir",
+    "isla-lib/src/executor/execution_limits.rs",
+    "isla-lib/src/executor/frame.rs",
+    "isla-lib/src/smt.rs",
+    "rv32d.ir",
+    "rv64d.ir",
+    "scripts/run.mk",
+    "src/isarch/exec.rs",
+    "src/isarch/mod.rs",
+    "src/isarch/target.rs"
+  ],
+  "additional_conflicts_vs_committed": [
+    "README.md"
+  ],
+  "removed_conflicts_vs_committed": []
+}

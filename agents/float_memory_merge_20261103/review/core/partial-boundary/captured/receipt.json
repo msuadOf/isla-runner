@@ -1,0 +1,41 @@
+{
+  "source": ".worktree/fm-store-probe-20261104",
+  "files": {
+    "probe.patch": {
+      "sha256": "938d0a287b296ad96bcc73422662a41b90038dff27cbb32ad9c1e415b66d6316",
+      "bytes": 9909
+    },
+    "input-sha256.txt": {
+      "sha256": "d33835eaa48fef192cc28ea7e37b8563a874bcc39b09e3163607a874624f38d1",
+      "bytes": 395
+    },
+    "probe-binary-sha256.txt": {
+      "sha256": "532bd9bce7a37497bc06cf06b5cd9e0fa275bb3f57e2ed2988cfef765091fb16",
+      "bytes": 122
+    },
+    "run-p3/p3-poison.json": {
+      "sha256": "2462fcb0af8b8a1a8e24d6e75613f3563d5179b53b5edc3f166b71a32ae9049c",
+      "bytes": 21353
+    },
+    "run-p3/run.log": {
+      "sha256": "1fb03c092e937ab3cb798cea704a4bfa26e0a03eb797caa320eca874ecb6aaf5",
+      "bytes": 2827
+    },
+    "run-p3/exit-code.txt": {
+      "sha256": "816c83d0ac08a94e91547a30df27dbbe88c7643cfa3c99d33120fd361173759a",
+      "bytes": 3
+    },
+    "run-main-v2/main-poison.json": {
+      "sha256": "1f1ca9f7a06b2e5cdddbf0fe43c9213cf5365dcd2943334dedbd62078ca258c9",
+      "bytes": 5238
+    },
+    "run-main-v2/run.log": {
+      "sha256": "e3f2e17879b31ba7965a5e199f02c081ef8593ccb0eec9ed9638a429631b1a84",
+      "bytes": 3321
+    },
+    "run-main-v2/exit-code.txt": {
+      "sha256": "fe028cccfcfd1aadf0cae5cdadc9fdb1e93988c41b242b575cb45a3dd4b0c24c",
+      "bytes": 3
+    }
+  }
+}

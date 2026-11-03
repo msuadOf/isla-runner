@@ -1,0 +1,45 @@
+{
+  "batch": "float-closure-final-0f7b8fb-two-clause-20261103",
+  "created_utc": "2026-11-03T09:13:18.003873+00:00",
+  "harness_sha256": "74a642d9c1223aef1ac287a2451fc54d4f00787ed4779a6f5a2643f27a7bda8e",
+  "inputs_sha256": "0a29115104b44f25924ddb37961b4dfd5967a42a8035bf9b33ac56cdecb7ae18",
+  "jobs": [
+    {
+      "job": "FLEQ_S",
+      "cpu": 26,
+      "pid": 930666,
+      "command": [
+        "/home/baiyifan/miniconda3/bin/python3",
+        "agents/float_review_closure_20261102/validation/full_batch/final/run_two_clause.py",
+        "--inputs",
+        "agents/float_review_closure_20261102/validation/inputs.model-converged-0f7b8fb-two-clause.json",
+        "--batch",
+        "float-closure-final-0f7b8fb-two-clause-20261103",
+        "--job",
+        "FLEQ_S",
+        "--cpu",
+        "26"
+      ],
+      "launch_log": "agents/float_review_closure_20261102/validation/full_batch/final/FLEQ_S.launch.log"
+    },
+    {
+      "job": "C_ADDI4SPN",
+      "cpu": 31,
+      "pid": 930667,
+      "command": [
+        "/home/baiyifan/miniconda3/bin/python3",
+        "agents/float_review_closure_20261102/validation/full_batch/final/run_two_clause.py",
+        "--inputs",
+        "agents/float_review_closure_20261102/validation/inputs.model-converged-0f7b8fb-two-clause.json",
+        "--batch",
+        "float-closure-final-0f7b8fb-two-clause-20261103",
+        "--job",
+        "C_ADDI4SPN",
+        "--cpu",
+        "31"
+      ],
+      "launch_log": "agents/float_review_closure_20261102/validation/full_batch/final/C_ADDI4SPN.launch.log"
+    }
+  ],
+  "classification": "final_two_clause_full_domain"
+}

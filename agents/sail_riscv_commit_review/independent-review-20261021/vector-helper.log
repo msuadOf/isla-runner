@@ -1,0 +1,5 @@
+Type error:
+agents/sail_riscv_commit_review/independent-review-20261021/vector-helper/helper_probe.sail:99.29-44:
+99 |  let (fflags, result_val) = old_fp_min_pure(op1, op2);
+   |                             ^-------------^
+   | Function old_fp_min_pure not found

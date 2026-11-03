@@ -1,0 +1,104 @@
+{
+  "flags-arithmetic": {
+    "events": {
+      "initial_task": 1,
+      "run_begin": 150,
+      "fork_child": 255,
+      "run_return finished": 150,
+      "task_done": 149
+    },
+    "queued": 106,
+    "running": 1,
+    "in_collector": 1,
+    "phases": {
+      "executor": {
+        "checks": 602,
+        "seconds": 396.7861715070003,
+        "max_s": 48.008122518
+      },
+      "collector": {
+        "checks": 5785,
+        "seconds": 6777.715555214032,
+        "max_s": 1038.65790227
+      },
+      "other": {
+        "checks": 0,
+        "seconds": 0.0,
+        "max_s": 0.0
+      }
+    },
+    "complete_interval_s": {
+      "executor": 399.27812039176933,
+      "collector": 6788.510273259482
+    },
+    "begin_count": 6388,
+    "end_count": 6387,
+    "result_counts": {
+      "1": 4801,
+      "-1": 1586
+    },
+    "pending": [
+      {
+        "id": 6388,
+        "begin": 539950.167662701
+      }
+    ],
+    "max_returned": {
+      "id": 685,
+      "seconds": 1038.65790227,
+      "result": "1"
+    },
+    "time": "Command exited with non-zero status 124\nwall_s=7200.37\nuser_s=7081.96\nsys_s=91.94\nmaxrss_kb=1660516\n"
+  },
+  "sat": {
+    "events": {
+      "initial_task": 1,
+      "run_begin": 199,
+      "fork_child": 434,
+      "run_return finished": 199,
+      "task_done": 198
+    },
+    "queued": 236,
+    "running": 1,
+    "in_collector": 1,
+    "phases": {
+      "executor": {
+        "checks": 8338,
+        "seconds": 2900.641318705008,
+        "max_s": 4.819379389
+      },
+      "collector": {
+        "checks": 8613,
+        "seconds": 4195.808639596007,
+        "max_s": 4.7694628
+      },
+      "other": {
+        "checks": 0,
+        "seconds": 0.0,
+        "max_s": 0.0
+      }
+    },
+    "complete_interval_s": {
+      "executor": 2914.857271821471,
+      "collector": 4262.412422609632
+    },
+    "begin_count": 16952,
+    "end_count": 16951,
+    "result_counts": {
+      "-1": 5664,
+      "1": 11287
+    },
+    "pending": [
+      {
+        "id": 16952,
+        "begin": 539950.145897471
+      }
+    ],
+    "max_returned": {
+      "id": 251,
+      "seconds": 4.819379389,
+      "result": "1"
+    },
+    "time": "Command exited with non-zero status 124\nwall_s=7200.16\nuser_s=7098.98\nsys_s=77.25\nmaxrss_kb=471028\n"
+  }
+}

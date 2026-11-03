@@ -1,0 +1,14 @@
+{
+  "isla_commit": "99a83bb9b2b285fca7c2a06e62548831d950b12a",
+  "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3",
+  "base_model_commit": "fd71c9ab58fe6f41b97c976a5f7e470318c708a8",
+  "ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+  "review": "GPT-6.1 Sol: PASS",
+  "ir_regression_steps": 25,
+  "directed_tasks": 56,
+  "json_cases": 156,
+  "assertions": 3518,
+  "gcc_clang_checks": 60,
+  "scope": "固定域vl≤2定向验收；非全域/全模型完整覆盖",
+  "pushed": false
+}

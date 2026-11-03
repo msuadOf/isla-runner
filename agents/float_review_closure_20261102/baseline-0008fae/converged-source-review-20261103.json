@@ -1,0 +1,73 @@
+{
+  "status": "PASS actual converged source commits and signed contents",
+  "model_tree": ".worktree/sail-riscv-float-converged-20261103",
+  "base": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "commits": [
+    {
+      "commit": "3d9ceebb8ae81b45ccafcde7cab81c0ab5b49bd8",
+      "subject": "refactor(model): 将算术异常原因恢复为布尔事实",
+      "files": [
+        "model/core/ieee_fp_exceptions.sail"
+      ]
+    },
+    {
+      "commit": "7eb4bd5c137c500209678f2f6eb007b572179b74",
+      "subject": "refactor(model): 恢复窄转换的纯返回数据流",
+      "files": [
+        "model/extensions/V/vext_fp_utils_insts.sail"
+      ]
+    },
+    {
+      "commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "subject": "refactor(model): 恢复浮点整数包装的结果数据流",
+      "files": [
+        "model/extensions/FD/softfloat_symbolic_f16.sail",
+        "model/extensions/FD/softfloat_symbolic_f32.sail",
+        "model/extensions/FD/softfloat_symbolic_f64.sail"
+      ]
+    }
+  ],
+  "model_tracked_files": 166,
+  "unchanged_other_model_files": 161,
+  "changed_file_hashes": [
+    {
+      "file": "model/core/ieee_fp_exceptions.sail",
+      "sha256": "7ed9529baac57717875ea49e8fff5130d3ec611f824aa71483b2b856d67c96b4",
+      "signed_candidate": "candidate-ieee_fp_exceptions.sail"
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f16.sail",
+      "sha256": "715795790c0efb100806c0a82195e137c4de66c4a9614baac9ee2b0b333a0646",
+      "signed_candidate": "wrappers-softfloat_symbolic_f16.sail"
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f32.sail",
+      "sha256": "ffe71d8f99652a20f9c7c6d969648af75bdc575ee9f2ca34e459fdfa879c5e17",
+      "signed_candidate": "wrappers-softfloat_symbolic_f32.sail"
+    },
+    {
+      "file": "model/extensions/FD/softfloat_symbolic_f64.sail",
+      "sha256": "b5b8ea9e4723e647fa74ea8ebfa47129106993a3a99d9df80105f9b3eab545ce",
+      "signed_candidate": "wrappers-softfloat_symbolic_f64.sail"
+    },
+    {
+      "file": "model/extensions/V/vext_fp_utils_insts.sail",
+      "sha256": "34191de93086708b44f552606b39878e1ad68be07c67fb2321eb7bec1b1172e1",
+      "signed_candidate": "candidate-vext_fp_utils_insts.sail"
+    }
+  ],
+  "pure_if_sites_reverted": 77,
+  "KEEP_and_OPEN_preserved": [
+    "fdext_regs entire file, including changed/Ext_F",
+    "ROD two mode wrappers exact bytes",
+    "FPint/round/conversion/BF16/ROD inner helpers exact bytes",
+    "18 arithmetic finite/valid guards retained",
+    "existing f16-i16 overflow retained, other pure narrow dataflow6202",
+    "ordinary six narrow adapters exact bytes",
+    "all other 161 model files, including NaN/canonical/mappings unchanged"
+  ],
+  "OPEN_disposition": "user explicitly deferred:29 calculation gates,changed1,RODmode2,existing6202 f16i16 outer overflow1; not this stage research blockers",
+  "frozen_e9_and214_166_sources_each_unchanged": true,
+  "scope": "source/commit identity only; strict generation, new IR/CFG and dynamic budgets separately reviewed"
+}

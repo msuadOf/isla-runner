@@ -1,0 +1,18 @@
+{
+  "exit_code": 0,
+  "sha256": {
+    "agents/encoding_constraint_isolation_20261102/review/checkpoint_probe.rs": "6b036a59ef903f724c3e9a33e47aec85bf6b5f6392ccf55a33fee826d294e7e7",
+    "isla/target/debug/deps/libisla_lib-2ee33fe3406dc3cf.rlib": "9e1060c6d94ced396f8e4a65573a2ee88a7d7d5400a21b80c083073eef476cc8"
+  },
+  "context": "各枚举replay使用独立Context，与生产一致",
+  "checks": [
+    "empty-checkpoint",
+    "DeclareFun-DefineConst",
+    "two-original-and-two-candidate-segments",
+    "two-enums",
+    "exact-event-order",
+    "fresh-number-restoration",
+    "model-readback",
+    "non-ancestor-rejection"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "captured_unix_seconds": 1793724967.1795936,
+  "root_pid": 3222694,
+  "processes": [
+    {
+      "pid": 3222694,
+      "exe": "user-home:/miniconda3/bin/python3.13",
+      "exe_sha256": "7b91f6c98e3d7beff5f90987565b21a0e1ca022d72e8e5e50e9dfe5c6435f2cf",
+      "cmdline": [
+        "python3",
+        "agents/float_memory_merge_20261103/validation/generate.py",
+        "--model",
+        "sail-riscv",
+        "--sail",
+        "workspace:/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+        "--plugin",
+        "workspace:/.tmp/float-full-trace-20260929/fvv-branch-candidate/sail_plugin_isla.cmxs",
+        "--commit",
+        "bf861b3e687894480aec701a886a38d4e50b8a99",
+        "--batch",
+        "merge-bf861b3e-20261104",
+        "--cpus",
+        "40,41,42,43",
+        ""
+      ],
+      "cwd": "workspace:/.worktree/merge-float-memory-20261104"
+    },
+    {
+      "pid": 3222783,
+      "exe": "workspace:/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/_build/default/src/bin/sail.exe",
+      "exe_sha256": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+      "cmdline": [
+        "workspace:/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/_build/install/default/bin/sail",
+        "--strict-var",
+        "--strict-bitvector",
+        "--strict-exponentials",
+        "--require-version",
+        "0.20.1",
+        "--memo-z3-path",
+        "workspace:/.worktree/merge-float-memory-20261104/agents/float_memory_merge_20261103/validation/generation/merge-bf861b3e-20261104/ordinary-strict/sail_smt_cache",
+        "--all-modules",
+        "--just-check",
+        "--config",
+        "workspace:/.worktree/merge-float-memory-20261104/isla/ir/provenance/rv64d.json",
+        "riscv.sail_project",
+        ""
+      ],
+      "cwd": "workspace:/.worktree/merge-float-memory-20261104/sail-riscv/model"
+    }
+  ],
+  "compile_z3_live_independent": {
+    "pid": 3268398,
+    "exe": "linuxbrew-home:/.linuxbrew/Cellar/z3/4.16.0/bin/z3",
+    "exe_sha256": "a7eac84c5493ac5766c2179620c3a4628b151198af9e6e9c488163c84561b3e9",
+    "cmdline": [
+      ""
+    ]
+  }
+}

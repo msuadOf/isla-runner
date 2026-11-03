@@ -1,0 +1,181 @@
+{
+  "scope": "GCC/Clang mnemonic, .insn, .byte for new mixed JSON",
+  "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+  "runner_sha256": "ba3c1726cf1548faf9c00b0d060f634d7d2aa611b11a8263083bd16225284e0e",
+  "toolchains": {
+    "gcc": {
+      "binary": "/usr/bin/riscv64-unknown-elf-gcc",
+      "sha256": "4310e64944572c23d75e4d49e828eeb073894a9ad8746bac30636085c32cd126",
+      "arguments": [
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d"
+      ]
+    },
+    "clang": {
+      "binary": "linuxbrew-home:/.linuxbrew/Cellar/llvm/22.1.8/bin/clang-22",
+      "sha256": "ab50a44e219c787b1a6ba0b8e07172080a4b3619c3f619b801ef058a7bdfad2a",
+      "arguments": [
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "case": "amo",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/amo/output/rv64_zAMO.json",
+      "source_sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/amo/output/rv64_zAMO.json",
+        "sha256": "a8f2b9dee29ce37330adffe0e5b212e08c63b1a801b6e463a8a1dcf42c360694",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "c_ld",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/c_ld/output/rv64_zC_LD.json",
+      "source_sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/c_ld/output/rv64_zC_LD.json",
+        "sha256": "4a659ff58dca972a233e2d8bfb73e26fc389d916ff9b5408646c3190fe153f2c",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "c_sd",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/c_sd/output/rv64_zC_SD.json",
+      "source_sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/c_sd/output/rv64_zC_SD.json",
+        "sha256": "a5c62797c20605d9f316214d1cf485bf26cbddea72d5b8f1ba720c5b63130227",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "fld",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/fld/output/rv64_zLOAD_FP.json",
+      "source_sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/fld/output/rv64_zLOAD_FP.json",
+        "sha256": "4d0c92f5584e28af6dedc4f66b49c2083c42641c768b4f6a98dbec20b3010087",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "flw",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/flw/output/rv64_zLOAD_FP.json",
+      "source_sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/flw/output/rv64_zLOAD_FP.json",
+        "sha256": "bae5ee63dffb151eca4c9c75c0e15e51785c724b03a9ebdd6a4f9a2f687a8317",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "fsd",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/fsd/output/rv64_zSTORE_FP.json",
+      "source_sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/fsd/output/rv64_zSTORE_FP.json",
+        "sha256": "efbc2d9b0216c2b86eaa2d8e26a144d98bf4c947042b7423aaae44ee4e0bfcb8",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "fsw",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/fsw/output/rv64_zSTORE_FP.json",
+      "source_sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/fsw/output/rv64_zSTORE_FP.json",
+        "sha256": "0cbc26708080024905e7d9612aecde83b805cfddb07a2b3a8e7f11fb31178ed2",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "ld",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/ld/output/rv64_zLOAD.json",
+      "source_sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/ld/output/rv64_zLOAD.json",
+        "sha256": "6e9ff1091beb5add23d78f11475d0e7c0a659f69c7b88dc392e48e5c6e062675",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    },
+    {
+      "case": "sd",
+      "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/sd/output/rv64_zSTORE.json",
+      "source_sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+      "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+      "checker": {
+        "simulation": false,
+        "source": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-4d08/union/sd/output/rv64_zSTORE.json",
+        "sha256": "876700009fe895a43f9f8ab8e5b2656d1c3dfe46367afdef7f4b2cab883b5c9c",
+        "gen": 1,
+        "illegal": 0,
+        "clang_mnemonic_rejections": 0,
+        "all_pass": true
+      },
+      "rows": 6,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

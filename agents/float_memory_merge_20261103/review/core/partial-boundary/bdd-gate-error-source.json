@@ -1,0 +1,20 @@
+{
+  "path": "agents/float_memory_merge_20261103/validation/dynamic/baseline-bdd/source/src/isarch/exec.rs",
+  "sha256": "e06799e523c845a64ed09590b7831d0f61c9cebef8dd0728f9d54ea0cb72c2b1",
+  "findings": {
+    "callback_last_value": {
+      "line": 252,
+      "needle": "let collected: Arc<Mutex<Option<Result<Val<B>, ExecError>>>>"
+    },
+    "gate_original_regs": {
+      "line": 1711,
+      "needle": "let gate_regs = if ctx.target.symbolic_csrs().is_empty()"
+    },
+    "p3_error_not_recorded": {
+      "line": 1798,
+      "needle": "警告: clause{} encdec 守卫回环译码失败，丢弃路径: {}"
+    }
+  },
+  "p3_err_branch_has_record_error": false,
+  "p3_branch_excerpt": "match encdec_guard_roundtrip_ok(\n                                                    expected_ctor,\n                                                    &val,\n                                                    shared_state,\n                                                    gate_regs,\n                                                    ctx.lets,\n                                                ) {\n                                                    Ok(true) => (),\n                                                    Ok(false) => {\n                                                        collected\n                                                            .lock()\n                                                            .expect(\"solve collector mutex poisoned\")\n                                                            .record_encdec_guard_reject();\n                                                        log!(\n                                                            log::PATH_RESULT,\n                                                            &format!(\n                                                                \"clause{} encdec 守卫拒绝非法编码变体（test-ins={}）\",\n                                                                ctx.instruction_name, test_ins\n                                                            )\n                                                        );\n                                                        submit_itrace(frame, &mut itrace_diagnostics);\n                                                        return;\n                                                    }\n                                                    Err(error) => {\n                                                        log!(\n                                                            log::PATH_RESULT,\n                                                            &format!(\n                                                                \"警告: clause{} encdec 守卫回环译码失败，丢弃路径: {}\",\n                                                                ctx.instruction_name, error\n                                                            )\n                                                        );\n                                                        submit_itrace(frame, &mut itrace_diagnostics);\n                                                        return;\n                                                    }\n                                                }\n                                            }\n                                            "
+}

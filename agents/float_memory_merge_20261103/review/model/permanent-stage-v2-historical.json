@@ -1,0 +1,11 @@
+{
+  "scope": "v2历史产物；最终完整状态不署v2",
+  "permanent_steps": 26,
+  "all_steps_exit_zero": true,
+  "negative_independent_replay_equal": true,
+  "negative_count": 104,
+  "checker_sha256": "9ebd0d937edc805e49103984bffbb507470115d349d7262553b6943b9e2763cf",
+  "ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "post_v2_change": "executor.rs和primop.rs仅cfg(test)新增显式SMT初始化5+9行，主与core reviewer已确认；v3另冻/构建/回归",
+  "remaining": "v3正式身份与结果待独审"
+}

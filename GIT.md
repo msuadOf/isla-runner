@@ -2,6 +2,10 @@
 
 本文记录 isla-runner 的版本管理规则。目录职责见 [specs/project-structure.md](specs/project-structure.md)，初始化命令见 [README.md](README.md)。
 
+## 根仓的双议题版本
+
+`float` 与 `memory` 是根仓分支，各自提交两个子模块gitlink和 `specs/topic-version.json`。本机分别检出于 `.worktree/runner-float`、`.worktree/runner-memory`，原master及dirty工作区保留。版本、发布前提及更新步骤见 [双分支说明](specs/topic-versions.md)。获取远端引用不等于已更新根仓版本；子模块提交应先可从正式远端获取，再推根仓议题分支。
+
 ## 父仓库固定的源码
 
 `isla/` 与 `sail-riscv/` 是父仓库记录精确 commit 的 Git submodule。`.gitmodules` 记录获取地址，`160000` gitlink 记录实际版本；分支名不代替 gitlink。更新其中任一源码版本时，先确认目标 commit、remote 与工作树状态，再由父仓库显式移动对应 gitlink。不要用 `git submodule update --remote` 隐式推进版本，也不要为了匹配 gitlink 对已有修改运行 reset 或 clean。
@@ -18,6 +22,10 @@
 
 workaround 配置归 `sail-riscv/configs/isla/workarounds/` 管理，Isla 直接读取，不再保留生成副本。后续提交这组改动时，先形成可获取的 Sail-RISC-V 提交，再形成消费它的 Isla 提交，最后由父仓库同时更新两个 gitlink；仅提交父仓库文档不能固定当前子模块未提交内容。
 
-## 根仓议题分支
+## 根仓议题合流
 
-`float`、`memory` 分别记录组件gitlink，具体同步顺序与本地工作树入口见 [双分支版本说明](specs/topic-versions.md)。不得把子模块分支切换当作已更新根仓版本。
+当前 float→memory 候选以 memory 为主线，并保留两条根仓历史。两个子模块已形成合流提交，父仓暂存相应 gitlink 与组合 IR 来源；联合动态已获限定签收，父仓提交/发布仍待完成。旧分支的 PASS 只适用原受测版本；原域 partial 与全域无退化未证继续单列。当前范围见 [合流状态](agents/float_memory_merge_20261103/status.md)。
+
+## 增量审查参照
+
+Isla 统一以 `0008fae76f4cff86dae1a036d889f0414c228e9d` 为共同基准核对实际生产代码增量。当前任务的短期基线仍需明确，以区分继承改动与本次改动；大IR、归档数据行数不能代替生产复杂度统计。必要性与最小化原则见 [项目验收口径](specs/GOAL.md)，本次审查见 [共同基准审查](agents/float_review_closure_20261102/baseline-0008fae/isla-review.md)。

@@ -1,0 +1,16 @@
+{
+  "source_commit": "de00adb1be7edb20c4561e4074c9485bf028be80",
+  "binary_sha256": "e95fa84208f748fb00c96260910000a950634a9d2b35b35c4bfd8b83c1b533ab",
+  "ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+  "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "exit_code": 124,
+  "wall_s": 7200.2,
+  "user_s": 7119.08,
+  "sys_s": 71.91,
+  "complete_json_present": false,
+  "verified_outcome": "TIMEOUT",
+  "formal_pass": false,
+  "scope": "初版de00adb旧eager-lane模型的单独诊断；不迁用于修订版cf1aa14正式三Clause",
+  "result_sha256": "e02db49054604dbeceec4d7777d9c34d57c91588320012e7ee2cb274fbfc3b68"
+}

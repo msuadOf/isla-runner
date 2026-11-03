@@ -1,0 +1,47 @@
+{
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "linked_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "imported_sources_sha256": {
+    "helper": "35346316349fda13b6f2527f90f4218ca64b3a03beec8eaae5ce9ad94926840d",
+    "instruction": "c09e84a2390fc9b9788667b8d453948a519f09d191c7e640a0842cf695092ac0"
+  },
+  "cargo_sources_sha256": {
+    "helper_runner/Cargo.toml": "ef13e17edcc18780a704a8aee2c313f2a07f90f54be4886f973ab2e9af3765f0",
+    "helper_runner/src/main.rs": "0b85a0a53e656474c2e5a3d101a55424f5afb31fdc2104b6e11dc555b7c449ca",
+    "instruction_runner/Cargo.toml": "29fe81622e0ecf54866870703e71e300de922b6273368279efda215f9be58701",
+    "instruction_runner/src/main.rs": "1f721ab350f6024fcf4c7c50815f2434dc400d159fc962edfcefaa4c41bbb935"
+  },
+  "rustflags": "official Z3 native library and matching rpath",
+  "builds": [
+    {
+      "kind": "helper",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "build",
+        "--offline",
+        "--release",
+        "--manifest-path",
+        "helper_runner/Cargo.toml"
+      ],
+      "log_sha256": "32716f9f6039bb99136b60dbc9f14cb8a12f252be19c1ed48477c3cfee8f0c8c",
+      "binary": "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-helpers",
+      "binary_sha256": "669c727ec92a61a5bd97d4f9b84f646f7c642f81ac579fffc2344fd3902afcf5"
+    },
+    {
+      "kind": "instruction",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "build",
+        "--offline",
+        "--release",
+        "--manifest-path",
+        "instruction_runner/Cargo.toml"
+      ],
+      "log_sha256": "24944d175632b930bf4cc1d2f5ba598665bb938a56b9d45cbaae9f82b9520597",
+      "binary": "agents/float_review_closure_20261102/validation/conversions/target/release/float-closure-conversion-instructions",
+      "binary_sha256": "9e1bc98f358d926abf8ac320521746840dd8370d13a113270ac26ca1d986716a"
+    }
+  ]
+}

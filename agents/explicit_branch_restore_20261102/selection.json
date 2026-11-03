@@ -1,0 +1,160 @@
+{
+  "snapshot_updated_utc": "2026-11-01T19:56:44.331291+00:00",
+  "budget_s": 7200,
+  "selected": [
+    {
+      "workload": "flags-compare",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        43.6,
+        52.17,
+        43.91
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "minmax",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        60.31,
+        60.72,
+        57.48
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "minm",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        9.63,
+        14.22,
+        20.12
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "maxm",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        12.05,
+        9.64,
+        15.37
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "mask",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        48.91,
+        54.85,
+        28.46
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "reduction",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        14.43,
+        9.63,
+        12.02
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "nan",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        160.78,
+        92.05,
+        187.92
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "class",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        1325.32,
+        1444.04,
+        1645.57
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "guard-valid",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        36.18,
+        22.64,
+        26.84
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "guard-normal",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        42.07,
+        33.75,
+        26.84
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "guard-reduction",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        11.12,
+        15.85,
+        12.02
+      ],
+      "B_record_count": 3
+    },
+    {
+      "workload": "guard-normal-wide",
+      "A_finished": true,
+      "B_finished": true,
+      "B_wall_s": [
+        826.43,
+        525.34,
+        659.55
+      ],
+      "B_record_count": 3
+    }
+  ],
+  "pending": [
+    {
+      "workload": "flags-arithmetic",
+      "A_finished": false,
+      "B_finished": false,
+      "B_wall_s": [],
+      "B_record_count": 0
+    },
+    {
+      "workload": "sat",
+      "A_finished": false,
+      "B_finished": false,
+      "B_wall_s": [],
+      "B_record_count": 0
+    }
+  ],
+  "shared_flags_deferred": "flags-compare 已完成，但与未完成flags-arithmetic共用accrue_fflags，整体暂缓",
+  "policy": "特殊值分类决定语义行为时按控制流；纯数据流内部表达式不机械改写",
+  "source_commits": [
+    "7f3f50d",
+    "fd71c9a"
+  ]
+}

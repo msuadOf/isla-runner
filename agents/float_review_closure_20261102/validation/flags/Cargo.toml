@@ -1,0 +1,13 @@
+[package]
+name = "float-flags-state-probe"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[[bin]]
+name = "float-flags-state-probe"
+path = "src/main.rs"
+
+[dependencies]
+isla-lib = { path = "../../../../.worktree/runner-float/isla/isla-lib", features = ["smt-thread-interrupt"] }

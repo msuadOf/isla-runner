@@ -1,0 +1,38 @@
+{
+  "flags-arithmetic/qffp": {
+    "pid": 336001,
+    "user_s": 7083.41,
+    "sys_s": 90.04,
+    "sample_monotonic": 538806.421122333
+  },
+  "flags-arithmetic/default": {
+    "pid": 336909,
+    "user_s": 7074.63,
+    "sys_s": 94.53,
+    "sample_monotonic": 538806.421241927
+  },
+  "flags-arithmetic/smt": {
+    "pid": 337847,
+    "user_s": 7162.58,
+    "sys_s": 12.74,
+    "sample_monotonic": 538807.422345682
+  },
+  "sat/qffp": {
+    "pid": 338452,
+    "user_s": 7085.8,
+    "sys_s": 87.77,
+    "sample_monotonic": 538807.422461136
+  },
+  "sat/default": {
+    "pid": 338502,
+    "user_s": 7090.31,
+    "sys_s": 75.4,
+    "sample_monotonic": 538808.423296575
+  },
+  "sat/smt": {
+    "pid": 338521,
+    "user_s": 7160.33,
+    "sys_s": 7.93,
+    "sample_monotonic": 538809.424070395
+  }
+}

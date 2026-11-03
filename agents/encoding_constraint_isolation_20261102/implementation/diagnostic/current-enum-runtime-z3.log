@@ -1,0 +1,109 @@
+   3038315:	find library=libc.so.6 [0]; searching
+   3038315:	 search path=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib:/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current:/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib:/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/ncurses/lib:/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/readline/lib:/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib:/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/opt/sqlite/lib:/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v3:/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v2:/home/linuxbrew/.linuxbrew/lib		(RPATH from file taskset)
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/Cellar/util-linux/2.42.2/lib/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/gcc/lib/gcc/current/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/libxcrypt/lib/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/ncurses/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/ncurses/lib/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/readline/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/readline/lib/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/zlib-ng-compat/lib/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/sqlite/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/sqlite/lib/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v3/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/lib/glibc-hwcaps/x86-64-v2/libc.so.6
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/lib/libc.so.6
+   3038315:	 search cache=/home/linuxbrew/.linuxbrew/etc/ld.so.cache
+   3038315:	  trying file=/home/linuxbrew/.linuxbrew/opt/glibc/lib/libc.so.6
+   3038315:	
+   3038315:	
+   3038315:	calling init: /home/linuxbrew/.linuxbrew/lib/ld.so
+   3038315:	
+   3038315:	
+   3038315:	calling init: /home/linuxbrew/.linuxbrew/opt/glibc/lib/libc.so.6
+   3038315:	
+   3038315:	
+   3038315:	initialize program: taskset
+   3038315:	
+   3038315:	
+   3038315:	transferring control: taskset
+   3038315:	
+   3038315:	find library=libz3.so.4 [0]; searching
+   3038315:	 search cache=/etc/ld.so.cache
+   3038315:	  trying file=/usr/lib/x86_64-linux-gnu/libz3.so.4
+   3038315:	
+   3038315:	find library=libgcc_s.so.1 [0]; searching
+   3038315:	 search cache=/etc/ld.so.cache
+   3038315:	  trying file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+   3038315:	
+   3038315:	find library=libc.so.6 [0]; searching
+   3038315:	 search cache=/etc/ld.so.cache
+   3038315:	  trying file=/usr/lib/x86_64-linux-gnu/libc.so.6
+   3038315:	
+   3038315:	find library=libstdc++.so.6 [0]; searching
+   3038315:	 search cache=/etc/ld.so.cache
+   3038315:	  trying file=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+   3038315:	
+   3038315:	find library=libm.so.6 [0]; searching
+   3038315:	 search cache=/etc/ld.so.cache
+   3038315:	  trying file=/usr/lib/x86_64-linux-gnu/libm.so.6
+   3038315:	
+   3038315:	
+   3038315:	calling init: /lib64/ld-linux-x86-64.so.2
+   3038315:	
+   3038315:	
+   3038315:	calling init: /usr/lib/x86_64-linux-gnu/libc.so.6
+   3038315:	
+   3038315:	
+   3038315:	calling init: /usr/lib/x86_64-linux-gnu/libm.so.6
+   3038315:	
+   3038315:	
+   3038315:	calling init: /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+   3038315:	
+   3038315:	
+   3038315:	calling init: /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+   3038315:	
+   3038315:	
+   3038315:	calling init: /usr/lib/x86_64-linux-gnu/libz3.so.4
+   3038315:	
+   3038315:	
+   3038315:	initialize program: ./current-test-bin
+   3038315:	
+   3038315:	
+   3038315:	transferring control: ./current-test-bin
+   3038315:	
+
+running 1 test
+test smt::tests::get_multi_member_enum_const_after_checkpoint_replay ...    3038315:	
+   3038315:	calling fini:  [0]
+   3038315:	
+   3038315:	
+   3038315:	calling fini: /usr/lib/x86_64-linux-gnu/libz3.so.4 [0]
+   3038315:	
+   3038315:	
+   3038315:	calling fini: /usr/lib/x86_64-linux-gnu/libstdc++.so.6 [0]
+   3038315:	
+Error: enumeration sort name is already declared
+   3038315:	
+   3038315:	calling fini: /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 [0]
+   3038315:	
+   3038315:	
+   3038315:	calling fini: /usr/lib/x86_64-linux-gnu/libm.so.6 [0]
+   3038315:	
+   3038315:	
+   3038315:	calling fini: /usr/lib/x86_64-linux-gnu/libc.so.6 [0]
+   3038315:	
+   3038315:	
+   3038315:	calling fini: /lib64/ld-linux-x86-64.so.2 [0]
+   3038315:	

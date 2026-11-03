@@ -1,0 +1,9 @@
+No primop parse_hex_bits (Name { id: 2549 })
+No primop emulator_write_tag (Name { id: 2960 })
+No primop emulator_read_tag (Name { id: 2959 })
+No primop valid_reservation (Name { id: 4453 })
+PASS active vstart=0x0 vl=1 mask=0x1
+PASS equal vstart=0x1 vl=1 mask=0x0
+PASS greater vstart=0x2 vl=1 mask=0x0
+PASS large vstart=0xffffffffffffffff vl=1 mask=0x0
+PASS total=4

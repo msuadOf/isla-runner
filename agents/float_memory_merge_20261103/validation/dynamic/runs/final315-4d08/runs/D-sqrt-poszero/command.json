@@ -1,0 +1,80 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "7200s",
+    "taskset",
+    "-c",
+    "21",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/isarch",
+    "-A",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-sqrt-poszero/constrained.ir",
+    "-C",
+    "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-sqrt-poszero/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "7200s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_UN_RM_FF_TYPE_D"
+  ],
+  "job": {
+    "name": "D-sqrt-poszero",
+    "family": "scalar",
+    "clause": "F_UN_RM_FF_TYPE_D",
+    "fields": [
+      0,
+      "zRM_RNE",
+      3,
+      "zFSQRT_D"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0x0",
+      "f1": "0x0",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "D-sqrt-poszero",
+      "family": "scalar",
+      "width": 64,
+      "op": "sqrt",
+      "fmt": "f64",
+      "dst": null,
+      "rm": 0,
+      "a": "0x0",
+      "b": null,
+      "c": null,
+      "reason": "sqrt-poszero",
+      "expected_bits": "0x0",
+      "oracle_raw_bits": "0x0",
+      "expected_flags": "0x0",
+      "oracle_argv": [
+        "--op",
+        "sqrt",
+        "--fmt",
+        "f64",
+        "--rm",
+        "0",
+        "--a",
+        "0x0"
+      ]
+    },
+    "expected_full_bits": "0x0"
+  },
+  "binary_sha256": "3e44cdd6db67f88f94bc894b5b9c6f1de94b7deeb9eb3d9379c49bec1bafbd3e",
+  "base_ir_sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+  "constrained_ir_sha256": "5f497b83748f2f9967e973ad2fbb5e46c7adae78df898a5f5f0212ef024836db",
+  "config_sha256": "5a3090b20e67b0b7fa0bda73cc8b594f58a435a024faadba38171a55531cae80",
+  "cpu": 21,
+  "environment": {
+    "LD_PRELOAD": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "workspace:/agents/float_memory_merge_20261103/validation/dynamic/runs/final315-4d08/runs/D-sqrt-poszero/seed-intercept.log"
+  }
+}

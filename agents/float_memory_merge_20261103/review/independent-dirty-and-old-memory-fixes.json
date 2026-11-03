@@ -1,0 +1,44 @@
+{
+  "dirty_patch_hash_matches": true,
+  "extra_conflicts": [
+    "README.md"
+  ],
+  "old_memory_fix_production_source": [
+    {
+      "path": "isla-lib/src/memory.rs",
+      "old_validated_sha256": "a7a0901d84958299994823aca6ea36afda4d59b1d5a679908677cfc91958431d",
+      "target_sha256": "c7be96851735cc47721f79833bb36ef2f76bbe7a148941a6a01011afdf94229b",
+      "target_equals_head": true,
+      "target_equals_old_validated": false
+    },
+    {
+      "path": "src/isarch/memory_model.rs",
+      "old_validated_sha256": "53b0e2817ba2745cffce607d37167d1229dd5c4ce36f667a93c06185e428e42a",
+      "target_sha256": "c1f33cb2ba9342151ee07aba8683fe7c64149c4dd43a0325cb27b4dc40bee07b",
+      "target_equals_head": true,
+      "target_equals_old_validated": false
+    },
+    {
+      "path": "src/isarch/target.rs",
+      "old_validated_sha256": "39677e77250dc763089140ce88138465e2ef8a1a06c17aa390b5fd290343cfc9",
+      "target_sha256": "71832506841b5c224d5dcb8cc4034b803657bcc2d7c110ce6c1708ba9bcf6654",
+      "target_equals_head": true,
+      "target_equals_old_validated": false
+    },
+    {
+      "path": "src/isarch/exec.rs",
+      "old_validated_sha256": "2046fb3df706218cad4e7d744b26896059266399541e082009c90ccef33765ff",
+      "target_sha256": "e06799e523c845a64ed09590b7831d0f61c9cebef8dd0728f9d54ea0cb72c2b1",
+      "target_equals_head": true,
+      "target_equals_old_validated": false
+    }
+  ],
+  "temporary_commit_files_match_original_dirty": {
+    "README.md": true,
+    "scripts/run.mk": true
+  },
+  "temporary_commit_changed_paths": [
+    "README.md",
+    "scripts/run.mk"
+  ]
+}

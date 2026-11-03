@@ -1,0 +1,464 @@
+{
+  "domain": "full",
+  "seed": 17,
+  "tactic": "qffp",
+  "threads": 1,
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "model_tree": {
+    "path": ".worktree/sail-riscv-float-converged-20261103",
+    "manifest": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/model-tree.json",
+      "sha256": "171176e54b221013d12243b921ccecc41f502d137db99e1e81c85513cb6f013e"
+    }
+  },
+  "isla_tree": {
+    "path": ".worktree/runner-float/isla",
+    "manifest": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/isla-source-tree.json",
+      "sha256": "8aba2ee239e602d615e970bf03b45490947fe4ef7e0912c149bf2b20c2c80c00"
+    }
+  },
+  "binary": {
+    "path": "agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace",
+    "sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d"
+  },
+  "z3": {
+    "path": "/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0",
+    "sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970"
+  },
+  "seed_preload": {
+    "path": "agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae"
+  },
+  "irs": {
+    "rv64-v128": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786"
+    },
+    "rv64-v256": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v256_e64/rv64d_v256_e64.ir",
+      "sha256": "47ba73418d6dcb1b1e86db7680ce4df9508e7885a02096e25e213c2c3b2c05e1"
+    },
+    "rv64-v512": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v512_e64/rv64d_v512_e64.ir",
+      "sha256": "2bdea17d36c64545254f50cc5a6902e570a1fea682de3f7c062bf641a85a62a9"
+    },
+    "rv64-default": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786"
+    },
+    "rv32-default": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-converged-0f7b8fb/rv32d/rv32d.ir",
+      "sha256": "e17c4fe18552f8ce219b35f846c4c1a2c530dcad0ac9fc8f10d0da2604c3fa4e"
+    }
+  },
+  "configs": {
+    "rv64-fd-full": {
+      "path": ".worktree/runner-float/isla/configs/riscv64_difftest_fd.toml",
+      "sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+    }
+  },
+  "jobs": {
+    "FCVTMOD_W_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FCVT_BF16_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FCVT_S_BF16": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLEQ_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLEQ_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLEQ_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLI_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "FLI_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "FLI_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "FLTQ_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLTQ_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FLTQ_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMAXM_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMAXM_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMAXM_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMINM_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMINM_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FMINM_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUNDNX_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUNDNX_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUNDNX_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUND_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUND_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FROUND_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVFMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVFMTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVFTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVVMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVVMTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWFTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVFMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVFTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVVMATYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "FWVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_F_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_F_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_RM_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_RM_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_RM_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_TYPE_F_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_TYPE_X_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_X_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_BIN_X_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_MADD_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_MADD_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_MADD_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_F_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_F_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_RM_FF_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FF_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FF_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FX_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FX_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_FX_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_XF_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_XF_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_RM_XF_TYPE_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "F_UN_TYPE_F_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_TYPE_X_S": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_X_TYPE_D": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "F_UN_X_TYPE_H": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "RFVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "RFWVVTYPE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFMERGE": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFMV": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFMVFS": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFMVSF": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "compatibility"
+    },
+    "VFNCVTBF16_F_F_W": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFNUNARY0": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFUNARY0": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFUNARY1": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWCVTBF16_F_F_V": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWMACCBF16_VF": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWMACCBF16_VV": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    },
+    "VFWUNARY0": {
+      "ir": "rv64-v128",
+      "config": "rv64-fd-full",
+      "scope": "affected"
+    }
+  },
+  "affected_manifest": {
+    "path": "agents/float_review_closure_20261102/validation/full_batch/final/affected-clauses.json",
+    "sha256": "1c028a7beb1ca013425cda346934dd9fd208c32d21077cc5aef8cb9b5798610f"
+  },
+  "binary_manifest": {
+    "path": "agents/float_review_closure_20261102/validation/bin/manifest-interrupt-itrace.json",
+    "sha256": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6"
+  },
+  "watchdog_evidence": {
+    "path": "agents/float_review_closure_20261102/review/enum/watchdog-itrace-result.json",
+    "sha256": "2bd0a0e7c20f83c6a412f53cf9305ffd78c2d1b7a91e5ca9ff39e512df0b6809"
+  },
+  "ir_aliases": {
+    "rv64-default": "rv64-v128"
+  }
+}
