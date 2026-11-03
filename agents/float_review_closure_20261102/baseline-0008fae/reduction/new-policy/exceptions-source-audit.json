@@ -1,0 +1,29 @@
+{
+  "scope": "read-only candidate; not a production implementation or dynamic result",
+  "baseline_sha256": "866f85a607b112d57a0ea8c6d9a85c1befb36ef11ea39b7058a252606df257cd",
+  "candidate_sha256": "7ed9529baac57717875ea49e8fff5130d3ec611f824aa71483b2b856d67c96b4",
+  "cause_ifs_reverted": 33,
+  "functions": 18,
+  "category_flag_cases": 55584,
+  "per_function_cases": {
+    "ieee_add16_exceptions": 1152,
+    "ieee_sub16_exceptions": 1152,
+    "ieee_mul16_exceptions": 1152,
+    "ieee_div16_exceptions": 1152,
+    "ieee_sqrt16_exceptions": 96,
+    "ieee_fma16_exceptions": 13824,
+    "ieee_add32_exceptions": 1152,
+    "ieee_sub32_exceptions": 1152,
+    "ieee_mul32_exceptions": 1152,
+    "ieee_div32_exceptions": 1152,
+    "ieee_sqrt32_exceptions": 96,
+    "ieee_fma32_exceptions": 13824,
+    "ieee_add64_exceptions": 1152,
+    "ieee_sub64_exceptions": 1152,
+    "ieee_mul64_exceptions": 1152,
+    "ieee_div64_exceptions": 1152,
+    "ieee_sqrt64_exceptions": 96,
+    "ieee_fma64_exceptions": 13824
+  },
+  "native_fp_and_directed_bound_lines_identical": true
+}

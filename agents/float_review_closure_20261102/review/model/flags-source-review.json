@@ -1,0 +1,23 @@
+{
+  "stage": "source only",
+  "status": "PASS",
+  "file": "model/extensions/FD/fdext_regs.sail",
+  "sha256": "252002bb29d17da842bfacc2ac5733baec7eeada2d84dce29c233a1a8dafb3b5",
+  "baseline": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "checks": [
+    "changed iff old != old|flags",
+    "changed implies F xor Zfinx assertion",
+    "changed false preserves all mstatus bits",
+    "Ext_F and changed true changes only FS14:13 and SD=xlen-1",
+    "FFLAGS old|flags and FRM/other FCSR bits retained",
+    "existing fflags/fcsr callback values and order retained",
+    "no new long_csr_write_callback"
+  ],
+  "not_signed": [
+    "final commit",
+    "SYMBOLIC strict generation",
+    "IR CFG",
+    "dynamic clause budget",
+    "condition witnesses"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "exit": 0,
+  "stdout": "(params random_seed 17)\n",
+  "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "seed_log": "parameter=random_seed original=987654321 fixed=17\n",
+  "actual_z3_loaded": [
+    "198000:\tcalling init: /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3"
+  ],
+  "build_command": "env PATH=/usr/bin:/bin /usr/bin/gcc -B/usr/bin -O2 seed_probe.c -I <official>/include -L <official>/lib -Wl,-rpath,<official>/lib -lz3 -lm -o seed_probe",
+  "initial_build_failures": "两次使用默认PATH链接失败：linuxbrew ld找不到remainder@GLIBC_2.43；改系统PATH及-B/usr/bin并显式-lm后构建通过。没有将失败计PASS。",
+  "probe_binary_sha256": "fee45fb6bcb05b25ec2db2535d40c8d23293bbff8a5536a9f43ea056a8291e93",
+  "probe_source_sha256": "e1905af6713ab9d3c7e7c0dd19f22bf570c6b1792193f733cbe5cf854d758e02"
+}

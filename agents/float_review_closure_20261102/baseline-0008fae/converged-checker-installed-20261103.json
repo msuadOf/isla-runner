@@ -1,0 +1,36 @@
+{
+  "status": "PASS installed five IR static closure checker",
+  "checker_sha256": "9ebd0d937edc805e49103984bffbb507470115d349d7262553b6943b9e2763cf",
+  "rows": [
+    {
+      "path": "isla/rv64d.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "target_count": 53,
+      "status": "PASS"
+    },
+    {
+      "path": "isla/rv32d.ir",
+      "sha256": "e17c4fe18552f8ce219b35f846c4c1a2c530dcad0ac9fc8f10d0da2604c3fa4e",
+      "target_count": 51,
+      "status": "PASS"
+    },
+    {
+      "path": "isla/ir/rv64d_v128_e64.ir",
+      "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "target_count": 53,
+      "status": "PASS"
+    },
+    {
+      "path": "isla/ir/rv64d_v256_e64.ir",
+      "sha256": "47ba73418d6dcb1b1e86db7680ce4df9508e7885a02096e25e213c2c3b2c05e1",
+      "target_count": 53,
+      "status": "PASS"
+    },
+    {
+      "path": "isla/ir/rv64d_v512_e64.ir",
+      "sha256": "2bdea17d36c64545254f50cc5a6902e570a1fea682de3f7c062bf641a85a62a9",
+      "target_count": 53,
+      "status": "PASS"
+    }
+  ]
+}

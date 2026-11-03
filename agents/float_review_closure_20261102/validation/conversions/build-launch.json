@@ -1,0 +1,16 @@
+{
+  "pid": 523425,
+  "cpu": 7,
+  "command": [
+    "taskset",
+    "-c",
+    "7",
+    "python3",
+    "build_runners.py",
+    "--isla-commit",
+    "42000be47596ec088623881d03c0eadc5cf0ba27",
+    "--z3-prefix",
+    "~/.local/opt/z3-official-1fd1d3613"
+  ],
+  "started_epoch": 1793633305.7800589
+}

@@ -20,3 +20,6 @@
 - [flags/sat完整归因确认](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)：两小时主路径账、六策略臂、活动gate与collector因果诊断，生产未改。
 
 - 2026-11-02 编码辅助约束分离与活动lane饱和分支完成，Sol独审及三完整Clause预算验收通过；[版本/证据/边界](encoding_constraint_isolation_20261102/status.md)。
+
+
+- 2026-11-03 float纯数据回退收敛与Sol限定验收完成，OPEN冻结延期memory，见[最终交付](float_review_closure_20261102/final-report.md)。

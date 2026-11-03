@@ -1,0 +1,1269 @@
+{
+  "scope": "Independent replay of expected-value SoftFloat calls only; no new IR executed",
+  "input_sha256": "6ed44d0afba816a709fe6f4f18f0e34505c8b3202aaed6e1ad306e5aea135891",
+  "oracle_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "rows": 315,
+  "failures": [],
+  "checks": [
+    {
+      "name": "H-add-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "H-add-inf-valid",
+      "match": true
+    },
+    {
+      "name": "H-sub-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "H-sub-inf-valid",
+      "match": true
+    },
+    {
+      "name": "H-mul-zero-inf",
+      "match": true
+    },
+    {
+      "name": "H-mul-inf-zero",
+      "match": true
+    },
+    {
+      "name": "H-mul-negzero-neginf",
+      "match": true
+    },
+    {
+      "name": "H-mul-neginf-negzero",
+      "match": true
+    },
+    {
+      "name": "H-mul-inf-valid",
+      "match": true
+    },
+    {
+      "name": "H-div-zero-zero",
+      "match": true
+    },
+    {
+      "name": "H-div-inf-inf",
+      "match": true
+    },
+    {
+      "name": "H-div-one-poszero",
+      "match": true
+    },
+    {
+      "name": "H-div-one-negzero",
+      "match": true
+    },
+    {
+      "name": "H-div-inf-zero",
+      "match": true
+    },
+    {
+      "name": "H-div-inf-one",
+      "match": true
+    },
+    {
+      "name": "H-div-zero-one",
+      "match": true
+    },
+    {
+      "name": "H-add-snan-left",
+      "match": true
+    },
+    {
+      "name": "H-add-snan-right",
+      "match": true
+    },
+    {
+      "name": "H-add-qnan-left",
+      "match": true
+    },
+    {
+      "name": "H-add-qnan-right",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-negone",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-neginf",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-negzero",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-poszero",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-one",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-snan",
+      "match": true
+    },
+    {
+      "name": "H-sqrt-qnan",
+      "match": true
+    },
+    {
+      "name": "H-fma-zero-inf",
+      "match": true
+    },
+    {
+      "name": "H-fma-inf-zero",
+      "match": true
+    },
+    {
+      "name": "H-fma-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "H-fma-inf-valid",
+      "match": true
+    },
+    {
+      "name": "H-fma-snan-a",
+      "match": true
+    },
+    {
+      "name": "H-fma-snan-b",
+      "match": true
+    },
+    {
+      "name": "H-fma-snan-c",
+      "match": true
+    },
+    {
+      "name": "H-fma-qnan-c",
+      "match": true
+    },
+    {
+      "name": "H-mul-overflow-rm0",
+      "match": true
+    },
+    {
+      "name": "H-mul-underflow-rm0",
+      "match": true
+    },
+    {
+      "name": "H-div-inexact-rm0",
+      "match": true
+    },
+    {
+      "name": "H-fma-fused-rm0",
+      "match": true
+    },
+    {
+      "name": "H-mul-overflow-rm1",
+      "match": true
+    },
+    {
+      "name": "H-mul-underflow-rm1",
+      "match": true
+    },
+    {
+      "name": "H-div-inexact-rm1",
+      "match": true
+    },
+    {
+      "name": "H-fma-fused-rm1",
+      "match": true
+    },
+    {
+      "name": "H-mul-overflow-rm2",
+      "match": true
+    },
+    {
+      "name": "H-mul-underflow-rm2",
+      "match": true
+    },
+    {
+      "name": "H-div-inexact-rm2",
+      "match": true
+    },
+    {
+      "name": "H-fma-fused-rm2",
+      "match": true
+    },
+    {
+      "name": "H-mul-overflow-rm3",
+      "match": true
+    },
+    {
+      "name": "H-mul-underflow-rm3",
+      "match": true
+    },
+    {
+      "name": "H-div-inexact-rm3",
+      "match": true
+    },
+    {
+      "name": "H-fma-fused-rm3",
+      "match": true
+    },
+    {
+      "name": "H-mul-overflow-rm4",
+      "match": true
+    },
+    {
+      "name": "H-mul-underflow-rm4",
+      "match": true
+    },
+    {
+      "name": "H-div-inexact-rm4",
+      "match": true
+    },
+    {
+      "name": "H-fma-fused-rm4",
+      "match": true
+    },
+    {
+      "name": "S-add-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "S-add-inf-valid",
+      "match": true
+    },
+    {
+      "name": "S-sub-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "S-sub-inf-valid",
+      "match": true
+    },
+    {
+      "name": "S-mul-zero-inf",
+      "match": true
+    },
+    {
+      "name": "S-mul-inf-zero",
+      "match": true
+    },
+    {
+      "name": "S-mul-negzero-neginf",
+      "match": true
+    },
+    {
+      "name": "S-mul-neginf-negzero",
+      "match": true
+    },
+    {
+      "name": "S-mul-inf-valid",
+      "match": true
+    },
+    {
+      "name": "S-div-zero-zero",
+      "match": true
+    },
+    {
+      "name": "S-div-inf-inf",
+      "match": true
+    },
+    {
+      "name": "S-div-one-poszero",
+      "match": true
+    },
+    {
+      "name": "S-div-one-negzero",
+      "match": true
+    },
+    {
+      "name": "S-div-inf-zero",
+      "match": true
+    },
+    {
+      "name": "S-div-inf-one",
+      "match": true
+    },
+    {
+      "name": "S-div-zero-one",
+      "match": true
+    },
+    {
+      "name": "S-add-snan-left",
+      "match": true
+    },
+    {
+      "name": "S-add-snan-right",
+      "match": true
+    },
+    {
+      "name": "S-add-qnan-left",
+      "match": true
+    },
+    {
+      "name": "S-add-qnan-right",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-negone",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-neginf",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-negzero",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-poszero",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-one",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-snan",
+      "match": true
+    },
+    {
+      "name": "S-sqrt-qnan",
+      "match": true
+    },
+    {
+      "name": "S-fma-zero-inf",
+      "match": true
+    },
+    {
+      "name": "S-fma-inf-zero",
+      "match": true
+    },
+    {
+      "name": "S-fma-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "S-fma-inf-valid",
+      "match": true
+    },
+    {
+      "name": "S-fma-snan-a",
+      "match": true
+    },
+    {
+      "name": "S-fma-snan-b",
+      "match": true
+    },
+    {
+      "name": "S-fma-snan-c",
+      "match": true
+    },
+    {
+      "name": "S-fma-qnan-c",
+      "match": true
+    },
+    {
+      "name": "S-mul-overflow-rm0",
+      "match": true
+    },
+    {
+      "name": "S-mul-underflow-rm0",
+      "match": true
+    },
+    {
+      "name": "S-div-inexact-rm0",
+      "match": true
+    },
+    {
+      "name": "S-fma-fused-rm0",
+      "match": true
+    },
+    {
+      "name": "S-mul-overflow-rm1",
+      "match": true
+    },
+    {
+      "name": "S-mul-underflow-rm1",
+      "match": true
+    },
+    {
+      "name": "S-div-inexact-rm1",
+      "match": true
+    },
+    {
+      "name": "S-fma-fused-rm1",
+      "match": true
+    },
+    {
+      "name": "S-mul-overflow-rm2",
+      "match": true
+    },
+    {
+      "name": "S-mul-underflow-rm2",
+      "match": true
+    },
+    {
+      "name": "S-div-inexact-rm2",
+      "match": true
+    },
+    {
+      "name": "S-fma-fused-rm2",
+      "match": true
+    },
+    {
+      "name": "S-mul-overflow-rm3",
+      "match": true
+    },
+    {
+      "name": "S-mul-underflow-rm3",
+      "match": true
+    },
+    {
+      "name": "S-div-inexact-rm3",
+      "match": true
+    },
+    {
+      "name": "S-fma-fused-rm3",
+      "match": true
+    },
+    {
+      "name": "S-mul-overflow-rm4",
+      "match": true
+    },
+    {
+      "name": "S-mul-underflow-rm4",
+      "match": true
+    },
+    {
+      "name": "S-div-inexact-rm4",
+      "match": true
+    },
+    {
+      "name": "S-fma-fused-rm4",
+      "match": true
+    },
+    {
+      "name": "D-add-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "D-add-inf-valid",
+      "match": true
+    },
+    {
+      "name": "D-sub-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "D-sub-inf-valid",
+      "match": true
+    },
+    {
+      "name": "D-mul-zero-inf",
+      "match": true
+    },
+    {
+      "name": "D-mul-inf-zero",
+      "match": true
+    },
+    {
+      "name": "D-mul-negzero-neginf",
+      "match": true
+    },
+    {
+      "name": "D-mul-neginf-negzero",
+      "match": true
+    },
+    {
+      "name": "D-mul-inf-valid",
+      "match": true
+    },
+    {
+      "name": "D-div-zero-zero",
+      "match": true
+    },
+    {
+      "name": "D-div-inf-inf",
+      "match": true
+    },
+    {
+      "name": "D-div-one-poszero",
+      "match": true
+    },
+    {
+      "name": "D-div-one-negzero",
+      "match": true
+    },
+    {
+      "name": "D-div-inf-zero",
+      "match": true
+    },
+    {
+      "name": "D-div-inf-one",
+      "match": true
+    },
+    {
+      "name": "D-div-zero-one",
+      "match": true
+    },
+    {
+      "name": "D-add-snan-left",
+      "match": true
+    },
+    {
+      "name": "D-add-snan-right",
+      "match": true
+    },
+    {
+      "name": "D-add-qnan-left",
+      "match": true
+    },
+    {
+      "name": "D-add-qnan-right",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-negone",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-neginf",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-negzero",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-poszero",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-one",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-snan",
+      "match": true
+    },
+    {
+      "name": "D-sqrt-qnan",
+      "match": true
+    },
+    {
+      "name": "D-fma-zero-inf",
+      "match": true
+    },
+    {
+      "name": "D-fma-inf-zero",
+      "match": true
+    },
+    {
+      "name": "D-fma-inf-cancel",
+      "match": true
+    },
+    {
+      "name": "D-fma-inf-valid",
+      "match": true
+    },
+    {
+      "name": "D-fma-snan-a",
+      "match": true
+    },
+    {
+      "name": "D-fma-snan-b",
+      "match": true
+    },
+    {
+      "name": "D-fma-snan-c",
+      "match": true
+    },
+    {
+      "name": "D-fma-qnan-c",
+      "match": true
+    },
+    {
+      "name": "D-mul-overflow-rm0",
+      "match": true
+    },
+    {
+      "name": "D-mul-underflow-rm0",
+      "match": true
+    },
+    {
+      "name": "D-div-inexact-rm0",
+      "match": true
+    },
+    {
+      "name": "D-fma-fused-rm0",
+      "match": true
+    },
+    {
+      "name": "D-mul-overflow-rm1",
+      "match": true
+    },
+    {
+      "name": "D-mul-underflow-rm1",
+      "match": true
+    },
+    {
+      "name": "D-div-inexact-rm1",
+      "match": true
+    },
+    {
+      "name": "D-fma-fused-rm1",
+      "match": true
+    },
+    {
+      "name": "D-mul-overflow-rm2",
+      "match": true
+    },
+    {
+      "name": "D-mul-underflow-rm2",
+      "match": true
+    },
+    {
+      "name": "D-div-inexact-rm2",
+      "match": true
+    },
+    {
+      "name": "D-fma-fused-rm2",
+      "match": true
+    },
+    {
+      "name": "D-mul-overflow-rm3",
+      "match": true
+    },
+    {
+      "name": "D-mul-underflow-rm3",
+      "match": true
+    },
+    {
+      "name": "D-div-inexact-rm3",
+      "match": true
+    },
+    {
+      "name": "D-fma-fused-rm3",
+      "match": true
+    },
+    {
+      "name": "D-mul-overflow-rm4",
+      "match": true
+    },
+    {
+      "name": "D-mul-underflow-rm4",
+      "match": true
+    },
+    {
+      "name": "D-div-inexact-rm4",
+      "match": true
+    },
+    {
+      "name": "D-fma-fused-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-exact-even",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm1",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm2",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm3",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-even-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-exact-odd",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm1",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm2",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm3",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-exact-odd-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-inexact-even",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm1",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm2",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm3",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-even-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-inexact-odd",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm1",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm2",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm3",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inexact-odd-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-negative-inexact",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-tiny",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm1",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm2",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm3",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-tiny-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-overflow",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm1",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm2",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm3",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-overflow-rm4",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-poszero",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-poszero-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-negzero",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-negzero-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-inf",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-inf-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-snan",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-snan-rm0",
+      "match": true
+    },
+    {
+      "name": "S-to-H-rod-qnan",
+      "match": true
+    },
+    {
+      "name": "S-to-H-ordinary-qnan-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-exact-even",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm1",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm2",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm3",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-even-rm4",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-exact-odd",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm1",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm2",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm3",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-exact-odd-rm4",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-inexact-even",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm1",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm2",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm3",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-even-rm4",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-inexact-odd",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm1",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm2",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm3",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inexact-odd-rm4",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-negative-inexact",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-tiny",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm1",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm2",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm3",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-tiny-rm4",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-overflow",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm1",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm2",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm3",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-overflow-rm4",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-poszero",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-poszero-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-negzero",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-negzero-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-inf",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-inf-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-snan",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-snan-rm0",
+      "match": true
+    },
+    {
+      "name": "D-to-S-rod-qnan",
+      "match": true
+    },
+    {
+      "name": "D-to-S-ordinary-qnan-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-fused-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-fused-rm1",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-fused-rm2",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-fused-rm3",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-fused-rm4",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-snan-a-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-snan-b-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-snan-acc-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-multi-mask0-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-multi-mask1-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-multi-mask2-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-multi-mask3-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VV-vl0-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-fused-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-fused-rm1",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-fused-rm2",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-fused-rm3",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-fused-rm4",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-snan-a-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-snan-b-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-snan-acc-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-multi-mask0-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-multi-mask1-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-multi-mask2-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-multi-mask3-rm0",
+      "match": true
+    },
+    {
+      "name": "BF16-VF-vl0-rm0",
+      "match": true
+    },
+    {
+      "name": "VH-add-inf-cancel-mask1",
+      "match": true
+    },
+    {
+      "name": "VH-add-inf-cancel-mask2",
+      "match": true
+    },
+    {
+      "name": "VH-add-inf-cancel-mask3",
+      "match": true
+    },
+    {
+      "name": "VH-mul-invalid-overflow-mask1",
+      "match": true
+    },
+    {
+      "name": "VH-mul-invalid-overflow-mask2",
+      "match": true
+    },
+    {
+      "name": "VH-mul-invalid-overflow-mask3",
+      "match": true
+    },
+    {
+      "name": "VH-div-nv-dz-mask0",
+      "match": true
+    },
+    {
+      "name": "VH-div-nv-dz-mask1",
+      "match": true
+    },
+    {
+      "name": "VH-div-nv-dz-mask2",
+      "match": true
+    },
+    {
+      "name": "VH-div-nv-dz-mask3",
+      "match": true
+    },
+    {
+      "name": "VS-add-inf-cancel-mask1",
+      "match": true
+    },
+    {
+      "name": "VS-add-inf-cancel-mask2",
+      "match": true
+    },
+    {
+      "name": "VS-add-inf-cancel-mask3",
+      "match": true
+    },
+    {
+      "name": "VS-mul-invalid-overflow-mask1",
+      "match": true
+    },
+    {
+      "name": "VS-mul-invalid-overflow-mask2",
+      "match": true
+    },
+    {
+      "name": "VS-mul-invalid-overflow-mask3",
+      "match": true
+    },
+    {
+      "name": "VS-div-nv-dz-mask0",
+      "match": true
+    },
+    {
+      "name": "VS-div-nv-dz-mask1",
+      "match": true
+    },
+    {
+      "name": "VS-div-nv-dz-mask2",
+      "match": true
+    },
+    {
+      "name": "VS-div-nv-dz-mask3",
+      "match": true
+    },
+    {
+      "name": "VD-add-inf-cancel-mask1",
+      "match": true
+    },
+    {
+      "name": "VD-add-inf-cancel-mask2",
+      "match": true
+    },
+    {
+      "name": "VD-add-inf-cancel-mask3",
+      "match": true
+    },
+    {
+      "name": "VD-mul-invalid-overflow-mask1",
+      "match": true
+    },
+    {
+      "name": "VD-mul-invalid-overflow-mask2",
+      "match": true
+    },
+    {
+      "name": "VD-mul-invalid-overflow-mask3",
+      "match": true
+    },
+    {
+      "name": "VD-div-nv-dz-mask0",
+      "match": true
+    },
+    {
+      "name": "VD-div-nv-dz-mask1",
+      "match": true
+    },
+    {
+      "name": "VD-div-nv-dz-mask2",
+      "match": true
+    },
+    {
+      "name": "VD-div-nv-dz-mask3",
+      "match": true
+    }
+  ]
+}

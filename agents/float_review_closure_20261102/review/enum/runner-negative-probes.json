@@ -1,0 +1,58 @@
+{
+  "runner_sha256": "7b126047f6f380601e9132cc9a82b6c96fef0b64c364d6e4056cee6e6a69eae5",
+  "checks": [
+    {
+      "case": "valid",
+      "accepted_schema": true
+    },
+    {
+      "case": "missing_error",
+      "accepted_schema": false
+    },
+    {
+      "case": "boolean_error",
+      "accepted_schema": false
+    },
+    {
+      "case": "negative_error",
+      "accepted_schema": false
+    },
+    {
+      "case": "foreign_clause",
+      "accepted_schema": false
+    },
+    {
+      "case": "missing_gen",
+      "accepted_schema": false
+    },
+    {
+      "case": "missing_provenance",
+      "accepted_schema": false
+    },
+    {
+      "case": "wrong_ir_hash",
+      "accepted_schema": false
+    },
+    {
+      "case": "seed_valid",
+      "accepted": true
+    },
+    {
+      "case": "seed_wrong_seed",
+      "accepted": false
+    },
+    {
+      "case": "seed_garbage",
+      "accepted": false
+    },
+    {
+      "case": "seed_missing",
+      "accepted": false
+    },
+    {
+      "case": "seed_mixed_bad",
+      "accepted": false
+    }
+  ],
+  "prior_probe_attempt": "owner同步新增ir/config形参后首次旧调用报TypeError；调整探针匹配新签名，未将失败计PASS。"
+}

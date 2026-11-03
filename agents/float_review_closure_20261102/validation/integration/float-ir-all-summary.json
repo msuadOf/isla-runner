@@ -1,0 +1,54 @@
+{
+  "source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "installed_manifest_sha256": "6caab4ef6b1a2b95b2e78691dc6b23e6acecca708fca41f4f036834c866a7093",
+  "command": "taskset -c 80 env CARGO_BUILD_JOBS=1 CARGO_NET_OFFLINE=true CARGO_TARGET_DIR=$ROOT/agents/float_review_closure_20261102/validation/integration/target RUSTFLAGS=\"-L native=$Z3_LIB -C link-arg=-Wl,-rpath,$Z3_LIB\" python3 test/float_ir/run.py --mode all --output $ROOT/agents/float_review_closure_20261102/validation/integration/float-ir-all-0f7b8fb",
+  "cwd": "isla",
+  "parent_exit_code": 0,
+  "checks_total": 26,
+  "checks_passed": 26,
+  "checks_sha256": "0a383a7357bf6e65fb5c352a441e2b6e804a8d2f61f06a1f5d730b6a8fa1160f",
+  "helper_rows": [
+    {
+      "name": "rv64d",
+      "last_line": "PASS 327 legacy SoftFloat cases",
+      "log_sha256": "21383f951130fdb9017dbef6cdb3fe4a2ee9ca4aba99b325be4f96fbad36b5ea"
+    },
+    {
+      "name": "rv32d",
+      "last_line": "PASS 307 legacy SoftFloat cases",
+      "log_sha256": "a64f5643b45cbe6092bc9791cc71a5f021bd34c13b090339314802442d1fcc23"
+    },
+    {
+      "name": "rv64d_v128_e64",
+      "last_line": "PASS 327 legacy SoftFloat cases",
+      "log_sha256": "21383f951130fdb9017dbef6cdb3fe4a2ee9ca4aba99b325be4f96fbad36b5ea"
+    },
+    {
+      "name": "rv64d_v256_e64",
+      "last_line": "PASS 327 legacy SoftFloat cases",
+      "log_sha256": "e77acad3b9fea27601280d2f410969f0e54e513cd304f74642bec66440f30ef4"
+    },
+    {
+      "name": "rv64d_v512_e64",
+      "last_line": "PASS 327 legacy SoftFloat cases",
+      "log_sha256": "e77acad3b9fea27601280d2f410969f0e54e513cd304f74642bec66440f30ef4"
+    }
+  ],
+  "runner": {
+    "float-ir-helpers": {
+      "sha256": "fe87aeabae8211e442adda4a3ed8f6904335fc24b44f80e2d1327730058d9c29",
+      "ldd_z3": [
+        "libz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000072e08d400000)"
+      ]
+    },
+    "float-ir-state": {
+      "sha256": "7dfa703f024fae993cab4709b41120644775e599c2336aaa10bb74e767131f6e",
+      "ldd_z3": [
+        "libz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x00007e070a400000)"
+      ]
+    }
+  },
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "cargo_fmt_check_exit_code": 0
+}

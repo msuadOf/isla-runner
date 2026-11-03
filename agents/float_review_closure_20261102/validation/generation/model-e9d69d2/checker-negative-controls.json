@@ -1,0 +1,53 @@
+{
+  "ir_sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+  "checker_sha256": "053b48b3b588c58f87d74a72c7a5d5097a610ccea37700d94380142fede5ad16",
+  "count": 9,
+  "all_rejected": true,
+  "cases": [
+    {
+      "case": "rounded_of_nx_swap",
+      "rejected": true,
+      "reason": "zieee_f16_rounded_exceptions: OF条件未来自边界析取"
+    },
+    {
+      "case": "rounded_self_eq",
+      "rejected": true,
+      "reason": "zieee_f16_rounded_exceptions: NX未分别比较lo/hi与目标结果"
+    },
+    {
+      "case": "rounded_uf_without_tiny",
+      "rejected": true,
+      "reason": "zieee_f16_rounded_exceptions: UF未结合独立tiny边界"
+    },
+    {
+      "case": "threshold_nx_lost",
+      "rejected": true,
+      "reason": "exact_threshold: UF未结合NX"
+    },
+    {
+      "case": "int_nx_lost",
+      "rejected": true,
+      "reason": "'false'"
+    },
+    {
+      "case": "round_quiet_mode_wrong",
+      "rejected": true,
+      "reason": "源异常分类不再使用quiet=false和原始源"
+    },
+    {
+      "case": "conversion_finite_facts_lost",
+      "rejected": true,
+      "reason": "zieee_convert32_to_16_exceptions: 有限真臂未直接返回exact facts"
+    },
+    {
+      "case": "rod_nx_false_also_jam",
+      "rejected": true,
+      "reason": "zieee_rod32_to_16: NX条件或jam/base方向变化"
+    },
+    {
+      "case": "rod_quiet_mode_wrong",
+      "rejected": true,
+      "reason": "源异常分类不再使用quiet=false和原始源"
+    }
+  ]
+}

@@ -1,0 +1,1472 @@
+{
+  "kind": "conservative_static_sail_call_closure",
+  "source_mode": "committed_component_heads",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "model_dirty": false,
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "isla_dirty": false,
+  "fd_float_source": ".worktree/runner-float/isla/scripts/run.mk",
+  "fd_float_count": 89,
+  "affected_count": 64,
+  "affected_clauses": [
+    "FCVTMOD_W_D",
+    "FCVT_BF16_S",
+    "FCVT_S_BF16",
+    "FLEQ_D",
+    "FLEQ_H",
+    "FLEQ_S",
+    "FLTQ_D",
+    "FLTQ_H",
+    "FLTQ_S",
+    "FMAXM_D",
+    "FMAXM_H",
+    "FMAXM_S",
+    "FMINM_D",
+    "FMINM_H",
+    "FMINM_S",
+    "FROUNDNX_D",
+    "FROUNDNX_H",
+    "FROUNDNX_S",
+    "FROUND_D",
+    "FROUND_H",
+    "FROUND_S",
+    "FVFMATYPE",
+    "FVFMTYPE",
+    "FVFTYPE",
+    "FVVMATYPE",
+    "FVVMTYPE",
+    "FVVTYPE",
+    "FWFTYPE",
+    "FWVFMATYPE",
+    "FWVFTYPE",
+    "FWVTYPE",
+    "FWVVMATYPE",
+    "FWVVTYPE",
+    "F_BIN_F_TYPE_D",
+    "F_BIN_F_TYPE_H",
+    "F_BIN_RM_TYPE_D",
+    "F_BIN_RM_TYPE_H",
+    "F_BIN_RM_TYPE_S",
+    "F_BIN_TYPE_F_S",
+    "F_BIN_TYPE_X_S",
+    "F_BIN_X_TYPE_D",
+    "F_BIN_X_TYPE_H",
+    "F_MADD_TYPE_D",
+    "F_MADD_TYPE_H",
+    "F_MADD_TYPE_S",
+    "F_UN_RM_FF_TYPE_D",
+    "F_UN_RM_FF_TYPE_H",
+    "F_UN_RM_FF_TYPE_S",
+    "F_UN_RM_FX_TYPE_D",
+    "F_UN_RM_FX_TYPE_H",
+    "F_UN_RM_FX_TYPE_S",
+    "F_UN_RM_XF_TYPE_D",
+    "F_UN_RM_XF_TYPE_H",
+    "F_UN_RM_XF_TYPE_S",
+    "RFVVTYPE",
+    "RFWVVTYPE",
+    "VFNCVTBF16_F_F_W",
+    "VFNUNARY0",
+    "VFUNARY0",
+    "VFUNARY1",
+    "VFWCVTBF16_F_F_V",
+    "VFWMACCBF16_VF",
+    "VFWMACCBF16_VV",
+    "VFWUNARY0"
+  ],
+  "unaffected_fd_float_clauses": [
+    "C_FLD",
+    "C_FLDSP",
+    "C_FLW",
+    "C_FLWSP",
+    "C_FSD",
+    "C_FSDSP",
+    "C_FSW",
+    "C_FSWSP",
+    "FLI_D",
+    "FLI_H",
+    "FLI_S",
+    "FMVH_X_D",
+    "FMVP_D_X",
+    "F_UN_F_TYPE_D",
+    "F_UN_F_TYPE_H",
+    "F_UN_TYPE_F_S",
+    "F_UN_TYPE_X_S",
+    "F_UN_X_TYPE_D",
+    "F_UN_X_TYPE_H",
+    "LOAD_FP",
+    "STORE_FP",
+    "VFMERGE",
+    "VFMV",
+    "VFMVFS",
+    "VFMVSF"
+  ],
+  "categories": {
+    "fflags_changed": {
+      "seed_functions": [
+        "accrue_fflags"
+      ],
+      "clauses": [
+        "FCVTMOD_W_D",
+        "FCVT_BF16_S",
+        "FCVT_S_BF16",
+        "FLEQ_D",
+        "FLEQ_H",
+        "FLEQ_S",
+        "FLTQ_D",
+        "FLTQ_H",
+        "FLTQ_S",
+        "FMAXM_D",
+        "FMAXM_H",
+        "FMAXM_S",
+        "FMINM_D",
+        "FMINM_H",
+        "FMINM_S",
+        "FROUNDNX_D",
+        "FROUNDNX_H",
+        "FROUNDNX_S",
+        "FROUND_D",
+        "FROUND_H",
+        "FROUND_S",
+        "FVFMATYPE",
+        "FVFMTYPE",
+        "FVFTYPE",
+        "FVVMATYPE",
+        "FVVMTYPE",
+        "FVVTYPE",
+        "FWFTYPE",
+        "FWVFMATYPE",
+        "FWVFTYPE",
+        "FWVTYPE",
+        "FWVVMATYPE",
+        "FWVVTYPE",
+        "F_BIN_F_TYPE_D",
+        "F_BIN_F_TYPE_H",
+        "F_BIN_RM_TYPE_D",
+        "F_BIN_RM_TYPE_H",
+        "F_BIN_RM_TYPE_S",
+        "F_BIN_TYPE_F_S",
+        "F_BIN_TYPE_X_S",
+        "F_BIN_X_TYPE_D",
+        "F_BIN_X_TYPE_H",
+        "F_MADD_TYPE_D",
+        "F_MADD_TYPE_H",
+        "F_MADD_TYPE_S",
+        "F_UN_RM_FF_TYPE_D",
+        "F_UN_RM_FF_TYPE_H",
+        "F_UN_RM_FF_TYPE_S",
+        "F_UN_RM_FX_TYPE_D",
+        "F_UN_RM_FX_TYPE_H",
+        "F_UN_RM_FX_TYPE_S",
+        "F_UN_RM_XF_TYPE_D",
+        "F_UN_RM_XF_TYPE_H",
+        "F_UN_RM_XF_TYPE_S",
+        "RFVVTYPE",
+        "RFWVVTYPE",
+        "VFNCVTBF16_F_F_W",
+        "VFNUNARY0",
+        "VFUNARY0",
+        "VFUNARY1",
+        "VFWCVTBF16_F_F_V",
+        "VFWMACCBF16_VF",
+        "VFWMACCBF16_VV",
+        "VFWUNARY0"
+      ],
+      "count": 64
+    },
+    "five_narrow_adapters": {
+      "seed_functions": [
+        "riscv_f16ToI8_pure",
+        "riscv_f16ToUi16_pure",
+        "riscv_f16ToUi8_pure",
+        "riscv_f32ToI16_pure",
+        "riscv_f32ToUi16_pure"
+      ],
+      "clauses": [
+        "VFNUNARY0",
+        "VFUNARY0"
+      ],
+      "count": 2
+    },
+    "twelve_integer_wrappers": {
+      "seed_functions": [
+        "riscv_f16ToI32",
+        "riscv_f16ToI64",
+        "riscv_f16ToUi32",
+        "riscv_f16ToUi64",
+        "riscv_f32ToI32",
+        "riscv_f32ToI64",
+        "riscv_f32ToUi32",
+        "riscv_f32ToUi64",
+        "riscv_f64ToI32",
+        "riscv_f64ToI64",
+        "riscv_f64ToUi32",
+        "riscv_f64ToUi64"
+      ],
+      "clauses": [
+        "F_UN_RM_FX_TYPE_D",
+        "F_UN_RM_FX_TYPE_H",
+        "F_UN_RM_FX_TYPE_S",
+        "VFNUNARY0",
+        "VFUNARY0",
+        "VFWUNARY0"
+      ],
+      "count": 6
+    },
+    "arithmetic_exception_causes": {
+      "seed_functions": [
+        "ieee_add16_exceptions",
+        "ieee_add32_exceptions",
+        "ieee_add64_exceptions",
+        "ieee_div16_exceptions",
+        "ieee_div32_exceptions",
+        "ieee_div64_exceptions",
+        "ieee_fma16_exceptions",
+        "ieee_fma32_exceptions",
+        "ieee_fma64_exceptions",
+        "ieee_mul16_exceptions",
+        "ieee_mul32_exceptions",
+        "ieee_mul64_exceptions",
+        "ieee_sqrt16_exceptions",
+        "ieee_sqrt32_exceptions",
+        "ieee_sqrt64_exceptions",
+        "ieee_sub16_exceptions",
+        "ieee_sub32_exceptions",
+        "ieee_sub64_exceptions"
+      ],
+      "clauses": [
+        "FVFMATYPE",
+        "FVFTYPE",
+        "FVVMATYPE",
+        "FVVTYPE",
+        "FWFTYPE",
+        "FWVFMATYPE",
+        "FWVFTYPE",
+        "FWVTYPE",
+        "FWVVMATYPE",
+        "FWVVTYPE",
+        "F_BIN_RM_TYPE_D",
+        "F_BIN_RM_TYPE_H",
+        "F_BIN_RM_TYPE_S",
+        "F_MADD_TYPE_D",
+        "F_MADD_TYPE_H",
+        "F_MADD_TYPE_S",
+        "F_UN_RM_FF_TYPE_D",
+        "F_UN_RM_FF_TYPE_H",
+        "F_UN_RM_FF_TYPE_S",
+        "RFVVTYPE",
+        "RFWVVTYPE",
+        "VFUNARY1",
+        "VFWMACCBF16_VF",
+        "VFWMACCBF16_VV"
+      ],
+      "count": 24
+    },
+    "rod_mode_and_jam": {
+      "seed_functions": [
+        "ieee_rod32_to_16",
+        "ieee_rod64_to_32",
+        "riscv_f32ToF16",
+        "riscv_f64ToF32"
+      ],
+      "clauses": [
+        "F_UN_RM_FF_TYPE_D",
+        "F_UN_RM_FF_TYPE_H",
+        "VFNUNARY0"
+      ],
+      "count": 3
+    }
+  },
+  "full_clause_run_list": [
+    {
+      "clause": "FCVTMOD_W_D",
+      "make_target": "solve-FCVTMOD_W_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FCVT_BF16_S",
+      "make_target": "solve-FCVT_BF16_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FCVT_S_BF16",
+      "make_target": "solve-FCVT_S_BF16",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FLEQ_D",
+      "make_target": "solve-FLEQ_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FLEQ_H",
+      "make_target": "solve-FLEQ_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FLEQ_S",
+      "make_target": "solve-FLEQ_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FLTQ_D",
+      "make_target": "solve-FLTQ_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FLTQ_H",
+      "make_target": "solve-FLTQ_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FLTQ_S",
+      "make_target": "solve-FLTQ_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FMAXM_D",
+      "make_target": "solve-FMAXM_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FMAXM_H",
+      "make_target": "solve-FMAXM_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FMAXM_S",
+      "make_target": "solve-FMAXM_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FMINM_D",
+      "make_target": "solve-FMINM_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FMINM_H",
+      "make_target": "solve-FMINM_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FMINM_S",
+      "make_target": "solve-FMINM_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FROUNDNX_D",
+      "make_target": "solve-FROUNDNX_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FROUNDNX_H",
+      "make_target": "solve-FROUNDNX_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FROUNDNX_S",
+      "make_target": "solve-FROUNDNX_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FROUND_D",
+      "make_target": "solve-FROUND_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FROUND_H",
+      "make_target": "solve-FROUND_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FROUND_S",
+      "make_target": "solve-FROUND_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FVFMATYPE",
+      "make_target": "solve-FVFMATYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FVFMTYPE",
+      "make_target": "solve-FVFMTYPE",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FVFTYPE",
+      "make_target": "solve-FVFTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FVVMATYPE",
+      "make_target": "solve-FVVMATYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FVVMTYPE",
+      "make_target": "solve-FVVMTYPE",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FVVTYPE",
+      "make_target": "solve-FVVTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FWFTYPE",
+      "make_target": "solve-FWFTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FWVFMATYPE",
+      "make_target": "solve-FWVFMATYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FWVFTYPE",
+      "make_target": "solve-FWVFTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FWVTYPE",
+      "make_target": "solve-FWVTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FWVVMATYPE",
+      "make_target": "solve-FWVVMATYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "FWVVTYPE",
+      "make_target": "solve-FWVVTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_F_TYPE_D",
+      "make_target": "solve-F_BIN_F_TYPE_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_F_TYPE_H",
+      "make_target": "solve-F_BIN_F_TYPE_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_RM_TYPE_D",
+      "make_target": "solve-F_BIN_RM_TYPE_D",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_RM_TYPE_H",
+      "make_target": "solve-F_BIN_RM_TYPE_H",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_RM_TYPE_S",
+      "make_target": "solve-F_BIN_RM_TYPE_S",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_TYPE_F_S",
+      "make_target": "solve-F_BIN_TYPE_F_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_TYPE_X_S",
+      "make_target": "solve-F_BIN_TYPE_X_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_X_TYPE_D",
+      "make_target": "solve-F_BIN_X_TYPE_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_BIN_X_TYPE_H",
+      "make_target": "solve-F_BIN_X_TYPE_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_MADD_TYPE_D",
+      "make_target": "solve-F_MADD_TYPE_D",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_MADD_TYPE_H",
+      "make_target": "solve-F_MADD_TYPE_H",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_MADD_TYPE_S",
+      "make_target": "solve-F_MADD_TYPE_S",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_FF_TYPE_D",
+      "make_target": "solve-F_UN_RM_FF_TYPE_D",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed",
+        "rod_mode_and_jam"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_FF_TYPE_H",
+      "make_target": "solve-F_UN_RM_FF_TYPE_H",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed",
+        "rod_mode_and_jam"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_FF_TYPE_S",
+      "make_target": "solve-F_UN_RM_FF_TYPE_S",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_FX_TYPE_D",
+      "make_target": "solve-F_UN_RM_FX_TYPE_D",
+      "categories": [
+        "fflags_changed",
+        "twelve_integer_wrappers"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_FX_TYPE_H",
+      "make_target": "solve-F_UN_RM_FX_TYPE_H",
+      "categories": [
+        "fflags_changed",
+        "twelve_integer_wrappers"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_FX_TYPE_S",
+      "make_target": "solve-F_UN_RM_FX_TYPE_S",
+      "categories": [
+        "fflags_changed",
+        "twelve_integer_wrappers"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_XF_TYPE_D",
+      "make_target": "solve-F_UN_RM_XF_TYPE_D",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_XF_TYPE_H",
+      "make_target": "solve-F_UN_RM_XF_TYPE_H",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "F_UN_RM_XF_TYPE_S",
+      "make_target": "solve-F_UN_RM_XF_TYPE_S",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "RFVVTYPE",
+      "make_target": "solve-RFVVTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "RFWVVTYPE",
+      "make_target": "solve-RFWVVTYPE",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFNCVTBF16_F_F_W",
+      "make_target": "solve-VFNCVTBF16_F_F_W",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFNUNARY0",
+      "make_target": "solve-VFNUNARY0",
+      "categories": [
+        "fflags_changed",
+        "five_narrow_adapters",
+        "rod_mode_and_jam",
+        "twelve_integer_wrappers"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFUNARY0",
+      "make_target": "solve-VFUNARY0",
+      "categories": [
+        "fflags_changed",
+        "five_narrow_adapters",
+        "twelve_integer_wrappers"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFUNARY1",
+      "make_target": "solve-VFUNARY1",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFWCVTBF16_F_F_V",
+      "make_target": "solve-VFWCVTBF16_F_F_V",
+      "categories": [
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFWMACCBF16_VF",
+      "make_target": "solve-VFWMACCBF16_VF",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFWMACCBF16_VV",
+      "make_target": "solve-VFWMACCBF16_VV",
+      "categories": [
+        "arithmetic_exception_causes",
+        "fflags_changed"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    },
+    {
+      "clause": "VFWUNARY0",
+      "make_target": "solve-VFWUNARY0",
+      "categories": [
+        "fflags_changed",
+        "twelve_integer_wrappers"
+      ],
+      "isa_config": "configs/riscv64_difftest_fd.toml",
+      "thread_count": 1,
+      "tactic": "qffp",
+      "outer_timeout_s": 7200,
+      "smt_timeout_s": 7200,
+      "seed": 17,
+      "status": "not_run_on_final_model"
+    }
+  ],
+  "clause_source_locations": {
+    "FCVTMOD_W_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:740"
+    ],
+    "FCVT_BF16_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zfbfmin_insts.sail:20"
+    ],
+    "FCVT_S_BF16": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zfbfmin_insts.sail:45"
+    ],
+    "FLEQ_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:634"
+    ],
+    "FLEQ_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:533"
+    ],
+    "FLEQ_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:583"
+    ],
+    "FLTQ_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:659"
+    ],
+    "FLTQ_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:558"
+    ],
+    "FLTQ_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:608"
+    ],
+    "FMAXM_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:289"
+    ],
+    "FMAXM_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:197"
+    ],
+    "FMAXM_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:243"
+    ],
+    "FMINM_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:266"
+    ],
+    "FMINM_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:174"
+    ],
+    "FMINM_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:220"
+    ],
+    "FROUNDNX_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:457"
+    ],
+    "FROUNDNX_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:341"
+    ],
+    "FROUNDNX_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:399"
+    ],
+    "FROUND_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:428"
+    ],
+    "FROUND_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:312"
+    ],
+    "FROUND_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfa_insts.sail:370"
+    ],
+    "FVFMATYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2090",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2142"
+    ],
+    "FVFMTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_vm_insts.sail:155",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_vm_insts.sail:204"
+    ],
+    "FVFTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1893",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1984"
+    ],
+    "FVVMATYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:178",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:231"
+    ],
+    "FVVMTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_vm_insts.sail:32",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_vm_insts.sail:80"
+    ],
+    "FVVTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:37",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:91"
+    ],
+    "FWFTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2471",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2523"
+    ],
+    "FWVFMATYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2345",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2399"
+    ],
+    "FWVFTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2219",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:2272"
+    ],
+    "FWVTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:565",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:617"
+    ],
+    "FWVVMATYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:437",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:492"
+    ],
+    "FWVVTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:309",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:363"
+    ],
+    "F_BIN_F_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:696",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:708",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:719",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:730",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:740"
+    ],
+    "F_BIN_F_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:342",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:353",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:364",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:375",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:385"
+    ],
+    "F_BIN_RM_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:336"
+    ],
+    "F_BIN_RM_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:195"
+    ],
+    "F_BIN_RM_TYPE_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:448"
+    ],
+    "F_BIN_TYPE_F_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:753",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:764",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:775",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:786",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:796"
+    ],
+    "F_BIN_TYPE_X_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:806",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:818",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:830"
+    ],
+    "F_BIN_X_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:750",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:762",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:774"
+    ],
+    "F_BIN_X_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:395",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:407",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:419"
+    ],
+    "F_MADD_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:268"
+    ],
+    "F_MADD_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:259"
+    ],
+    "F_MADD_TYPE_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:381"
+    ],
+    "F_UN_RM_FF_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:431",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:506",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:521"
+    ],
+    "F_UN_RM_FF_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:529",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:604",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:619",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:634",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:649"
+    ],
+    "F_UN_RM_FF_TYPE_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:535"
+    ],
+    "F_UN_RM_FX_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:446",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:461",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:536",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:552"
+    ],
+    "F_UN_RM_FX_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:544",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:559",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:664",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:680"
+    ],
+    "F_UN_RM_FX_TYPE_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:550",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:565",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:610",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:626"
+    ],
+    "F_UN_RM_XF_TYPE_D": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:476",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:491",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:568",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/dext_insts.sail:584"
+    ],
+    "F_UN_RM_XF_TYPE_H": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:574",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:589",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:696",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/zfh_insts.sail:712"
+    ],
+    "F_UN_RM_XF_TYPE_S": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:580",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:595",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:642",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/FD/fext_insts.sail:658"
+    ],
+    "RFVVTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_red_insts.sail:31",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_red_insts.sail:83"
+    ],
+    "RFWVVTYPE": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_red_insts.sail:161",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_red_insts.sail:211"
+    ],
+    "VFNCVTBF16_F_F_W": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfmin_insts.sail:19",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfmin_insts.sail:64"
+    ],
+    "VFNUNARY0": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1306",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1498"
+    ],
+    "VFUNARY0": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:718",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:809"
+    ],
+    "VFUNARY1": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1666",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1754"
+    ],
+    "VFWCVTBF16_F_F_V": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfmin_insts.sail:119",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfmin_insts.sail:164"
+    ],
+    "VFWMACCBF16_VF": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfwma_insts.sail:124",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfwma_insts.sail:173"
+    ],
+    "VFWMACCBF16_VV": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfwma_insts.sail:19",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/bfloat16/zvfbfwma_insts.sail:69"
+    ],
+    "VFWUNARY0": [
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:1137",
+      ".worktree/sail-riscv-general-float-by-model-20261022/model/extensions/V/vext_fp_insts.sail:961"
+    ]
+  },
+  "method_note": "Union ordinary and SYMBOLIC source definitions; recursively find callers of changed functions, then intersect the 89 FD_FLOAT entries. This is a conservative static scope, not proof that every enum or format reaches the changed behavior. Run-list fields are intended targets, not results; the standard Make target has no fixed-Z3-seed option, so the launch manifest must document its tested seed mechanism."
+}

@@ -1,0 +1,43 @@
+{
+  "scope": "Source/checkout temporal boundary for final315; no historical source-manifest relabel",
+  "final315_summary_sha256": "061a8645c1d66f2c86ea946a7f59715e22c7b18a6cc04095f57edccac2423701",
+  "last_job_result_epoch_s": 1793698072.5152454,
+  "summary_epoch_s": 1793698072.5571415,
+  "summary_utc": "2026-11-03T09:27:52.557142+00:00",
+  "launch_epoch_s": 1793696932.4638844,
+  "launch_runtime_isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "all315_completed_before_any_listed_clone_head_change": true,
+  "affected_by_clone_fast_forward_jobs": [],
+  "rerun_due_to_clone_fast_forward_needed": false,
+  "frozen_binary_and_base_ir_hashes_match_launch": true,
+  "clone_transitions": [
+    {
+      "clone": ".worktree/runner-float/isla",
+      "previous_head": "42000be47596ec088623881d03c0eadc5cf0ba27",
+      "integrated_head": "591693df2bc32019ea300511509ed683df09522e",
+      "reflog_epoch_s": 1793698193,
+      "reflog_utc": "2026-11-03T09:29:53+00:00",
+      "seconds_after_final315_summary": 120.442858,
+      "operation": "merge 591693df2bc32019ea300511509ed683df09522e: Fast-forward"
+    },
+    {
+      "clone": ".worktree/runner-float/sail-riscv",
+      "previous_head": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+      "integrated_head": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "reflog_epoch_s": 1793698201,
+      "reflog_utc": "2026-11-03T09:30:01+00:00",
+      "seconds_after_final315_summary": 128.442858,
+      "operation": "merge 0f7b8fbc6724103f91f929ef6918f123df75d6c9: Fast-forward"
+    },
+    {
+      "clone": "isla",
+      "previous_head": "42000be47596ec088623881d03c0eadc5cf0ba27",
+      "integrated_head": "591693df2bc32019ea300511509ed683df09522e",
+      "reflog_epoch_s": 1793698076,
+      "reflog_utc": "2026-11-03T09:27:56+00:00",
+      "seconds_after_final315_summary": 3.442858,
+      "operation": "commit: fix(float): \u540c\u6b65\u6536\u655b\u6a21\u578bIR\u4e0e\u63a7\u5236\u548c\u6570\u636e\u6d41\u56de\u5f52"
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,34 @@
+{
+  "checker_sha256": "076eec373dd26e08ba456b60aea002860a68f188fe8138ac13f10f98832e381a",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "rows": [
+    {
+      "mutation": "changed比较改成old==old，状态更新臂不可达",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "changed比较改成joined==joined，状态更新臂不可达",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "Dirty更新链把SD写0",
+      "result": "rejected",
+      "detail": "flags: SD未在FS更新后置1"
+    },
+    {
+      "mutation": "div16: 0/0原因改成Inf/Inf条件，0/0见证丢失",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "div16: finite gate改成0/0条件，普通有限异常路径丢失",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "f16→i8: overflow比较改成sig32==sig32，饱和真臂不可达",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: 不是低位符号扩展回比较"
+    }
+  ],
+  "status": "BLOCKED"
+}

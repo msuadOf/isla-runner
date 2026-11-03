@@ -1,0 +1,18 @@
+{
+  "runner_sha256": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1",
+  "command": [
+    "python3",
+    "agents/float_review_closure_20261102/validation/run_clause.py",
+    "--inputs",
+    "agents/float_review_closure_20261102/validation/inputs.model-8ad5e8e.json",
+    "--batch",
+    "review-reject-untraced",
+    "--job",
+    "FLEQ_S",
+    "--cpu",
+    "37",
+    "--dry-run"
+  ],
+  "exit": 1,
+  "output": "Traceback (most recent call last):\n  File \"/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py\", line 230, in <module>\n    main()\n    ~~~~^^\n  File \"/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py\", line 148, in main\n    raise ValueError(\"正式程序缺少同源 smt-thread-interrupt/itrace 构建证据\")\nValueError: 正式程序缺少同源 smt-thread-interrupt/itrace 构建证据\n"
+}

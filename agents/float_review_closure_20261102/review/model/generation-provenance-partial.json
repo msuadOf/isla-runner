@@ -1,0 +1,31 @@
+{
+  "status": "PASS for available ordinary/rv64v128/rv32 generation provenance",
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "tracked_model_inputs": 166,
+  "verified_tool_files": 149,
+  "actual_sail_binary_sha256": "373a37c268779bad65381b98c3dc13d56c3db9db90102d28d6f410278b23d45a",
+  "compile_z3_exe": "/home/linuxbrew/.linuxbrew/Cellar/z3/4.16.0/bin/z3",
+  "compile_z3_sha256": "a7eac84c5493ac5766c2179620c3a4628b151198af9e6e9c488163c84561b3e9",
+  "compile_z3_role": "Sail type constraints, distinct from official runtime Z3",
+  "generated": {
+    "ordinary-strict": {
+      "exit_code": 0,
+      "model_source_unchanged": true,
+      "ir_sha256": null,
+      "seconds": 217.071
+    },
+    "rv64d_v128_e64": {
+      "exit_code": 0,
+      "model_source_unchanged": true,
+      "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+      "seconds": 498.501
+    },
+    "rv32d": {
+      "exit_code": 0,
+      "model_source_unchanged": true,
+      "ir_sha256": "df3dfd02cecd184e8ed2adfcdab4c4d3a4e15afba274ab51c0c2d63041744eb0",
+      "seconds": 623.558
+    }
+  },
+  "scope": "V256/V512尚未完成；不包含永久CFG/动态签收"
+}

@@ -1,0 +1,2442 @@
+{
+  "scope": "Direct helper state audit; callback contract remains static IR only; rv64-default aliases rv64-v128",
+  "result_sha256": "9b823e4f2d2c1948e8c28889bd912ffb453cdeed062b787cd116f54eaadcd1df",
+  "model": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "isla": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "probe_binary_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd",
+  "rows": 300,
+  "batches": [
+    {
+      "ir_key": "rv64-v128",
+      "rows": 60,
+      "changed_true": 36,
+      "changed_false": 24
+    },
+    {
+      "ir_key": "rv64-v256",
+      "rows": 60,
+      "changed_true": 36,
+      "changed_false": 24
+    },
+    {
+      "ir_key": "rv64-v512",
+      "rows": 60,
+      "changed_true": 36,
+      "changed_false": 24
+    },
+    {
+      "ir_key": "rv64-default",
+      "rows": 60,
+      "changed_true": 36,
+      "changed_false": 24
+    },
+    {
+      "ir_key": "rv32-default",
+      "rows": 60,
+      "changed_true": 36,
+      "changed_false": 24
+    }
+  ],
+  "checks": [
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v128",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v256",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-v512",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x2000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x8000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv64-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000080002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a82002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000080004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a82004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "zero",
+      "changed": false,
+      "actual_fcsr": "0x123456a0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080002000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82002600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080004000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82004600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000000006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a02006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "same_nv",
+      "changed": false,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b0",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "old_nx_new_nv",
+      "changed": true,
+      "actual_fcsr": "0x123456b1",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0x0000000080006000",
+      "pass": true
+    },
+    {
+      "ir_key": "rv32-default",
+      "label": "new_multiple",
+      "changed": true,
+      "actual_fcsr": "0x123456b7",
+      "actual_mstatus": "0xa000000a82006600",
+      "pass": true
+    }
+  ]
+}

@@ -114,3 +114,8 @@ Isla `cf1aa14`、模型 `6202e23`：辅助编码仅保留指令字段原断言�
 完整旧显式 flags B / 当前正式浮点算术 / 新 VFUNARY0 分别 2626.07 / 1127.51 / 22.33 秒 finished，均 T1/qffp/seed17、Clause 与单次 SMT 各 7200 秒，原配置未缩域；错误及 partial 均零。56 项定向、126 项双工具链、15 项官方库 Rust 回归及真实 Make 入口通过。两版各 1258 条实际见证的指令、编码、完整前后态、返回值多重集合相同；不推断全域覆盖或严格加速比。
 
 五 IR/四配置严格生成和 25 步回归通过；flags changed 与其他未验窄转换仍维持现实现。既有枚举同 Context 重放单测失败单列，不计入通过数。旧 eager lane 饱和 B 初版诊断7200.20秒外限exit124、无完整JSON，不替代新模型验收。根 float 更新组件与证据，本轮未推送。详见[本轮状态](../agents/encoding_constraint_isolation_20261102/status.md)。
+
+
+## 2026-11-03 float收敛交付
+
+模型0f7b8fbc、Isla591693d：回退77处纯数据选择，保持NaN/trap和OPEN实现。源码/四配置strict与IR、安装版26步、新300flags/819+282+183转换/315异常oracle、GCC/Clang及Make、FLEQ_S与C_ADDI4SPN两完整域入口均由GPT-6.1 Sol独立限定签收。OPEN与通用策略配置延期memory合流，无本轮新增正确性阻断；不宣称全77预算、全控制流覆盖或硬件验收。详见[交付报告](../agents/float_review_closure_20261102/final-report.md)及[memory交接](../agents/float_review_closure_20261102/handoff-to-memory.md)。

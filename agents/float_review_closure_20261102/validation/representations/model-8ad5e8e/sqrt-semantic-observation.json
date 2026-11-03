@@ -1,0 +1,24 @@
+{
+  "sqrt-H": {
+    "semantic_pass": true,
+    "detail": {
+      "sqrt_cases": [
+        "negative",
+        "normal"
+      ],
+      "check_count": 26,
+      "failed_checks": 0
+    }
+  },
+  "sqrt-D": {
+    "semantic_pass": true,
+    "detail": {
+      "sqrt_cases": [
+        "negative",
+        "normal"
+      ],
+      "check_count": 26,
+      "failed_checks": 0
+    }
+  }
+}

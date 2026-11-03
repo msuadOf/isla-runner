@@ -1,0 +1,45 @@
+{
+  "source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "source_clean": true,
+  "source_tree_path": ".worktree/runner-float/isla",
+  "source_tree_clean": true,
+  "build_checkout_path": "isla",
+  "build_checkout_tracked_clean": true,
+  "build_checkout_untracked_paths": [
+    "test/float_ir/check_float_closure_branches.py"
+  ],
+  "smt_source_sha256": "aa3cb973102299707fc2d87c94369136daed8b88944e47b48ff3ee9e9ec1f9cc",
+  "profile": "release",
+  "binary": "agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace",
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "features": [
+    "default",
+    "itrace",
+    "smt-thread-interrupt",
+    "tracetool"
+  ],
+  "isla_lib_features": [
+    "default",
+    "itrace",
+    "smt-thread-interrupt",
+    "tracetool"
+  ],
+  "build_cpu": 99,
+  "sibling_cpu": 35,
+  "cargo_build_jobs": 1,
+  "build_command": "taskset -c 99 env CARGO_BUILD_JOBS=1 CARGO_TARGET_DIR=$ROOT/agents/float_review_closure_20261102/enum/target RUSTFLAGS=\"-L native=$Z3_LIB -C link-arg=-Wl,-rpath,$Z3_LIB\" cargo build --release --bin isarch --features smt-thread-interrupt,itrace",
+  "build_log": "agents/float_review_closure_20261102/validation/bin/build-isarch-42000be-interrupt-itrace.log",
+  "isarch_fingerprint": "agents/float_review_closure_20261102/validation/bin/fingerprint-isarch-interrupt-itrace.json",
+  "isla_lib_fingerprint": "agents/float_review_closure_20261102/validation/bin/fingerprint-isla-lib-interrupt-itrace.json",
+  "z3_library": "~/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0",
+  "z3_library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "ldd_log": "agents/float_review_closure_20261102/validation/bin/ldd-interrupt-itrace.txt",
+  "readelf_log": "agents/float_review_closure_20261102/validation/bin/readelf-interrupt-itrace.txt",
+  "runtime_loader_log": "agents/float_review_closure_20261102/validation/bin/runtime-loader-interrupt-itrace.log",
+  "runtime_help_exit_code": 0,
+  "formal_cli_smoke_result": "agents/float_review_closure_20261102/validation/bin/smoke-FLEQ_S-interrupt-itrace/result.json",
+  "formal_cli_smoke_result_sha256": "d826e0ccd8904acf89a2b9a40e5417a1bdd810702e1111933fc7ac4814f89763",
+  "formal_cli_smoke_pass": true,
+  "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+  "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)"
+}

@@ -1,0 +1,394 @@
+{
+  "scope": "Archived compiler bytes and actual Make JSON independently audited; compiler behavior failure separately reproduced",
+  "jobs": [
+    {
+      "job": "bf16-vl0",
+      "json_sha256": "e9ad0c83d9e9373f00a68516b13768ff4248f2aa189cf794d3fdcbd6a8f6629f",
+      "toolchain_results_sha256": "668a939b06c583972c1ba0f0589347aa3c6953a17ebdd2d57b007bb630fc7eec",
+      "gen": 6,
+      "compiler_checks": 36,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "bf16-vl1",
+      "json_sha256": "cded6cd59f5302cbbacbc1c5f43bb9f27f89be9e2b7695849c31c5b4d8521ca1",
+      "toolchain_results_sha256": "54fb9887bb5fea7579f01b6a7071606d1fa3f8d196d1eae16e7c9f88239f8242",
+      "gen": 6,
+      "compiler_checks": 36,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "c-addi4spn",
+      "json_sha256": "3284ffb98342b1e44ded9f872999ca2e38ab89e472ee0f49bb6b83998160586b",
+      "toolchain_results_sha256": "49db39d9b6b36dc80c6f172724568158f4f90e6cc8e2e8689d1fadd9a7fd9dcd",
+      "gen": 1,
+      "compiler_checks": 6,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "exact-int-to-D",
+      "json_sha256": "d037fb68d39c5232d2f39bee501173f0dcf43d9b0039f55721ebcd15e3f8a5a2",
+      "toolchain_results_sha256": "8fd62315a4ac1e90f87c73558740c60906ebe5f200fc7d9d378b1a7b2715054b",
+      "gen": 24,
+      "compiler_checks": 144,
+      "raw_failures": 10,
+      "exact_gnu_fallbacks": [
+        {
+          "index": 3,
+          "op": "fcvt.d.wu",
+          "rm": 4,
+          "raw_exit": 1,
+          "expected_bytes": "53c010d2"
+        },
+        {
+          "index": 4,
+          "op": "fcvt.d.wu",
+          "rm": 2,
+          "raw_exit": 1,
+          "expected_bytes": "53a010d2"
+        },
+        {
+          "index": 5,
+          "op": "fcvt.d.w",
+          "rm": 7,
+          "raw_exit": 1,
+          "expected_bytes": "53f000d2"
+        },
+        {
+          "index": 6,
+          "op": "fcvt.d.w",
+          "rm": 3,
+          "raw_exit": 1,
+          "expected_bytes": "53b000d2"
+        },
+        {
+          "index": 13,
+          "op": "fcvt.d.wu",
+          "rm": 7,
+          "raw_exit": 1,
+          "expected_bytes": "53f010d2"
+        },
+        {
+          "index": 14,
+          "op": "fcvt.d.w",
+          "rm": 4,
+          "raw_exit": 1,
+          "expected_bytes": "53c000d2"
+        },
+        {
+          "index": 15,
+          "op": "fcvt.d.wu",
+          "rm": 3,
+          "raw_exit": 1,
+          "expected_bytes": "53b010d2"
+        },
+        {
+          "index": 16,
+          "op": "fcvt.d.w",
+          "rm": 1,
+          "raw_exit": 1,
+          "expected_bytes": "539000d2"
+        },
+        {
+          "index": 17,
+          "op": "fcvt.d.wu",
+          "rm": 1,
+          "raw_exit": 1,
+          "expected_bytes": "539010d2"
+        },
+        {
+          "index": 23,
+          "op": "fcvt.d.w",
+          "rm": 2,
+          "raw_exit": 1,
+          "expected_bytes": "53a000d2"
+        }
+      ],
+      "operation_rm_coverage": {
+        "fcvt.d.l/rm0": 1,
+        "fcvt.d.l/rm1": 1,
+        "fcvt.d.l/rm2": 1,
+        "fcvt.d.l/rm3": 1,
+        "fcvt.d.l/rm4": 1,
+        "fcvt.d.l/rm7": 1,
+        "fcvt.d.lu/rm0": 1,
+        "fcvt.d.lu/rm1": 1,
+        "fcvt.d.lu/rm2": 1,
+        "fcvt.d.lu/rm3": 1,
+        "fcvt.d.lu/rm4": 1,
+        "fcvt.d.lu/rm7": 1,
+        "fcvt.d.w/rm0": 1,
+        "fcvt.d.w/rm1": 1,
+        "fcvt.d.w/rm2": 1,
+        "fcvt.d.w/rm3": 1,
+        "fcvt.d.w/rm4": 1,
+        "fcvt.d.w/rm7": 1,
+        "fcvt.d.wu/rm0": 1,
+        "fcvt.d.wu/rm1": 1,
+        "fcvt.d.wu/rm2": 1,
+        "fcvt.d.wu/rm3": 1,
+        "fcvt.d.wu/rm4": 1,
+        "fcvt.d.wu/rm7": 1
+      },
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "fleq-D-qNaN",
+      "json_sha256": "c3ae78583262e22b7be889eced1d121527556d83589d948c85429131b13c6650",
+      "toolchain_results_sha256": "edc48c349f185c25a381f9b503c546d65c3961a3d8de56f7aae349caff0ea008",
+      "gen": 8,
+      "compiler_checks": 48,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "fleq-H-qNaN",
+      "json_sha256": "18aa0f8671826b37498e858c83827c75e385aa5ca0c6c28fe0cac06cbd246dc6",
+      "toolchain_results_sha256": "ad62644da53a3ba5b16b1bbd056218c131a4d3f92f5b0b3cb11fdd334d5ce1a2",
+      "gen": 8,
+      "compiler_checks": 48,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "fleq-S-qNaN",
+      "json_sha256": "22f13d751c40336c1a49cddc4899f941ff568099906f7bcadab2ff24257315cc",
+      "toolchain_results_sha256": "938f3a760f884d7f8d4be6e29523e5753b2b4e9d7482fc3696e426b6dbbd4cda",
+      "gen": 8,
+      "compiler_checks": 48,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "sqrt-D",
+      "json_sha256": "1fd16248816e0bc24c80a779f843e789ca42c25f1a356c42d67387cab15c48b3",
+      "toolchain_results_sha256": "918c1fb4fda4ea288735589232891e1c66217d777ddff18d6efea2d56a8d5a32",
+      "gen": 24,
+      "compiler_checks": 144,
+      "raw_failures": 5,
+      "exact_gnu_fallbacks": [
+        {
+          "index": 3,
+          "op": "fcvt.d.s",
+          "rm": 2,
+          "raw_exit": 1,
+          "expected_bytes": "53200042"
+        },
+        {
+          "index": 6,
+          "op": "fcvt.d.s",
+          "rm": 7,
+          "raw_exit": 1,
+          "expected_bytes": "53700042"
+        },
+        {
+          "index": 10,
+          "op": "fcvt.d.s",
+          "rm": 3,
+          "raw_exit": 1,
+          "expected_bytes": "53300042"
+        },
+        {
+          "index": 20,
+          "op": "fcvt.d.s",
+          "rm": 4,
+          "raw_exit": 1,
+          "expected_bytes": "53400042"
+        },
+        {
+          "index": 21,
+          "op": "fcvt.d.s",
+          "rm": 1,
+          "raw_exit": 1,
+          "expected_bytes": "53100042"
+        }
+      ],
+      "operation_rm_coverage": {
+        "fcvt.d.s/rm0": 1,
+        "fcvt.d.s/rm1": 1,
+        "fcvt.d.s/rm2": 1,
+        "fcvt.d.s/rm3": 1,
+        "fcvt.d.s/rm4": 1,
+        "fcvt.d.s/rm7": 1
+      },
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "sqrt-H",
+      "json_sha256": "7794aca06dcf67ce4bd2ede63257662838bb763f2285837e2895dbbb167a7d7d",
+      "toolchain_results_sha256": "8e0c2806d7a3ce849de1138e18097f23de5fd5afc5b19a27cf34a7408d6e9c24",
+      "gen": 36,
+      "compiler_checks": 216,
+      "raw_failures": 10,
+      "exact_gnu_fallbacks": [
+        {
+          "index": 4,
+          "op": "fcvt.d.h",
+          "rm": 2,
+          "raw_exit": 1,
+          "expected_bytes": "53202042"
+        },
+        {
+          "index": 8,
+          "op": "fcvt.s.h",
+          "rm": 1,
+          "raw_exit": 1,
+          "expected_bytes": "53102040"
+        },
+        {
+          "index": 10,
+          "op": "fcvt.s.h",
+          "rm": 2,
+          "raw_exit": 1,
+          "expected_bytes": "53202040"
+        },
+        {
+          "index": 11,
+          "op": "fcvt.d.h",
+          "rm": 4,
+          "raw_exit": 1,
+          "expected_bytes": "53402042"
+        },
+        {
+          "index": 12,
+          "op": "fcvt.d.h",
+          "rm": 1,
+          "raw_exit": 1,
+          "expected_bytes": "53102042"
+        },
+        {
+          "index": 15,
+          "op": "fcvt.d.h",
+          "rm": 7,
+          "raw_exit": 1,
+          "expected_bytes": "53702042"
+        },
+        {
+          "index": 18,
+          "op": "fcvt.d.h",
+          "rm": 3,
+          "raw_exit": 1,
+          "expected_bytes": "53302042"
+        },
+        {
+          "index": 23,
+          "op": "fcvt.s.h",
+          "rm": 7,
+          "raw_exit": 1,
+          "expected_bytes": "53702040"
+        },
+        {
+          "index": 26,
+          "op": "fcvt.s.h",
+          "rm": 3,
+          "raw_exit": 1,
+          "expected_bytes": "53302040"
+        },
+        {
+          "index": 34,
+          "op": "fcvt.s.h",
+          "rm": 4,
+          "raw_exit": 1,
+          "expected_bytes": "53402040"
+        }
+      ],
+      "operation_rm_coverage": {
+        "fcvt.d.h/rm0": 1,
+        "fcvt.d.h/rm1": 1,
+        "fcvt.d.h/rm2": 1,
+        "fcvt.d.h/rm3": 1,
+        "fcvt.d.h/rm4": 1,
+        "fcvt.d.h/rm7": 1,
+        "fcvt.s.h/rm0": 1,
+        "fcvt.s.h/rm1": 1,
+        "fcvt.s.h/rm2": 1,
+        "fcvt.s.h/rm3": 1,
+        "fcvt.s.h/rm4": 1,
+        "fcvt.s.h/rm7": 1
+      },
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "sqrt-S",
+      "json_sha256": "e3e1edce9548d8e56a1b8c4764139be6db27317a5d11bf65d4b153c863811bc7",
+      "toolchain_results_sha256": "e9177766906dba828b314f9af13b1b89a99e5e6f6a672389ccfaae83dfce65bf",
+      "gen": 12,
+      "compiler_checks": 72,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "vfncvt-i8",
+      "json_sha256": "2bd27cea082d4d69a38947e03b29e77988e0518662898c490f9bb8fece30530f",
+      "toolchain_results_sha256": "80b1b066f4e1517b5196e22fa589ba656c28fb0a86e64fe5e20736b532cc9fc0",
+      "gen": 1,
+      "compiler_checks": 6,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "vfncvt-ui8",
+      "json_sha256": "d89848ef924dafb3d56e2b1cab793615135b5d74b228f423490c50a14df77217",
+      "toolchain_results_sha256": "d0c83a43e9a67e68996059ff7fa63e5b00256d0fec331df559d0d202a30b4182",
+      "gen": 1,
+      "compiler_checks": 6,
+      "raw_failures": 0,
+      "exact_gnu_fallbacks": [],
+      "operation_rm_coverage": {},
+      "unexpected_failures": [],
+      "all_pass": true
+    }
+  ],
+  "representation_gen": 135,
+  "representation_checks": 810,
+  "representation_unexpected_failures": 0,
+  "make": {
+    "json_sha256": "d17e33758a16ad45b30f6eeb384343593020e8a2f37521ae8c00fa8e61b16d89",
+    "toolchain_results_sha256": "7154461e1d18d548cb8fafd46e41bec1155c8a47b3dad33e36161e5135a85633",
+    "gen": 8,
+    "compiler_checks": 48,
+    "raw_failures": 0,
+    "exact_gnu_fallbacks": [],
+    "operation_rm_coverage": {},
+    "unexpected_failures": [],
+    "all_pass": true,
+    "actual_result_observable_cases": 4,
+    "actual_source_pairs": {
+      "finite/nan": 2,
+      "nan/nan": 2,
+      "finite/finite": 2,
+      "nan/finite": 2
+    },
+    "result_sha256": "d3b121ca12af831f7ed2fd1d2c7a0d22db5ff0a300890724faa1e5b0be979b65"
+  }
+}

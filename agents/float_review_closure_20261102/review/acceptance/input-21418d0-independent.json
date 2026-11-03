@@ -1,0 +1,102 @@
+{
+  "scope": "Final214 input hash audit and no-execution dry-run; not Clause completion",
+  "inputs_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+  "model_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "irs": {
+    "rv64-v128": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a"
+    },
+    "rv64-v256": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v256_e64/rv64d_v256_e64.ir",
+      "sha256": "11b797025387cd9dc48a6334d67e5780ce0656c4e64391bcda619345da97cf64"
+    },
+    "rv64-v512": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v512_e64/rv64d_v512_e64.ir",
+      "sha256": "c847d0d4ef1d78ae9f80f67d4c1833717d9166c43be04921a1e7187511a0e1a9"
+    },
+    "rv64-default": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a"
+    },
+    "rv32-default": {
+      "path": "agents/float_review_closure_20261102/validation/generation/model-21418d0/rv32d/rv32d.ir",
+      "sha256": "6e024d9a1ccae23bd0acb629ef661ac2a82976d3500bc8787692eaffc42fa368"
+    }
+  },
+  "jobs": 77,
+  "command": [
+    "python3",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+    "--inputs",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-21418d0-itrace.json",
+    "--batch",
+    "review-final214-dry",
+    "--job",
+    "FLEQ_S",
+    "--cpu",
+    "0",
+    "--dry-run"
+  ],
+  "exit_code": 0,
+  "dry_run": {
+    "batch": "review-final214-dry",
+    "job": "FLEQ_S",
+    "scope": "affected",
+    "affected_manifest_sha256": "409edef342a13a28d2d4b817609570a249d070b5379765eb498f4f0ffd241d3b",
+    "domain": "full",
+    "cpu": 0,
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+      "-o",
+      "time.txt",
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "7200s",
+      "taskset",
+      "-c",
+      "0",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-21418d0/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--tastic",
+      "qffp",
+      "--smt-timeout",
+      "7200s",
+      "--timeout-smt-output",
+      "file",
+      "--timeout-smt-dir",
+      "output/smt-timeouts",
+      "--verbose",
+      "--debug=fmlgcsra",
+      "--probe-all",
+      "--trace-all",
+      "--itrace=output/trace/itrace_FLEQ_S.txt",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "input_manifest": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-21418d0-itrace.json",
+    "input_manifest_sha256": "44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19",
+    "model_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+    "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+    "ir_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+    "binary_manifest_sha256": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6",
+    "watchdog_evidence_sha256": "2bd0a0e7c20f83c6a412f53cf9305ffd78c2d1b7a91e5ca9ff39e512df0b6809",
+    "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+    "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+    "seed": 17,
+    "ldd": "\tlinux-vdso.so.1 (0x000078d877bee000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000078d875000000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000078d877b91000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000078d874c00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000078d877bf0000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000078d874800000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000078d877a69000)\n"
+  },
+  "run_clause_sha256": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1"
+}

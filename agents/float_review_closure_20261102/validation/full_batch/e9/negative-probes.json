@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-11-02T17:06:28.356811+00:00",
+  "scheduler_sha256": "3ecd0ebc27db2e365b5d74fb49f8daceebc7a9ca29a3a87dddffb69d8650cf5b",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "cases": {
+    "wrong_model_commit": "rejected: 冻结inputs组件版本与64条影响闭包版本不一致",
+    "wrong_affected_sha256": "rejected: affected_manifest哈希不符",
+    "missing_VFUNARY0_job": "rejected: jobs须等于模板77条",
+    "correct_frozen_hashes": "accepted by frozen_inputs_error(None)"
+  },
+  "formal_clause_runs": 0
+}

@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-11-02T15:31:04Z",
+  "previous_pool": [20, 26, 43, 46],
+  "selected_pool": [35, 38, 49, 54],
+  "measurement": "三个连续约1秒的/proc/stat窗口，每值为该物理核两个SMT逻辑CPU的较高忙碌率",
+  "observations": [
+    {"cpu": 35, "siblings": [35, 99], "busy": [0.14, 0.041, 0.051], "external_emu_thread_rows": 0},
+    {"cpu": 38, "siblings": [38, 102], "busy": [0.139, 0.02, 0.172], "external_emu_thread_rows": 2},
+    {"cpu": 49, "siblings": [49, 113], "busy": [0.899, 0.08, 0.13], "external_emu_thread_rows": 0},
+    {"cpu": 54, "siblings": [54, 118], "busy": [0.85, 0.02, 0.05], "external_emu_thread_rows": 10}
+  ],
+  "reason": "原池20和46初次采样较忙；另一个低忙候选池在第二次采样升至0.51到1.0，故选35/38作初始两核，49/54仅在5分钟RSS与竞争观测后考虑扩容。四核不与generation31/60、exceptions17/29、conversions7/9、flags15、representations36或其SMT同胞相同；外部EMU线程可能迁移，不保证整机隔离。",
+  "other_owners_unchanged": true
+}

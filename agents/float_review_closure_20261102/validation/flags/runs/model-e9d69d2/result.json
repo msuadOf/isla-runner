@@ -1,0 +1,145 @@
+{
+  "scope": "direct concrete zaccrue_fflags helper; not whole Clause",
+  "probe_binary_role": "independent Rust helper runner, separate from frozen isarch",
+  "batch": "model-e9d69d2",
+  "cpu": 15,
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "runner_source_sha256": "26225f7c0cf463078e821db7c87ba0a1885c62f15e0f4fd3824bc52cf88843ab",
+  "runner_manifest_sha256": "5ec277d90a0c966da70a7b43c89ff55e5a144800b7f44499934af0c1904c1fdc",
+  "oracle_sha256": "ebf9424c3471c7589eb1546e1fd4731fedc2416ad0a0ef7061a8062d5e642665",
+  "ir_sha256": {
+    "rv64-v128": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+    "rv64-v256": "76d658edb9bb92ade750161a9f782bb4f908aec9a2ff3951a82a1b476126dc71",
+    "rv64-v512": "44657bfff823e33c66326cff0b7a6b27f4fd1715440653299462135fd9880006",
+    "rv64-default": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+    "rv32-default": "c619a2b803ba719505118793d72bb906d74f85acb06d457f8dc687680fdc1e88"
+  },
+  "config_sha256": {
+    "rv64": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "rv32": "d31bc7e7402412899d4998ca6882b4528052762d089e411118038f8a0d585a4f"
+  },
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "frozen_isarch_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "seed": 17,
+  "tactic": "qffp",
+  "build": [
+    "taskset",
+    "-c",
+    "15",
+    "cargo",
+    "build",
+    "--offline",
+    "--release",
+    "--manifest-path",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/Cargo.toml"
+  ],
+  "commands": {
+    "rv64-v128": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v256": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v256_e64/rv64d_v256_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-v512": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v512_e64/rv64d_v512_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv64-default": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/rv64d_v128_e64.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml"
+    ],
+    "rv32-default": [
+      "taskset",
+      "-c",
+      "15",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/flags/target/release/float-flags-state-probe",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv32d/rv32d.ir",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/test/float_ir/rv32_fd.toml"
+    ]
+  },
+  "cwd": "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla",
+  "z3_library_dir": "/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib",
+  "build_exit": 0,
+  "binary_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd",
+  "ldd": "\tlinux-vdso.so.1 (0x000073b128383000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x000073b125800000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000073b128326000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000073b125400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000073b128385000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000073b125000000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000073b1281fe000)\n",
+  "runs": {
+    "rv64-v128": {
+      "exit": 0,
+      "log_sha256": "e639d15bba0d1786184f996578098799ef960a99cd925ae78c26f1d5752df992",
+      "callback_contract": true,
+      "pass_count": 60,
+      "final_marker": true,
+      "seed_intercepted": true,
+      "seed_log_sha256": "799a98dcdf81d82a4db57c74a48ca43885649e41c93bffc71c962c129b8cbd4a",
+      "oracle_exit": 0,
+      "oracle_sha256": "6a3f88dada2758f1605a903ba6c88d19e8b61fa6a609e660a399bffd4746f23f"
+    },
+    "rv64-v256": {
+      "exit": 0,
+      "log_sha256": "600e60c36fc3dbc169f447ec005c79c6f47b6822b1562a16e0d3bf3bed2b759d",
+      "callback_contract": true,
+      "pass_count": 60,
+      "final_marker": true,
+      "seed_intercepted": true,
+      "seed_log_sha256": "413d053ec2b478608ab1bc2f8f4d622f742a8a33d5b1fce787ea09eb214e19c2",
+      "oracle_exit": 0,
+      "oracle_sha256": "6a3f88dada2758f1605a903ba6c88d19e8b61fa6a609e660a399bffd4746f23f"
+    },
+    "rv64-v512": {
+      "exit": 0,
+      "log_sha256": "600e60c36fc3dbc169f447ec005c79c6f47b6822b1562a16e0d3bf3bed2b759d",
+      "callback_contract": true,
+      "pass_count": 60,
+      "final_marker": true,
+      "seed_intercepted": true,
+      "seed_log_sha256": "9bf7e98d47be993aa7889d8e8d5c9b6bb7c54d83563bd31eea86fb8fbb55aeb1",
+      "oracle_exit": 0,
+      "oracle_sha256": "6a3f88dada2758f1605a903ba6c88d19e8b61fa6a609e660a399bffd4746f23f"
+    },
+    "rv64-default": {
+      "exit": 0,
+      "log_sha256": "e639d15bba0d1786184f996578098799ef960a99cd925ae78c26f1d5752df992",
+      "callback_contract": true,
+      "pass_count": 60,
+      "final_marker": true,
+      "seed_intercepted": true,
+      "seed_log_sha256": "ae5333d37c3fb104ebd8deb1d25701afdf842232d83d362fd23f010a45c26833",
+      "oracle_exit": 0,
+      "oracle_sha256": "6a3f88dada2758f1605a903ba6c88d19e8b61fa6a609e660a399bffd4746f23f"
+    },
+    "rv32-default": {
+      "exit": 0,
+      "log_sha256": "313a5bb98f0e4c0b99b958e19b1da728c6ebbbeeda8a4d15a44531b0cc0d1d59",
+      "callback_contract": true,
+      "pass_count": 60,
+      "final_marker": true,
+      "seed_intercepted": true,
+      "seed_log_sha256": "a3dbb09669a37cabb6c9b1d153543090cd17d8f254c0362a65ceec8171d7dd5e",
+      "oracle_exit": 0,
+      "oracle_sha256": "6a3f88dada2758f1605a903ba6c88d19e8b61fa6a609e660a399bffd4746f23f"
+    }
+  },
+  "finished_utc": "2026-11-02T17:00:45.201756+00:00",
+  "pass": true
+}

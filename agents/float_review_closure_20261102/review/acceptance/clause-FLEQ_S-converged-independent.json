@@ -1,0 +1,571 @@
+{
+  "scope": "Two explicitly authorized full-domain entries only; no float77 whole-domain claim",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "inputs_sha256": "0a29115104b44f25924ddb37961b4dfd5967a42a8035bf9b33ac56cdecb7ae18",
+  "result_sha256": "e5720d3dea872fa6c7d4fc7dd2e3ee80f4cec1d494ff49808679b8c01c4b7ec6",
+  "output_sha256": "87d9e4034be7236595674285e9c9a94676702937b9d30b192111418510dd373c",
+  "job": "FLEQ_S",
+  "gen": 48,
+  "observable_destinations": 24,
+  "return_kinds": {
+    "Retire_Success": 48
+  },
+  "trace_bytes": 17956384,
+  "trace_sha256": "d563f13ab694ef4acb4705c61e9604a43671d6c6d28423d6b403cb8747a7da0e",
+  "elapsed_s": 27.67,
+  "rows": [
+    {
+      "index": 0,
+      "word": "0xa1efc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 1,
+      "word": "0xa01fc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 2,
+      "word": "0xa1f0c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 3,
+      "word": "0xa000c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 4,
+      "word": "0xa1ffc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 5,
+      "word": "0xa1ffc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 6,
+      "word": "0xa0104053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 7,
+      "word": "0xa01fc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 8,
+      "word": "0xa0104053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 9,
+      "word": "0xa1ffc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x1"
+      },
+      "pass": true
+    },
+    {
+      "index": 10,
+      "word": "0xa1f0c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 11,
+      "word": "0xa1f0c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 12,
+      "word": "0xa1cfc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 13,
+      "word": "0xa0104053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 14,
+      "word": "0xa000c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 15,
+      "word": "0xa010c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 16,
+      "word": "0xa1ff40d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 17,
+      "word": "0xa01040d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 18,
+      "word": "0xa1cfc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 19,
+      "word": "0xa1f0c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 20,
+      "word": "0xa1ffc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 21,
+      "word": "0xa1ff4053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 22,
+      "word": "0xa010c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 23,
+      "word": "0xa1ff40d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 24,
+      "word": "0xa1f0c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 25,
+      "word": "0xa1ff4053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 26,
+      "word": "0xa1ff4053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 27,
+      "word": "0xa000c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 28,
+      "word": "0xa1ffc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 29,
+      "word": "0xa1f0c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 30,
+      "word": "0xa01040d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 31,
+      "word": "0xa1efc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 32,
+      "word": "0xa000c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 33,
+      "word": "0xa1efc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 34,
+      "word": "0xa01040d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 35,
+      "word": "0xa000c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 36,
+      "word": "0xa1efc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 37,
+      "word": "0xa1efc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 38,
+      "word": "0xa1ff4053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 39,
+      "word": "0xa1ff40d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 40,
+      "word": "0xa1f0c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 41,
+      "word": "0xa1f0c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 42,
+      "word": "0xa1ffc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x0",
+        "mstatus": "0x6600"
+      },
+      "pass": true
+    },
+    {
+      "index": 43,
+      "word": "0xa000c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 44,
+      "word": "0xa1f0c053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 45,
+      "word": "0xa1ffc053",
+      "retire": true,
+      "destination": null,
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600"
+      },
+      "pass": true
+    },
+    {
+      "index": 46,
+      "word": "0xa1f0c0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x6600",
+        "x1": "0x0"
+      },
+      "pass": true
+    },
+    {
+      "index": 47,
+      "word": "0xa1ffc0d3",
+      "retire": true,
+      "destination": "x1",
+      "computed_fields": {
+        "fcsr": "0x10",
+        "mstatus": "0x8000000000006600",
+        "x1": "0x0"
+      },
+      "pass": true
+    }
+  ],
+  "pass": true
+}

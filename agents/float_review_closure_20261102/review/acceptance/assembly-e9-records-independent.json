@@ -1,0 +1,34 @@
+{
+  "scope": "New e9 isolated forward/C and actual string toolchains; no dynamic reverse parsing or full-model assembly coverage",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "source_hashes": {
+    "dext": "1e0397fbc2988383a064a6cfc26f8870464122cd136fc62537e0612ab07ee688",
+    "zfh": "f5e7311bc490c2cb728fc8702d0491be263dee0cb822e32648bc33c405f9512e",
+    "fext": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d",
+    "types": "27f8138a53154ade9f4ce2ea3c0cd146b5f57d1d03a72b5d61f293eccc242590"
+  },
+  "probe_result_sha256": "a6de0eabe1b587e5f98d973e7f7559c2ad9b39ca1a2c6431d54ca6c3853bf5c2",
+  "new_probe_reexecution": [
+    {
+      "mode": "baseline",
+      "exit": 1,
+      "passed": 0,
+      "probe_source_sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c",
+      "probe_binary_sha256": "ec2bb3e2cff8dee5ca998c81aea7145b6054995a830acb829da7fdd041c81b50",
+      "new_log_sha256": "abcd5e96d4cee4597029a5623c0bb1ef28bc88c47aac1c2b1260c8ccf5572076"
+    },
+    {
+      "mode": "current",
+      "exit": 0,
+      "passed": 1104,
+      "probe_source_sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60",
+      "probe_binary_sha256": "4b811873c4d9b7e78b672297a3635bda3ebb689780a28bdb57d247c0ff1537aa",
+      "new_log_sha256": "60abc0c999a11eeb743c2899fc94416cd5e6da0df39fc7a6a81d8cbd04b5d3dc"
+    }
+  ],
+  "raw_toolchain_result_sha256": "c1f2a3669922ade245b2060a651c8f3ddfb5bec864416e0b0bbdb3babc1e0b78",
+  "raw_toolchain_rows": 48,
+  "raw_gnu_nonzero_exact_rejections": 25,
+  "independent_full_output_byte_checks": 5824,
+  "pass": true
+}

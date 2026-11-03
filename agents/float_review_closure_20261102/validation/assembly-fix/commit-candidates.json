@@ -1,0 +1,124 @@
+{
+  "purpose": "small-source evidence handoff; no git staging performed",
+  "files": [
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/report.md",
+      "bytes": 3654,
+      "sha256": "9383591a2d4519f978ae309cdbb4a5c52d5d0dfca62250901d249f0076c13c52"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe.py",
+      "bytes": 9792,
+      "sha256": "d9fc7cab31647fb5263cff905c16ae88cd8f455050efe16a60504bd10074eae7"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/toolchains.py",
+      "bytes": 4847,
+      "sha256": "4afb546f21241f33b06e8b98d05196a7601bd756e01cccb945376852a6e6c4ed"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/typecheck.py",
+      "bytes": 3196,
+      "sha256": "6cae848b9ecea2b499ecc171954c7c769e67c3adf38537cbb94127d2834a7cab"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/result.json",
+      "bytes": 1705,
+      "sha256": "97858e3a694acb215eefbc7c3bfe42f24f787c01987036952763997ec2d3a4ca"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/toolchains-attempt2/result.json",
+      "bytes": 48742,
+      "sha256": "c1f2a3669922ade245b2060a651c8f3ddfb5bec864416e0b0bbdb3babc1e0b78"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/typecheck-attempt1/stopped.json",
+      "bytes": 234,
+      "sha256": "72de644f2f23aaf400095614f3bb54c397717f668bd0844c3f3c10c0b13162e9"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/typecheck-launch.json",
+      "bytes": 185,
+      "sha256": "8fa66679348f97cbd9cbc50d675308b84fa783513779e6453813f48e4d45ef74"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/cases.json",
+      "bytes": 271575,
+      "sha256": "f7da0f446b0018cd22adeacf7324e14f9bab0513ce27b35dbca265b30a585275"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/probe-forward.sail",
+      "bytes": 137182,
+      "sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/probe-mapping-typecheck.sail",
+      "bytes": 137182,
+      "sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/mapping-typecheck.log",
+      "bytes": 450,
+      "sha256": "6fe7a0f1f3b1e6ad1c71a064acba6703fb0f0dfd2dc6e7cee99bfef669695d05"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/sail.log",
+      "bytes": 440,
+      "sha256": "1f38706da53fa558457976260ebc9977c7b4db332a6e4fb4f7672e7bccd1960a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/cc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/baseline/run.log",
+      "bytes": 43,
+      "sha256": "abcd5e96d4cee4597029a5623c0bb1ef28bc88c47aac1c2b1260c8ccf5572076"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/cases.json",
+      "bytes": 271575,
+      "sha256": "f7da0f446b0018cd22adeacf7324e14f9bab0513ce27b35dbca265b30a585275"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/probe-forward.sail",
+      "bytes": 138158,
+      "sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/probe-mapping-typecheck.sail",
+      "bytes": 138158,
+      "sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/mapping-typecheck.log",
+      "bytes": 449,
+      "sha256": "d68ee62f58ca62812afb00ca45d9786d6318327f4f15364b6e8e7f8d584a8316"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/sail.log",
+      "bytes": 439,
+      "sha256": "14cbaf047e2d133a4c081f3e008777227833d0e4213adc208748bcec9c81db7d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/cc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-final/current/run.log",
+      "bytes": 29542,
+      "sha256": "60abc0c999a11eeb743c2899fc94416cd5e6da0df39fc7a6a81d8cbd04b5d3dc"
+    }
+  ],
+  "file_count": 22,
+  "total_bytes": 1197548,
+  "excluded": [
+    "validation/assembly-fix/probe-final/**/probe",
+    "validation/assembly-fix/probe-final/**/probe.c",
+    "validation/assembly-fix/probe-final/**/memo",
+    "validation/assembly-fix/variants/**",
+    "validation/assembly-fix/probe-attempt[1-5]/**"
+  ]
+}

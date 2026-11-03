@@ -1,0 +1,14 @@
+{
+  "role": "Sail strict type constraints only; not Isla runtime Z3",
+  "observed_live_grandchild": {
+    "sail_pid": 383376,
+    "shell_pid": 491738,
+    "z3_pid": 491739,
+    "exe": "/home/linuxbrew/.linuxbrew/Cellar/z3/4.16.0/bin/z3"
+  },
+  "actual_z3_sha256": "a7eac84c5493ac5766c2179620c3a4628b151198af9e6e9c488163c84561b3e9",
+  "version": "Z3 version 4.16.0 - 64 bit",
+  "ctime_precedes_generation_start": true,
+  "runtime_official_z3_library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "source_manifest_sha256": "d0f6cb55c00437062807431907ff5b3fb59d3ace9e75db093f7adab7859923ff"
+}

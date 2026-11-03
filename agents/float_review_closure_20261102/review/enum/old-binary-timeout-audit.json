@@ -1,0 +1,12 @@
+{
+  "binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+  "metadata_features": [
+    "default"
+  ],
+  "build_log_sha256": "b0d924121845c0aae26e704ec92b6ff8c5bf4b2626f7e80e9b55aa36efed0356",
+  "build_log_interrupt_warning": true,
+  "imports_Z3_interrupt": false,
+  "source_sha256": "951934c4079b5e4284f2872448233774c3f6d563e9cba53f06a17ce361b78d19",
+  "conditional_wrapper": "    ($context:expr, $call:expr) => {{\n        #[cfg(feature = \"smt-thread-interrupt\")]\n        {\n            thread_interrupt_call($context, || $call)\n        }\n        #[cfg(not(feature = \"smt-thread-interrupt\"))]\n        {\n            Ok($call)\n        }\n    }};\n}\n",
+  "conclusion": "旧binary未启用smt-thread-interrupt；单次SMT超时参数被存储但不触发watchdog，整Clause外层timeout仍有效。无长Clause重测。"
+}

@@ -1,0 +1,27 @@
+{
+  "checker_sha256": "dd954bee8b797434f2aff67b72dc1c6c1e0e9acf71a0b568296660d5cca7bee2",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "rows": [
+    {
+      "mutation": "changed比较改成old==old，状态更新臂不可达",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "Dirty更新链把SD写0",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "div16: 0/0原因改成Inf/Inf条件，0/0见证丢失",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "div16: finite gate改成0/0条件，普通有限异常路径丢失",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "f16→i8: overflow比较改成sig32==sig32，饱和真臂不可达",
+      "result": "ACCEPTED_INVALID"
+    }
+  ],
+  "status": "BLOCKED"
+}

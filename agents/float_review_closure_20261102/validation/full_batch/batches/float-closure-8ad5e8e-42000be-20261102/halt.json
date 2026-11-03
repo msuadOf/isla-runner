@@ -1,0 +1,140 @@
+{
+  "batch": "float-closure-8ad5e8e-42000be-20261102",
+  "state": "stopped_due_to_startup_infrastructure_failure",
+  "recorded_utc": "2026-11-02T15:42:40.753908+00:00",
+  "supervisor_pid": 617801,
+  "supervisor_terminated": true,
+  "launched_jobs": 14,
+  "completed_in_last_summary": 12,
+  "unlaunched_jobs": 63,
+  "jobs": [
+    {
+      "job": "FCVTMOD_W_D",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "FCVT_BF16_S",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "FCVT_S_BF16",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "F_BIN_RM_TYPE_S",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "F_UN_RM_FX_TYPE_D",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "RFVVTYPE",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "RFWVVTYPE",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFNCVTBF16_F_F_W",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFNUNARY0",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFUNARY0",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFUNARY1",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFWCVTBF16_F_F_V",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFWMACCBF16_VF",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    },
+    {
+      "job": "VFWMACCBF16_VV",
+      "result_exists": true,
+      "exit_code": 1,
+      "pass": false,
+      "json_count": 0,
+      "run_log_sha256": "bea4c5529a52ca818e03c919512b5f7d83e7b254dc859ca2ab6800c8b18f1f80",
+      "message": "当前构建未启用轨迹支持，请启用 itrace/ftrace/btrace feature"
+    }
+  ],
+  "cause": "signed isarch binary lacks tracetool feature while signed run_clause.py passes --itrace",
+  "next": "rebuild traced independent binary, freeze new inputs, independent review, start new unique batch; preserve this batch"
+}

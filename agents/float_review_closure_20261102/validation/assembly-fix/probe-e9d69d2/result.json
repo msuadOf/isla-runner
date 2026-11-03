@@ -1,0 +1,36 @@
+[
+  {
+    "mode": "baseline",
+    "stage": "run",
+    "exit": 1,
+    "cases": 1104,
+    "passed_cases": 0,
+    "probe_sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c",
+    "mapping_typecheck_probe_sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c",
+    "mapping_typecheck_log_sha256": "5acf7ce276808e150af16b4c126bffd2ac032d11b2ee423bcbf826f2393d7c13",
+    "log_sha256": "abcd5e96d4cee4597029a5623c0bb1ef28bc88c47aac1c2b1260c8ccf5572076",
+    "source_sha256": {
+      "dext": "f7eb57c2f3532eb11ec1f76df9c0fb4cbcd1e34e5540308b5b3ec2193dab3081",
+      "zfh": "7a532ec1e53ea3b33f0bff2ba1c41b725a54df19539e5ca4682858325b57b61c",
+      "fext": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d",
+      "types": "27f8138a53154ade9f4ce2ea3c0cd146b5f57d1d03a72b5d61f293eccc242590"
+    }
+  },
+  {
+    "mode": "current",
+    "stage": "run",
+    "exit": 0,
+    "cases": 1104,
+    "passed_cases": 1104,
+    "probe_sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60",
+    "mapping_typecheck_probe_sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60",
+    "mapping_typecheck_log_sha256": "111e5441ec586732f472d5a5661f152333039660db991ac545b7e6c32ab2c026",
+    "log_sha256": "60abc0c999a11eeb743c2899fc94416cd5e6da0df39fc7a6a81d8cbd04b5d3dc",
+    "source_sha256": {
+      "dext": "1e0397fbc2988383a064a6cfc26f8870464122cd136fc62537e0612ab07ee688",
+      "zfh": "f5e7311bc490c2cb728fc8702d0491be263dee0cb822e32648bc33c405f9512e",
+      "fext": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d",
+      "types": "27f8138a53154ade9f4ce2ea3c0cd146b5f57d1d03a72b5d61f293eccc242590"
+    }
+  }
+]

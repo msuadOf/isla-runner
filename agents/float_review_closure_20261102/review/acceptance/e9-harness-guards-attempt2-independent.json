@@ -1,0 +1,29 @@
+{
+  "scope": "Static pre-sign of exact e9 guards/tree selection and unchanged independent expectations; no e9 dynamic PASS",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "candidate_parent": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "candidate_core_delta_sha256": "9dbf13575b7b32f48adb05f40c392bdbd520f77a980cea4d7594946808a1e9dd",
+  "flags": {
+    "runner_sha256": "96deaef252d29659e38b47558d54bedb64e7b9082d81e124ad2cf9acff648620",
+    "inverse_to_214_sha256": "f7ed5424e8bd42f7a5f0b704af44ed4951795ae8822375de6d866caf960e74d3",
+    "probe_source_sha256": "26225f7c0cf463078e821db7c87ba0a1885c62f15e0f4fd3824bc52cf88843ab",
+    "oracle_sha256": "ebf9424c3471c7589eb1546e1fd4731fedc2416ad0a0ef7061a8062d5e642665"
+  },
+  "conversions": {
+    "runner_sha256": "1a7e5ed98e27a6b37f92b03f80a6d29187a6417ba2d7f726883f34cb6d805e08",
+    "snapshot_sha256": "66639cfa23cf2c0415912ff3b951c5b4145fbf6e61ef9635426ffbc801d4372e",
+    "unchanged_input_files": 13,
+    "changed_input_files": [
+      "run.py"
+    ],
+    "frozen_subdirectory_root_depth_corrected": true,
+    "independent_fraction_expectations": 819
+  },
+  "exceptions": {
+    "runner_sha256": "8475d90d35d3d52195bbeb6bab4ab5cfe28d669536cb82aa61610c55e2efe311",
+    "inverse_to_214_sha256": "613e0441923a42650165da75a14bed730704bb16d08f09cda056c65008d12cd9",
+    "expected_sha256": "6ed44d0afba816a709fe6f4f18f0e34505c8b3202aaed6e1ad306e5aea135891",
+    "expected_source_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde"
+  },
+  "pass": true
+}

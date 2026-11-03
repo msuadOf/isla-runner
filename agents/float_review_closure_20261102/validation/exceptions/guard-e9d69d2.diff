@@ -1,0 +1,49 @@
+--- run_directed.py@613e0441
++++ run_directed.py@8475d90d
+@@ -30,6 +30,8 @@
+ BASE_MODEL_COMMIT = "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde"
+ ASSEMBLY_MODEL_COMMIT = "21418d0b0d4942fae20061ed580ee04aff4a8a61"
+ ASSEMBLY_DELTA_SHA256 = "305d826ee485b4803ffe8cb747cc9e20f815897c3b2714415a51c00867459bd7"
++CORE_MODEL_COMMIT = "e9d69d2f28586c089244c8e37ee4c904c5114458"
++CORE_DELTA_SHA256 = "9dbf13575b7b32f48adb05f40c392bdbd520f77a980cea4d7594946808a1e9dd"
+ 
+ 
+ def sha(path):
+@@ -313,13 +315,28 @@
+     assert sha(oracle_source) == expected["oracle_source_sha256"]
+     assert sha(archive) == expected["softfloat_archive_sha256"]
+     assert expected["model_commit"] == BASE_MODEL_COMMIT
+-    assert inputs["model_commit"] in (BASE_MODEL_COMMIT, ASSEMBLY_MODEL_COMMIT)
++    assert inputs["model_commit"] in (BASE_MODEL_COMMIT, ASSEMBLY_MODEL_COMMIT, CORE_MODEL_COMMIT)
+     model_delta_sha256 = None
++    model_delta_base_commit = None
+     if inputs["model_commit"] == ASSEMBLY_MODEL_COMMIT:
+         delta = subprocess.check_output(["git", "-C", str(ROOT / ".worktree/runner-float/sail-riscv"),
+                                          "diff", BASE_MODEL_COMMIT, ASSEMBLY_MODEL_COMMIT])
+         model_delta_sha256 = hashlib.sha256(delta).hexdigest()
++        model_delta_base_commit = BASE_MODEL_COMMIT
+         assert model_delta_sha256 == ASSEMBLY_DELTA_SHA256, "unexpected model delta"
++    elif inputs["model_commit"] == CORE_MODEL_COMMIT:
++        model_repo = ROOT / "sail-riscv"
++        parent = subprocess.check_output(["git", "-C", str(model_repo), "rev-parse",
++                                          CORE_MODEL_COMMIT + "^"], text=True).strip()
++        assert parent == ASSEMBLY_MODEL_COMMIT, "unexpected candidate parent"
++        changed = subprocess.check_output(["git", "-C", str(model_repo), "diff", "--name-only",
++                                           ASSEMBLY_MODEL_COMMIT, CORE_MODEL_COMMIT], text=True).splitlines()
++        assert changed == ["model/core/ieee_fp_exceptions.sail"], "unexpected candidate file scope"
++        delta = subprocess.check_output(["git", "-C", str(model_repo), "diff", "--no-ext-diff",
++                                         ASSEMBLY_MODEL_COMMIT, CORE_MODEL_COMMIT])
++        model_delta_sha256 = hashlib.sha256(delta).hexdigest()
++        model_delta_base_commit = ASSEMBLY_MODEL_COMMIT
++        assert model_delta_sha256 == CORE_DELTA_SHA256, "unexpected core delta"
+     for commit, tree in (("model_commit", "model_tree"), ("isla_commit", "isla_tree")):
+         verify_tree(inputs[tree], inputs[commit])
+     binary = checked(ROOT, inputs["binary"])
+@@ -366,6 +383,7 @@
+     write(out / "launch.json", {"model_commit": inputs["model_commit"],
+                                 "expected_source_commit": expected["model_commit"],
+                                 "model_delta_sha256": model_delta_sha256,
++                                "model_delta_base_commit": model_delta_base_commit,
+                                 "isla_commit": inputs["isla_commit"],
+                                 "inputs_path": str(args.inputs.resolve()),
+                                 "inputs_sha256": sha(args.inputs),

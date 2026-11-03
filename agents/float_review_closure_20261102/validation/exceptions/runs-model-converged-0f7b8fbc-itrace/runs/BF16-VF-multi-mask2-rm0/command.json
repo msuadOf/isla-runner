@@ -1,0 +1,135 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "17",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/BF16-VF-multi-mask2-rm0/constrained.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/BF16-VF-multi-mask2-rm0/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=VFWMACCBF16_VF"
+  ],
+  "job": {
+    "name": "BF16-VF-multi-mask2-rm0",
+    "family": "bf16",
+    "clause": "VFWMACCBF16_VF",
+    "fields": [
+      0,
+      2,
+      4,
+      8
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "vtype": "0x8",
+      "vl": "0x2",
+      "vstart": "0x0",
+      "vr0": "0x00000000000000000000000000000002",
+      "vr1": "0x00000000000000000000000000000000",
+      "vr2": "0x0000000000000000000000007f7f7f81",
+      "vr3": "0x00000000000000000000000000000000",
+      "vr4": "0x0000000000000000000000007f7f7f7f",
+      "vr5": "0x00000000000000000000000000000000",
+      "vr6": "0x00000000000000000000000000000000",
+      "vr7": "0x00000000000000000000000000000000",
+      "vr8": "0x00000000000000000000000000000000",
+      "vr9": "0x00000000000000000000000000000000",
+      "vr10": "0x00000000000000000000000000000000",
+      "vr11": "0x00000000000000000000000000000000",
+      "vr12": "0x00000000000000000000000000000000",
+      "vr13": "0x00000000000000000000000000000000",
+      "vr14": "0x00000000000000000000000000000000",
+      "vr15": "0x00000000000000000000000000000000",
+      "vr16": "0x00000000000000000000000000000000",
+      "vr17": "0x00000000000000000000000000000000",
+      "vr18": "0x00000000000000000000000000000000",
+      "vr19": "0x00000000000000000000000000000000",
+      "vr20": "0x00000000000000000000000000000000",
+      "vr21": "0x00000000000000000000000000000000",
+      "vr22": "0x00000000000000000000000000000000",
+      "vr23": "0x00000000000000000000000000000000",
+      "vr24": "0x00000000000000000000000000000000",
+      "vr25": "0x00000000000000000000000000000000",
+      "vr26": "0x00000000000000000000000000000000",
+      "vr27": "0x00000000000000000000000000000000",
+      "vr28": "0x00000000000000000000000000000000",
+      "vr29": "0x00000000000000000000000000000000",
+      "vr30": "0x00000000000000000000000000000000",
+      "vr31": "0x00000000000000000000000000000000",
+      "f4": "0xffffffffffff7f7f"
+    },
+    "expected": {
+      "name": "BF16-VF-multi-mask2-rm0",
+      "form": "VF",
+      "case": "multi-mask2",
+      "rm": 0,
+      "a": [
+        "0x7f81",
+        "0x7f7f"
+      ],
+      "b": [
+        "0x7f7f",
+        "0x7f7f"
+      ],
+      "acc": [
+        "0x0",
+        "0x0"
+      ],
+      "vl": 2,
+      "mask": 2,
+      "lanes": [
+        {
+          "lane": 0,
+          "active": false,
+          "bits": "0x0",
+          "flags": null,
+          "oracle_argv": null
+        },
+        {
+          "lane": 1,
+          "active": true,
+          "bits": "0x7f800000",
+          "flags": "0x5",
+          "oracle_argv": [
+            "--op",
+            "fma",
+            "--fmt",
+            "f32",
+            "--rm",
+            "0",
+            "--a",
+            "0x7f7f0000",
+            "--b",
+            "0x7f7f0000",
+            "--c",
+            "0x0"
+          ]
+        }
+      ],
+      "expected_flags": "0x5"
+    }
+  },
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "base_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "constrained_ir_sha256": "2f4c1979f3fb2818c0492726504fa71420c6e8ad7190856a21667f2ada23bfac",
+  "config_sha256": "85be2e64cc4b82843a251de4b9a0766895f28b10a29bc4496fd0b803219a23ec",
+  "cpu": 17,
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/BF16-VF-multi-mask2-rm0/seed-intercept.log"
+  }
+}

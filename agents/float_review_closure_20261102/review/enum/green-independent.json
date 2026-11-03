@@ -1,0 +1,51 @@
+{
+  "binary_sha256": "1ebb556f1c09b669f83701c23afec98b6ad6dee746e47fded6010d5bf7422209",
+  "source_sha256": "aa3cb973102299707fc2d87c94369136daed8b88944e47b48ff3ee9e9ec1f9cc",
+  "library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "ldd": "\tlinux-vdso.so.1 (0x0000780b7ba1e000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000780b78e00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000780b7b9c1000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000780b78a00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000780b7ba20000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000780b78600000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000780b7b899000)\n",
+  "readelf": "\nDynamic section at offset 0x43cd10 contains 31 entries:\n  Tag        Type                         Name/Value\n 0x000000000000001d (RUNPATH)            Library runpath: [/home/baiyifan/.local/opt/z3-official-1fd1d3613/lib]\n 0x0000000000000001 (NEEDED)             Shared library: [libz3.so.5.3]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW PIE\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000007 (RELA)               0x3438\n 0x0000000000000008 (RELASZ)             157368 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffff9 (RELACOUNT)          6275\n 0x0000000000000017 (JMPREL)             0x29af0\n 0x0000000000000002 (PLTRELSZ)           48 (bytes)\n 0x0000000000000003 (PLTGOT)             0x440838\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000006 (SYMTAB)             0x340\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000005 (STRTAB)             0x21d4\n 0x000000000000000a (STRSZ)              4701 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x21b8\n 0x0000000000000019 (INIT_ARRAY)         0x41be10\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x41be08\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000000000000c (INIT)               0x41acfc\n 0x000000000000000d (FINI)               0x41ad18\n 0x000000006ffffff0 (VERSYM)             0x1df8\n 0x000000006ffffffe (VERNEED)            0x2034\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x0000000000000000 (NULL)               0x0\n",
+  "runs": [
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "37",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/enum/target/release/deps/isla_lib-2540c7f0f5fc82f1",
+        "smt::",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "output": "\nrunning 29 tests\ntest smt::dump::tests::checkpoint_dump_preserves_temporary_assumption_as_replayable_command ... ok\ntest smt::dump::tests::checkpoint_dump_uses_shared_state_names_without_changing_local_symbols ... ok\ntest smt::dump::tests::checkpoint_dump_without_worker_uses_replayable_datatype_symbols ... ok\ntest smt::smtlib::tests::bits_to_i128_test ... ok\ntest smt::smtlib::tests::exp_eval_tests ... ok\ntest smt::tests::array ... ok\ntest smt::tests::bv_macro ... ok\ntest smt::tests::configured_tastic_is_used_by_solver ... ok\ntest smt::tests::define_enum_rejects_conflicting_member_count - should panic ... ok\ntest smt::tests::different_enums_keep_distinct_sorts_when_members_share_symbols ... ok\ntest smt::tests::enum_checkpoint_replays_after_all_solvers_drop ... ok\ntest smt::tests::get_const ... ok\ntest smt::tests::get_enum_const ... ok\ntest smt::tests::get_enum_rejects_conflicting_member_count - should panic ... ok\ntest smt::tests::get_enum_rejects_conflicting_member_count_across_solvers - should panic ... ok\ntest smt::tests::get_enum_rejects_empty_enumeration - should panic ... ok\ntest smt::tests::get_multi_member_enum_const_after_checkpoint_replay ... ok\ntest smt::tests::get_single_member_enum_const_after_checkpoint_replay ... ok\ntest smt::tests::get_struct_with_enum_field_after_checkpoint_replay ... ok\ntest smt::tests::instruction_checkpoint_keeps_only_instruction_derived_assertions ... ok\ntest smt::tests::isolated_checkpoint_preserves_definitions_and_rebases_only_new_constraints ... ok\ntest smt::tests::local_model_debug_preserves_original_model_text_semantics ... ok\ntest smt::tests::model_get_var_cache_is_local_and_cleared_on_completion_switch ... ok\ntest smt::tests::model_get_var_does_not_cache_arbitrary_or_errors ... ok\ntest smt::tests::model_get_var_reuses_concrete_typed_values_and_mixed_segments ... ok\ntest smt::tests::path_smt_stats_accumulate_protected_z3_calls_with_their_source_location ... ok\ntest smt::tests::smt_func ... ok\ntest smt::tests::smt_timeout_result_preserves_error_artifact_identity ... ok\ntest smt::z3_timeout::direct_tests::direct_timeout_error_panics - should panic ... ok\n\ntest result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 251 filtered out; finished in 0.45s\n\n"
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "37",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/enum/target/release/deps/isla_lib-2540c7f0f5fc82f1",
+        "--exact",
+        "tracetool::tests::ftrace_projects_existing_events_in_execution_order_across_forks",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "output": "\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 280 filtered out; finished in 0.00s\n\n",
+      "status": "NOT_EXERCISED: 当前构建未启用 tracetool feature，过滤器运行零项，不计PASS"
+    }
+  ],
+  "runtime_loader": {
+    "command": [
+      "taskset",
+      "-c",
+      "37",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/enum/target/release/deps/isla_lib-2540c7f0f5fc82f1",
+      "--exact",
+      "smt::tests::get_multi_member_enum_const_after_checkpoint_replay",
+      "--test-threads=1"
+    ],
+    "exit": 0,
+    "loaded": [
+      "4068236:\tcalling init: /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3"
+    ]
+  },
+  "reviewed_diff_sha256": "440b7a98765c8d92184fb066dde8d0e5170fb164e4858aa86db52c78baf10a1a"
+}

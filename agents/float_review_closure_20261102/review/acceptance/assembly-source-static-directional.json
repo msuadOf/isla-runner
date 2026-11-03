@@ -1,0 +1,27 @@
+{
+  "scope": "Current dirty source review only; runtime mapping tests pending",
+  "base_model": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "files": [
+    {
+      "path": "model/extensions/FD/dext_insts.sail",
+      "before_sha256": "f7eb57c2f3532eb11ec1f76df9c0fb4cbcd1e34e5540308b5b3ec2193dab3081",
+      "reviewed_sha256": "84fb27565de45366aa652f47f1914f7f694a762a735eae995d228036df90eb14",
+      "outside_three_assembly_groups_identical": true
+    },
+    {
+      "path": "model/extensions/FD/zfh_insts.sail",
+      "before_sha256": "7a532ec1e53ea3b33f0bff2ba1c41b725a54df19539e5ca4682858325b57b61c",
+      "reviewed_sha256": "f5776c0e59f9693c0707c3b57c7bbe25c98a2704fe6c15cb1819b67276e7b4b6",
+      "outside_three_assembly_groups_identical": true
+    }
+  ],
+  "forwards_partition": {
+    "op_rm_pairs": 72,
+    "canonical_rne_pairs": 5,
+    "generic_pairs": 67
+  },
+  "backwards_partition": {
+    "old_explicit_rm_pairs": 72,
+    "added_canonical_rne_pairs": 5
+  }
+}

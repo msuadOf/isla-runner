@@ -1,0 +1,10 @@
+[package]
+name = "float-closure-conversion-instructions"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+isla-lib = { path = "../../../../../.worktree/runner-float/isla/isla-lib" }
+serde_json = "1"

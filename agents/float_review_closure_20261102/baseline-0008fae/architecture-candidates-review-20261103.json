@@ -1,0 +1,230 @@
+{
+  "status": "PASS read-only candidate source/formula audit; not implementation permission",
+  "exceptions_candidate_sha256": "7ed9529baac57717875ea49e8fff5130d3ec611f824aa71483b2b856d67c96b4",
+  "exceptions_functions": 18,
+  "cause_ifs_removed": 33,
+  "native_FP_bindings_unchanged": 90,
+  "exception_predicate_and_output_proofs": [
+    {
+      "function": "ieee_add16_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "finite"
+    },
+    {
+      "function": "ieee_sub16_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "finite"
+    },
+    {
+      "function": "ieee_mul16_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_div16_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_sqrt16_exceptions",
+      "native_FP_bindings_unchanged": 4,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_fma16_exceptions",
+      "native_FP_bindings_unchanged": 6,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_add32_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "finite"
+    },
+    {
+      "function": "ieee_sub32_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "finite"
+    },
+    {
+      "function": "ieee_mul32_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_div32_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_sqrt32_exceptions",
+      "native_FP_bindings_unchanged": 4,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_fma32_exceptions",
+      "native_FP_bindings_unchanged": 6,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_add64_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "finite"
+    },
+    {
+      "function": "ieee_sub64_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "finite"
+    },
+    {
+      "function": "ieee_mul64_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_div64_exceptions",
+      "native_FP_bindings_unchanged": 5,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_sqrt64_exceptions",
+      "native_FP_bindings_unchanged": 4,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    },
+    {
+      "function": "ieee_fma64_exceptions",
+      "native_FP_bindings_unchanged": 6,
+      "source_NaN_calls_order_unchanged": true,
+      "predicate_and_return_formula_equal_6202": true,
+      "retained_gate": "valid"
+    }
+  ],
+  "arbitrary_nv_dz_gate_OF_UF_NX_cases": 64,
+  "wrapper_candidate_hashes": {
+    "wrappers-softfloat_symbolic_f16.sail": "715795790c0efb100806c0a82195e137c4de66c4a9614baac9ee2b0b333a0646",
+    "wrappers-softfloat_symbolic_f32.sail": "ffe71d8f99652a20f9c7c6d969648af75bdc575ee9f2ca34e459fdfa879c5e17",
+    "wrappers-softfloat_symbolic_f64.sail": "b5b8ea9e4723e647fa74ea8ebfa47129106993a3a99d9df80105f9b3eab545ce"
+  },
+  "wrapper_functions": [
+    {
+      "function": "riscv_f16ToI32",
+      "target_width": 32,
+      "unsigned": false,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f16ToUi32",
+      "target_width": 32,
+      "unsigned": true,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f16ToI64",
+      "target_width": 64,
+      "unsigned": false,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f16ToUi64",
+      "target_width": 64,
+      "unsigned": true,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f32ToI32",
+      "target_width": 32,
+      "unsigned": false,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f32ToUi32",
+      "target_width": 32,
+      "unsigned": true,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f32ToI64",
+      "target_width": 64,
+      "unsigned": false,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f32ToUi64",
+      "target_width": 64,
+      "unsigned": true,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f64ToI32",
+      "target_width": 32,
+      "unsigned": false,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f64ToUi32",
+      "target_width": 32,
+      "unsigned": true,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f64ToI64",
+      "target_width": 64,
+      "unsigned": false,
+      "candidate_function_identical_to6202": true
+    },
+    {
+      "function": "riscv_f64ToUi64",
+      "target_width": 64,
+      "unsigned": true,
+      "candidate_function_identical_to6202": true
+    }
+  ],
+  "wrapper_selection_cases": 12288,
+  "wrapper_non_target_and_ROD_bytes_unchanged": true,
+  "narrow_candidate_sha256": "34191de93086708b44f552606b39878e1ad68be07c67fb2321eb7bec1b1172e1",
+  "narrow_candidate_entire_file_equal6202": true,
+  "retained_f16_i16_outer_if": "OPEN, not approved by this preparation",
+  "finite_valid_RODmode_changed": "OPEN and unchanged in these candidates",
+  "frozen_e9_and214_model_files_unchanged": true,
+  "not_signed": [
+    "production application",
+    "Sail strict compilation",
+    "new IR/CFG",
+    "new dynamic/Clause budgets",
+    "OPEN gate architecture acceptance",
+    "performance"
+  ]
+}

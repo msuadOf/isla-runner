@@ -1,0 +1,13 @@
+{
+  "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/bf16-vl0/run/output/rv64_zVFWMACCBF16_VF.json",
+  "source_sha256": "e9ad0c83d9e9373f00a68516b13768ff4248f2aa189cf794d3fdcbd6a8f6629f",
+  "gen": 6,
+  "generic_checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+  "raw_all_pass": true,
+  "raw_failures": 0,
+  "accepted_gnu_exact_fallbacks": 0,
+  "selected": [],
+  "contract_errors": [],
+  "unhandled_failures": [],
+  "all_pass": true
+}

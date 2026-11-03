@@ -1,0 +1,7 @@
+# 候选生成与调度边界记录
+
+2026-11-02 17:02 UTC：`model-e9d69d2` 的 ordinary strict 与四配置 SYMBOLIC 均退出 0，五项 `source_unchanged=true`；每配置 memo 来自已审核的 `model-21418d0` 批次，复制哈希相同且 inode 不同。`independent-input-audit.json` 核对 166 个模型文件、149 个工具与配置文件，工具文件 ctime 均早于生成开始。Isla 42000be 源树另冻结 1021 个已跟踪文件。候选 `inputs.model-e9d69d2-itrace.json` SHA-256 为 `eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a`，`run_clause.py` 的 FLEQ_S dry-run 退出 0。
+
+协调新候选调度时，曾短暂修改共享 `validation/full_batch/scheduler.py`，把固定的 214 影响清单路径改为从输入读取；收到主 agent 指定候选使用独立副本后，立即逐行恢复。恢复后 SHA-256 `b478384ce3be9873bfa669c327b5723ebcbb53516e03a4c451aa4310ae42d690`，与修改前已签字节一致。该短暂改动期间未启动任何新调度。214 正式批次进程 PID 1160803 仍在运行；其 17:01:44 UTC 的 summary 为完成 1、通过 1、运行 4、排队 72、失败 0。214 冻结 inputs SHA-256 `44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19`，`run_clause.py` SHA-256 `b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1`，均未改动。新调度由 `validation/full_batch/e9/` 独立副本负责。
+
+永久 CFG 回归已按新IR数据流修订，仅在根 `isla/test/float_ir/` 修改 checker 与 README。checker SHA-256 `053b48b3b588c58f87d74a72c7a5d5097a610ccea37700d94380142fede5ad16`；四份新IR正控和special检查均退出0，见 `checker-green.log` 与 `check-special-green-final.log`。旧214快照checker对新IR以及新checker对214IR均退出1，日志分别为 `checker214-on-e9.log` 与 `checker-e9-on-214.log`；本地九项数据错误负变异全拒，见 `checker-negative-controls.json`。独立Sol另以同版checker完成31项负控并签收，见 `../../../baseline-0008fae/model-review.checker-e9d69d2.md`。这只验证静态IR合同，不替代动态数值或完整Clause预算。

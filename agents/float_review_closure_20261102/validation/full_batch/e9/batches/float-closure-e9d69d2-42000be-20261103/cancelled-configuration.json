@@ -1,0 +1,217 @@
+{
+  "utc": "2026-11-02T17:12:29.673009+00:00",
+  "reason": "initial plan contained only two CPUs, preventing later expansion; scheduler configuration correction",
+  "batch": "float-closure-e9d69d2-42000be-20261103",
+  "supervisor_pid": 206623,
+  "summary_at_cancellation": {
+    "batch": "float-closure-e9d69d2-42000be-20261103",
+    "updated_utc": "2026-11-02T17:12:24.057166+00:00",
+    "supervisor_pid": 206623,
+    "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+    "total": 77,
+    "affected_total": 64,
+    "compatibility_total": 13,
+    "queued": 75,
+    "running": 2,
+    "completed": 0,
+    "blocked": 0,
+    "blocked_jobs": [],
+    "frozen_error": null,
+    "task_conservation_total": 77,
+    "task_conservation_valid": true,
+    "passed": 0,
+    "failed": 0,
+    "affected_completed": 0,
+    "affected_passed": 0,
+    "compatibility_completed": 0,
+    "compatibility_passed": 0,
+    "max_parallel_requested": 2,
+    "max_parallel_effective": 2,
+    "scale_guard": null,
+    "control_error": null,
+    "observed_peak_rss_kb": 495828,
+    "mem_available_kb": 132800372,
+    "disk_free_bytes": 144699617280,
+    "disk_min_free_bytes": 21474836480,
+    "disk_projected_job_bytes": 1838289284,
+    "disk_required_for_next_job_bytes": 26989704332,
+    "disk_guard": null,
+    "peak_output_growth_bytes_per_s": 255317.96,
+    "peak_active_job_output_bytes": 12713527,
+    "external_emu_threads": 512,
+    "external_emu_cpus": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      22,
+      23,
+      28,
+      30,
+      31,
+      45,
+      46,
+      47,
+      55,
+      56,
+      57,
+      58,
+      59,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      71,
+      73,
+      75,
+      76,
+      78,
+      79,
+      84,
+      85,
+      86,
+      87,
+      94,
+      95,
+      99,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      120,
+      124
+    ],
+    "external_emu_threads_on_selected_siblings": 0,
+    "active": {
+      "F_BIN_RM_TYPE_S": {
+        "launcher_pid": 206656,
+        "cpu": 34,
+        "started_utc": "2026-11-02T17:11:19.292352+00:00",
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+          "--inputs",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-e9d69d2-itrace.json",
+          "--batch",
+          "float-closure-e9d69d2-42000be-20261103",
+          "--job",
+          "F_BIN_RM_TYPE_S",
+          "--cpu",
+          "34"
+        ],
+        "descendant_pids": [
+          206656,
+          206686,
+          206687,
+          206688
+        ],
+        "rss_kb_current": 416372
+      },
+      "VFUNARY0": {
+        "launcher_pid": 206657,
+        "cpu": 39,
+        "started_utc": "2026-11-02T17:11:19.293347+00:00",
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+          "--inputs",
+          "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-e9d69d2-itrace.json",
+          "--batch",
+          "float-closure-e9d69d2-42000be-20261103",
+          "--job",
+          "VFUNARY0",
+          "--cpu",
+          "39"
+        ],
+        "descendant_pids": [
+          206657,
+          206689,
+          206690,
+          206691
+        ],
+        "rss_kb_current": 495828
+      }
+    },
+    "results": {},
+    "path_accounting": {
+      "main_created": null,
+      "main_completed": null,
+      "main_queued": null,
+      "collector_pending": null,
+      "smt_check_pending": null,
+      "note": "正式harness尚无实时结构化路径/SMT阶段计数；留空，不从CPU或JSON缺失推断"
+    }
+  },
+  "owned_launcher_groups": [
+    {
+      "job": "F_BIN_RM_TYPE_S",
+      "pid": 206656,
+      "pgid": 206656,
+      "cmd": "/home/baiyifan/miniconda3/bin/python3 /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py --inputs /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-e9d69d2-itrace.json --batch float-closure-e9d69d2-42000be-20261103 --job F_BIN_RM_TYPE_S --cpu 34 "
+    },
+    {
+      "job": "VFUNARY0",
+      "pid": 206657,
+      "pgid": 206657,
+      "cmd": "/home/baiyifan/miniconda3/bin/python3 /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py --inputs /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-e9d69d2-itrace.json --batch float-closure-e9d69d2-42000be-20261103 --job VFUNARY0 --cpu 39 "
+    }
+  ],
+  "classification": "cancelled_before_result; no solver failure or timeout inferred",
+  "processes_confirmed_absent_utc": "2026-11-02T17:14:56.184826+00:00",
+  "processes_confirmed_absent": [
+    206623,
+    206656,
+    206657
+  ],
+  "summary_status_note": "summary.json is a final pre-cancellation snapshot; its running=2 fields are stale and do not indicate active processes or solver failure",
+  "orphan_cleanup": {
+    "utc": "2026-11-02T17:17:39.191584+00:00",
+    "owned_session_ids": [
+      206656,
+      206657
+    ],
+    "found": [
+      {
+        "pid": 206687,
+        "sid": 206656,
+        "pgid": 206687,
+        "cmd": "timeout --signal=TERM --kill-after=10s 7200s taskset -c 34 /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace -A /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/rv64d_v128_e64.ir -C /data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml -T 1 --tastic qffp --smt-timeout 7200s --timeout-smt-output file --timeout-smt-dir output/smt-timeouts --verbose --debug=fmlgcsra --probe-all --trace-all --itrace=output/trace/itrace_F_BIN_RM_TYPE_S.txt solve-state --clause=F_BIN_RM_TYPE_S "
+      },
+      {
+        "pid": 206688,
+        "sid": 206656,
+        "pgid": 206687,
+        "cmd": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace -A /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/rv64d_v128_e64.ir -C /data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml -T 1 --tastic qffp --smt-timeout 7200s --timeout-smt-output file --timeout-smt-dir output/smt-timeouts --verbose --debug=fmlgcsra --probe-all --trace-all --itrace=output/trace/itrace_F_BIN_RM_TYPE_S.txt solve-state --clause=F_BIN_RM_TYPE_S "
+      },
+      {
+        "pid": 206690,
+        "sid": 206657,
+        "pgid": 206690,
+        "cmd": "timeout --signal=TERM --kill-after=10s 7200s taskset -c 39 /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace -A /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/rv64d_v128_e64.ir -C /data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml -T 1 --tastic qffp --smt-timeout 7200s --timeout-smt-output file --timeout-smt-dir output/smt-timeouts --verbose --debug=fmlgcsra --probe-all --trace-all --itrace=output/trace/itrace_VFUNARY0.txt solve-state --clause=VFUNARY0 "
+      },
+      {
+        "pid": 206691,
+        "sid": 206657,
+        "pgid": 206690,
+        "cmd": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt-itrace -A /data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-e9d69d2/rv64d_v128_e64/rv64d_v128_e64.ir -C /data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml -T 1 --tastic qffp --smt-timeout 7200s --timeout-smt-output file --timeout-smt-dir output/smt-timeouts --verbose --debug=fmlgcsra --probe-all --trace-all --itrace=output/trace/itrace_VFUNARY0.txt solve-state --clause=VFUNARY0 "
+      }
+    ],
+    "after_term": [],
+    "remaining": [],
+    "explanation": "run_clause launched isarch in new process groups within its owned session, so launcher-group TERM alone did not stop descendants"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "red-baseline",
+  "model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "isla_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "ir_sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
+  "script_sha256": "584a97c1d239bbbd04452fa4e69821f2714cbfd96da062b8145e167ac5daf472",
+  "command": [
+    "python3",
+    "agents/float_review_closure_20261102/validation/check_cfg.py",
+    "--ir",
+    ".worktree/runner-float/isla/rv64d.ir"
+  ],
+  "exit_code": 1,
+  "stdout": "FAIL zriscv_f16ToI16_pure: 目标 Jump 1，需至少 2\nFAIL zriscv_f16ToI8_pure: 目标 Jump 0，需至少 2\nFAIL zriscv_f16ToUi8_pure: 目标 Jump 0，需至少 1\nFAIL zriscv_f16ToUi16_pure: 目标 Jump 0，需至少 1\nFAIL zriscv_f32ToI16_pure: 目标 Jump 0，需至少 2\nFAIL zriscv_f32ToUi16_pure: 目标 Jump 0，需至少 1\nFAIL zaccrue_fflags: changed 未进入目标 Jump\n",
+  "stderr": "",
+  "expected_red": true
+}

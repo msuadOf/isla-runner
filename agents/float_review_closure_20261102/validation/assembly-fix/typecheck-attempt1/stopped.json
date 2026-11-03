@@ -1,0 +1,7 @@
+{
+  "pid": 1047037,
+  "status": "STOPPED_PARTIAL",
+  "reason": "main owner started unified strict and four-IR generation; avoid competing full-model checks",
+  "signal": "SIGTERM process group",
+  "stopped_epoch": 1793636156.125343
+}

@@ -1,0 +1,147 @@
+{
+  "domain": "directed-fixed-state-smoke",
+  "command": [
+    "/usr/bin/time",
+    "-f",
+    "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+    "-o",
+    "time.txt",
+    "taskset",
+    "-c",
+    "36",
+    "make",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/make/model-8ad5e8e/smoke",
+    "-f",
+    "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/scripts/run.mk",
+    "-o",
+    "build-isarch",
+    "solve-FLEQ_S",
+    "IR_FILE=/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/generation/model-8ad5e8e/rv64d_v128_e64/rv64d_v128_e64.ir",
+    "ISA_CONFIG=/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/make/model-8ad5e8e/smoke/config.toml",
+    "THREADS=1",
+    "SOLVE_TIMEOUT=7200s",
+    "SMT_TIMEOUT=7200s",
+    "OUTER_TIMEOUT=7200s",
+    "TASTIC=qffp",
+    "ITRACE=0"
+  ],
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/make/model-8ad5e8e/smoke/seed-intercept.log"
+  },
+  "model_commit": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "inputs": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-8ad5e8e.json",
+  "inputs_sha256": "25a1a624cb5dcac76a2261c470e198c64a75b20259322a1c7ee5d0572b83ec24",
+  "binary_sha256": "fe4bdcebd1d970d6f026c0f81ccd22f807f5cb4729da27ef67e20b2c08d09d80",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "config_sha256": "41e48e2f8129c16fa1ad62a3b054f8bb5baea01dd84461eb2c8031d623da78cf",
+  "base_config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "makefile_sha256": "cce7dc2526f443ec100a10b05da4c68e635574c54c91c561f9beeb1a10bd3752",
+  "solve_process_sha256": "48aedd3ed6a8e5d0f6c16fcd9ba265d236cd87a32551a904a608f071deafaf4b",
+  "z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "special_harness_sha256": "a1516ab7aad7942d026f0feadf3d0e0df098cf1847a3e1da155a5dd8aa0c098a",
+  "checker_sha256": "68c3fbd5f31d30056b225b928aee2bac7b893f4613785144f9b50df47ad30cf3",
+  "runner_sha256": "783b540df7d9f0bd3f1c67347a34fdab50770cb57478fe0d183d4dfc3923283d",
+  "common_sha256": "6a35993cccfce29c93e659a6a852a3d496a2de5e7a41c23cc36993dd9e005e97",
+  "toolchains": {
+    "drivers": {
+      "gcc": {
+        "path": "/usr/bin/riscv64-unknown-elf-gcc",
+        "sha256": "4310e64944572c23d75e4d49e828eeb073894a9ad8746bac30636085c32cd126",
+        "version": "riscv64-unknown-elf-gcc (14.2.0+19) 14.2.0",
+        "arguments": [
+          "-march=rv64gcv_zfh_zfa",
+          "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+          "-mabi=lp64d"
+        ]
+      },
+      "clang": {
+        "path": "/home/linuxbrew/.linuxbrew/Cellar/llvm/22.1.8/bin/clang-22",
+        "sha256": "ab50a44e219c787b1a6ba0b8e07172080a4b3619c3f619b801ef058a7bdfad2a",
+        "version": "Homebrew clang version 22.1.8",
+        "arguments": [
+          "--target=riscv64-unknown-elf",
+          "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+          "-mabi=lp64d"
+        ]
+      }
+    },
+    "objcopy": {
+      "path": "/usr/bin/riscv64-unknown-elf-objcopy",
+      "sha256": "15a3fbf9c6ffdb08747440ef2935188046c47d3e3878de28812154e748ae50d3"
+    }
+  },
+  "target_isarch": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/bin/isarch-42000be-interrupt",
+  "ldd": "\tlinux-vdso.so.1 (0x00007eaed42b2000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x00007eaed1800000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007eaed4255000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007eaed1400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007eaed42b4000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007eaed1000000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007eaed16da000)\n",
+  "cpu": 36,
+  "started_utc": "2026-11-02T15:41:17.590778+00:00",
+  "exit_code": 0,
+  "elapsed_s": 4.024,
+  "finished_utc": "2026-11-02T15:41:21.615567+00:00",
+  "make_log_sha256": "be3b35ebc147e4b7ee8df1c60891469cbbe0c5a83dfb649f8093dd066b6082e2",
+  "recipe_ran": true,
+  "clause_log_sha256": "d9b5f882a923161533f854b47b6a68042fad5cc57c0060beb96866f92828029c",
+  "wall_s": 4.02,
+  "user_s": 3.1,
+  "sys_s": 0.85,
+  "maxrss_kb": 242596,
+  "seed_fixed_17": true,
+  "seed_log_sha256": "341d644ed3fc8e041af5e75959caeef4314f48c6bf4ae1f4d0efc63eff2ba876",
+  "output_sha256": "de742d75190d3e264b5889fde36f697d4fe03eac8d0bf8a9e27eaaef68f04ee4",
+  "summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zFLEQ_S"
+  },
+  "gen": 8,
+  "semantic_pass": true,
+  "semantic_detail": {
+    "x0_result_not_observable": 4,
+    "pairs": {
+      "normal/qNaN": 2,
+      "qNaN/qNaN": 2,
+      "normal/normal": 2,
+      "qNaN/normal": 2
+    },
+    "required_pairs": [
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "qNaN",
+        "normal"
+      ],
+      [
+        "normal",
+        "qNaN"
+      ]
+    ],
+    "check_count": 15,
+    "failed_checks": 0
+  },
+  "representations": {
+    "simulation": false,
+    "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/make/model-8ad5e8e/smoke/output/rv64_zFLEQ_S.json",
+    "sha256": "de742d75190d3e264b5889fde36f697d4fe03eac8d0bf8a9e27eaaef68f04ee4",
+    "gen": 8,
+    "illegal": 0,
+    "clang_mnemonic_rejections": 0,
+    "all_pass": true
+  },
+  "pass": true
+}

@@ -1,0 +1,659 @@
+{
+  "scope": "Actual machine-word/pre-state numerical replay; no owner expected fixture read",
+  "oracle_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "files": 1,
+  "checked_entries": 24,
+  "skipped_entries": 0,
+  "failures": 0,
+  "rows": [
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 0,
+      "instruction": "fcvt.d.wu f0, x1",
+      "word": "0xd2108053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 1,
+      "instruction": "fcvt.d.lu f0, x1, rmm",
+      "word": "0xd230c053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 2,
+      "instruction": "fcvt.d.lu f0, x1, rtz",
+      "word": "0xd2309053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 3,
+      "instruction": "fcvt.d.wu f0, x1, rmm",
+      "word": "0xd210c053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 4,
+      "instruction": "fcvt.d.wu f0, x1, rdn",
+      "word": "0xd210a053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 5,
+      "instruction": "fcvt.d.w f0, x1, dyn",
+      "word": "0xd200f053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 6,
+      "instruction": "fcvt.d.w f0, x1, rup",
+      "word": "0xd200b053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 7,
+      "instruction": "fcvt.d.lu f0, x1, rup",
+      "word": "0xd230b053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 8,
+      "instruction": "fcvt.d.l f0, x1, dyn",
+      "word": "0xd220f053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 9,
+      "instruction": "fcvt.d.w f0, x1",
+      "word": "0xd2008053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 10,
+      "instruction": "fcvt.d.lu f0, x1, dyn",
+      "word": "0xd230f053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 11,
+      "instruction": "fcvt.d.lu f0, x1, rne",
+      "word": "0xd2308053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 12,
+      "instruction": "fcvt.d.l f0, x1, rup",
+      "word": "0xd220b053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 13,
+      "instruction": "fcvt.d.wu f0, x1, dyn",
+      "word": "0xd210f053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 14,
+      "instruction": "fcvt.d.w f0, x1, rmm",
+      "word": "0xd200c053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 15,
+      "instruction": "fcvt.d.wu f0, x1, rup",
+      "word": "0xd210b053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 16,
+      "instruction": "fcvt.d.w f0, x1, rtz",
+      "word": "0xd2009053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 17,
+      "instruction": "fcvt.d.wu f0, x1, rtz",
+      "word": "0xd2109053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 18,
+      "instruction": "fcvt.d.l f0, x1, rmm",
+      "word": "0xd220c053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 19,
+      "instruction": "fcvt.d.lu f0, x1, rdn",
+      "word": "0xd230a053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 20,
+      "instruction": "fcvt.d.l f0, x1, rtz",
+      "word": "0xd2209053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 21,
+      "instruction": "fcvt.d.l f0, x1, rdn",
+      "word": "0xd220a053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 22,
+      "instruction": "fcvt.d.l f0, x1, rne",
+      "word": "0xd2208053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/representations/model-21418d0-exact/exact-int-to-D/run/output/rv64_zF_UN_RM_XF_TYPE_D.json",
+      "index": 23,
+      "instruction": "fcvt.d.w f0, x1, rdn",
+      "word": "0xd200a053",
+      "checks": [
+        {
+          "field": "f0",
+          "actual": "0x3ff0000000000000",
+          "expected": "0x3ff0000000000000",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "skipped": []
+}

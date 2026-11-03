@@ -1,0 +1,252 @@
+{
+  "status": "PASS actual IR pure values and retained gates",
+  "model": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "comparison": "21418d0",
+  "rows": [
+    {
+      "config": "rv64d_v128_e64",
+      "proofs": [
+        {
+          "function": "zieee_f16_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f32_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f64_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_exact_threshold_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_round16_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round32_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round64_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_fp_to_int_core",
+          "check": "same finite/valid guards, direct return of old NX condition"
+        },
+        {
+          "function": "zieee_convert32_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_bf16_from_f32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_rod32_to_16",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        },
+        {
+          "function": "zieee_rod64_to_32",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        }
+      ]
+    },
+    {
+      "config": "rv32d",
+      "proofs": [
+        {
+          "function": "zieee_f16_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f32_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f64_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_exact_threshold_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_round16_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round32_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round64_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_fp_to_int_core",
+          "check": "same finite/valid guards, direct return of old NX condition"
+        },
+        {
+          "function": "zieee_convert32_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_bf16_from_f32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_rod32_to_16",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        },
+        {
+          "function": "zieee_rod64_to_32",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        }
+      ]
+    },
+    {
+      "config": "rv64d_v256_e64",
+      "proofs": [
+        {
+          "function": "zieee_f16_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f32_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f64_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_exact_threshold_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_round16_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round32_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round64_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_fp_to_int_core",
+          "check": "same finite/valid guards, direct return of old NX condition"
+        },
+        {
+          "function": "zieee_convert32_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_bf16_from_f32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_rod32_to_16",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        },
+        {
+          "function": "zieee_rod64_to_32",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        }
+      ]
+    },
+    {
+      "config": "rv64d_v512_e64",
+      "proofs": [
+        {
+          "function": "zieee_f16_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f32_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_f64_rounded_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_exact_threshold_exceptions",
+          "check": "new OF/UF/NX return fields equal all three old branch-condition DAGs"
+        },
+        {
+          "function": "zieee_round16_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round32_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_round64_exceptions",
+          "check": "same finite guard, same per-source NV and old NX condition returned directly"
+        },
+        {
+          "function": "zieee_fp_to_int_core",
+          "check": "same finite/valid guards, direct return of old NX condition"
+        },
+        {
+          "function": "zieee_convert32_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_16_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_convert64_to_32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_bf16_from_f32_exceptions",
+          "check": "same finite guard and actual exact facts returned unchanged"
+        },
+        {
+          "function": "zieee_rod32_to_16",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        },
+        {
+          "function": "zieee_rod64_to_32",
+          "check": "same finite guard/RTZ base, both merged flags assignments; jam ITE uses same flags NX and exact base|1/base"
+        }
+      ]
+    }
+  ],
+  "method": "每条赋值建立按时间的表达式DAG指纹；引用旧实际Jump条件对新返回字段，ROD非SSA flags两个赋值分别核；不以源码if数或关键字出现替代值合同"
+}

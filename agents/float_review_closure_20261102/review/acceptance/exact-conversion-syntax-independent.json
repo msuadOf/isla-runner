@@ -1,0 +1,1125 @@
+{
+  "scope": "Exact conversion assembler syntax and negative controls; no model executed",
+  "rows": [
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.d.s f0, f1",
+      "exit": 0,
+      "bytes_le": "53800042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.d.s f0, f1, rne",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.s f0,f1,rne'\n"
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.d.s f0, f1, rtz",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.s f0,f1,rtz'\n"
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.d.s f0, f1, rdn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.s f0,f1,rdn'\n"
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.d.s f0, f1, rup",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.s f0,f1,rup'\n"
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.d.s f0, f1, rmm",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.s f0,f1,rmm'\n"
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.d.s f0, f1, dyn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.s f0,f1,dyn'\n"
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.d.s f0, f1",
+      "exit": 0,
+      "bytes_le": "53800042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.d.s f0, f1, rne",
+      "exit": 0,
+      "bytes_le": "53800042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.d.s f0, f1, rtz",
+      "exit": 0,
+      "bytes_le": "53900042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.d.s f0, f1, rdn",
+      "exit": 0,
+      "bytes_le": "53a00042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.d.s f0, f1, rup",
+      "exit": 0,
+      "bytes_le": "53b00042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.d.s f0, f1, rmm",
+      "exit": 0,
+      "bytes_le": "53c00042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.s",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.d.s f0, f1, dyn",
+      "exit": 0,
+      "bytes_le": "53f00042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.d.h f0, f1",
+      "exit": 0,
+      "bytes_le": "53802042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.d.h f0, f1, rne",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.h f0,f1,rne'\n"
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.d.h f0, f1, rtz",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.h f0,f1,rtz'\n"
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.d.h f0, f1, rdn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.h f0,f1,rdn'\n"
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.d.h f0, f1, rup",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.h f0,f1,rup'\n"
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.d.h f0, f1, rmm",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.h f0,f1,rmm'\n"
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.d.h f0, f1, dyn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.h f0,f1,dyn'\n"
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.d.h f0, f1",
+      "exit": 0,
+      "bytes_le": "53802042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.d.h f0, f1, rne",
+      "exit": 0,
+      "bytes_le": "53802042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.d.h f0, f1, rtz",
+      "exit": 0,
+      "bytes_le": "53902042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.d.h f0, f1, rdn",
+      "exit": 0,
+      "bytes_le": "53a02042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.d.h f0, f1, rup",
+      "exit": 0,
+      "bytes_le": "53b02042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.d.h f0, f1, rmm",
+      "exit": 0,
+      "bytes_le": "53c02042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.d.h f0, f1, dyn",
+      "exit": 0,
+      "bytes_le": "53f02042",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.s.h f0, f1",
+      "exit": 0,
+      "bytes_le": "53802040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.s.h f0, f1, rne",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.s.h f0,f1,rne'\n"
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.s.h f0, f1, rtz",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.s.h f0,f1,rtz'\n"
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.s.h f0, f1, rdn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.s.h f0,f1,rdn'\n"
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.s.h f0, f1, rup",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.s.h f0,f1,rup'\n"
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.s.h f0, f1, rmm",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.s.h f0,f1,rmm'\n"
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.s.h f0, f1, dyn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.s.h f0,f1,dyn'\n"
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.s.h f0, f1",
+      "exit": 0,
+      "bytes_le": "53802040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.s.h f0, f1, rne",
+      "exit": 0,
+      "bytes_le": "53802040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.s.h f0, f1, rtz",
+      "exit": 0,
+      "bytes_le": "53902040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.s.h f0, f1, rdn",
+      "exit": 0,
+      "bytes_le": "53a02040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.s.h f0, f1, rup",
+      "exit": 0,
+      "bytes_le": "53b02040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.s.h f0, f1, rmm",
+      "exit": 0,
+      "bytes_le": "53c02040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.h",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.s.h f0, f1, dyn",
+      "exit": 0,
+      "bytes_le": "53f02040",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.d.w f0, x1",
+      "exit": 0,
+      "bytes_le": "538000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.d.w f0, x1, rne",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.w f0,x1,rne'\n"
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.d.w f0, x1, rtz",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.w f0,x1,rtz'\n"
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.d.w f0, x1, rdn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.w f0,x1,rdn'\n"
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.d.w f0, x1, rup",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.w f0,x1,rup'\n"
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.d.w f0, x1, rmm",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.w f0,x1,rmm'\n"
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.d.w f0, x1, dyn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.w f0,x1,dyn'\n"
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.d.w f0, x1",
+      "exit": 0,
+      "bytes_le": "538000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.d.w f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.d.w f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.d.w f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.d.w f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.d.w f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.w",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.d.w f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f000d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.d.wu f0, x1",
+      "exit": 0,
+      "bytes_le": "538010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.d.wu f0, x1, rne",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.wu f0,x1,rne'\n"
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.d.wu f0, x1, rtz",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.wu f0,x1,rtz'\n"
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.d.wu f0, x1, rdn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.wu f0,x1,rdn'\n"
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.d.wu f0, x1, rup",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.wu f0,x1,rup'\n"
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.d.wu f0, x1, rmm",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.wu f0,x1,rmm'\n"
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.d.wu f0, x1, dyn",
+      "exit": 1,
+      "bytes_le": null,
+      "stderr": "/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-exact-conv-rjppiikf/x.s:3: Error: illegal operands `fcvt.d.wu f0,x1,dyn'\n"
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.d.wu f0, x1",
+      "exit": 0,
+      "bytes_le": "538010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.d.wu f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.d.wu f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.d.wu f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.d.wu f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.d.wu f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.wu",
+      "exact": true,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.d.wu f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f010d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.d.l f0, x1",
+      "exit": 0,
+      "bytes_le": "53f020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.d.l f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.d.l f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.d.l f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.d.l f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.d.l f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.d.l f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.d.l f0, x1",
+      "exit": 0,
+      "bytes_le": "53f020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.d.l f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.d.l f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.d.l f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.d.l f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.d.l f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.l",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.d.l f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f020d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.d.lu f0, x1",
+      "exit": 0,
+      "bytes_le": "53f030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.d.lu f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.d.lu f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.d.lu f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.d.lu f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.d.lu f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.d.lu f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.d.lu f0, x1",
+      "exit": 0,
+      "bytes_le": "53f030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.d.lu f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.d.lu f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.d.lu f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.d.lu f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.d.lu f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.d.lu",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.d.lu f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f030d2",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "none",
+      "text": "fcvt.s.w f0, x1",
+      "exit": 0,
+      "bytes_le": "53f000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rne",
+      "text": "fcvt.s.w f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rtz",
+      "text": "fcvt.s.w f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rdn",
+      "text": "fcvt.s.w f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rup",
+      "text": "fcvt.s.w f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "rmm",
+      "text": "fcvt.s.w f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "gcc",
+      "rm_text": "dyn",
+      "text": "fcvt.s.w f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "none",
+      "text": "fcvt.s.w f0, x1",
+      "exit": 0,
+      "bytes_le": "53f000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rne",
+      "text": "fcvt.s.w f0, x1, rne",
+      "exit": 0,
+      "bytes_le": "538000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rtz",
+      "text": "fcvt.s.w f0, x1, rtz",
+      "exit": 0,
+      "bytes_le": "539000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rdn",
+      "text": "fcvt.s.w f0, x1, rdn",
+      "exit": 0,
+      "bytes_le": "53a000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rup",
+      "text": "fcvt.s.w f0, x1, rup",
+      "exit": 0,
+      "bytes_le": "53b000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "rmm",
+      "text": "fcvt.s.w f0, x1, rmm",
+      "exit": 0,
+      "bytes_le": "53c000d0",
+      "stderr": ""
+    },
+    {
+      "op": "fcvt.s.w",
+      "exact": false,
+      "driver": "clang",
+      "rm_text": "dyn",
+      "text": "fcvt.s.w f0, x1, dyn",
+      "exit": 0,
+      "bytes_le": "53f000d0",
+      "stderr": ""
+    }
+  ]
+}

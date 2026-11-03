@@ -1,0 +1,287 @@
+{
+  "scope": "Archived compiler bytes and actual Make JSON independently audited; compiler behavior failure separately reproduced",
+  "jobs": [
+    {
+      "job": "bf16-vl0",
+      "json_sha256": "5074c1a90373daf78c71ecb4d78f8e8f313914c11575b473a6df6b565ae42a43",
+      "toolchain_results_sha256": "dc878528ef72d879602ce963f5b36b57d91b160222651b3328b07ed426631d50",
+      "gen": 6,
+      "compiler_checks": 36,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "bf16-vl1",
+      "json_sha256": "626f62fa6803af7ed1a4932a9539a935e42bdc681c068643290c8b2f7e4504e2",
+      "toolchain_results_sha256": "33e1ecec7772c41aa33f1a06a1dc2d1afbe50c8590ede34b0263506520bd63bb",
+      "gen": 6,
+      "compiler_checks": 36,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "c-addi4spn",
+      "json_sha256": "cfa834bd956fb4b9b44b236fd5994c66a31bb568094c796a6e629458bbdc7372",
+      "toolchain_results_sha256": "b8cad7d4c3656b12e995d9bc7c817f691fff391a071ee4aa130c764a54ccb072",
+      "gen": 1,
+      "compiler_checks": 6,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "fleq-D-qNaN",
+      "json_sha256": "a40741dc93a40d3269aa6784d17fd97c19539433998436af4f2855d097db5431",
+      "toolchain_results_sha256": "69c80f68031cce6a43047875fab199e52eb9565aa72617c6ecf10715b4eb05a1",
+      "gen": 8,
+      "compiler_checks": 48,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "fleq-H-qNaN",
+      "json_sha256": "10b938755d6e84752eb510b757e754fe3bc2e8295f605752d6647f1f946f1792",
+      "toolchain_results_sha256": "785f3c55613389e337c20a63abb37eb3ad58efdb7d411ce2185d1cec5d425554",
+      "gen": 8,
+      "compiler_checks": 48,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "fleq-S-qNaN",
+      "json_sha256": "2f53d23fec7fda765fec110b30772018ed7e7fd045a5e7cb8b9cea384f047db7",
+      "toolchain_results_sha256": "62afc4fee91cfa9452651e7c0c17e5f544aef9929fe3982620e3f86023601529",
+      "gen": 8,
+      "compiler_checks": 48,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "sqrt-D",
+      "json_sha256": "a53be29866fbdd1c77dc66096eb37bcb0357c319e307c0d387e6aa6677ba4cb3",
+      "toolchain_results_sha256": "8a20954fa4beb2fbe3966c872ecda17d21ebbe037a782cc8545580abe8e1509e",
+      "gen": 24,
+      "compiler_checks": 144,
+      "unexpected_failures": [
+        {
+          "index": 3,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.s f0, f0, rdn",
+          "exit": 1,
+          "expected": "53200042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/3-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/3-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.s f0,f0,rdn'\n"
+        },
+        {
+          "index": 6,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.s f0, f0, dyn",
+          "exit": 1,
+          "expected": "53700042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/6-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/6-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.s f0,f0,dyn'\n"
+        },
+        {
+          "index": 10,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.s f0, f0, rup",
+          "exit": 1,
+          "expected": "53300042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/10-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/10-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.s f0,f0,rup'\n"
+        },
+        {
+          "index": 16,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.s f0, f0, rne",
+          "exit": 1,
+          "expected": "53000042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/16-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/16-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.s f0,f0,rne'\n"
+        },
+        {
+          "index": 20,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.s f0, f0, rmm",
+          "exit": 1,
+          "expected": "53400042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/20-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/20-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.s f0,f0,rmm'\n"
+        },
+        {
+          "index": 21,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.s f0, f0, rtz",
+          "exit": 1,
+          "expected": "53100042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/21-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-D/toolchains/21-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.s f0,f0,rtz'\n"
+        }
+      ],
+      "all_pass": false
+    },
+    {
+      "job": "sqrt-H",
+      "json_sha256": "e9d7815f252c4d316228b157cb3768e2aebbf2631ecb086f78f649f5888ba31a",
+      "toolchain_results_sha256": "a4c6181735acc8be888e2afae53a35fba5320615cf9fcd006c7ca25dd94b6f24",
+      "gen": 36,
+      "compiler_checks": 216,
+      "unexpected_failures": [
+        {
+          "index": 3,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.h f0, f0, rne",
+          "exit": 1,
+          "expected": "53002042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/3-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/3-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.h f0,f0,rne'\n"
+        },
+        {
+          "index": 4,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.h f0, f0, rdn",
+          "exit": 1,
+          "expected": "53202042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/4-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/4-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.h f0,f0,rdn'\n"
+        },
+        {
+          "index": 8,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.s.h f0, f0, rtz",
+          "exit": 1,
+          "expected": "53102040",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/8-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/8-gcc-mnemonic.s:3: Error: illegal operands `fcvt.s.h f0,f0,rtz'\n"
+        },
+        {
+          "index": 10,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.s.h f0, f0, rdn",
+          "exit": 1,
+          "expected": "53202040",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/10-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/10-gcc-mnemonic.s:3: Error: illegal operands `fcvt.s.h f0,f0,rdn'\n"
+        },
+        {
+          "index": 11,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.h f0, f0, rmm",
+          "exit": 1,
+          "expected": "53402042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/11-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/11-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.h f0,f0,rmm'\n"
+        },
+        {
+          "index": 12,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.h f0, f0, rtz",
+          "exit": 1,
+          "expected": "53102042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/12-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/12-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.h f0,f0,rtz'\n"
+        },
+        {
+          "index": 15,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.h f0, f0, dyn",
+          "exit": 1,
+          "expected": "53702042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/15-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/15-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.h f0,f0,dyn'\n"
+        },
+        {
+          "index": 18,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.d.h f0, f0, rup",
+          "exit": 1,
+          "expected": "53302042",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/18-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/18-gcc-mnemonic.s:3: Error: illegal operands `fcvt.d.h f0,f0,rup'\n"
+        },
+        {
+          "index": 23,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.s.h f0, f0, dyn",
+          "exit": 1,
+          "expected": "53702040",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/23-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/23-gcc-mnemonic.s:3: Error: illegal operands `fcvt.s.h f0,f0,dyn'\n"
+        },
+        {
+          "index": 26,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.s.h f0, f0, rup",
+          "exit": 1,
+          "expected": "53302040",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/26-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/26-gcc-mnemonic.s:3: Error: illegal operands `fcvt.s.h f0,f0,rup'\n"
+        },
+        {
+          "index": 27,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.s.h f0, f0, rne",
+          "exit": 1,
+          "expected": "53002040",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/27-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/27-gcc-mnemonic.s:3: Error: illegal operands `fcvt.s.h f0,f0,rne'\n"
+        },
+        {
+          "index": 34,
+          "driver": "gcc",
+          "kind": "mnemonic",
+          "text": "fcvt.s.h f0, f0, rmm",
+          "exit": 1,
+          "expected": "53402040",
+          "stderr": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/34-gcc-mnemonic.s: Assembler messages:\n/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/representations/model-8ad5e8e/sqrt-H/toolchains/34-gcc-mnemonic.s:3: Error: illegal operands `fcvt.s.h f0,f0,rmm'\n"
+        }
+      ],
+      "all_pass": false
+    },
+    {
+      "job": "sqrt-S",
+      "json_sha256": "5c7511220f2dc5f6aa224c8750ed2131df7e2e840bad7b676bceebd6d8d39179",
+      "toolchain_results_sha256": "e5d637b3b9e4554f0f27d5affc366528c2950a860fb4701d572bf976cc004773",
+      "gen": 12,
+      "compiler_checks": 72,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "vfncvt-i8",
+      "json_sha256": "391dc500962085af34ff0becdfb2908e79d2a3576e4aff06ca41e8043d67b3f2",
+      "toolchain_results_sha256": "dc54d2146c757c60c7a541c41f1cbe63a5a6d9f6fc4d51acd8a2374e67948d04",
+      "gen": 1,
+      "compiler_checks": 6,
+      "unexpected_failures": [],
+      "all_pass": true
+    },
+    {
+      "job": "vfncvt-ui8",
+      "json_sha256": "c0384149a14a8e97544616eec458e13d6ff8fa5000027971258097914b8eb4f7",
+      "toolchain_results_sha256": "8c8286fb794e98644280bf37d38b1ada99fa90e72af19124bb0836cc8b1dabc5",
+      "gen": 1,
+      "compiler_checks": 6,
+      "unexpected_failures": [],
+      "all_pass": true
+    }
+  ],
+  "representation_gen": 111,
+  "representation_checks": 666,
+  "representation_unexpected_failures": 18,
+  "make": {
+    "json_sha256": "de742d75190d3e264b5889fde36f697d4fe03eac8d0bf8a9e27eaaef68f04ee4",
+    "toolchain_results_sha256": "e5695dd3780f2094772989986873eaa1af429a9db084692ca05f6854abc0e461",
+    "gen": 8,
+    "compiler_checks": 48,
+    "unexpected_failures": [],
+    "all_pass": true,
+    "actual_result_observable_cases": 4,
+    "actual_source_pairs": {
+      "finite/nan": 2,
+      "nan/nan": 2,
+      "finite/finite": 2,
+      "nan/finite": 2
+    },
+    "result_sha256": "969fea0d173d2f3115b10c7be3c73ea3efcf461cabf0f965d2af75cafd5adf3d"
+  }
+}

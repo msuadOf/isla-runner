@@ -1,0 +1,172 @@
+{
+  "status": "PASS selected CFG relationships",
+  "ir_sha256": "a699d34c4c9c52da15d6924f6788d641880b2c7f331b0f55fce42bddc576bbdc",
+  "checks": [
+    {
+      "function": "zieee_add16_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 2,
+      "finite_gate_pc": 49,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_sub16_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 2,
+      "finite_gate_pc": 47,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_mul16_exceptions",
+      "reason_branches": 2,
+      "source_classifications": 2,
+      "finite_gate_pc": 42,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_div16_exceptions",
+      "reason_branches": 3,
+      "source_classifications": 2,
+      "finite_gate_pc": 69,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_sqrt16_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 1,
+      "finite_gate_pc": 43,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_fma16_exceptions",
+      "reason_branches": 3,
+      "source_classifications": 3,
+      "finite_gate_pc": 139,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_add32_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 2,
+      "finite_gate_pc": 49,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_sub32_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 2,
+      "finite_gate_pc": 47,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_mul32_exceptions",
+      "reason_branches": 2,
+      "source_classifications": 2,
+      "finite_gate_pc": 42,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_div32_exceptions",
+      "reason_branches": 3,
+      "source_classifications": 2,
+      "finite_gate_pc": 69,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_sqrt32_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 1,
+      "finite_gate_pc": 43,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_fma32_exceptions",
+      "reason_branches": 3,
+      "source_classifications": 3,
+      "finite_gate_pc": 139,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_add64_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 2,
+      "finite_gate_pc": 49,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_sub64_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 2,
+      "finite_gate_pc": 47,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_mul64_exceptions",
+      "reason_branches": 2,
+      "source_classifications": 2,
+      "finite_gate_pc": 42,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_div64_exceptions",
+      "reason_branches": 3,
+      "source_classifications": 2,
+      "finite_gate_pc": 69,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_sqrt64_exceptions",
+      "reason_branches": 1,
+      "source_classifications": 1,
+      "finite_gate_pc": 43,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zieee_fma64_exceptions",
+      "reason_branches": 3,
+      "source_classifications": 3,
+      "finite_gate_pc": 139,
+      "wide_arithmetic_calls": 2,
+      "all_math_true_only_and_dominated": true
+    },
+    {
+      "function": "zaccrue_fflags",
+      "changed_and_Ext_F_dominate_bits_write": true,
+      "callbacks_after_merge": true
+    },
+    {
+      "function": "zieee_f16_rounded_exceptions",
+      "three_semantic_flag_exits": true
+    },
+    {
+      "function": "zieee_f32_rounded_exceptions",
+      "three_semantic_flag_exits": true
+    },
+    {
+      "function": "zieee_f64_rounded_exceptions",
+      "three_semantic_flag_exits": true
+    },
+    {
+      "function": "zieee_exact_threshold_exceptions",
+      "three_semantic_flag_exits": true
+    }
+  ],
+  "scope": "18实际helper、F1及4舍入出口的CFG；不代替剩余包装/窄化/ROD检查、SMT可达性或动态预算"
+}

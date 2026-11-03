@@ -1,0 +1,14 @@
+[
+  {
+    "file": "agents/float_review_closure_20261102/validation/representations/run.py",
+    "new_sha256": "612ebaf2233ffedff9087cf322bff67e3725b50377a2627f23d36474dd90eddd",
+    "old_sha256": "0ad192df93ffc68a6a5e43635530b4a50a34c3ab799b150822da3f86baa8b5c2",
+    "inverse_two_changes_exactly_recovers_old": true
+  },
+  {
+    "file": "agents/float_review_closure_20261102/validation/make/run.py",
+    "new_sha256": "40f6e03a6d446176456eb33ce9339867edb74fab88a95a2acc846bffd5557cab",
+    "old_sha256": "783b540df7d9f0bd3f1c67347a34fdab50770cb57478fe0d183d4dfc3923283d",
+    "inverse_two_changes_exactly_recovers_old": true
+  }
+]

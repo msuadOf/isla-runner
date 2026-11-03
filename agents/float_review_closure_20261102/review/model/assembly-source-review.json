@@ -1,0 +1,41 @@
+{
+  "stage": "assembly source and isolated actual forward only",
+  "status": "PASS within scope",
+  "baseline": "8ad5e8e9e0fc2a567a3b989a3738698f5c520bde",
+  "source_files": [
+    {
+      "file": "model/extensions/FD/dext_insts.sail",
+      "sha256": "1e0397fbc2988383a064a6cfc26f8870464122cd136fc62537e0612ab07ee688",
+      "new_exact_RNE_clauses": [
+        "FCVT_D_S",
+        "FCVT_D_W",
+        "FCVT_D_WU"
+      ],
+      "all_original_bytes_restored_after_removing_5_insertions": true,
+      "specific_precedes_original_generic": true
+    },
+    {
+      "file": "model/extensions/FD/zfh_insts.sail",
+      "sha256": "f5e7311bc490c2cb728fc8702d0491be263dee0cb822e32648bc33c405f9512e",
+      "new_exact_RNE_clauses": [
+        "FCVT_S_H",
+        "FCVT_D_H"
+      ],
+      "all_original_bytes_restored_after_removing_5_insertions": true,
+      "specific_precedes_original_generic": true
+    }
+  ],
+  "forward_probe_source_sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60",
+  "independent_C_rerun_exit": 0,
+  "independent_forward_cases": 1104,
+  "reverse_execution": "NOT VERIFIED: baseline and candidate string-concat reverse marked NonExec; interpreter TODO is not string parsing",
+  "guard_policy": "Specific-first ordered aliases; original generic unguarded bytes retained. No claim of disjoint instruction-domain guards.",
+  "not_signed": [
+    "full-model strict generation",
+    "final model commit",
+    "actual new IR forward order",
+    "full JSON toolchain representations",
+    "reverse runtime parsing",
+    "dynamic numeric or Clause budget"
+  ]
+}

@@ -1,0 +1,97 @@
+diff --git a/model/extensions/FD/dext_insts.sail b/model/extensions/FD/dext_insts.sail
+index 919b49e..c4e26b1 100644
+--- a/model/extensions/FD/dext_insts.sail
++++ b/model/extensions/FD/dext_insts.sail
+@@ -605,11 +605,24 @@ mapping f_un_rm_ff_type_mnemonic_D : f_un_rm_ff_op_D <-> string = {
+     FCVT_D_S  <-> "fcvt.d.s"
+ }
+ 
+-mapping clause assembly = F_UN_RM_FF_TYPE_D(rs1, rm, rd, op)
+-                      <-> f_un_rm_ff_type_mnemonic_D(op)
++mapping clause assembly = F_UN_RM_FF_TYPE_D(rs1, RM_RNE, rd, FCVT_D_S)
++                      <-> "fcvt.d.s" ^ spc() ^ freg_or_reg_name(rd)
++                          ^ sep() ^ freg_or_reg_name(rs1)
++
++mapping clause assembly =
++  forwards F_UN_RM_FF_TYPE_D(rs1, rm, rd, op)
++      => f_un_rm_ff_type_mnemonic_D(op)
+                           ^ spc() ^ freg_or_reg_name(rd)
+                           ^ sep() ^ freg_or_reg_name(rs1)
+                           ^ sep() ^ frm_mnemonic(rm)
++  when op != FCVT_D_S | rm != RM_RNE
++
++mapping clause assembly =
++  backwards f_un_rm_ff_type_mnemonic_D(op)
++            ^ spc() ^ freg_or_reg_name(rd)
++            ^ sep() ^ freg_or_reg_name(rs1)
++            ^ sep() ^ frm_mnemonic(rm)
++      => F_UN_RM_FF_TYPE_D(rs1, rm, rd, op)
+ 
+ mapping f_un_rm_fx_type_mnemonic_D : f_un_rm_fx_op_D <-> string = {
+     FCVT_W_D  <-> "fcvt.w.d",
+@@ -631,11 +644,28 @@ mapping f_un_rm_xf_type_mnemonic_D : f_un_rm_xf_op_D <-> string = {
+     FCVT_D_LU <-> "fcvt.d.lu",
+ }
+ 
+-mapping clause assembly = F_UN_RM_XF_TYPE_D(rs1, rm, rd, op)
+-                      <-> f_un_rm_xf_type_mnemonic_D(op)
++mapping clause assembly = F_UN_RM_XF_TYPE_D(rs1, RM_RNE, rd, FCVT_D_W)
++                      <-> "fcvt.d.w" ^ spc() ^ freg_or_reg_name(rd)
++                          ^ sep() ^ reg_name(rs1)
++
++mapping clause assembly = F_UN_RM_XF_TYPE_D(rs1, RM_RNE, rd, FCVT_D_WU)
++                      <-> "fcvt.d.wu" ^ spc() ^ freg_or_reg_name(rd)
++                          ^ sep() ^ reg_name(rs1)
++
++mapping clause assembly =
++  forwards F_UN_RM_XF_TYPE_D(rs1, rm, rd, op)
++      => f_un_rm_xf_type_mnemonic_D(op)
+                           ^ spc() ^ freg_or_reg_name(rd)
+                           ^ sep() ^ reg_name(rs1)
+                           ^ sep() ^ frm_mnemonic(rm)
++  when (op != FCVT_D_W & op != FCVT_D_WU) | rm != RM_RNE
++
++mapping clause assembly =
++  backwards f_un_rm_xf_type_mnemonic_D(op)
++            ^ spc() ^ freg_or_reg_name(rd)
++            ^ sep() ^ reg_name(rs1)
++            ^ sep() ^ frm_mnemonic(rm)
++      => F_UN_RM_XF_TYPE_D(rs1, rm, rd, op)
+ 
+ // *****************************************************************
+ // Binary, no rounding mode
+diff --git a/model/extensions/FD/zfh_insts.sail b/model/extensions/FD/zfh_insts.sail
+index 464e361..e7bc51f 100644
+--- a/model/extensions/FD/zfh_insts.sail
++++ b/model/extensions/FD/zfh_insts.sail
+@@ -735,11 +735,28 @@ mapping f_un_rm_ff_type_mnemonic_H : f_un_rm_ff_op_H <-> string = {
+     FCVT_D_H  <-> "fcvt.d.h",
+ }
+ 
+-mapping clause assembly = F_UN_RM_FF_TYPE_H(rs1, rm, rd, op)
+-                      <-> f_un_rm_ff_type_mnemonic_H(op)
++mapping clause assembly = F_UN_RM_FF_TYPE_H(rs1, RM_RNE, rd, FCVT_S_H)
++                      <-> "fcvt.s.h" ^ spc() ^ freg_or_reg_name(rd)
++                          ^ sep() ^ freg_or_reg_name(rs1)
++
++mapping clause assembly = F_UN_RM_FF_TYPE_H(rs1, RM_RNE, rd, FCVT_D_H)
++                      <-> "fcvt.d.h" ^ spc() ^ freg_or_reg_name(rd)
++                          ^ sep() ^ freg_or_reg_name(rs1)
++
++mapping clause assembly =
++  forwards F_UN_RM_FF_TYPE_H(rs1, rm, rd, op)
++      => f_un_rm_ff_type_mnemonic_H(op)
+                           ^ spc() ^ freg_or_reg_name(rd)
+                           ^ sep() ^ freg_or_reg_name(rs1)
+                           ^ sep() ^ frm_mnemonic(rm)
++  when (op != FCVT_S_H & op != FCVT_D_H) | rm != RM_RNE
++
++mapping clause assembly =
++  backwards f_un_rm_ff_type_mnemonic_H(op)
++            ^ spc() ^ freg_or_reg_name(rd)
++            ^ sep() ^ freg_or_reg_name(rs1)
++            ^ sep() ^ frm_mnemonic(rm)
++      => F_UN_RM_FF_TYPE_H(rs1, rm, rd, op)
+ 
+ mapping f_un_rm_fx_type_mnemonic_H : f_un_rm_fx_op_H <-> string = {
+     FCVT_W_H  <-> "fcvt.w.h",

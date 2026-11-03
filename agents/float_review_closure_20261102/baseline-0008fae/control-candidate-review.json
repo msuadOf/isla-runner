@@ -1,0 +1,37 @@
+{
+  "scope": "Second Sol exact candidate source/Boolean equivalence only; no strict/IR/dynamic or performance PASS",
+  "base_commit": "21418d0b0d4942fae20061ed580ee04aff4a8a61",
+  "candidate_sha256": "866f85a607b112d57a0ea8c6d9a85c1befb36ef11ea39b7058a252606df257cd",
+  "base_sha256": "23fda9824c2280609062bbe2b9766597681c29af13a1e9cf1be045d9106757a8",
+  "complete_file_reconstruction": "byte-for-byte equal",
+  "changed_functions": [
+    "ieee_bf16_from_f32_exceptions",
+    "ieee_convert32_to_16_exceptions",
+    "ieee_convert64_to_16_exceptions",
+    "ieee_convert64_to_32_exceptions",
+    "ieee_exact_threshold_exceptions",
+    "ieee_f16_rounded_exceptions",
+    "ieee_f32_rounded_exceptions",
+    "ieee_f64_rounded_exceptions",
+    "ieee_fp_to_int_core",
+    "ieee_rod32_to_16",
+    "ieee_rod64_to_32",
+    "ieee_round16_exceptions",
+    "ieee_round32_exceptions",
+    "ieee_round64_exceptions"
+  ],
+  "deleted_functions": [
+    "ieee_mask_exact_exceptions"
+  ],
+  "unchanged_let_start_expressions": 371,
+  "output_conditionals_removed": 18,
+  "deleted_mask_conditionals": 1,
+  "boolean_of_uf_nx_tuples": 8,
+  "boolean_invalid_nx_tuples": 4,
+  "jam16_cases": 131072,
+  "finite_classification_checks": 9208,
+  "mask_identity_tuples": 8,
+  "mask_remaining_tracked_references": 0,
+  "frozen_214_core_unchanged": true,
+  "source_pass": true
+}

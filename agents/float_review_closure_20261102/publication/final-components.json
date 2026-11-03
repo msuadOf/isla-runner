@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-11-03T09:38:41.909195+00:00",
+  "method": "非强推；明确SHA refspec；逐项ls-remote回读",
+  "repositories": [
+    {
+      "url": "https://github.com/msuadOf/sail-riscv.git",
+      "branch": "feat/sail-riscv-general-float-by-model-20261022",
+      "before": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+      "after": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+      "remote_readback_matches": true
+    },
+    {
+      "url": "https://github.com/ariscv/isla.git",
+      "branch": "feat/float-support",
+      "before": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+      "after": "591693df2bc32019ea300511509ed683df09522e",
+      "remote_readback_matches": true
+    }
+  ],
+  "root_float_publication": "随后由包含本文的根float提交固定；不自引用父提交SHA"
+}

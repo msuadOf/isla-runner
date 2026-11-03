@@ -1,0 +1,15 @@
+{
+  "config": "rv64d_v128_e64",
+  "old_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "new_sha256": "5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a",
+  "old_functions": 2053,
+  "new_functions": 2053,
+  "added": [],
+  "removed": [],
+  "changed": [
+    "zassembly_forwards",
+    "zassembly_forwards_infallible",
+    "zassembly_forwards_matches"
+  ],
+  "zexecute_unchanged": true
+}

@@ -1,0 +1,63 @@
+{
+  "scope": "SYMBOLIC actual extracted mappings C generation and runtime",
+  "forward_cases": 1104,
+  "ordinary_output_equal": true,
+  "stages": [
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "36",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/sail",
+        "-D",
+        "SYMBOLIC",
+        "--strict-var",
+        "--strict-bitvector",
+        "--strict-exponentials",
+        "--memo-z3-path",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-independent/current/symbolic-memo",
+        "-c",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-independent/current/probe-symbolic",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/sail-riscv/model/prelude/prelude.sail",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-independent/current/probe-forward.sail"
+      ],
+      "exit_code": 0,
+      "log_sha256": "87f2d4c98c1b3a10f2d6af6f201fbf33bc260f42b6c0828fff4b6c40e9dfb8ac"
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "36",
+        "cc",
+        "-O1",
+        "-I",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-independent/current/probe-symbolic.c",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/sail.c",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/sail_failure.c",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/rts.c",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/elf.c",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/sail_config.c",
+        "/data1/baiyifan/workplace/isla-runner/isla/target/float-solve-evidence/unified-backend-build/toolchain-a198-v2-20260927/sail-src/lib/cJSON.c",
+        "-lgmp",
+        "-lz",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-independent/current/probe-symbolic"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "36",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/assembly-independent/current/probe-symbolic"
+      ],
+      "exit_code": 0,
+      "log_sha256": "60abc0c999a11eeb743c2899fc94416cd5e6da0df39fc7a6a81d8cbd04b5d3dc"
+    }
+  ]
+}

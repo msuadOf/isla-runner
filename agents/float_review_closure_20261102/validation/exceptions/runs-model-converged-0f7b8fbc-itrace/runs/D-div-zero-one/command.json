@@ -1,0 +1,83 @@
+{
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "taskset",
+    "-c",
+    "29",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/isarch",
+    "-A",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/D-div-zero-one/constrained.ir",
+    "-C",
+    "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/D-div-zero-one/config.toml",
+    "-T",
+    "1",
+    "--smt-timeout",
+    "600s",
+    "--tastic",
+    "qffp",
+    "solve-state",
+    "--clause=F_BIN_RM_TYPE_D"
+  ],
+  "job": {
+    "name": "D-div-zero-one",
+    "family": "scalar",
+    "clause": "F_BIN_RM_TYPE_D",
+    "fields": [
+      1,
+      0,
+      "zRM_RNE",
+      3,
+      "zFDIV_D"
+    ],
+    "initial": {
+      "mstatus": 26112,
+      "fcsr": 0,
+      "f0": "0x0",
+      "f1": "0x3ff0000000000000",
+      "f2": "0x0",
+      "f3": "0x0"
+    },
+    "expected": {
+      "name": "D-div-zero-one",
+      "family": "scalar",
+      "width": 64,
+      "op": "div",
+      "fmt": "f64",
+      "dst": null,
+      "rm": 0,
+      "a": "0x0",
+      "b": "0x3ff0000000000000",
+      "c": null,
+      "reason": "zero over finite nonzero",
+      "expected_bits": "0x0",
+      "oracle_raw_bits": "0x0",
+      "expected_flags": "0x0",
+      "oracle_argv": [
+        "--op",
+        "div",
+        "--fmt",
+        "f64",
+        "--rm",
+        "0",
+        "--a",
+        "0x0",
+        "--b",
+        "0x3ff0000000000000"
+      ]
+    },
+    "expected_full_bits": "0x0"
+  },
+  "binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "base_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "constrained_ir_sha256": "f4c30556d4beb1afd15d28f8d43787259d539f85cbd1958d94899de4ca044ff1",
+  "config_sha256": "bb55af286a862d751314054a15ef1dfadd20b196061d6cbc9582af499a3b89e7",
+  "cpu": 29,
+  "environment": {
+    "LD_PRELOAD": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/seed_control.so",
+    "ISLA_ABLATION_SEED": "17",
+    "ISLA_ABLATION_SEED_LOG": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/exceptions/runs-model-converged-0f7b8fbc-itrace/runs/D-div-zero-one/seed-intercept.log"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "validation/run_clause.py": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1",
+  "validation/freeze_source.py": "db7d2927980c6e723538c65a0915158d78e1758a07ac966d9f824199588ea339",
+  "validation/procedure.md": "a2fac8f7465a2b835d535f8929afde56f64d94a7856aa421925d5a663b39f132",
+  "validation/inputs.model-8ad5e8e-itrace.json": "0e57cf681917c9a3f05070c146b877b7ed30e108dc2135d3f31740966965f90c",
+  "validation/bin/manifest-interrupt-itrace.json": "a795a0b97907190ec880b5b7948b44211673fefb7837b67103ee9e9799c793e6",
+  "validation/bin/fingerprint-isarch-interrupt-itrace.json": "5dabbdab68a658e9db4c9ca9abdf1d00a13caf6dd4bf443a73b85a0f55d96d3a",
+  "validation/bin/fingerprint-isla-lib-interrupt-itrace.json": "27e86f333549f97c0f0ceeb8e5bb3e7a6717d8251a2756654ebfadffb2f82e5f",
+  "inventory/affected-clauses.json": "6f3fc71ea2c9c6ebea3e21a1bdbf76db144db8464e0313e9f00655c8c7ad603c",
+  "review/enum/watchdog-itrace-result.json": "2bd0a0e7c20f83c6a412f53cf9305ffd78c2d1b7a91e5ca9ff39e512df0b6809",
+  "review/enum/harness-smoke-itrace/result.json": "13c27f82e0862af5d62719ac952dd7a3bfdd28d71b29b553a54fe7fe81453dab"
+}

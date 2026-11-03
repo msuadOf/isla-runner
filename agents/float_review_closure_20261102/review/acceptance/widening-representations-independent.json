@@ -1,0 +1,245 @@
+{
+  "scope": "Independent assembler behavior probes; no model execution",
+  "rows": [
+    {
+      "text": "fcvt.d.s f0, f0",
+      "driver": "gcc",
+      "kind": "no-rm",
+      "exit": 0,
+      "actual_bytes": "53000042",
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.s f0, f0, rne",
+      "driver": "gcc",
+      "kind": "rne",
+      "exit": 1,
+      "actual_bytes": null,
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": "/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s:3: Error: illegal operands `fcvt.d.s f0,f0,rne'\n"
+    },
+    {
+      "text": "fcvt.d.s f0, f0, rdn",
+      "driver": "gcc",
+      "kind": "rdn",
+      "exit": 1,
+      "actual_bytes": null,
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": "/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s:3: Error: illegal operands `fcvt.d.s f0,f0,rdn'\n"
+    },
+    {
+      "text": ".insn 4, 0x42002053",
+      "driver": "gcc",
+      "kind": "insn-rdn",
+      "exit": 0,
+      "actual_bytes": "53200042",
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.s f0, f0",
+      "driver": "clang",
+      "kind": "no-rm",
+      "exit": 0,
+      "actual_bytes": "53000042",
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.s f0, f0, rne",
+      "driver": "clang",
+      "kind": "rne",
+      "exit": 0,
+      "actual_bytes": "53000042",
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.s f0, f0, rdn",
+      "driver": "clang",
+      "kind": "rdn",
+      "exit": 0,
+      "actual_bytes": "53200042",
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": ""
+    },
+    {
+      "text": ".insn 4, 0x42002053",
+      "driver": "clang",
+      "kind": "insn-rdn",
+      "exit": 0,
+      "actual_bytes": "53200042",
+      "canonical_bytes": "53000042",
+      "rm2_bytes": "53200042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.h f0, f0",
+      "driver": "gcc",
+      "kind": "no-rm",
+      "exit": 0,
+      "actual_bytes": "53002042",
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.h f0, f0, rne",
+      "driver": "gcc",
+      "kind": "rne",
+      "exit": 1,
+      "actual_bytes": null,
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": "/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s:3: Error: illegal operands `fcvt.d.h f0,f0,rne'\n"
+    },
+    {
+      "text": "fcvt.d.h f0, f0, rdn",
+      "driver": "gcc",
+      "kind": "rdn",
+      "exit": 1,
+      "actual_bytes": null,
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": "/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s:3: Error: illegal operands `fcvt.d.h f0,f0,rdn'\n"
+    },
+    {
+      "text": ".insn 4, 0x42202053",
+      "driver": "gcc",
+      "kind": "insn-rdn",
+      "exit": 0,
+      "actual_bytes": "53202042",
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.h f0, f0",
+      "driver": "clang",
+      "kind": "no-rm",
+      "exit": 0,
+      "actual_bytes": "53002042",
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.h f0, f0, rne",
+      "driver": "clang",
+      "kind": "rne",
+      "exit": 0,
+      "actual_bytes": "53002042",
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.d.h f0, f0, rdn",
+      "driver": "clang",
+      "kind": "rdn",
+      "exit": 0,
+      "actual_bytes": "53202042",
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": ""
+    },
+    {
+      "text": ".insn 4, 0x42202053",
+      "driver": "clang",
+      "kind": "insn-rdn",
+      "exit": 0,
+      "actual_bytes": "53202042",
+      "canonical_bytes": "53002042",
+      "rm2_bytes": "53202042",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.s.h f0, f0",
+      "driver": "gcc",
+      "kind": "no-rm",
+      "exit": 0,
+      "actual_bytes": "53002040",
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.s.h f0, f0, rne",
+      "driver": "gcc",
+      "kind": "rne",
+      "exit": 1,
+      "actual_bytes": null,
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": "/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s:3: Error: illegal operands `fcvt.s.h f0,f0,rne'\n"
+    },
+    {
+      "text": "fcvt.s.h f0, f0, rdn",
+      "driver": "gcc",
+      "kind": "rdn",
+      "exit": 1,
+      "actual_bytes": null,
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": "/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s: Assembler messages:\n/home/baiyifan/.claude/tmp/float-widening-repr-o448r40z/x.s:3: Error: illegal operands `fcvt.s.h f0,f0,rdn'\n"
+    },
+    {
+      "text": ".insn 4, 0x40202053",
+      "driver": "gcc",
+      "kind": "insn-rdn",
+      "exit": 0,
+      "actual_bytes": "53202040",
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.s.h f0, f0",
+      "driver": "clang",
+      "kind": "no-rm",
+      "exit": 0,
+      "actual_bytes": "53002040",
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.s.h f0, f0, rne",
+      "driver": "clang",
+      "kind": "rne",
+      "exit": 0,
+      "actual_bytes": "53002040",
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": ""
+    },
+    {
+      "text": "fcvt.s.h f0, f0, rdn",
+      "driver": "clang",
+      "kind": "rdn",
+      "exit": 0,
+      "actual_bytes": "53202040",
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": ""
+    },
+    {
+      "text": ".insn 4, 0x40202053",
+      "driver": "clang",
+      "kind": "insn-rdn",
+      "exit": 0,
+      "actual_bytes": "53202040",
+      "canonical_bytes": "53002040",
+      "rm2_bytes": "53202040",
+      "stderr": ""
+    }
+  ]
+}

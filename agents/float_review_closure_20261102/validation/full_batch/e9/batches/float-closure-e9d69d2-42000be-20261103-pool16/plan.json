@@ -1,0 +1,345 @@
+{
+  "batch": "float-closure-e9d69d2-42000be-20261103-pool16",
+  "created_utc": "2026-11-02T17:14:57.697261+00:00",
+  "inputs": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/inputs.model-e9d69d2-itrace.json",
+  "inputs_sha256": "eb830e77f6d31e88574e018ef08e1eb1d5f47f2e9369169d9fd4613877e6973a",
+  "affected_manifest": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/full_batch/e9/affected-clauses.json",
+  "affected_manifest_sha256": "7b3c98bc0052c8894c68fea73ded1e97dd6748e7b90394d06a61c1f04ab930e3",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "count": 77,
+  "affected_count": 64,
+  "compatibility_count": 13,
+  "ordered_jobs": [
+    "F_BIN_RM_TYPE_S",
+    "VFUNARY0",
+    "VFNUNARY0",
+    "F_UN_RM_FX_TYPE_D",
+    "VFUNARY1",
+    "RFVVTYPE",
+    "RFWVVTYPE",
+    "VFWMACCBF16_VV",
+    "VFWMACCBF16_VF",
+    "VFNCVTBF16_F_F_W",
+    "VFWCVTBF16_F_F_V",
+    "FCVTMOD_W_D",
+    "FCVT_BF16_S",
+    "FCVT_S_BF16",
+    "FLEQ_D",
+    "FLEQ_H",
+    "FLEQ_S",
+    "FLI_D",
+    "FLI_H",
+    "FLI_S",
+    "FLTQ_D",
+    "FLTQ_H",
+    "FLTQ_S",
+    "FMAXM_D",
+    "FMAXM_H",
+    "FMAXM_S",
+    "FMINM_D",
+    "FMINM_H",
+    "FMINM_S",
+    "FROUNDNX_D",
+    "FROUNDNX_H",
+    "FROUNDNX_S",
+    "FROUND_D",
+    "FROUND_H",
+    "FROUND_S",
+    "FVFMATYPE",
+    "FVFMTYPE",
+    "FVFTYPE",
+    "FVVMATYPE",
+    "FVVMTYPE",
+    "FVVTYPE",
+    "FWFTYPE",
+    "FWVFMATYPE",
+    "FWVFTYPE",
+    "FWVTYPE",
+    "FWVVMATYPE",
+    "FWVVTYPE",
+    "F_BIN_F_TYPE_D",
+    "F_BIN_F_TYPE_H",
+    "F_BIN_RM_TYPE_D",
+    "F_BIN_RM_TYPE_H",
+    "F_BIN_TYPE_F_S",
+    "F_BIN_TYPE_X_S",
+    "F_BIN_X_TYPE_D",
+    "F_BIN_X_TYPE_H",
+    "F_MADD_TYPE_D",
+    "F_MADD_TYPE_H",
+    "F_MADD_TYPE_S",
+    "F_UN_F_TYPE_D",
+    "F_UN_F_TYPE_H",
+    "F_UN_RM_FF_TYPE_D",
+    "F_UN_RM_FF_TYPE_H",
+    "F_UN_RM_FF_TYPE_S",
+    "F_UN_RM_FX_TYPE_H",
+    "F_UN_RM_FX_TYPE_S",
+    "F_UN_RM_XF_TYPE_D",
+    "F_UN_RM_XF_TYPE_H",
+    "F_UN_RM_XF_TYPE_S",
+    "F_UN_TYPE_F_S",
+    "F_UN_TYPE_X_S",
+    "F_UN_X_TYPE_D",
+    "F_UN_X_TYPE_H",
+    "VFMERGE",
+    "VFMV",
+    "VFMVFS",
+    "VFMVSF",
+    "VFWUNARY0"
+  ],
+  "affected_clauses": [
+    "FCVTMOD_W_D",
+    "FCVT_BF16_S",
+    "FCVT_S_BF16",
+    "FLEQ_D",
+    "FLEQ_H",
+    "FLEQ_S",
+    "FLTQ_D",
+    "FLTQ_H",
+    "FLTQ_S",
+    "FMAXM_D",
+    "FMAXM_H",
+    "FMAXM_S",
+    "FMINM_D",
+    "FMINM_H",
+    "FMINM_S",
+    "FROUNDNX_D",
+    "FROUNDNX_H",
+    "FROUNDNX_S",
+    "FROUND_D",
+    "FROUND_H",
+    "FROUND_S",
+    "FVFMATYPE",
+    "FVFMTYPE",
+    "FVFTYPE",
+    "FVVMATYPE",
+    "FVVMTYPE",
+    "FVVTYPE",
+    "FWFTYPE",
+    "FWVFMATYPE",
+    "FWVFTYPE",
+    "FWVTYPE",
+    "FWVVMATYPE",
+    "FWVVTYPE",
+    "F_BIN_F_TYPE_D",
+    "F_BIN_F_TYPE_H",
+    "F_BIN_RM_TYPE_D",
+    "F_BIN_RM_TYPE_H",
+    "F_BIN_RM_TYPE_S",
+    "F_BIN_TYPE_F_S",
+    "F_BIN_TYPE_X_S",
+    "F_BIN_X_TYPE_D",
+    "F_BIN_X_TYPE_H",
+    "F_MADD_TYPE_D",
+    "F_MADD_TYPE_H",
+    "F_MADD_TYPE_S",
+    "F_UN_RM_FF_TYPE_D",
+    "F_UN_RM_FF_TYPE_H",
+    "F_UN_RM_FF_TYPE_S",
+    "F_UN_RM_FX_TYPE_D",
+    "F_UN_RM_FX_TYPE_H",
+    "F_UN_RM_FX_TYPE_S",
+    "F_UN_RM_XF_TYPE_D",
+    "F_UN_RM_XF_TYPE_H",
+    "F_UN_RM_XF_TYPE_S",
+    "RFVVTYPE",
+    "RFWVVTYPE",
+    "VFNCVTBF16_F_F_W",
+    "VFNUNARY0",
+    "VFUNARY0",
+    "VFUNARY1",
+    "VFWCVTBF16_F_F_V",
+    "VFWMACCBF16_VF",
+    "VFWMACCBF16_VV",
+    "VFWUNARY0"
+  ],
+  "compatibility_clauses": [
+    "FLI_D",
+    "FLI_H",
+    "FLI_S",
+    "F_UN_F_TYPE_D",
+    "F_UN_F_TYPE_H",
+    "F_UN_TYPE_F_S",
+    "F_UN_TYPE_X_S",
+    "F_UN_X_TYPE_D",
+    "F_UN_X_TYPE_H",
+    "VFMERGE",
+    "VFMV",
+    "VFMVFS",
+    "VFMVSF"
+  ],
+  "cpus": [
+    32,
+    33,
+    34,
+    37,
+    39,
+    41,
+    47,
+    48,
+    50,
+    51,
+    52,
+    53,
+    55,
+    57,
+    58,
+    61
+  ],
+  "cpu_detail": [
+    {
+      "cpu": 32,
+      "siblings": [
+        32,
+        96
+      ],
+      "initial_busy": 0.04
+    },
+    {
+      "cpu": 33,
+      "siblings": [
+        33,
+        97
+      ],
+      "initial_busy": 0.051
+    },
+    {
+      "cpu": 34,
+      "siblings": [
+        34,
+        98
+      ],
+      "initial_busy": 1.0
+    },
+    {
+      "cpu": 37,
+      "siblings": [
+        37,
+        101
+      ],
+      "initial_busy": 0.0
+    },
+    {
+      "cpu": 39,
+      "siblings": [
+        39,
+        103
+      ],
+      "initial_busy": 0.96
+    },
+    {
+      "cpu": 41,
+      "siblings": [
+        41,
+        105
+      ],
+      "initial_busy": 0.02
+    },
+    {
+      "cpu": 47,
+      "siblings": [
+        47,
+        111
+      ],
+      "initial_busy": 0.139
+    },
+    {
+      "cpu": 48,
+      "siblings": [
+        48,
+        112
+      ],
+      "initial_busy": 0.0
+    },
+    {
+      "cpu": 50,
+      "siblings": [
+        50,
+        114
+      ],
+      "initial_busy": 0.0
+    },
+    {
+      "cpu": 51,
+      "siblings": [
+        51,
+        115
+      ],
+      "initial_busy": 0.0
+    },
+    {
+      "cpu": 52,
+      "siblings": [
+        52,
+        116
+      ],
+      "initial_busy": 0.081
+    },
+    {
+      "cpu": 53,
+      "siblings": [
+        53,
+        117
+      ],
+      "initial_busy": 0.02
+    },
+    {
+      "cpu": 55,
+      "siblings": [
+        55,
+        119
+      ],
+      "initial_busy": 0.0
+    },
+    {
+      "cpu": 57,
+      "siblings": [
+        57,
+        121
+      ],
+      "initial_busy": 1.0
+    },
+    {
+      "cpu": 58,
+      "siblings": [
+        58,
+        122
+      ],
+      "initial_busy": 0.0
+    },
+    {
+      "cpu": 61,
+      "siblings": [
+        61,
+        125
+      ],
+      "initial_busy": 0.32
+    }
+  ],
+  "harness": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/validation/run_clause.py",
+  "harness_sha256": "b154941be1eaf7cd788c66053edbe564458a39eb8ba65f962aa85d26eaabc7b1",
+  "policy": {
+    "initial_parallel": 2,
+    "max_parallel": 16,
+    "outer_timeout_s": 7200,
+    "smt_timeout_s": 7200,
+    "thread_count": 1,
+    "tactic": "qffp",
+    "seed": 17,
+    "poll_seconds": 30,
+    "minimum_disk_free_bytes": 21474836480,
+    "disk_growth_horizon_s": 7200
+  },
+  "reviews": {
+    "acceptance": {
+      "path": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/acceptance/scheduler-e9-independent.json",
+      "sha256": "4af0054ba83a00e2e2a2c6132060f60ca11cc548385544852a38b84bfa3fef30"
+    },
+    "enum": {
+      "path": "/data1/baiyifan/workplace/isla-runner/agents/float_review_closure_20261102/review/enum/runner-review.md",
+      "sha256": "ee1b6b6b37e66ba429cc63d918e6de43076f5cad72a701a770c42e74919e50af"
+    }
+  }
+}

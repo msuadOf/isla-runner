@@ -1,0 +1,39 @@
+{
+  "scope": "Actual helper command/IR/config/probe source binding; callback only static IR contract",
+  "inputs_sha256": "5147af93ecd9cfb5cd6c0607d8073fa997b608dc9993f8c81dee8e739f1e631e",
+  "result_sha256": "0b5cb0e6b07a9a985470b085c446ce65ece19d44777dc06f7ee90b12a6cb1151",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "rows": [
+    {
+      "ir_key": "rv64-v128",
+      "ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "probe_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd"
+    },
+    {
+      "ir_key": "rv64-v256",
+      "ir_sha256": "47ba73418d6dcb1b1e86db7680ce4df9508e7885a02096e25e213c2c3b2c05e1",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "probe_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd"
+    },
+    {
+      "ir_key": "rv64-v512",
+      "ir_sha256": "2bdea17d36c64545254f50cc5a6902e570a1fea682de3f7c062bf641a85a62a9",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "probe_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd"
+    },
+    {
+      "ir_key": "rv64-default",
+      "ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "probe_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd"
+    },
+    {
+      "ir_key": "rv32-default",
+      "ir_sha256": "e17c4fe18552f8ce219b35f846c4c1a2c530dcad0ac9fc8f10d0da2604c3fa4e",
+      "config_sha256": "d31bc7e7402412899d4998ca6882b4528052762d089e411118038f8a0d585a4f",
+      "probe_sha256": "ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd"
+    }
+  ],
+  "pass": true
+}

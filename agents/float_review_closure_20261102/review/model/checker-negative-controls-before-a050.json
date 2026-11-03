@@ -1,0 +1,54 @@
+{
+  "checker_sha256": "cd6f6970ee27ea1f1a0f28c481fc415ea5ed7ddac6f657efd2dc0b2a0c25a55c",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "rows": [
+    {
+      "mutation": "mul零×Inf原因AND改OR，合法Inf乘法错误置NV",
+      "result": "rejected",
+      "detail": "zieee_mul16_exceptions: 第1原因/finite谓词方向变化"
+    },
+    {
+      "mutation": "add Inf抵消符号反转，同号Inf错误NV",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "rounded OF/NX条件互换，错误异常类别",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "ROD jam丢原base，恒取1",
+      "result": "ACCEPTED_INVALID"
+    },
+    {
+      "mutation": "changed比较改成old==old，状态更新臂不可达",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "changed比较改成joined==joined，状态更新臂不可达",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "Dirty更新链把SD写0",
+      "result": "rejected",
+      "detail": "flags: SD未在FS更新后置1"
+    },
+    {
+      "mutation": "div16: 0/0原因改成Inf/Inf条件，0/0见证丢失",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: 目标Jump谓词源角色错误 Counter({('inf', 'b'): 1, ('inf', 'a'): 1})"
+    },
+    {
+      "mutation": "div16: finite gate改成0/0条件，普通有限异常路径丢失",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: 目标Jump谓词源角色错误 Counter({('zzero', 'b'): 1, ('zzero', 'a'): 1})"
+    },
+    {
+      "mutation": "f16→i8: overflow比较改成sig32==sig32，饱和真臂不可达",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: 不是低位符号扩展回比较"
+    }
+  ],
+  "status": "BLOCKED"
+}

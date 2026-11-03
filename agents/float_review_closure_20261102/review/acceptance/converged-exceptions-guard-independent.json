@@ -1,0 +1,9 @@
+{
+  "scope": "Final converged 315 runner version guard only; no new dynamic PASS",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "runner_sha256": "12ea69e349660ccdb79d129f41968d35657a67502c70b028082a2053c9325cf7",
+  "inverse_to_e9_sha256": "8475d90d35d3d52195bbeb6bab4ab5cfe28d669536cb82aa61610c55e2efe311",
+  "converged_delta_sha256": "01ad2e7f97de170aa7e400979b5c00af49e3f473e8b65946d16faa2fe39c74ae",
+  "expected_sha256": "6ed44d0afba816a709fe6f4f18f0e34505c8b3202aaed6e1ad306e5aea135891",
+  "pass": true
+}

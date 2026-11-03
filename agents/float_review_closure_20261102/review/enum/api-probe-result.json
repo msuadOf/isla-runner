@@ -1,0 +1,10 @@
+{
+  "library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "duplicate_declaration_errors": [
+    "enumeration sort name is already declared",
+    "enumeration sort name is already declared"
+  ],
+  "different_sorts_with_same_member_symbols": true,
+  "same_sort_name_in_new_context": true,
+  "duplicate_still_rejected_after_releasing_original_references": true
+}

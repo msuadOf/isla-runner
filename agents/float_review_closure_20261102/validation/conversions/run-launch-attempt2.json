@@ -1,0 +1,17 @@
+{
+  "pid": 612354,
+  "cpu": 9,
+  "output": "runs/rv64d-v128-attempt2",
+  "ir_sha256": "5ecea3717205dda77bc3cdbaf7a6b677415152e1f5cd09e541d0530519e25017",
+  "config_sha256": "8247c8d467489111656f6953660670e96097a029fea458b660fe42579f86f987",
+  "fixture_snapshot_sha256": "36828c58e6a7a12a63980e6805c84e41c336b6e2f12b18a798804b11c15bdb0f",
+  "started_epoch": 1793633737.5094764,
+  "command": [
+    "taskset",
+    "-c",
+    "9",
+    "python3",
+    "run.py",
+    "--frozen-inputs"
+  ]
+}

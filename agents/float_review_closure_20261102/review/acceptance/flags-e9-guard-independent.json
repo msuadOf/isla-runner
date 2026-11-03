@@ -1,0 +1,13 @@
+{
+  "scope": "e9 flags guard static pre-sign only; no new run PASS",
+  "runner_sha256": "96deaef252d29659e38b47558d54bedb64e7b9082d81e124ad2cf9acff648620",
+  "inverse_to_214_sha256": "f7ed5424e8bd42f7a5f0b704af44ed4951795ae8822375de6d866caf960e74d3",
+  "change": "one exact allowlisted model commit; model-tree/source/hash verification retained",
+  "model": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "flags_architecture_source_unchanged": true,
+  "dependency_hashes": {
+    "validation/flags/src/main.rs": "26225f7c0cf463078e821db7c87ba0a1885c62f15e0f4fd3824bc52cf88843ab",
+    "validation/flags/oracle.py": "ebf9424c3471c7589eb1546e1fd4731fedc2416ad0a0ef7061a8062d5e642665"
+  },
+  "pass": true
+}

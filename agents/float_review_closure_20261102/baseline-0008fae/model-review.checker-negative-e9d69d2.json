@@ -1,0 +1,194 @@
+{
+  "checker_sha256": "053b48b3b588c58f87d74a72c7a5d5097a610ccea37700d94380142fede5ad16",
+  "ir_sha256": "661fd6e443a690f5b1c2a0ccfd1a5b84c908baba5e1b6cea786a1e0696a022ad",
+  "count": 31,
+  "status": "PASS targeted negatives",
+  "rows": [
+    {
+      "mutation": "FMA积符号反转",
+      "function": "zieee_fma16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_fma16_exceptions: 特殊行为条件与ISA分类不符 ('0x3c00', '0x7c00', '0x7c00') (False, False, True, False) != (False, False, False, False)"
+    },
+    {
+      "mutation": "sqrt误判负零",
+      "function": "zieee_sqrt16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sqrt16_exceptions: 特殊行为条件与ISA分类不符 ('0xbc00',) (False, True) != (True, False)"
+    },
+    {
+      "mutation": "mul原因AND改OR",
+      "function": "zieee_mul16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_mul16_exceptions: 第1原因/finite谓词方向变化"
+    },
+    {
+      "mutation": "add Inf抵消符号反转",
+      "function": "zieee_add16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add16_exceptions: add异号Inf方向错误"
+    },
+    {
+      "mutation": "ROD jam丢base",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: jam未采用base|1"
+    },
+    {
+      "mutation": "changed比较old==old",
+      "function": "zaccrue_fflags",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "changed比较joined==joined",
+      "function": "zaccrue_fflags",
+      "result": "rejected",
+      "detail": "flags: changed未比较old与old|flags"
+    },
+    {
+      "mutation": "SD写0",
+      "function": "zaccrue_fflags",
+      "result": "rejected",
+      "detail": "flags: SD未在FS更新后置1"
+    },
+    {
+      "mutation": "div 0/0换Inf/Inf",
+      "function": "zieee_div16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: 目标Jump谓词源角色错误 Counter({('inf', 'b'): 1, ('inf', 'a'): 1})"
+    },
+    {
+      "mutation": "div finite gate换0/0",
+      "function": "zieee_div16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_div16_exceptions: 目标Jump谓词源角色错误 Counter({('zzero', 'b'): 1, ('zzero', 'a'): 1})"
+    },
+    {
+      "mutation": "窄化overflow自比较",
+      "function": "zriscv_f16ToI8_pure",
+      "result": "rejected",
+      "detail": "zriscv_f16ToI8_pure: 不是低位符号扩展回比较"
+    },
+    {
+      "mutation": "原因出口清NV",
+      "function": "zieee_add16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_add16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "mutation": "原因出口清NV",
+      "function": "zieee_mul16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_mul16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "mutation": "原因出口清NV",
+      "function": "zieee_sqrt16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_sqrt16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "mutation": "原因出口清NV",
+      "function": "zieee_fma16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_fma16_exceptions: NV/DZ原因出口顺序变化"
+    },
+    {
+      "mutation": "rounded返回OF/NX字段互换",
+      "function": "zieee_f16_rounded_exceptions",
+      "result": "rejected",
+      "detail": "zieee_f16_rounded_exceptions: OF条件未来自边界析取"
+    },
+    {
+      "mutation": "threshold返回OF/NX字段互换",
+      "function": "zieee_exact_threshold_exceptions",
+      "result": "rejected",
+      "detail": "exact_threshold: OF条件变化"
+    },
+    {
+      "mutation": "rounded NX比较lo==lo",
+      "function": "zieee_f16_rounded_exceptions",
+      "result": "rejected",
+      "detail": "zieee_f16_rounded_exceptions: NX未分别比较lo/hi与目标结果"
+    },
+    {
+      "mutation": "threshold NX比较x==x",
+      "function": "zieee_exact_threshold_exceptions",
+      "result": "rejected",
+      "detail": "exact_threshold: NX未比较精确值与结果"
+    },
+    {
+      "mutation": "rounded UF由NX&&NX替代tiny",
+      "function": "zieee_f16_rounded_exceptions",
+      "result": "rejected",
+      "detail": "zieee_f16_rounded_exceptions: UF未结合独立tiny边界"
+    },
+    {
+      "mutation": "round NX比较x==x",
+      "function": "zieee_round16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_round16_exceptions: NX条件或出口变化"
+    },
+    {
+      "mutation": "fpint NX比较x==x",
+      "function": "zieee_fp_to_int_core",
+      "result": "rejected",
+      "detail": "fp_to_int_core: 合法舍入NX来源或返回字段变化"
+    },
+    {
+      "mutation": "round raise_inexact合取改析取",
+      "function": "zieee_round16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_round16_exceptions: NX条件或出口变化"
+    },
+    {
+      "mutation": "ROD ITE改由NV选择",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: 奇数化未由合流flags的NX控制"
+    },
+    {
+      "mutation": "ROD精确臂也jam",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: NX条件或jam/base方向变化"
+    },
+    {
+      "mutation": "ROD非finite丢sNaN NV",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: 非有限NV未保留源分类"
+    },
+    {
+      "mutation": "ROD finite丢exact flags",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "zieee_rod32_to_16: 非有限flags来源变化"
+    },
+    {
+      "mutation": "convert非finite丢sNaN NV",
+      "function": "zieee_convert32_to_16_exceptions",
+      "result": "rejected",
+      "detail": "zieee_convert32_to_16_exceptions: 非有限出口变化"
+    },
+    {
+      "mutation": "quiet源分类改成signaling，qNaN错误NV",
+      "function": "zieee_round16_exceptions",
+      "result": "rejected",
+      "detail": "源异常分类不再使用quiet=false和原始源"
+    },
+    {
+      "mutation": "quiet源分类改成signaling，qNaN错误NV",
+      "function": "zieee_convert32_to_16_exceptions",
+      "result": "rejected",
+      "detail": "源异常分类不再使用quiet=false和原始源"
+    },
+    {
+      "mutation": "quiet源分类改成signaling，qNaN错误NV",
+      "function": "zieee_rod32_to_16",
+      "result": "rejected",
+      "detail": "源异常分类不再使用quiet=false和原始源"
+    }
+  ]
+}

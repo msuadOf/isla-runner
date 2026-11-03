@@ -1,0 +1,8 @@
+{
+  "scope": "Final converged flags guard only; no new dynamic PASS",
+  "model": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "runner_sha256": "2d79b3bca36b9db0eda8424c88129f53dc30016dc95c46bb80cf7bd0fda86026",
+  "inverse_to_e9_sha256": "96deaef252d29659e38b47558d54bedb64e7b9082d81e124ad2cf9acff648620",
+  "flags_model_source_unchanged": true,
+  "pass": true
+}

@@ -1,0 +1,18 @@
+{
+  "formal_inputs_sha256": "5147af93ecd9cfb5cd6c0607d8073fa997b608dc9993f8c81dee8e739f1e631e",
+  "formal_model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "formal_isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "shared_v128_ir_sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+  "shared_official_z3_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "shared_seed_preload_sha256": "8b26e6567f153ec28f35dfaddc15e9dfa3d53dcfa7fb1fe23d4922452bf429ae",
+  "direct_config_sha256": "8247c8d467489111656f6953660670e96097a029fea458b660fe42579f86f987",
+  "formal_full_clause_config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "direct_runner_tactic": "Qfaufbv (fixed in both imported direct runners)",
+  "formal_tactic": "qffp",
+  "direct_runner_scope": "direct helper and zexecute/decode runner; not isarch solve-state JSON or full Clause",
+  "formal_binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+  "direct_helper_binary_sha256": "669c727ec92a61a5bd97d4f9b84f646f7c642f81ac579fffc2344fd3902afcf5",
+  "direct_instruction_binary_sha256": "9e1bc98f358d926abf8ac320521746840dd8370d13a113270ac26ca1d986716a",
+  "same_model_isla_ir_z3_seed": true,
+  "same_config_binary_tactic": false
+}

@@ -1,0 +1,7 @@
+	linux-vdso.so.1 (0x0000730bb8b42000)
+	libz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000730bb6000000)
+	libgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000730bb8ae5000)
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000730bb5c00000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000730bb8b44000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000730bb5800000)
+	libm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000730bb5eda000)

@@ -1,0 +1,341 @@
+{
+  "scope": "Actual machine-word/pre-state numerical replay; no owner expected fixture read",
+  "oracle_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "files": 10,
+  "checked_entries": 10,
+  "skipped_entries": 0,
+  "failures": 0,
+  "rows": [
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-add-inf-cancel-mask1/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfadd.vv v8, v2, v4, v0.t",
+      "word": "0x221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-add-inf-cancel-mask2/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfadd.vv v8, v2, v4, v0.t",
+      "word": "0x221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x40000000000000000000000000000000",
+          "expected": "0x40000000000000000000000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-add-inf-cancel-mask3/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfadd.vv v8, v2, v4, v0.t",
+      "word": "0x221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x40000000000000007ff8000000000000",
+          "expected": "0x40000000000000007ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-div-nv-dz-mask0/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfdiv.vv v8, v2, v4, v0.t",
+      "word": "0x80221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-div-nv-dz-mask1/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfdiv.vv v8, v2, v4, v0.t",
+      "word": "0x80221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-div-nv-dz-mask2/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfdiv.vv v8, v2, v4, v0.t",
+      "word": "0x80221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff00000000000000000000000000000",
+          "expected": "0x7ff00000000000000000000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x8",
+          "expected": "0x8",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-div-nv-dz-mask3/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfdiv.vv v8, v2, v4, v0.t",
+      "word": "0x80221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff00000000000007ff8000000000000",
+          "expected": "0x7ff00000000000007ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x18",
+          "expected": "0x18",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-mul-invalid-overflow-mask1/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfmul.vv v8, v2, v4, v0.t",
+      "word": "0x90221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff8000000000000",
+          "expected": "0x7ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x10",
+          "expected": "0x10",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-mul-invalid-overflow-mask2/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfmul.vv v8, v2, v4, v0.t",
+      "word": "0x90221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff00000000000000000000000000000",
+          "expected": "0x7ff00000000000000000000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x5",
+          "expected": "0x5",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "file": "agents/float_review_closure_20261102/validation/exceptions/runs-model-8ad5e8e-vd-retry/runs/VD-mul-invalid-overflow-mask3/output/rv64_zFVVTYPE.json",
+      "index": 0,
+      "instruction": "vfmul.vv v8, v2, v4, v0.t",
+      "word": "0x90221457",
+      "checks": [
+        {
+          "field": "vr8",
+          "actual": "0x7ff00000000000007ff8000000000000",
+          "expected": "0x7ff00000000000007ff8000000000000",
+          "pass": true
+        },
+        {
+          "field": "vstart",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        },
+        {
+          "field": "fcsr.flags",
+          "actual": "0x15",
+          "expected": "0x15",
+          "pass": true
+        },
+        {
+          "field": "fcsr.other",
+          "actual": "0x0",
+          "expected": "0x0",
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "skipped": []
+}

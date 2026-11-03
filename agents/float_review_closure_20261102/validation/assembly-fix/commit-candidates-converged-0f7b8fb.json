@@ -1,0 +1,651 @@
+{
+  "purpose": "converged 0f7b8fb explicit small-file handoff; no git staging performed",
+  "model_commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
+  "file_count": 127,
+  "total_bytes": 1411877,
+  "excluded": [
+    "validation/assembly-fix/probe-converged-20261103/**/probe",
+    "validation/assembly-fix/probe-converged-20261103/**/probe.c",
+    "validation/assembly-fix/probe-converged-20261103/**/probe.h",
+    "validation/assembly-fix/probe-converged-20261103/**/memo",
+    "validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/*.o",
+    "validation/assembly-fix/make-converged-0f7b8fb/smoke/output/process/**"
+  ],
+  "files": [
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/command.json",
+      "bytes": 4565,
+      "sha256": "7ba1e6cb52186fda12e3b6d3c504d7fff92efa5b0a22c4d6ebf805c225c9de3e"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/config.toml",
+      "bytes": 5145,
+      "sha256": "41e48e2f8129c16fa1ad62a3b054f8bb5baea01dd84461eb2c8031d623da78cf"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/make.log",
+      "bytes": 327,
+      "sha256": "1909a8b4a179178dac19bf7c59b25ef5ddc61169b67709958da495a79c51426f"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/output/log/FLEQ_S.log",
+      "bytes": 30999,
+      "sha256": "94412cfcdd9c8813c9aee34aa41d7c32d71697b3cfadbab539182f3666be88a7"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/output/rv64_zFLEQ_S.json",
+      "bytes": 117031,
+      "sha256": "e3e0e2c8aba8d75c8c9f2e5c2eaf6e169b43e0dfac81445dc208e0490c5ecaa7"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/output/status.intime.log",
+      "bytes": 14,
+      "sha256": "a2c27d4dd55a4f7b7fc7aee58a1ad7ef24b73ed0341952ac24929bf9cc5ed846"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/result.json",
+      "bytes": 6222,
+      "sha256": "297aa049f571ffa75ddfc01d8e90a6e262fef88ef862cc5ec3af06c70bb6e6b0"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/seed-intercept.log",
+      "bytes": 50,
+      "sha256": "d482ed55e11daeda0a8399a99c5618f5629a9ce62f3e7105104bcf89d2708c33"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/time.txt",
+      "bytes": 52,
+      "sha256": "9d83e563ba54b9883a8eb0c7ef5e67c2cf5b8366c7a4ab858e16fadd158605b7"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "33ce8b8ab371c708509fe88b03e7f57da9b203da77792759e61ac57216a11066"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-clang-binary.s",
+      "bytes": 73,
+      "sha256": "1d720bd0ebf2573b41468f751cdbad6c49fb9417803e3d4d910effe4e4f1028d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "33ce8b8ab371c708509fe88b03e7f57da9b203da77792759e61ac57216a11066"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-clang-insn.s",
+      "bytes": 40,
+      "sha256": "5009c02988e07064cbfbfdf930fc4537df64eb80a61206d0a9d470e032453aa0"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "33ce8b8ab371c708509fe88b03e7f57da9b203da77792759e61ac57216a11066"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-clang-mnemonic.s",
+      "bytes": 39,
+      "sha256": "813f13142569d9b1563feafb94e6608b97ba408dbf5709e9f43b5173b8b705dd"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "33ce8b8ab371c708509fe88b03e7f57da9b203da77792759e61ac57216a11066"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "1d720bd0ebf2573b41468f751cdbad6c49fb9417803e3d4d910effe4e4f1028d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "33ce8b8ab371c708509fe88b03e7f57da9b203da77792759e61ac57216a11066"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "5009c02988e07064cbfbfdf930fc4537df64eb80a61206d0a9d470e032453aa0"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "33ce8b8ab371c708509fe88b03e7f57da9b203da77792759e61ac57216a11066"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/0-gcc-mnemonic.s",
+      "bytes": 39,
+      "sha256": "813f13142569d9b1563feafb94e6608b97ba408dbf5709e9f43b5173b8b705dd"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "3174d0459d9ce6d2a3ba05d01b4172fcaed9dcf066bc5ba6e93ceadf6ac6aaa4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-clang-binary.s",
+      "bytes": 73,
+      "sha256": "b62bcde0ab7e1bfe5fe47745b3afa8c48845492a1e6dd78aaaac9a68298ed95c"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "3174d0459d9ce6d2a3ba05d01b4172fcaed9dcf066bc5ba6e93ceadf6ac6aaa4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-clang-insn.s",
+      "bytes": 40,
+      "sha256": "0db0d68aeca6d3fd129ae4ea5b965c99c0f4c85cfd96a8a2c8db23403d84706a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "3174d0459d9ce6d2a3ba05d01b4172fcaed9dcf066bc5ba6e93ceadf6ac6aaa4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-clang-mnemonic.s",
+      "bytes": 39,
+      "sha256": "d63a3983656281475403f279de3845048cb2c8b5a52ac6ec00d73748bc8e3ef6"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "3174d0459d9ce6d2a3ba05d01b4172fcaed9dcf066bc5ba6e93ceadf6ac6aaa4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "b62bcde0ab7e1bfe5fe47745b3afa8c48845492a1e6dd78aaaac9a68298ed95c"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "3174d0459d9ce6d2a3ba05d01b4172fcaed9dcf066bc5ba6e93ceadf6ac6aaa4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "0db0d68aeca6d3fd129ae4ea5b965c99c0f4c85cfd96a8a2c8db23403d84706a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "3174d0459d9ce6d2a3ba05d01b4172fcaed9dcf066bc5ba6e93ceadf6ac6aaa4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/1-gcc-mnemonic.s",
+      "bytes": 39,
+      "sha256": "d63a3983656281475403f279de3845048cb2c8b5a52ac6ec00d73748bc8e3ef6"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "3406c300b2eab4e9c3b02598cdfef79e88a71fde2962ab42c34969ad32c381d1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-clang-binary.s",
+      "bytes": 73,
+      "sha256": "569f98cf1817584ba643c5c2ae0cac2709deffea688690b94159965c8148dd71"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "3406c300b2eab4e9c3b02598cdfef79e88a71fde2962ab42c34969ad32c381d1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-clang-insn.s",
+      "bytes": 40,
+      "sha256": "3b3427fdc219c10c2441ea9d1aee865cc04185bb315ff8019a6645501e8d7c9d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "3406c300b2eab4e9c3b02598cdfef79e88a71fde2962ab42c34969ad32c381d1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-clang-mnemonic.s",
+      "bytes": 40,
+      "sha256": "1be276f5e30895bf95c2f6bf2138dc3d971236bd5a00bff08b6e0473d5159db9"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "3406c300b2eab4e9c3b02598cdfef79e88a71fde2962ab42c34969ad32c381d1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "569f98cf1817584ba643c5c2ae0cac2709deffea688690b94159965c8148dd71"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "3406c300b2eab4e9c3b02598cdfef79e88a71fde2962ab42c34969ad32c381d1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "3b3427fdc219c10c2441ea9d1aee865cc04185bb315ff8019a6645501e8d7c9d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "3406c300b2eab4e9c3b02598cdfef79e88a71fde2962ab42c34969ad32c381d1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/2-gcc-mnemonic.s",
+      "bytes": 40,
+      "sha256": "1be276f5e30895bf95c2f6bf2138dc3d971236bd5a00bff08b6e0473d5159db9"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "0816af22ff86d159a9307da68cf629bb4784ab84f53d0482ba53694b3bc267d8"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-clang-binary.s",
+      "bytes": 73,
+      "sha256": "73b303fc8724d9d8e288dc3baeae4e3eb2a76026490b6232e67aa1c58de930be"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "0816af22ff86d159a9307da68cf629bb4784ab84f53d0482ba53694b3bc267d8"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-clang-insn.s",
+      "bytes": 40,
+      "sha256": "9c0fc82d71a8d9960baedb546a53c691292b50abe7f634cb53a873ff17022871"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "0816af22ff86d159a9307da68cf629bb4784ab84f53d0482ba53694b3bc267d8"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-clang-mnemonic.s",
+      "bytes": 38,
+      "sha256": "2dcf3465ffaf75a960d02e64b82ac979e4b711a4578f64b7f404b53fe080dc93"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "0816af22ff86d159a9307da68cf629bb4784ab84f53d0482ba53694b3bc267d8"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "73b303fc8724d9d8e288dc3baeae4e3eb2a76026490b6232e67aa1c58de930be"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "0816af22ff86d159a9307da68cf629bb4784ab84f53d0482ba53694b3bc267d8"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "9c0fc82d71a8d9960baedb546a53c691292b50abe7f634cb53a873ff17022871"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "0816af22ff86d159a9307da68cf629bb4784ab84f53d0482ba53694b3bc267d8"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/3-gcc-mnemonic.s",
+      "bytes": 38,
+      "sha256": "2dcf3465ffaf75a960d02e64b82ac979e4b711a4578f64b7f404b53fe080dc93"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "f0c983861efdc3f978bd3fab7a31a1d99acf9e2e0bdb17d879ce1facfdefc787"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-clang-binary.s",
+      "bytes": 73,
+      "sha256": "f52a388f875c77d8b3681dc8283b851125f8d50e8846616d0f72a6014809af5a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "f0c983861efdc3f978bd3fab7a31a1d99acf9e2e0bdb17d879ce1facfdefc787"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-clang-insn.s",
+      "bytes": 40,
+      "sha256": "4590f3c83d26b7c221ced937c3d2572967a782326f70a6b0b0f35f55fa052601"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "f0c983861efdc3f978bd3fab7a31a1d99acf9e2e0bdb17d879ce1facfdefc787"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-clang-mnemonic.s",
+      "bytes": 38,
+      "sha256": "fbef45d4a42faa96477874c819b2b60ea342f07bed506166049d5fda8b611353"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "f0c983861efdc3f978bd3fab7a31a1d99acf9e2e0bdb17d879ce1facfdefc787"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "f52a388f875c77d8b3681dc8283b851125f8d50e8846616d0f72a6014809af5a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "f0c983861efdc3f978bd3fab7a31a1d99acf9e2e0bdb17d879ce1facfdefc787"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "4590f3c83d26b7c221ced937c3d2572967a782326f70a6b0b0f35f55fa052601"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "f0c983861efdc3f978bd3fab7a31a1d99acf9e2e0bdb17d879ce1facfdefc787"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/4-gcc-mnemonic.s",
+      "bytes": 38,
+      "sha256": "fbef45d4a42faa96477874c819b2b60ea342f07bed506166049d5fda8b611353"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "595ae49116df136f8fb93f7c86e28006ca8065485be7800d4454ff76165d2e6a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-clang-binary.s",
+      "bytes": 73,
+      "sha256": "c204bf5e930bc0ccd596f2cbfe879854a3bc59bfaca3c5f94743777a79830502"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "595ae49116df136f8fb93f7c86e28006ca8065485be7800d4454ff76165d2e6a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-clang-insn.s",
+      "bytes": 40,
+      "sha256": "614082b0a03c711a69f2ca493986f0aa435ef8baeab30cc0dabb9e916c567967"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "595ae49116df136f8fb93f7c86e28006ca8065485be7800d4454ff76165d2e6a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-clang-mnemonic.s",
+      "bytes": 40,
+      "sha256": "b0175c807e1f1339db100ae09756e99074e7fc87df00dc22463b95c96f790000"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "595ae49116df136f8fb93f7c86e28006ca8065485be7800d4454ff76165d2e6a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "c204bf5e930bc0ccd596f2cbfe879854a3bc59bfaca3c5f94743777a79830502"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "595ae49116df136f8fb93f7c86e28006ca8065485be7800d4454ff76165d2e6a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "614082b0a03c711a69f2ca493986f0aa435ef8baeab30cc0dabb9e916c567967"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "595ae49116df136f8fb93f7c86e28006ca8065485be7800d4454ff76165d2e6a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/5-gcc-mnemonic.s",
+      "bytes": 40,
+      "sha256": "b0175c807e1f1339db100ae09756e99074e7fc87df00dc22463b95c96f790000"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "838ce0f67ba023ae8aad57cd31852eb8c3bdc3a72ebb1b06f42a1b6ae3b9bd39"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-clang-binary.s",
+      "bytes": 73,
+      "sha256": "31d713a8db4231efd8196992f483431bedf9cbc442c921ff015e89aafdae349b"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "838ce0f67ba023ae8aad57cd31852eb8c3bdc3a72ebb1b06f42a1b6ae3b9bd39"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-clang-insn.s",
+      "bytes": 40,
+      "sha256": "f5573581ac68fb8a4ae745833c8e13ab12750ef3a53c9b8884335f99b773e64f"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "838ce0f67ba023ae8aad57cd31852eb8c3bdc3a72ebb1b06f42a1b6ae3b9bd39"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-clang-mnemonic.s",
+      "bytes": 39,
+      "sha256": "10b5c202f90043f1c2b0cbe3f3f5de749e8707806434abea5fcfd5b23b8c8760"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "838ce0f67ba023ae8aad57cd31852eb8c3bdc3a72ebb1b06f42a1b6ae3b9bd39"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "31d713a8db4231efd8196992f483431bedf9cbc442c921ff015e89aafdae349b"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "838ce0f67ba023ae8aad57cd31852eb8c3bdc3a72ebb1b06f42a1b6ae3b9bd39"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "f5573581ac68fb8a4ae745833c8e13ab12750ef3a53c9b8884335f99b773e64f"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "838ce0f67ba023ae8aad57cd31852eb8c3bdc3a72ebb1b06f42a1b6ae3b9bd39"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/6-gcc-mnemonic.s",
+      "bytes": 39,
+      "sha256": "10b5c202f90043f1c2b0cbe3f3f5de749e8707806434abea5fcfd5b23b8c8760"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-clang-binary.bin",
+      "bytes": 4,
+      "sha256": "48258e37463fead14153b5322d46e8a081bbe1993f5a8cbbe605492a0f749fe4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-clang-binary.s",
+      "bytes": 73,
+      "sha256": "457928a1efd9d2afba192f3d31271a0c3b0d0eec07910ce5591f835024382432"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-clang-insn.bin",
+      "bytes": 4,
+      "sha256": "48258e37463fead14153b5322d46e8a081bbe1993f5a8cbbe605492a0f749fe4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-clang-insn.s",
+      "bytes": 40,
+      "sha256": "12349376e2b15aae9b83ed89e907a1e055639bc619435c53e7ce2d1e5de8bf86"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-clang-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "48258e37463fead14153b5322d46e8a081bbe1993f5a8cbbe605492a0f749fe4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-clang-mnemonic.s",
+      "bytes": 39,
+      "sha256": "3191fbd53fc7e76f2d6d8e3f3be858a857568ffcc2f3c2215b1025c18d4ad45d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-gcc-binary.bin",
+      "bytes": 4,
+      "sha256": "48258e37463fead14153b5322d46e8a081bbe1993f5a8cbbe605492a0f749fe4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-gcc-binary.s",
+      "bytes": 73,
+      "sha256": "457928a1efd9d2afba192f3d31271a0c3b0d0eec07910ce5591f835024382432"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-gcc-insn.bin",
+      "bytes": 4,
+      "sha256": "48258e37463fead14153b5322d46e8a081bbe1993f5a8cbbe605492a0f749fe4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-gcc-insn.s",
+      "bytes": 40,
+      "sha256": "12349376e2b15aae9b83ed89e907a1e055639bc619435c53e7ce2d1e5de8bf86"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-gcc-mnemonic.bin",
+      "bytes": 4,
+      "sha256": "48258e37463fead14153b5322d46e8a081bbe1993f5a8cbbe605492a0f749fe4"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/7-gcc-mnemonic.s",
+      "bytes": 39,
+      "sha256": "3191fbd53fc7e76f2d6d8e3f3be858a857568ffcc2f3c2215b1025c18d4ad45d"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/results.json",
+      "bytes": 40294,
+      "sha256": "77729b35e21d62aa49b1ba570241de761eba1a66f726cb3f932a53414e97e15a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-0f7b8fb/smoke/toolchains/selection.json",
+      "bytes": 539,
+      "sha256": "91841168db3047646e135f7645a08f15f85cd2cf7b6ef7cbc09ef29c510bb4c1"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/make-converged-20261103.py",
+      "bytes": 6414,
+      "sha256": "40f6e03a6d446176456eb33ce9339867edb74fab88a95a2acc846bffd5557cab"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/cases.json",
+      "bytes": 271575,
+      "sha256": "f7da0f446b0018cd22adeacf7324e14f9bab0513ce27b35dbca265b30a585275"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/cc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/mapping-typecheck.log",
+      "bytes": 463,
+      "sha256": "f0460045cfa7808fe7a579fc77662c4231789b49f961d590d275d5b82b9edf7a"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/probe-forward.sail",
+      "bytes": 137182,
+      "sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/probe-mapping-typecheck.sail",
+      "bytes": 137182,
+      "sha256": "39b83c6e94ca131210d0db99aecc9d6adf3eec92a1ac48e468d6f4c608ee215c"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/run.log",
+      "bytes": 43,
+      "sha256": "abcd5e96d4cee4597029a5623c0bb1ef28bc88c47aac1c2b1260c8ccf5572076"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/baseline/sail.log",
+      "bytes": 453,
+      "sha256": "d34764424b2f4a14d15dd77052d1a4717998bb1e1108e09e67ec2a77aa0bcc9e"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/cases.json",
+      "bytes": 271575,
+      "sha256": "f7da0f446b0018cd22adeacf7324e14f9bab0513ce27b35dbca265b30a585275"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/cc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/mapping-typecheck.log",
+      "bytes": 462,
+      "sha256": "c48037e05dbfdc803ced66a1dea75acddbc3251baedf8d97a36b88d81abe7a54"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/probe-forward.sail",
+      "bytes": 138158,
+      "sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/probe-mapping-typecheck.sail",
+      "bytes": 138158,
+      "sha256": "0533fd9e7b631461483a2006f51370b80106fd168fa7a0fe4344114373297d60"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/run.log",
+      "bytes": 29542,
+      "sha256": "60abc0c999a11eeb743c2899fc94416cd5e6da0df39fc7a6a81d8cbd04b5d3dc"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/current/sail.log",
+      "bytes": 452,
+      "sha256": "0424b8e2963b003f7503061f5f06bd920022cb54bfd2dd2b7a6cd0c4b6397464"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103/result.json",
+      "bytes": 1705,
+      "sha256": "71ee0e508c74d3199d77c398d3f0a174eee207d2764deb733388bac35a7b39fa"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/probe-converged-20261103.py",
+      "bytes": 9804,
+      "sha256": "041bfbc25ebcc6faec0e7b03b201ba98ddc512e550fe5da725149d26af82caf6"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/report.md",
+      "bytes": 7245,
+      "sha256": "e6b7b76ca5b69c16d6dc0a76ee824ca6cdcd6ea75c9d1e02116baf6bbc2959be"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/toolchains-converged-20261103/result.json",
+      "bytes": 48742,
+      "sha256": "c1f2a3669922ade245b2060a651c8f3ddfb5bec864416e0b0bbdb3babc1e0b78"
+    },
+    {
+      "path": "agents/float_review_closure_20261102/validation/assembly-fix/toolchains-converged-20261103.py",
+      "bytes": 4860,
+      "sha256": "932b317d066e1fa3b7be98529e87e5c73eb36d087847db8fae11238d4aa7ff02"
+    }
+  ]
+}

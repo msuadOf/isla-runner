@@ -1,0 +1,21 @@
+{
+  "stage": "source only",
+  "status": "PASS",
+  "baseline": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "sha256": {
+    "model/extensions/V/vext_fp_utils_insts.sail": "2c6042a67c1798e746178725ab42a3cf2ff9c1df5b4552a18bcb1e1757ec3564"
+  },
+  "checks": [
+    "Six modified helper bodies manually matched to old ITE and ordinary upper/lower bound semantics",
+    "33 existing QF_BV queries independently rerun on official Z3 1fd1d3613; expected 12 unsat and 21 sat",
+    "Proof covers all sig32 and incoming flags, not upstream FP reachability",
+    "Signed sign branches only under overflow; unsigned NV only on overflow; active gate caller unchanged"
+  ],
+  "not_signed": [
+    "final commit",
+    "strict generation",
+    "IR CFG",
+    "dynamic oracle",
+    "full Clause budget"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "stage": "source only",
+  "status": "PASS",
+  "file": "model/core/ieee_fp_exceptions.sail",
+  "sha256": "23fda9824c2280609062bbe2b9766597681c29af13a1e9cf1be045d9106757a8",
+  "baseline": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "checks": [
+    "All 18 arithmetic exception helpers preserve per-source NaN classification before reason branches",
+    "Inf cancellation, two zero*Inf roles, two division NV causes, DZ, sqrt negative nonzero and FMA cancellation flags match original formulas",
+    "Wider arithmetic/rounding moved under original finite/valid predicate; no special path executes newly branched ordinary rounded helper",
+    "Three directed rounded helpers and exact threshold preserve all numeric formulas and use semantic OF/UF/NX flag return branches",
+    "No OF=>NX or OF/UF exclusion assumption used; arbitrary Boolean tuple preserved",
+    "FP-to-int valid/invalid plus NX branch preserves original lower/upper thresholds; constant width/signedness selectors remain data flow",
+    "Three round helpers preserve signaling NV, raise_inexact and finite-gated NX",
+    "Four narrowing/BF16 conversions and two ROD helpers compute exact exception facts only under finite gate",
+    "ROD RTZ base, flags, jam OR and same return pair preserved",
+    "Shared classification predicates, exception struct, pack bit order and widened exception helpers unchanged"
+  ],
+  "independent_evidence": "exceptions-formula-audit.json",
+  "not_signed": [
+    "final commit",
+    "strict generation: owners report existing unmodified masked_select quantifier error in direct command",
+    "IR CFG",
+    "dynamic numeric oracle",
+    "full Clause budget"
+  ]
+}

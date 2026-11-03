@@ -1,0 +1,65 @@
+{
+  "base_model_commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+  "current_model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "source_path": "model/extensions/V/vext_fp_utils_insts.sail",
+  "current_sha256": "2c6042a67c1798e746178725ab42a3cf2ff9c1df5b4552a18bcb1e1757ec3564",
+  "candidate_sha256": "34191de93086708b44f552606b39878e1ad68be07c67fb2321eb7bec1b1172e1",
+  "candidate_equals_6202_file": true,
+  "candidate_diff_only_symbolic_pure_section": true,
+  "current_source_unchanged": true,
+  "candidate_file": "candidate-vext_fp_utils_insts.sail",
+  "diff_file": "source.diff",
+  "diff_sha256": "8650dfec34be40af64688713533c078adc1495b03ec7aed61e82bfc503e3c000",
+  "added_lines": 14,
+  "removed_lines": 16,
+  "ordinary_functions_unchanged": {
+    "riscv_f16ToI16": true,
+    "riscv_f16ToI8": true,
+    "riscv_f32ToI16": true,
+    "riscv_f16ToUi16": true,
+    "riscv_f16ToUi8": true,
+    "riscv_f32ToUi16": true
+  },
+  "pure_functions": {
+    "riscv_f16ToI16_pure": {
+      "changed": true,
+      "new_if_overflow_count": 1,
+      "old_if_overflow_count": 1,
+      "candidate_matches_6202": true
+    },
+    "riscv_f16ToI8_pure": {
+      "changed": true,
+      "new_if_overflow_count": 0,
+      "old_if_overflow_count": 1,
+      "candidate_matches_6202": true
+    },
+    "riscv_f32ToI16_pure": {
+      "changed": true,
+      "new_if_overflow_count": 0,
+      "old_if_overflow_count": 1,
+      "candidate_matches_6202": true
+    },
+    "riscv_f16ToUi16_pure": {
+      "changed": true,
+      "new_if_overflow_count": 0,
+      "old_if_overflow_count": 1,
+      "candidate_matches_6202": true
+    },
+    "riscv_f16ToUi8_pure": {
+      "changed": true,
+      "new_if_overflow_count": 0,
+      "old_if_overflow_count": 1,
+      "candidate_matches_6202": true
+    },
+    "riscv_f32ToUi16_pure": {
+      "changed": true,
+      "new_if_overflow_count": 0,
+      "old_if_overflow_count": 1,
+      "candidate_matches_6202": true
+    }
+  },
+  "removed_new_overflow_if": 5,
+  "removed_new_signed_sign_if": 3,
+  "legacy_f16_i16_outer_if_retained": true,
+  "full_candidate_identical_to_6202": true
+}

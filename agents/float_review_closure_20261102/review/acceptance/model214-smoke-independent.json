@@ -1,0 +1,346 @@
+{
+  "scope": "Final 21418 full-domain FLEQ_S startup smoke only; separate from active 77 job batch",
+  "result_sha256": "5cd45ce506bb1bb5a6002dee82865be30af682dca98f41d1e781502c8506e534",
+  "output_sha256": "7433f4c61bfe32aaa6ddf572e86522ab53645f82b05f86574fc78e9a5fef0689",
+  "trace_bytes": 17956382,
+  "gen": 48,
+  "observable_destinations": 24,
+  "rows": [
+    {
+      "index": 0,
+      "word": "0xa1efc0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 1,
+      "word": "0xa01fc053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 2,
+      "word": "0xa1f0c0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 3,
+      "word": "0xa000c0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 4,
+      "word": "0xa1ffc053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 5,
+      "word": "0xa1ffc0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 6,
+      "word": "0xa0104053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 7,
+      "word": "0xa01fc0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 8,
+      "word": "0xa0104053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 9,
+      "word": "0xa1ffc0d3",
+      "result": 1,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 10,
+      "word": "0xa1f0c053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 11,
+      "word": "0xa1f0c0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 12,
+      "word": "0xa1cfc053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 13,
+      "word": "0xa0104053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 14,
+      "word": "0xa000c053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 15,
+      "word": "0xa010c0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 16,
+      "word": "0xa1ff40d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 17,
+      "word": "0xa01040d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 18,
+      "word": "0xa1cfc053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 19,
+      "word": "0xa1f0c053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 20,
+      "word": "0xa1ffc053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 21,
+      "word": "0xa1ff4053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 22,
+      "word": "0xa010c053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 23,
+      "word": "0xa1ff40d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 24,
+      "word": "0xa1f0c053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 25,
+      "word": "0xa1ff4053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 26,
+      "word": "0xa1ff4053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 27,
+      "word": "0xa000c0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 28,
+      "word": "0xa1ffc0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 29,
+      "word": "0xa1f0c053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 30,
+      "word": "0xa01040d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 31,
+      "word": "0xa1efc0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 32,
+      "word": "0xa000c053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 33,
+      "word": "0xa1efc0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 34,
+      "word": "0xa01040d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 35,
+      "word": "0xa000c053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 36,
+      "word": "0xa1efc0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 37,
+      "word": "0xa1efc053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 38,
+      "word": "0xa1ff4053",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 39,
+      "word": "0xa1ff40d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 40,
+      "word": "0xa1f0c0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 41,
+      "word": "0xa1f0c0d3",
+      "result": 0,
+      "flags": 0,
+      "destination_observable": true
+    },
+    {
+      "index": 42,
+      "word": "0xa1ffc053",
+      "result": 1,
+      "flags": 0,
+      "destination_observable": false
+    },
+    {
+      "index": 43,
+      "word": "0xa000c0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 44,
+      "word": "0xa1f0c053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 45,
+      "word": "0xa1ffc053",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": false
+    },
+    {
+      "index": 46,
+      "word": "0xa1f0c0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    },
+    {
+      "index": 47,
+      "word": "0xa1ffc0d3",
+      "result": 0,
+      "flags": 16,
+      "destination_observable": true
+    }
+  ]
+}

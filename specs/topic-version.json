@@ -3,97 +3,96 @@
   "topic": "float",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "编码候选约束分离与活动lane饱和显式分支；Sol独审与三完整Clause验收通过",
+  "status": "float纯数据回退收敛；Sol限定验收闭环，OPEN冻结延期memory合流",
   "components": {
     "isla": {
-      "commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+      "commit": "591693df2bc32019ea300511509ed683df09522e",
       "source_branch": "feat/float-support",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "6202e23fc43a9aa98d9fbfd42f0f2e6128cf7f9a",
+      "commit": "0f7b8fbc6724103f91f929ef6918f123df75d6c9",
       "source_branch": "feat/sail-riscv-general-float-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "a877e245cda62b8430b13541faf05a3a2f47719dddad283dd336fa45e068f97e",
-    "provenance": "由当前固定模型完整生成；各IR配置、源码与工具哈希见isla/ir/provenance/manifest.json"
+    "sha256": "0fb0897e028803155108ec59f8289d4f89bafa98deb063bfa7f016a3d29f0786",
+    "provenance": "最终0f7b8fbc模型四配置严格生成；五入口及166模型/149工具来源见isla/ir/provenance/manifest.json"
   },
   "excluded_isla_branches": [
     "feat/witness-randomization"
   ],
   "publication": {
-    "pushed_this_round": false,
-    "remote_reachability": "本轮仅从本机源仓获取已提交对象，未推送或重新核实正式远端"
+    "method": "子模块先、父float后非强推并逐项远程SHA回读",
+    "component_remote_reachability": "两子模块提交已从对应正式远程分支逐项SHA回读一致，见agents/float_review_closure_20261102/publication/final-components.json"
   },
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "validation": {
-    "date": "2026-11-02",
-    "report": "agents/encoding_constraint_isolation_20261102/status.md",
+    "date": "2026-11-03",
+    "report": "agents/float_review_closure_20261102/final-report.md",
+    "independent_review": "GPT-6.1 Sol，源码/IR/永久回归/实际数值/两完整入口分阶段签收",
+    "review_evidence": "agents/float_review_closure_20261102/review/acceptance/final-signoff.md",
+    "scope": "精确77纯data选择回退的限定收敛验收，非全77预算或全控制流覆盖",
+    "model_reverted_source_if_sites": 77,
+    "strict_configurations": 4,
+    "ir_logical_entries": 5,
+    "installed_regression_steps_passed": 26,
+    "independent_negative_mutations_rejected": 104,
+    "independent_ir_value_combinations": 276672,
+    "flags_cases": 300,
+    "conversion_cases": {
+      "helper": 819,
+      "scalar": 282,
+      "vector": 183
+    },
+    "exception_json_cases": 315,
     "assembly_required": [
       "gcc",
       "clang"
     ],
-    "full_model_control_flow_coverage": "not-measured",
-    "hardware_replay": "not-run",
-    "source_and_ir_review": "GPT-6.1 Sol: PASS",
-    "ir_regression_steps": 25,
-    "combined_clause_passed": [
-      "minmax",
-      "minm",
-      "maxm",
-      "nan",
-      "mask",
-      "reduction",
-      "class"
-    ],
-    "combined_clause_pending": [],
-    "ablation_completed_runs": 84,
-    "directed_special_control_tasks": 56,
-    "directed_json_cases": 156,
-    "directed_assertions": 3518,
-    "gcc_clang_encoding_checks": 126,
-    "latest_report": "agents/encoding_constraint_isolation_20261102/status.md",
-    "saturation_timeout_scope": "新活动gate+overflow-if原配置完整22.33s finished；旧eager B只作诊断",
-    "timeout_cause_report": "agents/explicit_branch_timeout_diagnosis_20261102/confirmation-report.md",
-    "timeout_tactics_tested": [
-      "qffp",
-      "default",
-      "smt"
-    ],
-    "saturation_clause_wall_s": 22.33,
-    "encoding_full_flags_performance": "PASS: 原B/原配置完整2626.07s",
-    "full_clause_wall_s": {
-      "frozen_explicit_flags_B": 2626.07,
-      "production_flags": 1127.51,
-      "production_VFUNARY0": 22.33
+    "assembly_forward_cases": 1104,
+    "independent_toolchain_word_checks": 5824,
+    "make_json_cases": 8,
+    "make_toolchain_checks": 48,
+    "full_domain_clause_results": {
+      "FLEQ_S": {
+        "wall_s": 27.67,
+        "json_cases": 48,
+        "status": "finished"
+      },
+      "C_ADDI4SPN": {
+        "wall_s": 2.038,
+        "json_cases": 1,
+        "status": "finished"
+      }
     },
     "clause_and_smt_budget_s": 7200,
-    "rust_official_z3_targeted_passed": 15,
-    "historical_explicit_branch_timeouts": {
-      "source": "agents/branch_ablation_official_z3_20261102",
-      "workloads": [
-        "flags-arithmetic",
-        "sat"
-      ],
-      "scope": "旧程序/旧模型，不作为当前预算失败"
-    },
-    "explicit_branch_not_restored_this_round": [
-      "flags changed",
-      "其他未验窄转换"
+    "deferred_to_memory": [
+      "changed fork策略",
+      "29 finite/valid gate策略",
+      "2 ROD模式guard策略",
+      "既有f16→I16外overflow策略",
+      "通用ITE化/符号化配置能力"
     ],
-    "actual_cases_equal_across_program_revisions": 1258,
-    "existing_enum_test": "失败单列，见本轮官方单测报告，不计入15项通过",
-    "isarch_binary_sha256": "abce451a11e0e4a8a3c9658d4a8462634f284085f219cca79f439ca176853a1a",
+    "historical_full77": {
+      "model214": {
+        "passed": 49,
+        "timed_out": 28
+      },
+      "modele9": {
+        "passed": 52,
+        "timed_out": 25
+      },
+      "scope": "旧版7200秒外限124且无完整JSON，保留历史，不改署最终版PASS"
+    },
+    "full_model_control_flow_coverage": "not-measured",
+    "dynamic_string_reverse_mapping": "not-validated",
+    "hardware_replay": "not-run",
     "official_z3_commit": "1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b",
-    "legacy_eager_sat_diagnostic": {
-      "program_revision": "de00adb",
-      "wall_s": 7200.2,
-      "exit_code": 124,
-      "complete_json": false,
-      "counts_as_pass": false
-    }
+    "isarch_source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+    "isarch_binary_sha256": "acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d",
+    "isla_final_vs_binary_source": "仅IR/来源/测试10文件变化，146受控Rust/Cargo/.cargo逐字相同"
   }
 }
