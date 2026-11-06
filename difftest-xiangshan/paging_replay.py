@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P0/E0：samples v1 的 Sv39 ld 框架探针；不承担 E1—E4 的全量转换。"""
+"""P0 定向探针；E0 历史转换与 E1/E2 原址探针，不承担完整 v2 平台验收。"""
 from __future__ import annotations
 
 import argparse
@@ -191,18 +191,85 @@ def relocate_sample(sample, decoder):
             "expected": expected, "sail_expected": predict(sample, decoder, "sail")}
 
 
+def directed_probe_case(sample, decoder, entry_mode="mprv"):
+    """E1/E2：保持原地址和 PTE；期望只取 Isla，拒绝未对齐的平台特性。"""
+    decoder.exact(sample, decoder.SAMPLE_FIELDS, "samples v1")
+    if sample["schema_version"] != 1 or entry_mode not in {"mprv", "s"}:
+        raise ValueError("定向探针要求 samples v1 与 mprv/s 入口")
+    registers = sample["pre_registers"]
+    if any(item != {"ctor": "None<RTLB_Entry>", "value": {"unit": True}}
+           for item in registers["tlb"]["vector"]):
+        raise ValueError("R5: 非空 TLB")
+    decoded = decoder.decode_sample(sample, decoder.Config(True, False, False))
+    access = decoded["access"]
+    instruction = decoder.decode_instruction(sample)
+    ctor = registers.get("$instruction")
+    if ctor is not None:
+        fields = decoder.struct_value(ctor["value"])
+        register_field = decoder.LOAD_FIELDS[2] if access == "load" else decoder.STORE_FIELDS[1]
+        fixed_x2 = decoder.bit_value(fields[register_field], 5) == 2
+    else:
+        fixed_x2 = sample["isa_state"]["$instruction"].replace(" ", "") == {
+            "load": "ldx2,0(x1)", "store": "sdx2,0(x1)"}[access]
+    if (decoded["mode"] != "Sv39" or decoded["va"] != 0x20000000
+            or decoded["root_paddr"] != 0x80200000
+            or instruction != (access, 0, 1) or not fixed_x2
+            or registers["cur_privilege"]["enum"] != "Supervisor"
+            or decoder.bit_value(registers["mstatus"]["struct"]["bits"], 64) & (1 << 17)):
+        raise ValueError("定向探针只支持固定 Sv39 S 态 ld/sd x2,0(x1)")
+    for entry in decoded["entries"]:
+        if entry["role"] == "data":
+            continue
+        f = entry["fields"]
+        if f["RSW_60t59b"]:
+            raise ValueError("配置未对齐：Svrsw60t59b")
+        if entry["role"] == "pointer" and int(entry["value"], 16) & 0xd0:
+            raise ValueError("R7: 指针 U/A/D 非零")
+        if f["N"] or f["PBMT"] or f["reserved"] or f["PPN"] >= 1 << 36:
+            raise ValueError("定向探针排除扩展位、保留位与高 PPN")
+    if decoded["exception_type"] not in {None, "E_Load_Page_Fault", "E_SAMO_Page_Fault"}:
+        raise ValueError("定向探针排除 PMA 不一致的 AF")
+    pre = decoder.memory_bytes(sample["pre_memory"], allow_unknown=True)
+    post = decoder.memory_bytes(sample["post_memory"])
+    if set(pre) != set(post) or any(not 0x80100000 <= a < RAM_LIMIT for a in pre):
+        raise ValueError("R9: 定向探针内存必须全部在 DRAM")
+    filled = {a: post[a] ^ 255 if value is None else value for a, value in pre.items()}
+    writes = []
+    for address in sorted({a & ~7 for a in pre}):
+        writes.append({"address": address, "value": decoder.read_word(filled, address),
+                       "expected_value": decoder.read_word(post, address), "role": "sample"})
+    # 真 S 态只补一项取指映射；样本 VA 使用根槽 0，取指使用未被样本占用的槽 2。
+    if entry_mode == "s":
+        address = 0x80200010
+        if any(address+i in pre for i in range(8)) or decoded["vpn"][-1] == 2:
+            raise ValueError("R6: S 态取指映射与样本重叠")
+        value = ((0x80000000 >> 12) << 10) | 0xcb
+        writes.append({"address": address, "value": value, "expected_value": value, "role": "harness_fetch"})
+    cause = {None: 0, "E_Load_Page_Fault": 13, "E_SAMO_Page_Fault": 15}[decoded["exception_type"]]
+    rd = None
+    if access == "load":
+        rd = decoder.bit_value(sample["post_registers"]["x2"], 64)
+    return {"sample": copy.deepcopy(sample), "decoded": decoded, "writes": writes,
+            "entry_mode": entry_mode, "access": access, "directed_probe": True,
+            "expected": {"cause": cause, "tval": decoded["va"] if cause else 0, "rd": rd}}
+
+
 def paging_assembly(case):
     sample, expected = case["sample"], case["expected"]
     registers = sample["pre_registers"]
     status = int(registers["mstatus"]["struct"]["bits"]["bits"], 2)
     privilege = {"User": 0, "Supervisor": 1}[registers["cur_privilege"]["enum"]]
     status = (status & ~((3 << 11) | (1 << 3))) | (1 << 17) | (privilege << 11)
+    real_s = case.get("entry_mode") == "s"
+    if real_s:
+        status &= ~(1 << 17)
+    access = case.get("access", "load")
     envcfg = int(registers["menvcfg"]["struct"]["bits"]["bits"], 2)
     if envcfg != 0:
         raise ValueError("E0 要求 menvcfg=0")
     lines = [".section .text.init", ".globl _start", ".option norvc", ".option norelax", "_start:",
              "    csrw satp, zero", "    csrw medeleg, zero", "    csrw mideleg, zero",
-             "    csrw mie, zero", "    csrw mcause, zero", "    csrw mtval, zero",
+             "    csrw mie, zero", "    csrw mcause, zero", "    csrw mtval, zero", "    csrw mepc, zero",
              "    csrw 0x30a, zero", "    la t0, trap_handler", "    csrw mtvec, t0",
              *pipeline.pmp_open_setup()]
     for word in case["writes"]:
@@ -211,28 +278,42 @@ def paging_assembly(case):
         lines += [f"    li t0, {word['address']:#x}", f"    li t1, {word['value']:#x}", "    sd t1, 0(t0)"]
     lines += ["    fence rw, rw", f"    li t0, {int(registers['satp']['bits'], 2):#x}", "    csrw satp, t0",
               "    sfence.vma x0, x0", f"    li t0, {status:#x}", "    csrw mstatus, t0"]
+    if real_s:
+        lines += ["    la t0, s_entry", "    csrw mepc, t0", "    mret", "s_entry:"]
     for index in range(1, 32):
         key = f"x{index}"
         if key in registers:
             lines.append(f"    li {key}, {int(registers[key]['bits'], 2):#x}")
-    lines += ["payload_ins:", "    ld x2, 0(x1)", "    li t0, 0x20000", "    csrc mstatus, t0",
-              "    csrr s0, mcause", "    csrr s1, mtval", "    csrr s2, mepc"]
+    lines += ["payload_ins:", "    ld x2, 0(x1)" if access == "load" else "    sd x2, 0(x1)"]
+    if real_s:
+        lines += ["s_return:", "    ecall", "    j fail_missing_trap"]
+    else:
+        lines += ["    li t0, 0x20000", "    csrc mstatus, t0",
+                  "    csrr s0, mcause", "    csrr s1, mtval", "    csrr s2, mepc"]
     if expected["cause"]:
         lines += ["    j fail_missing_trap"]
     else:
-        lines += [f"    li t0, {expected['rd']:#x}", "    bne x2, t0, fail_rd", "    j check_memory"]
+        lines += ["    j check_result"]
     lines += [".balign 4", "trap_handler:", "    li t0, 0x20000", "    csrc mstatus, t0",
               "    csrr s0, mcause", "    csrr s1, mtval", "    csrr s2, mepc"]
     if not expected["cause"]:
-        lines += ["    j fail_unexpected_trap"]
+        if real_s:
+            lines += ["    la t0, s_return", "    bne s2, t0, fail_unexpected_trap",
+                      "    li t0, 9", "    bne s0, t0, fail_cause", "    bnez s1, fail_tval",
+                      "    j check_result"]
+        else:
+            lines += ["    j fail_unexpected_trap"]
     else:
         lines += ["    la t0, payload_ins", "    bne s2, t0, fail_mepc",
                   f"    li t0, {expected['cause']}", "    bne s0, t0, fail_cause",
-                  f"    li t0, {expected['tval']:#x}", "    bne s1, t0, fail_tval", "    j check_memory"]
+                  f"    li t0, {expected['tval']:#x}", "    bne s1, t0, fail_tval", "    j check_result"]
+    lines += ["check_result:"]
+    if expected["rd"] is not None:
+        lines += [f"    li t0, {expected['rd']:#x}", "    bne x2, t0, fail_rd"]
     lines += ["check_memory:"]
     for word in case["writes"]:
         lines += [f"    li t0, {word['address']:#x}", "    ld t2, 0(t0)",
-                  f"    li t1, {word['value']:#x}", "    bne t2, t1, fail_memory"]
+                  f"    li t1, {word.get('expected_value', word['value']):#x}", "    bne t2, t1, fail_memory"]
     lines += ["good_trap:", "    li a0, 0", "good_trap_ins:", "    .4byte 0x0005006b"]
     for reason in FAILURE_REASONS:
         lines += [f"fail_{reason}:", "    li a0, 1", f"fail_{reason}_trap:", "    .4byte 0x0005006b", f"    j fail_{reason}"]

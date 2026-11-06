@@ -192,6 +192,51 @@ class ReplayTests(unittest.TestCase):
                         with self.assertRaisesRegex(ValueError, "出口静态检查"):
                             replay.build_case(c, directory)
 
+    def test_directed_probe_keeps_addresses_pte_and_isla_expectation(self):
+        s = replay.relocate_sample(sample(), self.decoder)["sample"]
+        before = copy.deepcopy(s)
+        c = replay.directed_probe_case(s, self.decoder)
+        self.assertEqual(s, before)
+        self.assertEqual({w["address"]: w["value"] for w in c["writes"]},
+                         {e["paddr"]: int(e["value"], 16) for e in c["decoded"]["entries"]})
+        self.assertEqual(c["expected"]["rd"], int(s["post_registers"]["x2"]["bits"], 2))
+        with self.assertRaisesRegex(ValueError, "Svrsw60t59b"):
+            replay.directed_probe_case(sample(), self.decoder)
+
+    def test_directed_store_fills_null_with_inverse_post_value(self):
+        s = replay.relocate_sample(sample(), self.decoder)["sample"]
+        walk = self.decoder.decode_sample(s, self.decoder.Config(True, False, False))
+        leaf = next(e["paddr"] for e in walk["entries"] if e["role"] == "leaf")
+        for name in ("pre_memory", "post_memory"):
+            next(cell for cell in s[name] if cell["address"] == leaf)["value"] |= 4
+        s["isa_state"]["$instruction"] = "sd x2, 0(x1)"
+        data = next(e["paddr"] for e in self.decoder.decode_sample(
+            s, self.decoder.Config(True, False, False))["entries"] if e["role"] == "data")
+        for cell in s["pre_memory"]:
+            if data <= cell["address"] < data+8:
+                cell["value"] = None
+        c = replay.directed_probe_case(s, self.decoder)
+        word = next(w for w in c["writes"] if w["address"] == data)
+        self.assertEqual(word["value"] ^ word["expected_value"], (1 << 64)-1)
+        self.assertIsNone(c["expected"]["rd"])
+        self.assertIn("sd x2, 0(x1)", replay.paging_assembly(c))
+
+    def test_directed_real_s_has_distinct_fetch_mapping_and_returns_via_ecall(self):
+        s = replay.relocate_sample(sample(), self.decoder)["sample"]
+        c = replay.directed_probe_case(s, self.decoder, "s")
+        fetch = [w for w in c["writes"] if w["role"] == "harness_fetch"]
+        self.assertEqual(len(fetch), 1)
+        self.assertEqual(fetch[0]["address"], 0x80200010)
+        self.assertEqual(fetch[0]["value"] & 0xff, 0xcb)
+        asm = replay.paging_assembly(c)
+        self.assertIn("mret\ns_entry:", asm)
+        self.assertIn("s_return:\n    ecall", asm)
+        parent = ROOT.parent / "output/e1-e4/unit"
+        parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=parent) as directory:
+            built = replay.build_case(c, directory)
+            self.assertGreater(built["symbols"]["payload_ins"], built["symbols"]["s_entry"])
+
 
 if __name__ == "__main__":
     unittest.main()
