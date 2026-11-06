@@ -155,3 +155,81 @@ PYTHONDONTWRITEBYTECODE=1 python3 output/ecfg/collect_results.py
 | 数量守恒及最终汇总 | output/ecfg/summary.json、collect-results.log |
 
 本轮没有 Isla 报错或异常空样本。尚未执行 XiangShan/NEMU 重放、check-samples 跨模式成员检查、STORE/Sv48 或完整具体值穷举，均记“未测”。未修改 design.md、另一个工作树或原配置；运行产物与脚本全部在 output/ecfg/，只有本报告按任务要求写入 agents/p0_replay/。
+
+
+## 扩展场景
+
+2026-11-07，P0 批次 A。**本节三个场景生成、严格解码、数量核账与禁读区断言通过。** 保留本文原有 Sv39 LOAD 结果不改；本节不宣称 design v2 全项 E-cfg 通过：E-dev 的两种设备配置触发 panic，Svrsw60t59b IR 重生成、count 模式、独立 C3、check-samples 及硬件重放未测。
+
+| 场景 | 路径数 | 守卫类数 | 样本数 | 形状数 | truncated=true 样本 | 耗时 | 退出 / 摘要 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| sv39-store | 20 | 1204 | 1204 | 92 | 1182 | 19.238s | 0 / finished |
+| sv48-load | 27 | 6918 | 6918 | 140 | 6895 | 57.120s | 0 / finished |
+| sv48-store | 27 | 3510 | 3510 | 124 | 3487 | 36.612s | 0 / finished |
+
+三场景同时运行，每个 -T32，外部进程组 1200 秒上限、内部 --timeout 1190，均自然完成。枚举线程沿用默认，上限 16；实际各路径线程数见 output/batch-a/extension-summary.json。class_cap=1、path_cap=1000000、sample_stride=1，所有 path_truncated=false；类内剩余解产生 truncated=true，不代表路径枚举截断。三场景 errors/execution-timeouts/smt-timeouts/unfinished-paths/model-query-timeouts/pending-batches 均为 0。没有为了稳定数字额外重复求解；形状数是本次代表样本观测，不证明形状全集。
+
+### 地址区域直方图与断言
+
+PTE 统计为实际读；LOAD 数据统计为实际读，STORE 数据统计为实际写，不能把 STORE 的 null 初值当成读取。每次访问均为 8 字节。访问异常目标没有发出访存，独立统计，不算禁读区实际读取。
+
+| 场景 | 区间 | PTE 读 | 数据读 | 数据写 | PTE AF 目标 | 数据 AF 目标 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| sv39-store | [0,0x1000) | 0 | 0 | 0 | 2 | 0 |
+| sv39-store | [0x1000,0x04000000) | 0 | 0 | 0 | 0 | 0 |
+| sv39-store | [0x04000000,0x80000000) | 0 | 0 | 0 | 0 | 8 |
+| sv39-store | [0x80000000,0x80100000)=harness | 0 | 0 | 0 | 0 | 0 |
+| sv39-store | [0x80100000,2^43) | 3160 | 0 | 136 | 0 | 0 |
+| sv39-store | [2^43,2^48) | 0 | 0 | 0 | 14 | 168 |
+| sv39-store | [2^48,2^64) | 0 | 0 | 0 | 2 | 88 |
+| sv48-load | [0,0x1000) | 0 | 0 | 0 | 8 | 2 |
+| sv48-load | [0x1000,0x04000000) | 0 | 0 | 0 | 0 | 0 |
+| sv48-load | [0x04000000,0x80000000) | 0 | 0 | 0 | 0 | 139 |
+| sv48-load | [0x80000000,0x80100000)=harness | 0 | 0 | 0 | 0 | 0 |
+| sv48-load | [0x80100000,2^43) | 24578 | 1568 | 0 | 0 | 0 |
+| sv48-load | [2^43,2^48) | 0 | 0 | 0 | 39 | 2606 |
+| sv48-load | [2^48,2^64) | 0 | 0 | 0 | 13 | 229 |
+| sv48-store | [0,0x1000) | 0 | 0 | 0 | 8 | 0 |
+| sv48-store | [0x1000,0x04000000) | 0 | 0 | 0 | 0 | 0 |
+| sv48-store | [0x04000000,0x80000000) | 0 | 0 | 0 | 0 | 40 |
+| sv48-store | [0x80000000,0x80100000)=harness | 0 | 0 | 0 | 0 | 0 |
+| sv48-store | [0x80100000,2^43) | 12338 | 0 | 392 | 0 | 0 |
+| sv48-store | [2^43,2^48) | 0 | 0 | 0 | 37 | 563 |
+| sv48-store | [2^48,2^64) | 0 | 0 | 0 | 15 | 141 |
+
+| 场景 | 低端原 RAM [0x04000000,0x80000000) PTE/数据实际读=0 | harness PTE/数据实际读=0 | 两区实际写=0 | 逐字节断言 |
+| --- | --- | --- | --- | --- |
+| sv39-store | PASS | PASS | PASS | PASS |
+| sv48-load | PASS | PASS | PASS | PASS |
+| sv48-store | PASS | PASS | PASS | PASS |
+
+全部实际 PTE 读取和数据读写均在 [0x80100000,2^43)。本轮使用 Svade/dirty_update=false；表中 PTE 项统计读取，不作为独立事件迹证明。STORE 的数据实际读取为零是单条 sd 的语义，额外检查写目标也不落禁区；数据写依据 pt_decode 对 post_memory 的严格解码统计，并检查 pre_memory 存在目标单元，允许其初值为 null。本轮不新增生成后填充或重定位。
+
+### 固定输入、命令和验证
+
+isarch/IR/config-xs.toml/pt_decode 哈希与本文“锁定输入”节相同；三次运行前均重新验证。STORE 使用 0x0020b023（sd x2,0(x1)），LOAD 使用 0x0000b103；x2 未新增钉值，沿用原 E-cfg 自由前态。Sv48 satp=0x9000000000080200，Sv39 satp=0x8000000000080200；x1=0x20000000、Supervisor、mstatus.bits=0x0000000a00040000，menvcfg/senvcfg/mseccfg.bits=0。命令依据外部 enumeration.md/samples.md 现有 solve-state 入口。其他参数沿用本文原命令，只把 -T 改为 32，STORE 换指令和 clause。
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 output/batch-a/run_scenario.py \
+  --out output/ecfg/sv39-store --config output/ecfg/config-xs.toml --access store --threads 32
+PYTHONDONTWRITEBYTECODE=1 python3 output/batch-a/run_scenario.py \
+  --out output/ecfg/sv48-load --config output/ecfg/config-xs.toml \
+  --satp 0x9000000000080200 --threads 32
+PYTHONDONTWRITEBYTECODE=1 python3 output/batch-a/run_scenario.py \
+  --out output/ecfg/sv48-store --config output/ecfg/config-xs.toml \
+  --satp 0x9000000000080200 --access store --threads 32
+# 每场景分别执行（替换 SCENARIO）：
+PYTHONDONTWRITEBYTECODE=1 python3 output/batch-a/check_regions.py \
+  output/ecfg/SCENARIO/samples.jsonl --out output/ecfg/SCENARIO/validation
+PYTHONDONTWRITEBYTECODE=1 python3 output/batch-a/collect.py
+```
+
+复现时使用新的空输出目录。运行器完整 argv/env/cwd/哈希/时间在各场景 done.json，日志为 stdout.txt/stderr.txt；JSON 为 output/rv64_zLOAD.json 或 rv64_zSTORE.json；原始样本为 samples.jsonl。validation/regions.json 保存完整事件、字节、去重地址与 AF 目标统计；validation/pt_decode/ 保存 shapes.json/page_tables.json/distribution.md。新统计器在 output/batch-a/，不改本文原有 check_regions.py 或冻结二进制。STORE 与设备窗口计数先行测试 2 项通过；最终 collect.py 校验 JSON/MERGE_STATS/样本类数守恒、未截断路径、输入 provenance 哈希和样本哈希通过，日志 output/batch-a/collect.log。
+
+| 样本流 | SHA-256 |
+| --- | --- |
+| sv39-store | `262715f96ebe900e3d6a543092bbabfa5a950969106d61d96ab955dd8f03576a` |
+| sv48-load | `4c312e289e9ccd7684ff543cbfca4cddb52f5d580ac9fc16911d76d9213110ab` |
+| sv48-store | `2fd22253e28365651d47b14324324d712263dd21b3de84e5765c3ce0276c104b` |
+
+总账：[extension-summary.json](../../output/batch-a/extension-summary.json)。所有运行和临时文件在本工作树 output/，未修改 isla-enumerate，未做 Git 写操作。设备区未签收的限制见 [E-dev](e-dev-results.md)；不能用本节成功替代设备判死实验。

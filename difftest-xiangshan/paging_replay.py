@@ -18,6 +18,7 @@ import pipeline
 
 PPN_MASK = ((1 << 44) - 1) << 10
 RAM_LIMIT = 1 << 43
+FAILURE_REASONS = ("unexpected_trap", "missing_trap", "rd", "mepc", "cause", "tval", "memory")
 
 
 def sha256(path):
@@ -232,10 +233,51 @@ def paging_assembly(case):
     for word in case["writes"]:
         lines += [f"    li t0, {word['address']:#x}", "    ld t2, 0(t0)",
                   f"    li t1, {word['value']:#x}", "    bne t2, t1, fail_memory"]
-    lines += ["good_trap:", "    li a0, 0", "good_trap_ins:", "    .4byte 0x0005006b", "    j good_trap"]
-    for reason in ("unexpected_trap", "missing_trap", "rd", "mepc", "cause", "tval", "memory"):
+    lines += ["good_trap:", "    li a0, 0", "good_trap_ins:", "    .4byte 0x0005006b"]
+    for reason in FAILURE_REASONS:
         lines += [f"fail_{reason}:", "    li a0, 1", f"fail_{reason}_trap:", "    .4byte 0x0005006b", f"    j fail_{reason}"]
     return "\n".join(lines)+"\n"
+
+
+def check_exit_layout(disassembly, symbols):
+    """核对链接后的出口：GOOD 只能从完整内存检查块顺序落入。"""
+    instructions = []
+    for line in disassembly.splitlines():
+        match = re.match(r"\s*([0-9a-f]+):\s+([0-9a-f]{8})\s+(.+)", line)
+        if match:
+            instructions.append((int(match[1], 16), int(match[2], 16), match[3]))
+    words = {pc: word for pc, word, asm in instructions}
+    failure_symbols = {f"fail_{reason}_trap" for reason in FAILURE_REASONS}
+    if {name for name in symbols if re.fullmatch(r"fail_.+_trap", name)
+        and name not in {f"fail_{reason}" for reason in FAILURE_REASONS}} != failure_symbols:
+        raise ValueError("出口静态检查：失败桩符号集合错误")
+    trap_addresses = {symbols[name] for name in failure_symbols | {"good_trap_ins"}}
+    if len(trap_addresses) != len(FAILURE_REASONS)+1:
+        raise ValueError("出口静态检查：失败桩符号地址不唯一")
+    if {pc for pc, word, asm in instructions if word & 0x7f == 0x6b} != trap_addresses:
+        raise ValueError("出口静态检查：存在未登记的 XSTrap 或出口缺失")
+    for name in failure_symbols:
+        if words.get(symbols[name]-4) != 0x00100513 or words.get(symbols[name]) != 0x0005006b:
+            raise ValueError("出口静态检查：失败桩编码错误")
+    check, good, trap = (symbols[name] for name in ("check_memory", "good_trap", "good_trap_ins"))
+    if not check < good or trap != good+4 or words.get(good) != 0x00000513 or words.get(trap) != 0x0005006b:
+        raise ValueError("出口静态检查：GOOD 桩布局错误")
+    failure_entries = {symbols[f"fail_{reason}"] for reason in FAILURE_REASONS}
+    for pc, word, asm in instructions:
+        opcode = word & 0x7f
+        if opcode == 0x67:
+            raise ValueError("出口静态检查：不允许间接跳转")
+        if opcode in (0x63, 0x6f):
+            target = re.search(r"\b([0-9a-f]+)\s+<", asm)
+            if target is None:
+                raise ValueError("出口静态检查：跳转目标不可解析")
+            destination = int(target[1], 16)
+            if check < destination <= trap:
+                raise ValueError("出口静态检查：跳转绕过内存检查")
+            if check <= pc < good and (opcode != 0x63 or destination not in failure_entries):
+                raise ValueError("出口静态检查：内存检查块不能顺序落入 GOOD")
+    if good-4 not in words or words[good-4] & 0x7f != 0x63:
+        raise ValueError("出口静态检查：GOOD 前缺少内存检查")
 
 
 def build_case(case, output, compiler="riscv64-unknown-elf-gcc"):
@@ -257,7 +299,17 @@ def build_case(case, output, compiler="riscv64-unknown-elf-gcc"):
         raise ValueError("R6: ELF 与样本内存重叠")
     nm = subprocess.run([compiler.removesuffix("gcc")+"nm", "-n", str(elf)], capture_output=True, text=True, check=True)
     (output/"symbols.txt").write_text(nm.stdout)
-    symbols = {parts[2]: int(parts[0], 16) for line in nm.stdout.splitlines() if len(parts := line.split()) == 3}
+    symbols = {}
+    for line in nm.stdout.splitlines():
+        parts = line.split()
+        if len(parts) == 3:
+            if parts[2] in symbols:
+                raise ValueError("出口静态检查：重复符号")
+            symbols[parts[2]] = int(parts[0], 16)
+    objdump = subprocess.run([compiler.removesuffix("gcc")+"objdump", "-d", "-M", "no-aliases", str(elf)],
+                             capture_output=True, text=True, check=True)
+    (output/"objdump.txt").write_text(objdump.stdout)
+    check_exit_layout(objdump.stdout, symbols)
     if symbols["trap_handler"] % 4:
         raise ValueError("handler 未按 4 字节对齐")
     result = {**case, "elf": str(elf), "elf_sha256": sha256(elf), "build_command": command, "symbols": symbols}
@@ -265,21 +317,33 @@ def build_case(case, output, compiler="riscv64-unknown-elf-gcc"):
     return result
 
 
-def classify_log(log, returncode, symbols):
+def classify_log(log, returncode, symbols, *, elf_sha256=None, expected_elf_sha256=None):
     text = re.sub(r"\x1b\[[0-9;]*m", "", log)
     l2 = bool(re.search(r"L2TLB resp test[^\n]*failed", text))
-    good, bad = "HIT GOOD TRAP" in text, "HIT BAD TRAP" in text
-    match = re.search(r"HIT (?:GOOD|BAD) TRAP[^\n]*?pc\s*=\s*(0x[0-9a-fA-F]+)", text)
+    hits = re.findall(r"HIT (?:GOOD|BAD) TRAP", text)
+    good, bad = "HIT GOOD TRAP" in hits, "HIT BAD TRAP" in hits
+    match = re.search(r"HIT (?:GOOD|BAD) TRAP at pc\s*=\s*(0x[0-9a-fA-F]+)", text)
     pc = int(match[1], 16) if match else None
-    symbol = next((name for name, address in symbols.items() if address == pc), None)
-    false_good = good and symbol is not None and symbol.startswith("fail_")
-    agree = returncode == 0 and good and not bad and not false_good and not l2 and "ABORT" not in text
-    bucket = ("framework-abort" if l2 else "timeout" if returncode is None else "agree" if agree
-              else "xs!=expected" if bad or false_good else "xs!=nemu" if "ABORT" in text else "other-failure")
+    names = [name for name, address in symbols.items() if address == pc]
+    symbol = names[0] if len(names) == 1 else None
+    failure = re.fullmatch(r"fail_(.+)_trap", symbol) if symbol is not None else None
+    reason = failure[1] if failure else None
+    false_good = good and failure is not None
+    hash_matches = elf_sha256 is not None and elf_sha256 == expected_elf_sha256
+    limit = bool(re.search(r"EXCEEDING (?:CYCLE|INSTR|CYCLE/INSTR) LIMIT", text))
+    agree = (hash_matches and returncode == 0 and len(hits) == 1 and good and not bad
+             and pc == symbols.get("good_trap_ins") and pc is not None
+             and symbol == "good_trap_ins" and not l2 and "ABORT" not in text and not limit)
+    bucket = ("timeout" if returncode is None else "limit" if limit else
+              "other-failure" if not hash_matches else
+              "xs!=expected" if len(hits) == 1 and failure else
+              "framework-abort" if l2 else "xs!=nemu" if "ABORT" in text else
+              "agree" if agree else "other-failure")
     return {"agree": agree, "bucket": bucket, "good_trap": good, "bad_trap": bad,
             "abort": "ABORT" in text, "trap_pc": pc, "trap_symbol": symbol,
             "bad_pc": pc if bad else None, "bad_symbol": symbol if bad else None,
-            "false_good": false_good, "l2tlb_failed": l2}
+            "false_good": false_good, "l2tlb_failed": l2, "reason": reason,
+            "hit_count": len(hits), "elf_hash_matches": hash_matches, "limit": limit}
 
 
 def run_probe(case, emulator, diff_so, timeout=600):
@@ -287,6 +351,8 @@ def run_probe(case, emulator, diff_so, timeout=600):
     if not 0 < timeout <= 600:
         raise ValueError("单次 emu 超时上限是 600 秒")
     directory = Path(case["elf"]).parent
+    if sha256(case["elf"]) != case["elf_sha256"]:
+        raise ValueError("R0: 运行 ELF 哈希与 case.json 不一致")
     command = [str(Path(emulator).resolve()), "-i", case["elf"], "--diff", str(Path(diff_so).resolve())]
     started = time.monotonic()
     # pipeline.run_case 会丢弃 GOOD 的完整日志，且超时后自动重跑，不能用于 E0 取证。
@@ -301,7 +367,9 @@ def run_probe(case, emulator, diff_so, timeout=600):
     log = (directory/"difftest.log").read_text(errors="replace")
     result = {"id": directory.name, "command": command, "returncode": returncode,
               "elapsed": round(time.monotonic()-started, 3), "log": str(directory/"difftest.log"),
-              **classify_log(log, returncode, case["symbols"])}
+              "elf_sha256": sha256(case["elf"]), "expected_elf_sha256": case["elf_sha256"],
+              **classify_log(log, returncode, case["symbols"], elf_sha256=sha256(case["elf"]),
+                             expected_elf_sha256=case["elf_sha256"])}
     (directory/"result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n")
     return result
 
@@ -346,7 +414,8 @@ def main():
         elif args.action == "run":
             print(json.dumps(run_probe(case, args.emu, args.diff, args.timeout), ensure_ascii=False))
         else:
-            print(json.dumps(classify_log(args.log.read_text(), args.returncode, case["symbols"]), ensure_ascii=False))
+            print(json.dumps(classify_log(args.log.read_text(), args.returncode, case["symbols"],
+                elf_sha256=sha256(case["elf"]), expected_elf_sha256=case["elf_sha256"]), ensure_ascii=False))
 
 
 if __name__ == "__main__":

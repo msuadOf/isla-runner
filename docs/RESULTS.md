@@ -187,3 +187,12 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 ## 2026-11-07 P0 重放器 E0（整体验收 FAIL）
 
 `feat/p0-replay` 工作树、根 HEAD `cf4cedf7`，emu `8714169…a85ee`、NEMU `9188e7d…ef43`：五条原始 Sv39 ld 代表 C1+C2 通过，9 项定向测试通过。只读 SO API 观测确认 PF 强制同步；构造的高 PA／有效 RAM 低位别名探针两侧报 AF5。L2TLB 事件已编入，但检查器未启用。错误期望进入 C2 失败桩，现有 emu 却仍报 GOOD，必须 BAD 的验收条件 FAIL；不计 E0 整组 PASS。未重编 emu，E1—E4 未测。详见 [命令、来源、完整结果与限制](../agents/p0_replay/e0-results.md)，本机证据统一在 `output/e0/`。
+
+
+## 2026-11-07 P0 批次 A（按 v2 出口契约）
+
+- **E-exit PASS**：emu `8714169…a85ee`、NEMU `9188e7d…ef43`；先红后绿，原 9 项加 3 项回归共 12/12。E0 五个正例和别名正对照重新生成重跑均 agree；错误期望、rd 翻位、V 位对照的桶与原因码正确；游离 GOOD 为 other-failure，自环 -I10000 为 limit（退出 0）。详见 [命令、逐例结果与静态检查解释](../agents/p0_replay/e-exit-results.md)。修订历史 E0“必须 BAD”的验收口径，原记录保留。
+- **E-dev FAIL，完整设备判死未验证**：isarch `496f63b6…0657`、IR `c0e4661a…31c0`；两种新增设备配置均在约 5 秒内 panic，设备数据读未完成验证。根放设备窗口后，仅 mmio 已导出 10 条设备 PTE 读样本；excluded 拒绝该读但 partial/errors=1。详见 [E-dev 失败与限制](../agents/p0_replay/e-dev-results.md)。
+- **E-cfg 扩展限定 PASS**：同 isarch/IR、配置 `40d72892…4129`，三场景同时 T32、单次 1200 秒上限；Sv39 STORE 为 20 路径/1204 类/92 形状/19.238 秒，Sv48 LOAD 为 27/6918/140/57.120 秒，Sv48 STORE 为 27/3510/124/36.612 秒。退出 0/finished，输入哈希、数量守恒、两个禁读区事件及字节断言均通过；没有超时。详见 [追加的扩展场景](../agents/p0_replay/e-cfg-results.md#扩展场景)。完整平台配置、新 IR、count 模式、独立 C3、check-samples 和硬件扩展重放未测；不计 design v2 的全项 E-cfg 通过。
+
+所有本轮原始输入与产物留在 output/exit、output/dev、output/ecfg 扩展目录及 output/batch-a；未写其他工作树、未做 Git 写操作、未重编冻结受测工具。

@@ -1,5 +1,12 @@
 # Findings
 
+## 2026-11-07 P0 批次 A：退出上限日志、设备区与扩展场景
+
+- 在 emu `8714169…a85ee` 上，自环加 `-I 10000` 实际打印字面量 `EXCEEDING CYCLE/INSTR LIMIT` 并退出 0，归类必须覆盖斜杠形式。PC 不匹配 good_trap_ins 的 GOOD 不能通过；E-exit 重跑正负例与原因码验证见 [报告](p0_replay/e-exit-results.md)。修订下方 E0 的 v1“必须 BAD”口径，历史事实保留。
+- isarch `496f63b6…0657`、IR `c0e4661a…31c0`、E-cfg 配置新增 mmio PMA 后，Sv39 LOAD 合并在普通根的 mmio+excluded/仅 mmio 两种写法均 panic：`smt.rs:968:40 no entry found for key`。回溯指向 region_merge::merge_states → merge_val/build_ite_with → translate_exp → mk_enum_member；源码索引缺失 enum id。具体未登记原因未核实；不写其他工作树、不修锁定运行器。
+- 同配置把根表直接置于设备窗口 0x30000000：仅 mmio 的崩溃前导出 10 条包含该 PTE 读取的 PF 样本，证明 mmio 属性本身不排除 PTE 访问。加 excluded 后该读取报 BadRead，0 样本，但 summary=partial/errors=1；不能当作全项判死 PASS。设备数据读未完成验证。详见 [E-dev](p0_replay/e-dev-results.md)。
+- 同冻结运行器/IR 和原 config-xs.toml 的 Sv39 STORE、Sv48 LOAD/STORE 完成 20/27/27 条路径；所有实际 PTE/数据访问都在 [0x80100000,2^43)，两个禁读区按事件和逐字节均为零。STORE 的 null 初值不能计作数据读取，数据写另计。守卫类和形状见 [扩展结果](p0_replay/e-cfg-results.md#扩展场景)；不从此推断设备配置、完整形状覆盖、独立 C3 或硬件重放通过。
+
 ## 2026-11-07 P0/E0：L2TLB 门控、页异常强制同步与 XSTrap 出口
 
 - 对本次 `8714169…a85ee` emu，`CONFIG_DIFFTEST_L2TLBEVENT` 定义仅证明事件接口存在；`difftest.cpp::init_checkers` 还用 `DEBUG_L2TLB` 门控检查器安装。配置注释该宏，实际二进制反汇编也没有安装 L2TLB 检查器；保留位 PF 实测无 ABORT，不能推广到启用检查器的构建。

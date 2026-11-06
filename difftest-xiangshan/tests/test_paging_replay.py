@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -132,18 +133,64 @@ class ReplayTests(unittest.TestCase):
 
     def test_good_at_failure_symbol_is_never_agreement(self):
         symbols = {"fail_unexpected_trap_trap": 0x80000224}
-        r = replay.classify_log("HIT GOOD TRAP at pc = 0x80000224", 0, symbols)
+        r = replay.classify_log("HIT GOOD TRAP at pc = 0x80000224", 0, symbols, elf_sha256="abc", expected_elf_sha256="abc")
         self.assertFalse(r["agree"])
         self.assertEqual(r["bucket"], "xs!=expected")
         self.assertTrue(r["false_good"])
 
     def test_log_classification_checks_returncode_and_exact_bad_symbol(self):
         symbols = {"fail_unexpected_trap": 0x80000300, "fail_unexpected_trap_trap": 0x80000304}
-        r = replay.classify_log("HIT BAD TRAP at pc = 0x80000304", 1, symbols)
+        r = replay.classify_log("HIT BAD TRAP at pc = 0x80000304", 1, symbols, elf_sha256="abc", expected_elf_sha256="abc")
         self.assertEqual(r["bad_symbol"], "fail_unexpected_trap_trap")
         self.assertFalse(replay.classify_log("HIT GOOD TRAP", 1, {})["agree"])
-        r = replay.classify_log("Warning: L2TLB resp test of core 0 sector 0 failed!\nABORT at pc", 1, {})
+        r = replay.classify_log("Warning: L2TLB resp test of core 0 sector 0 failed!\nABORT at pc", 1, {}, elf_sha256="abc", expected_elf_sha256="abc")
         self.assertTrue(r["l2tlb_failed"]); self.assertEqual(r["bucket"], "framework-abort")
+
+    def test_agreement_requires_one_exact_good_pc_and_matching_elf(self):
+        symbols = {"good_trap_ins": 0x80000244, "check_memory": 0x80000200}
+        good = "HIT GOOD TRAP at pc = 0x80000244"
+        def classify(log, code=0, actual="abc", expected="abc"):
+            return replay.classify_log(log, code, symbols, elf_sha256=actual,
+                                       expected_elf_sha256=expected)
+        self.assertTrue(classify(good)["agree"])
+        for log, code in [(good, 1), ("HIT GOOD TRAP at pc = 0x80000999", 0),
+                          ("HIT GOOD TRAP at pc = 0x80000200", 0), ("HIT GOOD TRAP", 0),
+                          ("", 0), (good+"\n"+good, 0), (good+"\nABORT", 0),
+                          (good+"\nHIT BAD TRAP at pc = 0x80000244", 0)]:
+            with self.subTest(log=log, code=code):
+                self.assertFalse(classify(log, code)["agree"])
+        self.assertFalse(classify(good, actual="def")["agree"])
+        self.assertFalse(classify(good, actual=None, expected=None)["agree"])
+        for limit in ("EXCEEDING CYCLE LIMIT", "EXCEEDING INSTR LIMIT", "EXCEEDING CYCLE/INSTR LIMIT"):
+            r = classify(good+"\n"+limit)
+            self.assertFalse(r["agree"])
+            self.assertEqual(r["bucket"], "limit")
+        self.assertEqual(classify(good, code=None)["bucket"], "timeout")
+
+    def test_failure_pc_returns_reason_for_good_and_bad(self):
+        for reason in replay.FAILURE_REASONS:
+            for label in ("GOOD", "BAD"):
+                symbol = f"fail_{reason}_trap"
+                r = replay.classify_log(f"HIT {label} TRAP at pc = 0x80000304", 0,
+                    {symbol: 0x80000304}, elf_sha256="abc", expected_elf_sha256="abc")
+                self.assertEqual(r["bucket"], "xs!=expected")
+                self.assertEqual(r["reason"], reason)
+
+    def test_build_rejects_bypassed_checks_extra_trap_and_aliased_failure(self):
+        c = replay.relocate_sample(sample(), self.decoder)
+        assembly = replay.paging_assembly(c)
+        variants = [assembly.replace("payload_ins:", "    j good_trap\npayload_ins:"),
+                    assembly.replace("payload_ins:", "    j good_trap_ins\npayload_ins:"),
+                    assembly.replace("payload_ins:", "    .4byte 0x0000006b\npayload_ins:"),
+                    assembly.replace("fail_rd:", "fail_alias_trap:\nfail_rd:")]
+        parent = ROOT.parent / "output/exit/unit"
+        parent.mkdir(parents=True, exist_ok=True)
+        for variant in variants:
+            with self.subTest(variant=variants.index(variant)):
+                with tempfile.TemporaryDirectory(dir=parent) as directory:
+                    with patch.object(replay, "paging_assembly", return_value=variant):
+                        with self.assertRaisesRegex(ValueError, "出口静态检查"):
+                            replay.build_case(c, directory)
 
 
 if __name__ == "__main__":
