@@ -182,3 +182,8 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 ```
 
 两条测试使用 `rv64d_v256_e64.json` 与 `test/first_party/src/no_override.json`；V256 配置、测试 ELF、模拟器的 SHA-256 依次为 `e28ac77273be6a31c544db6b196914dfb55b3b9fb72295ae7ef6cfc7b99dfc47`、`918863ec017c51732a294eddae17685929390d7f6af72f29dfcd054360ecedfa`、`aa493777b7c0362abc98f7a38d5008b0e3ff1970831e65eeaff9633b22182631`。修复前 CTest 退出 8 且新测试 `FAILURE: 2`；修复后 CTest 退出 0、2/2 通过。此结果只对应上述产物，后续源码和 V128 IR 需复验。
+
+
+## 2026-11-07 P0 重放器 E0（整体验收 FAIL）
+
+`feat/p0-replay` 工作树、根 HEAD `cf4cedf7`，emu `8714169…a85ee`、NEMU `9188e7d…ef43`：五条原始 Sv39 ld 代表 C1+C2 通过，9 项定向测试通过。只读 SO API 观测确认 PF 强制同步；构造的高 PA／有效 RAM 低位别名探针两侧报 AF5。L2TLB 事件已编入，但检查器未启用。错误期望进入 C2 失败桩，现有 emu 却仍报 GOOD，必须 BAD 的验收条件 FAIL；不计 E0 整组 PASS。未重编 emu，E1—E4 未测。详见 [命令、来源、完整结果与限制](../agents/p0_replay/e0-results.md)，本机证据统一在 `output/e0/`。

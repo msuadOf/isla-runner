@@ -1,5 +1,12 @@
 # Findings
 
+## 2026-11-07 P0/E0：L2TLB 门控、页异常强制同步与 XSTrap 出口
+
+- 对本次 `8714169…a85ee` emu，`CONFIG_DIFFTEST_L2TLBEVENT` 定义仅证明事件接口存在；`difftest.cpp::init_checkers` 还用 `DEBUG_L2TLB` 门控检查器安装。配置注释该宏，实际二进制反汇编也没有安装 L2TLB 检查器；保留位 PF 实测无 ABORT，不能推广到启用检查器的构建。
+- 只读 NEMU API 观测动态确认 PF 使用 `guided_exec(force=1,cause=13,mtval=VA)`。因此 PF 的 C1 一致不能代替 C2。高 PA 的有效 RAM 低位别名探针两侧报 AF5，无 guide；本次输入未截断成有效 RAM。
+- 同一 emu 上，`li a0,1; .4byte 0x0005006b` 在负对照中落到失败符号却仍报 GOOD/退出0。不能只看退出码和 GOOD 文本；必须核对 ELF 符号。原设计“rs1=a0 就能保证 BAD”的断言需按本版本修订，整体验收 FAIL。
+- 命令、二进制哈希、原始日志、观测器和适用边界见 [E0 报告](p0_replay/e0-results.md)。未修改受测资源，未重编。
+
 ## 2026-09-29 bughunt F 线验收战役：四签名命中矩阵与三族新候选
 
 - 产物：根仓 `.tmp/accept1-20260929-124451/`（gitignored）；结论：**P1-P3 改造达标**——已知 bug 自动级批量命中 + 新 bug 三族自动发现 + 重放毒丸消除。
