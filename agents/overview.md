@@ -12,4 +12,4 @@
 - workaround 描述归属与运行配置生成见 [workaround_ownership/status.md](workaround_ownership/status.md)。
 - 内存 clause 分支覆盖对照（W19+G1-G8）见 [memsolve_branch_coverage/status.md](memsolve_branch_coverage/status.md)。
 
-- P0 页表重放器见 [p0_replay/status.md](p0_replay/status.md)；P1b四场景5000例已重放核账，3个新形态待查，见 [报告](p0_replay/fuzz-p1b-results.md)。
+- P0 页表重放器见 [p0_replay/status.md](p0_replay/status.md)；P1b四场景5000例已重放核账，14 个分歧已按窄规则归类并向上游补报（[#6884](https://github.com/OpenXiangShan/XiangShan/issues/6884)，关联 #6670），见 [报告](p0_replay/fuzz-p1b-results.md)；新模型 ecfg4b 重放 E3 584/584、E4 587/587，见 [ecfg4b](p0_replay/ecfg4b-results.md)。（此前“3个新形态待查”的写法已被取代。）
