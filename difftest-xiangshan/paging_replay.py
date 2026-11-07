@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P0 定向探针；E0 历史转换与 E1/E2 原址探针，不承担完整 v2 平台验收。"""
+"""P0 重放：历史 E0、E1/E2 探针，以及 v2 平台绑定与原址具体化。"""
 from __future__ import annotations
 
 import argparse
@@ -23,6 +23,117 @@ FAILURE_REASONS = ("unexpected_trap", "missing_trap", "rd", "mepc", "cause", "tv
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def platform_hashes(profile):
+    """设计 v2：生成侧与运行侧分别规范化，避免环境更新使语料失效。"""
+    def digest(value):
+        return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"),
+                                         ensure_ascii=False).encode()).hexdigest()
+    return (digest({key: profile[key] for key in ("regions", "harness", "isa", "csr_init", "ir", "isla")}),
+            digest(profile["env"]))
+
+
+def create_platform_lock(profile, files):
+    gen, env = platform_hashes(profile)
+    lock = {"schema_version": 1, "platform_gen_sha256": gen, "platform_env_sha256": env,
+            **{name + "_sha256": sha256(path) for name, path in files.items()}}
+    lock["config_toml_sha256"] = lock.pop("config_sha256")
+    verify_platform_lock(profile, lock, files)
+    return lock
+
+
+def verify_platform_lock(profile, lock, files):
+    gen, env = platform_hashes(profile)
+    if (gen, env) != (lock["platform_gen_sha256"], lock["platform_env_sha256"]):
+        raise ValueError("R0: 平台描述与 lock 不符")
+    for name, path in files.items():
+        key = "config_toml_sha256" if name == "config" else name + "_sha256"
+        actual = sha256(path)
+        if actual != lock[key]:
+            raise ValueError(f"R0: {name} 实物哈希与 lock 不符")
+        section = "ir" if name == "ir" else "env" if name in {"emu", "nemu"} else "isla"
+        if key not in profile[section] or actual != profile[section][key]:
+            raise ValueError(f"R0: {name} 实物哈希与平台描述不符")
+
+
+def platform_case(sample, decoder, profile, source_gen_sha256):
+    """v2 原址转换：期望取 Isla，填具体初值和诱饵后交给 E3。"""
+    if source_gen_sha256 != platform_hashes(profile)[0]:
+        raise ValueError("R0: 样本生成侧哈希不符")
+    decoder.exact(sample, decoder.SAMPLE_FIELDS, "samples v1")
+    if sample["schema_version"] != 1:
+        raise ValueError("R1: 仅支持 samples v1")
+    registers = sample["pre_registers"]
+    if any(item != {"ctor": "None<RTLB_Entry>", "value": {"unit": True}}
+           for item in registers["tlb"]["vector"]):
+        raise ValueError("R5: 非空 TLB")
+    decoded = decoder.decode_sample(sample, decoder.Config(profile["isa"]["svrsw60t59b"], False, False))
+    access = decoded["access"]
+    instruction = decoder.decode_instruction(sample)
+    ctor = registers.get("$instruction")
+    if ctor is not None:
+        fields = decoder.struct_value(ctor["value"])
+        register_field = decoder.LOAD_FIELDS[2] if access == "load" else decoder.STORE_FIELDS[1]
+        fixed_x2 = decoder.bit_value(fields[register_field], 5) == 2
+    else:
+        fixed_x2 = sample["isa_state"]["$instruction"].replace(" ", "") == {
+            "load": "ldx2,0(x1)", "store": "sdx2,0(x1)"}[access]
+    if (decoded["mode"] not in {"Sv39", "Sv48"} or decoded["va"] != 0x20000000
+            or decoded["root_paddr"] != 0x80200000 or instruction != (access, 0, 1)
+            or not fixed_x2 or registers["cur_privilege"]["enum"] != "Supervisor"):
+        raise ValueError("R1: 本批只支持固定 S 态 ld/sd x2,0(x1)")
+    for entry in decoded["entries"]:
+        if entry["role"] == "data":
+            continue
+        f = entry["fields"]
+        if entry["role"] == "pointer" and int(entry["value"], 16) & 0xd0:
+            raise ValueError("R7: 指针 U/A/D 非零")
+        if (entry["level"] == 0 and f["V"] and f["N"] and f["PPN"] & 15 == 8
+                and (f["R"] or f["X"]) and not (f["W"] and not f["R"])
+                and not (f["PBMT"] or f["RSW_60t59b"] or f["reserved"])):
+            raise ValueError("R4: 构成 64K NAPOT")
+        # 高 PPN 与页异常同存的优先级未签收；只检查实际读到的 PTE。
+        if (f["V"] and f["PPN"] >= 1 << 36
+                and decoded["exception_type"] in {"E_Load_Page_Fault", "E_SAMO_Page_Fault"}):
+            raise ValueError("R8: 高 PPN 与页异常优先级待查")
+    def ram(address):
+        return any(r["kind"] == "ram" and r["base"] <= address
+                   and address + 8 <= r["base"] + r["size"] for r in profile["regions"]) and address >= 0x80100000
+    termination = decoded["termination"]
+    if termination is not None:
+        address = termination["paddr"]
+        if not any(r["kind"] == "hole" and r["base"] <= address
+                   and address + 8 <= r["base"] + r["size"] for r in profile["regions"]):
+            raise ValueError("R9: AF 目标不在 hole")
+    pre = decoder.memory_bytes(sample["pre_memory"], allow_unknown=True)
+    post = decoder.memory_bytes(sample["post_memory"])
+    if set(pre) != set(post) or any(not ram(a) for a in {a & ~7 for a in pre}):
+        raise ValueError("R9: 样本内存不全在可重放 DRAM")
+    filled = {a: post[a] ^ 255 if value is None else value for a, value in pre.items()}
+    expected_memory = dict(post)
+    # 每个实际 PTE 旁边放一个未访问槽，检查初始化和错误寻址；不改原 PTE。
+    for entry in decoded["entries"]:
+        if entry["role"] == "data":
+            continue
+        address = (entry["paddr"] & ~0xfff) | ((entry["paddr"] + 8) & 0xfff)
+        if ram(address) and not any(address + i in pre for i in range(8)):
+            value = 0xa55aa55aa55aa55a
+            for i in range(8):
+                filled[address+i] = expected_memory[address+i] = (value >> (8*i)) & 255
+    derived = copy.deepcopy(sample)
+    derived["pre_memory"] = [{"address": a, "value": v, "bytes": 1} for a, v in sorted(filled.items())]
+    # check-samples 的后态是实际触碰足迹；诱饵留在前态和 harness 回读表。
+    derived["post_memory"] = copy.deepcopy(sample["post_memory"])
+    writes = [{"address": a, "value": decoder.read_word(filled, a),
+               "expected_value": decoder.read_word(expected_memory, a), "role": "sample_or_decoy"}
+              for a in sorted({a & ~7 for a in filled})]
+    cause = {None: 0, "E_Load_Page_Fault": 13, "E_SAMO_Page_Fault": 15,
+             "E_Load_Access_Fault": 5, "E_SAMO_Access_Fault": 7}[decoded["exception_type"]]
+    return {"sample": derived, "decoded": decoded, "writes": writes, "entry_mode": "mprv", "access": access,
+            "platform_gen_sha256": source_gen_sha256, "platform_env_sha256": platform_hashes(profile)[1],
+            "expected": {"cause": cause, "tval": decoded["va"] if cause else 0,
+                         "rd": decoder.bit_value(sample["post_registers"]["x2"], 64) if access == "load" else None}}
 
 
 def load_decoder(directory):
