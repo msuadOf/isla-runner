@@ -45,7 +45,11 @@ assert sha(ROOT/audit['path']) == audit['sha256']
 if args.check_topic:
     topic = json.loads((ROOT/'specs/topic-version.json').read_text())
     assert topic['components']['sail-riscv']['commit'] == model_commit
-    assert topic['components']['isla']['commit'] == manifest['isla_commit']
+    # 清单记录生成时的 Isla 源码基准；topic 固定的是随后提交了 IR 与来源记录的 Isla 提交，
+    # 清单不可能包含自己所在提交的哈希，所以要求基准是固定提交的祖先（或相等）。
+    pinned = topic['components']['isla']['commit']
+    subprocess.run(['git','-C',str(ISLA),'merge-base','--is-ancestor',manifest['isla_commit'],pinned],check=True)
+    assert subprocess.run(['git','-C',str(ISLA),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip() == pinned
     assert topic['ir']['sha256'] == sha(ROOT/topic['ir']['path'])
     assert sha(manifest_path) in topic['ir']['provenance']
     assert topic['publication']['status'] == '待发布'
