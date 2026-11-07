@@ -1,5 +1,7 @@
 # Fuzzing P1b 扩展 campaign 结果（2026-11-07）
 
+> 最新规则复核 **PASS：14 个 mismatch 全部归为已上报的 XiangShan 真发现，未归类 0 个，4986 agree 不变；单元测试 124/124 PASS**。下文 campaign 统计及“3 个新形态待查”保留规则加入前的历史口径；本次结果见文末[已上报真发现的窄规则分类](#已上报真发现的窄规则分类2026-11-07)。
+
 **四场景5000个变异体全部完成重放及逐例核账：4986 agree、14 原始 mismatch；3 个新形态待查。unittest 119/119 PASS。新形态的简化输入已通过 J1 并重新实跑，三方 cause 见下表。**
 
 | 场景 | 变异体 | agree | mismatch | 新形态数 | 丢弃数 | 形状×切片桶增量 |
@@ -78,4 +80,48 @@ cd difftest-xiangshan/tests
 python3 -m unittest discover -v
 cd "$campaign_root"
 python3 output/fuzz-p1b/triage.py
+```
+
+## 已上报真发现的窄规则分类（2026-11-07）
+
+**triage 复核 PASS：5000 例仍为 4986 agree、14 原始 mismatch；14 例全部命中同一窄规则，未归类 0 例。14 个形态及各自计数、代表样本均与规则加入前一致。** 原来“3 个新形态待查”现归入该已上报问题；历史精确项命中的 1 例仍单独核账可查。
+
+| 场景 | agree | 原始 mismatch | 该规则归类 | 未归类 |
+| --- | ---: | ---: | ---: | ---: |
+| sv39-load | 1994 | 6 | 6 | 0 |
+| sv39-store | 996 | 4 | 4 | 0 |
+| sv48-load | 997 | 3 | 3 | 0 |
+| sv48-store | 999 | 1 | 1 | 0 |
+| 合计 | 4986 | 14 | 14 | 0 |
+
+证据：[本轮核账汇总](../../output/fuzz-p1b/reported-xs-rule/triage-summary.json)、[分类后的完整形态](../../output/fuzz-p1b/reported-xs-rule/triage-forms.json)、[triage 日志](../../output/fuzz-p1b/reported-xs-rule/triage.log)。各场景子目录保留 5000 例的逐例账本及原始具体 PTE 分组。核账继续验证 ELF、原日志分桶、独立 NEMU 轨迹、J1 接纳、覆盖与平台锁定；额外断言全部 agree 均不命中规则，分类前后原始计数及代表样本不变。首次复核在 JSON 数组与内存元组直接比较处失败（[日志](../../output/fuzz-p1b/reported-xs-rule/triage-first.log)），改为统一 JSON 格式后比较，完整复核退出 0。
+
+新增规则 `xs_leaf_ppn_af_over_permission_pf`，把满足条件的分歧标为“已上报的 XiangShan 真发现”。原始 mismatch 仍计数，具体 PTE 组及代表样本仍保留。`filtered_samples` 沿用已知表字段，表示已归类数量，不把这些样本改成 agree，也不丢弃输入、日志或复现证据。
+
+命中必须同时满足：
+
+- 实际读取的叶 PTE[53:46] 非零。
+- pt_decode 的失败原因为遍历第 6–9 步的 U/RWX/A/D 权限检查：`privilege_permission`、与访问类型对应的 `load_permission` / `store_permission` / `fetch_permission`、`accessed_update_disabled`，或 STORE 的 `dirty_update_disabled`；第 3 步结构/保留位 PF、第 5 步超级页未对齐 PF 不在此列。
+- emu / 独立 NEMU / Isla cause 严格对应 LOAD `5/13/13`、STORE `7/15/15` 或取指 `1/12/12`，且独立 NEMU 与 Isla 一致（`isla_consistent_side=nemu`）。
+
+reason 明确记录：规范按遍历顺序应报 PF，XiangShan `TLB.scala` 的 `!af` 掩码使 PF 让位于 PPN 溢出 AF，已上报。规则不用父种子的守卫类号作键；原精确 PTE 键继续可用。同一例同时命中精确项和该规则时，优先显示已上报规则的名称和 reason，只计一次。
+
+例如，LOAD 叶 PTE `0x000040000000000b` 因 A=0 失败，`0x0000400000000009` 因 R=0、MXR=0 失败；STORE 叶 PTE `0x0000400000000003` 因 W=0 失败。上述例子还须有指定三方 cause 才命中。PPN 未超宽且 A=0、超宽但超级页未对齐、超宽但遍历全部通过并一致报 AF、cause 三元组不同，均不命中。
+
+按 TDD 先补 5 个测试，确认规则尚不存在时失败，再实现。原 119 个加新增 5 个，完整 unittest discover **124/124 PASS**；[失败日志](../../output/fuzz-p1b/reported-xs-rule/tdd-red.log)、[定向通过日志](../../output/fuzz-p1b/reported-xs-rule/tdd-green.log)、[完整测试日志](../../output/fuzz-p1b/reported-xs-rule/unittest.log)保留。正例覆盖 L0/L1/L2、U 权限、W=0、A=0、D=0 与 PTE 高位边界；反例覆盖上述四类情况及 NEMU 不一致。当前 pt_decode 只支持 LOAD/STORE，取指使用合成解码记录检验 `1/12/12` 分支，不计作取指重放验证。
+
+本轮只修改分类实现、测试、核账脚本及本节报告，不修改 Sail、Isla、IR，也不重跑 emu。规则分类结果写入 `output/fuzz-p1b/reported-xs-rule/`；原 campaign 的 summary、已知精确输入表、重放结果、历史 triage 及其最终审计保持原样。修改前的 `paging_fuzz.py` 留存在该目录的 `campaign-paging_fuzz.py`，核对其 SHA-256 与四场景 manifest 一致；新分类器及 triage 的身份另见 [分类身份记录](../../output/fuzz-p1b/reported-xs-rule/classification-provenance.json)。
+
+本次复验命令（从工作树根目录开始，临时文件与日志均写数据盘）：
+
+```sh
+campaign_root="$PWD"
+export PYTHONDONTWRITEBYTECODE=1
+export PT_DECODE_DIR="$(realpath ../isla-enumerate/agents/path_merge_call_support/pt_decode)"
+export TMPDIR="$campaign_root/output/fuzz-p1b/reported-xs-rule/tmp"
+export PAGING_TEST_OUTPUT_DIR="$campaign_root/output/fuzz-p1b/reported-xs-rule/tests"
+cd difftest-xiangshan/tests
+python3 -m unittest discover -s . > "$campaign_root/output/fuzz-p1b/reported-xs-rule/unittest.log" 2>&1
+cd "$campaign_root"
+python3 output/fuzz-p1b/triage.py > output/fuzz-p1b/reported-xs-rule/triage.log 2>&1
 ```

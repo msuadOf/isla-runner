@@ -21,6 +21,11 @@ import paging_replay as replay
 FLAG_BITS = tuple(range(10)) + tuple(range(54, 64))
 OPERATORS = ('M1', 'M2', 'M5')
 SCENARIOS = ('sv39-load', 'sv39-store', 'sv48-load', 'sv48-store')
+KNOWN_MISMATCH_RULES = (dict(
+    rule='xs_leaf_ppn_af_over_permission_pf',
+    reason='已上报的 XiangShan 真发现：规范按遍历顺序应报 PF；'
+           'XiangShan TLB.scala 的 !af 掩码使第 6-9 步的权限/A/D PF '
+           '让位于叶 PPN 溢出 AF，已上报。'),)
 
 
 def canonical(value):
@@ -342,17 +347,55 @@ class Coverage:
 
 
 def mismatch_key(case, observation):
-    """具体 PTE 包含级别、地址和值；不允许用整个守卫类作为过滤键。"""
+    """精确键保留 PTE 级别、地址和值，禁止用整个守卫类作键。
+
+    另支持已上报问题的窄规则：叶 PTE[53:46]、遍历失败步骤及三方 cause
+    必须同时满足；规则不以守卫类为键，也不删除原始计数或代表样本。
+    """
     return dict(ptes=[dict(level=e['level'], address=e['paddr'], value=e['value'])
                       for e in case['decoded']['entries'] if e['role'] != 'data'],
                 xs_cause=observation['xs_cause'], nemu_cause=observation['nemu_cause'],
                 isla_consistent_side=observation['isla_consistent_side'])
 
 
+def reported_xs_ppn_fault(case, observation):
+    """仅归类叶 PPN 超宽 AF 抢占遍历第 6-9 步 PF 的已上报发现。"""
+    decoded = case['decoded']
+    causes = {'load': (5, 13, 13), 'store': (7, 15, 15), 'fetch': (1, 12, 12)}
+    expected = causes.get(decoded['access'])
+    if (expected is None or observation['isla_consistent_side'] != 'nemu'
+            or (observation['xs_cause'], observation['nemu_cause'],
+                case.get('expected', {}).get('cause')) != expected):
+        return False
+    reasons = {'privilege_permission', f"{decoded['access']}_permission",
+               'accessed_update_disabled'}
+    if decoded['access'] == 'store':
+        reasons.add('dirty_update_disabled')
+    if decoded['failure_reason'] not in reasons:
+        return False
+    ptes = [e for e in decoded['entries'] if e['role'] != 'data']
+    # pt_decode 先判结构异常和超级页对齐；这些 PF 不能归入权限优先级问题。
+    if any(e['role'] not in {'pointer', 'leaf'} or
+           e['failure_reason'] not in reasons | {None} for e in ptes):
+        return False
+    leaves = [e for e in ptes if e['role'] == 'leaf']
+    if len(leaves) != 1 or leaves[0] is not ptes[-1]:
+        return False
+    value, level = int(leaves[0]['value'], 16), leaves[0]['level']
+    return bool(value & (0xff << 46)) and not (
+        (value >> 10) & ((1 << (9*level))-1))
+
+
 class MismatchTable:
     def __init__(self, known=()):
-        self.known, self.groups = {}, {}
+        self.known, self.rules, self.groups = {}, {}, {}
         for item in known:
+            if 'rule' in item:
+                assert set(item) == {'rule', 'reason'} and item['reason']
+                assert item['rule'] in {r['rule'] for r in KNOWN_MISMATCH_RULES}
+                assert item['rule'] not in self.rules
+                self.rules[item['rule']] = item['reason']
+                continue
             assert set(item) == {'key', 'reason'} and item['reason']
             key = item['key']
             assert set(key) == {'ptes', 'xs_cause', 'nemu_cause', 'isla_consistent_side'}
@@ -369,20 +412,24 @@ class MismatchTable:
     def record(self, case, observation, sample_ref):
         key = mismatch_key(case, observation)
         identity = canonical(key)
-        filtered = identity in self.known
+        rule = next((name for name in self.rules if reported_xs_ppn_fault(case, observation)), None)
+        reason = self.rules[rule] if rule else self.known.get(identity)
+        filtered = reason is not None
         if identity not in self.groups:
             self.groups[identity] = dict(key=key, count=0, filtered_samples=0,
-                representative=sample_ref, known_reason=self.known.get(identity))
+                representative=sample_ref, known_reason=reason)
+            if rule:
+                self.groups[identity]['known_rule'] = rule
         group = self.groups[identity]
         group['count'] += 1
         group['filtered_samples'] += int(filtered)
-        return dict(filtered=filtered, group_key=key)
+        return dict(filtered=filtered, group_key=key, known_rule=rule)
 
     def summary(self):
         groups = list(self.groups.values())
         return dict(groups=groups, mismatch_samples=sum(g['count'] for g in groups),
                     filtered_samples=sum(g['filtered_samples'] for g in groups),
-                    known_entries=len(self.known))
+                    known_entries=len(self.known)+len(self.rules))
 
 
 def check_command(template, inputs, report):
@@ -538,7 +585,11 @@ def campaign(args):
     assert seed_stats['guard_classes'] == len(seeds), '本批要求每个来源守卫类一个代表'
     identities = snapshot([source])
     write_json(out/'readonly-before.json', identities)
-    known = [] if args.known_mismatches is None else json.loads(args.known_mismatches.read_text())
+    known = list(KNOWN_MISMATCH_RULES)
+    if args.known_mismatches is not None:
+        supplied = json.loads(args.known_mismatches.read_text())
+        known = [item for item in known if not any(
+            entry.get('rule') == item['rule'] for entry in supplied)] + supplied
     mismatch_table = MismatchTable(known)
     write_json(out/'known-mismatches.json', known)
     write_json(out/'manifest.json', dict(lock=lock, files={k: str(v) for k, v in files.items()},

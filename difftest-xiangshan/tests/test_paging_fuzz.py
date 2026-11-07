@@ -309,6 +309,98 @@ class FuzzTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             fuzz.MismatchTable([dict(class_id=0, reason='禁止整类忽略')])
 
+    def rule_case(self, value, access='load', level=0):
+        s = self.scenario_seed('sv39', access)
+        memory = self.decoder.memory_bytes(s['pre_memory'])
+        address = {0: 0x80301000, 1: 0x80300800, 2: 0x80200000}[level]
+        fuzz.put_word(memory, address, value)
+        derived, decoded = self.predict(s, memory)
+        cause = {None: 0, 'E_Load_Page_Fault': 13, 'E_SAMO_Page_Fault': 15,
+                 'E_Load_Access_Fault': 5, 'E_SAMO_Access_Fault': 7}[decoded['exception_type']]
+        observation = dict(xs_cause=5 if access == 'load' else 7,
+                           nemu_cause=cause, isla_consistent_side='nemu')
+        return dict(decoded=decoded, expected=dict(cause=cause)), observation
+
+    def test_reported_rule_accepts_permission_and_ad_faults_with_wide_leaf_ppn(self):
+        examples = [(0x000040000000000b, 'load', 'accessed_update_disabled'),
+                    (0x0000400000000009, 'load', 'load_permission'),
+                    (0x0000400000000003, 'store', 'store_permission'),
+                    (0x0000400000000019, 'store', 'privilege_permission'),
+                    (0x0000400000000047, 'store', 'dirty_update_disabled'),
+                    (0x002000000000000b, 'load', 'accessed_update_disabled')]
+        for value, access, failure in examples:
+            for level in (0, 1, 2):
+                with self.subTest(value=hex(value), access=access, level=level):
+                    case, observation = self.rule_case(value, access, level)
+                    self.assertEqual(case['decoded']['failure_reason'], failure)
+                    table = fuzz.MismatchTable(fuzz.KNOWN_MISMATCH_RULES)
+                    recorded = table.record(case, observation, 'representative')
+                    self.assertTrue(recorded['filtered'])
+                    self.assertEqual(recorded['known_rule'], fuzz.KNOWN_MISMATCH_RULES[0]['rule'])
+                    self.assertIn('已上报', table.summary()['groups'][0]['known_reason'])
+
+    def test_reported_rule_rejects_nonwide_structural_and_successful_walks(self):
+        examples = [(0xb, 0, 'accessed_update_disabled'),
+                    ((1 << 45) | 0xb, 0, 'accessed_update_disabled'),
+                    ((1 << 46) | (1 << 10) | 0xb, 1, 'superpage_misaligned'),
+                    ((1 << 46) | (1 << 54) | 0xb, 0, 'reserved_nonzero'),
+                    ((1 << 46) | 0xc7, 0, 'data_read_pma_access_fault')]
+        for value, level, failure in examples:
+            with self.subTest(value=hex(value), level=level):
+                case, observation = self.rule_case(value, level=level)
+                self.assertEqual(case['decoded']['failure_reason'], failure)
+                # 真实的两边 PF / 两边 AF 均不命中；伪造 AF/PF 也不能绕过失败原因检查。
+                for xs_cause in (case['expected']['cause'], 5):
+                    observation['xs_cause'] = xs_cause
+                    table = fuzz.MismatchTable(fuzz.KNOWN_MISMATCH_RULES)
+                    self.assertFalse(table.record(case, observation, 'negative')['filtered'])
+
+    def test_reported_rule_requires_exact_causes_access_and_nemu_agreement(self):
+        case, observation = self.rule_case(0x000040000000000b)
+        for field, value in [('xs_cause', 7), ('xs_cause', None), ('nemu_cause', 15),
+                             ('isla_consistent_side', 'neither'), ('isla_consistent_side', 'both')]:
+            with self.subTest(field=field, value=value):
+                changed = dict(observation, **{field: value})
+                self.assertFalse(fuzz.MismatchTable(fuzz.KNOWN_MISMATCH_RULES).record(
+                    case, changed, 'wrong-observation')['filtered'])
+        for changed in (dict(case, expected=dict(cause=15)),
+                        dict(case, decoded=dict(case['decoded'], access='store'))):
+            self.assertFalse(fuzz.MismatchTable(fuzz.KNOWN_MISMATCH_RULES).record(
+                changed, observation, 'wrong-case')['filtered'])
+
+    def test_reported_rule_supports_fetch_cause_tuple_without_claiming_fetch_replay(self):
+        # 当前 pt_decode 仅支持 LOAD/STORE；这里只检验规则的取指 cause 分支。
+        case, observation = self.rule_case(0x0000400000000009)
+        case['decoded'].update(access='fetch', failure_reason='fetch_permission')
+        case['decoded']['entries'][-1]['failure_reason'] = 'fetch_permission'
+        case['expected']['cause'] = 12
+        observation.update(xs_cause=1, nemu_cause=12)
+        self.assertTrue(fuzz.MismatchTable(fuzz.KNOWN_MISMATCH_RULES).record(
+            case, observation, 'fetch')['filtered'])
+        observation['xs_cause'] = 5
+        self.assertFalse(fuzz.MismatchTable(fuzz.KNOWN_MISMATCH_RULES).record(
+            case, observation, 'wrong-fetch')['filtered'])
+
+    def test_reported_rule_keeps_raw_groups_counts_and_representatives(self):
+        case, observation = self.rule_case(0x000040000000000b)
+        exact = dict(key=fuzz.mismatch_key(case, observation), reason='历史精确输入')
+        table = fuzz.MismatchTable([exact, *fuzz.KNOWN_MISMATCH_RULES])
+        before = copy.deepcopy(case)
+        table.record(case, observation, 'first')
+        table.record(case, observation, 'second')
+        other, other_observation = self.rule_case(0x0000400000000009)
+        table.record(other, other_observation, 'other')
+        summary = table.summary()
+        self.assertEqual(case, before)
+        self.assertEqual(summary['mismatch_samples'], 3)
+        self.assertEqual(summary['filtered_samples'], 3)
+        self.assertEqual(len(summary['groups']), 2)
+        self.assertEqual(summary['groups'][0]['count'], 2)
+        self.assertEqual(summary['groups'][0]['representative'], 'first')
+        self.assertEqual(summary['groups'][0]['known_rule'], fuzz.KNOWN_MISMATCH_RULES[0]['rule'])
+        with self.assertRaises(AssertionError):
+            fuzz.MismatchTable([dict(rule='whole_guard_class', reason='禁止整类忽略')])
+
     def test_observation_keeps_native_nemu_separate_from_guided_reference(self):
         case = {'expected': {'cause': 0}, 'symbols': dict(payload_ins=0x100, good_trap_ins=0x200,
                                 fail_unexpected_trap_trap=0x204)}
