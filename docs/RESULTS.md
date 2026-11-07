@@ -197,3 +197,5 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 - **E-cfg 扩展限定 PASS**：同 isarch/IR、配置 `40d72892…4129`，三场景同时 T32、单次 1200 秒上限；Sv39 STORE 为 20 路径/1204 类/92 形状/19.238 秒，Sv48 LOAD 为 27/6918/140/57.120 秒，Sv48 STORE 为 27/3510/124/36.612 秒。退出 0/finished，输入哈希、数量守恒、两个禁读区事件及字节断言均通过；没有超时。详见 [追加的扩展场景](../agents/p0_replay/e-cfg-results.md#扩展场景)。完整平台配置、新 IR、count 模式、独立 C3、check-samples 和硬件扩展重放未测；不计 design v2 的全项 E-cfg 通过。
 
 所有本轮原始输入与产物留在 output/exit、output/dev、output/ecfg 扩展目录及 output/batch-a；未写其他工作树、未做 Git 写操作、未重编冻结受测工具。
+
+| 2026-11-07，ecfg4b：新模型（Sail d79d8b32，浮点合并后加 Svnapot/Svpbmt/非叶保留位）+ Isla ae1a3355，用 ecfg3 完全相同的香山专用配置重生 IR | 四场景 2836 类/584 形状/122 路径，与 ecfg3 逐项相同；J1 2836/2836；E3 584/584；E4 587/587；Python 单测 124/124。先前 ecfg4 误用官方发布 IR（CLINT 大小 786432，种子暴涨到 8005 并撞 900 秒外限），已更正，不能算新模型缺陷。限定：四场景 class_cap=1 种子与每形状代表及定向/隔离输入；未签收类内全部取值、设备响应或硬件全覆盖 | [ecfg4b](../agents/p0_replay/ecfg4b-results.md)、[ecfg4 更正](../agents/p0_replay/ecfg4-results.md) |
