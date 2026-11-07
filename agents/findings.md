@@ -1705,3 +1705,11 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 ### XiangShan 浮点 DiffTest 的结果续跑按 case ID 跳过所有已记录条目
 
 `difftest-xiangshan/pipeline.py::run`从`results.ndjson`取得已有ID时不区分success/failure，后续同目录运行会跳过旧失败；`run_case`首跑超时后另以`--dump-commit-trace`重跑，重跑即使打印GOODTRAP，原记录仍为failure/returncode=null。对版本SHA `8099715d…22390c`的本地1344输入批次，30秒24路首轮135条有104成功/31超时（25条trace GOODTRAP），120秒24路第二轮1322条中1317成功/5超时（5条trace GOODTRAP），独立低并发重跑5条才取得5个正常退出。复跑须封存原日志并建立新结果目录，最终PASS只计对应case的GOODTRAP且returncode=0；[当前工作区逐例核账](../difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json)绑定IR `73dfb2e1…671d2a`、Isla `4e315e9a…59ae0`、FD配置 `20851fdb…723d0`、XiangShan `a13efc8`／emu `8714169…a85ee`／NEMU `9188e7d…ef43`。
+
+## 2026-11-07 XiangShan 叶 PTE「PPN 超宽」与「A=0」的异常优先级（疑似 RTL 偏离规范）
+
+- 现象：Sv39 LOAD，叶 PTE `0x000040000000000b`（PPN 超出实现物理地址宽度，A=0）。XiangShan emu 报 cause 5（load access fault），Isla（Sail）与 NEMU 报 cause 13（load page fault）。来源：fuzzing P1 的 500 个变异体（`agents/p0_replay/fuzz-p1-results.md`）。
+- 规范依据（手册 riscv-isa-manual-cn 检出 cc306428，路径位于本机 `/home/baiyifan/workplace-local/riscv-isa-manual-cn`）：翻译算法第 9 步（`src/priv/supervisor.adoc:2559-2564`）先于第 10 步生成物理地址（`:2571-2575`）；A=0 且实现 Svade 时报 page fault。异常优先级表 `src/priv/machine.adoc:2367-2370` 把地址翻译中先遇到的 page/access fault 排在最终物理地址的 access fault 之前。叶 PPN 过高只影响最终物理地址，不影响叶 PTE 自身的读取。
+- XiangShan 源码：`MMUBundle.scala:849-853` 的 `isAf` 对叶 PPN 高位非零即为 AF；`isPf`（`:805-823`）不含叶 A=0；`L2TLB.scala:931-939`、`PageTableWalker.scala:260-268` 只让 isPf 屏蔽 isAf；A=0 的 PF 在 `TLB.scala:462/530-541` 被 `!af` 屏蔽。有效优先级为：PTE 结构异常 → PPN 超宽 AF → A=0 PF。
+- Sail：`vmem.sail:91-117,134-162,295-304`、`vmem_ptw.sail:59-60` 先判 A=0（禁止硬件更新时 `PTW_PTE_Needs_Update` → page fault），之后才会访问物理地址。
+- 结论（Codex 只读调查，待 RTL 侧复现确认）：规范要求 cause 13，XiangShan 当前行为偏离；不进「已知 mismatch 过滤表」，作为真发现上报。待查：实际 emu 是否由该源码构建、模型是否关闭 A/D 硬件更新（本例 dirty_update=false，与 Svade 一致）。前提不同（启用硬件更新 A，或读取 PTE 本身失败）时 cause 5 可成立。
