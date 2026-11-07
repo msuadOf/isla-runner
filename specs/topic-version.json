@@ -6,7 +6,7 @@
   "status": "五入口IR已重生，来源哈希已核对；本轮定向验证通过；待发布",
   "components": {
     "isla": {
-      "commit": "ae1a33550c6d06ecbf85ac2e2daa85d196bd3e53",
+      "commit": "78b04e3df9876315ab07d32e5d8a6c5f2bb9383d",
       "source_branch": "feat/postprocess-enumeration",
       "url": "https://github.com/ariscv/isla.git"
     },
@@ -27,10 +27,10 @@
   "publication": {
     "pushed_this_round": false,
     "status": "待发布",
-    "component_remote_reachability": "2026-11-07 已用 git ls-remote 回读正式远端：Isla ariscv/isla 的 feat/postprocess-enumeration = ae1a3355，Sail msuadOf/sail-riscv 的 feat/sail-riscv-memory-by-model-20261022 = d79d8b32；旧publication只适用4d085b14/bf861b3e，见history",
+    "component_remote_reachability": "2026-11-07 已用 git ls-remote 回读正式远端：Isla ariscv/isla 的 feat/postprocess-enumeration = 78b04e3（含 judge 模式；IR 与来源记录仍在 ae1a3355，judge 提交未改动 IR），Sail msuadOf/sail-riscv 的 feat/sail-riscv-memory-by-model-20261022 = d79d8b32；旧publication只适用4d085b14/bf861b3e，见history",
     "root_push_status": "not-run",
     "git_write_operations": "子模块提交与推送、根仓 gitlink 提交由 Claude 在 2026-11-07 完成；Codex 阶段未做 Git 写操作",
-    "pending": "两个组件提交已推送；根仓 feat/memory-enum 的 gitlink 提交待推送；尚无独立签收，memory 分支本身未改动。components.isla 为含新IR与来源记录的提交 ae1a3355，其执行器/插件源码基准为 d7c25993"
+    "pending": "两个组件提交已推送；根仓 feat/memory-enum 的 gitlink 提交待推送；尚无独立签收，memory 分支本身未改动。components.isla 为 78b04e3，在含新IR与来源记录的 ae1a3355 之上增加 Isla judge 模式与相关文档，未改 IR，其执行器/插件源码基准为 d7c25993"
   },
   "updated": "2026-11-07",
   "validation": {
@@ -52,7 +52,7 @@
     {
       "components": {
         "isla": {
-          "commit": "ae1a33550c6d06ecbf85ac2e2daa85d196bd3e53",
+          "commit": "78b04e3df9876315ab07d32e5d8a6c5f2bb9383d",
           "source_branch": "feat/postprocess-enumeration",
           "url": "https://github.com/ariscv/isla.git"
         },

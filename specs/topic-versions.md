@@ -60,3 +60,5 @@ git -C .worktree/runner-float merge --ff-only origin/float
 ## 2026-11-04 float→memory 合流
 
 根仓以 `31ef3b9a8aa3a9db4c03a1d99c191cadf1aadaef` 为 memory 父提交，纳入 float `0665526d7e14a207eb9928e282e627584b5635fe`。保留 `topic=memory`；模型已形成双亲合流提交，Isla 双亲合流提交之后另有测试初始化兼容提交 `4d085b14`，父仓 gitlink 已暂存指向最终候选。组合 IR SHA-256 和来源见 `topic-version.json`、`isla/ir/provenance/manifest.json`；新二进制的已测定向范围获[限定签收](../agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md)，原域 partial 与全域无退化未证单列，父仓提交/发布仍待完成。旧两分支的 PASS 不迁记。float 的77处纯数据回退、NaN/trap 保留与 OPEN 范围见[交接](../agents/float_review_closure_20261102/handoff-to-memory.md)；本轮不新增通用配置、不研究 OPEN。`feat/witness-randomization` 继续排除；旧 memory 清单中的 float/general 分支在合流后成为祖先，不再列作排除项。
+
+2026-11-07：memory 的 Isla 由 `ae1a3355` 推进到 `78b04e3`（在同一新 IR 之上并入 judge 模式：`--check-samples-judge`，2836 种子五项验证通过，`cargo test` 1108 通过；IR 与来源记录未变）。Sail 仍为 `d79d8b32`。发布状态仍为“待发布”，无独立签收；推进前 `memory` 固定 `ae1a3355`，如需回退用反向提交。
