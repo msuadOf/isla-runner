@@ -1,5 +1,8 @@
 # Agents Overview
 
+2026-11-07：[枚举分支 IR 更新](memory_enum_ir_20261107/status.md)，五入口重生、来源哈希与本机定向复验通过；未做全域/硬件验收，待发布。
+
+
 本文件是根目录 `AGENTS.md` 引用的代码分析入口索引。
 
 - 仓库和代码逻辑的持续发现记录在 [findings.md](findings.md)。

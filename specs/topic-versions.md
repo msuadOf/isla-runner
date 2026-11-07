@@ -7,6 +7,7 @@
 | float | 591693df，77处纯数据回退收敛 | 0f7b8fbc，模型收敛 | 2026-11-03 限定验收；合流后须复验 |
 | memory（合流前） | bdd047bc，内存与JSON修复 | c70482a7，内存模型与预算坐标 | 2026-10-30 历史定向验收 |
 | memory（合流候选） | 4d085b14，双亲合流后的测试兼容提交 | bf861b3e，双亲合流 | 来源与已测定向范围限定签收；原域 partial 单列 |
+| feat/memory-enum（本轮） | d7c25993，含区域合并/枚举，已合入4d085b14 | d79d8b32，新页表模型及vstart早退补件 | 五入口IR重生；本机定向复验见[本轮报告](../agents/memory_enum_ir_20261107/final-report.md)；待发布 |
 
 每条分支的 `specs/topic-version.json` 是本分支的组件记录，gitlink是实际检出依据。float包含已合并通用支持、初态位模式配置、浮点支持及返回值具体化修复，不包含独立见证随机化分支；memory含PMA/CSR、value hints和encoding slices等已提交策略，新增SC双结果覆盖配置与不完整诊断。创建版本分支不代表接纳全部策略或完成联合功能验收。
 
@@ -51,6 +52,9 @@ git -C .worktree/runner-float merge --ff-only origin/float
 2026-10-30复审修复：同步当前两套模型IR、迁移workaround坐标，补JSON结果合同及SC覆盖配置；汇编要求GCC与Clang双通过。当前组件版本及定向验收见上文，前一次未重生IR的结论保留为历史版本记录。
 
 2026-10-31：float更新Isla80231ce9／模型9c339044，恢复nan_unbox原Sail if并完整重生IR；两侧见证与数值回归见[本次记录](../docs/nan-unbox-branch-restore-20261031.md)。没有由局部Jump减少推断整Clause提速。memory版本不变，其他独立review问题未在本轮修复。
+
+
+2026-11-07：根仓 `feat/memory-enum` 基于 memory `29aa4765`，Isla 更新来源为 `d7c25993` 的 `feat/postprocess-enumeration`，包含区域合并/枚举功能且已合入 `4d085b14`。Sail-RISC-V 为 `d79d8b32`，在 `bf861b3e` 上增加 Svnapot、Svpbmt、非叶 PTE 的 U/A/D 保留位检查三项语义补丁，并包含 `70b4d10` 的全寄存器访存早退清零 vstart 与 vmtype 坐标补件。使用相同浮点 Sail 0.20.1 快照与 Isla 插件重新生成全部五入口；旧生成配置因缺新扩展项被 Isla 拒绝后，按当前模型模板补齐 RV64=true、RV32=false，从新缓存重跑成功。新主 IR SHA-256 为 `1220297d0e7dc202c43bb0cee1d95941c4bc3cf62be6fd141d35dbd5a3ad2059`；四配置、命令、工具与历史哈希见 `isla/ir/provenance/manifest.json`。本轮定向结果和限制见[交付报告](../agents/memory_enum_ir_20261107/final-report.md)，旧 `4d085b14/bf861b3e` PASS 和主 IR `40f34f70…` 只保留原版本结论。publication 为**待发布**；本轮未做 Git 写操作、gitlink 更新或远端回读，IR/provenance 尚未提交。
 
 
 ## 2026-11-04 float→memory 合流

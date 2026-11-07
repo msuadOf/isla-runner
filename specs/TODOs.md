@@ -1,5 +1,8 @@
 # TODOs — 当前协作状态
 
+**2026-11-07 枚举分支 IR 更新**：Isla `d7c25993` / 模型 `d79d8b32` 的五入口重生、来源哈希与本机定向复验通过（1185 Rust、26步IR、104负变异、315/300数值状态、混合9例、vstart/helper、Make/编码）；旧签收保留原版本，未做全域/新页表专用语义/硬件验收，未做Git写操作，待发布；见[议题状态](../agents/memory_enum_ir_20261107/status.md)。
+
+
 **2026-10-21 memory版本快照**：本根仓分支固定组件提交与IR哈希，版本见 [manifest](topic-version.json)。原有状态表是共同基线的历史记录，不代表本分支额外验收；当前交付边界见 [双分支说明](topic-versions.md)。
 
 **2026-11-04 float→memory 合流候选（已测范围限定签收）**：父仓 `31ef3b9` 与 `0665526d` 已进入未提交合流；模型 `bf861b3e` 的79配置/130区域/22锚点、普通严格检查、四配置 IR 生成和五入口安装已获来源独审。Isla 双亲合流 `7cce7834` 后追加仅测试初始化兼容提交 `4d085b14`，最新源码 tree `3d852a5f` 获独立签收；父仓两个 gitlink 与主 IR SHA 已暂存绑定。最终二进制 `3e44cdd6…` 的 workspace 610/665、永久 IR 26 步、104负变异及定向315/300、混合9、nat8/helper4、三表示54、真实 Make 四入口均有实际结果；[联合独审](../agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md)确认已测范围 `limited-pass`，无新增实现阻断。原域FLEQ_S finished/gen48，LOAD_FP、C_LD、STORE 均 partial；P3、STORE、C_LD 各一条 Poison 代表已用旧/新同前态复放，归于既有边界，不外推全部922/112/7，见[核心分类](../agents/float_memory_merge_20261103/review/core/partial-boundary/report.md)。STORE/C_LD 旧基线长尾尚未完成，不能判全域无退化；F1继承缺陷、全部float77预算、OPEN、全控制流和硬件重放不在签收范围。两个组件已从正式目标分支逐 SHA 回读一致，父仓提交/发布及原memory工作树保护更新待完成；见[最终报告](../agents/float_memory_merge_20261103/final-report.md)。

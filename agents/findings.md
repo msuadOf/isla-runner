@@ -1715,3 +1715,9 @@ Isla `cf1aa14` 复用 `Val::symbolic_variables` 与 `Exp::modify`，原序传播
 # float→memory 父仓合流的版本边界（2026-11-04）
 
 根仓 `31ef3b9` 与 `0665526d` 的共同基线为 `a85d6df`。两分支的 `specs/topic-version.json` 均记录各自的两个子模块提交与 IR SHA；合流后的 gitlink 与组合 IR 必须另行取得，旧任一 manifest 不能代表合流版本。`make solve-<clause>` 目标在 `isla/scripts/run.mk`，根仓 `Makefile` 没有该目标；从根目录须用 `make -C isla solve-<clause>`。本次父仓 `-s resolve` 合流留下两个 gitlink 冲突，子仓最终提交前不选取任一旧 gitlink。具体实施见[合流记录](float_memory_merge_20261103/implementation/root-merge.md)。
+
+## 2026-11-07：新页表模型的 Isla 生成配置与 workaround
+
+模型 `d79d8b32` 将 Svnapot/Svpbmt 从固定不支持改为读取 `extensions.<name>.supported`。旧 `bf861b3e` 的四份生成 JSON 缺少这两个项；普通 `--just-check` 可以通过，但 Isla 后端在 `postlude/validate_config.sail:55` 拒绝未确定的运行时配置。因此普通严格检查通过不能代替完整 SYMBOLIC 生成。当前模型模板 `config/config.json.in` 使用 `CONFIG_XLEN_IS_64`：本轮仅补齐 RV64=true、RV32=false，保持其余生成项；失败与重跑来源见[本轮议题](memory_enum_ir_20261107/status.md)。
+
+`bf861b3e→d79d8b32` 的模型变动只与现有 `vmtype.toml` 一项源码区域相交。模型提交 `70b4d10` 已将 `process_vm` 范围从 `[652:2,673:3)` 迁到 `[658:2,679:3)`；按旧/新各自配置提取的区域正文一致。迁移来自两处全寄存器访存早退清零 `vstart` 所增加的六行，不是新页表逻辑本身。当前79配置/130区域/22注释锚点通过源码位置检查；这不证明每个区域都有 IR 指令命中，也不代表完整语义验收。

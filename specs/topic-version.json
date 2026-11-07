@@ -3,54 +3,102 @@
   "topic": "memory",
   "created": "2026-10-21",
   "root_base": "a85d6dfb8a906f17d6710cb85f26668b753729ce",
-  "status": "float→memory合流限定验收通过：来源、源码、定向Schema Union/数值/Make已签；原域访存partial、F1和全域未证仍保留；发布待完成",
+  "status": "五入口IR已重生，来源哈希已核对；本轮定向验证通过；待发布",
   "components": {
     "isla": {
-      "commit": "4d085b14aa0f987436b86d72f41fab1df9e9a132",
-      "source_branch": "feat/memory-consistency",
+      "commit": "ae1a33550c6d06ecbf85ac2e2daa85d196bd3e53",
+      "source_branch": "feat/postprocess-enumeration",
       "url": "https://github.com/ariscv/isla.git"
     },
     "sail-riscv": {
-      "commit": "bf861b3e687894480aec701a886a38d4e50b8a99",
+      "commit": "d79d8b320beec68b596e5e01e69cc353eb78f7a4",
       "source_branch": "feat/sail-riscv-memory-by-model-20261022",
       "url": "https://github.com/msuadOf/sail-riscv.git"
     }
   },
   "ir": {
     "path": "isla/rv64d.ir",
-    "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
-    "provenance": "最终bf861b3e模型经普通严格检查及四配置SYMBOLIC生成；五入口、源/工具/配置哈希见isla/ir/provenance/manifest.json（SHA-256 8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b）"
+    "sha256": "1220297d0e7dc202c43bb0cee1d95941c4bc3cf62be6fd141d35dbd5a3ad2059",
+    "provenance": "d79d8b32模型普通严格检查与四配置SYMBOLIC重生，五入口及配置/命令/工具哈希见isla/ir/provenance/manifest.json（SHA-256 26d458fe21ccabbdb0e928df81dd1a090bd487cab423c3797192ae0fd379fa14）；RV64启用Svnapot/Svpbmt，RV32禁用；旧bf861b3e哈希与验收保留在history及历史报告"
   },
   "excluded_isla_branches": [
     "feat/witness-randomization"
   ],
   "publication": {
-    "pushed_this_round": true,
-    "status": "components-published-root-pending",
-    "component_remote_reachability": "Isla与Sail-RISC-V最终提交已从正式URL目标分支逐SHA回读一致；见agents/float_memory_merge_20261103/publication/components.json",
-    "root_push_status": "not-run"
+    "pushed_this_round": false,
+    "status": "待发布",
+    "component_remote_reachability": "2026-11-07 已用 git ls-remote 回读正式远端：Isla ariscv/isla 的 feat/postprocess-enumeration = ae1a3355，Sail msuadOf/sail-riscv 的 feat/sail-riscv-memory-by-model-20261022 = d79d8b32；旧publication只适用4d085b14/bf861b3e，见history",
+    "root_push_status": "not-run",
+    "git_write_operations": "子模块提交与推送、根仓 gitlink 提交由 Claude 在 2026-11-07 完成；Codex 阶段未做 Git 写操作",
+    "pending": "两个组件提交已推送；根仓 feat/memory-enum 的 gitlink 提交待推送；尚无独立签收，memory 分支本身未改动。components.isla 为含新IR与来源记录的提交 ae1a3355，其执行器/插件源码基准为 d7c25993"
   },
-  "updated": "2026-11-04",
+  "updated": "2026-11-07",
   "validation": {
-    "status": "limited-pass",
-    "report": "agents/float_memory_merge_20261103/final-report.md",
-    "memory_history": "docs/json-semantic-validation-20261030.md",
-    "float_history": "agents/float_review_closure_20261102/final-report.md",
-    "float_scope": "精确77纯data选择回退的限定收敛验收，非全77预算或全控制流覆盖",
+    "status": "targeted-pass",
+    "date": "2026-11-07",
+    "report": "agents/memory_enum_ir_20261107/final-report.md",
+    "scope": "本轮实际程序和五入口的严格生成、永久IR、定向数值/状态、Schema Union、vstart、ExecuteAs、Make及汇编；不是新独立签收或全域验收",
     "full_model_control_flow_coverage": "not-measured",
     "hardware_replay": "not-run",
-    "source_review": "agents/float_memory_merge_20261103/review/core-final-report.md",
-    "ir_review": "agents/float_memory_merge_20261103/review/model/ir-review.md",
-    "independent_review": "agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md",
-    "date": "2026-11-04",
-    "scope": "最终4d085b14/3e44cdd6程序：严格生成/IR来源、Rust与永久回归、315/300定向、9例Schema Union、nat/ExecuteAs、定向Make与汇编；不含全部Clause预算或全域无退化",
     "limitations": [
-      "F1具体/符号内存后端不一致仍在",
-      "LOAD_FP/C_LD/STORE原域Make为partial，不计完整PASS",
-      "STORE/C_LD旧memory完整预算长尾未完成，不能证明全域无退化",
-      "仅三条Poison代表已新旧同输入复放，不外推全部922/112/7",
-      "float全部77项预算、全控制流覆盖、硬件重放未验",
-      "OPEN策略与通用ITE/符号化配置冻结未研究"
+      "未重跑完整77浮点预算及全部访存/异常域",
+      "未重跑F1新旧对照、三类Poison逐例复放及旧基线长尾；不把旧归因迁记到新模型",
+      "新Svnapot/Svpbmt/非叶保留位专用运行语义测试未在本轮执行",
+      "批量从旧T1改为T32，定向预算1200秒；不作为原7200秒性能对照",
+      "未执行Git写操作和发布；远端可获取性未重新核实"
     ]
-  }
+  },
+  "history": [
+    {
+      "components": {
+        "isla": {
+          "commit": "ae1a33550c6d06ecbf85ac2e2daa85d196bd3e53",
+          "source_branch": "feat/postprocess-enumeration",
+          "url": "https://github.com/ariscv/isla.git"
+        },
+        "sail-riscv": {
+          "commit": "d79d8b320beec68b596e5e01e69cc353eb78f7a4",
+          "source_branch": "feat/sail-riscv-memory-by-model-20261022",
+          "url": "https://github.com/msuadOf/sail-riscv.git"
+        }
+      },
+      "ir": {
+        "path": "isla/rv64d.ir",
+        "sha256": "40f34f706963afcca7dfbf8504ee888bdd004cd0c437712f097b7dda64a705c9",
+        "provenance": "最终bf861b3e模型经普通严格检查及四配置SYMBOLIC生成；五入口、源/工具/配置哈希见isla/ir/provenance/manifest.json（SHA-256 8e06ec617ca8378d965f8d9b2f0f882e7262520e9ac5cb488604f7470949268b）"
+      },
+      "validation": {
+        "status": "limited-pass",
+        "report": "agents/float_memory_merge_20261103/final-report.md",
+        "memory_history": "docs/json-semantic-validation-20261030.md",
+        "float_history": "agents/float_review_closure_20261102/final-report.md",
+        "float_scope": "精确77纯data选择回退的限定收敛验收，非全77预算或全控制流覆盖",
+        "full_model_control_flow_coverage": "not-measured",
+        "hardware_replay": "not-run",
+        "source_review": "agents/float_memory_merge_20261103/review/core-final-report.md",
+        "ir_review": "agents/float_memory_merge_20261103/review/model/ir-review.md",
+        "independent_review": "agents/float_memory_merge_20261103/review/acceptance/limited-signoff.md",
+        "date": "2026-11-04",
+        "scope": "最终4d085b14/3e44cdd6程序：严格生成/IR来源、Rust与永久回归、315/300定向、9例Schema Union、nat/ExecuteAs、定向Make与汇编；不含全部Clause预算或全域无退化",
+        "limitations": [
+          "F1具体/符号内存后端不一致仍在",
+          "LOAD_FP/C_LD/STORE原域Make为partial，不计完整PASS",
+          "STORE/C_LD旧memory完整预算长尾未完成，不能证明全域无退化",
+          "仅三条Poison代表已新旧同输入复放，不外推全部922/112/7",
+          "float全部77项预算、全控制流覆盖、硬件重放未验",
+          "OPEN策略与通用ITE/符号化配置冻结未研究"
+        ]
+      },
+      "publication": {
+        "pushed_this_round": true,
+        "status": "components-published-root-pending",
+        "component_remote_reachability": "Isla与Sail-RISC-V最终提交已从正式URL目标分支逐SHA回读一致；见agents/float_memory_merge_20261103/publication/components.json",
+        "root_push_status": "not-run"
+      },
+      "updated": "2026-11-04",
+      "status": "float→memory合流限定验收通过：来源、源码、定向Schema Union/数值/Make已签；原域访存partial、F1和全域未证仍保留；发布待完成"
+    }
+  ],
+  "root_branch": "feat/memory-enum",
+  "working_root_base": "29aa47656e437d7f41e87d90a894edd125f429c2"
 }
