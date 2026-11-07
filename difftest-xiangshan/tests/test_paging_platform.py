@@ -52,4 +52,33 @@ class PlatformTests(unittest.TestCase):
         p=self.platform();c=replay.platform_case(s,self.decoder,p,replay.platform_hashes(p)[0]);self.assertEqual(c['expected']['cause'],13)
         self.assertEqual(c['writes'][0]['value'],(1<<59)|1)
 
+    def test_standard_napot_keeps_original_pte_and_uses_replaced_ppn(self):
+        decoder,_=replay.load_decoder(os.environ['PT_DECODE_DIR'],standard_paging=True)
+        s=sample();pte=(1<<63)|((0x80408000>>12)<<10)|0xc7
+        words={0x80200000:((0x80300000>>12)<<10)|1,
+               0x80300800:((0x80301000>>12)<<10)|1,0x80301000:pte,0x80400000:0x1234}
+        s['pre_memory']=cells(words);s['post_memory']=cells(words);s['post_registers']['x2']=bits(0x1234)
+        p=self.platform();p['isa']['standard_paging']=True
+        c=replay.platform_case(s,decoder,p,replay.platform_hashes(p)[0])
+        self.assertEqual(c['decoded']['paddr_if_success'],0x80400000)
+        self.assertEqual(c['expected']['cause'],0)
+        self.assertTrue(any(w['address']==0x80301000 and w['value']==pte for w in c['writes']))
+        # 相同 NAPOT 编码的低4位改为1001，保持页异常和原始 PTE。
+        words.pop(0x80400000);words[0x80301000]=pte|(1<<10)
+        s['pre_memory']=cells(words);s['post_memory']=cells(words);s['post_registers']['x2']=bits(0);fault(s,13)
+        c=replay.platform_case(s,decoder,p,replay.platform_hashes(p)[0])
+        self.assertEqual(c['decoded']['failure_reason'],'n_reserved')
+        self.assertEqual(c['expected']['cause'],13)
+
+    def test_standard_nonleaf_reserved_faults_before_next_read(self):
+        decoder,_=replay.load_decoder(os.environ['PT_DECODE_DIR'],standard_paging=True)
+        p=self.platform();p['isa']['standard_paging']=True
+        for bit in (4,6,7):
+            with self.subTest(bit=bit):
+                s=self.source();s['pre_memory']=cells({0x80200000:(1<<bit)|1})
+                s['post_memory']=copy.deepcopy(s['pre_memory']);s['post_registers']['x2']=bits(0);fault(s,13)
+                c=replay.platform_case(s,decoder,p,replay.platform_hashes(p)[0])
+                self.assertEqual(c['expected']['cause'],13)
+                self.assertEqual(c['decoded']['failure_reason'],'nonleaf_reserved')
+
 if __name__=='__main__':unittest.main()

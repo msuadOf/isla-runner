@@ -86,6 +86,9 @@ def platform_case(sample, decoder, profile, source_gen_sha256):
     for entry in decoded["entries"]:
         if entry["role"] == "data":
             continue
+        # 新模型已补齐标准语义；保留原 PTE，分歧交给重放结果分类。
+        if profile["isa"].get("standard_paging", False):
+            continue
         f = entry["fields"]
         if entry["role"] == "pointer" and int(entry["value"], 16) & 0xd0:
             raise ValueError("R7: 指针 U/A/D 非零")
@@ -136,12 +139,39 @@ def platform_case(sample, decoder, profile, source_gen_sha256):
                          "rd": decoder.bit_value(sample["post_registers"]["x2"], 64) if access == "load" else None}}
 
 
-def load_decoder(directory):
+def load_decoder(directory, standard_paging=False):
     path = Path(directory).resolve() / "pt_decode.py"
     spec = importlib.util.spec_from_file_location("e0_pt_decode", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    if standard_paging:
+        module.classify_pte = lambda value, level, config: classify_standard_pte(module, value, level, config)
     return module, {"path": str(path), "sha256": sha256(path)}
+
+
+def classify_standard_pte(decoder, value, level, config):
+    """ecfg3：沿用严格解码足迹，补齐 NAPOT 与非叶保留位分类；PBMTE 固定0。"""
+    if level > 4:
+        raise ValueError("level 超过 Sv57 上限")
+    f = decoder.decode_pte(value)
+    invalid = [(not f["V"], "v_zero"), (f["W"] and not f["R"], "write_without_read"),
+               (f["PBMT"], "pbmt_disabled"),
+               (f["RSW_60t59b"] and not config.svrsw60t59b, "rsw60t59b_disabled"),
+               (f["reserved"], "reserved_nonzero")]
+    nonleaf = not (f["X"] or f["W"] or f["R"])
+    invalid += [(nonleaf and (f["U"] or f["A"] or f["D"] or f["N"] or f["PBMT"]), "nonleaf_reserved"),
+                (f["N"] and (level != 0 or f["PPN"] & 15 != 8), "n_reserved")]
+    for condition, reason in invalid:
+        if condition:
+            return dict(role="invalid", kind="invalid_"+reason, fields=f,
+                        failure_reason=reason, page_size=None)
+    if nonleaf:
+        return dict(role="pointer", kind="pointer", fields=f,
+                    failure_reason="pointer_at_level0" if level == 0 else None, page_size=None)
+    permissions = "".join(c.lower() if f[c] else "-" for c in "RWX")
+    return dict(role="leaf", kind=f"leaf_{permissions}_u{f['U']}" + ("_napot64k" if f["N"] else ""),
+                fields=f, failure_reason="superpage_misaligned" if f["PPN"] & ((1 << (9*level))-1) else None,
+                page_size=65536 if f["N"] else 1 << (12+9*level))
 
 
 def decode(sample, decoder):
