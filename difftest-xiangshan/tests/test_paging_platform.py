@@ -1,5 +1,5 @@
 """平台绑定与原址具体化的回归；不使用硬件模拟器。"""
-import copy,json,os,sys,tempfile,unittest
+import copy,hashlib,json,os,sys,tempfile,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import paging_replay as replay
@@ -38,6 +38,98 @@ class PlatformTests(unittest.TestCase):
             replay.verify_platform_lock(p,lock,files)
             files['config'].write_text('changed')
             with self.assertRaisesRegex(ValueError,'R0'):replay.verify_platform_lock(p,lock,files)
+
+    def locked_platform(self, directory):
+        p = self.platform()
+        files = {k: Path(directory)/k for k in ('config', 'ir', 'isarch')}
+        for name, path in files.items():
+            path.write_text(name)
+        p['ir']['ir_sha256'] = replay.sha256(files['ir'])
+        p['isla'].update(config_toml_sha256=replay.sha256(files['config']),
+                         isarch_sha256=replay.sha256(files['isarch']),
+                         enumeration_sha256='enumeration', scenario='sv39-load')
+        return p, files, replay.create_platform_lock(p, files)
+
+    def test_isarch_identity_is_record_only(self):
+        with tempfile.TemporaryDirectory() as directory:
+            p, files, lock = self.locked_platform(directory)
+            original = copy.deepcopy(p)
+            for target in ('profile', 'lock', 'both'):
+                with self.subTest(target=target):
+                    q, changed_lock = copy.deepcopy(p), copy.deepcopy(lock)
+                    if target in ('profile', 'both'):
+                        q['isla']['isarch_sha256'] = 'recorded-other-binary'
+                    if target in ('lock', 'both'):
+                        changed_lock['isarch_sha256'] = 'recorded-other-binary'
+                    self.assertEqual(replay.platform_hashes(p), replay.platform_hashes(q))
+                    with self.assertLogs('paging_replay', level='WARNING') as logs:
+                        replay.verify_platform_lock(q, changed_lock, files)
+                    self.assertEqual(len(logs.output), 1)
+                    self.assertIn('isarch', logs.output[0])
+            files['isarch'].write_text('rebuilt-binary')
+            with self.assertLogs('paging_replay', level='WARNING') as logs:
+                replay.verify_platform_lock(p, lock, files)
+            self.assertEqual(len(logs.output), 1)
+            self.assertEqual(p, original)
+            self.assertEqual(lock['schema_version'], 2)
+            self.assertIn('isarch_sha256', lock)
+            with self.assertLogs('paging_replay', level='WARNING'):
+                new_lock = replay.create_platform_lock(p, files)
+            self.assertEqual(new_lock['isarch_sha256'], replay.sha256(files['isarch']))
+            self.assertEqual(new_lock['platform_gen_sha256'], lock['platform_gen_sha256'])
+            self.assertEqual(p, original)
+
+    def test_generation_inputs_remain_lock_requirements(self):
+        with tempfile.TemporaryDirectory() as directory:
+            p, files, lock = self.locked_platform(directory)
+            changes = (('isla', 'config_toml_sha256'), ('ir', 'ir_sha256'),
+                       ('isla', 'enumeration_sha256'), ('isla', 'scenario'),
+                       ('regions', None), ('harness', 'code'), ('isa', 'svrsw60t59b'),
+                       ('csr_init', 'menvcfg'))
+            for section, key in changes:
+                with self.subTest(section=section, key=key):
+                    q = copy.deepcopy(p)
+                    if key is None:
+                        q[section][0]['size'] -= 4096
+                    else:
+                        q[section][key] = 'changed'
+                    self.assertNotEqual(replay.platform_hashes(p)[0], replay.platform_hashes(q)[0])
+                    with self.assertRaisesRegex(ValueError, 'R0'):
+                        replay.verify_platform_lock(q, lock, files)
+            for name in ('config', 'ir'):
+                with self.subTest(file=name):
+                    files[name].write_text('changed')
+                    with self.assertRaisesRegex(ValueError, 'R0'):
+                        replay.verify_platform_lock(p, lock, files)
+                    files[name].write_text(name)
+
+    def test_legacy_lock_keeps_original_hash_and_sample_binding(self):
+        with tempfile.TemporaryDirectory() as directory:
+            p, files, lock = self.locked_platform(directory)
+            # 独立重现旧算法；profile 的版本号与 lock 的版本号含义不同。
+            p['schema_version'] = 2
+            generation = {key: p[key] for key in
+                          ('regions', 'harness', 'isa', 'csr_init', 'ir', 'isla')}
+            legacy_gen = hashlib.sha256(json.dumps(
+                generation, sort_keys=True, separators=(',', ':'),
+                ensure_ascii=False).encode()).hexdigest()
+            lock.update(schema_version=1, platform_gen_sha256=legacy_gen)
+            replay.verify_platform_lock(p, lock, files)
+            files['isarch'].write_text('rebuilt-binary')
+            with self.assertLogs('paging_replay', level='WARNING'):
+                replay.verify_platform_lock(p, lock, files)
+            case = replay.platform_case(self.source(), self.decoder, p, legacy_gen)
+            self.assertEqual(case['platform_gen_sha256'], legacy_gen)
+            self.assertEqual(case['expected']['rd'], 0x1234)
+            q = copy.deepcopy(p)
+            q['isla']['isarch_sha256'] = 'changed-historical-record'
+            with self.assertRaisesRegex(ValueError, 'R0'):
+                replay.verify_platform_lock(q, lock, files)
+            for version in (2, 999):
+                with self.subTest(lock_schema=version):
+                    changed_lock = dict(lock, schema_version=version)
+                    with self.assertRaisesRegex(ValueError, 'R0'):
+                        replay.verify_platform_lock(p, changed_lock, files)
 
     def test_concretization_preserves_pte_and_checks_source_binding(self):
         s=self.source();before=copy.deepcopy(s);p=self.platform();h=replay.platform_hashes(p)[0]

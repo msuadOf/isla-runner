@@ -449,6 +449,35 @@ profile 文件建议放在 `difftest-xiangshan/platforms/`。生成侧哈希在 
 
 待 isla-enumerate 确认【未验证】：守卫赋值标签和节点键的现有导出格式，以及其稳定性范围。
 
+### 13.1 二进制身份仅记录（2026-11-07 修订）
+
+种子是具体输入与期望数据。新 lock 使用 `schema_version=2`，
+`platform_gen_sha256` 从 `isla` 段中只排除 `isarch_sha256`；
+该字段仍保存在 profile 与 lock 中，供追溯。只改记录值或重新编译 isarch，
+不会使新锁或种子失效。验证时，磁盘 isarch 哈希与任一记录不同只输出一条告警，不抛错。
+创建新锁时记录当前二进制哈希，不改写 profile 中的历史记录。
+
+IR 哈希、`config_toml_sha256`、`enumeration_sha256`、`scenario`、
+`regions`、`harness`、`isa`、`csr_init` 继续参与生成侧哈希，原有文件校验保持不变。
+二进制身份不能证明模型语义或导出逻辑是否相同；导出逻辑改变后，
+应使用 Isla `--check-samples` / judge，以具体指令、前态和当前模型语义重新确认种子。
+守卫标签与节点键仍须按其导出逻辑确认，不能仅凭种子通过复验认定标签稳定。
+
+兼容算法由 **lock 的** `schema_version` 决定，与 profile 自身的版本号无关：
+旧锁 `schema_version=1` 仍按原算法计算生成侧哈希（包括历史 `isarch_sha256` 记录），
+但磁盘二进制与记录不同也只告警；未知 lock 版本按 R0 拒绝。
+转换样本时识别新旧两种生成侧哈希，并保留来源哈希。
+`output/ecfg3`、`output/ecfg4b` 的 profile、lock 和样本保持原样，不自动迁移；
+复现旧锁须保留原 profile 记录，修改历史记录仍会破坏旧算法下的哈希绑定。
+§4.5 第 1 条“isarch 不符即拒绝”及上文的历史失效口径属于本次修订前规则，
+保留作历史说明；当前二进制身份规则以本节为准，历史验证结论仍限定于各自受测版本。
+
+本次验证：新增三项测试先在旧实现运行，a（二进制身份）与 c（旧锁遇到重编二进制）失败，
+b（配置、IR 等输入仍为门槛）原先就通过；修改后 3/3 通过。
+在 `difftest-xiangshan/tests` 设置 `PT_DECODE_DIR` 指向 isla-enumerate 的 `pt_decode` 后运行
+`python3 -m unittest discover -s .`，127/127 通过（原有 124 项加新增 3 项）。
+日志见 `output/isarch-record-only-tests/{red,green,full}.log`；本次未运行种子的 Isla/judge 复验。
+
 ## 14. 设计判断汇总（非事实）
 
 - 期望值取 Isla、平台描述只拷贝规范自选项（§4.1）。

@@ -7,6 +7,7 @@ import copy
 import hashlib
 import importlib.util
 import json
+import logging
 import os
 from pathlib import Path
 import re
@@ -25,18 +26,23 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def platform_hashes(profile):
-    """设计 v2：生成侧与运行侧分别规范化，避免环境更新使语料失效。"""
+def platform_hashes(profile, schema_version=2):
+    """按 lock 版本计算哈希；v2 仅记录 isarch 身份，v1 保留历史算法。"""
+    if schema_version not in (1, 2):
+        raise ValueError(f"R0: 不支持的 lock schema_version: {schema_version}")
     def digest(value):
         return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"),
                                          ensure_ascii=False).encode()).hexdigest()
-    return (digest({key: profile[key] for key in ("regions", "harness", "isa", "csr_init", "ir", "isla")}),
-            digest(profile["env"]))
+    generation = {key: profile[key] for key in ("regions", "harness", "isa", "csr_init", "ir", "isla")}
+    if schema_version == 2:
+        generation["isla"] = {key: value for key, value in profile["isla"].items()
+                              if key != "isarch_sha256"}
+    return digest(generation), digest(profile["env"])
 
 
 def create_platform_lock(profile, files):
     gen, env = platform_hashes(profile)
-    lock = {"schema_version": 1, "platform_gen_sha256": gen, "platform_env_sha256": env,
+    lock = {"schema_version": 2, "platform_gen_sha256": gen, "platform_env_sha256": env,
             **{name + "_sha256": sha256(path) for name, path in files.items()}}
     lock["config_toml_sha256"] = lock.pop("config_sha256")
     verify_platform_lock(profile, lock, files)
@@ -44,12 +50,18 @@ def create_platform_lock(profile, files):
 
 
 def verify_platform_lock(profile, lock, files):
-    gen, env = platform_hashes(profile)
+    gen, env = platform_hashes(profile, lock["schema_version"])
     if (gen, env) != (lock["platform_gen_sha256"], lock["platform_env_sha256"]):
         raise ValueError("R0: 平台描述与 lock 不符")
     for name, path in files.items():
         key = "config_toml_sha256" if name == "config" else name + "_sha256"
         actual = sha256(path)
+        if name == "isarch":
+            if actual != lock.get(key) or actual != profile["isla"].get(key):
+                logging.getLogger(__name__).warning(
+                    "isarch 实物哈希与记录不符（仅记录，不影响 corpus 条目的有效性）：实际=%s，lock=%s，profile=%s",
+                    actual, lock.get(key), profile["isla"].get(key))
+            continue
         if actual != lock[key]:
             raise ValueError(f"R0: {name} 实物哈希与 lock 不符")
         section = "ir" if name == "ir" else "env" if name in {"emu", "nemu"} else "isla"
@@ -59,7 +71,9 @@ def verify_platform_lock(profile, lock, files):
 
 def platform_case(sample, decoder, profile, source_gen_sha256):
     """v2 原址转换：期望取 Isla，填具体初值和诱饵后交给 E3。"""
-    if source_gen_sha256 != platform_hashes(profile)[0]:
+    # 旧调用方只传来源哈希；识别历史算法，保留旧样本的绑定和记录。
+    if (source_gen_sha256 != platform_hashes(profile)[0]
+            and source_gen_sha256 != platform_hashes(profile, schema_version=1)[0]):
         raise ValueError("R0: 样本生成侧哈希不符")
     decoder.exact(sample, decoder.SAMPLE_FIELDS, "samples v1")
     if sample["schema_version"] != 1:
