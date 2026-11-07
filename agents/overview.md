@@ -12,4 +12,4 @@
 - workaround 描述归属与运行配置生成见 [workaround_ownership/status.md](workaround_ownership/status.md)。
 - 内存 clause 分支覆盖对照（W19+G1-G8）见 [memsolve_branch_coverage/status.md](memsolve_branch_coverage/status.md)。
 
-- P0 页表重放器见 [p0_replay/status.md](p0_replay/status.md)；批次 A 的 E-exit 与三项 E-cfg 扩展通过；设备判死实验因运行器 panic 未签收。
+- P0 页表重放器见 [p0_replay/status.md](p0_replay/status.md)；P1b四场景5000例已重放核账，3个新形态待查，见 [报告](p0_replay/fuzz-p1b-results.md)。

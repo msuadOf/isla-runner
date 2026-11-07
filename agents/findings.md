@@ -1714,3 +1714,8 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 - Sail：`vmem.sail:91-117,134-162,295-304`、`vmem_ptw.sail:59-60` 先判 A=0（禁止硬件更新时 `PTW_PTE_Needs_Update` → page fault），之后才会访问物理地址。
 - 结论（Codex 只读调查，待 RTL 侧复现确认）：规范要求 cause 13，XiangShan 当前行为偏离；不进「已知 mismatch 过滤表」，作为真发现上报。待查：实际 emu 是否由该源码构建、模型是否关闭 A/D 硬件更新（本例 dirty_update=false，与 Svade 一致）。前提不同（启用硬件更新 A，或读取 PTE 本身失败）时 cause 5 可成立。
 - 2026-11-07 补充（构建身份核实）：当前 `difftest-xiangshan/xiangshan/build/emu` 的 sha256 以 `87141692…` 开头，与 `difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json` 记录的 `provenance/xiangshan_emu_sha256` 一致；NEMU so 为 `9188e7dd…`，同样与记录一致。XiangShan 源码 HEAD 为 `a13efc87…`，工作树干净；`build/rtl/PTW.sv` 生成时间早于 emu。因此上述分歧使用的 emu 与读过的源码对应同一次构建；该分歧在 emu 与 NEMU 上均已实测（emu cause 5，NEMU 与 Isla cause 13），不只是源码推断。NEMU 源码仍无，其行为只以实测为准。
+
+
+### 2026-11-07 页表变异扩展中的权限与超宽叶PPN组合
+
+P1b四场景5000例经J1及emu/独立NEMU重放，原始4986 agree、14 mismatch，归并为14个形态；3个新形态保留了简化输入并重新实测。LOAD权限不满足与超宽叶PPN同存时可观察到emu cause5、NEMU/Isla cause13；STORE对应可观察到7/15/15。它们与仅按A=0条件匹配的已知形态分列；同一cause组合不证明相同RTL根因，新形态规范判断待查。完整输入、页表级别与三方cause见 [P1b报告](p0_replay/fuzz-p1b-results.md)及其简化复现证据。本轮不修改既有规范调查结论或新增已知过滤键。

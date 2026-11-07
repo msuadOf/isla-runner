@@ -1,5 +1,7 @@
 # TODOs — 当前协作状态
 
+**P0-REPLAY / Fuzzing P1b（2026-11-07）**：四场景5000例全部重放及逐例核账完成：4986 agree、14原始mismatch、3个新形态待查；新形态简化输入J1及三方重放通过，unittest119/119 PASS。Sv48 STORE监控竞态已修复并保留中断证据。[结果与逐场景统计](../agents/p0_replay/fuzz-p1b-results.md)。下方批次A记录保留原版本口径。
+
 **P0-REPLAY / 批次 A（2026-11-07）**：E-exit **PASS**，原 9 项加新增回归共 12/12，五个 E0 正例已重跑 agree，负对照原因码、游离 GOOD 与 limit 均正确。E-dev **FAIL**：两种设备配置触发锁定 isarch 的 enum id panic；定向探针证明仅 mmio 可导出设备 PTE 读，excluded 拒绝该读但 partial/errors=1，设备数据分支尚未验证。E-cfg 扩展三场景限定 **PASS**：Sv39 STORE 20/1204/92、Sv48 LOAD 27/6918/140、Sv48 STORE 27/3510/124（路径/类/形状），地址断言通过。完整平台与 E1—E4 未测；E0 v1 失败口径保留为历史。[摘要](../agents/p0_replay/status.md)、[E-exit](../agents/p0_replay/e-exit-results.md)、[E-dev](../agents/p0_replay/e-dev-results.md)、[扩展场景](../agents/p0_replay/e-cfg-results.md#扩展场景)。
 
 **FLOAT-01 catalog观测范围收缩（2026-09-29）**：已amend为 `323021b`，只纳入catalog及关联信息；恢复原错误退出/trace策略，summary.complete只报告，保留8早退/1次最终SMT查询及原注释。精确64＋24、暂存82＋24、完整工作区83＋24及默认定向/编译/fmt通过（过滤已知x0失败），未跑全量solve/重放。原27文件暂存及exec.rs未暂存浮点层保留；[现行证据](../agents/float_support_review/catalog-commit-review-20260929.md#catalog限于观测信息2026-09-29)。31523ab及更早catalog记录为历史。

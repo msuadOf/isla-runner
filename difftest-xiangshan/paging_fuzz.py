@@ -20,6 +20,7 @@ import paging_replay as replay
 
 FLAG_BITS = tuple(range(10)) + tuple(range(54, 64))
 OPERATORS = ('M1', 'M2', 'M5')
+SCENARIOS = ('sv39-load', 'sv39-store', 'sv48-load', 'sv48-store')
 
 
 def canonical(value):
@@ -39,7 +40,8 @@ def load_corpus(path, manifest, lock, decoder):
     """只接受清单绑定的 class_cap=1 语料；重复输入保留最小 sample_id。"""
     if manifest['lock'] != lock or replay.sha256(path) != manifest['samples_sha256']:
         raise ValueError('R0: 种子与生成清单或 lock 不一致')
-    assert manifest['scenario'] == 'sv39-load'
+    if manifest['scenario'] not in SCENARIOS:
+        raise ValueError('不支持的种子场景')
     unique, classes, ids = {}, {}, {}
     total = 0
     for line in Path(path).read_text().splitlines():
@@ -52,7 +54,11 @@ def load_corpus(path, manifest, lock, decoder):
             for value in s[section].values():
                 decoder.validate_concrete(value)
         decoder.validate_concrete(s['result'])
-        decoder.memory_bytes(s['pre_memory'])
+        access = decoder.decode_instruction(s)[0]
+        translation = decoder.parse_satp(decoder.bit_value(s['pre_registers']['satp'], 64))
+        if translation['mode'].lower()+'-'+access != manifest['scenario']:
+            raise ValueError('种子实际场景与清单不符')
+        decoder.memory_bytes(s['pre_memory'], allow_unknown=access == 'store')
         decoder.memory_bytes(s['post_memory'])
         digest = input_digest(s)
         if s['sample_id'] in ids:
@@ -103,9 +109,13 @@ def check_read_address(address, profile):
 def predict_sample(parent, memory, decoder, profile, sample_id):
     """补齐新读取并生成 J2 提案；随后用严格 pt_decode 核对足迹和预测。"""
     registers = parent['pre_registers']
-    assert decoder.decode_instruction(parent) == ('load', 0, 1)
+    access, offset, base = decoder.decode_instruction(parent)
+    assert access in {'load', 'store'} and (offset, base) == (0, 1)
     assert decoder.effective_address(parent) == 0x20000000
-    assert decoder.bit_value(registers['satp'], 64) == 0x8000000000080200
+    translation = decoder.parse_satp(decoder.bit_value(registers['satp'], 64))
+    assert translation['mode'] in {'Sv39', 'Sv48'}
+    assert translation['root_paddr'] == 0x80200000
+    page_fault, access_fault = (13, 5) if access == 'load' else (15, 7)
     assert registers['cur_privilege']['enum'] == 'Supervisor'
     status = decoder.bit_value(registers['mstatus']['struct']['bits'], 64)
     assert not status & (1 << 17), 'P1 不改变权限场景'
@@ -126,34 +136,35 @@ def predict_sample(parent, memory, decoder, profile, sample_id):
             footprint[address+i] = pool[address+i]
         return decoder.read_word(pool, address)
 
-    for level in (2, 1, 0):
+    for level in reversed(range(translation['levels'])):
         address = table + ((va >> (12+9*level)) & 511)*8
         check_read_address(address, profile)
         if region_kind(address, profile) == 'hole':
             assert decoder.pma_permitted(registers, address, 'load') is False
-            cause = 5
+            cause = access_fault
             break
         value = read(address, 0)
         entry = decoder.classify_pte(value, level, config)
         fields = entry['fields']
         if entry['failure_reason']:
-            cause = 13
+            cause = page_fault
             break
         if entry['role'] == 'pointer':
             table = fields['PPN'] << 12
             continue
         assert entry['role'] == 'leaf'
         if ((fields['U'] and not status & (1 << 18))
-                or not (fields['R'] or (fields['X'] and status & (1 << 19)))
-                or not fields['A']):
-            cause = 13
+                or not (fields['W'] if access == 'store' else
+                        (fields['R'] or (fields['X'] and status & (1 << 19))))
+                or not fields['A'] or (access == 'store' and not fields['D'])):
+            cause = page_fault
             break
         size = entry['page_size']
         physical = ((fields['PPN'] << 12) & ~(size-1)) | (va & (size-1))
         check_read_address(physical, profile)
         if region_kind(physical, profile) == 'hole':
-            assert decoder.pma_permitted(registers, physical, 'load') is False
-            cause = 5
+            assert decoder.pma_permitted(registers, physical, access) is False
+            cause = access_fault
         else:
             rd = read(physical, 0x5a17c0de12345678)
         break
@@ -167,11 +178,17 @@ def predict_sample(parent, memory, decoder, profile, sample_id):
         derived['post_registers'][key] = copy.deepcopy(registers[key])
     if not cause:
         assert rd is not None
-        derived['post_registers']['x2'] = {'bits': f'{rd:064b}'}
+        if access == 'load':
+            derived['post_registers']['x2'] = {'bits': f'{rd:064b}'}
+        else:
+            post = dict(footprint)
+            put_word(post, physical, decoder.bit_value(registers['x2'], 64))
+            derived['post_memory'] = cells(post)
         derived['result'] = {'ctor': 'Retire_Success', 'value': {'unit': True}}
         derived['ret_val'] = '(|Retire_Success| (_ unit))'
     else:
-        exception = {5: 'E_Load_Access_Fault', 13: 'E_Load_Page_Fault'}[cause]
+        exception = {5: 'E_Load_Access_Fault', 13: 'E_Load_Page_Fault',
+                     7: 'E_SAMO_Access_Fault', 15: 'E_SAMO_Page_Fault'}[cause]
         derived['result'] = {'ctor': 'Memory_Exception', 'value': {'struct': {
             decoder.EXCEPTION_FIELDS[0]: {'bits': f'{va:064b}'},
             decoder.EXCEPTION_FIELDS[1]: {'ctor': exception, 'value': {'unit': True}}}}}
@@ -208,7 +225,9 @@ def mutate(parent, operator, rng, decoder, profile, sample_id, *, m2_mode=None):
     entries = [e for e in decoded['entries'] if e['role'] != 'data']
     assert entries
     entry = rng.choice(entries)
-    memory = decoder.memory_bytes(parent['pre_memory'])
+    memory = decoder.memory_bytes(parent['pre_memory'], allow_unknown=True)
+    post = decoder.memory_bytes(parent['post_memory'])
+    memory = {a: post[a] ^ 255 if byte is None else byte for a, byte in memory.items()}
     address, value = entry['paddr'], int(entry['value'], 16)
     change = dict(operator=operator, parent_sample_id=parent['sample_id'],
                   parent_path_signature=parent['path_signature'], parent_class_id=parent['class_id'],
@@ -374,7 +393,7 @@ def check_command(template, inputs, report):
     return command
 
 
-def check_batch(samples, directory, source):
+def check_batch(samples, directory, source, scenario='sv39-load'):
     """沿 ecfg3 的 J1 命令与逐查询 excluded 证明；后端不内嵌求解器。"""
     directory.mkdir(parents=True, exist_ok=False)
     (directory/'badread').mkdir()
@@ -382,7 +401,7 @@ def check_batch(samples, directory, source):
     ids = {s['sample_id'] for s in samples}
     assert len(ids) == len(samples) > 0
     inputs.write_text(''.join(canonical(s)+'\n' for s in samples))
-    template = json.loads((source/'sv39-load-e3/done.json').read_text())['command']
+    template = json.loads((source/f'{scenario}-e3/done.json').read_text())['command']
     command = check_command(template, inputs, report)
     env = os.environ.copy()
     env.update(LD_PRELOAD=str(source/'observe.so'), BADREAD_DUMP=str(directory/'badread'),
@@ -407,7 +426,7 @@ def check_batch(samples, directory, source):
     assert rows['sample_total'] == len(samples)
     assert len(rows['samples']) == len(samples)
     assert {r['sample_id'] for r in rows['samples']} == ids
-    summary = json.loads((directory/'output/rv64_zLOAD.json').read_text())['summary']
+    summary = json.loads((directory/f'output/rv64_z{scenario.split("-")[1].upper()}.json').read_text())['summary']
     assert all(summary[k] == 0 for k in ('execution-timeouts', 'smt-timeouts',
         'unfinished-paths', 'model-query-timeouts', 'pending-batches'))
     # 保留 raw partial；每个执行错误都须有独立 excluded 证明。
@@ -497,13 +516,16 @@ def snapshot(paths):
 
 def campaign(args):
     source, out = args.source.resolve(), args.out.resolve()
-    assert out.is_relative_to(Path(__file__).resolve().parents[1]/'output/fuzz-p1')
+    output_root = Path(__file__).resolve().parents[1]/'output'
+    assert any(out.is_relative_to(output_root/name) for name in ('fuzz-p1', 'fuzz-p1b'))
+    scenario = args.scenario
+    assert scenario in SCENARIOS
     out.mkdir(parents=True, exist_ok=False)
     for name in ('tmp', 'cache'):
         (out/name).mkdir()
     os.environ.update(TMPDIR=str(out/'tmp'), XDG_CACHE_HOME=str(out/'cache'),
                       PYTHONDONTWRITEBYTECODE='1')
-    assert 1 <= args.workers <= 8 and 0 < args.count <= 1000
+    assert 1 <= args.workers <= 8 and 0 < args.count <= 2000
     profile = json.loads((source/'profile.json').read_text())
     lock = json.loads((source/'profile.lock.json').read_text())
     files = {k: Path(v) for k, v in json.loads((source/'files.json').read_text()).items()}
@@ -511,18 +533,18 @@ def campaign(args):
     assert replay.sha256(Path(replay.__file__)) == profile['env']['paging_replay_sha256']
     decoder, decoder_identity = replay.load_decoder(args.pt_decode_dir, standard_paging=True)
     assert decoder_identity['sha256'] == profile['env']['pt_decode_sha256']
-    manifest = json.loads((source/'sv39-load/samples.manifest.json').read_text())
-    seeds, seed_stats = load_corpus(source/'sv39-load/samples.jsonl', manifest, lock, decoder)
-    assert len(seeds) == 728, '本 campaign 固定为 ecfg3 Sv39 LOAD 的728种子'
+    manifest = json.loads((source/scenario/'samples.manifest.json').read_text())
+    seeds, seed_stats = load_corpus(source/scenario/'samples.jsonl', manifest, lock, decoder)
+    assert seed_stats['guard_classes'] == len(seeds), '本批要求每个来源守卫类一个代表'
     identities = snapshot([source])
     write_json(out/'readonly-before.json', identities)
     known = [] if args.known_mismatches is None else json.loads(args.known_mismatches.read_text())
     mismatch_table = MismatchTable(known)
     write_json(out/'known-mismatches.json', known)
     write_json(out/'manifest.json', dict(lock=lock, files={k: str(v) for k, v in files.items()},
-        seeds=seed_stats, random_seed=args.seed, target=args.count, workers=args.workers,
+        scenario=scenario, seeds=seed_stats, random_seed=args.seed, target=args.count, workers=args.workers,
         paging_fuzz_sha256=replay.sha256(__file__), pt_decode=decoder_identity,
-        judge_template_sha256=replay.sha256(source/'sv39-load-e3/done.json'),
+        judge_template_sha256=replay.sha256(source/f'{scenario}-e3/done.json'),
         native_observer_sha256=replay.sha256(source/'nemu_native_observer.so'),
         judge_observer_sha256=replay.sha256(source/'observe.so'),
         excluded_checker_sha256=replay.sha256(source/'check_badread')))
@@ -532,10 +554,10 @@ def campaign(args):
     negative = copy.deepcopy(success)
     negative['sample_id'] = max(s['sample_id'] for s in seeds)+1
     negative['post_registers']['x2']['bits'] = f'{decoder.bit_value(success["post_registers"]["x2"], 64)^1:064b}'
-    checks, seed_batch = check_batch(seeds+[negative], out/'judge-seeds', source)
+    checks, seed_batch = check_batch(seeds+[negative], out/'judge-seeds', source, scenario)
     assert all(membership_reason(checks[s['sample_id']]) is None for s in seeds), '种子原样重判失败'
     assert membership_reason(checks[negative['sample_id']]) == 'inconsistent', 'J1 负对照未检出'
-    print(f'种子728/728一致；J1错误期望负对照已检出；{seed_batch["seconds"]:.3f}秒', flush=True)
+    print(f'种子{len(seeds)}/{len(seeds)}一致；J1错误期望负对照已检出；{seed_batch["seconds"]:.3f}秒', flush=True)
     coverage = Coverage()
     for s in seeds:
         coverage.observe(decoder.decode_sample(s, decoder.Config(False, False, False)))
@@ -574,7 +596,7 @@ def campaign(args):
         write_json(out/'mutations.json', mutation_rows)
         write_json(out/'discarded.json', discard_rows)
         checks, batch = check_batch([s for s, decoded, change in candidates],
-                                   out/f'judge-mutants-{batch_number:02d}', source)
+                                   out/f'judge-mutants-{batch_number:02d}', source, scenario)
         batches.append(batch)
         batch_number += 1
         for s, decoded, change in candidates:
@@ -612,16 +634,22 @@ def campaign(args):
             if len(results) % 20 == 0:
                 print(f'重放{len(results)}/{args.count}；桶{dict(Counter(r["bucket"] for r in results))}', flush=True)
     replay_seconds = time.monotonic()-started
-    # N3 型重放负对照：经过判官的成功样本，仅把 ELF 的 rd 期望翻一位。
+    # N3 型重放负对照：成功样本仅翻转 ELF 的 rd 或写后内存期望一位。
     negative_case = replay.platform_case(success, decoder, profile, lock['platform_gen_sha256'])
-    negative_case['expected']['rd'] ^= 1
+    negative_reason = 'rd' if negative_case['access'] == 'load' else 'memory'
+    if negative_reason == 'rd':
+        negative_case['expected']['rd'] ^= 1
+    else:
+        physical = negative_case['decoded']['paddr_if_success']
+        word = next(w for w in negative_case['writes'] if w['address'] == physical)
+        word['expected_value'] ^= 1
     negative_case['source'] = dict(negative_control='N3', parent_sample_id=success['sample_id'])
     n3 = replay_one((negative_case, out/'negative-N3', files, source/'nemu_native_observer.so'))
-    assert n3['bucket'] == 'xs!=expected' and n3['reason'] == 'rd', 'N3 型负对照未检出'
+    assert n3['bucket'] == 'xs!=expected' and n3['reason'] == negative_reason, 'N3 型负对照未检出'
     replay.verify_platform_lock(profile, lock, files)
     assert snapshot([source]) == identities, '旧产物发生变化'
     write_json(out/'coverage.json', coverage.export())
-    summary = dict(status='完成', seeds=seed_stats, target=args.count, attempts=attempts,
+    summary = dict(status='完成', scenario=scenario, seeds=seed_stats, target=args.count, attempts=attempts,
         generated=generated, replayed=len(results), operators=dict(Counter(
             c['source']['operator'] for c in accepted)),
         judge_discards=dict(Counter(r['reason'] for r in discard_rows if r['stage'] == 'judge')),
@@ -643,9 +671,10 @@ def campaign(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, default=Path('output/ecfg3'))
-    parser.add_argument('--out', type=Path, required=True, help='output/fuzz-p1 下的新目录')
+    parser.add_argument('--out', type=Path, required=True, help='output/fuzz-p1 或 output/fuzz-p1b 下的新目录')
     parser.add_argument('--pt-decode-dir', type=Path, required=True)
     parser.add_argument('--known-mismatches', type=Path)
+    parser.add_argument('--scenario', choices=SCENARIOS, default='sv39-load')
     parser.add_argument('--count', type=int, default=500)
     parser.add_argument('--seed', type=int, default=20261107)
     parser.add_argument('--workers', type=int, default=8)

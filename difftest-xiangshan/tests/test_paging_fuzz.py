@@ -49,6 +49,90 @@ class FuzzTests(unittest.TestCase):
             memory = self.decoder.memory_bytes(s['pre_memory'])
         return fuzz.predict_sample(s, memory, self.decoder, self.profile(), 100)
 
+    def scenario_seed(self, mode, access):
+        s = self.seed()
+        s['isa_state']['$instruction'] = ('ld' if access == 'load' else 'sd')+' x2, 0(x1)'
+        s['pre_registers']['x2'] = bits(0xdeadbeef)
+        if access == 'store':
+            s['post_registers']['x2'] = bits(0xdeadbeef)
+            memory = self.decoder.memory_bytes(s['post_memory'])
+            fuzz.put_word(memory, 0x80400000, 0xdeadbeef)
+            s['post_memory'] = fuzz.cells(memory)
+        if mode == 'sv48':
+            s['pre_registers']['satp'] = bits(0x9000000000080200)
+            memory = self.decoder.memory_bytes(s['pre_memory'])
+            fuzz.put_word(memory, 0x80200000, ((0x80302000 >> 12) << 10) | 1)
+            fuzz.put_word(memory, 0x80302000, ((0x80300000 >> 12) << 10) | 1)
+            s['pre_memory'] = fuzz.cells(memory)
+            post = self.decoder.memory_bytes(s['post_memory'])
+            fuzz.put_word(post, 0x80200000, ((0x80302000 >> 12) << 10) | 1)
+            fuzz.put_word(post, 0x80302000, ((0x80300000 >> 12) << 10) | 1)
+            s['post_memory'] = fuzz.cells(post)
+        return s
+
+    def test_prediction_supports_four_scenarios_and_store_post_memory(self):
+        for mode in ('sv39', 'sv48'):
+            for access in ('load', 'store'):
+                with self.subTest(mode=mode, access=access):
+                    s = self.scenario_seed(mode, access)
+                    derived, decoded = self.predict(s)
+                    self.assertEqual(decoded['mode'].lower(), mode)
+                    self.assertEqual(decoded['access'], access)
+                    self.assertEqual(derived['post_memory'], fuzz.cells(
+                        self.decoder.memory_bytes(s['post_memory'])))
+                    self.assertEqual(derived['post_registers']['x2'], s['post_registers']['x2'])
+                    self.assertEqual(derived['post_registers']['tlb']['vector'][0]['ctor'],
+                                     'Some<RTLB_Entry>')
+
+    def test_store_dirty_permission_faults_and_data_access_fault(self):
+        for flags, exception in ((0x47, 'E_SAMO_Page_Fault'),
+                                 (0xc3, 'E_SAMO_Page_Fault'),
+                                 (0x87, 'E_SAMO_Page_Fault'),
+                                 (0xc7, 'E_SAMO_Access_Fault')):
+            with self.subTest(flags=flags):
+                s = self.scenario_seed('sv48', 'store')
+                memory = self.decoder.memory_bytes(s['pre_memory'])
+                fuzz.put_word(memory, 0x80301000, (1 << 46) | flags)
+                derived, decoded = self.predict(s, memory)
+                self.assertEqual(decoded['exception_type'], exception)
+                self.assertEqual(derived['pre_memory'], derived['post_memory'])
+                self.assertEqual(derived['post_registers']['x2'], s['pre_registers']['x2'])
+
+    def test_store_unknown_initial_bytes_and_pte_data_alias(self):
+        s = self.scenario_seed('sv39', 'store')
+        for cell in s['pre_memory']:
+            if cell['address'] >= 0x80400000:
+                cell['value'] = None
+        derived, decoded, change = fuzz.mutate(
+            s, 'M5', random.Random(5), self.decoder, self.profile(), 101)
+        self.assertEqual(self.decoder.read_word(self.decoder.memory_bytes(
+            derived['post_memory']), 0x80400000), 0xdeadbeef)
+        s = self.scenario_seed('sv39', 'store')
+        memory = self.decoder.memory_bytes(s['pre_memory'])
+        fuzz.put_word(memory, 0x80301000, ((0x80301000 >> 12) << 10) | 0xc7)
+        derived, decoded = self.predict(s, memory)
+        self.assertEqual(decoded['paddr_if_success'], 0x80301000)
+        self.assertEqual(self.decoder.read_word(self.decoder.memory_bytes(
+            derived['post_memory']), 0x80301000), 0xdeadbeef)
+        self.assertEqual(int(derived['post_registers']['tlb']['vector'][0][
+            'value']['struct']['pte']['bits'], 2), ((0x80301000 >> 12) << 10) | 0xc7)
+
+    def test_corpus_binds_scenario_to_actual_instruction_and_satp(self):
+        for mode in ('sv39', 'sv48'):
+            for access in ('load', 'store'):
+                s = self.scenario_seed(mode, access)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory)/'seeds.jsonl'
+                    path.write_text(json.dumps(s)+'\n')
+                    lock = {'platform_gen_sha256': 'gen'}
+                    manifest = dict(lock=lock, samples_sha256=replay.sha256(path),
+                                    scenario=mode+'-'+access)
+                    seeds, stats = fuzz.load_corpus(path, manifest, lock, self.decoder)
+                    self.assertEqual(len(seeds), 1)
+                    manifest['scenario'] = mode+('-store' if access == 'load' else '-load')
+                    with self.assertRaisesRegex(ValueError, '场景'):
+                        fuzz.load_corpus(path, manifest, lock, self.decoder)
+
     def test_corpus_dedup_binds_manifest_and_preserves_class_sources(self):
         s = self.seed()
         t = copy.deepcopy(s)
