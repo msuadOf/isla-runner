@@ -106,7 +106,7 @@ class ReplayTests(unittest.TestCase):
                 self.assertTrue(any(w["value"] & (1 << 54) for w in c["writes"]))
 
     def test_real_elf_is_compact_handler_aligned_and_negative_input_unchanged(self):
-        parent = ROOT.parent / "output/e0/unit"
+        parent = Path(os.environ.get("PAGING_TEST_OUTPUT_DIR", ROOT.parent / "output/e0/unit"))
         parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=parent) as directory:
             c = replay.relocate_sample(sample(), self.decoder)
@@ -183,7 +183,7 @@ class ReplayTests(unittest.TestCase):
                     assembly.replace("payload_ins:", "    j good_trap_ins\npayload_ins:"),
                     assembly.replace("payload_ins:", "    .4byte 0x0000006b\npayload_ins:"),
                     assembly.replace("fail_rd:", "fail_alias_trap:\nfail_rd:")]
-        parent = ROOT.parent / "output/exit/unit"
+        parent = Path(os.environ.get("PAGING_TEST_OUTPUT_DIR", ROOT.parent / "output/exit/unit"))
         parent.mkdir(parents=True, exist_ok=True)
         for variant in variants:
             with self.subTest(variant=variants.index(variant)):
@@ -231,7 +231,7 @@ class ReplayTests(unittest.TestCase):
         asm = replay.paging_assembly(c)
         self.assertIn("mret\ns_entry:", asm)
         self.assertIn("s_return:\n    ecall", asm)
-        parent = ROOT.parent / "output/e1-e4/unit"
+        parent = Path(os.environ.get("PAGING_TEST_OUTPUT_DIR", ROOT.parent / "output/e1-e4/unit"))
         parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=parent) as directory:
             built = replay.build_case(c, directory)
