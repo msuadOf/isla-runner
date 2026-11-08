@@ -67,6 +67,7 @@ Claude ──SendMessage──▶ 中转子代理（只转发指令、回传报�
 
 | 现象 | 实际情况 | 做法 |
 | --- | --- | --- |
+| 指令里写了工作目录，Codex 却报“目录不可写 / Read-only file system” | Codex 的可写范围跟的是**启动它时 Claude 会话的当前工作目录**，不是指令里写的目录；换 worktree 时指令里写目标目录没用 | 派发前先用 Bash `cd` 到目标 worktree（让当前工作目录变成它），再启动 Codex；多个 worktree 并行写时，各自先 `cd` 再派发 |
 | 通知写 “completed / waiting on background work” | 只是转入后台，不是做完 | 看任务状态和结果内容，不以通知字样判断完成 |
 | 用 `TaskStop` 停任务 | 只停了本侧包装命令，Codex 侧任务仍在跑，后续 `--resume-last` 会被拒绝 | 用 `codex-companion.mjs cancel <job-id>` |
 | 同一工作树同时派两份会写文件的 Codex | 互相覆盖文件 | 同一工作树同一时间只允许一个写会话；只读咨询可以并行，见 2.1 |
