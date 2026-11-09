@@ -1,0 +1,50 @@
+{
+  "z3": "official 1fd1d3613",
+  "build_jobs": 8,
+  "results": [
+    {
+      "command": "cargo test --offline -j 8 -p isla-lib --lib executor::frame",
+      "result": "PASS",
+      "candidate_commit": "7885b24d8506d8f110842c3f4b7948836f624c42",
+      "passed": 6,
+      "failed": 0,
+      "ignored": 0,
+      "test_seconds": 0.11
+    },
+    {
+      "command": "cargo test --offline -j 8 -p isla-lib --lib --features tracetool executor::",
+      "result": "PASS",
+      "candidate_commit": "7885b24d8506d8f110842c3f4b7948836f624c42",
+      "passed": 498,
+      "failed": 0,
+      "ignored": 5,
+      "test_seconds": 10.38
+    },
+    {
+      "command": "cargo test --offline -j 8 -p isla --lib isarch::memory_model::tests",
+      "result": "PASS",
+      "candidate_commit": "7885b24d8506d8f110842c3f4b7948836f624c42",
+      "passed": 34,
+      "failed": 0,
+      "ignored": 0,
+      "test_seconds": 0.13
+    },
+    {
+      "command": "cargo check --offline -j 8 -p isla-axiomatic",
+      "result": "PASS",
+      "candidate_commit": "7885b24d8506d8f110842c3f4b7948836f624c42"
+    }
+  ],
+  "tdd": {
+    "sharing_red": "原类型触发24个编译错误",
+    "impure_reader_red": "读取值2，预期1；修正SMT初始化后实际复现",
+    "impure_reader_green": "自定义区域与数组回调的四个复制入口均通过"
+  },
+  "full_lib_or_end_to_end_performance_tested": false,
+  "integration_script": {
+    "real_repository_read_only_preflight": "PASS",
+    "isolated_fast_forward": "PASS",
+    "isolated_repeat_apply": "PASS",
+    "original_mainline_merged": false
+  }
+}

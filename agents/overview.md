@@ -182,3 +182,7 @@
 
 
 - 2026-11-09 [暂存区外审计与清理](unstaged_cleanup_20261109/status.md)：52个工作目录审计完成，恢复79份、删除4538个文件；COW/MMU等独有实现及证据保留，未跑测试和哈希核对。
+
+- 2026-11-09 [执行帧 CoW 合入与回调隔离](cow_local_frame_20261109/status.md)：候选7885b24d及限定验证完成；原.git只读，实际主线待快进。
+
+- 2026-11-09 [MMU 实验最终结论与关停归档](mmu_symbolic_experiment/final-report.md)：停止旧预算调优，保留Markdown和处理后数据，旧运行中间产物已清理。

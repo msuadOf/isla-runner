@@ -23,3 +23,7 @@ Isla workaround 配置直接由 `sail-riscv/configs/isla/workarounds/` 管理，
 具体 Git 操作边界见 [GIT.md](../GIT.md)。
 
 `AGENTS.md` 是协作入口，`CLAUDE.md` 是指向它的符号链接。根规则与子目录规则按适用路径共同生效；进入 `isla/` 时还需遵守其局部规则。`agents/<topic>/status.md` 指向议题细节；全仓状态以 [TODOs.md](TODOs.md) 汇总，旧记录的路径和版本仍需按其原文理解。
+
+## 实验归档约定（2026-11-09 用户确认）
+
+新归档只保留 Markdown 记录与处理后的数据／表格，包括批次、耗时、数据量、路径／分支数和实验思路。不归档二进制、IR、构建缓存或原始中间产物。历史记录保留原适用版本和修订说明；本次仅清理 MMU 旧实验目录，不据此删除其他议题资产。语义有效性由 `--check-samples`／judge 确认，哈希只作来源记录。

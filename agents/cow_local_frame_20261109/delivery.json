@@ -1,0 +1,9 @@
+{
+  "base_commit": "849900a6247bed81dc79a4c26af648ebea2f5b5f",
+  "candidate_commit": "7885b24d8506d8f110842c3f4b7948836f624c42",
+  "candidate_path": ".worktree/isla-cow-local-frame",
+  "branch": "feat/cow-local-frame",
+  "original_mainline_status": "pending_read_only_git",
+  "pushed": false,
+  "gitlink_updated": false
+}

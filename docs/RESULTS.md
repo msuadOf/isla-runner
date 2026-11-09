@@ -570,3 +570,9 @@ Isla `cf1aa14`、模型 `6202e23`：辅助编码仅保留指令字段原断言�
 命令`PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s .worktree/push-index-cleanup-20261109 -p test_maintenance.py -v`最终2项通过、1.356秒、exit0。临时bare远端实测单仓atomic推送全部测试分支与archive、设置upstream；非快进dry-run在任何实际发布前阻断。索引测试验证没有完整推送回执不能清理、部分暂存中间版可从原index+pack在独立存储恢复、工作区及未跟踪文件保留、仅移除缺失记录和重复执行幂等。初次测试入口的非ASCII bytes字面量已修正，不列为通过依据。
 
 实际工作区原审计3处223条cached，207条历史精确覆盖；16条为旧源码/缓存，已保存恢复材料。调查期间观察到外部清空索引并移除dead记录；本会话清理脚本先因变化停止，后续只读终核为空。12分支origin上游已由外部设置，真实网络回读仍因代理不可达失败，未把本地缓存当作本发布计划完整成功。源码/IR未修改，不新增功能PASS。[完整清单与证据](../agents/push_index_cleanup_20261109/status.md)。
+
+## 2026-11-09 执行帧 CoW 与 MMU 归档
+
+候选Isla7885b24d，基线849900a6，官方Z3 1fd1d3613，离线8路构建。frame默认6通过、tracetool执行器498通过/5忽略、数组内存34通过，axiomatic类型检查和格式检查通过。新增读计数回归先复现路径串扰，修复后自定义区域和回调两种模式均通过。只读真实预检、隔离主线快进与重复执行通过；原仓主线尚未合入。未生成IR、未做make或端到端性能验收。[完整范围、命令与审查](../agents/cow_local_frame_20261109/report.md)、[结构化结果](../agents/cow_local_frame_20261109/verification.json)。
+
+MMU本轮仅归档和关停，无新增动态PASS。旧运行44393文件/169658699字节已清理，保留Markdown和处理后数据；历史计数和2026-11-05后处理结论修订均保留。[最终报告](../agents/mmu_symbolic_experiment/final-report.md)。

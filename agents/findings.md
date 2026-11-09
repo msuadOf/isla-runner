@@ -2199,3 +2199,9 @@ runner的origin/feat/p0-replay@ffcc98e1对当前保留主线仍有24个独有提
 - Sail-RISC-V主区150份旧浮点修改/未跟踪源码均在runner的float/memory固定组件当前内容或历史中找到相同全文；本轮清掉旧副本，保留.gitignore的实际缓存过滤用途。
 - 旧memory-consistency候选的coherent_concrete_reads/special_overlap已由isarch的handles_concrete_reads及后续专属区域分派接续，不代表整份旧文件与主线相同。
 - 本次起点两个功能worktree各有5份已暂存IR，与前一轮223条旧索引清理属于不同起点状态；10份均保留。本轮仅内容审计和清理，没有新增动态PASS。详见[清理状态](unstaged_cleanup_20261109/status.md)。
+
+## 2026-11-09 执行帧 CoW 候选的回调边界
+
+候选7885b24d（基线849900a6）确认：freeze/unfreeze之外，LocalFrame::clone与new_call也是路径内存复制入口。仅改前两者不能隔离有状态读取；Atomic计数回归实际复现读取2而非预期1。四个入口统一使用Memory::fork_for_frame后，自定义区域和数组回调的隔离回归通过。默认不共享未知回调，SeqMemory与ImmutablePageTables显式确认纯读取；前者实际帧共享后写入隔离测试通过。Clone仍须独立复制路径私有状态，错误共享Atomic/Mutex无法靠trait自动识别。原主线因.git只读尚未更新，旧“冻结仍克隆容器”的事实仍适用于849900a6；候选实现与限制见[专题](cow_local_frame_20261109/report.md)。
+
+MMU旧预算实验已于2026-11-09停止并只归档Markdown与处理后数据；历史415/3181仍是触限下界，手写模板后处理不构成语义接纳。现行路径合并与fuzz方向见[最终报告](mmu_symbolic_experiment/final-report.md)。

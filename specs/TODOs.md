@@ -1,5 +1,9 @@
 # TODOs — 当前协作状态
 
+**执行帧 CoW（2026-11-09，候选完成／主线快进待执行）**：独立 feature 提交7885b24d基于849900a6，新增纯读取契约和默认深拷贝保护，适配现行路径合并。frame6、trace执行器498/5忽略、数组内存34及axiomatic检查通过；真实预检和隔离快进／重复执行通过。原.git只读，主线仍849900a6；未推送或移动gitlink，无性能PASS。[交付与执行入口](../agents/cow_local_frame_20261109/status.md)。
+
+**MMU 实验关停归档（2026-11-09，完成）**：按用户决策，现行路径合并已解决关注场景的路径规模问题，fuzz保留更大探索空间，停止旧预算调优。归档只留Markdown和处理后JSON/CSV；清理旧运行目录44393文件、169658699字节，仅留报告入口。历史超时计数仍为下界，36例后处理不算语义接纳证明。[最终报告](../agents/mmu_symbolic_experiment/final-report.md)。
+
 **三仓及各工作树暂存区外文件审计与清理（2026-11-09，完成）**：审查 52 个实际 Git 工作目录，按内容语义比对保留分支（runner 的 isarch/float/memory、Sail-RISC-V 的 isarch/fix/zvksha2-sew-assert/model-fix-vd-nf、Isla 的 isarch/feat/linearize-tri-strategy-grafted/feat/witness-randomization）。恢复 79 份未暂存工作文件到各自索引版本，安全删除 4,538 个确认无用的旧副本、编译缓存与字节码（无沙箱阻挡）。Sail-RISC-V 主区旧浮点副本已清除；Isla 历史浮点审查树、旧内存修复树及诊断源码树均已干净；独有的 COW、MMU 采样预算、semantic-mutation 实现及历史证据文档保留。两个功能工作区残留的 10 个已暂存 IR 文件亦已 unstage 并清除。全程未运行测试、未计算或生成哈希，备份快照完好。[完整审计及清单](../.worktree/unstaged-cleanup-20261109/audit.md)、[专题状态](../agents/unstaged_cleanup_20261109/status.md)。
 
 **Isla Git 历史大体积 IR 永久清除与远端同步（2026-11-09，完成）**：按用户要求，使用 `git-filter-repo` 将 `rv32d.ir`、`rv64d.ir` 及 `ir/rv64d_v*.ir` 从 Isla 仓库历史（`isarch`、`feat/linearize-tri-strategy-grafted`、`feat/witness-randomization` 及 tag `allai`）中彻底抹除，upstream `master` 保持原 SHA `b898a55d` 不变。仓库打包体积由 101MB 缩减至 29MB，已强制推送到 GitHub 远端；isla-runner 主仓库 `isarch` 分支子模块 gitlink 已同步更新至新 SHA `849900a6` 并推送到远端。[专题状态](../agents/push_index_cleanup_20261109/status.md)。
