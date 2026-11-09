@@ -5,5 +5,6 @@
 - [XiangShan harness，2026-09-21](xiangshan/2026-09-21-harness/README.md)
 - [Ara PoC 成套档案，2026-09-23](ara/2026-09-23-poc-batch/README.md)
 - [XiangShan Issue 草稿复现，2026-09-23](xiangshan/2026-09-23-issue-reproduction/README.md)
+- [标量浮点 73df 求解与当前工作区 XiangShan 结果本地备份，2026-09-29](float-scalar-2026-09-29/README.md)
 
 `_raw/` 存放本地大型原始档案，由根 `.gitignore` 排除；提交的 manifest 记录其大小与 SHA-256。它不是远端备份，新 clone 不含这些文件。源数据在本次整理中保留，未删除。

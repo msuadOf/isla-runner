@@ -1,5 +1,224 @@
 # Findings
 
+## 2026-11-03 符号执行路径策略四组对比实验与架构边界（Sv39 全符号页表）
+
+- **四组基准实测数据（60秒硬时限，Sv39 全符号页表 LOAD 负载，单线程）**：
+  - **Group A (基线: 原生直接分叉 / Direct Fork)**：探索路径 179 条（其中 123 条为浅层同质 Fault 路径，56 条为 2MiB 浅层 Success，0 条 4KiB 叶级深层 Success）；Z3 调用 89,017 次（耗时 46.33s）；单次 Z3 耗时 0.52ms；60s 触限。
+  - **Group B (静态局部线性化 / Whole-Function Flattening: zpte_is_non_leaf / zpte_is_invalid 全函数压平)**：探索路径下降至 105 条；Z3 调用下降至 36,314 次（耗时 23.67s）；成功打破浅层偏斜，打通 1 条 4KiB 深度路径；但因全函数压平导致 ITE AST 深度剧增，单次求解开销从 0.52ms 恶化至 0.652ms，首条 Success 耗时从 9.14s 延迟至 16.96s。
+  - **Group C (运行时动态路径合并 / Veritesting: 局域 SESE 菱形动态折叠)**：探索总路径暴增至 **665 条**（是基线的 3.7 倍，线性化的 6.3 倍）；成功正常翻译（Retire_Success）达 **131 条**，其中 **4KiB 叶级深层翻译达 99 条**（基线为 0 条）；单次求解开销降至 **0.213ms**；60s 吞吐与深层穿透力全面领先。
+  - **Group D (动态合并 + 笛卡尔积后处理 / PathMerge + Cartesian)**：在 Group C 提取的 2MiB 与 4KiB 结构模板上，展开 3 权限 × 2 特权 × 2 状态共 24 个微架构用例，Z3 批量验证**总耗时仅 21.24 毫秒（平均 0.391 毫秒/例）**，24/24 经 Sv39 规则核对 100% 合法，无冗余脏用例。（2026-11-05 修订：该校验用手写小公式与写死页表模板，未带路径约束，不构成合法性证明，待复验；见 localized_path_merge_review/plan.md 末节。）
+
+- **关于“Fault 异常路径”的定性澄清（纠正误判）**：
+  - 此前报告将 Fault 路径称为“废路径”系**严重误判**。Page Fault（页异常）、Access Fault（访问异常）、Misaligned（非对齐异常）是验证 CPU / MMU 异常响应逻辑、CSR (`scause`, `stval`, `sepc`) 写入正确性的关键测试见证用例，在处理器验证中具备重大架构价值。
+  - 此前问题的本质在于：浅层 L2 页表未加约束时，海量保留位翻转导致了“**同质冗余 Fault 组合爆炸**”，挤占了有限算力，使深度正常路径无法被探索到。故应定性为“**浅层同质冗余爆炸**”，绝非“废路径”。
+
+- **TOML 配置与通用引擎架构解耦规约**：
+  - **TOML 原字符串规范**：TOML 配置文件必须面向使用者保持人类可读性（如 `pte_is_valid`、`check_PTE_permission`），严禁要求用户在 TOML 中手工编写 Sail IR 内部的 `zz4X` 编码。Isla 内部在加载配置时，通过 `zencode::encode` 与 `symtab.lookup` 自动完成自然字符串向内部编码的转换。
+  - **通用引擎纯粹性**：`check_PTE_permission`、`update_PTE_Bits` 等特定指令集/特权级专有函数，严禁在通用的 `isla-lib` 核心库中硬编码。所有压平、合并与分支策略必须由 ISA 外部 TOML 配置声明式驱动，通用引擎仅维护拓扑检测、副作用隔离与 SMT 等价性证明等通用机制。
+
+- **运行时动态路径合并（`feat/runtime-path-merge`）独立审查发现**：
+  - 架构收益：摆脱了旧 `dev-isarch-pathmerge` 队列等待与丢任务的设计缺陷，在 `run_loop` 原地投机合并，保留复杂控制流多样性的同时局部压制位运算爆炸。
+  - 阻断性缺陷（待修复）：`try_merge_diamond` 投机执行失败回退至原生 fork 时未回滚 `solver` 脏事件/断言；`build_ite` 在 Union 构造器合并时未绑定条件、`(SymbolicCtor, Ctor)` 未取非；合并成功时硬编码向 itrace 推入了 `test_true`。
+
+
+## 2026-11-03 符号化与分支策略架构（TOML 声明式 auto/ite/fork 机制）
+
+- **背景与矛盾**：形式化 ISA 模型（Sail）在符号执行（Isla）中面临两难：在 Sail 源码硬编码显式分支容易诱发多通道组合路径爆炸（$2^n$ 超时），而全面压平为数据流 ITE 又会因求解器贪婪早退而抹杀关键硬件敏感边界（如符号扩展正负极值、各类 NaN 特异性用例）。
+- **配置驱动架构设计（Config-driven Policy Override）**：
+  - **默认策略**：全局采用 `auto` 策略，底层优先利用 SMT 数据流化简，保持 Sail 规范源码与 `0008fae` 祖先基线的高度一致性，避免模型源码层过度打补丁；
+  - **细粒度覆盖**：通过 Isla 运行配置文件（`config.toml`）声明式指定特定函数/模块的符号化分流策略：
+    - `strategy = "fork"`：针对硬件 Bug 高发边界（如符号正负分类、NaN 多样性刺探），强制分离路径，保障测试见证（Witnesses）的丰富度与微架构覆盖率；
+    - `strategy = "ite"`：针对纯数据流选择、饱和截断及标志位提取，强制压平为无分支 ITE，杜绝组合爆炸与超时。
+- **实施节奏规划**：当前 float 议题优先以“最小改动与实测必要性”为准则闭环收敛（撤回纯数据选择分支，冻结未决项，完成 Sol 独审与验收）；本套通用的 TOML 配置驱动 ITE 化能力，统筹留待后续合入内存符号化分支（`runner-memory` / `feat/memory-support`）时统一设计与实现。
+
+## 2026-10-24 通用分支功能归因与当前组合对照
+
+refactor/general-support-20261007与fix/general-review-20261008当前同为09fe582。对7b7337b的源码diff确认，主动前态符号化和vtype/vl配对约束已在基线，不能把现存target整段都算作本分支新增；新增特权域、完整见证及编码可行性等另见设计说明。当前原工作区对已解决组合54fb4e8e仍986同／15异／新增14，float.rs最终相同，旧工作区并非缺少所有通用能力，而是缺少后续修复与联合编码流程。此次只读核查，不新增动态PASS。[源码归因与证据](general_support_review/design-comparison-20261024.md)。
+
+## 2026-10-22 路径签名与变异反馈的边界
+
+- 既有 witness-pure@2fefa72 二进制0baf7eb0／IR6fc39efd 在两个目标的开关对照中，off仅导出五类上下文键，on的部分条目额外导出GPR/FPR/VPR/mstatus；因此完整JSON去重数不能直接衡量变异收益。仅比较实际共同字段仍可看到vl值域扩大，但VSETIVLI覆盖旧vl，字段多样性不等于有效输入切片或RTL行为多样性。本轮未重编／未DUT重放，精确哈希与来源限制见 [E1结果](semantic_mutation_fuzzing/pilot-results.md)。
+- 当前 `isla/isla-lib/src/executor/execution_limits.rs` 的 `ExecutionLimitPathState::advance_path_signature` 仅计算 `splitmix64((signature << 1) | direction)`，不纳入静态分支位置。因此不同 clause／不同分支位置上的相同 fork 方向序列可能得到同一签名；它可关联本次执行的路径记录，但不能单独充当静态分支覆盖键、语义等价证明或路径约束。核对时原 `isla/` HEAD 为 `7b7337b`，含既有未提交内容。
+- 同工作区 `src/isarch/exec.rs` 的 `AssemGenJsonItem` 包含 `test-ins-encdec`、`isa-state-complete`、`isa-state-post` 和 `path-signature`；这些字段没有自动提供求解条件或保证变异后仍可使用原 post-state。内存 `47ac90c` 的 value hints/编码分片与随机化 `2fefa72` 的 `randomize_witness` 分属其他工作树，本轮只读核对，未联合验证。论文对照、源码入口及待验证设计见 [语义约束变异报告](semantic_mutation_fuzzing/report.md)。
+
+## 2026-10-22 模型职责分类的通用边界与内存移植
+
+原分类链942062de、31b76d99、bfa54ad6、c3f80279分别混合公共Bool与FD、VPR与FPR、整数与浮点译码、共享向量与纯FP工具。逐函数／路径提取后可先形成4个通用模型提交，边界0de6edd1，不新增FP/RM声明或IEEE后端；再10个浮点提交，最终完整tree仍等于3ea3cbaf。VPR两份回归必须随通用寄存器组提取，不能只复制model路径。[提交映射与核账](sail_riscv_commit_review/topics-20261022.md)。
+
+46f8273a在旧基线上的vstart改动不能整文件覆盖4f2ac293：后者已合并向量普通／SYMBOLIC实现，当前需改16个调用点（arith5/fp1/mem3/utils7），不是旧树20处。新内存分支1fa93117先segment组界、再vstart接口，保留新基线重构，仅4个V模型文件改变；32次最终严格类型检查只证明类型／提交边界，不是新的动态指令验收。
+
+## 2026-10-21 GitHub TLS失败的代理边界
+
+本轮默认代理环境下Git/urllib访问GitHub及API均TLS EOF；仅在子进程清除HTTP_PROXY、HTTPS_PROXY、ALL_PROXY及小写对应变量后，直连GitHub/API均返回200，Git远端删除和ls-remote也成功。未改全局环境或Git配置。此前远端不可获取结论只限当时代理路径，不能推断GitHub或凭据本身不可用；`gh auth status` 在网络失败时给出的token失效提示亦未独立证实。
+
+## 2026-10-21 根仓双议题版本与子模块检出
+
+根仓float的首版本754ca8e固定Isla be1296b和模型候选3ea3cbaf，随后3bb9e8d保存独审；memory@8b24dc8固定Isla47ac90c和模型4f2ac293，均从a85d6df建立。两套隔离worktree各自独立检出子模块，manifest/gitlink/实际HEAD及默认IR哈希一致，原工作区索引和dirty层保留。float记录源码候选，不含通用09fe582／随机化2fefa72，也不证明现有IR由所固定模型精确重生；正式远端可获取性尚因TLS错误未核实。[版本说明](../specs/topic-versions.md)、[核查证据](branch_merge_review/root-sync-validation.json)。
+
+独审对现行模型最小C++探针确认：标准Sail0.20.1不能lower `float_rounding_mode`，同输入补丁版成功，故版本字符串不等于构建能力。三个旧fixture仍失配。复用逐文件相等源树生成的普通C++库，对18算术包装检查704880次调用（含重复），结果与SoftFloat flags一致；flags路径独立、数值共用SoftFloat，不是完整算法／67包装／SYMBOLIC证明。[独立证据与限制](sail_riscv_commit_review/independent-review-20261021.md)。
+
+## 2026-10-21 拆分分支与已有合并候选的现行边界
+
+Isla `.worktree/isla-float-support` 已于10-09成为detached `cf128bb`，父为7b7337b和be1296b，tree逐字等于仅浮点分支，未含通用／内存／随机化；10-08记录的“7b7337b干净基线”只适用于创建时。通用＋浮点候选仍在 `.worktree/isla-merge-check-20261008` 待提交，HEAD09fe582、MERGE_HEADbe1296b、索引tree54fb4e8e，原feat/float-support仍7b7337b加dirty层。Sail-RISC-V三条拆分链最终tree6fafcbc4相同，逐条索引核对仅比原工作区少12pyc。内存47ac90c除核心一致性还含PMA、CSR及value hints/encoding slices/encdec策略，不宜把分支整体等同最小内存功能。[分支与冲突证据](branch_merge_review/report.md)。
+
+## 2026-10-19 Sail-RISC-V 功能归组与合法性片段
+
+`595c1a0b..755fea6e`（含起点）与10-16的23层逐层tree相同，仅提交元数据不同。按model功能可重组为11个模型提交及1个忽略规则提交，最终tree保持 `6fafcbc4`。合法性修复需跨旧提交取hunk：`82a2bc4c` 的加宽归约通过普通FP检查拒绝SEW8，`755fea6e` 的两条BF16转换补SEW16拒绝；已提前集中到新SEW修复组，后续优化不再夹带这些变化。其余普通逐元素优化可合并，但归约有顺序依赖，BF16无活动lane的NV修复应独立保留。[新提交及22次精确树检查](sail_riscv_commit_review/commits-by-category-20261019.md)。
+
+## 2026-10-18 上游Sail原生汇编测试的模块边界
+
+Sail0.20.3在最新Sail-RISC-V的unit_tests模块中要求显式导入Fregidx/freg_name所属FD_core和Vregidx所属V_core，单独requires FD_instructions或BF16模块不会把这些定义传递进作用域。最终 `fbacdfff` 在unit_tests加入这些依赖及两个assembly测试函数，全模型严格检查通过；定向C++探针还须提供prelude声明的外部get_config_use_abi_names接口（此处取默认false）。修复已上报 [上游#2030](https://github.com/riscv/sail-riscv/pull/2030)，DCO通过；不能把定向C/C++探针当作完整CTest结果。[版本与验证边界](sail_riscv_commit_review/pr-1a135b24-20261018.md)。
+
+## 2026-10-18 最新 Sail-RISC-V 0.16 仍有 FLI/BF16 汇编文本错误
+
+官方 `master@e5acebb04ff573e93203596486b831a5974117c3` 中，FLI.H/S/D 仍以 `hex_bits_5` 打印常量索引；两条BF16转换仍在自带逗号的 `maybe_vmask` 前额外添加 `sep()`；BF16 VV/VF MACC两源操作数仍用 `spc()` 分隔。抽取实际映射的104条被LLVM22.1.8全部拒绝；只应用 `1a135b24` 三模型补丁后104文本/编码及32映射往返通过。GNU2.45.50将实际输出 `fli.s f16, 0x10` 编成索引25的16.0，原索引16应为1.0。没有验完整模型/IR/数值/硬件；检索未见专门修复，相关#1008为通用验证议题。[精确版本、来源与复现](sail_riscv_commit_review/upstream-1a135b24-20261018.md)。
+
+## 2026-10-18 FLI 二次幂常量的可读写法
+
+FLI索引2/3/4/5的长小数精确等于2^-16/2^-15/2^-8/2^-7。普通十进制、科学计数及 `0x1p-16`/`0x1p-15`/`0x1p-8`/`0x1p-7` 三种文本在GNU as2.45.50和LLVM MC22.1.8下共24次FLI.S汇编均成功并保留原索引；二次幂使用带p指数的十六进制浮点写法更易核对。未修改生产映射或验FLI.H/D；具体值与编码见 [补充复核](sail_riscv_commit_review/fli-syntax-20261017.md#2026-10-18-四个小常量的可读写法)。
+
+## 2026-10-17 FLI 索引文本在 GNU 下会静默改变编码
+
+针对 `1a135b24`，独立汇编实测确认：GCC14.2调用的GNU as 2.45.50及独立as2.46均接受 `fli.s f0, 0x10`，但按16.0生成 `f01c8053`（常量索引25），不是原意1.0的 `f0180053`（索引16）。LLVM MC/Clang22.1.8则报 `invalid floating point immediate`。`1.0`、`16.0`两组对照均在所有工具成功且编码匹配。GNU官方手册说明按 `strtof()` 数值解析；LLVM官方22分支 `parseFPImm()` 要求Real token。故旧索引文本的后果包括GNU静默错码和LLVM拒绝，不能笼统说两者均拒绝。15次检查和来源见 [专题复核](sail_riscv_commit_review/fli-syntax-20261017.md)；下文历史104条LLVM测试按原范围保留，不代表GNU测试。
+
+## 2026-10-16 Sail-RISC-V 合法性修复的跨提交边界
+
+对实际提交复核后，`aebc380d`新增普通FP的SEW8拒绝及BF16 SEW16检查，但其`illegal_fp_widening_reduction`仍直接使用允许SEW8的`valid_fp_op`。后续`d59577a0`虽标为perf，却将该函数改为调用`illegal_fp_reduction`，因此同时引入widening reduction的SEW8拒绝；仅挑前一提交不能声称此合法域修复完整。普通decoder的扩展/SEW guard另在外层，不能把直接execute的差异无条件外推为所有正常译码的回归。[逐提交接纳评估](sail_riscv_commit_review/merge-value-20261016.md)。
+
+## 2026-10-16 Sail-RISC-V 拆分与旧helper探针边界
+
+当前163件暂存改动可重组为23个有序单功能提交；最终tree `6fafcbc4`逐字等于原索引排除12pyc后的tree，原工作区保留。公共Bool接口先行、C++adapter铺底、异常/RM基础与包装切换分开，21个模型中间tree普通/SYMBOLIC类型检查均通过；完整C++与两项BF16执行只验证最终组合，不能外推每一层C++。实际提交见 [交付](sail_riscv_commit_review/commits-20261016.md)。
+
+新确认的测试失配：`test/symbolic_fp/solve_vector_lanes/build_helper_probe.py::definition(..., old=True)`对当前包装体做字符串替换，把 `fp_min_pure`内部调用也改成`old_fp_min_pure`，却未生成这个定义；原helper runner因此在Sail类型检查阶段失败。该测试不能作为当前共享min/max实现的旧新语义证据；同包独立move/merge14项仍通过，未修改生产源码掩盖失败。
+
+## 2026-10-14 Sail-RISC-V 当前提交边界
+
+2026-10-15 复核：HEAD/gitlink及完整暂存 binary diff 哈希未变。当前 `check_stage_b.sh`、`check_f16_wrapper.sh`、`check_f64.sh` 分别仍要求生成的 C++ 包含旧 `softfloat_f32eq`、`softfloat_f16add`、`softfloat_f64eq/muladd` 直连符号；这些结构期待需要随共用后端迁移，不能直接把新增测试目录算作现行验收。151个非缓存路径及共享函数边界见 [逐文件说明](sail_riscv_commit_review/file-details.md)，本次只核对源码和版本，未重跑功能测试。
+
+`sail-riscv@4f2ac293` 当前163件改动均已暂存，混有12件Python bytecode。`ieee_fp_primops.sail` 不仅有FP/RM声明，还在末尾新增ITE、strict Bool和Bool转bit四组声明及普通函数体；FD状态、NaN unbox、AMO/V matcher等小修依赖其中接口，按文件先提交小修会遗漏此前件。当前 `softfloat_interface.sail` 移除cpp直连、三个格式包装不再限定SYMBOLIC，普通C++同样执行共用Sail体；完整构建依赖父仓P0 Sail编译器补丁及新adapter/TLS接线。当前合法性fixture/纯比较旧快照恢复、minmax双体校验仍针对更早源结构，不能直接复用其历史PASS。实际有限复验和可选批次见[提交审阅](sail_riscv_commit_review/report.md)，未改变生产树或索引。
+
+## 2026-10-08 两分支合并与原工作区的边界
+
+`be1296b`（仅浮点）和`09fe582`（通用）的后续修复未回写原`isla@7b7337b`工作区，故合并不是当前dirty tree的逐字重组。用户随后澄清“等价”指代码意图及预期效果，允许bug fix；按此口径两分支合并与原工作区意图一致，差异服务于原有浮点支持、合法状态和可编码同模型见证目标。前轮否定结论只适用于文件树／精确行为口径。实际试合并在float.rs和exec.rs冲突；浮点bv_arg已支持MixedBits，可保留浮点实现；FS/VS偏好应位于各编码可行checkpoint内。解决后986文件相同、15不同、新增14，float.rs最终与原工作区相同；生产差异包含五IR的FPR状态／旧helper修复、宽值物化、MixedBits消费者、MPP和编码求解／错误退出。[精确版本与文件核验](float_support_review/merge-check-20261008.md)。
+
+## 2026-10-08 通用第二轮修复的现行事实
+
+`isla@09fe582` 已修复下方4b复审缺陷：Memory地址和执行器消费者复用MixedBits规范化，Monomorphize在checkpoint前写回同一规范化符号；mapping默认拒绝允许严格核对CFG的断言尾部。编码可行性由原execute checkpoint继续符号编码求得，普通拒绝域才接续压缩，各终态独立物化同模型前后态；不固定VS或恢复执行后态mapping。非法diversify及组合浮点FS/VS偏好均位于编码可行性之后，执行事件／路径签名仍取原execute。编码／物化异常成为失败退出，execute AssertionFailure／MatchFailure过滤仍保留。V128/V256 VSETIVLI均恢复12，C_ADDI新增1 ExecuteAs仍非退休／重放证据。详见[第二轮修复](general_support_review/fix2-20261008.md)；旧4b发现按适用版本保留。
+
+## 2026-10-08 通用分支扩大复审的现行事实
+
+`isla@4b141eb` 的 append 新 MixedBits 表示仍缺跨消费者兼容：Memory 地址仅接受 Bits／Symbolic，合法页号＋页内偏移拼接后读写 Type；Monomorphize 仅处理 Symbolic，拼接后跳过枚举／具化。相同新增探针基线通过、当前失败。寄存器向量索引也缺兼容，但当前 Sail 索引签名是整数，不将直接位串接口探针外推为实际指令失败。
+
+同一模型／具体前态编码不能单靠任选模型后验证闭合：当前 VSETIVLI 执行不约束入口 VS，编码 currentlyEnabled 守卫要求 VS 非零，当前选 VS=0 后丢弃整个路径；同 IR V128/V256 从基线12 gen变0，仅隔离增加 VS 非零恢复12。正确方向是把编码可行性纳入见证求解，旧执行后态 mapping 不能作为正确修复。
+
+mapping 默认拒绝的固定尾部识别与 assertions_to_jumps 追加 handler 冲突，真断言＋顶层正常 MatchFailure 会阻断压缩编码接续；最小 A/B 已确认。此前修复的定向／MRET PASS 不覆盖这些组合，整体仍待修复。完整证据与限制见[最新复审](general_support_review/rereview-20261008.md)。
+
+**2026-10-08 浮点独立基线边界**：feat/float-only-20261008从7b7337b直接提交六类浮点支持，28f626a至d04883b；不含通用8提交。fcsr/FS-VS测试可使用基线FmtVal、寄存器和既有JSON接口，不需要引入完整状态API或RV64域约束。旧feat/float-support-split-20261007已删除；下方旧链记录仅为历史。[新链核验](float_support_review/float-only-20261008.md)。
+
+## 2026-10-08 通用修复现行事实
+
+`isla@4b141eb` 已在通用分支修复前轮两个 P1。`Val::from_bits_slice` 在宿主宽度内构造 Bits，超宽采用与原长字面量解析相同的高位在前 Concrete MixedBits；Model 递归物化使用此接口，arbitrary 保留零值选择而不主动开启 completion。MixedBits 位串消费者复用规范化，拼接切片优化保留。MPP=1 随 S 能力排除，但0不能简单随无 U 排除：当前 Sail reset 从全零初始化该字段，CSR legalize 的写后域不是完整 reset/可达域；manifest 显式标注无 U 的0例外。精确及浮点组合 V128/V256 MRET各4 gen，原V256丢失已消除；只验MPP字段规则，未宣称完整mstatus组合可达或硬件等价。[修复与证据](general_support_review/fix.md)。
+
+**2026-10-07 浮点提交边界与旧回归兼容**：新分支feat/float-support-split-20261007继承通用8提交，另以6提交拆开浮点primop、生成IR、旧分派/回归迁移、fcsr、见证偏好和运行配置。Model::get_val会保留已具体化的MixedBits分段；旧SoftFloat测试runner须复用replace_mixed_bits归一化后匹配Bits，不能因表示不同误报数值错误。2028551含此最小测试适配，35例完整结果/flags通过。[证据](float_support_review/float-split-20261007.md)。
+
+## 2026-10-07 通用支持分支独立审查
+
+`isla@2792afd` 相对 `7b7337b` 的两个新回归已动态确认：`append(Symbolic,Bits)`/反序返回 MixedBits，但 add_bits_int/sub_bits_int 和已提交 fp*_from_ieee 消费者未适配（算术 8 例及 FP 转换 1 例基线过、分支 Type）；collector 为 mapping 全量 model.get_val(pre_state) 超出生产 B129 的宿主位宽，VLEN256 的 MRET 同一 IR 基线 4 gen、分支 0 gen，make 两边仍退出 0。FmtVal 本身可格式化宽值；Type 被既有只记录 Timeout/SMT 的策略忽略，故必须核对 gen，不能凭退出码验收。MPP 只排除保留 2，未随无 S 能力排除 Supervisor，属于新域功能遗漏而非新回归；SXL/UXL 固定 2 符合当前 Sail reset/legalize。Model 缓存的重复具体值查询有实测 20,000→1 次 Z3 调用，未证明端到端提速。[完整报告与版本证据](general_support_review/report.md)。
+
+此结论补充而不删除先前归并/拆分的限定 PASS：那些定向测试及 V128 smoke 没有覆盖上述组合或 V256，分支仍需修复后复验。
+
+**2026-10-07 提交边界接续**：4089545已按类型重做为416b94f至2792afd，最终tree不变。采样记账属于引擎能力；mapping专用的function_name/pc查询随mapping提交；状态物化与RV64域约束分开，后者包含可变Target接口和state-domain。原isla仍保持原分层。[新链与核验](float_support_review/general-split-20261007.md#按改动类型重做已完成)。
+
+
+## 2026-10-07 通用与浮点改动边界
+
+新工作树 `4089545` 已将MixedBits、模型具体值缓存、采样状态、完整前后态/编码一致性和RV64通用域约束独立提交。`scalar_sort`目前仅浮点调用，和旧浮点dispatcher删除、fcsr自动接入、FS/VS偏好一起留在未提交浮点层；一般状态测试里手工fcsr fixture本身不构成浮点接入。原isla仍保留完整旧分层。[核验依据](float_support_review/general-split-20261007.md)。
+
+## 2026-10-07 浮点辅助逻辑归属接续
+
+当前工作区已内联exec.rs浮点见证偏好及mapping错误分类，测试经真实collector/mapping入口；编码空转发删除。指令递归文本归属AssemGenJsonItem，hart探测归属Rv64Domain，浮点参数校验为Val方法；必要的前态过滤→model completion→mapping具体寄存器顺序保持。历史单函数名称只适用于修改前，当前验证见[结构修整记录](float_support_review/local-structure-20261007.md)。
+
+**2026-10-06 worker panic修复提交边界**：`7b7337b`将on_task_finished移到捕获任务unwind的外层，再resume_unwind；避免collector panic跳过pending计数导致等待不结束，不提供全局取消或abort恢复。修复现已提交，原浮点dispatcher/采样改动仍暂存。[证据](float_support_review/solve-process-commit-20261006.md#接续worker-panic-记账独立提交)。
+
+**2026-10-06 smtperf测试边界接续**：既有四参数宏/真实Context测试修正现已独立提交为 `d9f0fe0`；两种feature各4/4复验通过，非浮点生产改动。[证据](float_support_review/solve-process-commit-20261006.md#接续通用-smtperf-测试修正独立提交)。
+
+## 2026-10-06 solve清理的提交边界
+
+`1eddd68`起，每条solve recipe用solve_process.py监督原timeout的专属进程组，Ctrl-C/TERM清理同组后代；手动make solve-kill要求SOLVE_PID，核验cwd/脚本/系统Python身份后通过pidfd发信号。适用范围不含主动setsid/setpgid逃逸的后代。浮点solve-fd-nonmem入口仍在暂存区；[候选测试与实际运行证据](float_support_review/solve-process-commit-20261006.md)。
+
+
+## 2026-10-06 itrace 数据归属
+
+现行 `69cf43a`＋writer `a9884b2`：逐指令记录及摘要属于itrace::ItracePerInstr，公共TracePerPath仅组合itrace_records、函数事件、分支数据。其他工具复用itrace数据不改变其归属；公共配置、提交和writer才使用通用trace命名。此前common::TraceRecord是已修正的过度泛化。[依据](float_support_review/trace-composition-20261006.md#itrace-数据归属修正并重做两提交2026-10-06完成)。
+
+## 2026-10-06 轨迹现行提交边界
+
+平级归属修正已合入 `9da2eaa`，writer独立为 `48619f2`；此前9d8b915/c1d6bc6/4a84366为历史链。新末端与4a84366的Git tree完全一致，故以下源码结论继续适用。[重做证据](float_support_review/trace-composition-20261006.md#按原提交重做2026-10-06完成)。
+
+## 2026-10-06 tracetool 平级模块入口
+
+`4a84366`起，三种工具平级位于 `isla-lib/src/tracetool/{itrace,ftrace,btrace}.rs`；公共TraceOptions/TraceHandler通过tracetool入口提供，库内路径状态为TracePerPath/TraceCompletedPath，执行器字段为trace_path。common.rs组合输出，writer.rs/sequence.rs复用原机制；Make统一启用tracetool feature，三个别名feature均依赖公共feature。CLI仍可独立组合，btrace包含未执行静态分支清单。同层MRET对照支持行为保持，旧文档中itrace作为容器的路径限此前版本。[验证记录](float_support_review/trace-composition-20261006.md#tracetool-平级归属修正2026-10-06完成)。
+
+## 2026-10-06 三类轨迹组合与版本边界
+
+`9d8b915`起，逐指令记录从执行中的Instr直接取文本；ftrace投影既有SMT Function事件，外层入口补同类call事件；btrace在原Jump处理点保存SourceLoc、条件、后继、方向及上下文，入口枚举全部Jump输出静态branch sites但不保留索引。三类CLI组合代替旧catalog/compact，静态清单含未执行分支，动态branch_edge才表示执行证据。仅ftrace+btrace时普通指令不进入序列，但保留计数/函数集合；共享前缀容量语义保持。writer另列c1d6bc6。旧文档的开关与模式描述限原版。精确与完整版本不同的分支/签名数量来自原未提交断言转换等差异，比较必须使用同层源码；[验证记录](float_support_review/trace-composition-20261006.md)。
+
+
+## 2026-10-05 catalog 的独立 CLI 开关
+
+`d21ad62` 起，solve-state 的 `--no-itrace-catalog` 跳过 `set_runtime_catalog`；既有configure清空catalog，set_compact(true)保持。因此仍输出紧凑轨迹/实际边/签名，但不再输出runtime branch catalog、不做catalog后继校验，分支source为unknown。省略开关行为不变。[证据](float_support_review/catalog-boundary-20261005.md#cli-实施和验证完成)。
+
+
+## 2026-10-05 itrace 无限容量语义
+
+`5c376fb` 将固定256阈值改为ChunkCapacity::Unlimited默认值，usize与容量类型通过PartialEq/PartialOrd比较；任何usize（包括MAX）均小于Unlimited。取消长度触发分块不影响共享后的独立追加、前缀身份或记录顺序。有限配置可写Limited(256)，两配置均有定向验证；不增加通用无限数算术。[版本证据](float_support_review/catalog-boundary-20261005.md#容量类型与比较运算符-amend2026-10-05完成)。
+
+
+## 2026-10-05 itrace 提交边界接续
+
+`ef4ea1d` 保持catalog最小化边界；用户另行授权后，`64f74f3` 在其上提交SharedSequence共享前缀和writer条件变量等待/唤醒，frame/executor只随附测试适配。共享存储不再属于暂存层，worker异常记账、浮点采样查询仍未提交。精确候选与完整工作区验证范围见[接续记录](float_support_review/catalog-boundary-20261005.md#后续两项-itrace-改动独立提交2026-10-05)。
+
+
+## 2026-10-05 catalog 绑定与格式、存储边界
+
+`isla@ef4ea1d`的`set_runtime_catalog`只更新索引，不改变完整/紧凑输出；独立`set_compact(bool)`控制渲染，configure重置为完整格式，solve显式选紧凑。精确提交沿用原Vec/切片，SharedSequence与采样查询/frame接口仅在暂存组合保留，故后续审查必须区分HEAD与工作区。完整/紧凑和重新绑定回归、三层组合验证及同版IR的MRET观测对照通过，见[证据](float_support_review/catalog-boundary-20261005.md)。10-03记录中“保留共享前缀”仅适用于旧8545e7c及当前暂存组合。
+
+## 2026-10-05 sampled_execution_domain 的当前用途（静态核对）
+
+`isla/isla-lib/src/executor/execution_limits.rs` 的路径私有布尔量 `sampled_execution_domain` 默认 false，经 `commit_sample` 或 `record_kept_current_model` 置 true，随 frame 快照和 fork 继承；通过 `Frame::has_sampled_branch()` 读取。它记录执行限制导致的采样历史，不负责选择采样方向，也不是全局完整性证明。Monomorphize 在剩余值域 SAT、限制策略选择 KeepCurrentModel 时可出现 forks=0 而此标记=true，因此不能用 fork 数或普通分支 sample ordinal 替代。当前生产读取点为 `isla/src/isarch/mod.rs::run_mapping`（拒绝采样后的 mapping 结果）和 `isla/src/isarch/target.rs::probe_hart_support`（拒绝 fork 或采样的能力探测）；当前 `isarch/exec.rs` 没有读取该接口，不能由历史设计推断主求解 JSON 已据此判定完整性。本轮只读源码与已有测试断言，未运行动态测试；不新增 PASS。
+
+## 2026-10-03 catalog 与 exec.rs 的最小接入
+
+`isla@8545e7c` 以 `b18d6b7` 恢复原回调、早退和排序；生产区只新增catalog绑定及已有路径签名输出（+13/-3）。终态占位/回写、case-id、summary/terminals全部撤销，trace通过原diagnostics提交函数携带签名。`gen[].path-signature` 对应trace的`path_signature`，不保证无碰撞或完整覆盖。工作区原浮点域说明从已撤销summary迁至顶层`state-domain`，其他浮点行为仍为未提交增量。此前“保留注释/分支即可满足最小修改”不成立；现行依据是相对父提交的四处局部增量及三层验证，见[实施记录](float_support_review/catalog-local-patch-20261003.md)。历史账本审计仅适用旧schema。
+
+## 2026-09-30 旧 catalog 测试挂起现场
+
+后续修复（同日）：用户授权后 TERM 原进程，确认 PID 1363231/1362027 均退出。当前工作区在 worker 边界捕获 unwind，先完成计数归还/通知，再 resume 原 panic；writer 使用条件变量与互斥锁协调入队和关闭，不再空队列 yield。新增 collector panic 回归修前外限10秒返回124，修后0.01秒通过；原挂起测试在当前工作区0.21秒通过，不能据此恢复旧候选原始 panic。executor 84、itrace 72、isla库83（过滤已知 rv64_target_trait）通过，每条测试命令均 `timeout -k 1s 10s`。全 isla-lib 失败于 Z3 `enumeration sort name is already declared`，不宣称全量通过。fmt及diff检查通过；未跑 make solve。日志见 `isla/target/hang-*.log`，生产修改未提交，保留原有暂存及exec.rs修改。
+
+只读 ps/GDB 检查 PID 1363231（父 cargo 1362027），运行约34小时、CPU 99.8%，cwd 为 `isla/target/catalog-minimal-20260929/candidate`；binary 已删除但进程持有，不能用当前构建版本替代。`green.log` 显示 `collector_preserves_finished_results_and_materialization_failures` 未结束，这次运行不是 PASS。两次调用栈采样确认 TID 1363453 在 `itrace.rs:677` 空队列 `yield_now()` 忙等；TID 1363245 在 `executor.rs:1023` 条件变量等待，现场 pending=1、active=1、next_tid=1、队列为空，但无执行 worker。候选与当前源码均只在 run/collector 正常返回后调用 `on_task_finished`（945行）：panic 会跳过计数归还，调用方先等计数再离开 scope，阻止 scoped join 传播 panic。这是与现场一致的异常完成记账漏洞；原始 panic 被测试捕获，内容及最初触发点尚未恢复。writer 忙等是独立问题，单修它不能解除永久等待。下一步先补外限保护的 worker/collector panic 回归，再修异常记账并传播原 panic，以及 writer 阻塞唤醒。未修改生产代码、未终止进程、未复跑测试。
+
+## 2026-09-30 最新 XiangShan v3/v2 对 `case-007` 的无附件最小复现
+
+- 旧 T3b `case-007` 的“错位 `vsse32.v` 停摆”经对齐对照修订为更宽的现象：最小 M 态、e32/m1、vl=4、`v8=0`、stride=4、普通 RAM `0x80010000` **对齐**地址也停在 `vsse32.v` 前；`0x80010002` 错位版同样停，故错位不是已证实的必要触发条件。只改为对齐 `vse32.v` 则到 GOOD TRAP。复现源码、链接脚本、编译/运行命令已完整写入[上游 issue 交审稿](memsolve_branch_coverage/vsse32_issue/draft.md)，无需原始 ELF 或附件；此前 E 线和上一节的“错位新变体”保留为原发现口径，本节为现行修订。
+- 两名独立 agent 仅按交审稿文本分别 clone 官方最新分支、初始化钉定子模块并构建 `DefaultConfig` emu（v3 `09453ff8f44e9d2b526e6149c60e1dc3f08c7192`、difftest `4c64fe86`、NEMU `4cf99835`；v2 `e7bab53e66dfb3c4a1d11cf9519b0396f8576cae`、difftest `3729300a`、NEMU `c4114ce3`，复查 origin HEAD 未前移）。v3 对齐 DiffTest 最后提交 PC `0x80000030`，目标 `0x80000034` 未退休，15,000 周期看门狗后 ABORT（19 commits/23,331 cycles）；同 ELF `--no-diff -C 30000` 到上限仍 19 commits、无 GOOD TRAP。v3 错位版最后提交 `0x80000034`、目标 `0x80000038` 未退休；对齐 unit-stride 控制 GOOD TRAP。v2 对齐／错位 strided、对齐 unit、对齐 no-diff 四项均 GOOD TRAP。退出码、反汇编和完整日志见[v3 独立报告](../difftest-xiangshan/work/vsse32-issue-verification/v3/report.md)和[v2 独立报告](../difftest-xiangshan/work/vsse32-issue-verification/v2/report.md)；两目录为 gitignored 本机产物。
+- 无附件正文经独立构建审查修正：对齐版实际目标 PC 是 `0x80000034`（旧草稿误写 `0x80000038`）、干净 checkout 的 Mill 需显式 `NOOP_HOME`，当前钉定 difftest 的 `-fno-slp-vectorize` 需将 `CC=clang CXX=clang++` 作为 GNU make **命令行变量**传给内层 make。缓存/TMPDIR 另有本机 quota workaround，不是 RTL 复现条件。已合并[PR #5881](https://github.com/OpenXiangShan/XiangShan/pull/5881)修复 v2 的错位向量 store 停摆；它不覆盖本轮对齐 v3 现象，是否共用更深层 RTL 根因仍未由波形证明。用户审核后已发布 [XiangShan #6655](https://github.com/OpenXiangShan/XiangShan/issues/6655)；[发布核账](memsolve_branch_coverage/vsse32_issue/publication.md)确认线上正文逐字一致、无附件。当前账号无 GitHub 添加标签权限，线上标签为空。
+
+## 2026-09-30 T3b 错位向量 store 原载体与 GitHub 去重核账
+
+- 原载体为 T3 `round1.json` 的 `case-007`（`vsse32.v v8,(x6),x7`，x6=`0x80010002`、x7=4）和 `case-004`（`vse32.v v8,(x6)`，x6 同址），均为 e32/m1、vl=4；两个 `replay2` ELF 的 SHA-256 与 E 线证据包所存 ELF 一致。受测 emu 为 kunminghu-v3 `a13efc8775`。`--dump-commit-trace` 复跑显示 case-007 最后提交 PC `0x80000214`，目标 store 在 `0x80000218` 尚未提交；`--no-diff -C 30000` 仍冻结于 140 次提交并超周期限。原日志的 `ABORT pc=0x80000234` 是检测时 PC，不能当成已提交指令。`difftest-xiangshan/xiangshan/difftest/src/test/csrc/difftest/checkers/instructions.cpp::TimeoutChecker::check` 在 15000 周期无提交后强制 `ref_exec(1)`；此后的 REF 状态只供诊断。
+- case-004 的实际 ELF 目标 store PC 为 `0x80000214`（E 线上游草稿写的 `0x80000168` 是预填程序，不能当作目标 PC）；提交轨迹显示该 store 已提交，首个 `lbu` 在 `0x8000022c` 读到 `0xa5`，随后 DiffTest 报 REF=0、DUT=`0xa5`。这证实该输入的写后读回不同，但单次 `lbu` 不能区分真实 RAM 未写、store-to-load 转发旧值或其他 LSU 路径。
+- 2026-09-30 只读 GitHub 核对：[#5279](https://github.com/OpenXiangShan/XiangShan/issues/5279) 早已报告错位 `vse32.v` 提交、DUT store commit mask=0/无写效，故 case-004 不应称独立原创 bug；是否同一 RTL 根因未证。case-007 的普通 RAM 错位 `vsse32.v` 无提交，在现存 issue 快照和公开搜索中未见完全相同条件；[#6262](https://github.com/OpenXiangShan/XiangShan/issues/6262) 是未映射页 `vlseg` 读故障，[#6605](https://github.com/OpenXiangShan/XiangShan/issues/6605) 是 locked PMP 拒绝的 strided/indexed 漏 trap，[#6296](https://github.com/OpenXiangShan/XiangShan/issues/6296) 是 MMIO 错位 store cause 分歧。case-007 可称未找到同条件报告的**新症状候选**，不能在缺少对齐对照、最小化及 RTL 波形时断言独立原创根因。
+
+## 2026-09-30 标量 BF16 Retire 用例在 XiangShan MinimalConfig 报 cause 2
+
+- `73df` 标量 JSON 中 `FCVT.BF16.S` 10 条、`FCVT.S.BF16` 12 条为 Sail `Retire_Success`；当前工作区 XiangShan `a13efc8` MinimalConfig 的 22 条对应 ELF 均在 payload 实际机器字处报 `mcause=2`（Illegal Instruction），随后测试的“预期退休”trap handler 进入 park，不是浮点 `fflags` 异常，也不是 22 条正常通过。原始核账见 `difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json`，例见其 `current-unsupported-elf/case-000/difftest.log`。
+- 版本配置差异有源码支撑：Sail 的 `sail-riscv/config/config.json.in` 设 `Zfbfmin.supported=true`，`model/extensions/bfloat16/zfbfmin_insts.sail` 以该扩展和 F 使能为译码条件；XiangShan `src/main/scala/xiangshan/Parameters.scala::ISAExtensions` 未列 `zfbfmin`，`backend/decode/isa/Instructions.scala` 虽定义两条 BitPat／`ZFBFMINType`，但 `backend/decode/isa/Extensions.scala::extensions` 没有包含该类型，也没有其执行 uop 映射。结论限此构建的功能支持边界，不以 ISA 扩展缺失判为 XiangShan 功能 bug。
+
+## 2026-09-30 73df 标量浮点 `execute` 显式 arm 核账（限定范围）
+
+- 对 `73dfb2e1…671d2a` 的 51 个标量 clause、1344 条 `gen`，用同批冻结 Sail 模型重生现有 scalar 词法目录，并读取 `direct-entry-73df-batch-20260928/stage-v3/output/trace/` 的 51 份完整 ITRACE。49 个非 BF16 clause 的 `execute` 定义共有 68 个词法 site／238 个 arm：45 个二臂 RM match、6 个四臂操作 match、3 个 32 臂 FLI match、14 个二臂 assert。前三组 210 个 arm 均有实际分支方向或对应具体操作／立即数见证；14 个 assert 的 holds 方向均有 trace，fails 方向均无，共 224/238 静态 arm 观察到。两个 BF16 标量 `execute` 再含一个二臂 match、一个二臂 if，四臂均有 trace；故本批 `execute` 本体合计 **228/242** 静态 arm 被观察，剩余 14 个全部是 `xlen>=64`（12 个）或 `xlen>=64 && flen>=64`（2 个）的失败臂，在固定 RV64／FLEN64 配置下不可达，不能计为待补可达 arm。
+- 这不是完整 Sail 源码分支闭合。同期非 BF16 词法目录连共享函数共 177 site／591 候选 arm；共享 helper、译码 guard、短路因素、BF16 辅助函数和 ITE 数值选择尚无同版本完整可达分母及正式源码映射，不能用 `591-224` 作为缺口。`fdiv.{s,h,d}` 各 10 个 Retire 的两个源 FPR 原始位值均为零；缺少的数值情形不能按 `execute` arm 计数。旧 56cc 的 arm 结论不得迁给 73df。冻结来源及退出账见[73df 状态](float_support_review/status.md#直接-zexecute-入口接续2026-09-2873df-隔离候选)，批次 JSON／trace 位于 `isla/target/float-solve-evidence/direct-entry-73df-batch-20260928/stage-v3/output/`。
+
 ## 2026-09-29 bughunt F 线验收战役：四签名命中矩阵与三族新候选
 
 - 产物：根仓 `.tmp/accept1-20260929-124451/`（gitignored）；结论：**P1-P3 改造达标**——已知 bug 自动级批量命中 + 新 bug 三族自动发现 + 重放毒丸消除。
@@ -1691,3 +1910,292 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 ### XiangShan 浮点 DiffTest 的结果续跑按 case ID 跳过所有已记录条目
 
 `difftest-xiangshan/pipeline.py::run`从`results.ndjson`取得已有ID时不区分success/failure，后续同目录运行会跳过旧失败；`run_case`首跑超时后另以`--dump-commit-trace`重跑，重跑即使打印GOODTRAP，原记录仍为failure/returncode=null。对版本SHA `8099715d…22390c`的本地1344输入批次，30秒24路首轮135条有104成功/31超时（25条trace GOODTRAP），120秒24路第二轮1322条中1317成功/5超时（5条trace GOODTRAP），独立低并发重跑5条才取得5个正常退出。复跑须封存原日志并建立新结果目录，最终PASS只计对应case的GOODTRAP且returncode=0；[当前工作区逐例核账](../difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json)绑定IR `73dfb2e1…671d2a`、Isla `4e315e9a…59ae0`、FD配置 `20851fdb…723d0`、XiangShan `a13efc8`／emu `8714169…a85ee`／NEMU `9188e7d…ef43`。
+
+
+## 2026-10-08 仅浮点分支复审的产物边界与状态事实
+
+- `feat/float-only-20261008@d04883b` 在全局执行器删除旧SoftFloat分派，只迁移默认`rv64d.ir`；Git自带`rv32d.ir`仍缺63个riscv helper体，`ir/rv64d_v128_e64.ir`、v256、v512各缺67个。相同普通wrapper的f32Add(RNE,1,2)，`7b7337b`四份全部通过、分支全部NoFunction。全局退役必须覆盖仍公开支持的`IR_FILE`产物边界。旧V256 IR的公共FLEQ.S实际退出0／0gen；NoFunction不使collector失败是原策略，不能以退出码替代生成及错误核账。
+- 当前默认d012 IR的快速`set_F_bits`仍直接`zwF_from_vector`而不dirty FS/SD；真实FADD.S精确运算、fcsr=0、FS=Initial/Clean时结果正确但状态错误，普通FPR路径正确。基线与分支均复现，属于既有缺陷，后续FD修复候选证据不能转记到d012。预选Dirty初态的smoke会掩盖该边界。
+- BF16 `VFWMACCBF16_VF` scalar sNaN累积修复在精确分支有效：vl0、全mask、vstart>=vl、旧flags非零无活动四例基线新增NV／分支保留旧flags；活动元素两例分支仍新增NV。仅验证实际Retire及fcsr，不据此称全机状态闭合。
+- 本轮原语10、legacy35、独立SoftFloat327例／67helper及四项make smoke限定通过；分支新增兼容性回归和继承Dirty错误不因这些PASS失效。动态版本、完整命令、输入、状态及证据见[复审报告](float_only_review/report.md)。
+
+
+## 2026-10-08 仅浮点修复的跨产物装配与架构状态边界
+
+- `5ceb3ad`＋`be1296b`已在独立浮点分支修复此前缺体/FD状态问题。纯helper依赖闭包含RV64的146个新增函数（RV32141），复用6个旧函数；类型/extern及变量双射、tuple pragma严格核对，旧初始化/架构参数保持，来源文件与匿名位置ID须重映射。不能将原样复制SourceLoc编号当作有效装配。
+- 状态组件仅迁入生成的get_F_bits/set_F_bits，必须调用目标既有dirty_fd_context。RV32 mstatus载体仍64位，但SD位置31；将RV64 Dirty实现一起迁移会错误更新bit63。本轮RV32真实状态36例验证SD31，其他四IR验证SD63；完整数值1615例与公共入口支持恢复见[交付](float_only_review/fix.md)。
+- 这些IR中的hartSupports(Ext_F)已编译期折叠为true，const_primops关闭sys_enable_fdext不能构造硬件无F域。guard仅在测试副本翻转静态Ext_F常量臂，不能泛化为运行态配置或完整架构验收。
+- `ir/rv64d_v512_e64.ir`历史名称实际对应VLEN256，且与v256产物同字节；rv32实际XLEN32/FLEN64/VLEN256/ELEN32。迁移应核真实let/寄存器类型；RV32状态fixture须SATP/Misa32、CLINT34，不能套RV64配置后把初始化失败写成受测FD失败。
+- 最终默认IR是aea104c8，兼容组件与FD组件来自不同冻结来源；file名相同不证明整份产物对应同一源快照。修前d012红例仍属历史，当前修复及完整hash、命令、覆盖限制见[交付](float_only_review/fix.md)。
+
+## 2026-10-29：初态部分符号化配置（独立候选）
+
+`feat/initial-state-toml-20261029`（09fe582 上未提交补丁）通过 ISAConfig.initial_state → RV64 → Target::setup_pre_state 接入 `[initial_state]`。Isla 只解析 `0b` 通用位模式，不内置 VS/FS 等架构字段；右端是 bit0，0/1 约束对应符号位，? / x 与未写出高位均不增加约束。原执行 regs 与 pre_state 保存同一符号值，额外配置寄存器也被加入符号化/见证集合。额外 RV64 特权域默认关闭，顶层 initial_state_rv64_domain=true 可恢复；RVV 原约束保留。原工作区和旧分支尚不具备此功能。[验证和局限](initial_state_config/status.md)。
+
+2026-10-29后续：上述初态候选已提交为8948cc4并fast-forward合入refactor/general-support-20261007；原工作区仍未接入。general原dirty浮点改动恢复且增删/未跟踪文件哈希核对一致，其dirty组合未重新签收。
+
+8948cc4复审负例：initial_state.x1="中"使parse_u64_value的s[0..2]跨UTF-8边界而panic；initial_state.pma_regions="?"使setup_pre_state在类型验证前对List符号化得到Poison而panic。两项release退出134，均应按用户配置错误处理，尚未修复。[详情和复现](initial_state_config/review.md)。
+
+2026-10-29修订：两项初态配置panic已由ef882f0修复，非法数值/不支持类型均退出1返回明确错误，符号化前校验不改变内部Poison断言。[验证](initial_state_config/status.md)。
+
+## 2026-10-29 general＋float当前组合复核
+
+- general ef882f0新增ISAConfig字段与float be1296b的两个独立runner构造器不兼容，真实run.py构建E0063退出101；需两个构造器各补initial_state与initial_state_rv64_domain字段。常规根crate测试不覆盖这两个独立crate。此前09fe582组合通过不能外推新配置接口。
+- 两分支内容冲突仍在float.rs/exec.rs；前者用float的bv_arg处理MixedBits，后者保留联合编码求解，将FS/VS见证偏好放编码可行checkpoint之后。显式TOML FS1/VS0在组合FLEQ_S16条结果中保持。
+- C_ADDI真实输出仍有ExecuteAs(...Sym(...))，因ret_val在Model选择前to_str；这是基线沿袭的具化缺口，不是本次新增回归。新前后态/编码同模型并不自动修复ret_val。
+- [复审、版本、限定动态验证及局限](general_float_review_20261029/report.md)。正式分支未因本轮审阅修改。
+
+## 2026-10-29 实际有序合并完成
+
+feat/float-support现31506ee：2dbad3b先合general ef882f0、9217e17再合float be1296b（两runner补新配置字段）、31506ee在同最终Model中具化ret_val。两项组合review问题已解决，原历史报告保留适用版本。C_ADDI现在输出具体ExecuteAs payload，但没有新增递归续执行。原24dirty是旧实现，已完整存stash8f7b8d043b1cbb2088d3ee21dc806f76bd059cde并验证文件hash，未反向apply破坏修复。独立GPT-6.1 Sol核对顺序/内容通过；[状态与限定验证](general_float_merge_20261029/status.md)。
+
+2026-10-29术语后续：general cc7700b、float-only99a28b0和组合75e7440各含独立可读TRANSLATOR.md。符号值求解命名用concretize/concretization/concrete_*；TimeoutSmtDump::materialize为延迟文本生成，保留接口，不能全局替换。model_concretization.rs是general/组合当前测试入口，旧model_materialization.rs路径仅适用旧版本。[验证](terminology_concretization_20261029/status.md)。
+
+## 2026-10-30 根float/memory的JSON语义复审（当前版本）
+
+- memory根1731207固定源模型1fa93117，但运行Isla47ac90c的7c626989 IR未含valid_segment_group_without_overflow，也仍有旧result版get_start_element。定向vlseg2e8 v31,nf2生成Retire+2读；vle8 vstart最大值生成Illegal；均与当前源模型约束/策略不一致。更新gitlink不会更新已提交IR。
+- float根bb9d271的b0138b7/aea104c8 IR仍把FLI索引转hex_bits_5文本，而源18389a89使用fli_constant_mnemonic。新32条GNU接受6条且6条重汇编全与JSON错码；0x10文本得到f01c8053，JSON为f0180053。根pipeline按机器码.4byte可绕开文本，不等于文本正确。
+- 两分支MRET显式采样4→1且均退出0，当前JSON无sampled/partial字段；memory还将终值超时空分量条目保留于gen，内部超时标记不序列化。覆盖验收须关联源码分母/trace和丢失原因，不能只数gen。
+- memory默认PMA配置match_reservation=true：固定SC仅成功写路径；副本改成undefined bool后出现无写失败与有写成功两条。配置选择缩小覆盖域，不是SeqMemory提交逻辑错误。
+- [报告、源码位置、18探针和限定正面验证](json_semantic_review_20261030/report.md)。没有修改生产源码或更新分支。
+
+## 2026-10-30 JSON复审修复的现行事实
+
+原复审负例适用float bb9d271、memory1731207。本轮根90bb726/31ef3b9已完整重生五IR，具体来源由各Isla`ir/provenance/manifest.json`固定模型文件、配置、工具哈希。Sail版本字符串为f4f8e458，但快照无.git，未核验完整工具源码树。
+
+- memory新IR已包含寄存器组溢出检查和vstart非陷阱策略；原两个反例转绿。
+- GNU最新opcode表的FCVT.S.BF16只接受`D,S`且MASK_RM约束rm=0；Clang接受显式rm。模型保留原rm执行语义，rm=0输出标准助记符，其他rm输出`.insn r`，双工具链编码核对通过。不能简单删rm文本而保留非零rm机器码。
+- JSON的finished不是完整模型覆盖证明，summary固定model-coverage=not-measured。未采样MRET仍观察到一个未完成终态，故当前make smoke JSON如实为partial。终值查询超时诊断与可重放gen分开；新SC覆盖配置同时见证reservation成功和失败。
+- 原模型预算坐标已分别迁移，float132/memory130个region、各79配置/22锚点有效。memory少两region因vstart旧陷阱已删除；预算归模型仓唯一管理。
+
+[证据与边界](json_semantic_fixes_20261030/report.md)。
+
+## 2026-10-30 两subagent独立复审的新确认事实
+
+当前float90bb726／memory31ef3b9的来源哈希与固定模型一致；先前IR错配不再作为现行缺陷。新BF16非法布局会被Clang汇编器静态拒绝而GNU接受，故合法布局双工具链PASS不能外推非法路径。默认F_BIN_RM_TYPE_S的40条退休见证全为未boxing输入转qNaN，定向boxed配置可达正常有限数：保留公式语义不等于选出所有条件见证。float通用C_ADDI4SPN停在ExecuteAs后JSON仍finished，当前后态不是step完成后态。
+
+memory在具体地址时读取concrete快照，而符号地址绕到自由初始数组，同址同配置能读不同初值。源GPR未约束时会因Arbitrary跳过导出；当前pipeline前导使用t1(x6)，sd x6案例未恢复该寄存器使实际payload数据不等于JSON。异常ret_val仍在最终Model前to_str，完整IR实测含Sym。数组单测与编码往返不保证见证重放初态完整。
+
+[两个独立报告、复现与修改建议](independent_topic_review_20261030/summary.md)。本轮只读，不将修改意见写成已修复。
+
+## 2026-10-31 nan_unbox显式分支现行修订
+
+根float1c7a354的模型9c339044恢复原高位全ones的Sail if，Isla80231ce9全部五IR已同步；之前ITE合并的现行描述仅适用float90bb726及更早相关版本。新默认四算术见证包含两个源boxing四组合，各40退休例；恢复的是有效/无效boxing，不能等同于低位全部NaN/非NaN分类覆盖。该恢复未改其他ITE，也未修ExecuteAs等独立问题。
+
+历史nan局部Jump减少没有整Clause完成时间或总fork的严格收益数据；原FVFTYPE两版本7200秒均超时。本轮保留显式分支的依据是用户明确取舍，不能把数据表示正确性证明用作覆盖/性能证明。[验证](nan_unbox_branch_restore_20261031/report.md)。
+
+## 2026-10-31 分支合并同类改动范围
+
+当前9c339044恢复nan_unbox后，accrue_fflags条件状态更新、min/max NaN/零/大小选择、onehot分类和转换饱和、向量mask/归约、严格布尔合法性聚合仍在。历史标量min/max隔离十二入口1566→12路径、mask小原型8lane256→1（5.97→0.12秒）有局部数据，不能概括为全都无证据，也不能转成完整Clause同倍数收益或见证全覆盖。数值后端的条件公式不全是原已有显式if替换，须追踪原外部函数语义。[范围与证据](branch_folding_inventory_20261031/report.md)。
+
+## 2026-10-31 完整Clause分支消融的现行证据
+
+在模型9c339044／Isla80231ce9、同二进制同域三对实验中，min/max内部选择、mask/顺序归约、flags及合法性聚合均可减少默认见证分区；显式if补出的条件包括有限数大小、异号零、flags新增及活动lane。这是生成集合的差异，不是已生成样例算错的证据。flags算术、f32 NaN规范化、f16→i16饱和出现ITE能在60秒完成而if三次均超时的可完成性证据；不能据此计算等覆盖加速比。VFUNARY1分类和宽域合法性均双臂超时，无法判断。仅适用报告中的完整Clause与固定域，不能推广所有格式/向量/BF16调用点。[源差异、严格IR与原始重复证据](branch_ablation_20261031/report.md)。
+
+## 2026-11-01 SMT默认限时修正
+
+CLI未传--smt-timeout时configure_z3_timeout(None)不设置OnceLock，但smt/z3_timeout.rs::operation_timeout()回退Duration::from_secs(60)，故不是unlimited。已在flags/NaN重测日志中确认limit60s及partial。此前“不传即不限时”解释撤回；只限制Clause7200秒的实验须显式设置SMT7200秒以避免默认提前打断。[证据与续测](branch_ablation_20261031/budget-2h-audit-20261101.md)。
+
+## 2026-11-01 浮点显式分支的可达性求解性能
+
+符号Jump在fork前检查condition和not condition两次可满足性；超时经is_sat()?终止当前路径。flags的changed涉及f32/f64除法异常关系；sqrt出口NaN判断涉及原生fp.sqrt。在固定dump上qffp三次约3.71/0.209秒解flags/NaN，qfaufbv分别60秒unknown/37.74秒SAT；这是策略与浮点表达影响证据，非完整Clause修复或增量状态归因证明。sqrt(RMM,x)的NaN等价于输入NaN或x<+0，差异UNSAT，原query替换此谓词0.108秒SAT。[全部证据](branch_ablation_20261031/solver-diagnosis/report.md)。
+
+## 2026-11-01 default/smt策略补测
+
+同两超时dump三重复中，flags在default/smt/qfaufbv均60秒unknown，qffp约5.12秒SAT；NaN default约28.03秒、smt约45.85秒、qfaufbv约41.44秒、qffp约0.21秒。本轮并发与前轮不同不混算。当前isarch --tastic default在Z3 4.16.0.0因未暴露seed/random_seed参数而panic；不能直接改全局default。[数据与日志](branch_ablation_20261031/solver-diagnosis/default-smt-comparison.md)。
+
+## 2026-11-01 Z3 default浮点分发与Sail枚举
+
+匹配Z3 4.16.0源码，default先simplify再probe；is-qffp不接受datatype枚举，因此两个实际dump均未选qffp，dt2bv后均命中。qffp直接调用无此probe门槛，先fpa2bv再bitblast；通用smt也有theory_fpa转换，差异是流水线而非有无浮点支持。统一dt2bv/fpa2bv/simplify/default在25真实dump及10合成混合类型query通过，2次C API假设与模型原断言为true；完整Clause/seed接入未验。default顶层seed描述缺失与lazy_tactic未覆写collect_param_descrs有关，不能当所有后端不支持seed。[源码、probe、验收边界](branch_ablation_20261031/z3-strategy-source/report.md)。
+
+## 2026-11-01 Z3上游default混合枚举修复
+
+独立master8fbb275（构建自报5.3.4）增加严格FP＋简单枚举probe，在原纯FP分支之后调用dt2bv→qffp，原公开is-qffp不放宽；数组/量词/一般ADT/枚举函数和ITE及proof/core模式保留原路径。新增资源预算回归未修unknown、修后SAT；既有fpa及4测试组通过，41query预期一致、2真实queryCAPI双侧SAT且模型原断言为true。未证明全Clause7200秒、未接入生产Isla/default。[源码及补丁](branch_ablation_20261031/z3-upstream-fix/report.md)。
+
+## 2026-11-01 Z3枚举预处理独审修订
+
+独审发现dt2bv对每枚举变量急建构造器规模模型ITE，简单FP＋大枚举会明显回退并在同预算SAT变UNKNOWN。已对唯一enum自由常量累计构造器数，超过4096保留原default；两位独立复验原反例关闭，阈值/去重/域/模型语义通过。原域UNSAT测试固定变量无法验证非法编码排除，已改自由变量排除全部构造器。语义保持不要求相同具体模型，也不保证所有查询性能/预算/取消行为等同。[独审证据](branch_ablation_20261031/z3-upstream-fix/independent-review/summary.md)。
+
+## Z3替代路线的语义与lambda边界（2026-11-01）
+
+对上游8fbb275，enum2bv的value2bv/constrain_domain提供构造器唯一编码/合法域，enum_defs加dt2bv模型converter恢复原枚举；直接qffp则保留枚举原约束，fpa2bv/bitblast后由末尾SMT处理。对受限无量词FP/简单枚举，两者保留可满足性而不要求模型文本/预算/耗时相同。全局预处理初版遇枚举lambda有真实类型回退：body变BV但binder留E，default UNSAT→UNKNOWN；953e433用现有has_quantifier_probe（包括lambda）在整goal含量词时跳过新增转换，原反例与嵌套变体复审关闭。该guard也保留forall/exists旧路径；无FP枚举额外模型成本仍存在。B受限probe通过继承原var/quantifier拒绝逻辑避开此域。4096阈值历史已被用户要求删除，现行两个PR都未引入该成本阈值。[代码和证据](branch_ablation_20261031/z3-alternative-prs/equivalence.md)、[当前状态](branch_ablation_20261031/z3-alternative-prs/status.md)。
+
+## Isla与fork Z3 5.3.4的实测接入（2026-11-01）
+
+float isarch原DT_NEEDED为libz3.so.4.16，因此单设PATH或仅LD_LIBRARY_PATH指向5.3目录不等于换库。独立副本用patchelf显式替换DT_NEEDED可做兼容性诊断，正式部署应重新链接。Release5292580e5的default已通过当前Isla seed/random_seed能力检查，旧4.16下panic不能直接外推；--tastic default的FLEQ_S真实执行finished/10条，无错误/超时。改进A只接在default入口，当前Isla缺省qfaufbv不会自动消费它。MRET在本次新旧三对照均partial/unfinished=1，是独立边界，不能写全Clause通过。[证据](branch_ablation_20261031/z3-alternative-prs/isla-integration/status.md)。
+
+## Isla CLI缺省与Make显式策略分离（2026-11-01）
+
+float类型化Tactic的#[default]控制opts未传--tastic行为，帮助字符串须同步；Make通过ALL目标target-specific TASTIC=qfaufbv，再给filter-out MEMORY,FD_FLOAT目标覆盖qffp，GNU make命令行TASTIC仍优先。原枚举未含qffp，需新增解析/CStr才可直接接收Make值。memory已字符串策略且缺省default，不应为统一表面形式重构其SMT层。4×347目标dry-run与新5.3库CLI默认/Make qffp的FLEQ执行已验，源码尚未提交；不表示347Clause全通过或该映射全最优。[证据](isla_tactic_defaults_20261101/status.md)。
+
+## 官方Z3 default枚举修复已实测（2026-11-02）
+
+官方master1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b为#11506合并提交：原QFFP probe允许枚举，qffp preamble在fpa2bv/简化后加入dt2bv。官方干净源码Release新构建fpa、default枚举FP最小例与原flags-11均通过，18API/64原断言回读通过，Isla隔离FLEQ10条finished。它不是早期B纯保留枚举版本，旧A/B性能不可混用。安装前缀与完整版本证据见[状态](z3_official_build_20261102/status.md)。
+
+## Isla正式链接官方Z3的入口（2026-11-02）
+
+根/float与memory Make的Z3_PREFIX现在均为~/.local/opt/z3-official-1fd1d3613，通过RUSTFLAGS的-L native和运行时rpath固定同库；memory原先仅cargo build，已补齐相同入口。正式make重编译后四处Release和根Debug均含官方1fd1d3613，六次FLEQ/定向C_LD及2项初始化测试通过。runner-float target软链到既有initial-state worktree target、runner-memory target软链到memory-consistency target，后续并行构建必须避免同target目录相互覆盖，不能把软链路径误认为独立artifact。手工cargo不自动继承Make的链接参数。[证据](isla_official_z3_switch_20261102/status.md)。
+
+
+## 2026-11-02 浮点 JSON 完成边界与条件见证补验
+
+- 当前正式官方 Z3 的替换本身不能修复 `ExecuteAs` 边界：同编码 `0x1fe0` 的 C_ADDI4SPN 在原程序输入 x2=7 时输出x8=7。此次 collector 用 `LocalFrame::new_call` + 原 solver checkpoint 继续执行载荷，真实绿例变为x8=1027、Retire_Success，编码仍是原16位机器字。`new_call` 已保留regs/lets/memory、累计路径时间与分支预算；现isarch不启用function_assumptions、PC重访计数、interrupt，不能把此验证推广到配置了这些会话状态的其他入口。[证据](float_review_completion_20261102/executeas/green/checks.json)。
+- BF16非法布局是可保留的模型非法用例。新JSON同时提供原助记符、精确位串/小端字节和精确`.insn`；生产BF16-vl0/vl1及压缩例共13条、GCC/Clang共78项检查符合预期。四条非法BF16助记符被Clang拒绝，但精确两种表示的机器字均与模型编码一致，不能把可汇编等同于合法退休。[证据](float_review_completion_20261102/assembly/production-e2e/summary.json)。
+- 当前官方Z3现成FLEQ_S默认批已见证新增NV；旧“没有NV”结论只适用于旧版本。定向6次Clause/40条JSON补验确认左源单独sNaN新增NV、单独qNaN不新增NV；交换FPR配置仍未选到右源单独见证，说明配置目标不能替代对实际操作数分类。rec7/rsqrt7已见证SEW32/vl1的1.0及0x00400000次正规活动lane，数值误差界/flags/未活动状态保持通过，不代替全部查表oracle或格式覆盖。[核账](float_review_completion_20261102/data-conditions/report.md)。
+
+- `Collector`旧别名把捕获寿命与IR寿命绑定；保存`LocalFrame`到Mutex队列时不变性使局部配置无法借用。新增兼容的`ScopedCollector`区分二者，无执行语义变化；实际编译红例后新API测试通过。`run`返回前必须保存最后一次fork后SMT统计，避免new_call续段恢复旧快照漏计；对应1项回归先失败后通过。[修订依据](float_review_completion_20261102/executeas/status.md)。
+
+
+## 2026-11-02 预算内显式语义分支恢复
+
+用户确认：NaN等特殊值分类选择不同语义行为，按控制流审查；纯谓词/数值计算内部ITE不机械改写。模型7f3f50d/fd71c9a恢复5文件，独立GPT-6.1 Sol确认优先序、flags、归约顺序与十分类位序不变；Isla f152290同步四配置五IR。规范化2053函数仅10目标变化，FVVTYPE/RFVVTYPE的mask跳转分别支配6/4纯操作，假出口绕过运算；原总Jump增加不能证明此事实，永久CFG回归现拒绝两种错误运算位置。Sail backend eager_control_flow=false，底层fp_is_nan只构谓词，本轮无需改通用compiler/ITE接口。flags/sat和未测其他格式/循环不能按同构外推预算。[审查和证据](explicit_branch_restore_20261102/review/report.md)。
+
+
+## 2026-11-02 flags/sat显式分支的真实求解成本
+
+同冻结官方Z3/QFFP程序的check入口观测，flags ITE版6748次check累计44.16秒完成，而显式if前300秒255次累计297.44秒、最长22.27秒，主要是浮点异常条件约束导致多个查询变贵的累积，不能叫单个查询卡2h或已证实路径数爆炸。sat旧VFUNARY0在vl1/SEW16/VLEN128仍先运行8个lane的转换，mask只事后选择值和flags；恢复overflowif后不活动7lane也出现真实fork（日志连续8次）。sat ITE1993check累计3.24秒完成，显式版前300秒1668次累计292.05秒/最长1.55秒，额外组合与单查询变贵并存。诊断300秒窗不替换正式7200秒Clause预算。已预处理solver文本dump两种导出均解析错误，重放无效，不能据其最后sat或耗时下结论；真实FFI计时与原生fork日志不受该dump失败影响。[证据](explicit_branch_timeout_diagnosis_20261102/report.md)。
+
+
+## 2026-11-02：独立源NaN与活动lane分支
+
+模型四分类提交350a072/f263774/eb17b05/a9fd947，Isla对应IR提交99a83bb9；四配置严格生成、普通严格检查、五IR25步回归通过。独立GPT-6.1 Sol源码、实际CFG、56项定向结果复核通过。156条JSON、3518断言、正式make solve及GCC/Clang60项编码检查通过。固定域与vl≤2，不代表全域完整覆盖。
+
+flags超时主要为昂贵浮点异常约束导致多次SMT求解变慢；旧饱和实验对不活动lane提前计算，导致额外分叉，新的活动gate已纠正。饱和overflow显式化仍需重新预算实验；flags changed及其余特殊异常分界未全部恢复。见[本轮状态](special_control_restore_20261102/status.md)和[超时定位](explicit_branch_timeout_diagnosis_20261102/report.md)。未推送。
+
+
+## 2026-11-02：flags/sat超时完整归因确认
+
+六臂冻结B的qffp/default/smt完整Clause对照均7200s外限exit124，无完整JSON；CPU约99.5–99.7%，更换这两策略未使本轮负载完成。插桩主路径2h账：flags结构上界332、创建256、执行返回150/收集返回149、排队106+collector中1；sat上界1033、创建435、执行返回199/收集返回198、排队236+collector中1。主树/编码辅助树/JSON分别计数。
+
+flags已完成SMT查询约94.5%时间在collector，最长单次1038.658s SAT；sat最长4.819s、16951次已返回查询累积，兼旧8lane溢出组合。两项已返回check无UNKNOWN，外限截断时各一条刚开始的pending。旧源只加活动gate、保留overflow-if，同seed17三次57–64秒完整finished，确认不活动lane过早转换是重要原因。flags干净同具体FDIV_S编码诊断：原路径约束36.50秒，隔离后0.04–0.05秒，同机器码；不能据此直接删除生产约束。
+
+独立review发现并修正计数混合、旧探针残留同核竞争、check边界误归属；先前240/455秒性能值撤回为受干扰诊断。未微观定位原17分钟query为何跨轮变动，不宣称tactic普遍无影响或会话历史bug。生产源码/模型/策略未改。完整证据见[确认报告](explicit_branch_timeout_diagnosis_20261102/confirmation-report.md)。
+
+
+## 2026-11-02：编码辅助域与最终执行域分离
+
+Isla `de00adb` 的辅助 checkpoint 只移去原 Assert，保留声明、定义、枚举、事件和符号编号；编码终态通过新增 trace 后缀接回完整执行 checkpoint。普通成功优先，仅普通拒绝域进入压缩映射；成功、拒绝和异常均先核完整域可达性，UNSAT 过滤，UNKNOWN/error 保留为错误。独立 Sol 源码、checkpoint 探针、候选和 collector 回归通过；不能由此单独推断完整 flags Clause 已完成或性能改善。
+
+模型 `6202e23` 在原活动 lane gate 内恢复 f16→i16 overflow 显式分支。四配置 IR 规范化 2054 函数仅目标 helper 改变；永久 CFG 回归检查 overflow 真臂才可达 NV。Sol 全 sig32/flags 位向量检查无反例，新模型原配置完整 VFUNARY0 37.16秒 finished，46 JSON；独立有理数 oracle 检查相关实际转换见证。详见 [本轮状态](encoding_constraint_isolation_20261102/status.md)。
+
+
+## 2026-11-02：指令字段断言保留与完整域验证
+
+Isla `cf1aa14` 复用 `Val::symbolic_variables` 与 `Exp::modify`，原序传播 DeclareConst/DefineConst 的指令依赖，只保留原 Assert 子集；含状态或未知 App 的断言移开。声明、定义、枚举、事件与 next_var 均保留，候选增量最终接回完整 checkpoint。完整域蕴含辅助域，全部原可达编码仍可探索，UNKNOWN/error 不转为丢弃或后备。独立 Sol 复杂输入探针、官方 Z3 下 15 项测试和三完整 Clause 均通过。两版各1258条实际见证五字段多重集合一致，不等于全域覆盖证明。模型6202e23的overflow分支与原公式等价，flags changed尚未纳入本轮恢复。[证据](encoding_constraint_isolation_20261102/status.md)。
+
+## 2026-11-02 内存模型与见证协同复核
+
+当前模型c70482a7／Islabdd047bc再次核实：MemoryCallbacks分层保留，但SeqMemory自由初始数组未导入Concrete快照，符号地址跳过重叠检查，使同址AMOMAX固定地址读0、符号地址可读全1。Arbitrary GPR过滤与新内存见证合同不兼容，sd x6漏初值后被重放前导t1=0xa5改变写值；异常ret_val仍在最终Model前字符串化。四配置各159模型文件、5IR路径及配置哈希一致；79预算/130region/22锚点有效，旧IR错配不适用于此版。自由地址store另有vmem_utils.sail:224动态宽度错误，summary正确partial；未定位历史引入点。两P1可沿现有MemoryCallbacks/Target/最终Model修复，无需另建执行器。[本轮报告与新证据](coordinated_memory_review_20261102/report.md)。
+
+本轮追加确认：模型vext_mem_insts.sail的process_vlre/process_vsre在vstart≥evl早退时不执行末尾set_vstart(zeros())；非陷阱helper把原高位陷阱输入带进该成功出口。原函数体逐字保留的隔离IR后态断言中，两次final-vstart=0被过滤、两次final-vstart=全1通过并退休，证明成功后态遗漏。应在既有早退中清零，不需恢复陷阱或改执行结构。[方法与证据](coordinated_memory_review_20261102/report.md#f3--p2非陷阱-vstart-策略未补齐全寄存器访存的成功后态)。
+
+## 2026-11-02 内存符号化的职责与快照边界
+
+本节适用于指定 memory-consistency 工作树 bdd047bc 加本次定时读取的在途修复；[报告与源码指纹](memory_symbolization_architecture_20261102/report.md)界定版本，不替代修复验收。
+
+- SeqMemory 通过字节 Select/Store 维持单执行路径的顺序读写一致性；符号地址访问本身不要求按地址 fork，alias 可留给 SMT。它没有自动建立多核 RVWMO。
+- executor/frame.rs 的 freeze_frame 和 unfreeze_frame 均 Clone Memory；Region::Concrete 的标准 HashMap 会复制实际条目，外层 Frame 的 Arc 不表示字节已做页级 COW。Solver::from_checkpoint 新建 solver 并 replay，轨迹前缀共享不等于共享全部求解状态。
+- 本次在途实现将 concrete 非零初态写入 current 数组，对读取到的 concrete 地址按需约束基础数组为零，并将普通具体地址读也路由到回调。Custom/Constrained 保留专属分派；符号地址可能命中专属后端且不唯一时返回错误。仅确认实现存在，未在本轮执行验收。
+- 当前 solve-state 的数组地址接口为 64 位，不等同 XLEN；RV32 物理地址可从 34 位零扩展。MemoryBuilder 默认 CLINT 是 zero concrete 区域，不能视作完整设备模型。
+- 对照 isla-testgen 的 SeqMemory 明确限制符号访问 Concrete 与写特定页表；Morello translation_table_exp 单独编码受限固定表，并非通用可写 RISC-V 页表。其地址白名单适合受限测试域，不能原样用于保留架构异常域的当前场景。
+
+## 2026-11-02 内存协同正确性的现行修订
+
+上文同日复核适用于未修改的c70482a7/bdd047bc。用户授权后，当前未提交候选通过MemoryCallbacks统一Concrete快照与数组状态；稀疏非零初值按64字节Store块定义，零缺省按实际读地址约束初始数组，普通RAM保留按位回绕。Custom/Constrained继续专属分派，不确定混合域显式报错。RV32/RV64通过同一最终Model补齐x1–x31，递归具体化ret_val；必需事件及汇编/编码字段失败进入incomplete、summary.partial且不进gen。模型全寄存器访存早退补vstart清零，四配置5IR从冻结dirty源实际重生，manifest保存基线及补丁哈希；vmtype预算同步后79/130/22有效。
+
+最终源码全lib163/163，12组完整IR19JSON/65断言、vstart后态8/8；独立Sol复审关闭四个汇编/编码错误出口，另独立实跑两探针finished，无未关闭P1/P2。既存自由地址store动态宽度、MRET Poison和Excluded回绕等边界未被外推验收。Memory::write_byte仅在安装数组前作预置，当前生产调用链符合此顺序。[实施/版本与限定验证](coordinated_memory_fixes_20261102/report.md)、[独审](coordinated_memory_fixes_20261102/independent-review/report.md)。
+
+
+## 2026-11-02：枚举声明与单次SMT限时的实际边界
+
+- Isla42000be的修复依据：官方Z3同Context不能重新声明同名enumeration sort，即使Solver及已有sort引用已释放；from_checkpoint本来允许同Context回放，因此仅用Solver私有Enums缓存不足。Context缓存按实际Z3整数/字符串sort符号复用声明，Solver仍持有自己的引用；重放仍消费原fresh编号，避免改变后续trace身份。[独立API与生命周期审查](float_review_closure_20261102/review/enum/report.md)。
+- Isla42000be的`--smt-timeout`解析和配置本身不要求feature；未启用`smt-thread-interrupt`时调用宏直接执行Z3，单次看门狗不生效。不能据命令含该参数就声称单次限时已执行。正式构建需核两个crate feature指纹、ELF的Z3_interrupt与实际中断测试；外层timeout属于整Clause限时，二者分开记录。[真实watchdog证据](float_review_closure_20261102/review/enum/watchdog-result.json)。
+- binary版本与安装IR/永久测试的后续提交分别追溯：受测程序42000be不因父仓/子模块指针推进就变成新HEAD构建；应另建最终manifest，或用逐项编译输入一致证据明确适用关系。
+- f16最大有限数65504：f16→ui16没有正有限上溢；f16→i32/i64没有有限上下溢，f16→ui32/ui64没有正有限上溢。NaN/Inf和负有限unsigned invalid仍需验证。VFNUNARY0 SEW8的f16→i8/ui8合法，不应与SEW8浮点目标的非法性混淆。[矩阵](float_review_closure_20261102/validation/matrix.md)。
+
+
+## 2026-11-03：精确转换助记符与Sail验证边界
+
+- GCC/Clang实际112探针确认，FCVT.D.S/D.H/S.H/D.W/D.WU的rm=000可用共同的无RM标准助记符；GNU拒显式RM，而Clang接受并保留非零RM。删非零RM会把机器字改为rm=000，不能冒充精确重放。D.L/D.LU/S.W等有舍入的转换不可一起删RM。[独立实证与最小修复](float_review_closure_20261102/review/acceptance/exact-conversion-fix-opinion.md)。模型21418d0只把五条RNE canonical映射置于原generic之前，原generic逐字保留；真实C隔离正向1104例独审通过。
+- 当前实际Sail 0.20.1的P_string_append反向模式被effects标为NonExec；baseline同样如此。解释器对应分支仍是TODO空绑定，实际反向调用会Runtime type error，CLI可能仍exit0。不能仅看REPL退出码就给字符串反向mapping动态PASS；本次保留旧模式静态合同，正向使用真实C和IR/工具链验证，不修改编译器掩盖限制。[诊断](float_review_closure_20261102/review/acceptance/assembly-interpreter-result.json)。
+- Sail类型约束memo的key是完整SMT-LIB文本digest（唯一值查询另含目标表达式），变量做alpha规范化。缓存本身无模型/工具版本header且无写锁；同工具与对应配置下可独立复制复用，不能多个生成进程共享可写缓存，仍须实际执行全部strict检查并记录来源、hash及退出状态。[源码契约](float_review_closure_20261102/review/model/memo-contract.md)。
+
+- 2026-11-03 模型e9d69d2的六个exact-exception调用均处于源finite臂；此时源invalid_nan=false，exact facts的NV=DZ恒false，因此旧mask helper在这些调用点等价于直接facts。仅看到finite形参是true并不足以删mask，必须同时证明invalid与facts前两位。ROD的条件最低位置位属于数值计算，保留ITE；NX不能由最低位是否变化反推。见[独立推导](float_review_closure_20261102/baseline-0008fae/control-candidate-review.md)。
+
+## 2026-11-03：Sv39 预设与全符号页表预算边界
+
+适用于本轮冻结的 memory-consistency 二进制/IR；精确哈希与证据在`.worktree/mmu-symbolic-experiment/manifest.json`、`REPORT.md`，摘要见[实验状态](mmu_symbolic_experiment/status.md)。
+
+- 当前 MemoryBuilder 的 Sv39 Identity 只初始化根entry[0]和512个L1超页叶，映射低1GiB，叶标志包含U/A/D/R/W/X/V。Supervisor读取该预设需SUM=1，并确保低PA的PMA允许访问；直接使用VA=0x80000000会命中无效根项。
+- 当前 executor::start_multi 将 --timeout 转为 PathTimeout；限制按路径计，不保证进程在该秒数结束。整组实验须独立外限，外限杀死前可能没有最终JSON。
+- 受测IR的hartSupports(Ext_Svrsw60t59b)=true，PTE bit60:59可作软件位；出现0x0800…的PTE不能只凭bit59非零判为非法。其余保留位、叶对齐及权限仍需核对。
+- 本轮固定LD/VA/CSR的全符号页表单线程60秒已返回415条，16线程3181条仍未完。单线程已完成check/check_assumptions累计26.629秒、最长0.01302秒。支持“本配置路径显著增长且预算未完成”，不支持完整路径总数、过滤为零或普遍性能结论。两份原始SMT数组与读事件逐字节一致，独立Sv39解码通过。
+
+- 2026-11-03 浮点架构审查方法修订：源码/IR等价、固定输入数值PASS与新增fork必要性是不同结论。不能从“未证明ITE加速”反推“必须显式化”，也不能因最终会写寄存器就把纯数值选择认作控制流。最新用户要求按实际两臂副作用与理论/实测证据重新审定，见[统一准则](../specs/GOAL.md#浮点架构决策准则2026-11-03-最新用户指导)。这是审查约束，不是新增性能实验结论。
+
+## 局部路径合并历史实现边界（2026-11-03）
+
+静态核对 origin/dev-isarch-pathmerge@6cbefb4：executor.rs:1232 的 merge_traces 仅添加 Merge 事件；start_single 在主路径 solver 上调用 merge_frames，不重建共同前缀，不导入兄弟 solver 的定义及断言。drain_matching 取出的任务在合并失败时没有放回。OpenMerge/CloseMerge 仅推进 PC，start_multi/do_work 不执行 start_single 的合并逻辑。因而不能以该实现返回路径减少作为完整覆盖或提速证据。vmem_pte.sail 局部权限/格式检查无直接内存写，update_PTE_Bits 也只返回值；实际 A/D 写回在 vmem.sail。详见 [调查状态](localized_path_merge_review/status.md)。
+
+## 2026-11-03 IPDOM 与批量见证评审补充
+
+当前主工作区 isla-lib/src/ir.rs 的 Jump 只有 target 与 fallthrough；executor.rs 的 End 恢复 stack_call，Exit 单独处理三类退出。do_work 新建 Context 并重放 checkpoint；start_multi 由 MultiRuntime 管理 pending_tasks 与 queued_tasks。smt.rs 的 ReadMem/WriteMem 无通用事件 guard，check_sat_with 已调用 Z3 assumptions 接口；因此原生批量检查并非首次引入 assumptions，新增重点是候选枚举与同一 Model 下具体化。此为源码静态事实，无性能或覆盖 PASS。见 [议题摘要](localized_path_merge_review/status.md)。
+
+## 函数线性化安全边界（2026-11-03）
+
+Isla@42000be 静态核查：partial_linearize 会输出 MultiJump 对应 Jump；linearize::drop_assertions 将断言改 true，循环拒绝路径也已应用该处理。ssa::BlockInstr::is_pure 对 Call 只特殊排除 zUnreachable，不证明传递纯净性。executor ITE_PHI 在无 true、无 symbolic 输入时访问 symbolics[0]。primop_util::build_ite 不同 Union 构造器的结果标签只被限制属于两臂之一，没有关联选择条件；交换 SymbolicCtor/Ctor 未反转条件。均无本轮动态验证。见 [评审状态](linearization_tri_strategy_review/status.md)。
+
+
+2026-11-03 Isla@42000be 当前工作树静态核查：linearize::self_test 顺序执行两版本并仅比较返回值；all_unsat_collector 对 Exit/Suspended/非 Bool 只记录，对 Dead 不置失败，初始 true。不能直接作为严格等价证明网关。见[复审](linearization_tri_strategy_review/implementation-review.md)。
+
+
+- 2026-11-03 固定memory模型c70482a7+float模型0f7b8fbc的虚拟合并：get_start_element沿memory返回nat，但float新增SYMBOLIC VFMERGE和init_masked_source调用仍按Ok/Err处理（虚拟树vext_fp_insts.sail:2591、vext_utils_insts.sail:429）。因此Sail生产文件无Git文本冲突不代表接口兼容；合流需最小适配并strict重验。另旧F1–F5修复证据四Rust哈希均不同于runner-memory/bdd047bc当前源码，不继承旧PASS。见[独立核查](float_memory_merge_20261103/review/report.md)。
+
+
+## 2026-11-04 float→memory合流已核事实
+
+- `4d085b14`将两侧JSON合同并入同一最终Model，必需字段失败整例拒绝；write-first未观察旧字节的合法null与查询失败分开。源码及独立故障变异见[核心签收](float_memory_merge_20261103/review/core-final-report.md)。
+- memory旧测试依赖SMT隐式初始化，float的严格初始化需测试显式configure_tastic；默认并发及47个逐fresh进程验证后，测试专用后继不改生产区。
+- 固定机器字解码使用初始regs和CLI prestate，不直接采用TOML initial_state；定向向量guard需足宽vtype/fcsr/priv等。不要把短hex引起的位宽错误或未钉priv内部异常误判模型合流错误。
+- 原域Poison三个代表已新旧同完整状态复放：zicfilp不支持Hypervisor及MPRV启用/MPP保留值触发core/types非法权限。只解释代表，不证明922/112/7全量等价；F1同址具体读0而符号读可为全1在新旧均复现，尚未修复。见[限定签收](float_memory_merge_20261103/review/acceptance/limited-signoff.md)。
+
+
+- 2026-11-04 全量启动核验：4d085b14的isarch_main.rs:670在xlen32分支主动panic（匹配rv32_fd配置实跑确认）；有rv32d.ir不代表公共solve-state可生成RV32 JSON。run.mk ALL347，但默认solve排除FD/MEM；完整批次必须显式枚举ALL。实际79非访存FD用qffp，其余268用qfaufbv；默认路径55m/SMT1m/外限60m须按本批用户2h预算显式覆盖。见[全量批次](full_generation_20261104/status.md)。
+
+
+## 2026-11-09 历史分支清理的组件版本边界
+
+runner 保留的 `float@0665526d` 与 `memory@3278a442` 分别固定 Sail-RISC-V 的 `0f7b8fbc` 与 `d79d8b32`。两组件提交不在模型 `isarch@34903a1e` 的祖先链上，但仍由核心议题版本固定；删除对应本地历史分支前，须保留其工作树并转为同提交 detached，不能仅因其不属于 isarch 就丢掉该版本。
+
+Isla 的三策略 `33dbcdde` 和见证随机化 `2fefa727` 各有独立未合并提交，`isarch@87895be0` 分别没有 `isla-lib/src/ir/linearize_policy.rs`、`isla-lib/src/smt/witness.rs`，不能记为已经合并。Sail-RISC-V `feat/sail-std-gaps@7d7e76f3` 虽有两提交被 cherry-pick，仍有 `37e244ff` 的全寄存器访存 vstart 清零改动未按祖先关系合入。详见[审计状态](historical_branch_cleanup_20261109/status.md)。
+
+
+## 2026-11-09 std-gaps 与 isarch 的合并边界
+
+模型isarch34903a1e基于4f2ac293加x0修复与两个分页提交；5667f347→e8b686cd、7d7e76f3→34903a1e的补丁分别等价。std-gaps前四提交未进入isarch，其中ba729ce9/1fa93117/c70482a7仍由runner/memory的d79d8b32固定；37e244ff另含向量全寄存器访存早退清零。c70482a7不只移坐标，还将VVTYPE七处区域分支预算1→0。独立副本实际merge-tree无冲突、regs.sail保留x0修复，不能把“方案B未整枝合并”解释成x0文本冲突。未做新合并树的类型或功能验收。[详细证据](historical_branch_cleanup_20261109/std-gaps-analysis.md)。
+
+
+## 2026-11-09 std-gaps合入候选已完成限定实测
+
+模型cbb4766f双亲34903a1e与7d7e76f3；x0源码保持原blob。新组合普通/SYMBOLIC严格类型通过；当前v128 IR由该模型重生。真实IR定向22项覆盖segment组界及非法判定、vstart返回、全寄存器访存早退清零并验证无内存事件。原生fuzz20/20 corpus entry认证与20次变异判定通过。VVTYPE七项预算按源提交保留，未据此声明全覆盖。Isla79d0e335与runner fb9916b9固定IR和gitlink，原仓库引用待只读限制解除后导入。[证据](isarch_std_gaps_merge_20261109/status.md)。
+
+
+## 2026-11-09 origin清理的提交边界
+
+runner的origin/feat/p0-replay@ffcc98e1对当前保留主线仍有24个独有提交；它属于明确退役入口，不能称为整枝已合并。当前isarch的四个Python核心脚本与原replay-p0工作树逐字节一致。Isla的origin/feat/memory-consistency缓存为4d085b14（不是被删除同名本地分支的bdd047bc），已按4d085b14核对为当前isarch祖先。目标清单10条，其余12个已删本地历史分支在本地origin缓存中没有对应项；实时远端不可达，不能断言服务器不存在。[审计](origin_branch_cleanup_20261109/status.md)。
+
+
+## 2026-11-09 暂存遗留的精确归属
+
+模型主工作区163条暂存中151条blob由保留组件历史保存，12条为.pyc缓存；两个Isla历史树各30条，分别29和27条在保留历史中精确可达。未匹配源码为旧exec.rs（两树同版）、merge-check的executor.rs/target.rs，差异涉及后续返回值具体化和initial_state接口/测试补齐，不能宣称旧blob等于新代码。旧索引、patch和blob pack已独立保全。调查期间外部已清索引；最终cached全空、工作文件存在，本会话未操作原索引。
+
+只推三仓当前12分支不足以确保所有关联detached历史和runner的float/memory gitlink都可达；补充5个archive提交根，其中模型d79d8b32包含float所需0f7b8fbc。data1_b的登记实际指向另一common Git，不在本轮清理范围。[审计](push_index_cleanup_20261109/status.md)。
+
+
+## 2026-11-09 暂存区外残留的内容边界
+
+- `.worktree/isla-cow-fork` 的候选使 LocalFrame 容器也使用 Arc，freeze/unfreeze 直接克隆引用。保留主线虽有 Frame 的 Arc 字段，freeze 仍将 LocalFrame 容器克隆后放入新 Arc；两者不同，不能因字段名称相似判作已合入。
+- `.worktree/isla-mmu-tuning` 的 mmu_symbolic_budget 及 exploration-status 候选未在本轮保留主线找到同等实现，完整候选和证据保留。
+- Sail-RISC-V主区150份旧浮点修改/未跟踪源码均在runner的float/memory固定组件当前内容或历史中找到相同全文；本轮清掉旧副本，保留.gitignore的实际缓存过滤用途。
+- 旧memory-consistency候选的coherent_concrete_reads/special_overlap已由isarch的handles_concrete_reads及后续专属区域分派接续，不代表整份旧文件与主线相同。
+- 本次起点两个功能worktree各有5份已暂存IR，与前一轮223条旧索引清理属于不同起点状态；10份均保留。本轮仅内容审计和清理，没有新增动态PASS。详见[清理状态](unstaged_cleanup_20261109/status.md)。

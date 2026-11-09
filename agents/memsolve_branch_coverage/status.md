@@ -1,5 +1,9 @@
 # 内存 clause 分支覆盖对照状态（W19 + G1-G8）
 
+**2026-09-30 T3b 上游 issue 已发布**：从原 `case-007` 独立最小化出的 `vsse32.v` 在普通 RAM **对齐**基址 `0x80010000` 也停止提交，故旧“错位触发”表述已收缩为原发现条件，不是必要条件。两名独立 agent 只按[无附件 issue 正文](vsse32_issue/draft.md)在官方最新 v3 `09453ff8` 与 v2 `e7bab53e` 分别构建 `DefaultConfig` 并跑四项：v3 对齐／错位 strided 均看门狗 ABORT，对齐 `--no-diff -C30000` 仍 19 commits、unit-stride GOOD TRAP；v2 四项均 GOOD TRAP。关键命令、SHA、反汇编和退出码见[findings](../findings.md)及本机独立报告。用户审核后已发布 [XiangShan #6655](https://github.com/OpenXiangShan/XiangShan/issues/6655)，线上正文与[本地发布稿](vsse32_issue/issue-body.md)逐字一致、无附件；[发布核账](vsse32_issue/publication.md)。当前账号无加标签权限，线上无模板标签；独立 RTL 根因未证。
+
+**2026-09-30 T3b 原载体复核与去重**：原 `case-007` 的 `vsse32.v` 在 PC `0x80000218` 未提交，`--no-diff -C 30000` 仍停于 140 次提交；普通 RAM 错位跨步 store 是未找到同条件上游报告的新症状候选，尚无对齐对照／波形来证明独立根因。原 `case-004` 的 `vse32.v` 已在 PC `0x80000214` 提交，紧随的 `lbu` 读到预填 `0xa5`；GitHub #5279 已报告同类错位 unit-stride store 提交但零写掩码，故不作为独立原创 bug。E 线上游草稿所写的 `vse32` PC `0x80000168` 实为预填指令；后续使用草稿前须修订。原始运行结论保留为历史，核账见[findings](../findings.md)。
+
 **2026-09-29 GitHub 逐 issue 对照修订**：上游 #6475/#6486 维护者说明 kunminghu-v3 所测 segment 功能仍 WIP；本工作区定向 #6475 编码可经 pipeline 触发同名 ROB 断言，而旧自动批次未生成该编码。#6486 原 ELF 本地复现 store 数据分歧，合成单指令对照通过，精确前态与前置历史尚未拆开。旧 B3 对“preclass 吞掉 #6316/#6296”的泛化不适用于对应 AMO/VSSSEG：W24 `pipeline.py@41ff806` 与当前 `3b31333c` 的有效地址正则只识别 `sb/sh/sw/sd`，定向函数探针中 `sc.w`、`vssseg` 均返回不跳过；应先核对逐例 JSON/manifest。#1574 的45条 SC 成功见证全对齐不能证明 Z3 判错。版本、上游链接和[本地证据](../../difftest-xiangshan/work/github-memory-review/evidence.json)见[专题报告](../memory_github_xref/report.md)；下方 B/E 历史数据保留其当时范围。
 
 - 日期：2026-09-27。
