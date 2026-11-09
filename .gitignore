@@ -45,3 +45,5 @@ __pycache__/
 /agents/vext_issue_draft_reproduction/issue1/
 /agents/vext_issue_draft_reproduction/issue2/
 /agents/vext_issue_draft_reproduction/issue3/
+
+.worktree/
