@@ -37,3 +37,8 @@ workaround 配置直接位于 `sail-riscv/configs/isla/workarounds/`，`make sol
 ## 结果与分析
 
 逐次验证摘要见 [docs/RESULTS.md](docs/RESULTS.md)，专题调查与历史记录见 [agents/](agents/)。这些记录可能对应不同源码、IR、配置和模拟器版本；复用结论前先核对其 provenance。
+
+
+## isarch 整合入口
+
+统一候选保留 Isla 全部 path merge 与原生 fuzz，模型包含 x0、Svnapot 和 Svpbmt 修复。动态 prestate 重放与 smoke 入口见 [isarch fuzz smoke](difftest-xiangshan/smoke/isarch-fuzz/README.md)；本轮进展与限制见 [整合状态](agents/isarch_integration/status.md)。

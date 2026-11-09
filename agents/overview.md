@@ -1,3 +1,5 @@
+- 2026-11-09 [isarch 整合](isarch_integration/status.md)：方案 B，独立候选整合与实测。
+
 # Agents Overview
 
 本文件是根目录 `AGENTS.md` 引用的代码分析入口索引。

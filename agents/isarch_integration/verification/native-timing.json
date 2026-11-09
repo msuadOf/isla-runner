@@ -1,0 +1,20 @@
+{
+  "threads": 32,
+  "exploration_seconds": 60.28129349,
+  "index_seconds": 45.155922243,
+  "restore_seconds": 7.013396927,
+  "reconfirm_seconds": 0.277275701,
+  "judge_seconds": 6.774551831,
+  "loop_seconds": 6.79113139,
+  "campaign": {
+    "campaign_seconds": 6.761162583,
+    "generate_seconds": 6.191047847,
+    "fast_seconds": 0.175267439,
+    "hardware_seconds": 0.0,
+    "certify_seconds": 0.26944025,
+    "solver_attempts": 20,
+    "exhausted_requests": 0,
+    "certified": 20,
+    "corpus_added": 0
+  }
+}

@@ -1691,3 +1691,10 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 ### XiangShan 浮点 DiffTest 的结果续跑按 case ID 跳过所有已记录条目
 
 `difftest-xiangshan/pipeline.py::run`从`results.ndjson`取得已有ID时不区分success/failure，后续同目录运行会跳过旧失败；`run_case`首跑超时后另以`--dump-commit-trace`重跑，重跑即使打印GOODTRAP，原记录仍为failure/returncode=null。对版本SHA `8099715d…22390c`的本地1344输入批次，30秒24路首轮135条有104成功/31超时（25条trace GOODTRAP），120秒24路第二轮1322条中1317成功/5超时（5条trace GOODTRAP），独立低并发重跑5条才取得5个正常退出。复跑须封存原日志并建立新结果目录，最终PASS只计对应case的GOODTRAP且returncode=0；[当前工作区逐例核账](../difftest-xiangshan/work/float-v3-20260929/current-workspace-audit.json)绑定IR `73dfb2e1…671d2a`、Isla `4e315e9a…59ae0`、FD配置 `20851fdb…723d0`、XiangShan `a13efc8`／emu `8714169…a85ee`／NEMU `9188e7d…ef43`。
+
+
+## 2026-11-09 isarch 整合核对
+
+- Isla `a8b610dd` 的提交历史包含 `78b04e3d`、`d824ec21` 和 `ff975203`；直接以其建分支可完整保留 path merge 和 fuzz。
+- `feat/p0-replay@ffcc98e1` 的动态 prestate 未提交改动涉及三个核心脚本和三个测试文件；迁移时连同未改的 `paging_smt.py` 及四组现有回归测试导入。
+- `paging_fuzz.py` 没有 `--smoke` 参数；可执行 smoke 入口为 `difftest-xiangshan/smoke/isarch-fuzz/run.py`，使用同一 Isla 的 pt_decode，避免依赖旧 worktree 的绝对路径。

@@ -1,0 +1,26 @@
+{
+  "runner": {
+    "branches": true,
+    "worktrees": true,
+    "status": true,
+    "head": true,
+    "index": true,
+    "diff": true
+  },
+  "isla": {
+    "branches": true,
+    "worktrees": true,
+    "status": true,
+    "head": true,
+    "index": true,
+    "diff": true
+  },
+  "model": {
+    "branches": true,
+    "worktrees": true,
+    "status": true,
+    "head": true,
+    "index": true,
+    "diff": true
+  }
+}

@@ -182,3 +182,12 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 ```
 
 两条测试使用 `rv64d_v256_e64.json` 与 `test/first_party/src/no_override.json`；V256 配置、测试 ELF、模拟器的 SHA-256 依次为 `e28ac77273be6a31c544db6b196914dfb55b3b9fb72295ae7ef6cfc7b99dfc47`、`918863ec017c51732a294eddae17685929390d7f6af72f29dfcd054360ecedfa`、`aa493777b7c0362abc98f7a38d5008b0e3ff1970831e65eeaff9633b22182631`。修复前 CTest 退出 8 且新测试 `FAILURE: 2`；修复后 CTest 退出 0、2/2 通过。此结果只对应上述产物，后续源码和 V128 IR 需复验。
+
+
+## 2026-11-09 isarch 方案 B 候选限定验证
+
+受测模型 `34903a1e`，Isla 基线 `a8b610dd` 加当前模型重生 IR，runner 基线 `38801d0c` 加 replay-p0 动态前态。独立源码重建 release，链接官方 Z3 5.3.4.0，默认 feature。严格 SYMBOLIC IR 生成退出 0，458.56 秒；当前入口为 `isla/rv64d.ir` 与 `isla/ir/rv64d_v128_e64.ir`。
+
+命令：`cargo test --offline --manifest-path isla/isla-lib/Cargo.toml --lib path_merging -- --test-threads=8` 为 6/6；同入口过滤 `executor::tests` 为 396 通过、5 忽略。`python3 difftest-xiangshan/smoke/isarch-fuzz/run.py --mode python --output output/isarch-python-smoke` 为 153 通过、210 子测试。原生入口同脚本 `--mode native`（新 IR、32 线程、路径预算 60 秒、外限 360 秒）：20/20 corpus entry 认证，20 次变异及判定，退出 0。实际独立工作树命令见[验证记录](../agents/isarch_integration/verification/native-command.json)。
+
+探索包含 excluded memory 路径修剪与局部超时，不代表 STORE 全路径完成。未运行硬件测试或其他 IR 配置回归。原 Git 元数据只读，候选可交付，原仓库分支导入和清理尚未执行。[状态与证据](../agents/isarch_integration/status.md)。

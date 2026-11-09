@@ -1,3 +1,5 @@
+**isarch 方案 B 整合（2026-11-09，候选已实施／限定实测通过，原分支收尾阻塞）**：Python 153/210、path_merging 6、executor 396/5 ignored、原生 fuzz 20/20 认证及 20 次变异均退出 0。原 Git 元数据只读，候选已保存，原分支未清理。[状态](../agents/isarch_integration/status.md)。
+
 # TODOs — 当前协作状态
 
 **FLOAT-01 catalog观测范围收缩（2026-09-29）**：已amend为 `323021b`，只纳入catalog及关联信息；恢复原错误退出/trace策略，summary.complete只报告，保留8早退/1次最终SMT查询及原注释。精确64＋24、暂存82＋24、完整工作区83＋24及默认定向/编译/fmt通过（过滤已知x0失败），未跑全量solve/重放。原27文件暂存及exec.rs未暂存浮点层保留；[现行证据](../agents/float_support_review/catalog-commit-review-20260929.md#catalog限于观测信息2026-09-29)。31523ab及更早catalog记录为历史。

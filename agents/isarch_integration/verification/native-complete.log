@@ -1,0 +1,2 @@
+[FUZZ_CAMPAIGN] {"mutants":20,"budget":20,"attempts":20,"exhausted":0,"seconds":6.752600484}
+[FUZZ_COMPLETE] {"corpus":20,"mutants":20,"judge_seconds":6.774551831}
