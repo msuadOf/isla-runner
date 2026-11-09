@@ -1,0 +1,13 @@
+   Compiling isla-lib v0.2.0 (repo:/.worktree/isarch-std-gaps-merge-20261109/isla/isla-lib)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 30.12s
+     Running unittests src/lib.rs (repo:/.worktree/isarch-integration-record/cargo-target/debug/deps/isla_lib-45b0feb8e0c96ed7)
+
+running 6 tests
+test executor::execution_limits::tests::path_merging_rule_indices_keep_toml_order_after_unmatched_region ... ok
+test config::tests::execution_limits_merge_policy_defaults_priority_and_path_merging ... ok
+test executor::tests::path_merging_accepts_cross_arm_jump_with_static_join ... ok
+test executor::tests::path_merging_discards_region_local_declaration ... ok
+test executor::tests::path_merging_fallback_when_arm_has_exit ... ok
+test executor::tests::path_merging_diamond_reduces_forks ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 801 filtered out; finished in 0.04s

@@ -1698,3 +1698,8 @@ fc4 IR `fc4ce909…86415` 中 `assert_vector_num_elem_upto_128` 的`<=16`五个�
 - Isla `a8b610dd` 的提交历史包含 `78b04e3d`、`d824ec21` 和 `ff975203`；直接以其建分支可完整保留 path merge 和 fuzz。
 - `feat/p0-replay@ffcc98e1` 的动态 prestate 未提交改动涉及三个核心脚本和三个测试文件；迁移时连同未改的 `paging_smt.py` 及四组现有回归测试导入。
 - `paging_fuzz.py` 没有 `--smoke` 参数；可执行 smoke 入口为 `difftest-xiangshan/smoke/isarch-fuzz/run.py`，使用同一 Isla 的 pt_decode，避免依赖旧 worktree 的绝对路径。
+
+
+## 2026-11-09 std-gaps新组合已实测
+
+模型cbb4766f完整合并7d7e76f3并保留34903a1e的x0及分页历史。双模式严格类型检查通过，新v128 IR下的组界、vstart非陷阱及全寄存器早退清零定向22项通过，原生fuzz20/20成员认证与20次变异/判定通过。VVTYPE七处预算1→0沿用源提交，workaround校验为79配置/130区域/22锚点，不代表全覆盖。[证据](isarch_std_gaps_merge_20261109/status.md)。

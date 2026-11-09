@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/home/baiyifan/data1/isla-runner/.worktree/runner-memory-enum/output/memory-enum-20261107/toolchain/sail-src/sail",
+    "--no-warn",
+    "--no-color",
+    "--strict-var",
+    "--strict-bitvector",
+    "--strict-exponentials",
+    "--require-version",
+    "0.20.1",
+    "--memo-z3-path",
+    "/home/baiyifan/data1/isla-runner/.worktree/isarch-std-gaps-merge-20261109/normal-smt-cache",
+    "--all-modules",
+    "--just-check",
+    "riscv.sail_project"
+  ],
+  "cwd": "repo:/.worktree/isarch-std-gaps-merge-20261109/model/model",
+  "exit_code": 0,
+  "seconds": 190.14537145197392,
+  "environment": {}
+}

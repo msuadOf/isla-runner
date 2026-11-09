@@ -191,3 +191,8 @@ ctest --test-dir "$BF16_BUILD" -R '^first_party_rv64d_test_bf16_(wma_flags|nan_b
 命令：`cargo test --offline --manifest-path isla/isla-lib/Cargo.toml --lib path_merging -- --test-threads=8` 为 6/6；同入口过滤 `executor::tests` 为 396 通过、5 忽略。`python3 difftest-xiangshan/smoke/isarch-fuzz/run.py --mode python --output output/isarch-python-smoke` 为 153 通过、210 子测试。原生入口同脚本 `--mode native`（新 IR、32 线程、路径预算 60 秒、外限 360 秒）：20/20 corpus entry 认证，20 次变异及判定，退出 0。实际独立工作树命令见[验证记录](../agents/isarch_integration/verification/native-command.json)。
 
 探索包含 excluded memory 路径修剪与局部超时，不代表 STORE 全路径完成。未运行硬件测试或其他 IR 配置回归。原 Git 元数据只读，候选可交付，原仓库分支导入和清理尚未执行。[状态与证据](../agents/isarch_integration/status.md)。
+
+
+## 2026-11-09 std-gaps正式合并候选验证
+
+模型cbb4766f（父34903a1e、7d7e76f3），Isla基线87895be0。普通/SYMBOLIC严格类型检查190.15s/194.02s均exit0；严格v128 IR重生460.23s、exit0，更新rv64d.ir和ir/rv64d_v128_e64.ir。path merge6通过；executor396通过/5忽略；Python153通过/210子测试；新IR向量边界22项通过；原生fuzz20/20认证、20次变异/判定，全部exit0。workaround79配置/130区域/22锚点校验通过。原生探索有预算及excluded memory修剪，不宣称全路径；未测硬件或其他IR配置。中间探针初值类型和返回格式问题保留原日志，修正测试入口后通过。[命令与证据](../agents/isarch_std_gaps_merge_20261109/status.md)。

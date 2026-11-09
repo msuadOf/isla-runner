@@ -1,0 +1,44 @@
+{
+  "model_commit": "cbb4766f95370c405bf9070e459045ce5aaa281e",
+  "isla_base": "87895be060218b2f60b7ae88d886650ae2e9c549",
+  "runner_base": "d1e29e11dde3808ac95dd78715a6538a364b1e13",
+  "typecheck_normal_exit": 0,
+  "typecheck_symbolic_exit": 0,
+  "ir_generation_exit": 0,
+  "path_merge": {
+    "passed": 6,
+    "exit_code": 0
+  },
+  "executor": {
+    "passed": 396,
+    "ignored": 5,
+    "exit_code": 0
+  },
+  "python": {
+    "passed": 153,
+    "subtests_passed": 210,
+    "exit_code": 0
+  },
+  "vector_probes": {
+    "passed": 22,
+    "exit_code": 0
+  },
+  "native_fuzz": {
+    "corpus_certified": 20,
+    "mutants": 20,
+    "judged": 20,
+    "exit_code": 0
+  },
+  "workaround": {
+    "configs": 79,
+    "regions": 130,
+    "anchors": 22,
+    "exit_code": 0
+  },
+  "ir_scope": [
+    "rv64d.ir",
+    "ir/rv64d_v128_e64.ir"
+  ],
+  "vvtype_budget_changes": 7,
+  "production_refs_updated": false
+}
