@@ -1,0 +1,43 @@
+{
+  "query_count": 90,
+  "expected_answers_obtained": 90,
+  "short_budget_pass": 88,
+  "long_budget_pass": 2,
+  "long_budget_ms": 7200000,
+  "long_results": [
+    {
+      "query": "agents/branch_ablation_20261031/z3-alternative-prs/B/validation/real-flags-dump-7/query.smt2",
+      "command": [
+        "taskset",
+        "-c",
+        "107",
+        "agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "wall_s": 395.0411075130105,
+      "exit": 0,
+      "stdout": "sat\n",
+      "stderr": ""
+    },
+    {
+      "query": "agents/branch_ablation_20261031/z3-alternative-prs/B/validation/real-flags-dump-11/query.smt2",
+      "command": [
+        "taskset",
+        "-c",
+        "107",
+        "agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "wall_s": 436.1234442900168,
+      "exit": 0,
+      "stdout": "sat\n",
+      "stderr": ""
+    }
+  ],
+  "api_checks": 18,
+  "model_evaluations": 64,
+  "complete_clause_validated": false,
+  "timing_note": "Both long probes initially shared CPU107; after about six minutes one moved to CPU106. Wall times include contention and are not controlled A/B speed measurements."
+}

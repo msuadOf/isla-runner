@@ -1,0 +1,29 @@
+[
+  {
+    "simulation": false,
+    "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_completion_20261102/assembly/production-e2e/bf16-vl0/output/rv64_zVFWMACCBF16_VF.json",
+    "sha256": "fea1e94e2b52379d57b53cd70c1476dd2b5473566e44f2c9ae85f145f8b79cb2",
+    "gen": 6,
+    "illegal": 2,
+    "clang_mnemonic_rejections": 2,
+    "all_pass": true
+  },
+  {
+    "simulation": false,
+    "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_completion_20261102/assembly/production-e2e/bf16-vl1/output/rv64_zVFWMACCBF16_VF.json",
+    "sha256": "bbde76ba0af4e3a950e579708a00283ea6c678ee986e9a8f4b8ca085c86441d8",
+    "gen": 6,
+    "illegal": 2,
+    "clang_mnemonic_rejections": 2,
+    "all_pass": true
+  },
+  {
+    "simulation": false,
+    "source": "/data1/baiyifan/workplace/isla-runner/agents/float_review_completion_20261102/assembly/production-e2e/c-addi4spn/output/rv64_zC_ADDI4SPN.json",
+    "sha256": "0fa47790966bac28d3729a30ed141d9f385ba842e61212d025444e89bf02246f",
+    "gen": 1,
+    "illegal": 0,
+    "clang_mnemonic_rejections": 0,
+    "all_pass": true
+  }
+]

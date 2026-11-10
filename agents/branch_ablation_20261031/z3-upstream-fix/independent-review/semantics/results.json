@@ -1,0 +1,506 @@
+[
+  {
+    "case": "domain-1-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C0)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.01764809899032116
+  },
+  {
+    "case": "domain-1-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C0)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.022844991995953023
+  },
+  {
+    "case": "domain-1-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.0163040499901399
+  },
+  {
+    "case": "domain-1-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.014066562987864017
+  },
+  {
+    "case": "domain-2-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.015804983966518193
+  },
+  {
+    "case": "domain-2-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.022497461992315948
+  },
+  {
+    "case": "domain-2-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.01779815403278917
+  },
+  {
+    "case": "domain-2-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015062362013850361
+  },
+  {
+    "case": "domain-3-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C2)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.01688265602570027
+  },
+  {
+    "case": "domain-3-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.020629275997634977
+  },
+  {
+    "case": "domain-3-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.01592618803260848
+  },
+  {
+    "case": "domain-3-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.016693141020368785
+  },
+  {
+    "case": "domain-4-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.01627555798040703
+  },
+  {
+    "case": "domain-4-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.020006518985610455
+  },
+  {
+    "case": "domain-4-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.01627562800422311
+  },
+  {
+    "case": "domain-4-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.013930840010289103
+  },
+  {
+    "case": "domain-5-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C2)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.016415203048381954
+  },
+  {
+    "case": "domain-5-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C4)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.021212733001448214
+  },
+  {
+    "case": "domain-5-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.01567345001967624
+  },
+  {
+    "case": "domain-5-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.016540816985070705
+  },
+  {
+    "case": "domain-6-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C3)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.015620719990693033
+  },
+  {
+    "case": "domain-6-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.019989527005236596
+  },
+  {
+    "case": "domain-6-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015452993975486606
+  },
+  {
+    "case": "domain-6-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015490694961044937
+  },
+  {
+    "case": "domain-7-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C2)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.016215017007198185
+  },
+  {
+    "case": "domain-7-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.019821522990241647
+  },
+  {
+    "case": "domain-7-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015160676033701748
+  },
+  {
+    "case": "domain-7-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.016195245960261673
+  },
+  {
+    "case": "domain-8-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C5)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.014786393963731825
+  },
+  {
+    "case": "domain-8-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C1)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.021575513994321227
+  },
+  {
+    "case": "domain-8-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.016030471015255898
+  },
+  {
+    "case": "domain-8-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015616618969943374
+  },
+  {
+    "case": "domain-9-sat",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C3)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.015747983008623123
+  },
+  {
+    "case": "domain-9-sat",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C8)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.02056141395587474
+  },
+  {
+    "case": "domain-9-unsat",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015619509038515389
+  },
+  {
+    "case": "domain-9-unsat",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.01588958699721843
+  },
+  {
+    "case": "coupled",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C)\n (x (_ +zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.014928859018255025
+  },
+  {
+    "case": "coupled",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.022173731995280832
+  },
+  {
+    "case": "real-from-fp",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (fp #b0 #b011 #b000)))\n",
+    "stderr": "",
+    "seconds": 0.01588078698841855
+  },
+  {
+    "case": "real-from-fp",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (fp #b0 #b011 #b000)))\n",
+    "stderr": "",
+    "seconds": 0.01642551296390593
+  },
+  {
+    "case": "real-to-fp",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.01559992803959176
+  },
+  {
+    "case": "real-to-fp",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.0156545210047625
+  },
+  {
+    "case": "nan-self-eq",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.016182105988264084
+  },
+  {
+    "case": "nan-self-eq",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.021185322024393827
+  },
+  {
+    "case": "nan-negated",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015400923031847924
+  },
+  {
+    "case": "nan-negated",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015735791996121407
+  },
+  {
+    "case": "signed-zero",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ -zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.01741969201248139
+  },
+  {
+    "case": "signed-zero",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e C)\n (x (_ -zero 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.02025464497273788
+  },
+  {
+    "case": "rm",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (fp #b0 #b011 #b111)))\n",
+    "stderr": "",
+    "seconds": 0.01588030601851642
+  },
+  {
+    "case": "rm",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (fp #b0 #b011 #b111)))\n",
+    "stderr": "",
+    "seconds": 0.021600233973003924
+  },
+  {
+    "case": "rm-invalid",
+    "binary": "baseline",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.015083053964190185
+  },
+  {
+    "case": "rm-invalid",
+    "binary": "patched",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "",
+    "seconds": 0.02062502596527338
+  },
+  {
+    "case": "enum-ite-fallback",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.014574487984646112
+  },
+  {
+    "case": "enum-ite-fallback",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.020786810026038438
+  },
+  {
+    "case": "recognizer-fallback",
+    "binary": "baseline",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.014932619000319391
+  },
+  {
+    "case": "recognizer-fallback",
+    "binary": "patched",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n((original true)\n (e B)\n (x (_ NaN 3 4)))\n",
+    "stderr": "",
+    "seconds": 0.016189156041946262
+  }
+]

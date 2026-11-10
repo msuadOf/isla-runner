@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-11-03 21:37:30",
+  "group_a_baseline": {
+    "group": "Group_A_Baseline",
+    "exit_code": -9,
+    "timeout": true,
+    "wall_time": 60.068646179977804,
+    "first_path_time": 1.410938466899097,
+    "first_success_time": 9.141215002979152,
+    "total_paths": 179,
+    "success_paths": 56,
+    "page_fault_paths": 109,
+    "access_fault_paths": 14,
+    "other_paths": 0,
+    "z3": {
+      "calls": 89017,
+      "seconds": 46.32810788800007,
+      "max_seconds": 0.047087429,
+      "sat": 5765,
+      "unsat": 1010
+    }
+  },
+  "group_b_linearization": {
+    "group": "Group_B_Linearization",
+    "exit_code": -9,
+    "timeout": true,
+    "wall_time": 60.073654145002365,
+    "first_path_time": 1.5425206989748403,
+    "first_success_time": 16.962494810926728,
+    "total_paths": 105,
+    "success_paths": 8,
+    "page_fault_paths": 88,
+    "access_fault_paths": 9,
+    "other_paths": 0,
+    "z3": {
+      "calls": 36314,
+      "seconds": 23.668668757000308,
+      "max_seconds": 0.043401889,
+      "sat": 2904,
+      "unsat": 282
+    }
+  },
+  "group_c_cartesian": {
+    "group": "Linearization_Cartesian_PostProcessing",
+    "templates_used": 3,
+    "post_processing_seconds": 0.07035712199285626,
+    "avg_smt_ms": 0.45232644576268893,
+    "total_cases_generated": 36,
+    "valid_cases_verified": 36
+  }
+}

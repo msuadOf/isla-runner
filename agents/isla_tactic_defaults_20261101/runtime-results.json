@@ -1,0 +1,79 @@
+[
+  {
+    "name": "cli-default-no-tastic",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/target/debug/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/ir/rv64d_v128_e64.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--smt-timeout",
+      "7200",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "exit": 0,
+    "wall_s": 13.715887037978973,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zFLEQ_S"
+    },
+    "gen": 10,
+    "binary_sha256": "9ae1b1d600a92af6f6b6b00120f26b60ba4f1b53ff177220db02acce2a83e0f5",
+    "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+  },
+  {
+    "name": "make-clause-qffp",
+    "command": [
+      "make",
+      "--no-print-directory",
+      "-f",
+      "/data1/baiyifan/workplace/isla-runner/isla/scripts/run.mk",
+      "-o",
+      "build-isarch",
+      "solve-FLEQ_S",
+      "IR_FILE=/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/ir/rv64d_v128_e64.ir",
+      "ISA_CONFIG=/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml",
+      "THREADS=1",
+      "Z3_TIMEOUT_IMPL=direct",
+      "SMT_TIMEOUT=7200",
+      "SOLVE_TIMEOUT=7200",
+      "OUTER_TIMEOUT=7200"
+    ],
+    "exit": 0,
+    "wall_s": 15.727011060982477,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zFLEQ_S"
+    },
+    "gen": 10,
+    "binary_sha256": "9ae1b1d600a92af6f6b6b00120f26b60ba4f1b53ff177220db02acce2a83e0f5",
+    "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0"
+  }
+]

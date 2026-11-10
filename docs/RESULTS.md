@@ -1,5 +1,21 @@
 # RESULTS — 验证与历史证据索引
 
+## 2026-11-10 第二轮补跑规则验证（准备验证）
+
+按用户追加授权，主轮保持运行，新增独立等待脚本。环境错误按原 tactic 补跑一次，主轮 error 且含 `zext_decode 译码回环返回非具体值: Poison` 改 default 补跑一次，其他错误、partial、两小时超时不补跑。`/usr/bin/python3 -B -m unittest -v test_second_round.py` 在实验目录运行，5/5 通过，验证名单选择、双原因时 default 优先、第二轮结果优先、待补跑标注及主轮收尾门槛。没有额外启动 isarch，未获得第二轮功能或性能结论。
+
+冻结二进制源码与提交 daf61c04 一致的补记由 Claude 提供，README 已引用 binary-commit-note.json，不重编。第二轮运行状态和名单见 [专题状态](../agents/pathmerge_cache_all_clauses_20261110/status.md)。
+
+## 2026-11-10 路径合并与双格式缓存实测（冒烟有结论，全量运行中）
+
+冻结缓存工作树现有 release：feat/isarch-path-cache@a38c5e02 加未提交实现，原样复制到实验目录 bin/isarch；只读使用旧全量 rv64d.ir 和冻结的三份 ISA 配置。新范围严格限于用户提供的 221 项。实际参数为 `--path-merging -T 32 --timeout 120m --smt-timeout 1m --path-cache-write <dir> --path-cache-format both solve-state --clause=<name>`，外层 `timeout --signal=TERM --kill-after=10s 120m`，两路并发。命令、环境、配置和默认加载行为四项均核实无 execution limit 预算。
+
+ORCB：41.43s，1 条缓存路径，JSON 数据 577585 字节、bin 37715 字节，峰值 442052 KiB。RORI：5.04s，1 条缓存路径，JSON 数据 385227 字节、bin 30660 字节，峰值 324640 KiB。两项双格式文件、manifest、批次号和 JSON 实际条目数核对通过，sampled-paths=0。两项求解均因译码回环 Poison 退出错误，manifest 标 partial，正式 outcome 为 error；只有缓存写出检查通过，不是完整探索 PASS。无缓存读回认证结论。
+
+首次全量启动命令结束时隔离会话退出，FWVFTYPE、FWVTYPE 只有约 4 秒末次心跳，锁已释放。两项记为运行环境 error，退出码、峰值内存未知，不重试。随后保留持续工具会话承载 setsid nohup driver，继续其余项；已核实跨调用心跳更新和锁存活。全量结果待运行结束。无 Git 写操作，旧 126 项不重跑。
+
+[专题状态](../agents/pathmerge_cache_all_clauses_20261110/status.md)、[命令及记录口径](../.worktree/pathmerge-cache-all-20261110/README.md)、[冒烟数据](../.worktree/pathmerge-cache-all-20261110/smoke.json)、[逐项结果](../.worktree/pathmerge-cache-all-20261110/results.jsonl)、[实时进度](../.worktree/pathmerge-cache-all-20261110/progress.json)。
+
 ## 2026-11-03 Sv39 局部线性化与笛卡尔积后处理 A/B 对照实测（限定验证）
 
 在 `.worktree/mmu-symbolic-experiment/` 下建立三组端到端对照实验（执行器 `isla/.worktrees/memory-consistency/target/release/isarch`，单线程 `-T 1`，60秒硬时限，指令 `0x0000b103` `ld x2, 0(x1)`，全符号页表与 SMT Array 内存）。结果存入 `exp-ab-comparison/comparison_report.json`。
@@ -576,3 +592,8 @@ Isla `cf1aa14`、模型 `6202e23`：辅助编码仅保留指令字段原断言�
 候选Isla7885b24d，基线849900a6，官方Z3 1fd1d3613，离线8路构建。frame默认6通过、tracetool执行器498通过/5忽略、数组内存34通过，axiomatic类型检查和格式检查通过。新增读计数回归先复现路径串扰，修复后自定义区域和回调两种模式均通过。只读真实预检、隔离主线快进与重复执行通过；原仓主线尚未合入。未生成IR、未做make或端到端性能验收。[完整范围、命令与审查](../agents/cow_local_frame_20261109/report.md)、[结构化结果](../agents/cow_local_frame_20261109/verification.json)。
 
 MMU本轮仅归档和关停，无新增动态PASS。旧运行44393文件/169658699字节已清理，保留Markdown和处理后数据；历史计数和2026-11-05后处理结论修订均保留。[最终报告](../agents/mmu_symbolic_experiment/final-report.md)。
+
+
+## 2026-11-10 两个 Isla 分支合并前审查与修复
+
+基线 `daf61c04`；受测版本为 loop `9a6cd0ac`、quick `9a4f5c91` 各自加本轮未提交修复，链接用户指定 Z3 5.4.0。两树格式检查通过；loop 库839单元+53集成+3文档通过，quick 库814单元+53集成+3文档通过（rustdoc须同值RUSTDOCFLAGS）。顶层分别233/240通过，均有与修前相同的缺 `rv64d.ir` 七项失败；不得记为全量PASS。无新增失败，未跑 isarch 长时实测或合并树。问题、命令和失败清单见 [限定审查](../agents/isla_premerge_review_20261110/review.md)。

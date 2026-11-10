@@ -1,0 +1,1768 @@
+[
+  {
+    "version": "head",
+    "width": 128,
+    "clause": "MRET",
+    "count": 4,
+    "returns": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 814277273372256191,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10451216379200822465,
+        "pre_fields": 101,
+        "post_fields": 101
+      }
+    ]
+  },
+  {
+    "version": "head",
+    "width": 128,
+    "clause": "C_ADDI",
+    "count": 0,
+    "returns": {},
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": []
+  },
+  {
+    "version": "head",
+    "width": 128,
+    "clause": "ITYPE",
+    "count": 32,
+    "returns": {
+      "Retire_Success(())": 32
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'h0000_7f93",
+        "assembly": "andi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 166178811018644868,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_8013",
+        "assembly": "addi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_b013",
+        "assembly": "sltiu x0, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 940509589469629987,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_f013",
+        "assembly": "andi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1135984241079952499,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_2f93",
+        "assembly": "slti x31, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1693221581765226302,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h001f_a013",
+        "assembly": "slti x0, x31, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1712111902956349394,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_3f93",
+        "assembly": "sltiu x31, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1763698593814884307,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_8f93",
+        "assembly": "addi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_6013",
+        "assembly": "ori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2473873833893714794,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_4013",
+        "assembly": "xori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2639761772991731052,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_0f93",
+        "assembly": "addi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2752876776965356570,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_cf93",
+        "assembly": "xori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 3705594432398073476,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_bf93",
+        "assembly": "sltiu x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 4457916429368214525,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h8010_2f93",
+        "assembly": "slti x31, x0, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 4892282229934725152,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_ff93",
+        "assembly": "andi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5128205634053843242,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h001f_af93",
+        "assembly": "slti x31, x31, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 5483744575818107372,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_e013",
+        "assembly": "ori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5605716764813611352,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_0013",
+        "assembly": "addi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 6733685180589500961,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_b013",
+        "assembly": "sltiu x0, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 8589758195451349156,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_4f93",
+        "assembly": "xori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 8629274255115738460,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h801f_af93",
+        "assembly": "slti x31, x31, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 8914543099102115235,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_bf93",
+        "assembly": "sltiu x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 9673118912988820173,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_6f93",
+        "assembly": "ori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 11830546055577422772,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_ef93",
+        "assembly": "ori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 12220000464808863569,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h8010_2013",
+        "assembly": "slti x0, x0, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 12433771066292267786,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_3f93",
+        "assembly": "sltiu x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13480884164698204715,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_7013",
+        "assembly": "andi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13482322656499461310,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_3013",
+        "assembly": "sltiu x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13914965261820469487,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_2013",
+        "assembly": "slti x0, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 14297247726309276728,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h801f_a013",
+        "assembly": "slti x0, x31, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 15024317733161444484,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_3013",
+        "assembly": "sltiu x0, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 15251638768293668978,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_c013",
+        "assembly": "xori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 18265370769041432507,
+        "pre_fields": 101,
+        "post_fields": 101
+      }
+    ]
+  },
+  {
+    "version": "head",
+    "width": 128,
+    "clause": "SRET",
+    "count": 6,
+    "returns": {
+      "Retire_Success(())": 4,
+      "Illegal_Instruction(())": 2
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 390801918239454091,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 1142711600484381855,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 2351379190916918689,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 8357968215788014430,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10051126666406672375,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 16294208416658607535,
+        "pre_fields": 101,
+        "post_fields": 101
+      }
+    ]
+  },
+  {
+    "version": "head",
+    "width": 128,
+    "clause": "VSETIVLI",
+    "count": 0,
+    "returns": {},
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": []
+  },
+  {
+    "version": "head",
+    "width": 256,
+    "clause": "MRET",
+    "count": 4,
+    "returns": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 814277273372256191,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10451216379200822465,
+        "pre_fields": 101,
+        "post_fields": 101
+      }
+    ]
+  },
+  {
+    "version": "head",
+    "width": 256,
+    "clause": "C_ADDI",
+    "count": 0,
+    "returns": {},
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": []
+  },
+  {
+    "version": "head",
+    "width": 256,
+    "clause": "ITYPE",
+    "count": 32,
+    "returns": {
+      "Retire_Success(())": 32
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'h0000_7f93",
+        "assembly": "andi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 166178811018644868,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_8013",
+        "assembly": "addi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_b013",
+        "assembly": "sltiu x0, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 940509589469629987,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_f013",
+        "assembly": "andi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1135984241079952499,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_2f93",
+        "assembly": "slti x31, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1693221581765226302,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0019_2013",
+        "assembly": "slti x0, x18, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1712111902956349394,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_3f93",
+        "assembly": "sltiu x31, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1763698593814884307,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_8f93",
+        "assembly": "addi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_6013",
+        "assembly": "ori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2473873833893714794,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_4013",
+        "assembly": "xori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2639761772991731052,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_0f93",
+        "assembly": "addi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2752876776965356570,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_cf93",
+        "assembly": "xori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 3705594432398073476,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_bf93",
+        "assembly": "sltiu x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 4457916429368214525,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h8010_2f93",
+        "assembly": "slti x31, x0, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 4892282229934725152,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_ff93",
+        "assembly": "andi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5128205634053843242,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h001f_af93",
+        "assembly": "slti x31, x31, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 5483744575818107372,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_e013",
+        "assembly": "ori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5605716764813611352,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_0013",
+        "assembly": "addi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 6733685180589500961,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_b013",
+        "assembly": "sltiu x0, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 8589758195451349156,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_4f93",
+        "assembly": "xori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 8629274255115738460,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h801f_af93",
+        "assembly": "slti x31, x31, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 8914543099102115235,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h800f_bf93",
+        "assembly": "sltiu x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 9673118912988820173,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_6f93",
+        "assembly": "ori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 11830546055577422772,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_ef93",
+        "assembly": "ori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 12220000464808863569,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h8010_2013",
+        "assembly": "slti x0, x0, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 12433771066292267786,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_3f93",
+        "assembly": "sltiu x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13480884164698204715,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_7013",
+        "assembly": "andi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13482322656499461310,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0000_3013",
+        "assembly": "sltiu x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13914965261820469487,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_2013",
+        "assembly": "slti x0, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 14297247726309276728,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h801f_a013",
+        "assembly": "slti x0, x31, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 15024317733161444484,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h0010_3013",
+        "assembly": "sltiu x0, x0, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 15251638768293668978,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h000f_c013",
+        "assembly": "xori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 18265370769041432507,
+        "pre_fields": 101,
+        "post_fields": 101
+      }
+    ]
+  },
+  {
+    "version": "head",
+    "width": 256,
+    "clause": "SRET",
+    "count": 6,
+    "returns": {
+      "Retire_Success(())": 4,
+      "Illegal_Instruction(())": 2
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 390801918239454091,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 1142711600484381855,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 2351379190916918689,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 8357968215788014430,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10051126666406672375,
+        "pre_fields": 101,
+        "post_fields": 101
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 16294208416658607535,
+        "pre_fields": 101,
+        "post_fields": 101
+      }
+    ]
+  },
+  {
+    "version": "head",
+    "width": 256,
+    "clause": "VSETIVLI",
+    "count": 0,
+    "returns": {},
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": []
+  },
+  {
+    "version": "base",
+    "width": 128,
+    "clause": "MRET",
+    "count": 4,
+    "returns": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 814277273372256191,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10451216379200822465,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 17348748927508558622,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 128,
+    "clause": "C_ADDI",
+    "count": 0,
+    "returns": {},
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": []
+  },
+  {
+    "version": "base",
+    "width": 128,
+    "clause": "ITYPE",
+    "count": 32,
+    "returns": {
+      "Retire_Success(())": 32
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'h0000_7f93",
+        "assembly": "andi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 166178811018644868,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_8013",
+        "assembly": "addi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_b013",
+        "assembly": "sltiu x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 940509589469629987,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_f013",
+        "assembly": "andi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1135984241079952499,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h4000_2f93",
+        "assembly": "slti x31, x0, 0x400",
+        "result": "Retire_Success(())",
+        "signature": 1693221581765226302,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0012_2013",
+        "assembly": "slti x0, x4, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1712111902956349394,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h8000_3f93",
+        "assembly": "sltiu x31, x0, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 1763698593814884307,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_8f93",
+        "assembly": "addi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_6013",
+        "assembly": "ori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2473873833893714794,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_4013",
+        "assembly": "xori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2639761772991731052,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_0f93",
+        "assembly": "addi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2752876776965356570,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_cf93",
+        "assembly": "xori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 3705594432398073476,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h800f_bf93",
+        "assembly": "sltiu x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 4457916429368214525,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_2f93",
+        "assembly": "slti x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 4892282229934725152,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_ff93",
+        "assembly": "andi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5128205634053843242,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0014_2f93",
+        "assembly": "slti x31, x8, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 5483744575818107372,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_e013",
+        "assembly": "ori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5605716764813611352,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_0013",
+        "assembly": "addi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 6733685180589500961,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h800f_b013",
+        "assembly": "sltiu x0, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 8589758195451349156,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_4f93",
+        "assembly": "xori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 8629274255115738460,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h8010_af93",
+        "assembly": "slti x31, x1, -0x7ff",
+        "result": "Retire_Success(())",
+        "signature": 8914543099102115235,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_bf93",
+        "assembly": "sltiu x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 9673118912988820173,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_6f93",
+        "assembly": "ori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 11830546055577422772,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_ef93",
+        "assembly": "ori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 12220000464808863569,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_2013",
+        "assembly": "slti x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 12433771066292267786,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_3f93",
+        "assembly": "sltiu x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13480884164698204715,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_7013",
+        "assembly": "andi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13482322656499461310,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_3013",
+        "assembly": "sltiu x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13914965261820469487,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h4000_2013",
+        "assembly": "slti x0, x0, 0x400",
+        "result": "Retire_Success(())",
+        "signature": 14297247726309276728,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_a013",
+        "assembly": "slti x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 15024317733161444484,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h8000_3013",
+        "assembly": "sltiu x0, x0, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 15251638768293668978,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_c013",
+        "assembly": "xori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 18265370769041432507,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 128,
+    "clause": "SRET",
+    "count": 6,
+    "returns": {
+      "Retire_Success(())": 4,
+      "Illegal_Instruction(())": 2
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 390801918239454091,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 1142711600484381855,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 6429488743548902303,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10051126666406672375,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 12062320941893594105,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 16294208416658607535,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 128,
+    "clause": "VSETIVLI",
+    "count": 12,
+    "returns": {
+      "Retire_Success(())": 12
+    },
+    "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+    "items": [
+      {
+        "encoding": "32'hc230_7057",
+        "assembly": "vsetivli x0, 0x0, 0x23",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc040_7fd7",
+        "assembly": "vsetivli x31, 0x0, 0x4",
+        "result": "Retire_Success(())",
+        "signature": 1193741411402531359,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc230_7fd7",
+        "assembly": "vsetivli x31, 0x0, 0x23",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc0e1_f057",
+        "assembly": "vsetivli x0, 0x3, e16, mf4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 2537520565732405598,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc040_7057",
+        "assembly": "vsetivli x0, 0x0, 0x4",
+        "result": "Retire_Success(())",
+        "signature": 2988960624869992628,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc120_7057",
+        "assembly": "vsetivli x0, 0x0, e32, m4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 6672117053918287038,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc07c_7057",
+        "assembly": "vsetivli x0, 0x18, e8, mf2, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 10425144959524720486,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc160_7057",
+        "assembly": "vsetivli x0, 0x0, e32, mf4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 11283721914626432266,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc090_7fd7",
+        "assembly": "vsetivli x31, 0x0, e16, m2, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 12041149045941709759,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc1d0_7fd7",
+        "assembly": "vsetivli x31, 0x0, e64, mf8, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 12698696437574433904,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc175_ffd7",
+        "assembly": "vsetivli x31, 0xb, e32, mf2, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 14487874328847736978,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc051_ffd7",
+        "assembly": "vsetivli x31, 0x3, e8, mf8, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 17534167798943570667,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 256,
+    "clause": "MRET",
+    "count": 4,
+    "returns": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 814277273372256191,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10451216379200822465,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h3020_0073",
+        "assembly": "mret",
+        "result": "Retire_Success(())",
+        "signature": 17348748927508558622,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 256,
+    "clause": "C_ADDI",
+    "count": 0,
+    "returns": {},
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": []
+  },
+  {
+    "version": "base",
+    "width": 256,
+    "clause": "ITYPE",
+    "count": 32,
+    "returns": {
+      "Retire_Success(())": 32
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'h0000_7f93",
+        "assembly": "andi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 166178811018644868,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_8013",
+        "assembly": "addi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_b013",
+        "assembly": "sltiu x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 940509589469629987,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_f013",
+        "assembly": "andi x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1135984241079952499,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h4000_2f93",
+        "assembly": "slti x31, x0, 0x400",
+        "result": "Retire_Success(())",
+        "signature": 1693221581765226302,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0013_a013",
+        "assembly": "slti x0, x7, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 1712111902956349394,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h8000_3f93",
+        "assembly": "sltiu x31, x0, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 1763698593814884307,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_8f93",
+        "assembly": "addi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_6013",
+        "assembly": "ori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2473873833893714794,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_4013",
+        "assembly": "xori x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2639761772991731052,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_0f93",
+        "assembly": "addi x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 2752876776965356570,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_cf93",
+        "assembly": "xori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 3705594432398073476,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h800f_bf93",
+        "assembly": "sltiu x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 4457916429368214525,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_2f93",
+        "assembly": "slti x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 4892282229934725152,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_ff93",
+        "assembly": "andi x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5128205634053843242,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0010_af93",
+        "assembly": "slti x31, x1, 0x1",
+        "result": "Retire_Success(())",
+        "signature": 5483744575818107372,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_e013",
+        "assembly": "ori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 5605716764813611352,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_0013",
+        "assembly": "addi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 6733685180589500961,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h800f_b013",
+        "assembly": "sltiu x0, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 8589758195451349156,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_4f93",
+        "assembly": "xori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 8629274255115738460,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h800f_af93",
+        "assembly": "slti x31, x31, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 8914543099102115235,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_bf93",
+        "assembly": "sltiu x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 9673118912988820173,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_6f93",
+        "assembly": "ori x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 11830546055577422772,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_ef93",
+        "assembly": "ori x31, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 12220000464808863569,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_2013",
+        "assembly": "slti x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 12433771066292267786,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_3f93",
+        "assembly": "sltiu x31, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13480884164698204715,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_7013",
+        "assembly": "andi x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13482322656499461310,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h0000_3013",
+        "assembly": "sltiu x0, x0, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 13914965261820469487,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h4000_2013",
+        "assembly": "slti x0, x0, 0x400",
+        "result": "Retire_Success(())",
+        "signature": 14297247726309276728,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_a013",
+        "assembly": "slti x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 15024317733161444484,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h8000_3013",
+        "assembly": "sltiu x0, x0, -0x800",
+        "result": "Retire_Success(())",
+        "signature": 15251638768293668978,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h000f_c013",
+        "assembly": "xori x0, x31, 0x0",
+        "result": "Retire_Success(())",
+        "signature": 18265370769041432507,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 256,
+    "clause": "SRET",
+    "count": 6,
+    "returns": {
+      "Retire_Success(())": 4,
+      "Illegal_Instruction(())": 2
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 390801918239454091,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 1142711600484381855,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 6429488743548902303,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 10051126666406672375,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Retire_Success(())",
+        "signature": 12062320941893594105,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'h1020_0073",
+        "assembly": "sret",
+        "result": "Illegal_Instruction(())",
+        "signature": 16294208416658607535,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  },
+  {
+    "version": "base",
+    "width": 256,
+    "clause": "VSETIVLI",
+    "count": 12,
+    "returns": {
+      "Retire_Success(())": 12
+    },
+    "ir_sha256": "9692b6105e08dd32f362a7c4752b331441b41b0cfaf4108e833ef9476dd6608b",
+    "items": [
+      {
+        "encoding": "32'hc230_7057",
+        "assembly": "vsetivli x0, 0x0, 0x23",
+        "result": "Retire_Success(())",
+        "signature": 933929842286410705,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc040_7fd7",
+        "assembly": "vsetivli x31, 0x0, 0x4",
+        "result": "Retire_Success(())",
+        "signature": 1193741411402531359,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc230_7fd7",
+        "assembly": "vsetivli x31, 0x0, 0x23",
+        "result": "Retire_Success(())",
+        "signature": 1834545233706922361,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc065_f057",
+        "assembly": "vsetivli x0, 0xb, e8, mf4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 2537520565732405598,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc040_7057",
+        "assembly": "vsetivli x0, 0x0, 0x4",
+        "result": "Retire_Success(())",
+        "signature": 2988960624869992628,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc110_7057",
+        "assembly": "vsetivli x0, 0x0, e32, m2, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 6672117053918287038,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc06c_f057",
+        "assembly": "vsetivli x0, 0x19, e8, mf4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 10425144959524720486,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc0d0_7057",
+        "assembly": "vsetivli x0, 0x0, e16, mf8, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 11283721914626432266,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc1a0_7fd7",
+        "assembly": "vsetivli x31, 0x0, e64, m4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 12041149045941709759,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc160_7fd7",
+        "assembly": "vsetivli x31, 0x0, e32, mf4, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 12698696437574433904,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc05a_ffd7",
+        "assembly": "vsetivli x31, 0x15, e8, mf8, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 14487874328847736978,
+        "pre_fields": 0,
+        "post_fields": 0
+      },
+      {
+        "encoding": "32'hc052_ffd7",
+        "assembly": "vsetivli x31, 0x5, e8, mf8, tu, mu",
+        "result": "Retire_Success(())",
+        "signature": 17534167798943570667,
+        "pre_fields": 0,
+        "post_fields": 0
+      }
+    ]
+  }
+]

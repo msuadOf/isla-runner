@@ -1,0 +1,37 @@
+{
+  "ordinary-strict": {
+    "exit_code": 0,
+    "seconds": 548.4492709909682,
+    "source_unchanged": true,
+    "ir_sha256": null,
+    "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3"
+  },
+  "rv32d": {
+    "exit_code": 0,
+    "seconds": 1066.6911363059771,
+    "source_unchanged": true,
+    "ir_sha256": "4b28eca3954490e08eebd9c0974a8101f3fc34bb93174133ce776bc2e7d472c8",
+    "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3"
+  },
+  "rv64d_v128_e64": {
+    "exit_code": 0,
+    "seconds": 1065.825977438013,
+    "source_unchanged": true,
+    "ir_sha256": "23e37501a6036ba92e0b043c261fc8efa91feb3e3b5d77698f14d9a0c1cd6048",
+    "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3"
+  },
+  "rv64d_v256_e64": {
+    "exit_code": 0,
+    "seconds": 1104.6040522099938,
+    "source_unchanged": true,
+    "ir_sha256": "95223fc356812c60ce87b67f2aa0c40154152f32a127cba3d7ee6386e8b23eb4",
+    "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3"
+  },
+  "rv64d_v512_e64": {
+    "exit_code": 0,
+    "seconds": 1038.8675548220053,
+    "source_unchanged": true,
+    "ir_sha256": "b81b8a83f3758b7ef4e7d9e99ce37122a1207986e13c4913f172c201fbab6963",
+    "model_commit": "a9fd9476fc1bf471070a38e01ee9233d10d742d3"
+  }
+}

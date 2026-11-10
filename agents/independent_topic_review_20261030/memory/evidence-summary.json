@@ -1,0 +1,149 @@
+[
+  {
+    "probe": "amo-concrete-fixed",
+    "exit": 0,
+    "seconds": 1.2193890929920599,
+    "cases": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zAMO"
+    }
+  },
+  {
+    "probe": "amo-concrete-symbolic",
+    "exit": 0,
+    "seconds": 2.472995185002219,
+    "cases": 5,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zAMO"
+    }
+  },
+  {
+    "probe": "load-fixed",
+    "exit": 0,
+    "seconds": 1.871662522025872,
+    "cases": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    }
+  },
+  {
+    "probe": "sc-free-data",
+    "exit": 0,
+    "seconds": 1.6693645190098323,
+    "cases": 2,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zSTORECON"
+    }
+  },
+  {
+    "probe": "store-free-address",
+    "exit": 0,
+    "seconds": 6.131767809973098,
+    "cases": 3,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 1,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "partial",
+      "model-coverage": "not-measured",
+      "target-clause": "zSTORE"
+    }
+  },
+  {
+    "probe": "store-free-data",
+    "exit": 0,
+    "seconds": 1.5710897999815643,
+    "cases": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zSTORE"
+    }
+  },
+  {
+    "probe": "store-free-t1",
+    "exit": 0,
+    "seconds": 4.483288927003741,
+    "cases": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zSTORE"
+    }
+  }
+]

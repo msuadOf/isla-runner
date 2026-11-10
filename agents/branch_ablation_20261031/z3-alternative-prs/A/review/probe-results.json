@@ -1,0 +1,82 @@
+[
+  {
+    "case": "lambda-enum",
+    "solver": "base",
+    "exit": 0,
+    "seconds": 0.019298855040688068,
+    "stdout": "sat\n(\n  (define-fun x () E\n    B)\n)\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-enum",
+    "solver": "A",
+    "exit": 0,
+    "seconds": 0.03445374598959461,
+    "stdout": "sat\n(\n  (define-fun x () E\n    B)\n)\n",
+    "stderr": ""
+  },
+  {
+    "case": "quant-finite",
+    "solver": "base",
+    "exit": 0,
+    "seconds": 0.01899958704598248,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "quant-finite",
+    "solver": "A",
+    "exit": 0,
+    "seconds": 0.017263609042856842,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "quant-mixed",
+    "solver": "base",
+    "exit": 0,
+    "seconds": 0.027080011030193418,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "quant-mixed",
+    "solver": "A",
+    "exit": 0,
+    "seconds": 0.020799267978873104,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-unsat",
+    "solver": "base",
+    "exit": 0,
+    "seconds": 0.01588015101151541,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-unsat",
+    "solver": "A",
+    "exit": 0,
+    "seconds": 0.018406760005746037,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-nested",
+    "solver": "base",
+    "exit": 0,
+    "seconds": 0.016463466978166252,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-nested",
+    "solver": "A",
+    "exit": 0,
+    "seconds": 0.0166786530171521,
+    "stdout": "unsat\n",
+    "stderr": ""
+  }
+]

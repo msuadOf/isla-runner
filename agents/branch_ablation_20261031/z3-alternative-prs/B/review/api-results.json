@@ -1,0 +1,56 @@
+[
+  {
+    "mode": "plain",
+    "checks": [
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "model_assertions": [
+      "true",
+      "true",
+      "true"
+    ],
+    "proof_available": null,
+    "core_count": null,
+    "ok": true
+  },
+  {
+    "mode": "core",
+    "checks": [
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "model_assertions": [
+      "true",
+      "true",
+      "true"
+    ],
+    "proof_available": null,
+    "core_count": 1,
+    "ok": true
+  },
+  {
+    "mode": "proof",
+    "checks": [
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "model_assertions": [
+      "true",
+      "true",
+      "true"
+    ],
+    "proof_available": true,
+    "core_count": null,
+    "ok": true
+  }
+]

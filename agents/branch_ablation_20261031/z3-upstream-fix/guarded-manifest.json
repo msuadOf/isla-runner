@@ -1,0 +1,19 @@
+{
+  "upstream_base": "8fbb275aba0472e862e289c7af1331b3bd5d512c",
+  "branch": "fix/default-fp-enum-11500",
+  "version": "Z3 version 5.3.4 - 64 bit - build hashcode 8fbb275aba0472e862e289c7af1331b3bd5d512c",
+  "cmake_command": "cmake -S .tmp/z3-enum-fp-default -B .tmp/z3-enum-fp-default/build -G Ninja -DCMAKE_BUILD_TYPE=Release -DZ3_ENABLE_EXAMPLE_TARGETS=OFF -DZ3_BUILD_PYTHON_BINDINGS=OFF",
+  "build_command": "cmake --build .tmp/z3-enum-fp-default/build --target z3 test-z3 libz3 -j 24",
+  "hashes": {
+    "src/tactic/fpa/qffp_tactic.cpp": "8fd7ccc9a8cf5df3dec18920552d5c0bac7a9e651a34253d110279ae600467ef",
+    "src/tactic/fpa/qffp_tactic.h": "331e62990a7448906ab0a14c3d028ad80f39e27a84c122169749559a8882c0d0",
+    "src/tactic/portfolio/default_tactic.cpp": "6957befe0b33e03826b2737afccade8473e93776c7ae009506a858beabcb792f",
+    "src/test/fpa.cpp": "35fda6f639a8ece80f5feb9b6322c27296527a3de70f92c9ea463112c30831ee",
+    "build/z3": "99d27e45f13f1d805a3c416327e428d72dc3c151d742c8324f642e869af161c6",
+    "build/libz3.so": "699dae63d3b7d62a7bc931cd89afe983ed9846defe3625e4f73f96773f414326"
+  },
+  "patch_sha256": "3aa306680883e895370a69619093edeb59aa53a6aadd3ed53919f41c56399cd5",
+  "revision": "independently-reviewed-enum-model-cost-guard",
+  "review_snapshot": "independent-review/guarded-snapshot.json",
+  "enum_model_cost_limit": 4096
+}

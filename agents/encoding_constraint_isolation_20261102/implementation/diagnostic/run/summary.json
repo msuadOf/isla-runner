@@ -1,0 +1,74 @@
+{
+  "stages": {
+    "aux_jump_false": {
+      "completed": 1472,
+      "wall_total_s": 0.571744,
+      "wall_max_s": 0.000722,
+      "result_counts": {
+        "Sat": 1214,
+        "Unsat": 258
+      }
+    },
+    "aux_jump_true": {
+      "completed": 1472,
+      "wall_total_s": 0.793684,
+      "wall_max_s": 0.001487,
+      "result_counts": {
+        "Sat": 1428,
+        "Unsat": 44
+      }
+    },
+    "candidate_full_replay": {
+      "completed": 1281,
+      "wall_total_s": 9.56442,
+      "wall_max_s": 0.019305,
+      "result_counts": {}
+    },
+    "candidate_full_sat": {
+      "completed": 1280,
+      "wall_total_s": 89.68840900000001,
+      "wall_max_s": 3.490985,
+      "result_counts": {
+        "Sat": 211,
+        "Unsat": 1069
+      }
+    },
+    "final_model_sat": {
+      "completed": 70,
+      "wall_total_s": 31.739152999999998,
+      "wall_max_s": 4.257607,
+      "result_counts": {
+        "Sat": 70
+      }
+    },
+    "fs_vs_preference": {
+      "completed": 70,
+      "wall_total_s": 28.619139,
+      "wall_max_s": 3.24472,
+      "result_counts": {
+        "Sat": 70
+      }
+    },
+    "main_pre_sat": {
+      "completed": 44,
+      "wall_total_s": 38.078755,
+      "wall_max_s": 4.351004,
+      "result_counts": {
+        "Sat": 44
+      }
+    },
+    "output_full_replay": {
+      "completed": 70,
+      "wall_total_s": 0.401396,
+      "wall_max_s": 0.01734,
+      "result_counts": {}
+    }
+  },
+  "pending": [
+    {
+      "check": true,
+      "id": 4409,
+      "stage": "candidate_full_sat"
+    }
+  ]
+}

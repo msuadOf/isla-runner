@@ -1,0 +1,789 @@
+{
+  "topic": "accrue_fflags mstatus conditional update",
+  "variant_manifest_sha256": "954027ed5567899f90cb90160e9a3113a8ee068e576570fdf8e66c14696ffadb",
+  "ir_structure": {
+    "A": {
+      "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "function_sha256": "33d48fd82fd263d135445303d92892f1f12b82c593428ff45367ae73e12de996",
+      "function_lines": 93,
+      "eq_anything_calls": 1,
+      "neq_bits_calls": 0,
+      "jumps": 1,
+      "ite_calls": 0
+    },
+    "B": {
+      "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "function_sha256": "4d4f02e00fa4d2f50770206c22c7fdf1897ee6705410ddc528a1f52629969149",
+      "function_lines": 92,
+      "eq_anything_calls": 1,
+      "neq_bits_calls": 0,
+      "jumps": 2,
+      "ite_calls": 0
+    }
+  },
+  "workloads": {
+    "FLEQ_S": {
+      "clause": "FLEQ_S",
+      "ordered_labels": [
+        "warm_A",
+        "warm_B",
+        "r1_A",
+        "r1_B",
+        "r2_B",
+        "r2_A",
+        "r3_A",
+        "r3_B"
+      ],
+      "warmups": [
+        {
+          "clause": "FLEQ_S",
+          "variant": "A",
+          "label": "warm_A",
+          "command": [
+            "taskset",
+            "-c",
+            "40-43",
+            "timeout",
+            "-s",
+            "TERM",
+            "-k",
+            "2s",
+            "60s",
+            "/usr/bin/time",
+            "-f",
+            "%e,%U,%S,%M",
+            "-o",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/runs/FLEQ_S/warm_A/resources.csv",
+            "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+            "-A",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/A/ir/rv64d_flags_ite.ir",
+            "-C",
+            "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+            "-T",
+            "1",
+            "--timeout",
+            "30s",
+            "--smt-timeout",
+            "10s",
+            "--tastic",
+            "qfaufbv",
+            "solve-state",
+            "--clause=FLEQ_S"
+          ],
+          "cwd": "agents/branch_ablation_20261031/flags/runs/FLEQ_S/warm_A",
+          "exit": 0,
+          "wall_seconds": 4.421344,
+          "outer_timeout": false,
+          "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+          "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+          "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+          "fork_count": null,
+          "fork_count_reason": "isarch 的现有 JSON 不报告全局真实 fork 数；叶路径上的累计值不可相加",
+          "time_wall_seconds": 4.4,
+          "user_cpu_seconds": 3.9,
+          "system_cpu_seconds": 0.51,
+          "max_rss_kb": 232984,
+          "json_files": [
+            "output/rv64_zFLEQ_S.json"
+          ],
+          "summary": {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFLEQ_S"
+          },
+          "gen": 10,
+          "retire": 10,
+          "illegal": 0,
+          "other_ret_vals": [],
+          "witness": {
+            "flags_new": 0,
+            "flags_unchanged": 10,
+            "both_boxed": 4,
+            "one_unboxed": 4,
+            "both_unboxed": 2
+          },
+          "boxing_patterns": {
+            "boxed,boxed": 4,
+            "unboxed,boxed": 2,
+            "unboxed,unboxed": 2,
+            "boxed,unboxed": 2
+          }
+        },
+        {
+          "clause": "FLEQ_S",
+          "variant": "B",
+          "label": "warm_B",
+          "command": [
+            "taskset",
+            "-c",
+            "40-43",
+            "timeout",
+            "-s",
+            "TERM",
+            "-k",
+            "2s",
+            "60s",
+            "/usr/bin/time",
+            "-f",
+            "%e,%U,%S,%M",
+            "-o",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/runs/FLEQ_S/warm_B/resources.csv",
+            "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+            "-A",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/B/ir/rv64d_flags_if.ir",
+            "-C",
+            "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+            "-T",
+            "1",
+            "--timeout",
+            "30s",
+            "--smt-timeout",
+            "10s",
+            "--tastic",
+            "qfaufbv",
+            "solve-state",
+            "--clause=FLEQ_S"
+          ],
+          "cwd": "agents/branch_ablation_20261031/flags/runs/FLEQ_S/warm_B",
+          "exit": 0,
+          "wall_seconds": 6.324198,
+          "outer_timeout": false,
+          "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+          "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+          "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+          "fork_count": null,
+          "fork_count_reason": "isarch 的现有 JSON 不报告全局真实 fork 数；叶路径上的累计值不可相加",
+          "time_wall_seconds": 6.24,
+          "user_cpu_seconds": 5.55,
+          "system_cpu_seconds": 0.71,
+          "max_rss_kb": 233792,
+          "json_files": [
+            "output/rv64_zFLEQ_S.json"
+          ],
+          "summary": {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFLEQ_S"
+          },
+          "gen": 16,
+          "retire": 16,
+          "illegal": 0,
+          "other_ret_vals": [],
+          "witness": {
+            "flags_new": 6,
+            "flags_unchanged": 10,
+            "both_boxed": 6,
+            "one_unboxed": 8,
+            "both_unboxed": 2
+          },
+          "boxing_patterns": {
+            "boxed,unboxed": 4,
+            "boxed,boxed": 6,
+            "unboxed,unboxed": 2,
+            "unboxed,boxed": 4
+          }
+        }
+      ],
+      "arms": {
+        "A": {
+          "repeats": 3,
+          "exit_codes": [
+            0,
+            0,
+            0
+          ],
+          "outer_timeouts": 0,
+          "measurements": {
+            "wall_seconds": {
+              "median": 4.620991,
+              "min": 4.420737,
+              "max": 4.621409
+            },
+            "user_cpu_seconds": {
+              "median": 4.04,
+              "min": 3.81,
+              "max": 4.05
+            },
+            "system_cpu_seconds": {
+              "median": 0.51,
+              "min": 0.49,
+              "max": 0.52
+            },
+            "max_rss_kb": {
+              "median": 232924,
+              "min": 232780,
+              "max": 235612
+            }
+          },
+          "gen": [
+            10,
+            10,
+            10
+          ],
+          "retire": [
+            10,
+            10,
+            10
+          ],
+          "illegal": [
+            0,
+            0,
+            0
+          ],
+          "witness": [
+            {
+              "flags_new": 0,
+              "flags_unchanged": 10,
+              "both_boxed": 4,
+              "one_unboxed": 4,
+              "both_unboxed": 2
+            },
+            {
+              "flags_new": 0,
+              "flags_unchanged": 10,
+              "both_boxed": 4,
+              "one_unboxed": 4,
+              "both_unboxed": 2
+            },
+            {
+              "flags_new": 0,
+              "flags_unchanged": 10,
+              "both_boxed": 4,
+              "one_unboxed": 4,
+              "both_unboxed": 2
+            }
+          ],
+          "summary": [
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zFLEQ_S"
+            },
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zFLEQ_S"
+            },
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zFLEQ_S"
+            }
+          ],
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有全局真实fork总数输出，未启可靠计数日志；gen不能代替fork",
+          "raw_results": [
+            "agents/branch_ablation_20261031/flags/runs/FLEQ_S/r1_A/result.json",
+            "agents/branch_ablation_20261031/flags/runs/FLEQ_S/r2_A/result.json",
+            "agents/branch_ablation_20261031/flags/runs/FLEQ_S/r3_A/result.json"
+          ]
+        },
+        "B": {
+          "repeats": 3,
+          "exit_codes": [
+            0,
+            0,
+            0
+          ],
+          "outer_timeouts": 0,
+          "measurements": {
+            "wall_seconds": {
+              "median": 6.324118,
+              "min": 6.32383,
+              "max": 6.424051
+            },
+            "user_cpu_seconds": {
+              "median": 5.54,
+              "min": 5.53,
+              "max": 5.68
+            },
+            "system_cpu_seconds": {
+              "median": 0.74,
+              "min": 0.72,
+              "max": 0.77
+            },
+            "max_rss_kb": {
+              "median": 231880,
+              "min": 231016,
+              "max": 234652
+            }
+          },
+          "gen": [
+            16,
+            16,
+            16
+          ],
+          "retire": [
+            16,
+            16,
+            16
+          ],
+          "illegal": [
+            0,
+            0,
+            0
+          ],
+          "witness": [
+            {
+              "flags_new": 6,
+              "flags_unchanged": 10,
+              "both_boxed": 6,
+              "one_unboxed": 8,
+              "both_unboxed": 2
+            },
+            {
+              "flags_new": 6,
+              "flags_unchanged": 10,
+              "both_boxed": 6,
+              "one_unboxed": 8,
+              "both_unboxed": 2
+            },
+            {
+              "flags_new": 6,
+              "flags_unchanged": 10,
+              "both_boxed": 6,
+              "one_unboxed": 8,
+              "both_unboxed": 2
+            }
+          ],
+          "summary": [
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zFLEQ_S"
+            },
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zFLEQ_S"
+            },
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zFLEQ_S"
+            }
+          ],
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有全局真实fork总数输出，未启可靠计数日志；gen不能代替fork",
+          "raw_results": [
+            "agents/branch_ablation_20261031/flags/runs/FLEQ_S/r1_B/result.json",
+            "agents/branch_ablation_20261031/flags/runs/FLEQ_S/r2_B/result.json",
+            "agents/branch_ablation_20261031/flags/runs/FLEQ_S/r3_B/result.json"
+          ]
+        }
+      }
+    },
+    "F_BIN_RM_TYPE_S": {
+      "clause": "F_BIN_RM_TYPE_S",
+      "ordered_labels": [
+        "warm_A",
+        "warm_B",
+        "r1_A",
+        "r1_B",
+        "r2_B",
+        "r2_A",
+        "r3_A",
+        "r3_B"
+      ],
+      "warmups": [
+        {
+          "clause": "F_BIN_RM_TYPE_S",
+          "variant": "A",
+          "label": "warm_A",
+          "command": [
+            "taskset",
+            "-c",
+            "40-43",
+            "timeout",
+            "-s",
+            "TERM",
+            "-k",
+            "2s",
+            "60s",
+            "/usr/bin/time",
+            "-f",
+            "%e,%U,%S,%M",
+            "-o",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/warm_A/resources.csv",
+            "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+            "-A",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/A/ir/rv64d_flags_ite.ir",
+            "-C",
+            "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+            "-T",
+            "1",
+            "--timeout",
+            "30s",
+            "--smt-timeout",
+            "10s",
+            "--tastic",
+            "qfaufbv",
+            "solve-state",
+            "--clause=F_BIN_RM_TYPE_S"
+          ],
+          "cwd": "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/warm_A",
+          "exit": 0,
+          "wall_seconds": 53.092643,
+          "outer_timeout": false,
+          "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+          "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+          "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+          "fork_count": null,
+          "fork_count_reason": "isarch 的现有 JSON 不报告全局真实 fork 数；叶路径上的累计值不可相加",
+          "time_wall_seconds": 52.97,
+          "user_cpu_seconds": 49.23,
+          "system_cpu_seconds": 4.31,
+          "max_rss_kb": 267972,
+          "json_files": [
+            "output/rv64_zF_BIN_RM_TYPE_S.json"
+          ],
+          "summary": {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_RM_TYPE_S"
+          },
+          "gen": 208,
+          "retire": 160,
+          "illegal": 48,
+          "other_ret_vals": [],
+          "witness": {
+            "flags_new": 10,
+            "flags_unchanged": 150,
+            "both_boxed": 40,
+            "one_unboxed": 80,
+            "both_unboxed": 40
+          },
+          "boxing_patterns": {
+            "unboxed,unboxed": 40,
+            "boxed,unboxed": 40,
+            "unboxed,boxed": 40,
+            "boxed,boxed": 40
+          }
+        },
+        {
+          "clause": "F_BIN_RM_TYPE_S",
+          "variant": "B",
+          "label": "warm_B",
+          "command": [
+            "taskset",
+            "-c",
+            "40-43",
+            "timeout",
+            "-s",
+            "TERM",
+            "-k",
+            "2s",
+            "60s",
+            "/usr/bin/time",
+            "-f",
+            "%e,%U,%S,%M",
+            "-o",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/warm_B/resources.csv",
+            "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+            "-A",
+            "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/flags/B/ir/rv64d_flags_if.ir",
+            "-C",
+            "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+            "-T",
+            "1",
+            "--timeout",
+            "30s",
+            "--smt-timeout",
+            "10s",
+            "--tastic",
+            "qfaufbv",
+            "solve-state",
+            "--clause=F_BIN_RM_TYPE_S"
+          ],
+          "cwd": "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/warm_B",
+          "exit": 124,
+          "wall_seconds": 60.202477,
+          "outer_timeout": true,
+          "ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+          "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+          "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+          "fork_count": null,
+          "fork_count_reason": "isarch 的现有 JSON 不报告全局真实 fork 数；叶路径上的累计值不可相加",
+          "json_files": []
+        }
+      ],
+      "arms": {
+        "A": {
+          "repeats": 3,
+          "exit_codes": [
+            0,
+            0,
+            0
+          ],
+          "outer_timeouts": 0,
+          "measurements": {
+            "wall_seconds": {
+              "median": 52.2884,
+              "min": 51.886655,
+              "max": 53.58696
+            },
+            "user_cpu_seconds": {
+              "median": 48.52,
+              "min": 48.22,
+              "max": 49.81
+            },
+            "system_cpu_seconds": {
+              "median": 4.24,
+              "min": 4.11,
+              "max": 4.24
+            },
+            "max_rss_kb": {
+              "median": 269976,
+              "min": 267288,
+              "max": 270820
+            }
+          },
+          "gen": [
+            208,
+            208,
+            208
+          ],
+          "retire": [
+            160,
+            160,
+            160
+          ],
+          "illegal": [
+            48,
+            48,
+            48
+          ],
+          "witness": [
+            {
+              "flags_new": 10,
+              "flags_unchanged": 150,
+              "both_boxed": 40,
+              "one_unboxed": 80,
+              "both_unboxed": 40
+            },
+            {
+              "flags_new": 10,
+              "flags_unchanged": 150,
+              "both_boxed": 40,
+              "one_unboxed": 80,
+              "both_unboxed": 40
+            },
+            {
+              "flags_new": 10,
+              "flags_unchanged": 150,
+              "both_boxed": 40,
+              "one_unboxed": 80,
+              "both_unboxed": 40
+            }
+          ],
+          "summary": [
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zF_BIN_RM_TYPE_S"
+            },
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zF_BIN_RM_TYPE_S"
+            },
+            {
+              "sampled-paths": 0,
+              "errors": 0,
+              "execution-timeouts": 0,
+              "smt-timeouts": 0,
+              "unfinished-paths": 0,
+              "assertion-filtered-paths": 0,
+              "omitted-cases": 0,
+              "model-query-timeouts": 0,
+              "encoding-filtered-paths": 0,
+              "pending-batches": 0,
+              "status": "finished",
+              "model-coverage": "not-measured",
+              "target-clause": "zF_BIN_RM_TYPE_S"
+            }
+          ],
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有全局真实fork总数输出，未启可靠计数日志；gen不能代替fork",
+          "raw_results": [
+            "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/r1_A/result.json",
+            "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/r2_A/result.json",
+            "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/r3_A/result.json"
+          ]
+        },
+        "B": {
+          "repeats": 3,
+          "exit_codes": [
+            124,
+            124,
+            124
+          ],
+          "outer_timeouts": 3,
+          "measurements": {
+            "wall_seconds": {
+              "median": 60.195911,
+              "min": 60.195334,
+              "max": 60.197503
+            },
+            "user_cpu_seconds": null,
+            "system_cpu_seconds": null,
+            "max_rss_kb": null
+          },
+          "gen": [
+            null,
+            null,
+            null
+          ],
+          "retire": [
+            null,
+            null,
+            null
+          ],
+          "illegal": [
+            null,
+            null,
+            null
+          ],
+          "witness": [
+            null,
+            null,
+            null
+          ],
+          "summary": [
+            null,
+            null,
+            null
+          ],
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有全局真实fork总数输出，未启可靠计数日志；gen不能代替fork",
+          "raw_results": [
+            "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/r1_B/result.json",
+            "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/r2_B/result.json",
+            "agents/branch_ablation_20261031/flags/runs/F_BIN_RM_TYPE_S/r3_B/result.json"
+          ],
+          "smt_timeout_diagnostics_in_log": [
+            5,
+            5,
+            5
+          ],
+          "resource_missing_reason": "外层timeout杀死内层/usr/bin/time，resources.csv为空"
+        }
+      }
+    }
+  },
+  "finding": "完整FLEQ_S中显式if多6条新flags见证；真实标量算术中ITE三次完成、if三次外限超时；不可算等覆盖加速倍数",
+  "classification": "完整Clause预算收益伴随默认见证覆盖代价",
+  "eq_anything_query_avoidance": "not_measured; both arms retain identical eq_anything condition",
+  "resource_limit": "F_BIN_RM_TYPE_S B外限杀死内部time包装，CPU/RSS缺失",
+  "state_note": "FLEQ_S不写FPR，flags新增时SD 0→1可归于accrue_fflags；F_BIN_RM_TYPE_S写FPR，flags不变时SD仍会因FPR写回变1，不能用其最终SD归因flags条件。两者初始FS=Dirty、SD=0、FFLAGS=0。"
+}

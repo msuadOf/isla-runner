@@ -1,0 +1,6957 @@
+[
+  {
+    "name": "control3",
+    "phases": [
+      {
+        "stage": "main_finished_begin",
+        "begin": 535159.07,
+        "end": 535159.07,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535159.07,
+        "end": 535212.65,
+        "elapsed": 53.58,
+        "queries": 1,
+        "query_seconds": 53.579,
+        "ids": [
+          48
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535212.65,
+        "end": 535212.71,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 535212.71,
+        "end": 535213.0,
+        "elapsed": 0.29,
+        "queries": 7,
+        "query_seconds": 0.124,
+        "ids": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 535213.0,
+        "end": 535213.0,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 535213.0,
+        "end": 535453.32,
+        "elapsed": 240.32,
+        "queries": 7,
+        "query_seconds": 239.972,
+        "ids": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 535453.32,
+        "end": 535453.32,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 535453.32,
+        "end": 535455.73,
+        "elapsed": 2.41,
+        "queries": 43,
+        "query_seconds": 2.244,
+        "ids": [
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535455.73,
+        "end": 535455.73,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535455.73,
+        "end": 535455.8,
+        "elapsed": 0.07,
+        "queries": 1,
+        "query_seconds": 0.077,
+        "ids": [
+          106
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535455.8,
+        "end": 535455.85,
+        "elapsed": 0.05,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 535455.85,
+        "end": 535456.26,
+        "elapsed": 0.41,
+        "queries": 7,
+        "query_seconds": 0.228,
+        "ids": [
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 535456.26,
+        "end": 535456.26,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 535456.26,
+        "end": 535457.01,
+        "elapsed": 0.75,
+        "queries": 7,
+        "query_seconds": 0.589,
+        "ids": [
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 535457.01,
+        "end": 535457.01,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 535457.01,
+        "end": 535459.38,
+        "elapsed": 2.37,
+        "queries": 39,
+        "query_seconds": 2.275,
+        "ids": [
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535459.38,
+        "end": 535459.38,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535459.38,
+        "end": 535459.47,
+        "elapsed": 0.09,
+        "queries": 1,
+        "query_seconds": 0.084,
+        "ids": [
+          160
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535459.47,
+        "end": 535459.5,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 535459.5,
+        "end": 535459.77,
+        "elapsed": 0.27,
+        "queries": 7,
+        "query_seconds": 0.136,
+        "ids": [
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 535459.77,
+        "end": 535459.77,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 535459.77,
+        "end": 535460.28,
+        "elapsed": 0.51,
+        "queries": 7,
+        "query_seconds": 0.413,
+        "ids": [
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 535460.28,
+        "end": 535460.28,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 535460.28,
+        "end": 535545.71,
+        "elapsed": 85.43,
+        "queries": 18,
+        "query_seconds": 85.366,
+        "ids": [
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535545.71,
+        "end": 535545.72,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535545.72,
+        "end": 535610.64,
+        "elapsed": 64.92,
+        "queries": 1,
+        "query_seconds": 64.926,
+        "ids": [
+          193
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535610.64,
+        "end": 535610.7,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 535610.7,
+        "end": 535611.11,
+        "elapsed": 0.41,
+        "queries": 7,
+        "query_seconds": 0.146,
+        "ids": [
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 535611.11,
+        "end": 535611.11,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 535611.11,
+        "end": 536120.26,
+        "elapsed": 509.15,
+        "queries": 7,
+        "query_seconds": 508.608,
+        "ids": [
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536120.26,
+        "end": 536120.26,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536120.26,
+        "end": 536120.42,
+        "elapsed": 0.16,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536120.42,
+        "end": 536120.42,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536120.42,
+        "end": 536120.54,
+        "elapsed": 0.12,
+        "queries": 1,
+        "query_seconds": 0.121,
+        "ids": [
+          208
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536120.54,
+        "end": 536120.59,
+        "elapsed": 0.05,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 536120.59,
+        "end": 536121.1,
+        "elapsed": 0.51,
+        "queries": 7,
+        "query_seconds": 0.32,
+        "ids": [
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 536121.1,
+        "end": 536121.1,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536121.1,
+        "end": 536121.88,
+        "elapsed": 0.78,
+        "queries": 7,
+        "query_seconds": 0.608,
+        "ids": [
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536121.88,
+        "end": 536121.88,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536121.88,
+        "end": 536121.94,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536121.94,
+        "end": 536121.94,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536121.94,
+        "end": 536122.0,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.054,
+        "ids": [
+          223
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536122.0,
+        "end": 536122.03,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 536122.03,
+        "end": 536122.32,
+        "elapsed": 0.29,
+        "queries": 7,
+        "query_seconds": 0.169,
+        "ids": [
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 536122.32,
+        "end": 536122.32,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536122.32,
+        "end": 536122.86,
+        "elapsed": 0.54,
+        "queries": 7,
+        "query_seconds": 0.411,
+        "ids": [
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536122.86,
+        "end": 536122.86,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536122.86,
+        "end": 536122.92,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536122.92,
+        "end": 536122.92,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536122.92,
+        "end": 536122.98,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.059,
+        "ids": [
+          238
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536122.98,
+        "end": 536123.0,
+        "elapsed": 0.02,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 536123.0,
+        "end": 536123.23,
+        "elapsed": 0.23,
+        "queries": 7,
+        "query_seconds": 0.13,
+        "ids": [
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 536123.23,
+        "end": 536123.23,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536123.23,
+        "end": 536123.71,
+        "elapsed": 0.48,
+        "queries": 7,
+        "query_seconds": 0.368,
+        "ids": [
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536123.71,
+        "end": 536123.72,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536123.72,
+        "end": 536305.5,
+        "elapsed": 181.78,
+        "queries": 8,
+        "query_seconds": 181.645,
+        "ids": [
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536305.5,
+        "end": 536305.5,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536305.5,
+        "end": 536399.01,
+        "elapsed": 93.51,
+        "queries": 1,
+        "query_seconds": 93.51,
+        "ids": [
+          261
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536399.01,
+        "end": 536399.14,
+        "elapsed": 0.13,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 536399.14,
+        "end": 536399.85,
+        "elapsed": 0.71,
+        "queries": 7,
+        "query_seconds": 0.306,
+        "ids": [
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 536399.85,
+        "end": 536399.85,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536399.85,
+        "end": 536771.21,
+        "elapsed": 371.36,
+        "queries": 7,
+        "query_seconds": 370.998,
+        "ids": [
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536771.21,
+        "end": 536771.22,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536771.22,
+        "end": 536853.18,
+        "elapsed": 81.96,
+        "queries": 8,
+        "query_seconds": 81.78,
+        "ids": [
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536853.18,
+        "end": 536853.18,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536853.18,
+        "end": 536886.42,
+        "elapsed": 33.24,
+        "queries": 1,
+        "query_seconds": 33.235,
+        "ids": [
+          284
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536886.42,
+        "end": 536886.48,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_begin",
+        "begin": 536886.48,
+        "end": 536886.73,
+        "elapsed": 0.25,
+        "queries": 6,
+        "query_seconds": 0.049,
+        "ids": [
+          285,
+          286,
+          287,
+          288,
+          289,
+          290
+        ]
+      },
+      {
+        "stage": "control_fresh_context_end",
+        "begin": 536886.73,
+        "end": 536886.73,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      }
+    ]
+  },
+  {
+    "name": "fresh3",
+    "phases": [
+      {
+        "stage": "main_finished_begin",
+        "begin": 535697.66,
+        "end": 535697.66,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535697.66,
+        "end": 535763.85,
+        "elapsed": 66.19,
+        "queries": 1,
+        "query_seconds": 66.194,
+        "ids": [
+          48
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535763.85,
+        "end": 535763.93,
+        "elapsed": 0.08,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535763.93,
+        "end": 535764.44,
+        "elapsed": 0.51,
+        "queries": 7,
+        "query_seconds": 0.237,
+        "ids": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535764.44,
+        "end": 535764.44,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535764.44,
+        "end": 535765.05,
+        "elapsed": 0.61,
+        "queries": 7,
+        "query_seconds": 0.283,
+        "ids": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535765.05,
+        "end": 535765.05,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535765.05,
+        "end": 535765.68,
+        "elapsed": 0.63,
+        "queries": 7,
+        "query_seconds": 0.286,
+        "ids": [
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535765.68,
+        "end": 535765.69,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535765.69,
+        "end": 535769.98,
+        "elapsed": 4.29,
+        "queries": 43,
+        "query_seconds": 4.063,
+        "ids": [
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535769.98,
+        "end": 535769.98,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535769.98,
+        "end": 535770.09,
+        "elapsed": 0.11,
+        "queries": 1,
+        "query_seconds": 0.107,
+        "ids": [
+          113
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535770.09,
+        "end": 535770.17,
+        "elapsed": 0.08,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535770.17,
+        "end": 535770.77,
+        "elapsed": 0.6,
+        "queries": 7,
+        "query_seconds": 0.341,
+        "ids": [
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535770.77,
+        "end": 535770.77,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535770.77,
+        "end": 535771.29,
+        "elapsed": 0.52,
+        "queries": 7,
+        "query_seconds": 0.323,
+        "ids": [
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535771.29,
+        "end": 535771.29,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535771.29,
+        "end": 535771.64,
+        "elapsed": 0.35,
+        "queries": 7,
+        "query_seconds": 0.189,
+        "ids": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535771.64,
+        "end": 535771.64,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535771.64,
+        "end": 535773.35,
+        "elapsed": 1.71,
+        "queries": 39,
+        "query_seconds": 1.586,
+        "ids": [
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535773.35,
+        "end": 535773.35,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535773.35,
+        "end": 535773.38,
+        "elapsed": 0.03,
+        "queries": 1,
+        "query_seconds": 0.037,
+        "ids": [
+          174
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535773.38,
+        "end": 535773.42,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535773.42,
+        "end": 535773.7,
+        "elapsed": 0.28,
+        "queries": 7,
+        "query_seconds": 0.108,
+        "ids": [
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535773.7,
+        "end": 535773.7,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535773.7,
+        "end": 535774.11,
+        "elapsed": 0.41,
+        "queries": 7,
+        "query_seconds": 0.219,
+        "ids": [
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535774.11,
+        "end": 535774.11,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535774.11,
+        "end": 535774.33,
+        "elapsed": 0.22,
+        "queries": 7,
+        "query_seconds": 0.099,
+        "ids": [
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535774.33,
+        "end": 535774.33,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535774.33,
+        "end": 535920.06,
+        "elapsed": 145.73,
+        "queries": 18,
+        "query_seconds": 145.617,
+        "ids": [
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535920.06,
+        "end": 535920.06,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535920.06,
+        "end": 535989.4,
+        "elapsed": 69.34,
+        "queries": 1,
+        "query_seconds": 69.334,
+        "ids": [
+          214
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535989.4,
+        "end": 535989.49,
+        "elapsed": 0.09,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535989.49,
+        "end": 535989.93,
+        "elapsed": 0.44,
+        "queries": 7,
+        "query_seconds": 0.15,
+        "ids": [
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535989.93,
+        "end": 535989.93,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535989.93,
+        "end": 535990.35,
+        "elapsed": 0.42,
+        "queries": 7,
+        "query_seconds": 0.174,
+        "ids": [
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535990.35,
+        "end": 535990.35,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535990.35,
+        "end": 535990.77,
+        "elapsed": 0.42,
+        "queries": 7,
+        "query_seconds": 0.154,
+        "ids": [
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535990.77,
+        "end": 535990.78,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535990.78,
+        "end": 535990.98,
+        "elapsed": 0.2,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535990.98,
+        "end": 535990.98,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535990.98,
+        "end": 535991.09,
+        "elapsed": 0.11,
+        "queries": 1,
+        "query_seconds": 0.108,
+        "ids": [
+          236
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535991.09,
+        "end": 535991.15,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535991.15,
+        "end": 535991.54,
+        "elapsed": 0.39,
+        "queries": 7,
+        "query_seconds": 0.19,
+        "ids": [
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535991.54,
+        "end": 535991.54,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535991.54,
+        "end": 535991.89,
+        "elapsed": 0.35,
+        "queries": 7,
+        "query_seconds": 0.208,
+        "ids": [
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535991.89,
+        "end": 535991.89,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535991.89,
+        "end": 535992.2,
+        "elapsed": 0.31,
+        "queries": 7,
+        "query_seconds": 0.163,
+        "ids": [
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535992.2,
+        "end": 535992.2,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535992.2,
+        "end": 535992.26,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535992.26,
+        "end": 535992.26,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535992.26,
+        "end": 535992.32,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.06,
+        "ids": [
+          258
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535992.32,
+        "end": 535992.34,
+        "elapsed": 0.02,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535992.34,
+        "end": 535992.63,
+        "elapsed": 0.29,
+        "queries": 7,
+        "query_seconds": 0.16,
+        "ids": [
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535992.63,
+        "end": 535992.63,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535992.63,
+        "end": 535992.88,
+        "elapsed": 0.25,
+        "queries": 7,
+        "query_seconds": 0.135,
+        "ids": [
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535992.88,
+        "end": 535992.88,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535992.88,
+        "end": 535993.15,
+        "elapsed": 0.27,
+        "queries": 7,
+        "query_seconds": 0.145,
+        "ids": [
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535993.15,
+        "end": 535993.15,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535993.15,
+        "end": 535993.21,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 535993.21,
+        "end": 535993.21,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 535993.21,
+        "end": 535993.32,
+        "elapsed": 0.11,
+        "queries": 1,
+        "query_seconds": 0.107,
+        "ids": [
+          280
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 535993.32,
+        "end": 535993.37,
+        "elapsed": 0.05,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 535993.37,
+        "end": 535993.88,
+        "elapsed": 0.51,
+        "queries": 7,
+        "query_seconds": 0.296,
+        "ids": [
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 535993.88,
+        "end": 535993.88,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 535993.88,
+        "end": 535994.4,
+        "elapsed": 0.52,
+        "queries": 7,
+        "query_seconds": 0.313,
+        "ids": [
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 535994.4,
+        "end": 535994.4,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 535994.4,
+        "end": 535994.92,
+        "elapsed": 0.52,
+        "queries": 7,
+        "query_seconds": 0.329,
+        "ids": [
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 535994.92,
+        "end": 535994.93,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 535994.93,
+        "end": 536153.83,
+        "elapsed": 158.9,
+        "queries": 8,
+        "query_seconds": 158.746,
+        "ids": [
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536153.83,
+        "end": 536153.83,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536153.83,
+        "end": 536241.1,
+        "elapsed": 87.27,
+        "queries": 1,
+        "query_seconds": 87.275,
+        "ids": [
+          310
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536241.1,
+        "end": 536241.22,
+        "elapsed": 0.12,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536241.22,
+        "end": 536241.96,
+        "elapsed": 0.74,
+        "queries": 7,
+        "query_seconds": 0.319,
+        "ids": [
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536241.96,
+        "end": 536241.96,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536241.96,
+        "end": 536242.71,
+        "elapsed": 0.75,
+        "queries": 7,
+        "query_seconds": 0.355,
+        "ids": [
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536242.71,
+        "end": 536242.71,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536242.71,
+        "end": 536243.44,
+        "elapsed": 0.73,
+        "queries": 7,
+        "query_seconds": 0.356,
+        "ids": [
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536243.44,
+        "end": 536243.44,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536243.44,
+        "end": 536526.21,
+        "elapsed": 282.77,
+        "queries": 8,
+        "query_seconds": 282.543,
+        "ids": [
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536526.21,
+        "end": 536526.21,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536526.21,
+        "end": 536586.88,
+        "elapsed": 60.67,
+        "queries": 1,
+        "query_seconds": 60.669,
+        "ids": [
+          340
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536586.88,
+        "end": 536586.94,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536586.94,
+        "end": 536587.18,
+        "elapsed": 0.24,
+        "queries": 7,
+        "query_seconds": 0.05,
+        "ids": [
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536587.18,
+        "end": 536587.18,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536587.18,
+        "end": 536587.41,
+        "elapsed": 0.23,
+        "queries": 7,
+        "query_seconds": 0.059,
+        "ids": [
+          348,
+          349,
+          350,
+          351,
+          352,
+          353,
+          354
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536587.41,
+        "end": 536587.41,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536587.41,
+        "end": 536587.63,
+        "elapsed": 0.22,
+        "queries": 7,
+        "query_seconds": 0.057,
+        "ids": [
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536587.63,
+        "end": 536587.63,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536587.63,
+        "end": 536656.04,
+        "elapsed": 68.41,
+        "queries": 8,
+        "query_seconds": 68.286,
+        "ids": [
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536656.04,
+        "end": 536656.04,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536656.04,
+        "end": 536684.95,
+        "elapsed": 28.91,
+        "queries": 1,
+        "query_seconds": 28.905,
+        "ids": [
+          370
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536684.95,
+        "end": 536685.01,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536685.01,
+        "end": 536685.26,
+        "elapsed": 0.25,
+        "queries": 7,
+        "query_seconds": 0.07,
+        "ids": [
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536685.26,
+        "end": 536685.26,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536685.26,
+        "end": 536685.49,
+        "elapsed": 0.23,
+        "queries": 7,
+        "query_seconds": 0.048,
+        "ids": [
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536685.49,
+        "end": 536685.49,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536685.49,
+        "end": 536685.71,
+        "elapsed": 0.22,
+        "queries": 7,
+        "query_seconds": 0.058,
+        "ids": [
+          385,
+          386,
+          387,
+          388,
+          389,
+          390,
+          391
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536685.71,
+        "end": 536685.71,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536685.71,
+        "end": 536749.0,
+        "elapsed": 63.29,
+        "queries": 8,
+        "query_seconds": 63.184,
+        "ids": [
+          392,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536749.0,
+        "end": 536749.0,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536749.0,
+        "end": 536781.37,
+        "elapsed": 32.37,
+        "queries": 1,
+        "query_seconds": 32.37,
+        "ids": [
+          400
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536781.37,
+        "end": 536781.44,
+        "elapsed": 0.07,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536781.44,
+        "end": 536781.68,
+        "elapsed": 0.24,
+        "queries": 7,
+        "query_seconds": 0.055,
+        "ids": [
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536781.68,
+        "end": 536781.68,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536781.68,
+        "end": 536781.91,
+        "elapsed": 0.23,
+        "queries": 7,
+        "query_seconds": 0.05,
+        "ids": [
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          414
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536781.91,
+        "end": 536781.91,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536781.91,
+        "end": 536782.13,
+        "elapsed": 0.22,
+        "queries": 6,
+        "query_seconds": 0.05,
+        "ids": [
+          415,
+          416,
+          417,
+          418,
+          419,
+          420
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536782.13,
+        "end": 536782.13,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536782.13,
+        "end": 536784.52,
+        "elapsed": 2.39,
+        "queries": 3,
+        "query_seconds": 2.301,
+        "ids": [
+          421,
+          422,
+          423
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536784.52,
+        "end": 536784.52,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536784.52,
+        "end": 536786.47,
+        "elapsed": 1.95,
+        "queries": 1,
+        "query_seconds": 1.942,
+        "ids": [
+          424
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536786.47,
+        "end": 536786.53,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536786.53,
+        "end": 536786.76,
+        "elapsed": 0.23,
+        "queries": 6,
+        "query_seconds": 0.052,
+        "ids": [
+          425,
+          426,
+          427,
+          428,
+          429,
+          430
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536786.76,
+        "end": 536786.76,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536786.76,
+        "end": 536786.95,
+        "elapsed": 0.19,
+        "queries": 7,
+        "query_seconds": 0.033,
+        "ids": [
+          431,
+          432,
+          433,
+          434,
+          435,
+          436,
+          437
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536786.95,
+        "end": 536786.95,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536786.95,
+        "end": 536787.15,
+        "elapsed": 0.2,
+        "queries": 7,
+        "query_seconds": 0.053,
+        "ids": [
+          438,
+          439,
+          440,
+          441,
+          442,
+          443,
+          444
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536787.15,
+        "end": 536787.15,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536787.15,
+        "end": 536790.59,
+        "elapsed": 3.44,
+        "queries": 3,
+        "query_seconds": 3.379,
+        "ids": [
+          445,
+          446,
+          447
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536790.59,
+        "end": 536790.59,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536790.59,
+        "end": 536792.27,
+        "elapsed": 1.68,
+        "queries": 1,
+        "query_seconds": 1.68,
+        "ids": [
+          448
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536792.27,
+        "end": 536792.32,
+        "elapsed": 0.05,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536792.32,
+        "end": 536792.51,
+        "elapsed": 0.19,
+        "queries": 6,
+        "query_seconds": 0.04,
+        "ids": [
+          449,
+          450,
+          451,
+          452,
+          453,
+          454
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536792.51,
+        "end": 536792.51,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536792.51,
+        "end": 536792.71,
+        "elapsed": 0.2,
+        "queries": 8,
+        "query_seconds": 0.062,
+        "ids": [
+          455,
+          456,
+          457,
+          458,
+          459,
+          460,
+          461,
+          462
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536792.71,
+        "end": 536792.71,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536792.71,
+        "end": 536792.9,
+        "elapsed": 0.19,
+        "queries": 7,
+        "query_seconds": 0.045,
+        "ids": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536792.9,
+        "end": 536792.9,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536792.9,
+        "end": 536803.79,
+        "elapsed": 10.89,
+        "queries": 2,
+        "query_seconds": 10.822,
+        "ids": [
+          470,
+          471
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536803.79,
+        "end": 536803.79,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536803.79,
+        "end": 536820.42,
+        "elapsed": 16.63,
+        "queries": 1,
+        "query_seconds": 16.631,
+        "ids": [
+          472
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536820.42,
+        "end": 536820.47,
+        "elapsed": 0.05,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536820.47,
+        "end": 536820.69,
+        "elapsed": 0.22,
+        "queries": 7,
+        "query_seconds": 0.065,
+        "ids": [
+          473,
+          474,
+          475,
+          476,
+          477,
+          478,
+          479
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536820.69,
+        "end": 536820.69,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536820.69,
+        "end": 536820.87,
+        "elapsed": 0.18,
+        "queries": 6,
+        "query_seconds": 0.038,
+        "ids": [
+          480,
+          481,
+          482,
+          483,
+          484,
+          485
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536820.87,
+        "end": 536820.87,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536820.87,
+        "end": 536821.07,
+        "elapsed": 0.2,
+        "queries": 8,
+        "query_seconds": 0.062,
+        "ids": [
+          486,
+          487,
+          488,
+          489,
+          490,
+          491,
+          492,
+          493
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536821.07,
+        "end": 536821.08,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536821.08,
+        "end": 536821.16,
+        "elapsed": 0.08,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536821.16,
+        "end": 536821.16,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536821.16,
+        "end": 536939.41,
+        "elapsed": 118.25,
+        "queries": 1,
+        "query_seconds": 118.256,
+        "ids": [
+          494
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536939.41,
+        "end": 536939.49,
+        "elapsed": 0.08,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536939.49,
+        "end": 536939.75,
+        "elapsed": 0.26,
+        "queries": 7,
+        "query_seconds": 0.05,
+        "ids": [
+          495,
+          496,
+          497,
+          498,
+          499,
+          500,
+          501
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536939.75,
+        "end": 536939.75,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536939.75,
+        "end": 536940.06,
+        "elapsed": 0.31,
+        "queries": 7,
+        "query_seconds": 0.08,
+        "ids": [
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536940.06,
+        "end": 536940.06,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536940.06,
+        "end": 536940.29,
+        "elapsed": 0.23,
+        "queries": 6,
+        "query_seconds": 0.037,
+        "ids": [
+          509,
+          510,
+          511,
+          512,
+          513,
+          514
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536940.29,
+        "end": 536940.3,
+        "elapsed": 0.01,
+        "queries": 1,
+        "query_seconds": 0.003,
+        "ids": [
+          515
+        ]
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536940.3,
+        "end": 536942.0,
+        "elapsed": 1.7,
+        "queries": 39,
+        "query_seconds": 1.544,
+        "ids": [
+          516,
+          517,
+          518,
+          519,
+          520,
+          521,
+          522,
+          523,
+          524,
+          525,
+          526,
+          527,
+          528,
+          529,
+          530,
+          531,
+          532,
+          533,
+          534,
+          535,
+          536,
+          537,
+          538,
+          539,
+          540,
+          541,
+          542,
+          543,
+          544,
+          545,
+          546,
+          547,
+          548,
+          549,
+          550,
+          551,
+          552,
+          553,
+          554
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536942.0,
+        "end": 536942.0,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536942.0,
+        "end": 536942.05,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.049,
+        "ids": [
+          555
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536942.05,
+        "end": 536942.08,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536942.08,
+        "end": 536942.22,
+        "elapsed": 0.14,
+        "queries": 6,
+        "query_seconds": 0.048,
+        "ids": [
+          556,
+          557,
+          558,
+          559,
+          560,
+          561
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536942.22,
+        "end": 536942.22,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536942.22,
+        "end": 536942.33,
+        "elapsed": 0.11,
+        "queries": 7,
+        "query_seconds": 0.04,
+        "ids": [
+          562,
+          563,
+          564,
+          565,
+          566,
+          567,
+          568
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536942.33,
+        "end": 536942.33,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536942.33,
+        "end": 536942.47,
+        "elapsed": 0.14,
+        "queries": 8,
+        "query_seconds": 0.054,
+        "ids": [
+          569,
+          570,
+          571,
+          572,
+          573,
+          574,
+          575,
+          576
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536942.47,
+        "end": 536942.47,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536942.47,
+        "end": 536943.21,
+        "elapsed": 0.74,
+        "queries": 18,
+        "query_seconds": 0.682,
+        "ids": [
+          577,
+          578,
+          579,
+          580,
+          581,
+          582,
+          583,
+          584,
+          585,
+          586,
+          587,
+          588,
+          589,
+          590,
+          591,
+          592,
+          593,
+          594
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536943.21,
+        "end": 536943.21,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536943.21,
+        "end": 536943.26,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.048,
+        "ids": [
+          595
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536943.26,
+        "end": 536943.29,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536943.29,
+        "end": 536943.45,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.037,
+        "ids": [
+          596,
+          597,
+          598,
+          599,
+          600,
+          601,
+          602
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536943.45,
+        "end": 536943.45,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536943.45,
+        "end": 536943.6,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.048,
+        "ids": [
+          603,
+          604,
+          605,
+          606,
+          607,
+          608
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536943.6,
+        "end": 536943.6,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536943.6,
+        "end": 536943.77,
+        "elapsed": 0.17,
+        "queries": 8,
+        "query_seconds": 0.07,
+        "ids": [
+          609,
+          610,
+          611,
+          612,
+          613,
+          614,
+          615,
+          616
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536943.77,
+        "end": 536943.77,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536943.77,
+        "end": 536943.8,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536943.8,
+        "end": 536943.8,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536943.8,
+        "end": 536943.83,
+        "elapsed": 0.03,
+        "queries": 1,
+        "query_seconds": 0.037,
+        "ids": [
+          617
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536943.83,
+        "end": 536943.85,
+        "elapsed": 0.02,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536943.85,
+        "end": 536943.95,
+        "elapsed": 0.1,
+        "queries": 6,
+        "query_seconds": 0.032,
+        "ids": [
+          618,
+          619,
+          620,
+          621,
+          622,
+          623
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536943.95,
+        "end": 536943.95,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536943.95,
+        "end": 536944.04,
+        "elapsed": 0.09,
+        "queries": 7,
+        "query_seconds": 0.031,
+        "ids": [
+          624,
+          625,
+          626,
+          627,
+          628,
+          629,
+          630
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536944.04,
+        "end": 536944.04,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536944.04,
+        "end": 536944.18,
+        "elapsed": 0.14,
+        "queries": 7,
+        "query_seconds": 0.091,
+        "ids": [
+          631,
+          632,
+          633,
+          634,
+          635,
+          636,
+          637
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536944.18,
+        "end": 536944.18,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536944.18,
+        "end": 536944.24,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.008,
+        "ids": [
+          638
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536944.24,
+        "end": 536944.24,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536944.24,
+        "end": 536944.28,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.036,
+        "ids": [
+          639
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536944.28,
+        "end": 536944.29,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536944.29,
+        "end": 536944.38,
+        "elapsed": 0.09,
+        "queries": 6,
+        "query_seconds": 0.045,
+        "ids": [
+          640,
+          641,
+          642,
+          643,
+          644,
+          645
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536944.38,
+        "end": 536944.38,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536944.38,
+        "end": 536944.48,
+        "elapsed": 0.1,
+        "queries": 7,
+        "query_seconds": 0.055,
+        "ids": [
+          646,
+          647,
+          648,
+          649,
+          650,
+          651,
+          652
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536944.48,
+        "end": 536944.48,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536944.48,
+        "end": 536944.57,
+        "elapsed": 0.09,
+        "queries": 7,
+        "query_seconds": 0.037,
+        "ids": [
+          653,
+          654,
+          655,
+          656,
+          657,
+          658,
+          659
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536944.57,
+        "end": 536944.57,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536944.57,
+        "end": 536944.6,
+        "elapsed": 0.03,
+        "queries": 1,
+        "query_seconds": 0.002,
+        "ids": [
+          660
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536944.6,
+        "end": 536944.6,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536944.6,
+        "end": 536944.64,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.036,
+        "ids": [
+          661
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536944.64,
+        "end": 536944.65,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536944.65,
+        "end": 536944.75,
+        "elapsed": 0.1,
+        "queries": 6,
+        "query_seconds": 0.035,
+        "ids": [
+          662,
+          663,
+          664,
+          665,
+          666,
+          667
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536944.75,
+        "end": 536944.75,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536944.75,
+        "end": 536944.84,
+        "elapsed": 0.09,
+        "queries": 7,
+        "query_seconds": 0.037,
+        "ids": [
+          668,
+          669,
+          670,
+          671,
+          672,
+          673,
+          674
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536944.84,
+        "end": 536944.84,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536944.84,
+        "end": 536944.94,
+        "elapsed": 0.1,
+        "queries": 8,
+        "query_seconds": 0.056,
+        "ids": [
+          675,
+          676,
+          677,
+          678,
+          679,
+          680,
+          681,
+          682
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536944.94,
+        "end": 536944.94,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536944.94,
+        "end": 536945.32,
+        "elapsed": 0.38,
+        "queries": 8,
+        "query_seconds": 0.326,
+        "ids": [
+          683,
+          684,
+          685,
+          686,
+          687,
+          688,
+          689,
+          690
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536945.32,
+        "end": 536945.32,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536945.32,
+        "end": 536945.36,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.044,
+        "ids": [
+          691
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536945.36,
+        "end": 536945.4,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536945.4,
+        "end": 536945.56,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.046,
+        "ids": [
+          692,
+          693,
+          694,
+          695,
+          696,
+          697,
+          698
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536945.56,
+        "end": 536945.56,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536945.56,
+        "end": 536945.71,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.048,
+        "ids": [
+          699,
+          700,
+          701,
+          702,
+          703,
+          704
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536945.71,
+        "end": 536945.71,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536945.71,
+        "end": 536945.87,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.039,
+        "ids": [
+          705,
+          706,
+          707,
+          708,
+          709,
+          710,
+          711
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536945.87,
+        "end": 536945.88,
+        "elapsed": 0.01,
+        "queries": 1,
+        "query_seconds": 0.002,
+        "ids": [
+          712
+        ]
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536945.88,
+        "end": 536946.24,
+        "elapsed": 0.36,
+        "queries": 8,
+        "query_seconds": 0.322,
+        "ids": [
+          713,
+          714,
+          715,
+          716,
+          717,
+          718,
+          719,
+          720
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536946.24,
+        "end": 536946.24,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536946.24,
+        "end": 536946.29,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.048,
+        "ids": [
+          721
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536946.29,
+        "end": 536946.32,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536946.32,
+        "end": 536946.47,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.049,
+        "ids": [
+          722,
+          723,
+          724,
+          725,
+          726,
+          727,
+          728
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536946.47,
+        "end": 536946.47,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536946.47,
+        "end": 536946.62,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.034,
+        "ids": [
+          729,
+          730,
+          731,
+          732,
+          733,
+          734
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536946.62,
+        "end": 536946.62,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536946.62,
+        "end": 536946.77,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.055,
+        "ids": [
+          735,
+          736,
+          737,
+          738,
+          739,
+          740,
+          741
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536946.77,
+        "end": 536946.78,
+        "elapsed": 0.01,
+        "queries": 1,
+        "query_seconds": 0.006,
+        "ids": [
+          742
+        ]
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536946.78,
+        "end": 536947.15,
+        "elapsed": 0.37,
+        "queries": 8,
+        "query_seconds": 0.329,
+        "ids": [
+          743,
+          744,
+          745,
+          746,
+          747,
+          748,
+          749,
+          750
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536947.15,
+        "end": 536947.15,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536947.15,
+        "end": 536947.2,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.054,
+        "ids": [
+          751
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536947.2,
+        "end": 536947.24,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536947.24,
+        "end": 536947.4,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.051,
+        "ids": [
+          752,
+          753,
+          754,
+          755,
+          756,
+          757,
+          758
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536947.4,
+        "end": 536947.4,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536947.4,
+        "end": 536947.56,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.051,
+        "ids": [
+          759,
+          760,
+          761,
+          762,
+          763,
+          764,
+          765
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536947.56,
+        "end": 536947.56,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536947.56,
+        "end": 536947.72,
+        "elapsed": 0.16,
+        "queries": 6,
+        "query_seconds": 0.044,
+        "ids": [
+          766,
+          767,
+          768,
+          769,
+          770,
+          771
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536947.72,
+        "end": 536947.73,
+        "elapsed": 0.01,
+        "queries": 1,
+        "query_seconds": 0.011,
+        "ids": [
+          772
+        ]
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536947.73,
+        "end": 536948.09,
+        "elapsed": 0.36,
+        "queries": 8,
+        "query_seconds": 0.312,
+        "ids": [
+          773,
+          774,
+          775,
+          776,
+          777,
+          778,
+          779,
+          780
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536948.09,
+        "end": 536948.09,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536948.09,
+        "end": 536948.13,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.045,
+        "ids": [
+          781
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536948.13,
+        "end": 536948.17,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536948.17,
+        "end": 536948.31,
+        "elapsed": 0.14,
+        "queries": 6,
+        "query_seconds": 0.032,
+        "ids": [
+          782,
+          783,
+          784,
+          785,
+          786,
+          787
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536948.31,
+        "end": 536948.31,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536948.31,
+        "end": 536948.47,
+        "elapsed": 0.16,
+        "queries": 8,
+        "query_seconds": 0.045,
+        "ids": [
+          788,
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          795
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536948.47,
+        "end": 536948.47,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536948.47,
+        "end": 536948.62,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.047,
+        "ids": [
+          796,
+          797,
+          798,
+          799,
+          800,
+          801
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536948.62,
+        "end": 536948.63,
+        "elapsed": 0.01,
+        "queries": 1,
+        "query_seconds": 0.002,
+        "ids": [
+          802
+        ]
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536948.63,
+        "end": 536948.77,
+        "elapsed": 0.14,
+        "queries": 2,
+        "query_seconds": 0.087,
+        "ids": [
+          803,
+          804
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536948.77,
+        "end": 536948.77,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536948.77,
+        "end": 536948.82,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.049,
+        "ids": [
+          805
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536948.82,
+        "end": 536948.86,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536948.86,
+        "end": 536948.99,
+        "elapsed": 0.13,
+        "queries": 7,
+        "query_seconds": 0.055,
+        "ids": [
+          806,
+          807,
+          808,
+          809,
+          810,
+          811,
+          812
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536948.99,
+        "end": 536948.99,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536948.99,
+        "end": 536949.22,
+        "elapsed": 0.23,
+        "queries": 7,
+        "query_seconds": 0.084,
+        "ids": [
+          813,
+          814,
+          815,
+          816,
+          817,
+          818,
+          819
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536949.22,
+        "end": 536949.22,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536949.22,
+        "end": 536949.47,
+        "elapsed": 0.25,
+        "queries": 7,
+        "query_seconds": 0.127,
+        "ids": [
+          820,
+          821,
+          822,
+          823,
+          824,
+          825,
+          826
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536949.47,
+        "end": 536949.47,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536949.47,
+        "end": 536949.62,
+        "elapsed": 0.15,
+        "queries": 2,
+        "query_seconds": 0.095,
+        "ids": [
+          827,
+          828
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536949.62,
+        "end": 536949.62,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536949.62,
+        "end": 536949.66,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.044,
+        "ids": [
+          829
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536949.66,
+        "end": 536949.7,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536949.7,
+        "end": 536949.84,
+        "elapsed": 0.14,
+        "queries": 7,
+        "query_seconds": 0.05,
+        "ids": [
+          830,
+          831,
+          832,
+          833,
+          834,
+          835,
+          836
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536949.84,
+        "end": 536949.84,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536949.84,
+        "end": 536949.98,
+        "elapsed": 0.14,
+        "queries": 6,
+        "query_seconds": 0.023,
+        "ids": [
+          837,
+          838,
+          839,
+          840,
+          841,
+          842
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536949.98,
+        "end": 536949.98,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536949.98,
+        "end": 536950.13,
+        "elapsed": 0.15,
+        "queries": 8,
+        "query_seconds": 0.07,
+        "ids": [
+          843,
+          844,
+          845,
+          846,
+          847,
+          848,
+          849,
+          850
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536950.13,
+        "end": 536950.13,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536950.13,
+        "end": 536950.27,
+        "elapsed": 0.14,
+        "queries": 2,
+        "query_seconds": 0.089,
+        "ids": [
+          851,
+          852
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536950.27,
+        "end": 536950.27,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536950.27,
+        "end": 536950.32,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.048,
+        "ids": [
+          853
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536950.32,
+        "end": 536950.36,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536950.36,
+        "end": 536950.49,
+        "elapsed": 0.13,
+        "queries": 6,
+        "query_seconds": 0.045,
+        "ids": [
+          854,
+          855,
+          856,
+          857,
+          858,
+          859
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536950.49,
+        "end": 536950.49,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536950.49,
+        "end": 536950.65,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.051,
+        "ids": [
+          860,
+          861,
+          862,
+          863,
+          864,
+          865,
+          866
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536950.65,
+        "end": 536950.65,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536950.65,
+        "end": 536950.8,
+        "elapsed": 0.15,
+        "queries": 8,
+        "query_seconds": 0.047,
+        "ids": [
+          867,
+          868,
+          869,
+          870,
+          871,
+          872,
+          873,
+          874
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536950.8,
+        "end": 536950.8,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536950.8,
+        "end": 536950.86,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536950.86,
+        "end": 536950.86,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536950.86,
+        "end": 536950.9,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.047,
+        "ids": [
+          875
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536950.9,
+        "end": 536950.94,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536950.94,
+        "end": 536951.1,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.049,
+        "ids": [
+          876,
+          877,
+          878,
+          879,
+          880,
+          881,
+          882
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536951.1,
+        "end": 536951.1,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536951.1,
+        "end": 536951.25,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.049,
+        "ids": [
+          883,
+          884,
+          885,
+          886,
+          887,
+          888,
+          889
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536951.25,
+        "end": 536951.25,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536951.25,
+        "end": 536951.39,
+        "elapsed": 0.14,
+        "queries": 6,
+        "query_seconds": 0.039,
+        "ids": [
+          890,
+          891,
+          892,
+          893,
+          894,
+          895
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536951.39,
+        "end": 536951.39,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536951.39,
+        "end": 536952.04,
+        "elapsed": 0.65,
+        "queries": 19,
+        "query_seconds": 0.581,
+        "ids": [
+          896,
+          897,
+          898,
+          899,
+          900,
+          901,
+          902,
+          903,
+          904,
+          905,
+          906,
+          907,
+          908,
+          909,
+          910,
+          911,
+          912,
+          913,
+          914
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536952.04,
+        "end": 536952.04,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536952.04,
+        "end": 536952.09,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.047,
+        "ids": [
+          915
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536952.09,
+        "end": 536952.12,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536952.12,
+        "end": 536952.26,
+        "elapsed": 0.14,
+        "queries": 6,
+        "query_seconds": 0.032,
+        "ids": [
+          916,
+          917,
+          918,
+          919,
+          920,
+          921
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536952.26,
+        "end": 536952.26,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536952.26,
+        "end": 536952.41,
+        "elapsed": 0.15,
+        "queries": 8,
+        "query_seconds": 0.047,
+        "ids": [
+          922,
+          923,
+          924,
+          925,
+          926,
+          927,
+          928,
+          929
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536952.41,
+        "end": 536952.41,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536952.41,
+        "end": 536952.56,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.03,
+        "ids": [
+          930,
+          931,
+          932,
+          933,
+          934,
+          935
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536952.56,
+        "end": 536952.56,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536952.56,
+        "end": 536952.58,
+        "elapsed": 0.02,
+        "queries": 1,
+        "query_seconds": 0.001,
+        "ids": [
+          936
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536952.58,
+        "end": 536952.58,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536952.58,
+        "end": 536952.62,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.037,
+        "ids": [
+          937
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536952.62,
+        "end": 536952.63,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536952.63,
+        "end": 536952.73,
+        "elapsed": 0.1,
+        "queries": 7,
+        "query_seconds": 0.049,
+        "ids": [
+          938,
+          939,
+          940,
+          941,
+          942,
+          943,
+          944
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536952.73,
+        "end": 536952.73,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536952.73,
+        "end": 536952.81,
+        "elapsed": 0.08,
+        "queries": 6,
+        "query_seconds": 0.033,
+        "ids": [
+          945,
+          946,
+          947,
+          948,
+          949,
+          950
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536952.81,
+        "end": 536952.81,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536952.81,
+        "end": 536952.9,
+        "elapsed": 0.09,
+        "queries": 8,
+        "query_seconds": 0.055,
+        "ids": [
+          951,
+          952,
+          953,
+          954,
+          955,
+          956,
+          957,
+          958
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536952.9,
+        "end": 536952.9,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536952.9,
+        "end": 536952.92,
+        "elapsed": 0.02,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536952.92,
+        "end": 536952.92,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536952.92,
+        "end": 536952.96,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.036,
+        "ids": [
+          959
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536952.96,
+        "end": 536952.97,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536952.97,
+        "end": 536953.2,
+        "elapsed": 0.23,
+        "queries": 6,
+        "query_seconds": 0.131,
+        "ids": [
+          960,
+          961,
+          962,
+          963,
+          964,
+          965
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536953.2,
+        "end": 536953.2,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536953.2,
+        "end": 536953.27,
+        "elapsed": 0.07,
+        "queries": 7,
+        "query_seconds": 0.021,
+        "ids": [
+          966,
+          967,
+          968,
+          969,
+          970,
+          971,
+          972
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536953.27,
+        "end": 536953.27,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536953.27,
+        "end": 536953.35,
+        "elapsed": 0.08,
+        "queries": 7,
+        "query_seconds": 0.037,
+        "ids": [
+          973,
+          974,
+          975,
+          976,
+          977,
+          978,
+          979
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536953.35,
+        "end": 536953.36,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536953.36,
+        "end": 536953.39,
+        "elapsed": 0.03,
+        "queries": 1,
+        "query_seconds": 0.001,
+        "ids": [
+          980
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536953.39,
+        "end": 536953.39,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536953.39,
+        "end": 536953.42,
+        "elapsed": 0.03,
+        "queries": 1,
+        "query_seconds": 0.03,
+        "ids": [
+          981
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536953.42,
+        "end": 536953.43,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536953.43,
+        "end": 536953.52,
+        "elapsed": 0.09,
+        "queries": 6,
+        "query_seconds": 0.035,
+        "ids": [
+          982,
+          983,
+          984,
+          985,
+          986,
+          987
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536953.52,
+        "end": 536953.52,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536953.52,
+        "end": 536953.61,
+        "elapsed": 0.09,
+        "queries": 7,
+        "query_seconds": 0.042,
+        "ids": [
+          988,
+          989,
+          990,
+          991,
+          992,
+          993,
+          994
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536953.61,
+        "end": 536953.61,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536953.61,
+        "end": 536953.69,
+        "elapsed": 0.08,
+        "queries": 7,
+        "query_seconds": 0.032,
+        "ids": [
+          995,
+          996,
+          997,
+          998,
+          999,
+          1000,
+          1001
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536953.69,
+        "end": 536953.69,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536953.69,
+        "end": 536954.02,
+        "elapsed": 0.33,
+        "queries": 9,
+        "query_seconds": 0.283,
+        "ids": [
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536954.02,
+        "end": 536954.02,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536954.02,
+        "end": 536954.07,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.048,
+        "ids": [
+          1011
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536954.07,
+        "end": 536954.1,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536954.1,
+        "end": 536954.24,
+        "elapsed": 0.14,
+        "queries": 7,
+        "query_seconds": 0.05,
+        "ids": [
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536954.24,
+        "end": 536954.24,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536954.24,
+        "end": 536954.38,
+        "elapsed": 0.14,
+        "queries": 6,
+        "query_seconds": 0.03,
+        "ids": [
+          1019,
+          1020,
+          1021,
+          1022,
+          1023,
+          1024
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536954.38,
+        "end": 536954.38,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536954.38,
+        "end": 536954.54,
+        "elapsed": 0.16,
+        "queries": 8,
+        "query_seconds": 0.048,
+        "ids": [
+          1025,
+          1026,
+          1027,
+          1028,
+          1029,
+          1030,
+          1031,
+          1032
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536954.54,
+        "end": 536954.54,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536954.54,
+        "end": 536954.88,
+        "elapsed": 0.34,
+        "queries": 8,
+        "query_seconds": 0.288,
+        "ids": [
+          1033,
+          1034,
+          1035,
+          1036,
+          1037,
+          1038,
+          1039,
+          1040
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536954.88,
+        "end": 536954.88,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536954.88,
+        "end": 536954.93,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.049,
+        "ids": [
+          1041
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536954.93,
+        "end": 536954.97,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536954.97,
+        "end": 536955.14,
+        "elapsed": 0.17,
+        "queries": 7,
+        "query_seconds": 0.04,
+        "ids": [
+          1042,
+          1043,
+          1044,
+          1045,
+          1046,
+          1047,
+          1048
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536955.14,
+        "end": 536955.14,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536955.14,
+        "end": 536955.29,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.054,
+        "ids": [
+          1049,
+          1050,
+          1051,
+          1052,
+          1053,
+          1054,
+          1055
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536955.29,
+        "end": 536955.29,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536955.29,
+        "end": 536955.45,
+        "elapsed": 0.16,
+        "queries": 6,
+        "query_seconds": 0.039,
+        "ids": [
+          1056,
+          1057,
+          1058,
+          1059,
+          1060,
+          1061
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536955.45,
+        "end": 536955.46,
+        "elapsed": 0.01,
+        "queries": 1,
+        "query_seconds": 0.011,
+        "ids": [
+          1062
+        ]
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536955.46,
+        "end": 536955.96,
+        "elapsed": 0.5,
+        "queries": 8,
+        "query_seconds": 0.438,
+        "ids": [
+          1063,
+          1064,
+          1065,
+          1066,
+          1067,
+          1068,
+          1069,
+          1070
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536955.96,
+        "end": 536955.96,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536955.96,
+        "end": 536956.02,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.06,
+        "ids": [
+          1071
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536956.02,
+        "end": 536956.06,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536956.06,
+        "end": 536956.25,
+        "elapsed": 0.19,
+        "queries": 7,
+        "query_seconds": 0.047,
+        "ids": [
+          1072,
+          1073,
+          1074,
+          1075,
+          1076,
+          1077,
+          1078
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536956.25,
+        "end": 536956.25,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536956.25,
+        "end": 536956.43,
+        "elapsed": 0.18,
+        "queries": 7,
+        "query_seconds": 0.052,
+        "ids": [
+          1079,
+          1080,
+          1081,
+          1082,
+          1083,
+          1084,
+          1085
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536956.43,
+        "end": 536956.43,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536956.43,
+        "end": 536956.71,
+        "elapsed": 0.28,
+        "queries": 7,
+        "query_seconds": 0.112,
+        "ids": [
+          1086,
+          1087,
+          1088,
+          1089,
+          1090,
+          1091,
+          1092
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536956.71,
+        "end": 536956.72,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536956.72,
+        "end": 536957.07,
+        "elapsed": 0.35,
+        "queries": 8,
+        "query_seconds": 0.278,
+        "ids": [
+          1093,
+          1094,
+          1095,
+          1096,
+          1097,
+          1098,
+          1099,
+          1100
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536957.07,
+        "end": 536957.07,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536957.07,
+        "end": 536957.12,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.049,
+        "ids": [
+          1101
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536957.12,
+        "end": 536957.16,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536957.16,
+        "end": 536957.32,
+        "elapsed": 0.16,
+        "queries": 6,
+        "query_seconds": 0.038,
+        "ids": [
+          1102,
+          1103,
+          1104,
+          1105,
+          1106,
+          1107
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536957.32,
+        "end": 536957.32,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536957.32,
+        "end": 536957.47,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.048,
+        "ids": [
+          1108,
+          1109,
+          1110,
+          1111,
+          1112,
+          1113,
+          1114
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536957.47,
+        "end": 536957.47,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536957.47,
+        "end": 536957.63,
+        "elapsed": 0.16,
+        "queries": 8,
+        "query_seconds": 0.037,
+        "ids": [
+          1115,
+          1116,
+          1117,
+          1118,
+          1119,
+          1120,
+          1121,
+          1122
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536957.63,
+        "end": 536957.63,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536957.63,
+        "end": 536957.77,
+        "elapsed": 0.14,
+        "queries": 2,
+        "query_seconds": 0.091,
+        "ids": [
+          1123,
+          1124
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536957.77,
+        "end": 536957.77,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536957.77,
+        "end": 536957.83,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.048,
+        "ids": [
+          1125
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536957.83,
+        "end": 536957.85,
+        "elapsed": 0.02,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536957.85,
+        "end": 536958.0,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.036,
+        "ids": [
+          1126,
+          1127,
+          1128,
+          1129,
+          1130,
+          1131
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536958.0,
+        "end": 536958.0,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536958.0,
+        "end": 536958.14,
+        "elapsed": 0.14,
+        "queries": 7,
+        "query_seconds": 0.043,
+        "ids": [
+          1132,
+          1133,
+          1134,
+          1135,
+          1136,
+          1137,
+          1138
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536958.14,
+        "end": 536958.14,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536958.14,
+        "end": 536958.3,
+        "elapsed": 0.16,
+        "queries": 8,
+        "query_seconds": 0.06,
+        "ids": [
+          1139,
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1145,
+          1146
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536958.3,
+        "end": 536958.3,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536958.3,
+        "end": 536958.5,
+        "elapsed": 0.2,
+        "queries": 2,
+        "query_seconds": 0.11,
+        "ids": [
+          1147,
+          1148
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536958.5,
+        "end": 536958.5,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536958.5,
+        "end": 536958.55,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.052,
+        "ids": [
+          1149
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536958.55,
+        "end": 536958.59,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536958.59,
+        "end": 536958.73,
+        "elapsed": 0.14,
+        "queries": 7,
+        "query_seconds": 0.032,
+        "ids": [
+          1150,
+          1151,
+          1152,
+          1153,
+          1154,
+          1155,
+          1156
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536958.73,
+        "end": 536958.73,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536958.73,
+        "end": 536958.89,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.057,
+        "ids": [
+          1157,
+          1158,
+          1159,
+          1160,
+          1161,
+          1162,
+          1163
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536958.89,
+        "end": 536958.89,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536958.89,
+        "end": 536959.04,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.044,
+        "ids": [
+          1164,
+          1165,
+          1166,
+          1167,
+          1168,
+          1169
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536959.04,
+        "end": 536959.04,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536959.04,
+        "end": 536959.2,
+        "elapsed": 0.16,
+        "queries": 3,
+        "query_seconds": 0.109,
+        "ids": [
+          1170,
+          1171,
+          1172
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536959.2,
+        "end": 536959.2,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536959.2,
+        "end": 536959.25,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.051,
+        "ids": [
+          1173
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536959.25,
+        "end": 536959.28,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536959.28,
+        "end": 536959.44,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.048,
+        "ids": [
+          1174,
+          1175,
+          1176,
+          1177,
+          1178,
+          1179,
+          1180
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536959.44,
+        "end": 536959.44,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536959.44,
+        "end": 536959.6,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.046,
+        "ids": [
+          1181,
+          1182,
+          1183,
+          1184,
+          1185,
+          1186,
+          1187
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536959.6,
+        "end": 536959.6,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536959.6,
+        "end": 536959.75,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.046,
+        "ids": [
+          1188,
+          1189,
+          1190,
+          1191,
+          1192,
+          1193,
+          1194
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536959.75,
+        "end": 536959.75,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_only_return",
+        "begin": 536959.75,
+        "end": 536959.8,
+        "elapsed": 0.05,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536959.8,
+        "end": 536959.8,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536959.8,
+        "end": 536959.86,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.059,
+        "ids": [
+          1195
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536959.86,
+        "end": 536959.89,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536959.89,
+        "end": 536960.04,
+        "elapsed": 0.15,
+        "queries": 6,
+        "query_seconds": 0.038,
+        "ids": [
+          1196,
+          1197,
+          1198,
+          1199,
+          1200,
+          1201
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536960.04,
+        "end": 536960.04,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536960.04,
+        "end": 536960.19,
+        "elapsed": 0.15,
+        "queries": 7,
+        "query_seconds": 0.039,
+        "ids": [
+          1202,
+          1203,
+          1204,
+          1205,
+          1206,
+          1207,
+          1208
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536960.19,
+        "end": 536960.19,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536960.19,
+        "end": 536960.35,
+        "elapsed": 0.16,
+        "queries": 8,
+        "query_seconds": 0.05,
+        "ids": [
+          1209,
+          1210,
+          1211,
+          1212,
+          1213,
+          1214,
+          1215,
+          1216
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536960.35,
+        "end": 536960.35,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      }
+    ]
+  },
+  {
+    "name": "replicate",
+    "phases": [
+      {
+        "stage": "main_finished_begin",
+        "begin": 536059.02,
+        "end": 536059.02,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536059.02,
+        "end": 536158.03,
+        "elapsed": 99.01,
+        "queries": 1,
+        "query_seconds": 99.009,
+        "ids": [
+          48
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536158.03,
+        "end": 536158.15,
+        "elapsed": 0.12,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536158.15,
+        "end": 536158.89,
+        "elapsed": 0.74,
+        "queries": 7,
+        "query_seconds": 0.349,
+        "ids": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536158.89,
+        "end": 536158.89,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536158.89,
+        "end": 536159.6,
+        "elapsed": 0.71,
+        "queries": 7,
+        "query_seconds": 0.328,
+        "ids": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536159.6,
+        "end": 536159.6,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536159.6,
+        "end": 536160.32,
+        "elapsed": 0.72,
+        "queries": 7,
+        "query_seconds": 0.331,
+        "ids": [
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536160.32,
+        "end": 536160.32,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536160.32,
+        "end": 536615.28,
+        "elapsed": 454.96,
+        "queries": 7,
+        "query_seconds": 454.551,
+        "ids": [
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536615.28,
+        "end": 536615.28,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536615.28,
+        "end": 536617.01,
+        "elapsed": 1.73,
+        "queries": 43,
+        "query_seconds": 1.572,
+        "ids": [
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536617.01,
+        "end": 536617.01,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536617.01,
+        "end": 536617.06,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.05,
+        "ids": [
+          120
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536617.06,
+        "end": 536617.12,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536617.12,
+        "end": 536617.41,
+        "elapsed": 0.29,
+        "queries": 7,
+        "query_seconds": 0.144,
+        "ids": [
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536617.41,
+        "end": 536617.42,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536617.42,
+        "end": 536617.68,
+        "elapsed": 0.26,
+        "queries": 7,
+        "query_seconds": 0.149,
+        "ids": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536617.68,
+        "end": 536617.68,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536617.68,
+        "end": 536617.94,
+        "elapsed": 0.26,
+        "queries": 7,
+        "query_seconds": 0.143,
+        "ids": [
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536617.94,
+        "end": 536617.94,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536617.94,
+        "end": 536618.54,
+        "elapsed": 0.6,
+        "queries": 7,
+        "query_seconds": 0.457,
+        "ids": [
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536618.54,
+        "end": 536618.54,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536618.54,
+        "end": 536620.06,
+        "elapsed": 1.52,
+        "queries": 39,
+        "query_seconds": 1.412,
+        "ids": [
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536620.06,
+        "end": 536620.06,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536620.06,
+        "end": 536620.11,
+        "elapsed": 0.05,
+        "queries": 1,
+        "query_seconds": 0.045,
+        "ids": [
+          188
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536620.11,
+        "end": 536620.14,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536620.14,
+        "end": 536620.31,
+        "elapsed": 0.17,
+        "queries": 7,
+        "query_seconds": 0.036,
+        "ids": [
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536620.31,
+        "end": 536620.31,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536620.31,
+        "end": 536620.47,
+        "elapsed": 0.16,
+        "queries": 7,
+        "query_seconds": 0.06,
+        "ids": [
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536620.47,
+        "end": 536620.47,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536620.47,
+        "end": 536620.63,
+        "elapsed": 0.16,
+        "queries": 6,
+        "query_seconds": 0.042,
+        "ids": [
+          203,
+          204,
+          205,
+          206,
+          207,
+          208
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536620.63,
+        "end": 536620.63,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536620.63,
+        "end": 536621.09,
+        "elapsed": 0.46,
+        "queries": 8,
+        "query_seconds": 0.358,
+        "ids": [
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536621.09,
+        "end": 536621.09,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536621.09,
+        "end": 536685.63,
+        "elapsed": 64.54,
+        "queries": 18,
+        "query_seconds": 64.445,
+        "ids": [
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234
+        ]
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536685.63,
+        "end": 536685.63,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536685.63,
+        "end": 536718.47,
+        "elapsed": 32.84,
+        "queries": 1,
+        "query_seconds": 32.841,
+        "ids": [
+          235
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536718.47,
+        "end": 536718.54,
+        "elapsed": 0.07,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536718.54,
+        "end": 536718.77,
+        "elapsed": 0.23,
+        "queries": 7,
+        "query_seconds": 0.05,
+        "ids": [
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536718.77,
+        "end": 536718.77,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536718.77,
+        "end": 536718.99,
+        "elapsed": 0.22,
+        "queries": 7,
+        "query_seconds": 0.057,
+        "ids": [
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536718.99,
+        "end": 536718.99,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536718.99,
+        "end": 536719.2,
+        "elapsed": 0.21,
+        "queries": 6,
+        "query_seconds": 0.039,
+        "ids": [
+          250,
+          251,
+          252,
+          253,
+          254,
+          255
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536719.2,
+        "end": 536719.2,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536719.2,
+        "end": 536976.82,
+        "elapsed": 257.62,
+        "queries": 8,
+        "query_seconds": 257.301,
+        "ids": [
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536976.82,
+        "end": 536976.83,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536976.83,
+        "end": 536977.04,
+        "elapsed": 0.21,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536977.04,
+        "end": 536977.04,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536977.04,
+        "end": 536977.12,
+        "elapsed": 0.08,
+        "queries": 1,
+        "query_seconds": 0.064,
+        "ids": [
+          264
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536977.12,
+        "end": 536977.15,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536977.15,
+        "end": 536977.4,
+        "elapsed": 0.25,
+        "queries": 7,
+        "query_seconds": 0.124,
+        "ids": [
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536977.4,
+        "end": 536977.4,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536977.4,
+        "end": 536977.6,
+        "elapsed": 0.2,
+        "queries": 7,
+        "query_seconds": 0.132,
+        "ids": [
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536977.6,
+        "end": 536977.6,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536977.6,
+        "end": 536977.8,
+        "elapsed": 0.2,
+        "queries": 7,
+        "query_seconds": 0.137,
+        "ids": [
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536977.8,
+        "end": 536977.8,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536977.8,
+        "end": 536978.23,
+        "elapsed": 0.43,
+        "queries": 7,
+        "query_seconds": 0.354,
+        "ids": [
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536978.23,
+        "end": 536978.23,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536978.23,
+        "end": 536978.29,
+        "elapsed": 0.06,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536978.29,
+        "end": 536978.29,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536978.29,
+        "end": 536978.33,
+        "elapsed": 0.04,
+        "queries": 1,
+        "query_seconds": 0.038,
+        "ids": [
+          293
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536978.33,
+        "end": 536978.34,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536978.34,
+        "end": 536978.45,
+        "elapsed": 0.11,
+        "queries": 7,
+        "query_seconds": 0.048,
+        "ids": [
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536978.45,
+        "end": 536978.45,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536978.45,
+        "end": 536978.55,
+        "elapsed": 0.1,
+        "queries": 6,
+        "query_seconds": 0.046,
+        "ids": [
+          301,
+          302,
+          303,
+          304,
+          305,
+          306
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536978.55,
+        "end": 536978.55,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536978.55,
+        "end": 536978.64,
+        "elapsed": 0.09,
+        "queries": 7,
+        "query_seconds": 0.04,
+        "ids": [
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536978.64,
+        "end": 536978.64,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536978.64,
+        "end": 536978.93,
+        "elapsed": 0.29,
+        "queries": 8,
+        "query_seconds": 0.225,
+        "ids": [
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536978.93,
+        "end": 536978.94,
+        "elapsed": 0.01,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_only_return",
+        "begin": 536978.94,
+        "end": 536978.98,
+        "elapsed": 0.04,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_finished_begin",
+        "begin": 536978.98,
+        "end": 536978.98,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "main_initial_check_begin",
+        "begin": 536978.98,
+        "end": 536979.04,
+        "elapsed": 0.06,
+        "queries": 1,
+        "query_seconds": 0.06,
+        "ids": [
+          322
+        ]
+      },
+      {
+        "stage": "main_initial_check_end_encoding_begin",
+        "begin": 536979.04,
+        "end": 536979.07,
+        "elapsed": 0.03,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_1_begin",
+        "begin": 536979.07,
+        "end": 536979.46,
+        "elapsed": 0.39,
+        "queries": 7,
+        "query_seconds": 0.173,
+        "ids": [
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329
+        ]
+      },
+      {
+        "stage": "control_fresh_context_1_end",
+        "begin": 536979.46,
+        "end": 536979.46,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_2_begin",
+        "begin": 536979.46,
+        "end": 536979.73,
+        "elapsed": 0.27,
+        "queries": 7,
+        "query_seconds": 0.198,
+        "ids": [
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336
+        ]
+      },
+      {
+        "stage": "control_fresh_context_2_end",
+        "begin": 536979.73,
+        "end": 536979.73,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_fresh_context_3_begin",
+        "begin": 536979.73,
+        "end": 536980.22,
+        "elapsed": 0.49,
+        "queries": 7,
+        "query_seconds": 0.413,
+        "ids": [
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343
+        ]
+      },
+      {
+        "stage": "control_fresh_context_3_end",
+        "begin": 536980.22,
+        "end": 536980.22,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      },
+      {
+        "stage": "control_original_checkpoint_begin",
+        "begin": 536980.22,
+        "end": 536980.78,
+        "elapsed": 0.56,
+        "queries": 7,
+        "query_seconds": 0.466,
+        "ids": [
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350
+        ]
+      },
+      {
+        "stage": "control_original_checkpoint_end",
+        "begin": 536980.78,
+        "end": 536980.78,
+        "elapsed": 0.0,
+        "queries": 0,
+        "query_seconds": 0,
+        "ids": []
+      }
+    ]
+  }
+]

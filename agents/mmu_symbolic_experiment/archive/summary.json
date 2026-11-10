@@ -1,0 +1,748 @@
+[
+  {
+    "exit": 0,
+    "wall_seconds": 1.0657113200286403,
+    "config_sha256": "c91fd405d69dd0f0d0f171fe9fcd369d63245103bc4910b9881bb5ea92469301",
+    "name": "bare",
+    "returned_paths": 0,
+    "returned_types": {},
+    "complete_witnesses": 0,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.1661175349727273,
+    "name": "bare-final",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 5,
+        "seconds": 0.010831804999999998,
+        "max_seconds": 0.009918033
+      },
+      "get_model": {
+        "calls": 15,
+        "seconds": 0.00030596999999999997,
+        "max_seconds": 4.4771e-05
+      },
+      "check_assumptions": {
+        "calls": 8,
+        "seconds": 0.021124682,
+        "max_seconds": 0.007232467
+      },
+      "model_eval": {
+        "calls": 260,
+        "seconds": 0.0005645930000000002,
+        "max_seconds": 1.867e-05
+      }
+    },
+    "check_results": {
+      "1": 13
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.3670402289135382,
+    "name": "bare-measured",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 5,
+        "seconds": 0.009951927999999999,
+        "max_seconds": 0.009093226
+      },
+      "get_model": {
+        "calls": 15,
+        "seconds": 0.00024720899999999997,
+        "max_seconds": 3.8572e-05
+      },
+      "check_assumptions": {
+        "calls": 8,
+        "seconds": 0.012516624,
+        "max_seconds": 0.006333104
+      },
+      "model_eval": {
+        "calls": 260,
+        "seconds": 0.0005236889999999999,
+        "max_seconds": 1.0851e-05
+      }
+    },
+    "check_results": {
+      "1": 13
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.4670503659872338,
+    "name": "bare-observed",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 5,
+        "seconds": 0.010325929999999999,
+        "max_seconds": 0.009033418
+      },
+      "get_model": {
+        "calls": 15,
+        "seconds": 0.00046924800000000007,
+        "max_seconds": 4.8712e-05
+      },
+      "check_assumptions": {
+        "calls": 8,
+        "seconds": 0.014523605000000002,
+        "max_seconds": 0.006495097
+      },
+      "model_eval": {
+        "calls": 260,
+        "seconds": 0.002565484000000001,
+        "max_seconds": 3.1911e-05
+      }
+    },
+    "check_results": {
+      "1": 13
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.166296444949694,
+    "name": "bare-parallel16",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 5,
+        "seconds": 0.008579291999999999,
+        "max_seconds": 0.007767093
+      },
+      "get_model": {
+        "calls": 15,
+        "seconds": 0.00028052200000000006,
+        "max_seconds": 3.2221e-05
+      },
+      "check_assumptions": {
+        "calls": 8,
+        "seconds": 0.023049856000000004,
+        "max_seconds": 0.005437448
+      },
+      "model_eval": {
+        "calls": 260,
+        "seconds": 0.0005733670000000001,
+        "max_seconds": 2.1151e-05
+      }
+    },
+    "check_results": {
+      "1": 13
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.2661456200294197,
+    "config_sha256": "b0e99e098e54bc26b28264d7608ff60a6229cda2f3acf873a0516e35475c33bc",
+    "name": "identity",
+    "returned_paths": 0,
+    "returned_types": {},
+    "complete_witnesses": 0,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.6677522769896314,
+    "name": "identity-final",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 7,
+        "seconds": 0.019216611999999998,
+        "max_seconds": 0.008369317
+      },
+      "get_model": {
+        "calls": 42,
+        "seconds": 0.0011996049999999999,
+        "max_seconds": 5.7232e-05
+      },
+      "check_assumptions": {
+        "calls": 80,
+        "seconds": 0.15967688300000005,
+        "max_seconds": 0.007419574
+      },
+      "model_eval": {
+        "calls": 268,
+        "seconds": 0.0005572520000000003,
+        "max_seconds": 1.558e-05
+      }
+    },
+    "check_results": {
+      "1": 40,
+      "-1": 47
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.367670024977997,
+    "name": "identity-measured",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 7,
+        "seconds": 0.021836117999999998,
+        "max_seconds": 0.009534292
+      },
+      "get_model": {
+        "calls": 42,
+        "seconds": 0.0011809829999999996,
+        "max_seconds": 3.9052e-05
+      },
+      "check_assumptions": {
+        "calls": 80,
+        "seconds": 0.175234711,
+        "max_seconds": 0.008422781
+      },
+      "model_eval": {
+        "calls": 268,
+        "seconds": 0.0005722679999999996,
+        "max_seconds": 1.733e-05
+      }
+    },
+    "check_results": {
+      "1": 40,
+      "-1": 47
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.6669838279485703,
+    "name": "identity-observed",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 7,
+        "seconds": 0.018401048,
+        "max_seconds": 0.007918813
+      },
+      "get_model": {
+        "calls": 42,
+        "seconds": 0.0015811830000000001,
+        "max_seconds": 5.3222e-05
+      },
+      "check_assumptions": {
+        "calls": 80,
+        "seconds": 0.165675169,
+        "max_seconds": 0.006763837
+      },
+      "model_eval": {
+        "calls": 268,
+        "seconds": 0.0029445969999999985,
+        "max_seconds": 5.6083e-05
+      }
+    },
+    "check_results": {
+      "1": 40,
+      "-1": 47
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 0,
+    "wall_seconds": 1.3672305810032412,
+    "name": "identity-parallel16",
+    "returned_paths": 1,
+    "returned_types": {
+      "success": 1
+    },
+    "complete_witnesses": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zLOAD"
+    },
+    "json_cases": 1,
+    "json_types": {
+      "success": 1
+    },
+    "z3": {
+      "check": {
+        "calls": 7,
+        "seconds": 0.019776687999999997,
+        "max_seconds": 0.008118255
+      },
+      "get_model": {
+        "calls": 42,
+        "seconds": 0.0014275249999999998,
+        "max_seconds": 0.000157286
+      },
+      "check_assumptions": {
+        "calls": 80,
+        "seconds": 0.183776711,
+        "max_seconds": 0.010963489
+      },
+      "model_eval": {
+        "calls": 268,
+        "seconds": 0.0006577000000000002,
+        "max_seconds": 2.1901e-05
+      }
+    },
+    "check_results": {
+      "1": 40,
+      "-1": 47
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 65.00156362901907,
+    "config_sha256": "c91fd405d69dd0f0d0f171fe9fcd369d63245103bc4910b9881bb5ea92469301",
+    "name": "symbolic",
+    "returned_paths": 0,
+    "returned_types": {},
+    "complete_witnesses": 0,
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 60.06409638002515,
+    "name": "symbolic-final",
+    "returned_paths": 415,
+    "returned_types": {
+      "page_fault": 291,
+      "access_fault": 48,
+      "success": 76
+    },
+    "complete_witnesses": 414,
+    "z3": {
+      "check": {
+        "calls": 1296,
+        "seconds": 3.031168291000004,
+        "max_seconds": 0.012708831
+      },
+      "get_model": {
+        "calls": 8352,
+        "seconds": 0.34543778500000116,
+        "max_seconds": 0.000301681
+      },
+      "check_assumptions": {
+        "calls": 7268,
+        "seconds": 23.597588442,
+        "max_seconds": 0.013016818
+      },
+      "model_eval": {
+        "calls": 109344,
+        "seconds": 0.22865716899999816,
+        "max_seconds": 3.9291e-05
+      }
+    },
+    "check_results": {
+      "1": 7522,
+      "-1": 1042
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 60.03343836404383,
+    "name": "symbolic-measured",
+    "returned_paths": 289,
+    "returned_types": {
+      "page_fault": 190,
+      "access_fault": 35,
+      "success": 64
+    },
+    "complete_witnesses": 288,
+    "z3": {
+      "check": {
+        "calls": 904,
+        "seconds": 2.0824252279999986,
+        "max_seconds": 0.013599496
+      },
+      "get_model": {
+        "calls": 5793,
+        "seconds": 0.23310925900000046,
+        "max_seconds": 0.000420365
+      },
+      "check_assumptions": {
+        "calls": 5105,
+        "seconds": 17.48228599200005,
+        "max_seconds": 0.016248473
+      },
+      "model_eval": {
+        "calls": 75880,
+        "seconds": 0.1696254030000007,
+        "max_seconds": 7.3473e-05
+      }
+    },
+    "check_results": {
+      "1": 5216,
+      "-1": 793
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 60.04403662995901,
+    "name": "symbolic-observed",
+    "returned_paths": 361,
+    "returned_types": {
+      "page_fault": 251,
+      "access_fault": 42,
+      "success": 68
+    },
+    "complete_witnesses": 360,
+    "z3": {
+      "check": {
+        "calls": 1127,
+        "seconds": 2.604339796999998,
+        "max_seconds": 0.01363835
+      },
+      "get_model": {
+        "calls": 7250,
+        "seconds": 0.3601436660000003,
+        "max_seconds": 0.000322012
+      },
+      "check_assumptions": {
+        "calls": 6311,
+        "seconds": 21.524145145999952,
+        "max_seconds": 0.014057417
+      },
+      "model_eval": {
+        "calls": 95008,
+        "seconds": 1.0074968609999904,
+        "max_seconds": 0.000203228
+      }
+    },
+    "check_results": {
+      "1": 6528,
+      "-1": 910
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 60.27029243297875,
+    "name": "symbolic-parallel16",
+    "returned_paths": 3181,
+    "returned_types": {
+      "page_fault": 1631,
+      "success": 1022,
+      "access_fault": 528
+    },
+    "complete_witnesses": 1562,
+    "z3": {
+      "check": {
+        "calls": 9597,
+        "seconds": 36.50375438099986,
+        "max_seconds": 0.037996153
+      },
+      "get_model": {
+        "calls": 62363,
+        "seconds": 5.232552401000016,
+        "max_seconds": 0.002002002
+      },
+      "check_assumptions": {
+        "calls": 55210,
+        "seconds": 349.84092629700297,
+        "max_seconds": 0.059858776
+      },
+      "model_eval": {
+        "calls": 847589,
+        "seconds": 3.917138289999795,
+        "max_seconds": 0.004479312
+      }
+    },
+    "check_results": {
+      "1": 56002,
+      "-1": 8805
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 60.041190224001184,
+    "name": "symbolic-qfaufbv",
+    "returned_paths": 207,
+    "returned_types": {
+      "page_fault": 124,
+      "access_fault": 21,
+      "success": 62
+    },
+    "complete_witnesses": 205,
+    "z3": {
+      "check": {
+        "calls": 640,
+        "seconds": 1.2488709259999984,
+        "max_seconds": 0.0120435
+      },
+      "get_model": {
+        "calls": 4084,
+        "seconds": 0.17207837299999942,
+        "max_seconds": 0.000460677
+      },
+      "check_assumptions": {
+        "calls": 3658,
+        "seconds": 8.959089159999985,
+        "max_seconds": 0.012020218
+      },
+      "model_eval": {
+        "calls": 54104,
+        "seconds": 0.5562248800000005,
+        "max_seconds": 0.000102844
+      }
+    },
+    "check_results": {
+      "1": 3670,
+      "-1": 628
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  },
+  {
+    "exit": 124,
+    "wall_seconds": 60.11109535896685,
+    "name": "symbolic-witness",
+    "returned_paths": 266,
+    "returned_types": {
+      "page_fault": 169,
+      "access_fault": 33,
+      "success": 64
+    },
+    "complete_witnesses": 265,
+    "z3": {
+      "check": {
+        "calls": 833,
+        "seconds": 1.9582345999999995,
+        "max_seconds": 0.024785011
+      },
+      "get_model": {
+        "calls": 5337,
+        "seconds": 0.21928127799999975,
+        "max_seconds": 0.001618498
+      },
+      "check_assumptions": {
+        "calls": 4738,
+        "seconds": 16.997368315999967,
+        "max_seconds": 0.03051591
+      },
+      "model_eval": {
+        "calls": 69844,
+        "seconds": 0.16888027399999883,
+        "max_seconds": 0.000186697
+      }
+    },
+    "check_results": {
+      "1": 4805,
+      "-1": 766
+    },
+    "note": "外层杀死时，路径/查询计数为已返回下界；UNSAT查询不是被过滤路径数。"
+  }
+]

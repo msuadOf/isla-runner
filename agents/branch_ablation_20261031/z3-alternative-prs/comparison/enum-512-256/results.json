@@ -1,0 +1,110 @@
+[
+  {
+    "case": "enum-512-256",
+    "variant": "A",
+    "rep": 0,
+    "cpu": 100,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "exit": 0,
+    "wall_s": 0.2576399190002121,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "enum-512-256",
+    "variant": "B",
+    "rep": 0,
+    "cpu": 100,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "exit": 0,
+    "wall_s": 0.024684418982360512,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "enum-512-256",
+    "variant": "B",
+    "rep": 1,
+    "cpu": 100,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "exit": 0,
+    "wall_s": 0.023347162001300603,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "enum-512-256",
+    "variant": "A",
+    "rep": 1,
+    "cpu": 100,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "exit": 0,
+    "wall_s": 0.24420038401149213,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "enum-512-256",
+    "variant": "A",
+    "rep": 2,
+    "cpu": 100,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "exit": 0,
+    "wall_s": 0.24240216397447512,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "enum-512-256",
+    "variant": "B",
+    "rep": 2,
+    "cpu": 100,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "exit": 0,
+    "wall_s": 0.02501421800116077,
+    "stdout": "sat\n",
+    "stderr": ""
+  }
+]

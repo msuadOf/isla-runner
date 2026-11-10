@@ -1,0 +1,26 @@
+{
+  "src/tactic/fpa/qffp_tactic.cpp": {
+    "expected": "8fd7ccc9a8cf5df3dec18920552d5c0bac7a9e651a34253d110279ae600467ef",
+    "actual": "8fd7ccc9a8cf5df3dec18920552d5c0bac7a9e651a34253d110279ae600467ef"
+  },
+  "src/tactic/fpa/qffp_tactic.h": {
+    "expected": "331e62990a7448906ab0a14c3d028ad80f39e27a84c122169749559a8882c0d0",
+    "actual": "331e62990a7448906ab0a14c3d028ad80f39e27a84c122169749559a8882c0d0"
+  },
+  "src/tactic/portfolio/default_tactic.cpp": {
+    "expected": "6957befe0b33e03826b2737afccade8473e93776c7ae009506a858beabcb792f",
+    "actual": "6957befe0b33e03826b2737afccade8473e93776c7ae009506a858beabcb792f"
+  },
+  "src/test/fpa.cpp": {
+    "expected": "35fda6f639a8ece80f5feb9b6322c27296527a3de70f92c9ea463112c30831ee",
+    "actual": "35fda6f639a8ece80f5feb9b6322c27296527a3de70f92c9ea463112c30831ee"
+  },
+  "build/z3": {
+    "expected": "99d27e45f13f1d805a3c416327e428d72dc3c151d742c8324f642e869af161c6",
+    "actual": "99d27e45f13f1d805a3c416327e428d72dc3c151d742c8324f642e869af161c6"
+  },
+  "build/libz3.so": {
+    "expected": "699dae63d3b7d62a7bc931cd89afe983ed9846defe3625e4f73f96773f414326",
+    "actual": "699dae63d3b7d62a7bc931cd89afe983ed9846defe3625e4f73f96773f414326"
+  }
+}

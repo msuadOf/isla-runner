@@ -1,0 +1,41 @@
+{
+  "base128": {
+    "make_exit": 0,
+    "gen": 4,
+    "ret_val_counts": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "encoding": [
+      "32'h3020_0073"
+    ]
+  },
+  "head128": {
+    "make_exit": 0,
+    "gen": 4,
+    "ret_val_counts": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "encoding": [
+      "32'h3020_0073"
+    ]
+  },
+  "base256": {
+    "make_exit": 0,
+    "gen": 4,
+    "ret_val_counts": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "encoding": [
+      "32'h3020_0073"
+    ]
+  },
+  "head256": {
+    "make_exit": 0,
+    "gen": 0,
+    "ret_val_counts": {},
+    "encoding": []
+  }
+}

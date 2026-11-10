@@ -1,0 +1,17 @@
+{
+  "binary_sha256": "c9c5bb8b32289006b1af621f71f03537aecf4a1b0b9ed9b51bc68e573785e2f2",
+  "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+  "base_config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "version": "",
+  "cpu_selection": "1s /proc/stat sample; physical35 sibling99 combined busy0.50; physical33 sibling97 busy0.55; fixedCPU35/33",
+  "max_parallel": 2,
+  "clause_external_budget_s": 7200,
+  "smt_operation_timeout_s": 7200,
+  "jobs": [
+    "fleq-snan",
+    "fleq-qnan",
+    "estimate-normal",
+    "estimate-subnormal"
+  ],
+  "scheduling_note": "Pilot scheduler assigned both scalar probes CPU35 and both vector probes CPU33. Each pair shared one CPU; no elapsed time is used as performance evidence. A late taskset attempt found the vector process had already completed, so no affinity change was applied."
+}

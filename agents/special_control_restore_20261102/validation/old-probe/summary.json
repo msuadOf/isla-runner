@@ -1,0 +1,16 @@
+{
+  "state": "preparing",
+  "jobs": {
+    "bf16-VF-tiny-rm3": {
+      "state": "PASS",
+      "cpu": 34,
+      "seconds": 2.526,
+      "exit": 0,
+      "checks": "80/80",
+      "gen": 1,
+      "partial": false,
+      "output_sha256": "3ec3888e2d1027d3f7abd3334171937782e8db16e72559e8ae54dfb5a68d027d"
+    }
+  },
+  "updated_epoch": 1793569169.7771783
+}

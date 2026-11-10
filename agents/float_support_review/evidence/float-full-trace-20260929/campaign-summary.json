@@ -1,0 +1,1826 @@
+{
+  "started_utc": "2026-09-29T04:28:15.708686+00:00",
+  "ended_utc": "2026-09-29T04:59:16.448568+00:00",
+  "elapsed_seconds": 1860.615,
+  "command": [
+    "make",
+    "-f",
+    "scripts/run.mk",
+    "-o",
+    "build-isarch",
+    "-k",
+    "-j4",
+    "solve-fd-nonmem",
+    "THREADS=2",
+    "ITRACE=1",
+    "OUTER_TIMEOUT=300s",
+    "SOLVE_TIMEOUT=270s",
+    "SMT_TIMEOUT=30s",
+    "TASTIC=qfaufbv"
+  ],
+  "input_sha256": {
+    "target/release/isarch": "196809a4ccab23223e84d3645d3cd24d7eb0aab32e98702b31f63b47e52a81c8",
+    "rv64d.ir": "e893e1277f7eb529972b8903d3445fd7f1d2b37ab8024112841c804dd922f4d9",
+    "configs/riscv64_difftest_fd.toml": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "scripts/run.mk": "98d31f032e9c0c76ac33e676738f5e7bc2450fceb704a972ba234c397fb929ab",
+    "scripts/run_ctrl_c.mk": "8081d772609eae3ccfb93db21d92f7bdab3115d3ed12e6cfd96981abb88bd9f3",
+    "scripts/solve_process.py": "48aedd3ed6a8e5d0f6c16fcd9ba265d236cd87a32551a904a608f071deafaf4b",
+    "frozen-dryrun.txt": "29c5d3efa528904340040ce84be4985ee54a56948f87683fa65156f817a702f1"
+  },
+  "target_count": 77,
+  "itrace": true,
+  "sampling": false,
+  "make_exit_code": 2,
+  "resource_stop": null,
+  "final_audit_sha256": "59cd1509c223c932b2b5e110bcae15c4b9a78fde5a711fcf27c9f6f977863690",
+  "aggregate_timeout_vector_forks": 2635,
+  "timeout_vector_fork_sites": [
+    {
+      "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+      "forks": 486
+    },
+    {
+      "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+      "forks": 286
+    },
+    {
+      "source": "extensions/V/vext_control.sail 365:21 - 365:57",
+      "forks": 100
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+      "forks": 84
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 83:36 - 84:67",
+      "forks": 74
+    },
+    {
+      "source": "extensions/V/vext_control.sail 29:2 - 35:3",
+      "forks": 66
+    },
+    {
+      "source": "extensions/V/vext_control.sail 139:2 - 159:3",
+      "forks": 49
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1694:4 - 1725:5",
+      "forks": 49
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 48:23 - 49:44",
+      "forks": 48
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 48:52 - 49:44",
+      "forks": 48
+    },
+    {
+      "source": "extensions/V/vext_control.sail 140:4 - 147:5",
+      "forks": 46
+    },
+    {
+      "source": "sail/lib/float/nan.sail 18:34 - 18:88",
+      "forks": 43
+    },
+    {
+      "source": "sail/lib/float/nan.sail 26:29 - 26:75",
+      "forks": 43
+    },
+    {
+      "source": "sail/lib/float/classify.sail 28:2 - 38:3",
+      "forks": 43
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 79:5 - 79:52",
+      "forks": 39
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 79:2 - 80:19",
+      "forks": 36
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 53:23 - 53:63",
+      "forks": 32
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 84:5 - 84:66",
+      "forks": 28
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1928:4 - 1950:5",
+      "forks": 24
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 74:17 - 74:63",
+      "forks": 20
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 75:17 - 75:63",
+      "forks": 20
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 475:8 - 475:18",
+      "forks": 17
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 476:8 - 476:19",
+      "forks": 17
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 477:8 - 477:18",
+      "forks": 17
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 347:8 - 347:17",
+      "forks": 17
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 348:8 - 348:17",
+      "forks": 17
+    },
+    {
+      "source": "extensions/FD/fdext_regs.sail 318:2 - 320:25",
+      "forks": 16
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 64:6 - 64:19",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 65:6 - 65:19",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 66:6 - 66:18",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1067:8 - 1067:20",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1075:8 - 1075:19",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1083:8 - 1083:20",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1091:8 - 1091:19",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1099:8 - 1099:19",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1107:8 - 1107:24",
+      "forks": 15
+    },
+    {
+      "source": "extensions/V/vext_control.sail 149:4 - 153:5",
+      "forks": 13
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 748:8 - 748:19",
+      "forks": 13
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 756:8 - 756:18",
+      "forks": 13
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 764:8 - 764:19",
+      "forks": 13
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 772:8 - 772:18",
+      "forks": 13
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 780:8 - 780:23",
+      "forks": 13
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 48:2 - 49:44",
+      "forks": 12
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 574:2 - 577:35",
+      "forks": 12
+    },
+    {
+      "source": "extensions/V/vext_utils_insts.sail 86:4 - 86:54",
+      "forks": 12
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 719:6 - 723:31",
+      "forks": 12
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 62:8 - 62:18",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 63:8 - 63:18",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 64:8 - 64:18",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 602:8 - 602:16",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1420:8 - 1420:20",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1428:8 - 1428:19",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1436:8 - 1436:20",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1444:8 - 1444:19",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1452:8 - 1452:19",
+      "forks": 11
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 182:8 - 182:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 183:8 - 183:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 184:8 - 184:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 185:8 - 185:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 186:8 - 186:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 210:8 - 210:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 211:8 - 211:18",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 212:8 - 212:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 213:8 - 213:18",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 214:8 - 214:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 215:8 - 215:18",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 216:8 - 216:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 69:8 - 69:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 70:8 - 70:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 71:8 - 71:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 72:8 - 72:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 73:8 - 73:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 74:8 - 74:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 75:8 - 75:17",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 76:8 - 76:18",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2508:8 - 2508:16",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1460:8 - 1460:23",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1468:8 - 1468:24",
+      "forks": 10
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2121:8 - 2121:16",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2122:8 - 2122:17",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2123:8 - 2123:16",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2124:8 - 2124:17",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2125:8 - 2125:16",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2126:8 - 2126:17",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2127:8 - 2127:16",
+      "forks": 9
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1904:2 - 1908:35",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2382:8 - 2382:18",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2383:8 - 2383:19",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2384:8 - 2384:18",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2256:8 - 2256:17",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2257:8 - 2257:17",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 44:2 - 44:49",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1338:4 - 1413:5",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1692:5 - 1692:52",
+      "forks": 6
+    },
+    {
+      "source": "sail/lib/float/classify.sail 32:38 - 32:130",
+      "forks": 6
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1315:2 - 1317:35",
+      "forks": 5
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1926:5 - 1926:54",
+      "forks": 4
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 174:2 - 174:49",
+      "forks": 4
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1336:17 - 1336:127",
+      "forks": 4
+    },
+    {
+      "source": "sail/lib/float/zero.sail 18:34 - 18:78",
+      "forks": 4
+    },
+    {
+      "source": "sail/lib/float/classify.sail 30:7 - 38:3",
+      "forks": 4
+    },
+    {
+      "source": "sail/lib/float/classify.sail 30:38 - 30:128",
+      "forks": 4
+    },
+    {
+      "source": "sail/lib/float/classify.sail 33:38 - 33:127",
+      "forks": 4
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2096:5 - 2098:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2097:5 - 2098:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2096:2 - 2099:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 159:5 - 160:40",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 159:2 - 161:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 184:5 - 187:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 185:5 - 187:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 186:5 - 187:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 184:2 - 188:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 38:5 - 40:40",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 39:5 - 40:40",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_vm_insts.sail 38:2 - 41:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 43:5 - 46:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 44:5 - 46:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 45:5 - 46:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 43:2 - 47:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 38:5 - 39:40",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 38:2 - 40:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 67:2 - 67:64",
+      "forks": 3
+    },
+    {
+      "source": "extensions/bfloat16/zvfbfmin_insts.sail 28:6 - 29:63",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1315:6 - 1316:63",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 724:5 - 726:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 725:5 - 726:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 724:2 - 727:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1672:5 - 1674:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1673:5 - 1674:39",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1672:2 - 1675:35",
+      "forks": 3
+    },
+    {
+      "source": "extensions/bfloat16/zvfbfmin_insts.sail 127:6 - 128:63",
+      "forks": 3
+    },
+    {
+      "source": "extensions/bfloat16/zvfbfwma_insts.sail 134:6 - 135:63",
+      "forks": 3
+    },
+    {
+      "source": "extensions/bfloat16/zvfbfwma_insts.sail 28:6 - 30:63",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 970:6 - 971:63",
+      "forks": 3
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 43:2 - 43:60",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2480:5 - 2482:45",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2481:5 - 2482:45",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2480:2 - 2483:35",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2354:6 - 2355:63",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2228:6 - 2229:63",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 574:6 - 576:47",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 446:6 - 448:63",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 318:6 - 320:63",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_red_insts.sail 166:2 - 168:35",
+      "forks": 2
+    },
+    {
+      "source": "extensions/bfloat16/zvfbfmin_insts.sail 28:2 - 30:35",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1692:2 - 1746:3",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 726:10 - 726:86",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 992:17 - 992:159",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 994:4 - 1060:5",
+      "forks": 2
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1336:45 - 1336:127",
+      "forks": 1
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 38:23 - 38:74",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2601:5 - 2603:39",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2599:22 - 2599:83",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2602:5 - 2603:39",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2601:2 - 2604:35",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_utils_insts.sail 38:2 - 38:74",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2696:5 - 2697:39",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2696:2 - 2698:35",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 1845:5 - 1845:52",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_regs.sail 375:2 - 378:3",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2773:2 - 2773:73",
+      "forks": 0
+    },
+    {
+      "source": "extensions/V/vext_fp_insts.sail 2790:2 - 2790:44",
+      "forks": 0
+    }
+  ],
+  "vector_targets": [
+    {
+      "target": "FVFMATYPE",
+      "complete_json": false,
+      "forks": 116,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 18
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2121:8 - 2121:16",
+          "forks": 9
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2122:8 - 2122:17",
+          "forks": 9
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2123:8 - 2123:16",
+          "forks": 9
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 1
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 27
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 29
+        }
+      ]
+    },
+    {
+      "target": "FVFMTYPE",
+      "complete_json": false,
+      "forks": 107,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 22
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 12
+        },
+        {
+          "source": "extensions/V/vext_fp_vm_insts.sail 182:8 - 182:17",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_vm_insts.sail 183:8 - 183:17",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_vm_insts.sail 184:8 - 184:17",
+          "forks": 10
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 2
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 28
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "target": "FVFTYPE",
+      "complete_json": false,
+      "forks": 78,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1928:4 - 1950:5",
+          "forks": 24
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 17
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1904:2 - 1908:35",
+          "forks": 6
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 53:23 - 53:63",
+          "forks": 4
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 2
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 23
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "target": "FVVMATYPE",
+      "complete_json": false,
+      "forks": 121,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 14
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 210:8 - 210:17",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 211:8 - 211:18",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 212:8 - 212:17",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 213:8 - 213:18",
+          "forks": 10
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 1
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 26
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 66
+        }
+      ]
+    },
+    {
+      "target": "FVVMTYPE",
+      "complete_json": false,
+      "forks": 92,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 21
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 12
+        },
+        {
+          "source": "extensions/V/vext_fp_vm_insts.sail 62:8 - 62:18",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_fp_vm_insts.sail 63:8 - 63:18",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_fp_vm_insts.sail 64:8 - 64:18",
+          "forks": 11
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 2
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 30
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 28
+        }
+      ]
+    },
+    {
+      "target": "FVVTYPE",
+      "complete_json": false,
+      "forks": 134,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 17
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 69:8 - 69:16",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 70:8 - 70:16",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 71:8 - 71:16",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 72:8 - 72:16",
+          "forks": 10
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 1
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 29
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 57
+        }
+      ]
+    },
+    {
+      "target": "FWFTYPE",
+      "complete_json": false,
+      "forks": 61,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 17
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2508:8 - 2508:16",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 8
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:23 - 49:44",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:52 - 49:44",
+          "forks": 4
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 7
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 27
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "target": "FWVFMATYPE",
+      "complete_json": false,
+      "forks": 96,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 21
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 14
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+          "forks": 6
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:36 - 84:67",
+          "forks": 6
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2382:8 - 2382:18",
+          "forks": 6
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 7
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 33
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "target": "FWVFTYPE",
+      "complete_json": false,
+      "forks": 90,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 21
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 14
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+          "forks": 6
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:36 - 84:67",
+          "forks": 6
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2256:8 - 2256:17",
+          "forks": 6
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 7
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 33
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "target": "FWVTYPE",
+      "complete_json": false,
+      "forks": 111,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 26
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 14
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 574:2 - 577:35",
+          "forks": 12
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 602:8 - 602:16",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+          "forks": 6
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 7
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 52
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "target": "FWVVMATYPE",
+      "complete_json": false,
+      "forks": 203,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 41
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 26
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+          "forks": 20
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 475:8 - 475:18",
+          "forks": 17
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 476:8 - 476:19",
+          "forks": 17
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 7
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 63
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 29
+        }
+      ]
+    },
+    {
+      "target": "FWVVTYPE",
+      "complete_json": false,
+      "forks": 189,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 42
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 28
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+          "forks": 20
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 347:8 - 347:17",
+          "forks": 17
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 348:8 - 348:17",
+          "forks": 17
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 7
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 64
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 25
+        }
+      ]
+    },
+    {
+      "target": "RFVVTYPE",
+      "complete_json": false,
+      "forks": 82,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_fp_red_insts.sail 64:6 - 64:19",
+          "forks": 15
+        },
+        {
+          "source": "extensions/V/vext_fp_red_insts.sail 65:6 - 65:19",
+          "forks": 15
+        },
+        {
+          "source": "extensions/V/vext_fp_red_insts.sail 66:6 - 66:18",
+          "forks": 15
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 9
+        },
+        {
+          "source": "extensions/V/vext_fp_red_insts.sail 44:2 - 44:49",
+          "forks": 6
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 1
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 6
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 31
+        }
+      ]
+    },
+    {
+      "target": "RFWVVTYPE",
+      "complete_json": false,
+      "forks": 29,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 7
+        },
+        {
+          "source": "extensions/V/vext_fp_red_insts.sail 174:2 - 174:49",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_control.sail 365:21 - 365:57",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_control.sail 29:2 - 35:3",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 67:2 - 67:64",
+          "forks": 3
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 3
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 4
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "target": "VFMERGE",
+      "complete_json": true,
+      "forks": 35,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 38:23 - 38:74",
+          "forks": 7
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2601:5 - 2603:39",
+          "forks": 5
+        },
+        {
+          "source": "extensions/V/vext_control.sail 29:2 - 35:3",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2599:22 - 2599:83",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 53:23 - 53:63",
+          "forks": 3
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 6
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 16
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "target": "VFMV",
+      "complete_json": true,
+      "forks": 35,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 14
+        },
+        {
+          "source": "extensions/V/vext_control.sail 29:2 - 35:3",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2696:5 - 2697:39",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 53:23 - 53:63",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2696:2 - 2698:35",
+          "forks": 3
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 2
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 20
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "target": "VFMVFS",
+      "complete_json": true,
+      "forks": 7,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_control.sail 29:2 - 35:3",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1845:5 - 1845:52",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 43:2 - 43:60",
+          "forks": 1
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 2
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 3
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "target": "VFMVSF",
+      "complete_json": true,
+      "forks": 19,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_regs.sail 375:2 - 378:3",
+          "forks": 6
+        },
+        {
+          "source": "extensions/V/vext_control.sail 29:2 - 35:3",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2773:2 - 2773:73",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 3
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 2790:2 - 2790:44",
+          "forks": 3
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 2
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 6
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "target": "VFNCVTBF16_F_F_W",
+      "complete_json": false,
+      "forks": 55,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 17
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 7
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:23 - 49:44",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:52 - 49:44",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_control.sail 365:21 - 365:57",
+          "forks": 4
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 12
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 25
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "target": "VFNUNARY0",
+      "complete_json": false,
+      "forks": 186,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 31
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 14
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1420:8 - 1420:20",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1428:8 - 1428:19",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1436:8 - 1436:20",
+          "forks": 11
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 46
+        },
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 18
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 23
+        }
+      ]
+    },
+    {
+      "target": "VFUNARY0",
+      "complete_json": false,
+      "forks": 125,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 23
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 748:8 - 748:19",
+          "forks": 13
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 756:8 - 756:18",
+          "forks": 13
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 764:8 - 764:19",
+          "forks": 13
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 772:8 - 772:18",
+          "forks": 13
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 1
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 32
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 41
+        }
+      ]
+    },
+    {
+      "target": "VFUNARY1",
+      "complete_json": false,
+      "forks": 267,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1694:4 - 1725:5",
+          "forks": 49
+        },
+        {
+          "source": "sail/lib/float/nan.sail 18:34 - 18:88",
+          "forks": 43
+        },
+        {
+          "source": "sail/lib/float/nan.sail 26:29 - 26:75",
+          "forks": 43
+        },
+        {
+          "source": "sail/lib/float/classify.sail 28:2 - 38:3",
+          "forks": 43
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 13
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 1
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 22
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 22
+        }
+      ]
+    },
+    {
+      "target": "VFWCVTBF16_F_F_V",
+      "complete_json": false,
+      "forks": 71,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 25
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:23 - 49:44",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:52 - 49:44",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_control.sail 365:21 - 365:57",
+          "forks": 4
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 12
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 34
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "target": "VFWMACCBF16_VF",
+      "complete_json": false,
+      "forks": 83,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 22
+        },
+        {
+          "source": "extensions/FD/fdext_regs.sail 318:2 - 320:25",
+          "forks": 16
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 10
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:23 - 49:44",
+          "forks": 4
+        },
+        {
+          "source": "extensions/V/vext_fp_utils_insts.sail 48:52 - 49:44",
+          "forks": 4
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 12
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 30
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 27
+        }
+      ]
+    },
+    {
+      "target": "VFWMACCBF16_VV",
+      "complete_json": false,
+      "forks": 122,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 40
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 20
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:4 - 84:67",
+          "forks": 11
+        },
+        {
+          "source": "extensions/V/vext_utils_insts.sail 83:36 - 84:67",
+          "forks": 9
+        },
+        {
+          "source": "extensions/V/vext_control.sail 365:21 - 365:57",
+          "forks": 8
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 12
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 57
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 33
+        }
+      ]
+    },
+    {
+      "target": "VFWUNARY0",
+      "complete_json": false,
+      "forks": 217,
+      "top_fork_sites": [
+        {
+          "source": "extensions/V/vext_utils_insts.sail 284:2 - 286:24",
+          "forks": 38
+        },
+        {
+          "source": "extensions/V/vext_control.sail 514:2 - 514:80",
+          "forks": 22
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1067:8 - 1067:20",
+          "forks": 15
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1075:8 - 1075:19",
+          "forks": 15
+        },
+        {
+          "source": "extensions/V/vext_fp_insts.sail 1083:8 - 1083:20",
+          "forks": 15
+        }
+      ],
+      "prefix_terminals": [
+        {
+          "status": "non-encodable",
+          "phase": "materialize",
+          "count": 17
+        },
+        {
+          "status": "illegal",
+          "phase": "execute",
+          "count": 47
+        },
+        {
+          "status": "retire",
+          "phase": "execute",
+          "count": 37
+        }
+      ]
+    }
+  ],
+  "raw_evidence_local_path": ".tmp/float-full-trace-20260929"
+}

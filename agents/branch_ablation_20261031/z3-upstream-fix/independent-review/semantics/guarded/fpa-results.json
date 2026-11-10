@@ -1,0 +1,5 @@
+{
+  "exit": 0,
+  "stdout": "PASS\n",
+  "stderr": "(test fpa :time 1.40 :before-memory 0.97 :after-memory 19.27)\n"
+}

@@ -1,0 +1,11 @@
+{
+  "head": "8fbb275aba0472e862e289c7af1331b3bd5d512c",
+  "status": " M src/tactic/fpa/qffp_tactic.cpp\n M src/tactic/fpa/qffp_tactic.h\n M src/tactic/portfolio/default_tactic.cpp\n M src/test/fpa.cpp\n",
+  "hashes": {
+    "src/tactic/fpa/qffp_tactic.cpp": "e6fec8e04db54f150ace83e51f9608557e5d8d0aa13192be574fb50d86e7ad13",
+    "src/tactic/fpa/qffp_tactic.h": "331e62990a7448906ab0a14c3d028ad80f39e27a84c122169749559a8882c0d0",
+    "src/tactic/portfolio/default_tactic.cpp": "6957befe0b33e03826b2737afccade8473e93776c7ae009506a858beabcb792f",
+    "src/test/fpa.cpp": "941be29f3b01249414c649b880e2f0b68ffe7b4589ba790b3c5143e00c39735d",
+    "build/libz3.so": "7dfe5968ec497fda59bc10631e5ad51d638440b94cd3f5edd63cb60ec6f73ec7"
+  }
+}

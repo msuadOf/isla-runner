@@ -1,0 +1,893 @@
+[
+  {
+    "name": "fvftype_illegal_dynamic_frm5",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xa1",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "0": "VF_VADD",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "0": "VF_VADD",
+      "1": "0x1",
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "vr3": "0x40800000",
+      "vstart": "0x0",
+      "fcsr": "0xa1",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 99,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_illegal_dynamic_frm6",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xc1",
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "4": "0x3",
+      "3": "0x1",
+      "0": "VF_VADD",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "0": "VF_VADD",
+      "1": "0x1",
+      "2": "0x2",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected": {
+      "fcsr": "0xc1",
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "vr3": "0x40800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 94,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_illegal_dynamic_frm7",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vstart": "0x0",
+      "vr3": "0x40800000",
+      "mstatus": "0x6600",
+      "fcsr": "0xe1"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3",
+      "0": "VF_VADD"
+    },
+    "expected_fields": {
+      "4": "0x3",
+      "0": "VF_VADD",
+      "3": "0x1",
+      "2": "0x2",
+      "1": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "fcsr": "0xe1",
+      "vstart": "0x0",
+      "vr3": "0x40800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 97,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmatype_illegal_dynamic_frm5",
+    "clause": "FVFMATYPE",
+    "word": "0xb220d1d7",
+    "decoded_ctor": "FVFMATYPE",
+    "reencoded": "0xb220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vr3": "0x40800000",
+      "vstart": "0x0",
+      "fcsr": "0xa1",
+      "mstatus": "0x6600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "0": "VF_VMACC",
+      "4": "0x3",
+      "1": "0x1",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "4": "0x3",
+      "0": "VF_VMACC",
+      "1": "0x1",
+      "3": "0x1",
+      "2": "0x2"
+    },
+    "expected": {
+      "vr3": "0x40800000",
+      "fcsr": "0xa1",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 99,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmatype_illegal_dynamic_frm6",
+    "clause": "FVFMATYPE",
+    "word": "0xb220d1d7",
+    "decoded_ctor": "FVFMATYPE",
+    "reencoded": "0xb220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vr3": "0x40800000",
+      "fcsr": "0xc1",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "0": "VF_VMACC",
+      "3": "0x1",
+      "4": "0x3",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "1": "0x1",
+      "0": "VF_VMACC",
+      "4": "0x3",
+      "3": "0x1",
+      "2": "0x2"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "fcsr": "0xc1",
+      "vstart": "0x0",
+      "vr3": "0x40800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 95,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmatype_illegal_dynamic_frm7",
+    "clause": "FVFMATYPE",
+    "word": "0xb220d1d7",
+    "decoded_ctor": "FVFMATYPE",
+    "reencoded": "0xb220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vr3": "0x40800000",
+      "fcsr": "0xe1",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3",
+      "0": "VF_VMACC",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "0": "VF_VMACC",
+      "1": "0x1",
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "vr3": "0x40800000",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "fcsr": "0xe1"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 113,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_illegal_dynamic_frm5",
+    "clause": "FVFMTYPE",
+    "word": "0x7220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x7220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "mstatus": "0x6600",
+      "fcsr": "0xa1",
+      "vr3": "0x0",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "0": "VFM_VMFNE",
+      "1": "0x1",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "0": "VFM_VMFNE",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x0",
+      "fcsr": "0xa1"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 118,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_illegal_dynamic_frm6",
+    "clause": "FVFMTYPE",
+    "word": "0x7220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x7220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xc1",
+      "vr3": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x3",
+      "0": "VFM_VMFNE",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "0": "VFM_VMFNE",
+      "2": "0x2",
+      "1": "0x1"
+    },
+    "expected": {
+      "fcsr": "0xc1",
+      "vr3": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 111,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_illegal_dynamic_frm7",
+    "clause": "FVFMTYPE",
+    "word": "0x7220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x7220d1d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "fcsr": "0xe1",
+      "vr3": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "0": "VFM_VMFNE",
+      "4": "0x3",
+      "1": "0x1",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "4": "0x3",
+      "0": "VFM_VMFNE",
+      "1": "0x1",
+      "3": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "fcsr": "0xe1",
+      "vr3": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 103,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary0_illegal_dynamic_frm5",
+    "clause": "VFUNARY0",
+    "word": "0x4a2091d7",
+    "decoded_ctor": "VFUNARY0",
+    "reencoded": "0x4a2091d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xa1",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x3",
+      "2": "FV_CVT_X_F",
+      "1": "0x2",
+      "0": "0x1"
+    },
+    "expected_fields": {
+      "1": "0x2",
+      "2": "FV_CVT_X_F",
+      "3": "0x3",
+      "0": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "fcsr": "0xa1",
+      "vr3": "0x40800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 98,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary0_illegal_dynamic_frm6",
+    "clause": "VFUNARY0",
+    "word": "0x4a2091d7",
+    "decoded_ctor": "VFUNARY0",
+    "reencoded": "0x4a2091d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xc1",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x3",
+      "0": "0x1",
+      "1": "0x2",
+      "2": "FV_CVT_X_F"
+    },
+    "expected_fields": {
+      "3": "0x3",
+      "0": "0x1",
+      "1": "0x2",
+      "2": "FV_CVT_X_F"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "vr3": "0x40800000",
+      "fcsr": "0xc1"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 122,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary0_illegal_dynamic_frm7",
+    "clause": "VFUNARY0",
+    "word": "0x4a2091d7",
+    "decoded_ctor": "VFUNARY0",
+    "reencoded": "0x4a2091d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xe1",
+      "vr3": "0x40800000",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "FV_CVT_X_F",
+      "3": "0x3",
+      "1": "0x2",
+      "0": "0x1"
+    },
+    "expected_fields": {
+      "1": "0x2",
+      "2": "FV_CVT_X_F",
+      "0": "0x1",
+      "3": "0x3"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "vr3": "0x40800000",
+      "fcsr": "0xe1",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 126,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary1_illegal_dynamic_frm5",
+    "clause": "VFUNARY1",
+    "word": "0x4e2011d7",
+    "decoded_ctor": "VFUNARY1",
+    "reencoded": "0x4e2011d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xa1",
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "0x1",
+      "3": "0x3",
+      "2": "FVV_VSQRT",
+      "1": "0x2"
+    },
+    "expected_fields": {
+      "2": "FVV_VSQRT",
+      "0": "0x1",
+      "3": "0x3",
+      "1": "0x2"
+    },
+    "expected": {
+      "fcsr": "0xa1",
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "vr3": "0x40800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 113,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary1_illegal_dynamic_frm6",
+    "clause": "VFUNARY1",
+    "word": "0x4e2011d7",
+    "decoded_ctor": "VFUNARY1",
+    "reencoded": "0x4e2011d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xc1",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x2",
+      "0": "0x1",
+      "2": "FVV_VSQRT",
+      "3": "0x3"
+    },
+    "expected_fields": {
+      "3": "0x3",
+      "0": "0x1",
+      "2": "FVV_VSQRT",
+      "1": "0x2"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0xc1",
+      "vr3": "0x40800000",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 121,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary1_illegal_dynamic_frm7",
+    "clause": "VFUNARY1",
+    "word": "0x4e2011d7",
+    "decoded_ctor": "VFUNARY1",
+    "reencoded": "0x4e2011d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xe1",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "0x1",
+      "2": "FVV_VSQRT",
+      "1": "0x2",
+      "3": "0x3"
+    },
+    "expected_fields": {
+      "1": "0x2",
+      "2": "FVV_VSQRT",
+      "0": "0x1",
+      "3": "0x3"
+    },
+    "expected": {
+      "vr3": "0x40800000",
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "fcsr": "0xe1"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 114,
+    "structural_ok": true
+  },
+  {
+    "name": "vfwunary0_illegal_dynamic_frm5",
+    "clause": "VFWUNARY0",
+    "word": "0x4a261257",
+    "decoded_ctor": "VFWUNARY0",
+    "reencoded": "0x4a261257",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xa1",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "vr4": "0x4010000000000000",
+      "mstatus": "0x6600",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "FWV_CVT_F_F",
+      "1": "0x2",
+      "3": "0x4",
+      "0": "0x1"
+    },
+    "expected_fields": {
+      "0": "0x1",
+      "2": "FWV_CVT_F_F",
+      "3": "0x4",
+      "1": "0x2"
+    },
+    "expected": {
+      "vr4": "0x4010000000000000",
+      "mstatus": "0x6600",
+      "fcsr": "0xa1",
+      "vstart": "0x0",
+      "vr5": "0x123456789abcdef0fedcba9876543210"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 126,
+    "structural_ok": true
+  },
+  {
+    "name": "vfwunary0_illegal_dynamic_frm6",
+    "clause": "VFWUNARY0",
+    "word": "0x4a261257",
+    "decoded_ctor": "VFWUNARY0",
+    "reencoded": "0x4a261257",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vr4": "0x4010000000000000",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "mstatus": "0x6600",
+      "vstart": "0x0",
+      "fcsr": "0xc1"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x4",
+      "2": "FWV_CVT_F_F",
+      "1": "0x2",
+      "0": "0x1"
+    },
+    "expected_fields": {
+      "0": "0x1",
+      "1": "0x2",
+      "2": "FWV_CVT_F_F",
+      "3": "0x4"
+    },
+    "expected": {
+      "vr4": "0x4010000000000000",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "fcsr": "0xc1"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 112,
+    "structural_ok": true
+  },
+  {
+    "name": "vfwunary0_illegal_dynamic_frm7",
+    "clause": "VFWUNARY0",
+    "word": "0x4a261257",
+    "decoded_ctor": "VFWUNARY0",
+    "reencoded": "0x4a261257",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vr4": "0x4010000000000000",
+      "mstatus": "0x6600",
+      "fcsr": "0xe1",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "FWV_CVT_F_F",
+      "0": "0x1",
+      "3": "0x4",
+      "1": "0x2"
+    },
+    "expected_fields": {
+      "1": "0x2",
+      "0": "0x1",
+      "2": "FWV_CVT_F_F",
+      "3": "0x4"
+    },
+    "expected": {
+      "vr4": "0x4010000000000000",
+      "vstart": "0x0",
+      "fcsr": "0xe1",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 125,
+    "structural_ok": true
+  },
+  {
+    "name": "rfvvtype_illegal_dynamic_frm5",
+    "clause": "RFVVTYPE",
+    "word": "0xe2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0xe2091d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xa1",
+      "vr3": "0x40800000",
+      "mstatus": "0x6600",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "0": "FVV_VFREDOSUM",
+      "3": "0x1",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "1": "0x1",
+      "0": "FVV_VFREDOSUM",
+      "4": "0x3",
+      "2": "0x2",
+      "3": "0x1"
+    },
+    "expected": {
+      "vr3": "0x40800000",
+      "fcsr": "0xa1",
+      "vstart": "0x0",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 117,
+    "structural_ok": true
+  },
+  {
+    "name": "rfvvtype_illegal_dynamic_frm6",
+    "clause": "RFVVTYPE",
+    "word": "0xe2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0xe2091d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "fcsr": "0xc1",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "FVV_VFREDOSUM",
+      "3": "0x1",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "0": "FVV_VFREDOSUM",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected": {
+      "fcsr": "0xc1",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 127,
+    "structural_ok": true
+  },
+  {
+    "name": "rfvvtype_illegal_dynamic_frm7",
+    "clause": "RFVVTYPE",
+    "word": "0xe2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0xe2091d7",
+    "execute_result": "Illegal_Instruction",
+    "expected_result": "Illegal_Instruction",
+    "registers": {
+      "vstart": "0x0",
+      "fcsr": "0xe1",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x3",
+      "0": "FVV_VFREDOSUM",
+      "1": "0x1",
+      "2": "0x2",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "1": "0x1",
+      "4": "0x3",
+      "2": "0x2",
+      "0": "FVV_VFREDOSUM"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "vr3": "0x40800000",
+      "fcsr": "0xe1",
+      "mstatus": "0x6600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 109,
+    "structural_ok": true
+  }
+]

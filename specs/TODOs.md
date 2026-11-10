@@ -1,5 +1,9 @@
 # TODOs — 当前协作状态
 
+**两分支合并前审查（2026-11-10）**：loop-region-merge 与 isarch-quick-failures 限相对 `daf61c04` 审查及当轮修复完成；带修复后可合并，无新增失败，顶层仍有原有缺 IR 七项失败；合并树待验证。[状态](../agents/isla_premerge_review_20261110/status.md)。
+
+**路径合并与缓存实测（2026-11-10，主轮运行／第二轮等待）**：只测名单 221 项，双并发、T32/2h、无限制预算；主轮 PID 2128518 保持运行。新增独立第二轮：环境错误按原 tactic 补跑，指定 Poison 错误改 default；等待主轮完全收尾后再启动，其他错误／partial／超时不补跑。当前候选四项，名单随主轮更新；五项规则测试通过，最终汇总合并两轮。[状态](../agents/pathmerge_cache_all_clauses_20261110/status.md)。
+
 **执行帧 CoW（2026-11-09，候选完成／主线快进待执行）**：独立 feature 提交7885b24d基于849900a6，新增纯读取契约和默认深拷贝保护，适配现行路径合并。frame6、trace执行器498/5忽略、数组内存34及axiomatic检查通过；真实预检和隔离快进／重复执行通过。原.git只读，主线仍849900a6；未推送或移动gitlink，无性能PASS。[交付与执行入口](../agents/cow_local_frame_20261109/status.md)。
 
 **MMU 实验关停归档（2026-11-09，完成）**：按用户决策，现行路径合并已解决关注场景的路径规模问题，fuzz保留更大探索空间，停止旧预算调优。归档只留Markdown和处理后JSON/CSV；清理旧运行目录44393文件、169658699字节，仅留报告入口。历史超时计数仍为下界，36例后处理不算语义接纳证明。[最终报告](../agents/mmu_symbolic_experiment/final-report.md)。
@@ -187,6 +191,9 @@
 | MEM-BUGHUNT-01 | 找 bug 能力改造（signposting/预分片/守卫过滤） | 第一波 P1/P2/P3 已完成并提交（worktree 60ca0e0/58c9766/47ac90c、根仓 488803f）：P1 `[[value_hints]]`、P2 `[[encoding_slices]]`+`--instruction-bits` 向量译码 panic 根因修复、P3 译码回环过滤+preclass 可见化；第二波 P4 账本/P5 模式库/P6 序列重放待启动 | 部分 PASS：错位形态 0→192（#1574 类材料）、VSSEG 28/28 组合且 vsseg3e32 重放**无定向参数自动命中 #6475** ROB assert、VLX 缩域 32 条破超时、ldu 16→0、测试 140/148/80 绿、回归逐项一致（zSTORE 128/2579 按 P2 口径注记）；F 线验收战役完成：#6475 自动级 155 例、#6486 自动级 295 例含 41 例真分歧、三族新 DUT bug 候选自动发现（NC-1 死锁/NC-2 垃圾访存/NC-3 mtval+0x10）、AMO 过滤后全量重放 0 失败、zSTORE 错位 0→256+——改造达标；T3b 未复现（待原载体复验） | [计划](../agents/memory_support_review/plan-bughunt.md)、[findings](../agents/findings.md)、F 线产物根仓 `.tmp/accept1-20260929-124451/`（gitignored）；上游上报包 7 项（E 线四草稿+NC-1/2/3）；证据底座=W24 campaign+B 组归因+E 线定向复现。 |
 | PREEXEC-01 | C ADD pre-exec constraints | 仅见计划 | 未测 | [计划原文](../agents/c_add_pre_exec_constraints/plan.md)；待核对实施状态。 |
 | COMMIT-01 | 工作区提交审计 | 历史批次完成 | 待核实 | [状态](../agents/commit_workspace_audit/status.md)；仅描述 2026-09-23 批次。 |
+| LOOPMERGE-01 | path merge 支持循环内分叉合并 | M0–M2、vector_update 改纯已提交，经合并前审查修复（6861c94e），与 QUICKFAIL-01 合入集成分支 `feat/isarch-integration-20261110`（c1559ad8）；226 个 clause 集成实测运行中 | 合并树 isla-lib 单元测试 844 通过；实测进行中 | [状态](../agents/loop_region_merge_20261110/status.md)、[设计与计划](../agents/loop_region_merge_20261110/plan.md)、实测目录 `.worktree/integration-run-20261110/` |
+| QUICKFAIL-01 | isarch 快速失败修复（Poison/Z3、浮点函数缺失、无合法编码、未完成路径、LOAD_FP panic） | 四类修复和 Z3≥5.4.0 检测已提交（9a4f5c91，审查修复 02e92c2d），已合入集成分支 c1559ad8；剩 CPOP/CPOPW、LOAD_FP、浮点 helper | 原 Poison 37/39、无编码 10/10、未完成 22/22 通过（10 分钟外限）；make solve-MRET 通过 | [状态](../agents/isarch_quick_failures_20261110/status.md)、[诊断](../agents/isarch_quick_failures_20261110/diagnosis-20261110.md)、[修复后结果](../agents/isarch_quick_failures_20261110/after-fix-20261110.md) |
+| GENERIC-01 | Isla 对 Sail 模型通用：模型语义迁到配置或模型侧 | 合法初态域、RVV 初态规则已迁到 `[constraints].initial` 与 `symbolic_registers`（集成分支 31a36d2f）；随机数待模型侧实现；映射名后续 | 等价证明通过；7 个 clause 回归一致 | [状态](../agents/isla_model_agnostic_20261110/status.md)、[审查](../agents/isla_model_agnostic_20261110/review-20261110.md) |
 
 没有独立 `status.md` 的专题仍以其计划或报告作为证据入口。新增议题先在本表登记，再按根 `AGENTS.md` 的要求建立可审阅方案。
 

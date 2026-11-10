@@ -1,0 +1,2046 @@
+[
+  {
+    "name": "fvfmatype_masked_skip_sticky",
+    "clause": "FVFMATYPE",
+    "word": "0xb020d1d7",
+    "decoded_ctor": "FVFMATYPE",
+    "reencoded": "0xb020d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x41f0000040ec000041a0000041200000",
+      "fcsr": "0x4",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x0",
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x3",
+      "0": "VF_VMACC"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "2": "0x2",
+      "0": "VF_VMACC",
+      "1": "0x0"
+    },
+    "expected": {
+      "vr3": "0x41f0000040ec000041a0000041200000",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 51,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_masked_skip_sticky",
+    "clause": "FVFMTYPE",
+    "word": "0x7020d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x7020d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0xe",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "VFM_VMFNE",
+      "3": "0x1",
+      "1": "0x0",
+      "2": "0x2",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "1": "0x0",
+      "0": "VFM_VMFNE",
+      "2": "0x2"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4",
+      "vr3": "0xe"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 52,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_masked_skip_sticky",
+    "clause": "FVFTYPE",
+    "word": "0x20d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x20d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x41f000004070000041a0000041200000",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "1": "0x0",
+      "2": "0x2",
+      "0": "VF_VADD",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "1": "0x0",
+      "3": "0x1",
+      "4": "0x3",
+      "2": "0x2",
+      "0": "VF_VADD"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x4",
+      "vr3": "0x41f000004070000041a0000041200000",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 48,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmatype_masked_skip_sticky",
+    "clause": "FVVMATYPE",
+    "word": "0xb02091d7",
+    "decoded_ctor": "FVVMATYPE",
+    "reencoded": "0xb02091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x41f0000040ec000041a0000041200000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "4": "0x3",
+      "3": "0x1",
+      "1": "0x0",
+      "0": "FVV_VMACC"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "2": "0x2",
+      "1": "0x0",
+      "4": "0x3",
+      "0": "FVV_VMACC"
+    },
+    "expected": {
+      "vr3": "0x41f0000040ec000041a0000041200000",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 48,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmtype_masked_skip_sticky",
+    "clause": "FVVMTYPE",
+    "word": "0x702091d7",
+    "decoded_ctor": "FVVMTYPE",
+    "reencoded": "0x702091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0xe",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "FVVM_VMFNE",
+      "2": "0x2",
+      "3": "0x1",
+      "1": "0x0",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "4": "0x3",
+      "1": "0x0",
+      "2": "0x2",
+      "3": "0x1",
+      "0": "FVVM_VMFNE"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0xe"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 51,
+    "structural_ok": true
+  },
+  {
+    "name": "fwftype_masked_skip_sticky",
+    "clause": "FWFTYPE",
+    "word": "0xd020d257",
+    "decoded_ctor": "FWFTYPE",
+    "reencoded": "0xd020d257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr4": "0x40340000000000004024000000000000",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x403e000000000000400e000000000000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x4",
+      "1": "0x0",
+      "2": "0x2",
+      "3": "0x1",
+      "0": "FWF_VADD"
+    },
+    "expected_fields": {
+      "4": "0x4",
+      "2": "0x2",
+      "1": "0x0",
+      "0": "FWF_VADD",
+      "3": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000",
+      "vstart": "0x0",
+      "vr5": "0x403e000000000000400e000000000000",
+      "fcsr": "0x4"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 57,
+    "structural_ok": true
+  },
+  {
+    "name": "fwvfmatype_masked_skip_sticky",
+    "clause": "FWVFMATYPE",
+    "word": "0xf020d257",
+    "decoded_ctor": "FWVFMATYPE",
+    "reencoded": "0xf020d257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "vr4": "0x40340000000000004024000000000000",
+      "vr5": "0x403e000000000000401d800000000000",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x4",
+      "1": "0x0",
+      "2": "0x1",
+      "3": "0x2",
+      "0": "FWVF_VMACC"
+    },
+    "expected_fields": {
+      "4": "0x4",
+      "3": "0x2",
+      "0": "FWVF_VMACC",
+      "2": "0x1",
+      "1": "0x0"
+    },
+    "expected": {
+      "vr5": "0x403e000000000000401d800000000000",
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000",
+      "fcsr": "0x4",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 61,
+    "structural_ok": true
+  },
+  {
+    "name": "fwvftype_masked_skip_sticky",
+    "clause": "FWVFTYPE",
+    "word": "0xc020d257",
+    "decoded_ctor": "FWVFTYPE",
+    "reencoded": "0xc020d257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "vr5": "0x403e000000000000400e000000000000",
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000",
+      "fcsr": "0x4"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "0": "FWVF_VADD",
+      "4": "0x4",
+      "3": "0x1",
+      "1": "0x0"
+    },
+    "expected_fields": {
+      "4": "0x4",
+      "0": "FWVF_VADD",
+      "2": "0x2",
+      "1": "0x0",
+      "3": "0x1"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000",
+      "vr5": "0x403e000000000000400e000000000000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 58,
+    "structural_ok": true
+  },
+  {
+    "name": "fwvtype_masked_skip_sticky",
+    "clause": "FWVTYPE",
+    "word": "0xd0209257",
+    "decoded_ctor": "FWVTYPE",
+    "reencoded": "0xd0209257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "vr4": "0x40340000000000004024000000000000",
+      "vr5": "0x403e000000000000400e000000000000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "1": "0x0",
+      "0": "FWV_VADD",
+      "4": "0x4",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "4": "0x4",
+      "0": "FWV_VADD",
+      "1": "0x0",
+      "3": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x403e000000000000400e000000000000",
+      "fcsr": "0x4",
+      "vr4": "0x40340000000000004024000000000000",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 55,
+    "structural_ok": true
+  },
+  {
+    "name": "fwvvmatype_masked_skip_sticky",
+    "clause": "FWVVMATYPE",
+    "word": "0xf0209257",
+    "decoded_ctor": "FWVVMATYPE",
+    "reencoded": "0xf0209257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "vr5": "0x403e000000000000401d800000000000",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x4",
+      "1": "0x0",
+      "3": "0x1",
+      "0": "FWVV_VMACC",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x4",
+      "0": "FWVV_VMACC",
+      "1": "0x0"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "vr5": "0x403e000000000000401d800000000000",
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 58,
+    "structural_ok": true
+  },
+  {
+    "name": "fwvvtype_masked_skip_sticky",
+    "clause": "FWVVTYPE",
+    "word": "0xc0209257",
+    "decoded_ctor": "FWVVTYPE",
+    "reencoded": "0xc0209257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr4": "0x40340000000000004024000000000000",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x403e000000000000400e000000000000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "1": "0x0",
+      "2": "0x2",
+      "0": "FWVV_VADD",
+      "4": "0x4"
+    },
+    "expected_fields": {
+      "0": "FWVV_VADD",
+      "4": "0x4",
+      "3": "0x1",
+      "1": "0x0",
+      "2": "0x2"
+    },
+    "expected": {
+      "vr5": "0x403e000000000000400e000000000000",
+      "mstatus": "0x8000000000006600",
+      "vr4": "0x40340000000000004024000000000000",
+      "fcsr": "0x4",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 56,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary0_masked_skip_sticky",
+    "clause": "VFUNARY0",
+    "word": "0x482091d7",
+    "decoded_ctor": "VFUNARY0",
+    "reencoded": "0x482091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "vr3": "0x41f000000000000241a0000041200000",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "FV_CVT_X_F",
+      "1": "0x2",
+      "3": "0x3",
+      "0": "0x0"
+    },
+    "expected_fields": {
+      "2": "FV_CVT_X_F",
+      "0": "0x0",
+      "1": "0x2",
+      "3": "0x3"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "vr3": "0x41f000000000000241a0000041200000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 45,
+    "structural_ok": true
+  },
+  {
+    "name": "vfunary1_masked_skip_sticky",
+    "clause": "VFUNARY1",
+    "word": "0x4c2011d7",
+    "decoded_ctor": "VFUNARY1",
+    "reencoded": "0x4c2011d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x41f000004000000041a0000041200000",
+      "vstart": "0x0",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x3",
+      "0": "0x0",
+      "2": "FVV_VSQRT",
+      "1": "0x2"
+    },
+    "expected_fields": {
+      "1": "0x2",
+      "2": "FVV_VSQRT",
+      "0": "0x0",
+      "3": "0x3"
+    },
+    "expected": {
+      "vr3": "0x41f000004000000041a0000041200000",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 47,
+    "structural_ok": true
+  },
+  {
+    "name": "vfwunary0_masked_skip_sticky",
+    "clause": "VFWUNARY0",
+    "word": "0x48261257",
+    "decoded_ctor": "VFWUNARY0",
+    "reencoded": "0x48261257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4",
+      "vr5": "0x403e0000000000003ff8000000000000",
+      "vstart": "0x0",
+      "vr4": "0x40340000000000004024000000000000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x4",
+      "1": "0x2",
+      "0": "0x0",
+      "2": "FWV_CVT_F_F"
+    },
+    "expected_fields": {
+      "3": "0x4",
+      "1": "0x2",
+      "2": "FWV_CVT_F_F",
+      "0": "0x0"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "vr5": "0x403e0000000000003ff8000000000000",
+      "vr4": "0x40340000000000004024000000000000",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 50,
+    "structural_ok": true
+  },
+  {
+    "name": "fwv_cvt_f_x_e8_sign",
+    "clause": "VFWUNARY0",
+    "word": "0x4a259257",
+    "decoded_ctor": "VFWUNARY0",
+    "reencoded": "0x4a259257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "vr4": "0xc000",
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x123456789abcdef0fedcba9876543210"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "FWV_CVT_F_X",
+      "3": "0x4",
+      "1": "0x2",
+      "0": "0x1"
+    },
+    "expected_fields": {
+      "1": "0x2",
+      "0": "0x1",
+      "2": "FWV_CVT_F_X",
+      "3": "0x4"
+    },
+    "expected": {
+      "vr4": "0xc000",
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x123456789abcdef0fedcba9876543210"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 43,
+    "structural_ok": true
+  },
+  {
+    "name": "fwv_cvt_f_xu_e8_sign",
+    "clause": "VFWUNARY0",
+    "word": "0x4a251257",
+    "decoded_ctor": "VFWUNARY0",
+    "reencoded": "0x4a251257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "vr4": "0x5bf0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "0x1",
+      "2": "FWV_CVT_F_XU",
+      "1": "0x2",
+      "3": "0x4"
+    },
+    "expected_fields": {
+      "3": "0x4",
+      "2": "FWV_CVT_F_XU",
+      "0": "0x1",
+      "1": "0x2"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr5": "0x123456789abcdef0fedcba9876543210",
+      "vr4": "0x5bf0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 43,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_vfm_vmfeq_false",
+    "clause": "FVFMTYPE",
+    "word": "0x6220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x6220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "1": "0x1",
+      "0": "VFM_VMFEQ",
+      "4": "0x3",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "1": "0x1",
+      "3": "0x1",
+      "0": "VFM_VMFEQ",
+      "4": "0x3"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x0",
+      "fcsr": "0x0",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 51,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_vfm_vmfeq_qnan",
+    "clause": "FVFMTYPE",
+    "word": "0x6220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x6220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "vr3": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "3": "0x1",
+      "0": "VFM_VMFEQ",
+      "2": "0x2",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "1": "0x1",
+      "4": "0x3",
+      "2": "0x2",
+      "0": "VFM_VMFEQ"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "vr3": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 52,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_vfm_vmfne_qnan",
+    "clause": "FVFMTYPE",
+    "word": "0x7220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x7220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x0",
+      "vr3": "0x1",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "3": "0x1",
+      "4": "0x3",
+      "2": "0x2",
+      "0": "VFM_VMFNE"
+    },
+    "expected_fields": {
+      "0": "VFM_VMFNE",
+      "1": "0x1",
+      "3": "0x1",
+      "2": "0x2",
+      "4": "0x3"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "vr3": "0x1",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 52,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_vfm_vmfle_qnan",
+    "clause": "FVFMTYPE",
+    "word": "0x6620d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x6620d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x10",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "VFM_VMFLE",
+      "4": "0x3",
+      "2": "0x2",
+      "1": "0x1",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "0": "VFM_VMFLE",
+      "2": "0x2",
+      "4": "0x3",
+      "1": "0x1",
+      "3": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x10",
+      "vr3": "0x0",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 53,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmtype_vfm_vmfeq_snan",
+    "clause": "FVFMTYPE",
+    "word": "0x6220d1d7",
+    "decoded_ctor": "FVFMTYPE",
+    "reencoded": "0x6220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x10",
+      "vstart": "0x0",
+      "vr3": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "VFM_VMFEQ",
+      "2": "0x2",
+      "4": "0x3",
+      "3": "0x1",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "0": "VFM_VMFEQ",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "fcsr": "0x10",
+      "vr3": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 53,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmtype_fvvm_vmfeq_qnan",
+    "clause": "FVVMTYPE",
+    "word": "0x622091d7",
+    "decoded_ctor": "FVVMTYPE",
+    "reencoded": "0x622091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x0",
+      "fcsr": "0x0",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "0": "FVVM_VMFEQ",
+      "1": "0x1",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "4": "0x3",
+      "0": "FVVM_VMFEQ",
+      "1": "0x1",
+      "3": "0x1"
+    },
+    "expected": {
+      "vr3": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 50,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmtype_fvvm_vmfne_qnan",
+    "clause": "FVVMTYPE",
+    "word": "0x722091d7",
+    "decoded_ctor": "FVVMTYPE",
+    "reencoded": "0x722091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "vr3": "0x1",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "FVVM_VMFNE",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "0": "FVVM_VMFNE",
+      "2": "0x2",
+      "4": "0x3",
+      "1": "0x1"
+    },
+    "expected": {
+      "vr3": "0x1",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 51,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmtype_fvvm_vmfle_qnan",
+    "clause": "FVVMTYPE",
+    "word": "0x662091d7",
+    "decoded_ctor": "FVVMTYPE",
+    "reencoded": "0x662091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x0",
+      "fcsr": "0x10",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x3",
+      "1": "0x1",
+      "0": "FVVM_VMFLE"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "0": "FVVM_VMFLE",
+      "1": "0x1",
+      "3": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x0",
+      "fcsr": "0x10",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 51,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmtype_fvvm_vmfeq_snan",
+    "clause": "FVVMTYPE",
+    "word": "0x622091d7",
+    "decoded_ctor": "FVVMTYPE",
+    "reencoded": "0x622091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x10",
+      "vr3": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x3",
+      "2": "0x2",
+      "1": "0x1",
+      "3": "0x1",
+      "0": "FVVM_VMFEQ"
+    },
+    "expected_fields": {
+      "0": "FVVM_VMFEQ",
+      "2": "0x2",
+      "3": "0x1",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "vr3": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x10"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 50,
+    "structural_ok": true
+  },
+  {
+    "name": "vf_vslide1up_vl2_payload",
+    "clause": "FVFTYPE",
+    "word": "0x3a20d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x3a20d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "vr3": "0x40e0000040c000007fc123453fc00000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "1": "0x1",
+      "0": "VF_VSLIDE1UP",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "0": "VF_VSLIDE1UP",
+      "2": "0x2",
+      "1": "0x1"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "vr3": "0x40e0000040c000007fc123453fc00000",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 47,
+    "structural_ok": true
+  },
+  {
+    "name": "vf_vslide1down_vl2_payload",
+    "clause": "FVFTYPE",
+    "word": "0x3e20d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x3e20d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x40e0000040c000003fc000007fc56789",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "fcsr": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "1": "0x1",
+      "0": "VF_VSLIDE1DOWN",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "0": "VF_VSLIDE1DOWN",
+      "3": "0x1",
+      "2": "0x2",
+      "4": "0x3",
+      "1": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "vr3": "0x40e0000040c000003fc000007fc56789"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 47,
+    "structural_ok": true
+  },
+  {
+    "name": "fvv_vfredosum_three_lanes",
+    "clause": "RFVVTYPE",
+    "word": "0xe2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0xe2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "vr3": "0x40a80000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x3",
+      "2": "0x2",
+      "0": "FVV_VFREDOSUM",
+      "3": "0x1",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3",
+      "0": "FVV_VFREDOSUM",
+      "3": "0x1"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x40a80000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 58,
+    "structural_ok": true
+  },
+  {
+    "name": "fvv_vfredusum_three_lanes",
+    "clause": "RFVVTYPE",
+    "word": "0x62091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0x62091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vr3": "0x40a80000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "0": "FVV_VFREDUSUM",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "0": "FVV_VFREDUSUM",
+      "4": "0x3",
+      "1": "0x1"
+    },
+    "expected": {
+      "vr3": "0x40a80000",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "fcsr": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 58,
+    "structural_ok": true
+  },
+  {
+    "name": "fvv_vfredmax_three_lanes",
+    "clause": "RFVVTYPE",
+    "word": "0x1e2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0x1e2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x40100000",
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x3",
+      "2": "0x2",
+      "3": "0x1",
+      "1": "0x1",
+      "0": "FVV_VFREDMAX"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "1": "0x1",
+      "0": "FVV_VFREDMAX",
+      "2": "0x2"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x40100000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 55,
+    "structural_ok": true
+  },
+  {
+    "name": "fvv_vfredmin_three_lanes",
+    "clause": "RFVVTYPE",
+    "word": "0x162091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0x162091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x3f000000",
+      "fcsr": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "0": "FVV_VFREDMIN",
+      "4": "0x3",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "0": "FVV_VFREDMIN",
+      "3": "0x1",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "vr3": "0x3f000000",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 54,
+    "structural_ok": true
+  },
+  {
+    "name": "rfvvtype_vl0_no_write",
+    "clause": "RFVVTYPE",
+    "word": "0xe2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0xe2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x40800000",
+      "vstart": "0x0",
+      "fcsr": "0x4",
+      "mstatus": "0x6600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "0": "FVV_VFREDOSUM",
+      "1": "0x1",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "1": "0x1",
+      "2": "0x2",
+      "0": "FVV_VFREDOSUM",
+      "4": "0x3"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 47,
+    "structural_ok": true
+  },
+  {
+    "name": "rfvvtype_masked_snan_payload",
+    "clause": "RFVVTYPE",
+    "word": "0xc2091d7",
+    "decoded_ctor": "RFVVTYPE",
+    "reencoded": "0xc2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x7fc12345",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "0": "FVV_VFREDOSUM",
+      "2": "0x2",
+      "1": "0x0"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "2": "0x2",
+      "0": "FVV_VFREDOSUM",
+      "1": "0x0",
+      "4": "0x3"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "vr3": "0x7fc12345",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 50,
+    "structural_ok": true
+  },
+  {
+    "name": "fvv_vfwredosum_three_lanes",
+    "clause": "RFWVVTYPE",
+    "word": "0xce2091d7",
+    "decoded_ctor": "RFWVVTYPE",
+    "reencoded": "0xce2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x4015000000000000",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "fcsr": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x3",
+      "1": "0x1",
+      "3": "0x1",
+      "2": "0x2",
+      "0": "FVV_VFWREDOSUM"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "4": "0x3",
+      "0": "FVV_VFWREDOSUM",
+      "3": "0x1",
+      "1": "0x1"
+    },
+    "expected": {
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x4015000000000000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 69,
+    "structural_ok": true
+  },
+  {
+    "name": "fvv_vfwredusum_three_lanes",
+    "clause": "RFWVVTYPE",
+    "word": "0xc62091d7",
+    "decoded_ctor": "RFWVVTYPE",
+    "reencoded": "0xc62091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "vr3": "0x4015000000000000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "FVV_VFWREDUSUM",
+      "2": "0x2",
+      "1": "0x1",
+      "3": "0x1",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "1": "0x1",
+      "3": "0x1",
+      "2": "0x2",
+      "4": "0x3",
+      "0": "FVV_VFWREDUSUM"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "vr3": "0x4015000000000000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 69,
+    "structural_ok": true
+  },
+  {
+    "name": "rfwvvtype_vl0_no_write",
+    "clause": "RFWVVTYPE",
+    "word": "0xce2091d7",
+    "decoded_ctor": "RFWVVTYPE",
+    "reencoded": "0xce2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x6600",
+      "vr3": "0x40800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "2": "0x2",
+      "4": "0x3",
+      "0": "FVV_VFWREDOSUM",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "1": "0x1",
+      "0": "FVV_VFWREDOSUM",
+      "4": "0x3",
+      "2": "0x2",
+      "3": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "fcsr": "0x4",
+      "vr3": "0x40800000",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 53,
+    "structural_ok": true
+  },
+  {
+    "name": "rfwvvtype_masked_snan_payload",
+    "clause": "RFWVVTYPE",
+    "word": "0xcc2091d7",
+    "decoded_ctor": "RFWVVTYPE",
+    "reencoded": "0xcc2091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "vr3": "0x7ff80000deadbeef",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "4": "0x3",
+      "2": "0x2",
+      "1": "0x0",
+      "3": "0x1",
+      "0": "FVV_VFWREDOSUM"
+    },
+    "expected_fields": {
+      "2": "0x2",
+      "3": "0x1",
+      "4": "0x3",
+      "0": "FVV_VFWREDOSUM",
+      "1": "0x0"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "vr3": "0x7ff80000deadbeef",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 56,
+    "structural_ok": true
+  },
+  {
+    "name": "vfmerge_mask_both_choices",
+    "clause": "VFMERGE",
+    "word": "0x5c20d1d7",
+    "decoded_ctor": "VFMERGE",
+    "reencoded": "0x5c20d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x0",
+      "vr3": "0x40e0000040c000003fc0000040100000",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "2": "0x3",
+      "0": "0x2"
+    },
+    "expected_fields": {
+      "0": "0x2",
+      "1": "0x1",
+      "2": "0x3"
+    },
+    "expected": {
+      "vr3": "0x40e0000040c000003fc0000040100000",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 46,
+    "structural_ok": true
+  },
+  {
+    "name": "vfmvfs_vl0_start0",
+    "clause": "VFMVFS",
+    "word": "0x422011d7",
+    "decoded_ctor": "VFMVFS",
+    "reencoded": "0x422011d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "f3": "0xffffffff40100000",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x3",
+      "0": "0x2"
+    },
+    "expected_fields": {
+      "0": "0x2",
+      "1": "0x3"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "f3": "0xffffffff40100000",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 44,
+    "structural_ok": true
+  },
+  {
+    "name": "vfmvfs_vl1_start1",
+    "clause": "VFMVFS",
+    "word": "0x422011d7",
+    "decoded_ctor": "VFMVFS",
+    "reencoded": "0x422011d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "f3": "0xffffffff40100000",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "0x2",
+      "1": "0x3"
+    },
+    "expected_fields": {
+      "0": "0x2",
+      "1": "0x3"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "f3": "0xffffffff40100000",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 44,
+    "structural_ok": true
+  },
+  {
+    "name": "vfmvsf_vl0_start0",
+    "clause": "VFMVSF",
+    "word": "0x4200d1d7",
+    "decoded_ctor": "VFMVSF",
+    "reencoded": "0x4200d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x4",
+      "vr3": "0x40800000",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x3",
+      "0": "0x1"
+    },
+    "expected_fields": {
+      "1": "0x3",
+      "0": "0x1"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x40800000",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 47,
+    "structural_ok": true
+  },
+  {
+    "name": "vfmvsf_vl1_start1",
+    "clause": "VFMVSF",
+    "word": "0x4200d1d7",
+    "decoded_ctor": "VFMVSF",
+    "reencoded": "0x4200d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4",
+      "vr3": "0x40800000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "0x1",
+      "1": "0x3"
+    },
+    "expected_fields": {
+      "1": "0x3",
+      "0": "0x1"
+    },
+    "expected": {
+      "vr3": "0x40800000",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 46,
+    "structural_ok": true
+  },
+  {
+    "name": "fvfmatype_fused_low_product",
+    "clause": "FVFMATYPE",
+    "word": "0xb220d1d7",
+    "decoded_ctor": "FVFMATYPE",
+    "reencoded": "0xb220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0",
+      "vr3": "0xa8800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "4": "0x3",
+      "1": "0x1",
+      "2": "0x2",
+      "0": "VF_VMACC"
+    },
+    "expected_fields": {
+      "1": "0x1",
+      "3": "0x1",
+      "4": "0x3",
+      "0": "VF_VMACC",
+      "2": "0x2"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "vr3": "0xa8800000",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 50,
+    "structural_ok": true
+  },
+  {
+    "name": "fvvmatype_fused_low_product",
+    "clause": "FVVMATYPE",
+    "word": "0xb22091d7",
+    "decoded_ctor": "FVVMATYPE",
+    "reencoded": "0xb22091d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0",
+      "vr3": "0xa8800000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "0": "FVV_VMACC",
+      "2": "0x2",
+      "1": "0x1",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "3": "0x1",
+      "2": "0x2",
+      "0": "FVV_VMACC",
+      "1": "0x1",
+      "4": "0x3"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr3": "0xa8800000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 47,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_no_body_vl2_start2",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "vr3": "0x4220000041f0000041a0000041200000"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "2": "0x2",
+      "0": "VF_VADD",
+      "4": "0x3",
+      "3": "0x1"
+    },
+    "expected_fields": {
+      "4": "0x3",
+      "3": "0x1",
+      "2": "0x2",
+      "1": "0x1",
+      "0": "VF_VADD"
+    },
+    "expected": {
+      "vr3": "0x4220000041f0000041a0000041200000",
+      "vstart": "0x0",
+      "fcsr": "0x4",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 46,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_no_body_vl0_start0",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr3": "0x4220000041f0000041a0000041200000",
+      "fcsr": "0x4",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "0": "VF_VADD",
+      "3": "0x1",
+      "4": "0x3",
+      "2": "0x2"
+    },
+    "expected_fields": {
+      "0": "VF_VADD",
+      "3": "0x1",
+      "2": "0x2",
+      "4": "0x3",
+      "1": "0x1"
+    },
+    "expected": {
+      "fcsr": "0x4",
+      "vr3": "0x4220000041f0000041a0000041200000",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 45,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_invalid_box_e16",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "vr3": "0x7e00",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "1": "0x1",
+      "3": "0x1",
+      "2": "0x2",
+      "0": "VF_VADD",
+      "4": "0x3"
+    },
+    "expected_fields": {
+      "1": "0x1",
+      "3": "0x1",
+      "4": "0x3",
+      "0": "VF_VADD",
+      "2": "0x2"
+    },
+    "expected": {
+      "vstart": "0x0",
+      "vr3": "0x7e00",
+      "mstatus": "0x8000000000006600",
+      "fcsr": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 44,
+    "structural_ok": true
+  },
+  {
+    "name": "fvftype_invalid_box_e32",
+    "clause": "FVFTYPE",
+    "word": "0x220d1d7",
+    "decoded_ctor": "FVFTYPE",
+    "reencoded": "0x220d1d7",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vstart": "0x0",
+      "fcsr": "0x0",
+      "vr3": "0x7fc00000",
+      "mstatus": "0x8000000000006600"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "3": "0x1",
+      "0": "VF_VADD",
+      "2": "0x2",
+      "4": "0x3",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "0": "VF_VADD",
+      "4": "0x3",
+      "3": "0x1",
+      "2": "0x2",
+      "1": "0x1"
+    },
+    "expected": {
+      "mstatus": "0x8000000000006600",
+      "vr3": "0x7fc00000",
+      "fcsr": "0x0",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 48,
+    "structural_ok": true
+  },
+  {
+    "name": "fwvvtype_lmul2_cross_register",
+    "clause": "FWVVTYPE",
+    "word": "0xc2241257",
+    "decoded_ctor": "FWVVTYPE",
+    "reencoded": "0xc2241257",
+    "execute_result": "Retire_Success",
+    "registers": {
+      "vr7": "0x405ac00000000000405a800000000000",
+      "fcsr": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr6": "0x405a400000000000404b800000000000",
+      "vr4": "0x40360000000000004026000000000000",
+      "vr5": "0x40460000000000004040800000000000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x2",
+      "4": "0x4",
+      "3": "0x8",
+      "0": "FWVV_VADD",
+      "1": "0x1"
+    },
+    "expected_fields": {
+      "4": "0x4",
+      "3": "0x8",
+      "2": "0x2",
+      "0": "FWVV_VADD",
+      "1": "0x1"
+    },
+    "expected": {
+      "vr4": "0x40360000000000004026000000000000",
+      "vr5": "0x40460000000000004040800000000000",
+      "vr6": "0x405a400000000000404b800000000000",
+      "fcsr": "0x0",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600",
+      "vr7": "0x405ac00000000000405a800000000000"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 78,
+    "structural_ok": true
+  }
+]

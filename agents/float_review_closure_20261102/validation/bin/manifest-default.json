@@ -1,0 +1,26 @@
+{
+  "source_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "source_clean": true,
+  "smt_source_sha256": "aa3cb973102299707fc2d87c94369136daed8b88944e47b48ff3ee9e9ec1f9cc",
+  "profile": "release",
+  "binary": "agents/float_review_closure_20261102/validation/bin/isarch-42000be-default",
+  "binary_sha256": "4230545803dd57535a3741b294c576b81b2e9c65a417e51fb3e539d9d36c1c30",
+  "features": [
+    "default"
+  ],
+  "isla_lib_features": [
+    "default"
+  ],
+  "build_cpu": 114,
+  "sibling_cpu": 50,
+  "cargo_build_jobs": 1,
+  "build_command": "taskset -c 114 env CARGO_BUILD_JOBS=1 CARGO_TARGET_DIR=$ROOT/agents/float_review_closure_20261102/enum/target RUSTFLAGS=\"-L native=$Z3_LIB -C link-arg=-Wl,-rpath,$Z3_LIB\" cargo build --release --bin isarch",
+  "build_log": "agents/float_review_closure_20261102/validation/bin/build-isarch-42000be-default.log",
+  "isarch_fingerprint": "agents/float_review_closure_20261102/validation/bin/fingerprint-isarch-default.json",
+  "isla_lib_fingerprint": "agents/float_review_closure_20261102/validation/bin/fingerprint-isla-lib-default.json",
+  "z3_library": "~/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3.4.0",
+  "z3_library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "ldd_log": "agents/float_review_closure_20261102/validation/bin/ldd-default.txt",
+  "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+  "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)"
+}

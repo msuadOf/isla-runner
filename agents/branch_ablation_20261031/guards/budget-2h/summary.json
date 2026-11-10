@@ -1,0 +1,624 @@
+{
+  "status": "complete",
+  "updated_utc": "2026-10-31T10:47:43.800472+00:00",
+  "launch": {
+    "workers": [
+      {
+        "pair": 0,
+        "pid": 3218095,
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/budget-2h/worker.py",
+          "0"
+        ],
+        "log": "worker-0.log",
+        "started_utc": "2026-10-31T10:42:51.494318+00:00"
+      },
+      {
+        "pair": 1,
+        "pid": 3218096,
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/budget-2h/worker.py",
+          "1"
+        ],
+        "log": "worker-1.log",
+        "started_utc": "2026-10-31T10:42:51.495667+00:00"
+      },
+      {
+        "pair": 2,
+        "pid": 3218097,
+        "command": [
+          "/home/baiyifan/miniconda3/bin/python3",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/budget-2h/worker.py",
+          "2"
+        ],
+        "log": "worker-2.log",
+        "started_utc": "2026-10-31T10:42:51.496519+00:00"
+      }
+    ],
+    "no_additional_warmup": true,
+    "external_timeout_seconds_per_run": 7200,
+    "path_timeout_cli": null,
+    "smt_timeout_cli": null
+  },
+  "pairs": {
+    "0": {
+      "cpu": 56,
+      "order": [
+        "A",
+        "B_normal"
+      ],
+      "status": "complete",
+      "worker_pid": 3218095,
+      "child_pid": null,
+      "run_dir": "agents/branch_ablation_20261031/guards/budget-2h/pair-0/run-1-B_normal"
+    },
+    "1": {
+      "cpu": 57,
+      "order": [
+        "B_normal",
+        "A"
+      ],
+      "status": "complete",
+      "worker_pid": 3218096,
+      "child_pid": null,
+      "run_dir": "agents/branch_ablation_20261031/guards/budget-2h/pair-1/run-1-A"
+    },
+    "2": {
+      "cpu": 58,
+      "order": [
+        "A",
+        "B_normal"
+      ],
+      "status": "complete",
+      "worker_pid": 3218097,
+      "child_pid": null,
+      "run_dir": "agents/branch_ablation_20261031/guards/budget-2h/pair-2/run-1-B_normal"
+    }
+  },
+  "runs": [
+    {
+      "arm": "A",
+      "pair": 0,
+      "index": 0,
+      "cpu": 56,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+        "-o",
+        "time.txt",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "7200s",
+        "taskset",
+        "-c",
+        "56",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+        "-A",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/A/ir/rv64d_guard_A.ir",
+        "-C",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/context.toml",
+        "-T",
+        "1",
+        "--tastic",
+        "qfaufbv",
+        "solve-state",
+        "--clause=FVVTYPE"
+      ],
+      "cwd": "agents/branch_ablation_20261031/guards/budget-2h/pair-0/run-0-A",
+      "exit_code": 0,
+      "external_timeout": false,
+      "elapsed_monotonic_s": 132.694,
+      "wall_s": 132.69,
+      "user_s": 122.59,
+      "sys_s": 9.61,
+      "maxrss_kb": 518728,
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数",
+      "log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+      "time_sha256": "b3a80c7d8bec8589b87bb71f251c974f0c5cce338f160d500485388515520539",
+      "finished_utc": "2026-10-31T10:45:04.547526+00:00",
+      "input_sha256": {
+        "binary": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+        "config": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+        "A": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+        "B_normal": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a"
+      },
+      "output_file": "rv64_zFVVTYPE.json",
+      "output_sha256": "9ca4ff45caa0cad5de7627f0bb73a5c517a4bf872247d566f5f66be1e2feafad",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 81,
+      "retire": 54,
+      "illegal": 27,
+      "exception": 0,
+      "result_sha256": "943191a678cc47822fa75eeee4d2b4a8e127ecc7c8f1751dc3e1fb4a947d18e4"
+    },
+    {
+      "arm": "B_normal",
+      "pair": 0,
+      "index": 1,
+      "cpu": 56,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+        "-o",
+        "time.txt",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "7200s",
+        "taskset",
+        "-c",
+        "56",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+        "-A",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/B_normal/ir/rv64d_guard_B_normal.ir",
+        "-C",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/context.toml",
+        "-T",
+        "1",
+        "--tastic",
+        "qfaufbv",
+        "solve-state",
+        "--clause=FVVTYPE"
+      ],
+      "cwd": "agents/branch_ablation_20261031/guards/budget-2h/pair-0/run-1-B_normal",
+      "exit_code": 0,
+      "external_timeout": false,
+      "elapsed_monotonic_s": 132.293,
+      "wall_s": 132.29,
+      "user_s": 122.09,
+      "sys_s": 9.6,
+      "maxrss_kb": 530164,
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数",
+      "log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+      "time_sha256": "2e3c7edd4800fc5825c34dc9120f8778674a580fb805223ff8ea8f5c9931ddd9",
+      "finished_utc": "2026-10-31T10:47:17.055294+00:00",
+      "input_sha256": {
+        "binary": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+        "config": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+        "A": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+        "B_normal": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a"
+      },
+      "output_file": "rv64_zFVVTYPE.json",
+      "output_sha256": "a446c0f5f8086ed8822ab322ad3331a276cd2c3dd14bb5f36406b8378473c63d",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 108,
+      "retire": 54,
+      "illegal": 54,
+      "exception": 0,
+      "result_sha256": "cc7c17974444f0d709447656d487215b24df9a7bf51c8b37b65ceb52872867f9"
+    },
+    {
+      "arm": "B_normal",
+      "pair": 1,
+      "index": 0,
+      "cpu": 57,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+        "-o",
+        "time.txt",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "7200s",
+        "taskset",
+        "-c",
+        "57",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+        "-A",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/B_normal/ir/rv64d_guard_B_normal.ir",
+        "-C",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/context.toml",
+        "-T",
+        "1",
+        "--tastic",
+        "qfaufbv",
+        "solve-state",
+        "--clause=FVVTYPE"
+      ],
+      "cwd": "agents/branch_ablation_20261031/guards/budget-2h/pair-1/run-0-B_normal",
+      "exit_code": 0,
+      "external_timeout": false,
+      "elapsed_monotonic_s": 136.598,
+      "wall_s": 136.59,
+      "user_s": 125.36,
+      "sys_s": 10.69,
+      "maxrss_kb": 513612,
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数",
+      "log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+      "time_sha256": "6ba4f3ea8f3b0fe08e1c4659d515c1be4705d8b1978315cf8ec7b585fb217348",
+      "finished_utc": "2026-10-31T10:45:08.480843+00:00",
+      "input_sha256": {
+        "binary": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+        "config": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+        "A": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+        "B_normal": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a"
+      },
+      "output_file": "rv64_zFVVTYPE.json",
+      "output_sha256": "a446c0f5f8086ed8822ab322ad3331a276cd2c3dd14bb5f36406b8378473c63d",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 108,
+      "retire": 54,
+      "illegal": 54,
+      "exception": 0,
+      "result_sha256": "5cf0de0ea1e1df0a9dbefc0366348da4e1884e71ad4b973ca8c028ae5a40a9bb"
+    },
+    {
+      "arm": "A",
+      "pair": 1,
+      "index": 1,
+      "cpu": 57,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+        "-o",
+        "time.txt",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "7200s",
+        "taskset",
+        "-c",
+        "57",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+        "-A",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/A/ir/rv64d_guard_A.ir",
+        "-C",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/context.toml",
+        "-T",
+        "1",
+        "--tastic",
+        "qfaufbv",
+        "solve-state",
+        "--clause=FVVTYPE"
+      ],
+      "cwd": "agents/branch_ablation_20261031/guards/budget-2h/pair-1/run-1-A",
+      "exit_code": 0,
+      "external_timeout": false,
+      "elapsed_monotonic_s": 129.893,
+      "wall_s": 129.88,
+      "user_s": 120.84,
+      "sys_s": 8.49,
+      "maxrss_kb": 555988,
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数",
+      "log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+      "time_sha256": "75b7cad382c5cce1db4fc900f9bbdd465ff04ab11dae2e762e8771bb2f25dc7a",
+      "finished_utc": "2026-10-31T10:47:18.652475+00:00",
+      "input_sha256": {
+        "binary": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+        "config": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+        "A": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+        "B_normal": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a"
+      },
+      "output_file": "rv64_zFVVTYPE.json",
+      "output_sha256": "cf04a9cf9d3fb9d03f2788ab463af14c030110ce9a9bea5d066f4126a3ea8c28",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 81,
+      "retire": 54,
+      "illegal": 27,
+      "exception": 0,
+      "result_sha256": "c02c9b5c60e8f4cd741951696cb61739e553daea5ecd2734c19b580c1d02923b"
+    },
+    {
+      "arm": "A",
+      "pair": 2,
+      "index": 0,
+      "cpu": 58,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+        "-o",
+        "time.txt",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "7200s",
+        "taskset",
+        "-c",
+        "58",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+        "-A",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/A/ir/rv64d_guard_A.ir",
+        "-C",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/context.toml",
+        "-T",
+        "1",
+        "--tastic",
+        "qfaufbv",
+        "solve-state",
+        "--clause=FVVTYPE"
+      ],
+      "cwd": "agents/branch_ablation_20261031/guards/budget-2h/pair-2/run-0-A",
+      "exit_code": 0,
+      "external_timeout": false,
+      "elapsed_monotonic_s": 134.493,
+      "wall_s": 134.49,
+      "user_s": 124.98,
+      "sys_s": 8.96,
+      "maxrss_kb": 527232,
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数",
+      "log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+      "time_sha256": "8d2a5d5a7f263aa29570462a1f490f2b22ae7f767b7f1be4baa5f75edcba930c",
+      "finished_utc": "2026-10-31T10:45:06.367345+00:00",
+      "input_sha256": {
+        "binary": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+        "config": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+        "A": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+        "B_normal": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a"
+      },
+      "output_file": "rv64_zFVVTYPE.json",
+      "output_sha256": "9ca4ff45caa0cad5de7627f0bb73a5c517a4bf872247d566f5f66be1e2feafad",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 81,
+      "retire": 54,
+      "illegal": 27,
+      "exception": 0,
+      "result_sha256": "7e260045e6a9470ee1270b9e38905b0df302aef2a139cf41c3a53116beb12f59"
+    },
+    {
+      "arm": "B_normal",
+      "pair": 2,
+      "index": 1,
+      "cpu": 58,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "wall_s=%e\nuser_s=%U\nsys_s=%S\nmaxrss_kb=%M",
+        "-o",
+        "time.txt",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "7200s",
+        "taskset",
+        "-c",
+        "58",
+        "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+        "-A",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/B_normal/ir/rv64d_guard_B_normal.ir",
+        "-C",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/guards/context.toml",
+        "-T",
+        "1",
+        "--tastic",
+        "qfaufbv",
+        "solve-state",
+        "--clause=FVVTYPE"
+      ],
+      "cwd": "agents/branch_ablation_20261031/guards/budget-2h/pair-2/run-1-B_normal",
+      "exit_code": 0,
+      "external_timeout": false,
+      "elapsed_monotonic_s": 133.691,
+      "wall_s": 133.68,
+      "user_s": 122.95,
+      "sys_s": 10.16,
+      "maxrss_kb": 506516,
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数",
+      "log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+      "time_sha256": "7eb96edc0e239e4bbe7c0a2b5b36455cb97c78ede4ff0b67e6ed52c0e598ee3e",
+      "finished_utc": "2026-10-31T10:47:20.279576+00:00",
+      "input_sha256": {
+        "binary": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+        "config": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+        "A": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+        "B_normal": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a"
+      },
+      "output_file": "rv64_zFVVTYPE.json",
+      "output_sha256": "a446c0f5f8086ed8822ab322ad3331a276cd2c3dd14bb5f36406b8378473c63d",
+      "summary": {
+        "sampled-paths": 0,
+        "errors": 0,
+        "execution-timeouts": 0,
+        "smt-timeouts": 0,
+        "unfinished-paths": 0,
+        "assertion-filtered-paths": 0,
+        "omitted-cases": 0,
+        "model-query-timeouts": 0,
+        "encoding-filtered-paths": 0,
+        "pending-batches": 0,
+        "status": "finished",
+        "model-coverage": "not-measured",
+        "target-clause": "zFVVTYPE"
+      },
+      "gen": 108,
+      "retire": 54,
+      "illegal": 54,
+      "exception": 0,
+      "result_sha256": "1c337cca5aa7ffe5ec223ad5524a24216e8dd023aec2c844b11165a0c4f5e241"
+    }
+  ],
+  "arms": {
+    "A": {
+      "completed_runs": 3,
+      "wall_s": {
+        "median": 132.69,
+        "min": 129.88,
+        "max": 134.49
+      },
+      "user_s": {
+        "median": 122.59,
+        "min": 120.84,
+        "max": 124.98
+      },
+      "sys_s": {
+        "median": 8.96,
+        "min": 8.49,
+        "max": 9.61
+      },
+      "maxrss_kb": {
+        "median": 527232,
+        "min": 518728,
+        "max": 555988
+      },
+      "gen": {
+        "median": 81,
+        "min": 81,
+        "max": 81
+      },
+      "retire": {
+        "median": 54,
+        "min": 54,
+        "max": 54
+      },
+      "illegal": {
+        "median": 27,
+        "min": 27,
+        "max": 27
+      },
+      "exception": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "external_timeouts": 0,
+      "statuses": [
+        "finished",
+        "finished",
+        "finished"
+      ],
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数"
+    },
+    "B_normal": {
+      "completed_runs": 3,
+      "wall_s": {
+        "median": 133.68,
+        "min": 132.29,
+        "max": 136.59
+      },
+      "user_s": {
+        "median": 122.95,
+        "min": 122.09,
+        "max": 125.36
+      },
+      "sys_s": {
+        "median": 10.16,
+        "min": 9.6,
+        "max": 10.69
+      },
+      "maxrss_kb": {
+        "median": 513612,
+        "min": 506516,
+        "max": 530164
+      },
+      "gen": {
+        "median": 108,
+        "min": 108,
+        "max": 108
+      },
+      "retire": {
+        "median": 54,
+        "min": 54,
+        "max": 54
+      },
+      "illegal": {
+        "median": 54,
+        "min": 54,
+        "max": 54
+      },
+      "exception": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "external_timeouts": 0,
+      "statuses": [
+        "finished",
+        "finished",
+        "finished"
+      ],
+      "fork": null,
+      "fork_note": "无可靠真实 fork 总数"
+    }
+  },
+  "workload": "完整 FVVTYPE；宽域 context.toml；无额外预热",
+  "comparison_boundary": "本轮两小时外限，不与先前60秒试验合并",
+  "speed_ratio": {
+    "B_over_A_wall_median": 1.0074609993217274
+  },
+  "speed_ratio_note": "仅在两臂各3次自然完成并有最终JSON时可计算；超时不计算"
+}

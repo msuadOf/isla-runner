@@ -1,0 +1,1911 @@
+{
+  "budget_seconds": 7200,
+  "path_timeout": null,
+  "smt_timeout": null,
+  "no_extra_warmup": true,
+  "prior_60s_runs_excluded": true,
+  "variants": {
+    "nan": {
+      "clause": "F_UN_RM_FF_TYPE_S",
+      "variant": "nan_f32_if",
+      "pairs": [
+        {
+          "pair": 1,
+          "cpu": 60,
+          "order": [
+            "A",
+            "B"
+          ],
+          "worker_status": {
+            "kind": "nan",
+            "pair": 1,
+            "cpu": 60,
+            "worker_pid": 3083139,
+            "order": [
+              "A",
+              "B"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.8928127,
+            "completed": [
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "B",
+                "status": "failed",
+                "exit_code": 1
+              }
+            ],
+            "end_unix": 1793445649.934345
+          },
+          "arms": {
+            "A": {
+              "kind": "nan",
+              "pair": 1,
+              "arm": "A",
+              "cpu": 60,
+              "pid_worker": 3083139,
+              "status": "finished",
+              "start_unix": 1793443341.0106895,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/nan/pair-1/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "60",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=F_UN_RM_FF_TYPE_S"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793443348.0491915,
+              "wall_seconds": 6.916109772049822,
+              "exit_code": 0,
+              "user_cpu_seconds": 5.57,
+              "sys_cpu_seconds": 1.19,
+              "max_rss_kb": 232628.0,
+              "json_files": [
+                "output/rv64_zF_UN_RM_FF_TYPE_S.json"
+              ],
+              "gen": 26,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zF_UN_RM_FF_TYPE_S"
+              },
+              "terminal_counts": {
+                "illegal": 6,
+                "retire": 20
+              },
+              "target_witness_counts": {
+                "non-NaN": 10,
+                "NaN": 10
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "nan",
+              "pair": 1,
+              "arm": "B",
+              "cpu": 60,
+              "pid_worker": 3083139,
+              "status": "failed",
+              "start_unix": 1793443348.1645422,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/nan/pair-1/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "60",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan_f32_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=F_UN_RM_FF_TYPE_S"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "a9d62f68cc723c3d1c5df4fb70400bc05e83fb92fb0d8a842ddea59dd744c1b9",
+              "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793445649.9320955,
+              "wall_seconds": 2301.671863488038,
+              "exit_code": 1,
+              "user_cpu_seconds": 2292.57,
+              "sys_cpu_seconds": 4.46,
+              "max_rss_kb": 382472.0,
+              "json_files": [
+                "output/rv64_zF_UN_RM_FF_TYPE_S.json"
+              ],
+              "gen": 17,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 13,
+                "execution-timeouts": 0,
+                "smt-timeouts": 13,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "partial",
+                "model-coverage": "not-measured",
+                "target-clause": "zF_UN_RM_FF_TYPE_S"
+              },
+              "terminal_counts": {
+                "illegal": 6,
+                "retire": 11
+              },
+              "target_witness_counts": {
+                "non-NaN": 1,
+                "NaN": 10
+              },
+              "partial": true
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "cpu": 61,
+          "order": [
+            "B",
+            "A"
+          ],
+          "worker_status": {
+            "kind": "nan",
+            "pair": 2,
+            "cpu": 61,
+            "worker_pid": 3083140,
+            "order": [
+              "B",
+              "A"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.8939342,
+            "completed": [
+              {
+                "arm": "B",
+                "status": "failed",
+                "exit_code": 1
+              },
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              }
+            ],
+            "end_unix": 1793447841.5650601
+          },
+          "arms": {
+            "A": {
+              "kind": "nan",
+              "pair": 2,
+              "arm": "A",
+              "cpu": 61,
+              "pid_worker": 3083140,
+              "status": "finished",
+              "start_unix": 1793447836.3660624,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/nan/pair-2/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "61",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=F_UN_RM_FF_TYPE_S"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793447841.562521,
+              "wall_seconds": 5.102718506008387,
+              "exit_code": 0,
+              "user_cpu_seconds": 3.67,
+              "sys_cpu_seconds": 1.08,
+              "max_rss_kb": 232120.0,
+              "json_files": [
+                "output/rv64_zF_UN_RM_FF_TYPE_S.json"
+              ],
+              "gen": 26,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zF_UN_RM_FF_TYPE_S"
+              },
+              "terminal_counts": {
+                "illegal": 6,
+                "retire": 20
+              },
+              "target_witness_counts": {
+                "non-NaN": 10,
+                "NaN": 10
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "nan",
+              "pair": 2,
+              "arm": "B",
+              "cpu": 61,
+              "pid_worker": 3083140,
+              "status": "failed",
+              "start_unix": 1793443341.012847,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/nan/pair-2/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "61",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan_f32_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=F_UN_RM_FF_TYPE_S"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "a9d62f68cc723c3d1c5df4fb70400bc05e83fb92fb0d8a842ddea59dd744c1b9",
+              "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793447835.7956703,
+              "wall_seconds": 4494.6624786370085,
+              "exit_code": 1,
+              "user_cpu_seconds": 4480.52,
+              "sys_cpu_seconds": 6.96,
+              "max_rss_kb": 371588.0,
+              "json_files": [
+                "output/rv64_zF_UN_RM_FF_TYPE_S.json"
+              ],
+              "gen": 19,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 16,
+                "execution-timeouts": 0,
+                "smt-timeouts": 16,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "partial",
+                "model-coverage": "not-measured",
+                "target-clause": "zF_UN_RM_FF_TYPE_S"
+              },
+              "terminal_counts": {
+                "illegal": 6,
+                "retire": 13
+              },
+              "target_witness_counts": {
+                "non-NaN": 3,
+                "NaN": 10
+              },
+              "partial": true
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "cpu": 62,
+          "order": [
+            "A",
+            "B"
+          ],
+          "worker_status": {
+            "kind": "nan",
+            "pair": 3,
+            "cpu": 62,
+            "worker_pid": 3083144,
+            "order": [
+              "A",
+              "B"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.8948622,
+            "completed": [
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "B",
+                "status": "failed",
+                "exit_code": 1
+              }
+            ],
+            "end_unix": 1793446538.353015
+          },
+          "arms": {
+            "A": {
+              "kind": "nan",
+              "pair": 3,
+              "arm": "A",
+              "cpu": 62,
+              "pid_worker": 3083144,
+              "status": "finished",
+              "start_unix": 1793443341.0133493,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/nan/pair-3/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "62",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=F_UN_RM_FF_TYPE_S"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793443348.0516894,
+              "wall_seconds": 6.91560174501501,
+              "exit_code": 0,
+              "user_cpu_seconds": 5.53,
+              "sys_cpu_seconds": 1.22,
+              "max_rss_kb": 232092.0,
+              "json_files": [
+                "output/rv64_zF_UN_RM_FF_TYPE_S.json"
+              ],
+              "gen": 26,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zF_UN_RM_FF_TYPE_S"
+              },
+              "terminal_counts": {
+                "illegal": 6,
+                "retire": 20
+              },
+              "target_witness_counts": {
+                "non-NaN": 10,
+                "NaN": 10
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "nan",
+              "pair": 3,
+              "arm": "B",
+              "cpu": 62,
+              "pid_worker": 3083144,
+              "status": "failed",
+              "start_unix": 1793443348.1531668,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/nan/pair-3/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "62",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan_f32_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/nan/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=F_UN_RM_FF_TYPE_S"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "a9d62f68cc723c3d1c5df4fb70400bc05e83fb92fb0d8a842ddea59dd744c1b9",
+              "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793446538.3508081,
+              "wall_seconds": 3190.101941708999,
+              "exit_code": 1,
+              "user_cpu_seconds": 3179.41,
+              "sys_cpu_seconds": 5.31,
+              "max_rss_kb": 389376.0,
+              "json_files": [
+                "output/rv64_zF_UN_RM_FF_TYPE_S.json"
+              ],
+              "gen": 17,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 17,
+                "execution-timeouts": 0,
+                "smt-timeouts": 17,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "partial",
+                "model-coverage": "not-measured",
+                "target-clause": "zF_UN_RM_FF_TYPE_S"
+              },
+              "terminal_counts": {
+                "illegal": 6,
+                "retire": 11
+              },
+              "target_witness_counts": {
+                "NaN": 10,
+                "non-NaN": 1
+              },
+              "partial": true
+            }
+          }
+        }
+      ],
+      "arms": {
+        "A": {
+          "started": 3,
+          "complete": 3,
+          "pending": 0,
+          "censored": 0,
+          "failed": 0,
+          "running": 0,
+          "wall_complete_seconds": {
+            "median": 6.91560174501501,
+            "min": 5.102718506008387,
+            "max": 6.916109772049822
+          },
+          "wall_censored_seconds": null,
+          "user_cpu_seconds": {
+            "median": 5.53,
+            "min": 3.67,
+            "max": 5.57
+          },
+          "sys_cpu_seconds": {
+            "median": 1.19,
+            "min": 1.08,
+            "max": 1.22
+          },
+          "max_rss_kb": {
+            "median": 232120.0,
+            "min": 232092.0,
+            "max": 232628.0
+          },
+          "gen_complete": {
+            "median": 26,
+            "min": 26,
+            "max": 26
+          },
+          "terminal_counts_complete": {
+            "illegal": 18,
+            "retire": 60
+          },
+          "target_witness_counts_complete": {
+            "non-NaN": 30,
+            "NaN": 30
+          },
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有可核实的动态fork总数输出"
+        },
+        "B": {
+          "started": 3,
+          "complete": 0,
+          "pending": 0,
+          "censored": 0,
+          "failed": 3,
+          "running": 0,
+          "wall_complete_seconds": null,
+          "wall_censored_seconds": null,
+          "user_cpu_seconds": {
+            "median": 3179.41,
+            "min": 2292.57,
+            "max": 4480.52
+          },
+          "sys_cpu_seconds": {
+            "median": 5.31,
+            "min": 4.46,
+            "max": 6.96
+          },
+          "max_rss_kb": {
+            "median": 382472.0,
+            "min": 371588.0,
+            "max": 389376.0
+          },
+          "gen_complete": null,
+          "terminal_counts_complete": {},
+          "target_witness_counts_complete": {},
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有可核实的动态fork总数输出"
+        }
+      }
+    },
+    "sat": {
+      "clause": "VFUNARY0",
+      "variant": "sat_f16_i16_if",
+      "pairs": [
+        {
+          "pair": 1,
+          "cpu": 63,
+          "order": [
+            "A",
+            "B"
+          ],
+          "worker_status": {
+            "kind": "sat",
+            "pair": 1,
+            "cpu": 63,
+            "worker_pid": 3083156,
+            "order": [
+              "A",
+              "B"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.8958466,
+            "completed": [
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "B",
+                "status": "censored",
+                "exit_code": 124
+              }
+            ],
+            "end_unix": 1793450549.2216768
+          },
+          "arms": {
+            "A": {
+              "kind": "sat",
+              "pair": 1,
+              "arm": "A",
+              "cpu": 63,
+              "pid_worker": 3083156,
+              "status": "finished",
+              "start_unix": 1793443341.0216992,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/sat/pair-1/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "63",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY0"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793443348.8623233,
+              "wall_seconds": 7.715275790949818,
+              "exit_code": 0,
+              "user_cpu_seconds": 6.85,
+              "sys_cpu_seconds": 0.69,
+              "max_rss_kb": 249316.0,
+              "json_files": [
+                "output/rv64_zVFUNARY0.json"
+              ],
+              "gen": 18,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY0"
+              },
+              "terminal_counts": {
+                "retire": 12,
+                "illegal": 6
+              },
+              "target_witness_counts": {
+                "source-zero": 4,
+                "invalid-false": 4,
+                "other-opcode": 8
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "sat",
+              "pair": 1,
+              "arm": "B",
+              "cpu": 63,
+              "pid_worker": 3083156,
+              "status": "censored",
+              "start_unix": 1793443348.956888,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/sat/pair-1/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "63",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat_f16_i16_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY0"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+              "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793450549.2206888,
+              "wall_seconds": 7200.1665991219925,
+              "exit_code": 124,
+              "user_cpu_seconds": 7177.42,
+              "sys_cpu_seconds": 10.57,
+              "max_rss_kb": 433496.0,
+              "json_files": [],
+              "gen": null,
+              "summary": null,
+              "terminal_counts": null,
+              "target_witness_counts": null,
+              "partial": null
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "cpu": 64,
+          "order": [
+            "B",
+            "A"
+          ],
+          "worker_status": {
+            "kind": "sat",
+            "pair": 2,
+            "cpu": 64,
+            "worker_pid": 3083170,
+            "order": [
+              "B",
+              "A"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.897545,
+            "completed": [
+              {
+                "arm": "B",
+                "status": "censored",
+                "exit_code": 124
+              },
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              }
+            ],
+            "end_unix": 1793450547.9282503
+          },
+          "arms": {
+            "A": {
+              "kind": "sat",
+              "pair": 2,
+              "arm": "A",
+              "cpu": 64,
+              "pid_worker": 3083170,
+              "status": "finished",
+              "start_unix": 1793450541.4134076,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/sat/pair-2/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "64",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY0"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793450547.925516,
+              "wall_seconds": 6.414502180996351,
+              "exit_code": 0,
+              "user_cpu_seconds": 5.58,
+              "sys_cpu_seconds": 0.69,
+              "max_rss_kb": 254348.0,
+              "json_files": [
+                "output/rv64_zVFUNARY0.json"
+              ],
+              "gen": 18,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY0"
+              },
+              "terminal_counts": {
+                "retire": 12,
+                "illegal": 6
+              },
+              "target_witness_counts": {
+                "source-zero": 4,
+                "invalid-false": 4,
+                "other-opcode": 8
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "sat",
+              "pair": 2,
+              "arm": "B",
+              "cpu": 64,
+              "pid_worker": 3083170,
+              "status": "censored",
+              "start_unix": 1793443341.0148203,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/sat/pair-2/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "64",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat_f16_i16_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY0"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+              "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793450541.3101835,
+              "wall_seconds": 7200.1775540829985,
+              "exit_code": 124,
+              "user_cpu_seconds": 7171.55,
+              "sys_cpu_seconds": 10.9,
+              "max_rss_kb": 426480.0,
+              "json_files": [],
+              "gen": null,
+              "summary": null,
+              "terminal_counts": null,
+              "target_witness_counts": null,
+              "partial": null
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "cpu": 65,
+          "order": [
+            "A",
+            "B"
+          ],
+          "worker_status": {
+            "kind": "sat",
+            "pair": 3,
+            "cpu": 65,
+            "worker_pid": 3083185,
+            "order": [
+              "A",
+              "B"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.898011,
+            "completed": [
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "B",
+                "status": "censored",
+                "exit_code": 124
+              }
+            ],
+            "end_unix": 1793450548.707804
+          },
+          "arms": {
+            "A": {
+              "kind": "sat",
+              "pair": 3,
+              "arm": "A",
+              "cpu": 65,
+              "pid_worker": 3083185,
+              "status": "finished",
+              "start_unix": 1793443341.023387,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/sat/pair-3/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "65",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY0"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793443348.3655016,
+              "wall_seconds": 7.215373817016371,
+              "exit_code": 0,
+              "user_cpu_seconds": 6.3,
+              "sys_cpu_seconds": 0.78,
+              "max_rss_kb": 254016.0,
+              "json_files": [
+                "output/rv64_zVFUNARY0.json"
+              ],
+              "gen": 18,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY0"
+              },
+              "terminal_counts": {
+                "retire": 12,
+                "illegal": 6
+              },
+              "target_witness_counts": {
+                "source-zero": 4,
+                "invalid-false": 4,
+                "other-opcode": 8
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "sat",
+              "pair": 3,
+              "arm": "B",
+              "cpu": 65,
+              "pid_worker": 3083185,
+              "status": "censored",
+              "start_unix": 1793443348.4668796,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/sat/pair-3/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "65",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat_f16_i16_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/sat/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY0"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+              "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793450548.706651,
+              "wall_seconds": 7200.143164907,
+              "exit_code": 124,
+              "user_cpu_seconds": 7174.56,
+              "sys_cpu_seconds": 10.01,
+              "max_rss_kb": 435996.0,
+              "json_files": [],
+              "gen": null,
+              "summary": null,
+              "terminal_counts": null,
+              "target_witness_counts": null,
+              "partial": null
+            }
+          }
+        }
+      ],
+      "arms": {
+        "A": {
+          "started": 3,
+          "complete": 3,
+          "pending": 0,
+          "censored": 0,
+          "failed": 0,
+          "running": 0,
+          "wall_complete_seconds": {
+            "median": 7.215373817016371,
+            "min": 6.414502180996351,
+            "max": 7.715275790949818
+          },
+          "wall_censored_seconds": null,
+          "user_cpu_seconds": {
+            "median": 6.3,
+            "min": 5.58,
+            "max": 6.85
+          },
+          "sys_cpu_seconds": {
+            "median": 0.69,
+            "min": 0.69,
+            "max": 0.78
+          },
+          "max_rss_kb": {
+            "median": 254016.0,
+            "min": 249316.0,
+            "max": 254348.0
+          },
+          "gen_complete": {
+            "median": 18,
+            "min": 18,
+            "max": 18
+          },
+          "terminal_counts_complete": {
+            "retire": 36,
+            "illegal": 18
+          },
+          "target_witness_counts_complete": {
+            "source-zero": 12,
+            "invalid-false": 12,
+            "other-opcode": 24
+          },
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有可核实的动态fork总数输出"
+        },
+        "B": {
+          "started": 3,
+          "complete": 0,
+          "pending": 0,
+          "censored": 3,
+          "failed": 0,
+          "running": 0,
+          "wall_complete_seconds": null,
+          "wall_censored_seconds": {
+            "median": 7200.1665991219925,
+            "min": 7200.143164907,
+            "max": 7200.1775540829985
+          },
+          "user_cpu_seconds": {
+            "median": 7174.56,
+            "min": 7171.55,
+            "max": 7177.42
+          },
+          "sys_cpu_seconds": {
+            "median": 10.57,
+            "min": 10.01,
+            "max": 10.9
+          },
+          "max_rss_kb": {
+            "median": 433496.0,
+            "min": 426480.0,
+            "max": 435996.0
+          },
+          "gen_complete": null,
+          "terminal_counts_complete": {},
+          "target_witness_counts_complete": {},
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有可核实的动态fork总数输出"
+        }
+      }
+    },
+    "class": {
+      "clause": "VFUNARY1",
+      "variant": "class_if",
+      "pairs": [
+        {
+          "pair": 1,
+          "cpu": 66,
+          "order": [
+            "A",
+            "B"
+          ],
+          "worker_status": {
+            "kind": "class",
+            "pair": 1,
+            "cpu": 66,
+            "worker_pid": 3083201,
+            "order": [
+              "A",
+              "B"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.8992457,
+            "completed": [
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "B",
+                "status": "finished",
+                "exit_code": 0
+              }
+            ],
+            "end_unix": 1793445216.8791413
+          },
+          "arms": {
+            "A": {
+              "kind": "class",
+              "pair": 1,
+              "arm": "A",
+              "cpu": 66,
+              "pid_worker": 3083201,
+              "status": "finished",
+              "start_unix": 1793443341.026318,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/class/pair-1/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "66",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class64/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY1"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793444111.0837934,
+              "wall_seconds": 769.9329740329995,
+              "exit_code": 0,
+              "user_cpu_seconds": 751.87,
+              "sys_cpu_seconds": 15.83,
+              "max_rss_kb": 293452.0,
+              "json_files": [
+                "output/rv64_zVFUNARY1.json"
+              ],
+              "gen": 310,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY1"
+              },
+              "terminal_counts": {
+                "retire": 306,
+                "illegal": 4
+              },
+              "target_witness_counts": {
+                "other-opcode": 304,
+                "vfclass": 2,
+                "vfclass-inactive": 1,
+                "class-4": 1
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "class",
+              "pair": 1,
+              "arm": "B",
+              "cpu": 66,
+              "pid_worker": 3083201,
+              "status": "finished",
+              "start_unix": 1793444111.2026455,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/class/pair-1/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "66",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class64/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY1"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "4a2a51300354c3618f764e530de25aad54be40781c41275d96292254dcb5ba7d",
+              "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793445216.8509278,
+              "wall_seconds": 1105.5534246069728,
+              "exit_code": 0,
+              "user_cpu_seconds": 1076.79,
+              "sys_cpu_seconds": 22.66,
+              "max_rss_kb": 316068.0,
+              "json_files": [
+                "output/rv64_zVFUNARY1.json"
+              ],
+              "gen": 508,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY1"
+              },
+              "terminal_counts": {
+                "retire": 504,
+                "illegal": 4
+              },
+              "target_witness_counts": {
+                "vfclass": 200,
+                "class-9": 10,
+                "class-8": 20,
+                "vfclass-inactive": 59,
+                "other-opcode": 304,
+                "class-5": 20,
+                "class-2": 20,
+                "class-6": 10,
+                "class-1": 10,
+                "class-4": 16,
+                "class-3": 10,
+                "class-7": 10,
+                "class-0": 15
+              },
+              "partial": false
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "cpu": 67,
+          "order": [
+            "B",
+            "A"
+          ],
+          "worker_status": {
+            "kind": "class",
+            "pair": 2,
+            "cpu": 67,
+            "worker_pid": 3083215,
+            "order": [
+              "B",
+              "A"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.8989367,
+            "completed": [
+              {
+                "arm": "B",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              }
+            ],
+            "end_unix": 1793445210.8940468
+          },
+          "arms": {
+            "A": {
+              "kind": "class",
+              "pair": 2,
+              "arm": "A",
+              "cpu": 67,
+              "pid_worker": 3083215,
+              "status": "finished",
+              "start_unix": 1793444440.5172532,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/class/pair-2/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "67",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class64/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY1"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793445210.877322,
+              "wall_seconds": 770.2617472120328,
+              "exit_code": 0,
+              "user_cpu_seconds": 753.05,
+              "sys_cpu_seconds": 12.3,
+              "max_rss_kb": 293192.0,
+              "json_files": [
+                "output/rv64_zVFUNARY1.json"
+              ],
+              "gen": 310,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY1"
+              },
+              "terminal_counts": {
+                "retire": 306,
+                "illegal": 4
+              },
+              "target_witness_counts": {
+                "other-opcode": 304,
+                "vfclass": 2,
+                "vfclass-inactive": 1,
+                "class-4": 1
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "class",
+              "pair": 2,
+              "arm": "B",
+              "cpu": 67,
+              "pid_worker": 3083215,
+              "status": "finished",
+              "start_unix": 1793443341.0210748,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/class/pair-2/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "67",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class64/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY1"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "4a2a51300354c3618f764e530de25aad54be40781c41275d96292254dcb5ba7d",
+              "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793444440.3742921,
+              "wall_seconds": 1099.227170922968,
+              "exit_code": 0,
+              "user_cpu_seconds": 1073.31,
+              "sys_cpu_seconds": 22.86,
+              "max_rss_kb": 300288.0,
+              "json_files": [
+                "output/rv64_zVFUNARY1.json"
+              ],
+              "gen": 508,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY1"
+              },
+              "terminal_counts": {
+                "retire": 504,
+                "illegal": 4
+              },
+              "target_witness_counts": {
+                "vfclass": 200,
+                "class-9": 10,
+                "class-8": 20,
+                "vfclass-inactive": 58,
+                "other-opcode": 304,
+                "class-5": 20,
+                "class-2": 20,
+                "class-6": 10,
+                "class-1": 10,
+                "class-4": 14,
+                "class-3": 11,
+                "class-7": 10,
+                "class-0": 17
+              },
+              "partial": false
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "cpu": 68,
+          "order": [
+            "A",
+            "B"
+          ],
+          "worker_status": {
+            "kind": "class",
+            "pair": 3,
+            "cpu": 68,
+            "worker_pid": 3083227,
+            "order": [
+              "A",
+              "B"
+            ],
+            "status": "complete",
+            "start_unix": 1793443340.9001598,
+            "completed": [
+              {
+                "arm": "A",
+                "status": "finished",
+                "exit_code": 0
+              },
+              {
+                "arm": "B",
+                "status": "finished",
+                "exit_code": 0
+              }
+            ],
+            "end_unix": 1793445012.8519437
+          },
+          "arms": {
+            "A": {
+              "kind": "class",
+              "pair": 3,
+              "arm": "A",
+              "cpu": 68,
+              "pid_worker": 3083227,
+              "status": "finished",
+              "start_unix": 1793443341.0238917,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/class/pair-3/A",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "68",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class64/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY1"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+              "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793444031.711983,
+              "wall_seconds": 690.5652446120512,
+              "exit_code": 0,
+              "user_cpu_seconds": 672.44,
+              "sys_cpu_seconds": 16.33,
+              "max_rss_kb": 290492.0,
+              "json_files": [
+                "output/rv64_zVFUNARY1.json"
+              ],
+              "gen": 310,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY1"
+              },
+              "terminal_counts": {
+                "retire": 306,
+                "illegal": 4
+              },
+              "target_witness_counts": {
+                "other-opcode": 304,
+                "vfclass": 2,
+                "vfclass-inactive": 1,
+                "class-4": 1
+              },
+              "partial": false
+            },
+            "B": {
+              "kind": "class",
+              "pair": 3,
+              "arm": "B",
+              "cpu": 68,
+              "pid_worker": 3083227,
+              "status": "finished",
+              "start_unix": 1793444031.8303819,
+              "cwd": "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/budget-2h/class/pair-3/B",
+              "command": [
+                "/usr/bin/time",
+                "-v",
+                "timeout",
+                "--signal=TERM",
+                "--kill-after=10s",
+                "7200s",
+                "taskset",
+                "-c",
+                "68",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class_if/ir/rv64d.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/classification/class64/initial.toml",
+                "-T",
+                "1",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=VFUNARY1"
+              ],
+              "path_timeout": null,
+              "smt_timeout": null,
+              "outer_timeout_seconds": 7200,
+              "ir_sha256": "4a2a51300354c3618f764e530de25aad54be40781c41275d96292254dcb5ba7d",
+              "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+              "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+              "fork_count": null,
+              "fork_count_reason": "固定isarch没有可核实的动态fork总数输出",
+              "end_unix": 1793445012.8242815,
+              "wall_seconds": 980.8975940860109,
+              "exit_code": 0,
+              "user_cpu_seconds": 957.98,
+              "sys_cpu_seconds": 20.21,
+              "max_rss_kb": 312528.0,
+              "json_files": [
+                "output/rv64_zVFUNARY1.json"
+              ],
+              "gen": 508,
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zVFUNARY1"
+              },
+              "terminal_counts": {
+                "retire": 504,
+                "illegal": 4
+              },
+              "target_witness_counts": {
+                "vfclass": 200,
+                "class-9": 10,
+                "class-8": 20,
+                "vfclass-inactive": 59,
+                "other-opcode": 304,
+                "class-5": 20,
+                "class-2": 20,
+                "class-6": 10,
+                "class-1": 10,
+                "class-4": 15,
+                "class-3": 10,
+                "class-7": 10,
+                "class-0": 16
+              },
+              "partial": false
+            }
+          }
+        }
+      ],
+      "arms": {
+        "A": {
+          "started": 3,
+          "complete": 3,
+          "pending": 0,
+          "censored": 0,
+          "failed": 0,
+          "running": 0,
+          "wall_complete_seconds": {
+            "median": 769.9329740329995,
+            "min": 690.5652446120512,
+            "max": 770.2617472120328
+          },
+          "wall_censored_seconds": null,
+          "user_cpu_seconds": {
+            "median": 751.87,
+            "min": 672.44,
+            "max": 753.05
+          },
+          "sys_cpu_seconds": {
+            "median": 15.83,
+            "min": 12.3,
+            "max": 16.33
+          },
+          "max_rss_kb": {
+            "median": 293192.0,
+            "min": 290492.0,
+            "max": 293452.0
+          },
+          "gen_complete": {
+            "median": 310,
+            "min": 310,
+            "max": 310
+          },
+          "terminal_counts_complete": {
+            "retire": 918,
+            "illegal": 12
+          },
+          "target_witness_counts_complete": {
+            "other-opcode": 912,
+            "vfclass": 6,
+            "vfclass-inactive": 3,
+            "class-4": 3
+          },
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有可核实的动态fork总数输出"
+        },
+        "B": {
+          "started": 3,
+          "complete": 3,
+          "pending": 0,
+          "censored": 0,
+          "failed": 0,
+          "running": 0,
+          "wall_complete_seconds": {
+            "median": 1099.227170922968,
+            "min": 980.8975940860109,
+            "max": 1105.5534246069728
+          },
+          "wall_censored_seconds": null,
+          "user_cpu_seconds": {
+            "median": 1073.31,
+            "min": 957.98,
+            "max": 1076.79
+          },
+          "sys_cpu_seconds": {
+            "median": 22.66,
+            "min": 20.21,
+            "max": 22.86
+          },
+          "max_rss_kb": {
+            "median": 312528.0,
+            "min": 300288.0,
+            "max": 316068.0
+          },
+          "gen_complete": {
+            "median": 508,
+            "min": 508,
+            "max": 508
+          },
+          "terminal_counts_complete": {
+            "retire": 1512,
+            "illegal": 12
+          },
+          "target_witness_counts_complete": {
+            "vfclass": 600,
+            "class-9": 30,
+            "class-8": 60,
+            "vfclass-inactive": 176,
+            "other-opcode": 912,
+            "class-5": 60,
+            "class-2": 60,
+            "class-6": 30,
+            "class-1": 30,
+            "class-4": 45,
+            "class-3": 31,
+            "class-7": 30,
+            "class-0": 48
+          },
+          "fork_count": null,
+          "fork_count_reason": "固定isarch没有可核实的动态fork总数输出"
+        }
+      }
+    }
+  },
+  "all_pairs_complete": true
+}

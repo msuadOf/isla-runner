@@ -1,0 +1,107 @@
+[
+  {
+    "ir": "rv64d.ir",
+    "sha256": "aea104c88a3c90f5e3030365d38dbcbc97a058dcfaf22b77b6717bffae59b544",
+    "changed_original_definitions": [
+      [
+        "fn",
+        "zget_F_bits"
+      ],
+      [
+        "fn",
+        "zset_F_bits"
+      ],
+      [
+        "files",
+        ""
+      ]
+    ],
+    "stage1_reproducible": true,
+    "stage2_reproducible": true,
+    "dirty_function_unchanged": true
+  },
+  {
+    "ir": "rv32d.ir",
+    "sha256": "88b6f5d8dd4a314a3dc720f2aa943fefebb65c61c9dd581a2e7a214e6081c583",
+    "changed_original_definitions": [
+      [
+        "fn",
+        "zget_F_bits"
+      ],
+      [
+        "fn",
+        "zset_F_bits"
+      ],
+      [
+        "files",
+        ""
+      ]
+    ],
+    "stage1_reproducible": true,
+    "stage2_reproducible": true,
+    "dirty_function_unchanged": true
+  },
+  {
+    "ir": "ir/rv64d_v128_e64.ir",
+    "sha256": "d1fff976f4f04d0baf29ec9b9de51105ca8d7bcc252759f6fb5405191563329d",
+    "changed_original_definitions": [
+      [
+        "fn",
+        "zget_F_bits"
+      ],
+      [
+        "fn",
+        "zset_F_bits"
+      ],
+      [
+        "files",
+        ""
+      ]
+    ],
+    "stage1_reproducible": true,
+    "stage2_reproducible": true,
+    "dirty_function_unchanged": true
+  },
+  {
+    "ir": "ir/rv64d_v256_e64.ir",
+    "sha256": "2498a77d98d4ce8c071834632606d98b3ec4b3085f3573ddb3c9cda6bfa2e2ed",
+    "changed_original_definitions": [
+      [
+        "fn",
+        "zget_F_bits"
+      ],
+      [
+        "fn",
+        "zset_F_bits"
+      ],
+      [
+        "files",
+        ""
+      ]
+    ],
+    "stage1_reproducible": true,
+    "stage2_reproducible": true,
+    "dirty_function_unchanged": true
+  },
+  {
+    "ir": "ir/rv64d_v512_e64.ir",
+    "sha256": "2498a77d98d4ce8c071834632606d98b3ec4b3085f3573ddb3c9cda6bfa2e2ed",
+    "changed_original_definitions": [
+      [
+        "fn",
+        "zget_F_bits"
+      ],
+      [
+        "fn",
+        "zset_F_bits"
+      ],
+      [
+        "files",
+        ""
+      ]
+    ],
+    "stage1_reproducible": true,
+    "stage2_reproducible": true,
+    "dirty_function_unchanged": true
+  }
+]

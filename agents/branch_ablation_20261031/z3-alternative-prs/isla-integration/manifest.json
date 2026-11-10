@@ -1,0 +1,21 @@
+{
+  "release": ".tmp/isla-z3-a-smoke/release/z3-fork-5292580e5840-linux-x64.tar.gz",
+  "release_sha256": "33d73147e302d1a0a9993ee3a5a197144e82e741cd977eafa797d861206ecd9d",
+  "new_library": "/data1/baiyifan/workplace/isla-runner/.tmp/isla-z3-a-smoke/unpacked/z3-fork-5292580e5840-linux-x64/lib/libz3.so.5.3",
+  "original_binary": "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/target/release/isarch",
+  "original_binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+  "isolated_binary": "/data1/baiyifan/workplace/isla-runner/.tmp/isla-z3-a-smoke/isarch-new-z3",
+  "isolated_binary_sha256": "a3658dbd456761b2cbb3692bb9e6850657bcfd3d1947d8366142e70a17f129dc",
+  "isla_commit": "80231ce9928ccda10ba5750e5ff3570f5afb03fe",
+  "method": "patchelf on an independent copied binary; not a rebuild",
+  "new_z3_build_info": {
+    "repository": "msuadOf/z3",
+    "source_commit": "5292580e58404c43566cd81fd7fcc151974f0ff2",
+    "platform": "linux-x64",
+    "system": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "run_id": "41279556474",
+    "run_attempt": "1",
+    "configuration": "Release",
+    "strategy": "A: finite-enum preprocessing before default dispatch"
+  }
+}

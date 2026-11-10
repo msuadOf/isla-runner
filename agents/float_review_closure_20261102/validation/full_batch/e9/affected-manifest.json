@@ -1,0 +1,19 @@
+{
+  "kind": "affected_clause_manifest",
+  "created_utc": "2026-11-02T17:00:14.808628+00:00",
+  "model_tree": ".worktree/sail-riscv-general-float-by-model-20261022",
+  "model_commit": "e9d69d2f28586c089244c8e37ee4c904c5114458",
+  "model_dirty": false,
+  "isla_tree": ".worktree/runner-float/isla",
+  "isla_commit": "42000be47596ec088623881d03c0eadc5cf0ba27",
+  "isla_dirty": false,
+  "closure_path": "agents/float_review_closure_20261102/validation/full_batch/e9/affected-clauses.json",
+  "closure_sha256": "7b3c98bc0052c8894c68fea73ded1e97dd6748e7b90394d06a61c1f04ab930e3",
+  "generator_path": "agents/float_review_closure_20261102/validation/full_batch/e9/build_affected.py",
+  "generator_sha256": "694c0d2e0c783b7fd95f4492893550f4cdf94117e374c96567f5363fe735feb1",
+  "fd_float_count": 89,
+  "affected_count": 64,
+  "old_214_closure_sha256": "409edef342a13a28d2d4b817609570a249d070b5379765eb498f4f0ffd241d3b",
+  "added_vs_214": [],
+  "removed_vs_214": []
+}

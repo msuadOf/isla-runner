@@ -1,0 +1,39 @@
+{
+  "binary": {
+    "path": "isla/.worktrees/memory-consistency/target/release/isarch",
+    "sha256": "ed4685e061b47594c7402f9eda0f5fd9d0f62d350efd1bd44545f2ffdf5b4172"
+  },
+  "ir": {
+    "path": "isla/.worktrees/memory-consistency/rv64d.ir",
+    "sha256": "c0e4661a73888c56438a6f76059370667d141a026502d0511291586067bd31c0"
+  },
+  "source_head": "bdd047bc67c357f3c6e9c4d34b5ec9daaf81ab57",
+  "source_status": " M README.md\n M docs/json-results.md\n M ir/provenance/manifest.json\n M ir/rv64d_v128_e64.ir\n M ir/rv64d_v256_e64.ir\n M ir/rv64d_v512_e64.ir\n M isla-lib/src/memory.rs\n M rv32d.ir\n M rv64d.ir\n M scripts/run.mk\n M src/isarch/exec.rs\n M src/isarch/memory_model.rs\n M src/isarch/target.rs\n?? ir/provenance/model-memory-correctness.patch\n",
+  "base_config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+  "ldd": "\tlinux-vdso.so.1 (0x0000725986662000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000725983a00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000725986605000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000725983600000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000725986664000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000725983200000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007259864df000)",
+  "final_input_hashes": {
+    "src/isarch/memory_builder.rs": "80526aa391409d75275a3e3b863d3572ef82a4077668287e6955bd99453154e9",
+    "src/isarch/memory_model.rs": "53b0e2817ba2745cffce607d37167d1229dd5c4ce36f667a93c06185e428e42a",
+    "src/isarch/exec.rs": "2046fb3df706218cad4e7d744b26896059266399541e082009c90ccef33765ff",
+    "src/isarch/target.rs": "39677e77250dc763089140ce88138465e2ef8a1a06c17aa390b5fd290343cfc9",
+    "isla-lib/src/executor.rs": "cad6d999c1db6743212e8674ab012441978288f2204e366f62651bf23f31f67f",
+    "isla-lib/src/smt.rs": "6448e1c51f38d1bf797f85d24c2f5496d6b3771d55771fca467796d2af02c104",
+    "ir/provenance/manifest.json": "af009e3347638708b6af070b85907ce9425e4ee475cb5689a60dc780220abc8d",
+    "ir/provenance/rv64d.json": "89923ebff21718bb382df38bf246207cbb1eb5ae0cd314d078d87c0ab2b9f625",
+    "target/release/isarch": "ed4685e061b47594c7402f9eda0f5fd9d0f62d350efd1bd44545f2ffdf5b4172",
+    "rv64d.ir": "c0e4661a73888c56438a6f76059370667d141a026502d0511291586067bd31c0"
+  },
+  "observers": {
+    "z3_observe.so": "d5820d682c4ab9d3eecd437ff19cc3c3969e51c3ab879be5b6d58bd5b7b42e55",
+    "z3_observe_v2.so": "d3ad2578da9ae1dca692379f728613732e0ab58d3972e9a8a25b9654480f4735",
+    "z3_observe.c": "f6b2aad9ec72f0ddf464f9d6e7add5abf16dd9d182fc6110c91db204ab8b71fc"
+  },
+  "binary_version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613",
+  "machine": {
+    "system": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "cpu_affinity_count": 128,
+    "cpu_model": "model name\t: AMD EPYC 7543 32-Core Processor"
+  },
+  "observer_build_command": "gcc -shared -fPIC -O2 -Wall -Wextra -o z3_observe_v2.so z3_observe.c -ldl -pthread",
+  "note": "源码HEAD/status用于背景核对，二进制身份以其SHA256为准，不声称当前dirty源码恰为编译输入。"
+}

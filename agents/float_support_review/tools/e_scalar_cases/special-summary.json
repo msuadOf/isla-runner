@@ -1,0 +1,146 @@
+[
+  {
+    "name": "fminm_d_qnan_rs2",
+    "clause": "FMINM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.626,
+    "stderr": "fminm_d_qnan_rs2.stderr"
+  },
+  {
+    "name": "fminm_d_snan_rs2",
+    "clause": "FMINM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.703,
+    "stderr": "fminm_d_snan_rs2.stderr"
+  },
+  {
+    "name": "fminm_d_signed_zero",
+    "clause": "FMINM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.671,
+    "stderr": "fminm_d_signed_zero.stderr"
+  },
+  {
+    "name": "fmaxm_d_qnan_rs2",
+    "clause": "FMAXM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.764,
+    "stderr": "fmaxm_d_qnan_rs2.stderr"
+  },
+  {
+    "name": "fmaxm_d_snan_rs2",
+    "clause": "FMAXM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.65,
+    "stderr": "fmaxm_d_snan_rs2.stderr"
+  },
+  {
+    "name": "fmaxm_d_signed_zero",
+    "clause": "FMAXM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.517,
+    "stderr": "fmaxm_d_signed_zero.stderr"
+  },
+  {
+    "name": "fminm_h_qnan_rs2",
+    "clause": "FMINM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.505,
+    "stderr": "fminm_h_qnan_rs2.stderr"
+  },
+  {
+    "name": "fminm_h_snan_rs2",
+    "clause": "FMINM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.568,
+    "stderr": "fminm_h_snan_rs2.stderr"
+  },
+  {
+    "name": "fminm_h_signed_zero",
+    "clause": "FMINM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.566,
+    "stderr": "fminm_h_signed_zero.stderr"
+  },
+  {
+    "name": "fmaxm_h_qnan_rs2",
+    "clause": "FMAXM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.512,
+    "stderr": "fmaxm_h_qnan_rs2.stderr"
+  },
+  {
+    "name": "fmaxm_h_snan_rs2",
+    "clause": "FMAXM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.75,
+    "stderr": "fmaxm_h_snan_rs2.stderr"
+  },
+  {
+    "name": "fmaxm_h_signed_zero",
+    "clause": "FMAXM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.874,
+    "stderr": "fmaxm_h_signed_zero.stderr"
+  },
+  {
+    "name": "fminm_s_qnan_rs2",
+    "clause": "FMINM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.342,
+    "stderr": "fminm_s_qnan_rs2.stderr"
+  },
+  {
+    "name": "fminm_s_snan_rs2",
+    "clause": "FMINM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.723,
+    "stderr": "fminm_s_snan_rs2.stderr"
+  },
+  {
+    "name": "fminm_s_signed_zero",
+    "clause": "FMINM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.705,
+    "stderr": "fminm_s_signed_zero.stderr"
+  },
+  {
+    "name": "fmaxm_s_qnan_rs2",
+    "clause": "FMAXM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.747,
+    "stderr": "fmaxm_s_qnan_rs2.stderr"
+  },
+  {
+    "name": "fmaxm_s_snan_rs2",
+    "clause": "FMAXM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.731,
+    "stderr": "fmaxm_s_snan_rs2.stderr"
+  },
+  {
+    "name": "fmaxm_s_signed_zero",
+    "clause": "FMAXM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.692,
+    "stderr": "fmaxm_s_signed_zero.stderr"
+  }
+]

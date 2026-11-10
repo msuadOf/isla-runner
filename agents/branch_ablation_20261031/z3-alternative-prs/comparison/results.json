@@ -1,0 +1,836 @@
+[
+  {
+    "case": "nan",
+    "summary": {
+      "A": {
+        "median": 0.10005582199664786,
+        "range": [
+          0.09245310997357592,
+          0.10844724596245214
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "B": {
+        "median": 0.1787967089912854,
+        "range": [
+          0.17831137595931068,
+          0.18551818700507283
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      }
+    },
+    "runs": [
+      {
+        "case": "nan",
+        "variant": "A",
+        "rep": 0,
+        "cpu": 96,
+        "command": [
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.10844724596245214,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "nan",
+        "variant": "B",
+        "rep": 0,
+        "cpu": 96,
+        "command": [
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.18551818700507283,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "nan",
+        "variant": "B",
+        "rep": 1,
+        "cpu": 96,
+        "command": [
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.1787967089912854,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "nan",
+        "variant": "A",
+        "rep": 1,
+        "cpu": 96,
+        "command": [
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.10005582199664786,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "nan",
+        "variant": "A",
+        "rep": 2,
+        "cpu": 96,
+        "command": [
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.09245310997357592,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "nan",
+        "variant": "B",
+        "rep": 2,
+        "cpu": 96,
+        "command": [
+          "taskset",
+          "-c",
+          "96",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.17831137595931068,
+        "stdout": "sat\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "case": "flags",
+    "summary": {
+      "A": {
+        "median": 5.954928848019335,
+        "range": [
+          5.908728196984157,
+          6.005964333016891
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "B": {
+        "median": 15.348227277980186,
+        "range": [
+          15.303551082964987,
+          15.519425639999099
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      }
+    },
+    "runs": [
+      {
+        "case": "flags",
+        "variant": "A",
+        "rep": 0,
+        "cpu": 97,
+        "command": [
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 6.005964333016891,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "flags",
+        "variant": "B",
+        "rep": 0,
+        "cpu": 97,
+        "command": [
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 15.348227277980186,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "flags",
+        "variant": "B",
+        "rep": 1,
+        "cpu": 97,
+        "command": [
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 15.519425639999099,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "flags",
+        "variant": "A",
+        "rep": 1,
+        "cpu": 97,
+        "command": [
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 5.954928848019335,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "flags",
+        "variant": "A",
+        "rep": 2,
+        "cpu": 97,
+        "command": [
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 5.908728196984157,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "flags",
+        "variant": "B",
+        "rep": 2,
+        "cpu": 97,
+        "command": [
+          "taskset",
+          "-c",
+          "97",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 15.303551082964987,
+        "stdout": "sat\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "case": "minimal",
+    "summary": {
+      "A": {
+        "median": 0.1427558340365067,
+        "range": [
+          0.14245606499025598,
+          0.14418659295188263
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "B": {
+        "median": 0.0854719850467518,
+        "range": [
+          0.08187811501557007,
+          0.08598314900882542
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      }
+    },
+    "runs": [
+      {
+        "case": "minimal",
+        "variant": "A",
+        "rep": 0,
+        "cpu": 98,
+        "command": [
+          "taskset",
+          "-c",
+          "98",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.14245606499025598,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "minimal",
+        "variant": "B",
+        "rep": 0,
+        "cpu": 98,
+        "command": [
+          "taskset",
+          "-c",
+          "98",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.08187811501557007,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "minimal",
+        "variant": "B",
+        "rep": 1,
+        "cpu": 98,
+        "command": [
+          "taskset",
+          "-c",
+          "98",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.08598314900882542,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "minimal",
+        "variant": "A",
+        "rep": 1,
+        "cpu": 98,
+        "command": [
+          "taskset",
+          "-c",
+          "98",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.1427558340365067,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "minimal",
+        "variant": "A",
+        "rep": 2,
+        "cpu": 98,
+        "command": [
+          "taskset",
+          "-c",
+          "98",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.14418659295188263,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "minimal",
+        "variant": "B",
+        "rep": 2,
+        "cpu": 98,
+        "command": [
+          "taskset",
+          "-c",
+          "98",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.0854719850467518,
+        "stdout": "sat\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "case": "enum-6-256",
+    "summary": {
+      "A": {
+        "median": 0.03195022197905928,
+        "range": [
+          0.0296149060013704,
+          0.03290121798636392
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "B": {
+        "median": 0.02305177296511829,
+        "range": [
+          0.02072892797878012,
+          0.02371643204241991
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      }
+    },
+    "runs": [
+      {
+        "case": "enum-6-256",
+        "variant": "A",
+        "rep": 0,
+        "cpu": 99,
+        "command": [
+          "taskset",
+          "-c",
+          "99",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.03290121798636392,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-6-256",
+        "variant": "B",
+        "rep": 0,
+        "cpu": 99,
+        "command": [
+          "taskset",
+          "-c",
+          "99",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.02305177296511829,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-6-256",
+        "variant": "B",
+        "rep": 1,
+        "cpu": 99,
+        "command": [
+          "taskset",
+          "-c",
+          "99",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.02371643204241991,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-6-256",
+        "variant": "A",
+        "rep": 1,
+        "cpu": 99,
+        "command": [
+          "taskset",
+          "-c",
+          "99",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.03195022197905928,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-6-256",
+        "variant": "A",
+        "rep": 2,
+        "cpu": 99,
+        "command": [
+          "taskset",
+          "-c",
+          "99",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.0296149060013704,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-6-256",
+        "variant": "B",
+        "rep": 2,
+        "cpu": 99,
+        "command": [
+          "taskset",
+          "-c",
+          "99",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.02072892797878012,
+        "stdout": "sat\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "case": "enum-512-256",
+    "summary": {
+      "A": {
+        "median": 0.24420038401149213,
+        "range": [
+          0.24240216397447512,
+          0.2576399190002121
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "B": {
+        "median": 0.024684418982360512,
+        "range": [
+          0.023347162001300603,
+          0.02501421800116077
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      }
+    },
+    "runs": [
+      {
+        "case": "enum-512-256",
+        "variant": "A",
+        "rep": 0,
+        "cpu": 100,
+        "command": [
+          "taskset",
+          "-c",
+          "100",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.2576399190002121,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-512-256",
+        "variant": "B",
+        "rep": 0,
+        "cpu": 100,
+        "command": [
+          "taskset",
+          "-c",
+          "100",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.024684418982360512,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-512-256",
+        "variant": "B",
+        "rep": 1,
+        "cpu": 100,
+        "command": [
+          "taskset",
+          "-c",
+          "100",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.023347162001300603,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-512-256",
+        "variant": "A",
+        "rep": 1,
+        "cpu": 100,
+        "command": [
+          "taskset",
+          "-c",
+          "100",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.24420038401149213,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-512-256",
+        "variant": "A",
+        "rep": 2,
+        "cpu": 100,
+        "command": [
+          "taskset",
+          "-c",
+          "100",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.24240216397447512,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-512-256",
+        "variant": "B",
+        "rep": 2,
+        "cpu": 100,
+        "command": [
+          "taskset",
+          "-c",
+          "100",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.02501421800116077,
+        "stdout": "sat\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "case": "enum-1024-256",
+    "summary": {
+      "A": {
+        "median": 0.5128552110400051,
+        "range": [
+          0.4955303589813411,
+          0.5501557910465635
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "B": {
+        "median": 0.027188709005713463,
+        "range": [
+          0.025356038007885218,
+          0.027904768008738756
+        ],
+        "results": [
+          "sat",
+          "sat",
+          "sat"
+        ]
+      }
+    },
+    "runs": [
+      {
+        "case": "enum-1024-256",
+        "variant": "A",
+        "rep": 0,
+        "cpu": 101,
+        "command": [
+          "taskset",
+          "-c",
+          "101",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.5501557910465635,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-1024-256",
+        "variant": "B",
+        "rep": 0,
+        "cpu": 101,
+        "command": [
+          "taskset",
+          "-c",
+          "101",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.027904768008738756,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-1024-256",
+        "variant": "B",
+        "rep": 1,
+        "cpu": 101,
+        "command": [
+          "taskset",
+          "-c",
+          "101",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.025356038007885218,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-1024-256",
+        "variant": "A",
+        "rep": 1,
+        "cpu": 101,
+        "command": [
+          "taskset",
+          "-c",
+          "101",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.5128552110400051,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-1024-256",
+        "variant": "A",
+        "rep": 2,
+        "cpu": 101,
+        "command": [
+          "taskset",
+          "-c",
+          "101",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.4955303589813411,
+        "stdout": "sat\n",
+        "stderr": ""
+      },
+      {
+        "case": "enum-1024-256",
+        "variant": "B",
+        "rep": 2,
+        "cpu": 101,
+        "command": [
+          "taskset",
+          "-c",
+          "101",
+          "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+          "-t:60000",
+          "-in"
+        ],
+        "exit": 0,
+        "wall_s": 0.027188709005713463,
+        "stdout": "sat\n",
+        "stderr": ""
+      }
+    ]
+  }
+]

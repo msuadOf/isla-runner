@@ -1,4 +1,7 @@
 # Agents Overview
+- 2026-11-10 [Isla 两分支合并前审查与当轮修复](isla_premerge_review_20261110/status.md)：限相对 `daf61c04` 审查并完成修复；无新增失败，缺 IR 七项原失败保留，合并树待验证。
+
+- 2026-11-10 [221 个 clause 的路径合并与写缓存实测](pathmerge_cache_all_clauses_20261110/status.md)：主轮继续运行；新增第二轮等待脚本，环境错误补跑、Poison 改 default，主轮收尾后自动接续，保留两轮记录。
 
 - 2026-11-09 三仓及各工作树暂存区外文件审计与清理完成。审查 52 个实际 Git 工作目录，按内容比对恢复 79 份未暂存工作文件，删除 4,538 个确认无用的旧副本、编译缓存与字节码；未运行测试、未计算哈希。保留独有实现及历史证据，详见 [审计报告](../.worktree/unstaged-cleanup-20261109/audit.md)、[专题状态](unstaged_cleanup_20261109/status.md)。
 

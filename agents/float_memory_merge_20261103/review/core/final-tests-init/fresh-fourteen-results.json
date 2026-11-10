@@ -1,0 +1,72 @@
+[
+  {
+    "test": "executor::tests::multi_thread_entry_injects_initial_memory",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "executor::tests::multi_thread_entry_none_keeps_default_memory",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "executor::tests::multi_thread_read_mem_event_survives_fork",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "executor::tests::multi_thread_read_mem_symbolic_region_event",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "executor::tests::symbolic_pma_region_size_forks_matching_range",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_64_equivalent_to_int_roundtrip",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_amo_min_shape_128_symbolic",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_length_mismatch_is_type_error",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_mixed_concrete_symbolic",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_s_128_cross_sign_boundary",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_symbolic_128_no_panic_and_concretizes",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::bits_compare_u_128_boundary_values",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::sail_signed_symbolic_128_is_identity",
+    "returncode": 0,
+    "test_count": 1
+  },
+  {
+    "test": "primop::tests::sail_unsigned_symbolic_128_still_panics",
+    "returncode": 0,
+    "test_count": 1
+  }
+]

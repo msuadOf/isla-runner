@@ -1,0 +1,28 @@
+{
+  "A": "当前 SYMBOLIC 条件状态 ITE",
+  "B": "仅将 mstatus 条件状态 ITE 改为显式 if",
+  "model_commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+  "different_source_files": [
+    "extensions/FD/fdext_regs.sail"
+  ],
+  "different_lines": 1,
+  "diff_sha256": "44958990e3f13a4e127133cfa5993e706d2bd6c44034557b219131d4f758cbbb",
+  "A_source_manifest_sha256": "d0187c7befda728f4f8e26582bfe44f84c3431c01e2e893ffc0f3041b3a301a9",
+  "B_source_manifest_sha256": "1686d988e63c4d2657db5cac8a3c4a550306e8b51044dec6697bf5a06aac3606",
+  "A_ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+  "B_ir_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+  "same_plugin_sha256": "c4eccb06af9f85820c28bd67556ae0f191361c93cbe1afb334900f9e1f0e22f6",
+  "same_config_sha256": "89923ebff21718bb382df38bf246207cbb1eb5ae0cd314d078d87c0ab2b9f625",
+  "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+  "A_ir_source": "isla/rv64d.ir; 原交付manifest逐文件、插件、配置、编译参数核对一致",
+  "B_ir_source": "strict完整模型新生成，见B/ir/generation-rv64d_flags_if.json",
+  "ir_diff_hunks": 2,
+  "A_baseline_provenance_sha256": "f8b7abda712a46be10f9ed85861d335a951bc858c5036581d8224b0520f0f520",
+  "A_baseline_checks": {
+    "source_files_match": true,
+    "plugin_match": true,
+    "config_match": true,
+    "ir_match": true,
+    "command_options_match": true
+  }
+}

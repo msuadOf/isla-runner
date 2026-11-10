@@ -1,0 +1,87 @@
+[
+  {
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "exit": 0,
+    "seconds": 3.616845761949662,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "gen": 4,
+    "retire": 4,
+    "boxing_patterns": {
+      "boxed,boxed": 3,
+      "unboxed,boxed": 1
+    },
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zFLEQ_S"
+    }
+  },
+  {
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=F_BIN_RM_TYPE_S"
+    ],
+    "exit": 0,
+    "seconds": 9.779703831998631,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "gen": 52,
+    "retire": 40,
+    "boxing_patterns": {
+      "unboxed,unboxed": 40
+    },
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zF_BIN_RM_TYPE_S"
+    }
+  }
+]

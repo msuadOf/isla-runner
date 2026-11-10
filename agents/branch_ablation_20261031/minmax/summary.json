@@ -1,0 +1,1326 @@
+{
+  "protocol": "agents/branch_ablation_20261031/protocol.md",
+  "variant": {
+    "base_commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+    "base_file_sha256": "547156c7e1c25c1b2fe417c4c33401260f3ad7ab2d7d678a00145f292deea32a",
+    "B_file_sha256": "d24bea03579188d52e1f51985eb16050f6e8bbe492e7de0c5e616d21eb5de986",
+    "changed_files": [
+      "extensions/FD/fp_minmax.sail"
+    ],
+    "model_file_count": 166,
+    "all_unchanged_files_equal": true,
+    "base_ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+    "config_sha256": "89923ebff21718bb382df38bf246207cbb1eb5ae0cd314d078d87c0ab2b9f625",
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204"
+  },
+  "ir_comparison": {
+    "A_fn_count": 2053,
+    "B_fn_count": 2053,
+    "added_fns": [],
+    "removed_fns": [],
+    "raw_changed_fns": [
+      "zfp_max_pure",
+      "zfp_maxm_pure",
+      "zfp_min_pure",
+      "zfp_minm_pure"
+    ],
+    "location_stripped_changed_fns": [
+      "zfp_max_pure",
+      "zfp_min_pure"
+    ],
+    "location_stripped_changed_count": 2,
+    "A_ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+    "B_ir_sha256": "33563af6c675db0040077b0e339345ce11c1e45fdb657c3340120a19f2a41c3b"
+  },
+  "clauses": {
+    "F_BIN_TYPE_F_S": {
+      "A": {
+        "wall_seconds": {
+          "values": [
+            5.51010271999985,
+            5.509504564979579,
+            5.50981480901828
+          ],
+          "median": 5.50981480901828,
+          "range": [
+            5.509504564979579,
+            5.51010271999985
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            4.65,
+            4.73,
+            4.71
+          ],
+          "median": 4.71,
+          "range": [
+            4.65,
+            4.73
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.81,
+            0.81,
+            0.83
+          ],
+          "median": 0.81,
+          "range": [
+            0.81,
+            0.83
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            233152.0,
+            232944.0,
+            231960.0
+          ],
+          "median": 232944.0,
+          "range": [
+            231960.0,
+            233152.0
+          ]
+        },
+        "forks": {
+          "values": [
+            39,
+            39,
+            39
+          ],
+          "median": 39,
+          "range": [
+            39,
+            39
+          ]
+        },
+        "gen": {
+          "values": [
+            20,
+            20,
+            20
+          ],
+          "median": 20,
+          "range": [
+            20,
+            20
+          ]
+        },
+        "retire": {
+          "values": [
+            20,
+            20,
+            20
+          ],
+          "median": 20,
+          "range": [
+            20,
+            20
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_TYPE_F_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_TYPE_F_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_TYPE_F_S"
+          }
+        ],
+        "conditions": [
+          {
+            "one_nan": 4,
+            "both_nan": 2,
+            "both_zero": 2
+          },
+          {
+            "one_nan": 4,
+            "both_nan": 2,
+            "both_zero": 2
+          },
+          {
+            "one_nan": 4,
+            "both_nan": 2,
+            "both_zero": 2
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / +zero": 2,
+            "+zero / unboxed→qNaN": 2,
+            "unboxed→qNaN / unboxed→qNaN": 2,
+            "+zero / +zero": 2
+          },
+          {
+            "unboxed→qNaN / +zero": 2,
+            "+zero / unboxed→qNaN": 2,
+            "unboxed→qNaN / unboxed→qNaN": 2,
+            "+zero / +zero": 2
+          },
+          {
+            "unboxed→qNaN / +zero": 2,
+            "+zero / unboxed→qNaN": 2,
+            "unboxed→qNaN / unboxed→qNaN": 2,
+            "+zero / +zero": 2
+          }
+        ]
+      },
+      "B": {
+        "wall_seconds": {
+          "values": [
+            12.815592813014518,
+            12.715579623007216,
+            13.115991386002861
+          ],
+          "median": 12.815592813014518,
+          "range": [
+            12.715579623007216,
+            13.115991386002861
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            11.36,
+            11.43,
+            11.56
+          ],
+          "median": 11.43,
+          "range": [
+            11.36,
+            11.56
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            1.46,
+            1.3,
+            1.62
+          ],
+          "median": 1.46,
+          "range": [
+            1.3,
+            1.62
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            241568.0,
+            257192.0,
+            241496.0
+          ],
+          "median": 241568.0,
+          "range": [
+            241496.0,
+            257192.0
+          ]
+        },
+        "forks": {
+          "values": [
+            71,
+            71,
+            71
+          ],
+          "median": 71,
+          "range": [
+            71,
+            71
+          ]
+        },
+        "gen": {
+          "values": [
+            36,
+            36,
+            36
+          ],
+          "median": 36,
+          "range": [
+            36,
+            36
+          ]
+        },
+        "retire": {
+          "values": [
+            36,
+            36,
+            36
+          ],
+          "median": 36,
+          "range": [
+            36,
+            36
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_TYPE_F_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_TYPE_F_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zF_BIN_TYPE_F_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 8,
+            "normal_lt": 2,
+            "one_nan": 8,
+            "normal_gt": 2,
+            "both_zero": 4
+          },
+          {
+            "both_nan": 8,
+            "normal_lt": 2,
+            "one_nan": 8,
+            "normal_gt": 2,
+            "both_zero": 4
+          },
+          {
+            "both_nan": 8,
+            "normal_lt": 2,
+            "one_nan": 8,
+            "normal_gt": 2,
+            "both_zero": 4
+          }
+        ],
+        "classes": [
+          {
+            "qNaN / unboxed→qNaN": 2,
+            "unboxed→qNaN / unboxed→qNaN": 2,
+            "normal / normal": 4,
+            "+zero / unboxed→qNaN": 2,
+            "qNaN / qNaN": 2,
+            "unboxed→qNaN / qNaN": 2,
+            "unboxed→qNaN / +zero": 2,
+            "normal / qNaN": 2,
+            "qNaN / normal": 1,
+            "-zero / +zero": 2,
+            "sNaN / normal": 1,
+            "+zero / -zero": 2
+          },
+          {
+            "qNaN / unboxed→qNaN": 2,
+            "unboxed→qNaN / unboxed→qNaN": 2,
+            "normal / normal": 4,
+            "+zero / unboxed→qNaN": 2,
+            "qNaN / qNaN": 2,
+            "unboxed→qNaN / qNaN": 2,
+            "unboxed→qNaN / +zero": 2,
+            "normal / qNaN": 2,
+            "sNaN / normal": 1,
+            "-zero / +zero": 2,
+            "qNaN / normal": 1,
+            "+zero / -zero": 2
+          },
+          {
+            "qNaN / unboxed→qNaN": 2,
+            "unboxed→qNaN / unboxed→qNaN": 2,
+            "normal / normal": 4,
+            "+zero / unboxed→qNaN": 2,
+            "qNaN / qNaN": 2,
+            "unboxed→qNaN / qNaN": 2,
+            "unboxed→qNaN / +zero": 2,
+            "normal / sNaN": 1,
+            "qNaN / normal": 1,
+            "-zero / +zero": 2,
+            "normal / qNaN": 1,
+            "sNaN / normal": 1,
+            "+zero / -zero": 2
+          }
+        ]
+      }
+    },
+    "FMINM_S": {
+      "A": {
+        "wall_seconds": {
+          "values": [
+            1.8071204000152647,
+            1.807112661015708,
+            1.8073060699971393
+          ],
+          "median": 1.8071204000152647,
+          "range": [
+            1.807112661015708,
+            1.8073060699971393
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            1.43,
+            1.4,
+            1.41
+          ],
+          "median": 1.41,
+          "range": [
+            1.4,
+            1.43
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.31,
+            0.33,
+            0.33
+          ],
+          "median": 0.33,
+          "range": [
+            0.31,
+            0.33
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            229784.0,
+            229576.0,
+            229680.0
+          ],
+          "median": 229680.0,
+          "range": [
+            229576.0,
+            229784.0
+          ]
+        },
+        "forks": {
+          "values": [
+            7,
+            7,
+            7
+          ],
+          "median": 7,
+          "range": [
+            7,
+            7
+          ]
+        },
+        "gen": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "retire": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          }
+        ]
+      },
+      "B": {
+        "wall_seconds": {
+          "values": [
+            4.50854484498268,
+            4.611006377032027,
+            4.609180770989042
+          ],
+          "median": 4.609180770989042,
+          "range": [
+            4.50854484498268,
+            4.611006377032027
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            3.91,
+            3.95,
+            3.96
+          ],
+          "median": 3.95,
+          "range": [
+            3.91,
+            3.96
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.59,
+            0.57,
+            0.6
+          ],
+          "median": 0.59,
+          "range": [
+            0.57,
+            0.6
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            232760.0,
+            231644.0,
+            233216.0
+          ],
+          "median": 232760.0,
+          "range": [
+            231644.0,
+            233216.0
+          ]
+        },
+        "forks": {
+          "values": [
+            23,
+            23,
+            23
+          ],
+          "median": 23,
+          "range": [
+            23,
+            23
+          ]
+        },
+        "gen": {
+          "values": [
+            12,
+            12,
+            12
+          ],
+          "median": 12,
+          "range": [
+            12,
+            12
+          ]
+        },
+        "retire": {
+          "values": [
+            12,
+            12,
+            12
+          ],
+          "median": 12,
+          "range": [
+            12,
+            12
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 4,
+            "one_nan": 4,
+            "both_zero": 2,
+            "normal_lt": 1,
+            "normal_gt": 1
+          },
+          {
+            "both_nan": 4,
+            "one_nan": 4,
+            "both_zero": 2,
+            "normal_lt": 1,
+            "normal_gt": 1
+          },
+          {
+            "both_nan": 4,
+            "one_nan": 4,
+            "both_zero": 2,
+            "normal_lt": 1,
+            "normal_gt": 1
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / -zero": 1,
+            "-zero / +zero": 1,
+            "unboxed→qNaN / qNaN": 1,
+            "qNaN / qNaN": 1,
+            "sNaN / normal": 1,
+            "normal / normal": 2,
+            "normal / sNaN": 1,
+            "qNaN / unboxed→qNaN": 1,
+            "+zero / unboxed→qNaN": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / -zero": 1,
+            "-zero / +zero": 1,
+            "unboxed→qNaN / qNaN": 1,
+            "qNaN / qNaN": 1,
+            "qNaN / normal": 1,
+            "normal / normal": 2,
+            "normal / qNaN": 1,
+            "qNaN / unboxed→qNaN": 1,
+            "+zero / unboxed→qNaN": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / -zero": 1,
+            "-zero / +zero": 1,
+            "unboxed→qNaN / qNaN": 1,
+            "qNaN / qNaN": 1,
+            "sNaN / normal": 1,
+            "normal / normal": 2,
+            "normal / sNaN": 1,
+            "qNaN / unboxed→qNaN": 1,
+            "+zero / unboxed→qNaN": 1
+          }
+        ]
+      }
+    },
+    "FMAXM_S": {
+      "A": {
+        "wall_seconds": {
+          "values": [
+            1.806817430013325,
+            1.8070582470390946,
+            1.8072467150050215
+          ],
+          "median": 1.8070582470390946,
+          "range": [
+            1.806817430013325,
+            1.8072467150050215
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            1.46,
+            1.45,
+            1.47
+          ],
+          "median": 1.46,
+          "range": [
+            1.45,
+            1.47
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.3,
+            0.34,
+            0.32
+          ],
+          "median": 0.32,
+          "range": [
+            0.3,
+            0.34
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            230556.0,
+            229420.0,
+            229352.0
+          ],
+          "median": 229420.0,
+          "range": [
+            229352.0,
+            230556.0
+          ]
+        },
+        "forks": {
+          "values": [
+            7,
+            7,
+            7
+          ],
+          "median": 7,
+          "range": [
+            7,
+            7
+          ]
+        },
+        "gen": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "retire": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          }
+        ]
+      },
+      "B": {
+        "wall_seconds": {
+          "values": [
+            4.708361803961452,
+            4.709349751996342,
+            4.608596328995191
+          ],
+          "median": 4.708361803961452,
+          "range": [
+            4.608596328995191,
+            4.709349751996342
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            4.02,
+            4.02,
+            4.01
+          ],
+          "median": 4.02,
+          "range": [
+            4.01,
+            4.02
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.6,
+            0.61,
+            0.6
+          ],
+          "median": 0.6,
+          "range": [
+            0.6,
+            0.61
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            231744.0,
+            232648.0,
+            233708.0
+          ],
+          "median": 232648.0,
+          "range": [
+            231744.0,
+            233708.0
+          ]
+        },
+        "forks": {
+          "values": [
+            23,
+            23,
+            23
+          ],
+          "median": 23,
+          "range": [
+            23,
+            23
+          ]
+        },
+        "gen": {
+          "values": [
+            12,
+            12,
+            12
+          ],
+          "median": 12,
+          "range": [
+            12,
+            12
+          ]
+        },
+        "retire": {
+          "values": [
+            12,
+            12,
+            12
+          ],
+          "median": 12,
+          "range": [
+            12,
+            12
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 4,
+            "one_nan": 4,
+            "both_zero": 2,
+            "normal_lt": 1,
+            "normal_gt": 1
+          },
+          {
+            "both_nan": 4,
+            "one_nan": 4,
+            "both_zero": 2,
+            "normal_lt": 1,
+            "normal_gt": 1
+          },
+          {
+            "both_nan": 4,
+            "one_nan": 4,
+            "both_zero": 2,
+            "normal_lt": 1,
+            "normal_gt": 1
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / -zero": 1,
+            "-zero / +zero": 1,
+            "unboxed→qNaN / qNaN": 1,
+            "qNaN / qNaN": 1,
+            "qNaN / normal": 1,
+            "normal / normal": 2,
+            "normal / sNaN": 1,
+            "qNaN / unboxed→qNaN": 1,
+            "+zero / unboxed→qNaN": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / -zero": 1,
+            "-zero / +zero": 1,
+            "unboxed→qNaN / qNaN": 1,
+            "qNaN / qNaN": 1,
+            "qNaN / normal": 1,
+            "normal / normal": 2,
+            "normal / qNaN": 1,
+            "qNaN / unboxed→qNaN": 1,
+            "+zero / unboxed→qNaN": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / -zero": 1,
+            "-zero / +zero": 1,
+            "unboxed→qNaN / qNaN": 1,
+            "qNaN / qNaN": 1,
+            "qNaN / normal": 1,
+            "normal / normal": 2,
+            "normal / qNaN": 1,
+            "qNaN / unboxed→qNaN": 1,
+            "+zero / unboxed→qNaN": 1
+          }
+        ]
+      }
+    }
+  },
+  "conclusion": {
+    "performance": "完整Clause收益：A在F_BIN_TYPE_F_S的墙钟中位数5.510秒，B为12.816秒；coverage代价单列",
+    "coverage": "A的min/max仅8条退休见证且无正常有限数大小两侧及负零；B为24条并有这些见证",
+    "recommendation": "当前生成器未补足条件见证前，恢复fp_min_pure/fp_max_pure显式选择；若保留ITE，须补条件见证后按相同覆盖量重测",
+    "untested": [
+      "F16/F64及向量完整Clause",
+      "硬件回放"
+    ]
+  },
+  "independent_last_nan_selection": {
+    "variant": "C",
+    "summary_path": "summary-C.json",
+    "report_section": "独立子项：minm/maxm 末层 NaN 选择",
+    "changes": "仅 fp_minm_pure/fp_maxm_pure 末层 ITE→if；纯 min/max 六层选择维持 A 的 ITE",
+    "status": "三对 AC/CA/AC 已完成"
+  }
+}

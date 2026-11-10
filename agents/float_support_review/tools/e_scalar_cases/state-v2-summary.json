@@ -1,0 +1,92 @@
+[
+  {
+    "batch": "000-007",
+    "count": 8,
+    "first": "fcvtmod_zero",
+    "last": "fcvtmod_infinity",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.331
+  },
+  {
+    "batch": "008-015",
+    "count": 8,
+    "first": "fcvtmod_huge",
+    "last": "feq_d_qnan",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.203
+  },
+  {
+    "batch": "016-023",
+    "count": 8,
+    "first": "feq_d_snan",
+    "last": "feq_h_snan",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.168
+  },
+  {
+    "batch": "024-031",
+    "count": 8,
+    "first": "flt_h_qnan",
+    "last": "flt_s_qnan",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.967
+  },
+  {
+    "batch": "032-039",
+    "count": 8,
+    "first": "fadd_h_unboxed",
+    "last": "fminm_s_unboxed",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 7.473
+  },
+  {
+    "batch": "040-047",
+    "count": 8,
+    "first": "fclass_h_category0",
+    "last": "fclass_h_category7",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 7.529
+  },
+  {
+    "batch": "048-055",
+    "count": 8,
+    "first": "fclass_h_category8",
+    "last": "fclass_s_category5",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.098
+  },
+  {
+    "batch": "056-063",
+    "count": 8,
+    "first": "fclass_s_category6",
+    "last": "fclass_d_category3",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 5.747
+  },
+  {
+    "batch": "064-071",
+    "count": 8,
+    "first": "fclass_d_category4",
+    "last": "fmv_h_x_signbit",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 5.767
+  },
+  {
+    "batch": "072-075",
+    "count": 4,
+    "first": "fmv_x_s_signbit",
+    "last": "fmv_d_x_signbit",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 5.545
+  }
+]

@@ -1,0 +1,2 @@
+c011139457134cbb48c396ec567ee98b3b328d18c1e61c64409bfa3aeaa09815  archives/_raw/float-scalar-73df-20260929.tar.zst
+4d5b2635051b3b0e3b65e34490fa05f69ccb4580739470c7fe7dc849265a13d9  archives/float-scalar-2026-09-29/manifest.json

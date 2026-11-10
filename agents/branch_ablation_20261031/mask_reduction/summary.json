@@ -1,0 +1,1244 @@
+{
+  "protocol": "agents/branch_ablation_20261031/protocol.md",
+  "model_commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+  "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+  "cpu_affinity": "52-55",
+  "threads": 1,
+  "outer_limit_seconds": 60,
+  "path_limit_seconds": 30,
+  "smt_limit_seconds": 10,
+  "initial_context": {
+    "vtype": "0x10",
+    "SEW": 32,
+    "LMUL": 1,
+    "vl": 2,
+    "vstart": 0,
+    "vector_data": "symbolic"
+  },
+  "groups": {
+    "mask": {
+      "clause": "FVVTYPE",
+      "result_class": "完整Clause收益（A耗时较低，但默认活动掩码侧无见证）",
+      "recommendation": "在已测Clause优先恢复B的显式活动lane判断；其余向量Clause和未测上下文需单独核对",
+      "coverage_note": "B的gen增加来自显式分支见证；两臂输入域相同，输出集合不同，耗时不代表等覆盖工作量的加速",
+      "source_diff_sha256": "221c847671b88b5443431d7bbfe68c6a062c402f2a13525c058e7a909d2398dd",
+      "only_changed_model_file": "extensions/V/vext_fp_insts.sail",
+      "model_file_count": 166,
+      "same_plugin": true,
+      "same_generation_config": true,
+      "same_initial_config": true,
+      "fork_count": null,
+      "fork_count_reason": "isarch 未提供可靠的全局真实 fork 计数",
+      "variants": {
+        "A": {
+          "source_manifest_sha256": "657c73419abe0e284934d779ff0bca9891a533d29ec6da49001fce3cc318a0d2",
+          "source_target_sha256": "bdc27ae064c69ea703d8920acaa0874168691c9bc04e9aff2152a12fbfe4b6cb",
+          "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+          "initial_config_sha256": "22213b4fe0be2211833548b25bafbf066b67e84c1c97f6f4778b4db29a0a608e",
+          "complete": true,
+          "runs": [
+            {
+              "label": "r1_A",
+              "exit": 0,
+              "wall_seconds": 7.92612,
+              "time_wall_seconds": 7.88,
+              "user_cpu_seconds": 7.06,
+              "system_cpu_seconds": 0.91,
+              "max_rss_kb": 257144,
+              "gen": 27,
+              "retire": 18,
+              "illegal": 9,
+              "outer_timeout": false,
+              "witness": {
+                "active": 9,
+                "inactive": 9,
+                "mixed": 0,
+                "masked_active": 0,
+                "masked_inactive": 9,
+                "masked_mixed": 0,
+                "mask_enabled": 9,
+                "unmasked": 9,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zFVVTYPE.json": "8f8c9ee293a5190a1002d5939feb597535579ec9f9d65feec1bfa1bafb2a7d16"
+              },
+              "resources_sha256": "6a80605637dd5eacfa88b7aaf89da592b98c728a79eba6b735c744b02aed03f3",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/runs/r1_A/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/A/ir/rv64d_mask_A.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/A/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=FVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/mask/runs/r1_A",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r2_A",
+              "exit": 0,
+              "wall_seconds": 7.625865,
+              "time_wall_seconds": 7.59,
+              "user_cpu_seconds": 6.75,
+              "system_cpu_seconds": 0.92,
+              "max_rss_kb": 257172,
+              "gen": 27,
+              "retire": 18,
+              "illegal": 9,
+              "outer_timeout": false,
+              "witness": {
+                "active": 9,
+                "inactive": 9,
+                "mixed": 0,
+                "masked_active": 0,
+                "masked_inactive": 9,
+                "masked_mixed": 0,
+                "mask_enabled": 9,
+                "unmasked": 9,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zFVVTYPE.json": "8f8c9ee293a5190a1002d5939feb597535579ec9f9d65feec1bfa1bafb2a7d16"
+              },
+              "resources_sha256": "d4ce674115eca0dfe568cdd43695778496eecb36dfdb49c3edd67b1602884e0c",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/runs/r2_A/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/A/ir/rv64d_mask_A.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/A/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=FVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/mask/runs/r2_A",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r3_A",
+              "exit": 0,
+              "wall_seconds": 7.726063,
+              "time_wall_seconds": 7.65,
+              "user_cpu_seconds": 6.8,
+              "system_cpu_seconds": 0.94,
+              "max_rss_kb": 255764,
+              "gen": 27,
+              "retire": 18,
+              "illegal": 9,
+              "outer_timeout": false,
+              "witness": {
+                "active": 9,
+                "inactive": 9,
+                "mixed": 0,
+                "masked_active": 0,
+                "masked_inactive": 9,
+                "masked_mixed": 0,
+                "mask_enabled": 9,
+                "unmasked": 9,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zFVVTYPE.json": "8f8c9ee293a5190a1002d5939feb597535579ec9f9d65feec1bfa1bafb2a7d16"
+              },
+              "resources_sha256": "36d6531ac2a05095a9edaf728e12adf38b505a03f57b0ca4d00e46d38cca9d7f",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/runs/r3_A/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/A/ir/rv64d_mask_A.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/A/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=FVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/mask/runs/r3_A",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            }
+          ],
+          "generation_log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+          "generation_record_sha256": "c4c0b8b21b816ac7e32aa6ce9953852a24c0679c9ff65dc5fa160891b3892c7a",
+          "wall_median_seconds": 7.65,
+          "wall_range_seconds": [
+            7.59,
+            7.88
+          ]
+        },
+        "B": {
+          "source_manifest_sha256": "6143f9b637b8fad021fee65c08d95f2763e0af9ce15c92d7d095ef78357585d9",
+          "source_target_sha256": "52a5a403dcc85ae4075aba9709453073ca1f5b259f86c8c910cf114f357a4ba1",
+          "ir_sha256": "f7f4c0738b9546e2b28dd8a11995410f481c86781a97b6c7731d605852f425fa",
+          "initial_config_sha256": "22213b4fe0be2211833548b25bafbf066b67e84c1c97f6f4778b4db29a0a608e",
+          "complete": true,
+          "runs": [
+            {
+              "label": "r1_B",
+              "exit": 0,
+              "wall_seconds": 11.33212,
+              "time_wall_seconds": 11.23,
+              "user_cpu_seconds": 9.77,
+              "system_cpu_seconds": 1.64,
+              "max_rss_kb": 260728,
+              "gen": 54,
+              "retire": 45,
+              "illegal": 9,
+              "outer_timeout": false,
+              "witness": {
+                "active": 36,
+                "inactive": 27,
+                "mixed": 18,
+                "masked_active": 27,
+                "masked_inactive": 27,
+                "masked_mixed": 18,
+                "mask_enabled": 36,
+                "unmasked": 9,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zFVVTYPE.json": "d0580c63cd547501b204bb1763382be33b39765dddeed14cfb37a4ddfedc3f2d"
+              },
+              "resources_sha256": "0079582881cac44e7e0a98d29a284dda4d3267cbd541db84b6f428d6a5007d2f",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/runs/r1_B/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/B/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=FVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/mask/runs/r1_B",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r2_B",
+              "exit": 0,
+              "wall_seconds": 11.231098,
+              "time_wall_seconds": 11.16,
+              "user_cpu_seconds": 9.63,
+              "system_cpu_seconds": 1.71,
+              "max_rss_kb": 255904,
+              "gen": 54,
+              "retire": 45,
+              "illegal": 9,
+              "outer_timeout": false,
+              "witness": {
+                "active": 36,
+                "inactive": 27,
+                "mixed": 18,
+                "masked_active": 27,
+                "masked_inactive": 27,
+                "masked_mixed": 18,
+                "mask_enabled": 36,
+                "unmasked": 9,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zFVVTYPE.json": "d0580c63cd547501b204bb1763382be33b39765dddeed14cfb37a4ddfedc3f2d"
+              },
+              "resources_sha256": "5508677319ab0f10bc55712db7cad6a5b06b6538a39644d9ba84e6dc3c7a0dc3",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/runs/r2_B/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/B/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=FVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/mask/runs/r2_B",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r3_B",
+              "exit": 0,
+              "wall_seconds": 11.231516,
+              "time_wall_seconds": 11.17,
+              "user_cpu_seconds": 9.65,
+              "system_cpu_seconds": 1.71,
+              "max_rss_kb": 258268,
+              "gen": 54,
+              "retire": 45,
+              "illegal": 9,
+              "outer_timeout": false,
+              "witness": {
+                "active": 36,
+                "inactive": 27,
+                "mixed": 18,
+                "masked_active": 27,
+                "masked_inactive": 27,
+                "masked_mixed": 18,
+                "mask_enabled": 36,
+                "unmasked": 9,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zFVVTYPE.json": "d0580c63cd547501b204bb1763382be33b39765dddeed14cfb37a4ddfedc3f2d"
+              },
+              "resources_sha256": "6a589cccf4bc96e29d2fdabd5ed69139d1ad98b0077cac1a00e46b68770caf50",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/runs/r3_B/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/mask/B/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=FVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/mask/runs/r3_B",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            }
+          ],
+          "generation_log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+          "generation_record_sha256": "9c48ae45b838ddfafb96b29a7cb1b628620604f3775234dfc3edd17ae33a5e26",
+          "wall_median_seconds": 11.17,
+          "wall_range_seconds": [
+            11.16,
+            11.23
+          ]
+        }
+      }
+    },
+    "reduction": {
+      "clause": "RFVVTYPE",
+      "result_class": "完整Clause收益（A耗时较低，但默认活动掩码侧无见证）",
+      "recommendation": "在已测Clause优先恢复B的显式活动lane判断；其余向量Clause和未测上下文需单独核对",
+      "coverage_note": "B的gen增加来自显式分支见证；两臂输入域相同，输出集合不同，耗时不代表等覆盖工作量的加速",
+      "source_diff_sha256": "5a6ab2f3324407b75628a082e7d33224f4ea73b8d4412c61c3693c32aa0239c1",
+      "only_changed_model_file": "extensions/V/vext_fp_red_insts.sail",
+      "model_file_count": 166,
+      "same_plugin": true,
+      "same_generation_config": true,
+      "same_initial_config": true,
+      "fork_count": null,
+      "fork_count_reason": "isarch 未提供可靠的全局真实 fork 计数",
+      "variants": {
+        "A": {
+          "source_manifest_sha256": "03a94e17a18f67cbbac6210e8740e162cf0c78b4ca493c84e6d233d982ec6a29",
+          "source_target_sha256": "62c066def287a83d49d9ddfd57266e6d4d91c950a2931391aaf37572456bae45",
+          "ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+          "initial_config_sha256": "22213b4fe0be2211833548b25bafbf066b67e84c1c97f6f4778b4db29a0a608e",
+          "complete": true,
+          "runs": [
+            {
+              "label": "r1_A",
+              "exit": 0,
+              "wall_seconds": 4.220095,
+              "time_wall_seconds": 4.17,
+              "user_cpu_seconds": 3.71,
+              "system_cpu_seconds": 0.49,
+              "max_rss_kb": 246352,
+              "gen": 12,
+              "retire": 8,
+              "illegal": 4,
+              "outer_timeout": false,
+              "witness": {
+                "active": 4,
+                "inactive": 4,
+                "mixed": 0,
+                "masked_active": 0,
+                "masked_inactive": 4,
+                "masked_mixed": 0,
+                "mask_enabled": 4,
+                "unmasked": 4,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zRFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zRFVVTYPE.json": "589c7e79ea3f0c690cb75bf138afddbb59626dcb453951045bcb182385f7ed3b"
+              },
+              "resources_sha256": "e691e81e8487cf3aee19dcc597e01ecc8b370321583c1c90570876db063ad4a4",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/runs/r1_A/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/A/ir/rv64d_reduction_A.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/A/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=RFVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/reduction/runs/r1_A",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r2_A",
+              "exit": 0,
+              "wall_seconds": 4.220277,
+              "time_wall_seconds": 4.14,
+              "user_cpu_seconds": 3.68,
+              "system_cpu_seconds": 0.49,
+              "max_rss_kb": 246336,
+              "gen": 12,
+              "retire": 8,
+              "illegal": 4,
+              "outer_timeout": false,
+              "witness": {
+                "active": 4,
+                "inactive": 4,
+                "mixed": 0,
+                "masked_active": 0,
+                "masked_inactive": 4,
+                "masked_mixed": 0,
+                "mask_enabled": 4,
+                "unmasked": 4,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zRFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zRFVVTYPE.json": "589c7e79ea3f0c690cb75bf138afddbb59626dcb453951045bcb182385f7ed3b"
+              },
+              "resources_sha256": "b35aebccf9f72e4495831f3b2a995ea7dc265dffdbb10599ec812ba3cdc56303",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/runs/r2_A/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/A/ir/rv64d_reduction_A.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/A/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=RFVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/reduction/runs/r2_A",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r3_A",
+              "exit": 0,
+              "wall_seconds": 4.219967,
+              "time_wall_seconds": 4.17,
+              "user_cpu_seconds": 3.76,
+              "system_cpu_seconds": 0.45,
+              "max_rss_kb": 246292,
+              "gen": 12,
+              "retire": 8,
+              "illegal": 4,
+              "outer_timeout": false,
+              "witness": {
+                "active": 4,
+                "inactive": 4,
+                "mixed": 0,
+                "masked_active": 0,
+                "masked_inactive": 4,
+                "masked_mixed": 0,
+                "mask_enabled": 4,
+                "unmasked": 4,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zRFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zRFVVTYPE.json": "589c7e79ea3f0c690cb75bf138afddbb59626dcb453951045bcb182385f7ed3b"
+              },
+              "resources_sha256": "e28126ba8dcde9a69e3c27a71600034ea2420a9b49204cb8ebb5fad61173c7d4",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/runs/r3_A/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/A/ir/rv64d_reduction_A.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/A/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=RFVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/reduction/runs/r3_A",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            }
+          ],
+          "generation_log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+          "generation_record_sha256": "c4c0b8b21b816ac7e32aa6ce9953852a24c0679c9ff65dc5fa160891b3892c7a",
+          "wall_median_seconds": 4.17,
+          "wall_range_seconds": [
+            4.14,
+            4.17
+          ]
+        },
+        "B": {
+          "source_manifest_sha256": "c8b8d21423cc4802bccabe04dbd13c897c55526de88e6a904c46da8facb6a513",
+          "source_target_sha256": "b77fe1556019f41e6eb12149962e4bd4ef0220b118451508639c584725b8353f",
+          "ir_sha256": "c6dbeef1376e5b544f1e697bbc8b2a3e289bdbea507b3ed0d472c23731a45de6",
+          "initial_config_sha256": "22213b4fe0be2211833548b25bafbf066b67e84c1c97f6f4778b4db29a0a608e",
+          "complete": true,
+          "runs": [
+            {
+              "label": "r1_B",
+              "exit": 0,
+              "wall_seconds": 5.32221,
+              "time_wall_seconds": 5.2,
+              "user_cpu_seconds": 4.58,
+              "system_cpu_seconds": 0.69,
+              "max_rss_kb": 246348,
+              "gen": 24,
+              "retire": 20,
+              "illegal": 4,
+              "outer_timeout": false,
+              "witness": {
+                "active": 16,
+                "inactive": 12,
+                "mixed": 8,
+                "masked_active": 12,
+                "masked_inactive": 12,
+                "masked_mixed": 8,
+                "mask_enabled": 16,
+                "unmasked": 4,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zRFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zRFVVTYPE.json": "dd3b39d126f55d49f2f136a2e0749ea6d648e293e5b9219a018dc2cac5a822e8"
+              },
+              "resources_sha256": "87228c28c2be3e545050673147f2f7132728875f7adc4a38cedd875eb2dd8e7a",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/runs/r1_B/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/B/ir/rv64d_reduction_B.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/B/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=RFVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/reduction/runs/r1_B",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r2_B",
+              "exit": 0,
+              "wall_seconds": 5.321761,
+              "time_wall_seconds": 5.25,
+              "user_cpu_seconds": 4.57,
+              "system_cpu_seconds": 0.76,
+              "max_rss_kb": 247224,
+              "gen": 24,
+              "retire": 20,
+              "illegal": 4,
+              "outer_timeout": false,
+              "witness": {
+                "active": 16,
+                "inactive": 12,
+                "mixed": 8,
+                "masked_active": 12,
+                "masked_inactive": 12,
+                "masked_mixed": 8,
+                "mask_enabled": 16,
+                "unmasked": 4,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zRFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zRFVVTYPE.json": "dd3b39d126f55d49f2f136a2e0749ea6d648e293e5b9219a018dc2cac5a822e8"
+              },
+              "resources_sha256": "821e681d6415cc9611e762502f7cf1e26ee9d77c5f0316d2eb19adb542f1f2b6",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/runs/r2_B/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/B/ir/rv64d_reduction_B.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/B/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=RFVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/reduction/runs/r2_B",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            },
+            {
+              "label": "r3_B",
+              "exit": 0,
+              "wall_seconds": 5.32197,
+              "time_wall_seconds": 5.21,
+              "user_cpu_seconds": 4.57,
+              "system_cpu_seconds": 0.71,
+              "max_rss_kb": 246224,
+              "gen": 24,
+              "retire": 20,
+              "illegal": 4,
+              "outer_timeout": false,
+              "witness": {
+                "active": 16,
+                "inactive": 12,
+                "mixed": 8,
+                "masked_active": 12,
+                "masked_inactive": 12,
+                "masked_mixed": 8,
+                "mask_enabled": 16,
+                "unmasked": 4,
+                "unknown": 0,
+                "vl_zero": 0,
+                "vstart_nonzero": 0
+              },
+              "observed_domain": {
+                "vtype": [
+                  16
+                ],
+                "vl": [
+                  2
+                ],
+                "vstart": [
+                  0
+                ]
+              },
+              "summary": {
+                "sampled-paths": 0,
+                "errors": 0,
+                "execution-timeouts": 0,
+                "smt-timeouts": 0,
+                "unfinished-paths": 0,
+                "assertion-filtered-paths": 0,
+                "omitted-cases": 0,
+                "model-query-timeouts": 0,
+                "encoding-filtered-paths": 0,
+                "pending-batches": 0,
+                "status": "finished",
+                "model-coverage": "not-measured",
+                "target-clause": "zRFVVTYPE"
+              },
+              "partial_log_retire_count": null,
+              "partial_log_illegal_count": null,
+              "run_log_sha256": "b7c28c2e0c99169e042373299173875f1f378e927ba09b9671dc043c0f7ad7a1",
+              "output_sha256": {
+                "output/rv64_zRFVVTYPE.json": "1fcc794bdb56e512995d16f214c018e1d5cfb338f5b595939bd8c1fa4613d25d"
+              },
+              "resources_sha256": "d531385abf45148e3142fb5e42a046b2c8c4d23ec4c5fe9c21ba32e49b2c7b35",
+              "command": [
+                "taskset",
+                "-c",
+                "52-55",
+                "timeout",
+                "-s",
+                "TERM",
+                "-k",
+                "2s",
+                "60s",
+                "/usr/bin/time",
+                "-f",
+                "%e,%U,%S,%M",
+                "-o",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/runs/r3_B/resources.csv",
+                "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+                "-A",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/B/ir/rv64d_reduction_B.ir",
+                "-C",
+                "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/mask_reduction/reduction/B/initial.toml",
+                "-T",
+                "1",
+                "--timeout",
+                "30s",
+                "--smt-timeout",
+                "10s",
+                "--tastic",
+                "qfaufbv",
+                "solve-state",
+                "--clause=RFVVTYPE"
+              ],
+              "cwd": "agents/branch_ablation_20261031/mask_reduction/reduction/runs/r3_B",
+              "environment_overrides": {
+                "LD_LIBRARY_PATH": "/home/linuxbrew/.linuxbrew/opt/z3/lib"
+              }
+            }
+          ],
+          "generation_log_sha256": "97ab750860c1548092e3af4bd5e958feea4510963984ceeeeb68fba2334c80dd",
+          "generation_record_sha256": "93ab8c7f99dbbe96678c8215fb5d7e6396a8caa020a9458af8d176e2983de48a",
+          "wall_median_seconds": 5.21,
+          "wall_range_seconds": [
+            5.2,
+            5.25
+          ]
+        }
+      }
+    }
+  }
+}

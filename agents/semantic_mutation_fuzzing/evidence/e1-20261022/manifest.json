@@ -1,0 +1,878 @@
+{
+  "source": "isla/.worktrees/witness-pure",
+  "source_head": "2fefa7274d6e84bef46e5c25b1a06b662d69aa29",
+  "source_status": "",
+  "binary_rebuilt_this_run": false,
+  "artifacts": {
+    "binary": {
+      "path": "isla/.worktrees/witness-pure/target/release/isarch",
+      "sha256": "0baf7eb09c3e1ae7bc39c781568cb237bfac4b1a6355696460878ddedc5a087c"
+    },
+    "ir": {
+      "path": "isla/.worktrees/witness-pure/rv64d.ir",
+      "sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c"
+    },
+    "config": {
+      "path": "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+      "sha256": "01229f5ff91a54ed632739d422d6fffa83f3dc87165b55d13b65c5c3d89c5bfb"
+    }
+  },
+  "scope": "生成侧 pilot；不测 DUT／源码分支覆盖；使用既有二进制，未重新构建",
+  "runs": [
+    {
+      "clause": "VFMVFS",
+      "repeat": 1,
+      "mode": "off",
+      "seed": null,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "solve-state",
+        "--clause=VFMVFS"
+      ],
+      "cwd": "VFMVFS-r1-off",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 3.971104,
+      "output_files": [
+        "output/rv64_zVFMVFS.json"
+      ],
+      "generated": 16,
+      "unique_initial_states": 16,
+      "unique_instruction_inputs": 16,
+      "unique_contexts": 16,
+      "source_vector_values": null,
+      "missing_source_states": 16,
+      "instruction_verdicts": {
+        "vfmv.f.s:Illegal_Instruction(())": 13,
+        "vfmv.f.s:Retire_Success(())": 3
+      },
+      "verdicts": {
+        "Illegal_Instruction(())": 13,
+        "Retire_Success(())": 3
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_001f"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0005",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_0009",
+          "64'h0000_0000_0000_000a",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_0010",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0017",
+          "64'h0000_0000_0000_0018",
+          "64'h0000_0000_0000_0019",
+          "64'h0000_0000_0000_001a",
+          "64'h0000_0000_0000_001b",
+          "64'h8000_0000_0000_0000"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "781379a63e4a6c41137197b705b64dcd79f7746c845dda7301376c23ba65f311"
+    },
+    {
+      "clause": "VFMVFS",
+      "repeat": 1,
+      "mode": "on",
+      "seed": 1234,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "--witness-randomization",
+        "1234",
+        "solve-state",
+        "--clause=VFMVFS"
+      ],
+      "cwd": "VFMVFS-r1-on",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 4.372606,
+      "output_files": [
+        "output/rv64_zVFMVFS.json"
+      ],
+      "generated": 16,
+      "unique_initial_states": 16,
+      "unique_instruction_inputs": 16,
+      "unique_contexts": 16,
+      "source_vector_values": 3,
+      "missing_source_states": 13,
+      "instruction_verdicts": {
+        "vfmv.f.s:Illegal_Instruction(())": 13,
+        "vfmv.f.s:Retire_Success(())": 3
+      },
+      "verdicts": {
+        "Illegal_Instruction(())": 13,
+        "Retire_Success(())": 3
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0015",
+          "64'h0000_0000_0000_001d",
+          "64'h0000_0000_0000_0028",
+          "64'h0000_0000_0000_002e"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0022",
+          "64'h0fa9_9976_e2c0_d0b9",
+          "64'hc6b6_69c4_e0e1_490f"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_0009",
+          "64'h0000_0000_0000_000b",
+          "64'h0000_0000_0000_000e",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0013",
+          "64'h0000_0000_0000_0017",
+          "64'h0000_0000_0000_0019",
+          "64'h0000_0000_0000_001a",
+          "64'h0000_0000_0000_001b",
+          "64'h8000_0000_0000_0000"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "2fecaf1a48e6b7dbf9f9c32a1721ba94c5faddd1ebbfd7091b387de5e76078c4"
+    },
+    {
+      "clause": "VFMVFS",
+      "repeat": 2,
+      "mode": "on",
+      "seed": 4321,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "--witness-randomization",
+        "4321",
+        "solve-state",
+        "--clause=VFMVFS"
+      ],
+      "cwd": "VFMVFS-r2-on",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 4.422717,
+      "output_files": [
+        "output/rv64_zVFMVFS.json"
+      ],
+      "generated": 16,
+      "unique_initial_states": 16,
+      "unique_instruction_inputs": 16,
+      "unique_contexts": 16,
+      "source_vector_values": 4,
+      "missing_source_states": 12,
+      "instruction_verdicts": {
+        "vfmv.f.s:Illegal_Instruction(())": 13,
+        "vfmv.f.s:Retire_Success(())": 3
+      },
+      "verdicts": {
+        "Illegal_Instruction(())": 13,
+        "Retire_Success(())": 3
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_0012",
+          "64'h0000_0000_0000_0027",
+          "64'h0000_0000_0000_0032"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0013",
+          "64'h0000_0000_0000_0024",
+          "64'h481e_6b4e_d8cc_117d"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0002",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_000a",
+          "64'h0000_0000_0000_000b",
+          "64'h0000_0000_0000_0010",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0012",
+          "64'h0000_0000_0000_0017",
+          "64'h0000_0000_0000_0019",
+          "64'h0000_0000_0000_001a",
+          "64'h8000_0000_0000_0000"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "822ca9050f620e9933e789d402c5598b1a2fe5c37a07dc0266239c3213e85954"
+    },
+    {
+      "clause": "VFMVFS",
+      "repeat": 2,
+      "mode": "off",
+      "seed": null,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "solve-state",
+        "--clause=VFMVFS"
+      ],
+      "cwd": "VFMVFS-r2-off",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 4.025975,
+      "output_files": [
+        "output/rv64_zVFMVFS.json"
+      ],
+      "generated": 16,
+      "unique_initial_states": 15,
+      "unique_instruction_inputs": 16,
+      "unique_contexts": 15,
+      "source_vector_values": null,
+      "missing_source_states": 16,
+      "instruction_verdicts": {
+        "vfmv.f.s:Illegal_Instruction(())": 13,
+        "vfmv.f.s:Retire_Success(())": 3
+      },
+      "verdicts": {
+        "Illegal_Instruction(())": 13,
+        "Retire_Success(())": 3
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_0004",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_001f"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0005",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_0009",
+          "64'h0000_0000_0000_000a",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_0010",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0017",
+          "64'h0000_0000_0000_0018",
+          "64'h0000_0000_0000_001b",
+          "64'h8000_0000_0000_0000"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "7fa75c072eb5c94f94480fc90eaa5055a8be2b32a132920c5710a8e0a7552e15"
+    },
+    {
+      "clause": "VFMVFS",
+      "repeat": 3,
+      "mode": "off",
+      "seed": null,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "solve-state",
+        "--clause=VFMVFS"
+      ],
+      "cwd": "VFMVFS-r3-off",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 3.871315,
+      "output_files": [
+        "output/rv64_zVFMVFS.json"
+      ],
+      "generated": 16,
+      "unique_initial_states": 16,
+      "unique_instruction_inputs": 16,
+      "unique_contexts": 16,
+      "source_vector_values": null,
+      "missing_source_states": 16,
+      "instruction_verdicts": {
+        "vfmv.f.s:Illegal_Instruction(())": 13,
+        "vfmv.f.s:Retire_Success(())": 3
+      },
+      "verdicts": {
+        "Illegal_Instruction(())": 13,
+        "Retire_Success(())": 3
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_001f"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0005",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_0009",
+          "64'h0000_0000_0000_000a",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_0010",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0017",
+          "64'h0000_0000_0000_0018",
+          "64'h0000_0000_0000_0019",
+          "64'h0000_0000_0000_0099",
+          "64'h8000_0000_0000_0000"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "59f469db9e5f9dd9cfa9d84c7e013744ddf719eff56d28c982456d5adf886974"
+    },
+    {
+      "clause": "VFMVFS",
+      "repeat": 3,
+      "mode": "on",
+      "seed": 20261022,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "--witness-randomization",
+        "20261022",
+        "solve-state",
+        "--clause=VFMVFS"
+      ],
+      "cwd": "VFMVFS-r3-on",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 4.372017,
+      "output_files": [
+        "output/rv64_zVFMVFS.json"
+      ],
+      "generated": 16,
+      "unique_initial_states": 16,
+      "unique_instruction_inputs": 16,
+      "unique_contexts": 15,
+      "source_vector_values": 6,
+      "missing_source_states": 10,
+      "instruction_verdicts": {
+        "vfmv.f.s:Illegal_Instruction(())": 13,
+        "vfmv.f.s:Retire_Success(())": 3
+      },
+      "verdicts": {
+        "Illegal_Instruction(())": 13,
+        "Retire_Success(())": 3
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_003f"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0005",
+          "64'h0000_0000_0000_0018",
+          "64'h1466_9c5e_f0cc_8beb",
+          "64'hf439_6bac_baec_7b45"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0002",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_0009",
+          "64'h0000_0000_0000_000a",
+          "64'h0000_0000_0000_000f",
+          "64'h0000_0000_0000_0010",
+          "64'h0000_0000_0000_0011",
+          "64'h0000_0000_0000_0012",
+          "64'h0000_0000_0000_0018",
+          "64'h0000_0000_0000_001a",
+          "64'h8000_0000_0000_0000"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "565791f9ac417a5334d018f733f1ae42855c9567fe822d7f9bc8392849e6cc3e"
+    },
+    {
+      "clause": "VSETIVLI",
+      "repeat": 1,
+      "mode": "off",
+      "seed": null,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "solve-state",
+        "--clause=VSETIVLI"
+      ],
+      "cwd": "VSETIVLI-r1-off",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 1.517452,
+      "output_files": [
+        "output/rv64_zVSETIVLI.json"
+      ],
+      "generated": 12,
+      "unique_initial_states": 7,
+      "unique_instruction_inputs": 12,
+      "unique_contexts": 7,
+      "source_vector_values": null,
+      "missing_source_states": 0,
+      "instruction_verdicts": {
+        "vsetivli:Retire_Success(())": 12
+      },
+      "verdicts": {
+        "Retire_Success(())": 12
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0002",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_0013",
+          "64'h0000_0000_0000_001a"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "3723907f3c1efdfcf960a9cdeaf2772eeb91e103a747685be36443bca323dbd2"
+    },
+    {
+      "clause": "VSETIVLI",
+      "repeat": 1,
+      "mode": "on",
+      "seed": 1234,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "--witness-randomization",
+        "1234",
+        "solve-state",
+        "--clause=VSETIVLI"
+      ],
+      "cwd": "VSETIVLI-r1-on",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 1.717907,
+      "output_files": [
+        "output/rv64_zVSETIVLI.json"
+      ],
+      "generated": 12,
+      "unique_initial_states": 12,
+      "unique_instruction_inputs": 12,
+      "unique_contexts": 12,
+      "source_vector_values": null,
+      "missing_source_states": 0,
+      "instruction_verdicts": {
+        "vsetivli:Retire_Success(())": 12
+      },
+      "verdicts": {
+        "Retire_Success(())": 12
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_0030",
+          "64'h0000_0000_0000_0039"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0019",
+          "64'h7a69_5d6b_9b4a_ebf2",
+          "64'hef30_dffe_2881_7573"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_000b",
+          "64'h0000_0000_0000_0013",
+          "64'h0000_0000_0000_0018",
+          "64'h0000_0000_0000_00c6",
+          "64'h0000_0000_0000_00d9"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "7fccc9ed5559db9ce7143baf0d8d3bebd08b83f1b5122890e0b42cfef8c8f70d"
+    },
+    {
+      "clause": "VSETIVLI",
+      "repeat": 2,
+      "mode": "on",
+      "seed": 4321,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "--witness-randomization",
+        "4321",
+        "solve-state",
+        "--clause=VSETIVLI"
+      ],
+      "cwd": "VSETIVLI-r2-on",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 1.66811,
+      "output_files": [
+        "output/rv64_zVSETIVLI.json"
+      ],
+      "generated": 12,
+      "unique_initial_states": 12,
+      "unique_instruction_inputs": 12,
+      "unique_contexts": 12,
+      "source_vector_values": null,
+      "missing_source_states": 0,
+      "instruction_verdicts": {
+        "vsetivli:Retire_Success(())": 12
+      },
+      "verdicts": {
+        "Retire_Success(())": 12
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0006"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0013",
+          "64'h0000_0000_0000_0023",
+          "64'h0000_0000_0000_0028",
+          "64'h0000_0000_0000_0036",
+          "64'h0000_0000_0000_003f",
+          "64'h9494_a758_48ee_5d30"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0007",
+          "64'h0000_0000_0000_0012",
+          "64'h0000_0000_0000_0019",
+          "64'h0000_0000_0000_001a",
+          "64'h0000_0000_0000_001b"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "18b40d1d3a71f085c8d2a5cf34252b7713995bcc19556d0eccb946f7cd1f7529"
+    },
+    {
+      "clause": "VSETIVLI",
+      "repeat": 2,
+      "mode": "off",
+      "seed": null,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "solve-state",
+        "--clause=VSETIVLI"
+      ],
+      "cwd": "VSETIVLI-r2-off",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 1.567641,
+      "output_files": [
+        "output/rv64_zVSETIVLI.json"
+      ],
+      "generated": 12,
+      "unique_initial_states": 4,
+      "unique_instruction_inputs": 12,
+      "unique_contexts": 4,
+      "source_vector_values": null,
+      "missing_source_states": 0,
+      "instruction_verdicts": {
+        "vsetivli:Retire_Success(())": 12
+      },
+      "verdicts": {
+        "Retire_Success(())": 12
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0002",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0013"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "7006c19e955ea266e5eb87796c1501f9ab75d2e842f127323785125ff7264603"
+    },
+    {
+      "clause": "VSETIVLI",
+      "repeat": 3,
+      "mode": "off",
+      "seed": null,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "solve-state",
+        "--clause=VSETIVLI"
+      ],
+      "cwd": "VSETIVLI-r3-off",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 1.567399,
+      "output_files": [
+        "output/rv64_zVSETIVLI.json"
+      ],
+      "generated": 12,
+      "unique_initial_states": 6,
+      "unique_instruction_inputs": 12,
+      "unique_contexts": 6,
+      "source_vector_values": null,
+      "missing_source_states": 0,
+      "instruction_verdicts": {
+        "vsetivli:Retire_Success(())": 12
+      },
+      "verdicts": {
+        "Retire_Success(())": 12
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0002",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0008",
+          "64'h0000_0000_0000_001a"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "40efdf7aa1ee700ce40e5c85405260f009f5842e1eeee1d0a45e8fd10918ca0b"
+    },
+    {
+      "clause": "VSETIVLI",
+      "repeat": 3,
+      "mode": "on",
+      "seed": 20261022,
+      "command": [
+        "isla/.worktrees/witness-pure/target/release/isarch",
+        "-A",
+        "isla/.worktrees/witness-pure/rv64d.ir",
+        "-C",
+        "isla/.worktrees/witness-pure/configs/riscv64_difftest_fd.toml",
+        "--tastic",
+        "qfaufbv",
+        "-T",
+        "1",
+        "--timeout",
+        "45s",
+        "--smt-timeout",
+        "10s",
+        "--witness-randomization",
+        "20261022",
+        "solve-state",
+        "--clause=VSETIVLI"
+      ],
+      "cwd": "VSETIVLI-r3-on",
+      "exit_code": 0,
+      "external_timeout": false,
+      "seconds": 1.667728,
+      "output_files": [
+        "output/rv64_zVSETIVLI.json"
+      ],
+      "generated": 12,
+      "unique_initial_states": 12,
+      "unique_instruction_inputs": 12,
+      "unique_contexts": 11,
+      "source_vector_values": null,
+      "missing_source_states": 0,
+      "instruction_verdicts": {
+        "vsetivli:Retire_Success(())": 12
+      },
+      "verdicts": {
+        "Retire_Success(())": 12
+      },
+      "context_values": {
+        "vl": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0003",
+          "64'h0000_0000_0000_001b"
+        ],
+        "vstart": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_001d",
+          "64'h0000_0000_0000_002d",
+          "64'h0000_0000_0000_003d",
+          "64'hcaa7_5784_4223_7532",
+          "64'hd616_9259_571d_73b5"
+        ],
+        "vtype": [
+          "64'h0000_0000_0000_0000",
+          "64'h0000_0000_0000_0001",
+          "64'h0000_0000_0000_0002",
+          "64'h0000_0000_0000_0005",
+          "64'h0000_0000_0000_0006",
+          "64'h0000_0000_0000_0009",
+          "64'h0000_0000_0000_000a"
+        ]
+      },
+      "producer_summary": null,
+      "output_sha256": "5994a677641266209c4db8d39752937925f608a8bd9206f017d96d2b113a1bcb"
+    }
+  ],
+  "total_seconds": 34.763889,
+  "artifact_hashes_unchanged": true
+}

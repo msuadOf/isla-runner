@@ -1,0 +1,496 @@
+[
+  {
+    "cardinality": 1,
+    "name": "positive-assumption",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.007740847999230027,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C0)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 1,
+    "name": "negative-assumption",
+    "status": -1,
+    "expected": -1,
+    "seconds": 0.0001349739613942802,
+    "model_eval": [],
+    "passed": true
+  },
+  {
+    "cardinality": 1,
+    "name": "recover-after-unsat",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.006365459994412959,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C0)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 1,
+    "name": "nested-contradiction",
+    "status": -1,
+    "expected": -1,
+    "seconds": 0.00011090299813076854,
+    "model_eval": [],
+    "passed": true
+  },
+  {
+    "cardinality": 1,
+    "name": "nested-pop-recovery",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.005199466017074883,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C0)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 1,
+    "name": "outer-pop-recovery",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.001656705979257822,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C0)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 3,
+    "name": "positive-assumption",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.005992519028950483,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C2)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 3,
+    "name": "negative-assumption",
+    "status": -1,
+    "expected": -1,
+    "seconds": 0.0023896279744803905,
+    "model_eval": [],
+    "passed": true
+  },
+  {
+    "cardinality": 3,
+    "name": "recover-after-unsat",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.001392268983181566,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C2)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 3,
+    "name": "nested-contradiction",
+    "status": -1,
+    "expected": -1,
+    "seconds": 0.005428612988907844,
+    "model_eval": [],
+    "passed": true
+  },
+  {
+    "cardinality": 3,
+    "name": "nested-pop-recovery",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.0014845620025880635,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C2)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 3,
+    "name": "outer-pop-recovery",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.00110672099981457,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C2)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 6,
+    "name": "positive-assumption",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.007320256030652672,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C2))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C3))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C4))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C5)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 6,
+    "name": "negative-assumption",
+    "status": -1,
+    "expected": -1,
+    "seconds": 0.0020729880197905004,
+    "model_eval": [],
+    "passed": true
+  },
+  {
+    "cardinality": 6,
+    "name": "recover-after-unsat",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.003009535023011267,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C2))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C3))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C4))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C5)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 6,
+    "name": "nested-contradiction",
+    "status": -1,
+    "expected": -1,
+    "seconds": 0.0017552489880472422,
+    "model_eval": [],
+    "passed": true
+  },
+  {
+    "cardinality": 6,
+    "name": "nested-pop-recovery",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.0012501750024966896,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C2))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C3))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C4))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C5)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "cardinality": 6,
+    "name": "outer-pop-recovery",
+    "status": 1,
+    "expected": 1,
+    "seconds": 0.001046090037561953,
+    "model_eval": [
+      {
+        "term": "(fp.isNaN x)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C0))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C1))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C2))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C3))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(not (= e C4))",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e f)",
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "term": "(= e C5)",
+        "ok": true,
+        "value": "true"
+      }
+    ],
+    "passed": true
+  }
+]

@@ -1,0 +1,870 @@
+[
+  {
+    "name": "group-r31-nf2-p0",
+    "function": "valid_segment_group_without_overflow",
+    "argv": [
+      "0b11111",
+      "2",
+      "0"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "--",
+      "valid_segment_group_without_overflow",
+      "0b11111",
+      "2",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "group-r30-nf2-p0",
+    "function": "valid_segment_group_without_overflow",
+    "argv": [
+      "0b11110",
+      "2",
+      "0"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "--",
+      "valid_segment_group_without_overflow",
+      "0b11110",
+      "2",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "group-r31-nf2-p-1",
+    "function": "valid_segment_group_without_overflow",
+    "argv": [
+      "0b11111",
+      "2",
+      "-1"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "--",
+      "valid_segment_group_without_overflow",
+      "0b11111",
+      "2",
+      "-1"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "group-r30-nf2-p-1",
+    "function": "valid_segment_group_without_overflow",
+    "argv": [
+      "0b11110",
+      "2",
+      "-1"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "--",
+      "valid_segment_group_without_overflow",
+      "0b11110",
+      "2",
+      "-1"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "group-r28-nf2-p1",
+    "function": "valid_segment_group_without_overflow",
+    "argv": [
+      "0b11100",
+      "2",
+      "1"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "--",
+      "valid_segment_group_without_overflow",
+      "0b11100",
+      "2",
+      "1"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "group-r30-nf2-p1",
+    "function": "valid_segment_group_without_overflow",
+    "argv": [
+      "0b11110",
+      "2",
+      "1"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "--",
+      "valid_segment_group_without_overflow",
+      "0b11110",
+      "2",
+      "1"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "illegal_load-r31",
+    "function": "illegal_load",
+    "argv": [
+      "0b11111",
+      "0b1",
+      "2",
+      "8",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_load",
+      "0b11111",
+      "0b1",
+      "2",
+      "8",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "illegal_load-r30",
+    "function": "illegal_load",
+    "argv": [
+      "0b11110",
+      "0b1",
+      "2",
+      "8",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_load",
+      "0b11110",
+      "0b1",
+      "2",
+      "8",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "illegal_store-r31",
+    "function": "illegal_store",
+    "argv": [
+      "0b11111",
+      "2",
+      "8",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_store",
+      "0b11111",
+      "2",
+      "8",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "illegal_store-r30",
+    "function": "illegal_store",
+    "argv": [
+      "0b11110",
+      "2",
+      "8",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_store",
+      "0b11110",
+      "2",
+      "8",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "illegal_indexed_load-r31",
+    "function": "illegal_indexed_load",
+    "argv": [
+      "0b11111",
+      "0b1",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_indexed_load",
+      "0b11111",
+      "0b1",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "illegal_indexed_load-r30",
+    "function": "illegal_indexed_load",
+    "argv": [
+      "0b11110",
+      "0b1",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_indexed_load",
+      "0b11110",
+      "0b1",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "illegal_indexed_store-r31",
+    "function": "illegal_indexed_store",
+    "argv": [
+      "0b11111",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "true",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_indexed_store",
+      "0b11111",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "true"
+    ]
+  },
+  {
+    "name": "illegal_indexed_store-r30",
+    "function": "illegal_indexed_store",
+    "argv": [
+      "0b11110",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "initial": [
+      "vtype={bits=0x0000000000000000}"
+    ],
+    "expected": "false",
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vtype={bits=0x0000000000000000}",
+      "--",
+      "illegal_indexed_store",
+      "0b11110",
+      "2",
+      "8",
+      "0",
+      "0"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "false"
+    ]
+  },
+  {
+    "name": "vstart-0",
+    "function": "get_start_element",
+    "argv": [
+      "()"
+    ],
+    "initial": [
+      "vstart=0x0000000000000000"
+    ],
+    "expected": "0",
+    "integer_result": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x0000000000000000",
+      "--",
+      "get_start_element",
+      "()"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(_ bv0 128)"
+    ]
+  },
+  {
+    "name": "vstart-127",
+    "function": "get_start_element",
+    "argv": [
+      "()"
+    ],
+    "initial": [
+      "vstart=0x000000000000007f"
+    ],
+    "expected": "127",
+    "integer_result": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x000000000000007f",
+      "--",
+      "get_start_element",
+      "()"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(_ bv127 128)"
+    ]
+  },
+  {
+    "name": "vstart-128",
+    "function": "get_start_element",
+    "argv": [
+      "()"
+    ],
+    "initial": [
+      "vstart=0x0000000000000080"
+    ],
+    "expected": "128",
+    "integer_result": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x0000000000000080",
+      "--",
+      "get_start_element",
+      "()"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(_ bv128 128)"
+    ]
+  },
+  {
+    "name": "vstart-65535",
+    "function": "get_start_element",
+    "argv": [
+      "()"
+    ],
+    "initial": [
+      "vstart=0x000000000000ffff"
+    ],
+    "expected": "65535",
+    "integer_result": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x000000000000ffff",
+      "--",
+      "get_start_element",
+      "()"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(_ bv65535 128)"
+    ]
+  },
+  {
+    "name": "process_vlre-early-2",
+    "function": "process_vlre",
+    "argv": [
+      "1",
+      "0b00000",
+      "8",
+      "0b00001",
+      "2"
+    ],
+    "initial": [
+      "vstart=0x0000000000000002"
+    ],
+    "expected": "(|Retire_Success| (_ unit))",
+    "clears_vstart": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x0000000000000002",
+      "--",
+      "process_vlre",
+      "1",
+      "0b00000",
+      "8",
+      "0b00001",
+      "2"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(|Retire_Success| (_ unit))"
+    ]
+  },
+  {
+    "name": "process_vlre-early-128",
+    "function": "process_vlre",
+    "argv": [
+      "1",
+      "0b00000",
+      "8",
+      "0b00001",
+      "2"
+    ],
+    "initial": [
+      "vstart=0x0000000000000080"
+    ],
+    "expected": "(|Retire_Success| (_ unit))",
+    "clears_vstart": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x0000000000000080",
+      "--",
+      "process_vlre",
+      "1",
+      "0b00000",
+      "8",
+      "0b00001",
+      "2"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(|Retire_Success| (_ unit))"
+    ]
+  },
+  {
+    "name": "process_vsre-early-2",
+    "function": "process_vsre",
+    "argv": [
+      "1",
+      "8",
+      "0b00001",
+      "0b00000",
+      "2"
+    ],
+    "initial": [
+      "vstart=0x0000000000000002"
+    ],
+    "expected": "(|Retire_Success| (_ unit))",
+    "clears_vstart": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x0000000000000002",
+      "--",
+      "process_vsre",
+      "1",
+      "8",
+      "0b00001",
+      "0b00000",
+      "2"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(|Retire_Success| (_ unit))"
+    ]
+  },
+  {
+    "name": "process_vsre-early-128",
+    "function": "process_vsre",
+    "argv": [
+      "1",
+      "8",
+      "0b00001",
+      "0b00000",
+      "2"
+    ],
+    "initial": [
+      "vstart=0x0000000000000080"
+    ],
+    "expected": "(|Retire_Success| (_ unit))",
+    "clears_vstart": true,
+    "command": [
+      "timeout",
+      "20s",
+      "repo:/.worktree/isarch-integration-record/cargo-target/release/isla-execute-function",
+      "-A",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/generated-ir/rv64d.ir",
+      "-C",
+      "repo:/.worktree/isarch-std-gaps-merge-20261109/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "10",
+      "--traces",
+      "-m",
+      "-I",
+      "vstart=0x0000000000000080",
+      "--",
+      "process_vsre",
+      "1",
+      "8",
+      "0b00001",
+      "0b00000",
+      "2"
+    ],
+    "exit_code": 0,
+    "observed": [
+      "(|Retire_Success| (_ unit))"
+    ]
+  }
+]

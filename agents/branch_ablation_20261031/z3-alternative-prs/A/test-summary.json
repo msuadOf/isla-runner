@@ -1,0 +1,9 @@
+{
+  "variant": "A",
+  "binary_sha256": "4a59670951074abeeb682c9b2d37cc0cc07dfe57635c7c1b4a4caf70de133def",
+  "query_count": 90,
+  "query_pass": 90,
+  "api_checks": 18,
+  "model_evaluations": 64,
+  "api_pass": true
+}

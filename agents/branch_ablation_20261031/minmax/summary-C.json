@@ -1,0 +1,841 @@
+{
+  "protocol": "agents/branch_ablation_20261031/protocol.md",
+  "variant": {
+    "base_commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+    "variant": "C_last_nan_if_only",
+    "base_file_sha256": "547156c7e1c25c1b2fe417c4c33401260f3ad7ab2d7d678a00145f292deea32a",
+    "C_file_sha256": "45cb8e9804d6626fb33c7c82916114d8c4817a976cec78ed03f962506eb082f6",
+    "changed_files": [
+      "extensions/FD/fp_minmax.sail"
+    ],
+    "model_file_count": 166,
+    "all_unchanged_files_equal": true,
+    "base_ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf"
+  },
+  "ir_comparison": {
+    "A_fn_count": 2053,
+    "C_fn_count": 2053,
+    "added_fns": [],
+    "removed_fns": [],
+    "raw_changed_fns": [
+      "zfp_maxm_pure",
+      "zfp_minm_pure"
+    ],
+    "location_stripped_changed_fns": [
+      "zfp_maxm_pure",
+      "zfp_minm_pure"
+    ],
+    "location_stripped_changed_count": 2,
+    "A_ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+    "C_ir_sha256": "4dbec681f26b59470b510012e731e979089a5b88810b381383366cd0f0a313ad"
+  },
+  "clauses": {
+    "FMINM_S": {
+      "A": {
+        "wall_seconds": {
+          "values": [
+            1.8070413480163552,
+            1.8081849499722011,
+            1.8079275200143456
+          ],
+          "median": 1.8079275200143456,
+          "range": [
+            1.8070413480163552,
+            1.8081849499722011
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            1.46,
+            1.45,
+            1.42
+          ],
+          "median": 1.45,
+          "range": [
+            1.42,
+            1.46
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.32,
+            0.32,
+            0.33
+          ],
+          "median": 0.32,
+          "range": [
+            0.32,
+            0.33
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            231612.0,
+            229720.0,
+            229660.0
+          ],
+          "median": 229720.0,
+          "range": [
+            229660.0,
+            231612.0
+          ]
+        },
+        "forks": {
+          "values": [
+            7,
+            7,
+            7
+          ],
+          "median": 7,
+          "range": [
+            7,
+            7
+          ]
+        },
+        "gen": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "retire": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          }
+        ]
+      },
+      "C": {
+        "wall_seconds": {
+          "values": [
+            2.1065705869696103,
+            2.1074380920035765,
+            2.108209630998317
+          ],
+          "median": 2.1074380920035765,
+          "range": [
+            2.1065705869696103,
+            2.108209630998317
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            1.72,
+            1.73,
+            1.72
+          ],
+          "median": 1.72,
+          "range": [
+            1.72,
+            1.73
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.37,
+            0.34,
+            0.37
+          ],
+          "median": 0.37,
+          "range": [
+            0.34,
+            0.37
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            230796.0,
+            231304.0,
+            229752.0
+          ],
+          "median": 230796.0,
+          "range": [
+            229752.0,
+            231304.0
+          ]
+        },
+        "forks": {
+          "values": [
+            9,
+            9,
+            9
+          ],
+          "median": 9,
+          "range": [
+            9,
+            9
+          ]
+        },
+        "gen": {
+          "values": [
+            5,
+            5,
+            5
+          ],
+          "median": 5,
+          "range": [
+            5,
+            5
+          ]
+        },
+        "retire": {
+          "values": [
+            5,
+            5,
+            5
+          ],
+          "median": 5,
+          "range": [
+            5,
+            5
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMINM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 2,
+            "one_nan": 2,
+            "both_zero": 1
+          },
+          {
+            "both_nan": 2,
+            "one_nan": 2,
+            "both_zero": 1
+          },
+          {
+            "both_nan": 2,
+            "one_nan": 2,
+            "both_zero": 1
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "qNaN / qNaN": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "qNaN / qNaN": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "qNaN / qNaN": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / +zero": 1
+          }
+        ]
+      }
+    },
+    "FMAXM_S": {
+      "A": {
+        "wall_seconds": {
+          "values": [
+            1.8072787680430338,
+            1.907393747009337,
+            1.908473277988378
+          ],
+          "median": 1.907393747009337,
+          "range": [
+            1.8072787680430338,
+            1.908473277988378
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            1.43,
+            1.47,
+            1.46
+          ],
+          "median": 1.46,
+          "range": [
+            1.43,
+            1.47
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.32,
+            0.33,
+            0.35
+          ],
+          "median": 0.33,
+          "range": [
+            0.32,
+            0.35
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            230688.0,
+            229600.0,
+            230636.0
+          ],
+          "median": 230636.0,
+          "range": [
+            229600.0,
+            230688.0
+          ]
+        },
+        "forks": {
+          "values": [
+            7,
+            7,
+            7
+          ],
+          "median": 7,
+          "range": [
+            7,
+            7
+          ]
+        },
+        "gen": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "retire": {
+          "values": [
+            4,
+            4,
+            4
+          ],
+          "median": 4,
+          "range": [
+            4,
+            4
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          },
+          {
+            "both_nan": 1,
+            "both_zero": 1,
+            "one_nan": 2
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "+zero / +zero": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1
+          }
+        ]
+      },
+      "C": {
+        "wall_seconds": {
+          "values": [
+            2.208906218991615,
+            2.208871203009039,
+            2.2084574759937823
+          ],
+          "median": 2.208871203009039,
+          "range": [
+            2.2084574759937823,
+            2.208906218991615
+          ]
+        },
+        "user_seconds": {
+          "values": [
+            1.76,
+            1.74,
+            1.75
+          ],
+          "median": 1.75,
+          "range": [
+            1.74,
+            1.76
+          ]
+        },
+        "system_seconds": {
+          "values": [
+            0.35,
+            0.36,
+            0.35
+          ],
+          "median": 0.35,
+          "range": [
+            0.35,
+            0.36
+          ]
+        },
+        "max_rss_kb": {
+          "values": [
+            229736.0,
+            229996.0,
+            229472.0
+          ],
+          "median": 229736.0,
+          "range": [
+            229472.0,
+            229996.0
+          ]
+        },
+        "forks": {
+          "values": [
+            9,
+            9,
+            9
+          ],
+          "median": 9,
+          "range": [
+            9,
+            9
+          ]
+        },
+        "gen": {
+          "values": [
+            5,
+            5,
+            5
+          ],
+          "median": 5,
+          "range": [
+            5,
+            5
+          ]
+        },
+        "retire": {
+          "values": [
+            5,
+            5,
+            5
+          ],
+          "median": 5,
+          "range": [
+            5,
+            5
+          ]
+        },
+        "illegal": {
+          "values": [
+            0,
+            0,
+            0
+          ],
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "external_timeout": [
+          false,
+          false,
+          false
+        ],
+        "exit": [
+          0,
+          0,
+          0
+        ],
+        "statuses": [
+          "finished",
+          "finished",
+          "finished"
+        ],
+        "summary_fields": [
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          },
+          {
+            "sampled-paths": 0,
+            "errors": 0,
+            "execution-timeouts": 0,
+            "smt-timeouts": 0,
+            "unfinished-paths": 0,
+            "assertion-filtered-paths": 0,
+            "omitted-cases": 0,
+            "model-query-timeouts": 0,
+            "encoding-filtered-paths": 0,
+            "pending-batches": 0,
+            "status": "finished",
+            "model-coverage": "not-measured",
+            "target-clause": "zFMAXM_S"
+          }
+        ],
+        "conditions": [
+          {
+            "both_nan": 2,
+            "one_nan": 2,
+            "both_zero": 1
+          },
+          {
+            "both_nan": 2,
+            "one_nan": 2,
+            "both_zero": 1
+          },
+          {
+            "both_nan": 2,
+            "one_nan": 2,
+            "both_zero": 1
+          }
+        ],
+        "classes": [
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "qNaN / qNaN": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "qNaN / qNaN": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / +zero": 1
+          },
+          {
+            "unboxed→qNaN / unboxed→qNaN": 1,
+            "qNaN / qNaN": 1,
+            "+zero / unboxed→qNaN": 1,
+            "unboxed→qNaN / +zero": 1,
+            "+zero / +zero": 1
+          }
+        ]
+      }
+    }
+  },
+  "conclusion": {
+    "performance": "A末层NaN ITE相对C显式if，FMINM_S与FMAXM_S完整Clause每次墙钟中位数均少约0.30秒；生成见证数不同，不能解释为相同覆盖量加速。",
+    "coverage": "C每Clause 5条退休见证、9 fork，A为4条、7 fork；C新增双侧有效boxing qNaN/qNaN见证。两臂皆finished且无超时/采样。",
+    "recommendation": "仅就当前生成器的条件见证覆盖，建议恢复末层显式NaN判断；若保留ITE须补双侧有效qNaN条件见证并重测相同覆盖口径。",
+    "untested": [
+      "F16/F64及向量完整Clause",
+      "硬件回放"
+    ]
+  }
+}

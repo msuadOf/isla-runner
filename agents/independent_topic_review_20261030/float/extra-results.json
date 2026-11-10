@@ -1,0 +1,168 @@
+[
+  {
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/independent_topic_review_20261030/float/c-addi4spn/config.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "25",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=C_ADDI4SPN"
+    ],
+    "exit": 0,
+    "seconds": 1.5183214739663526,
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "f90b927cbf728e3f016e894bf633ccaeddcf4eea623923442e121611f9c85d06",
+    "gen": 1,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zC_ADDI4SPN"
+    },
+    "returns": [
+      "ExecuteAs(ITYPE({tuple#%bv12_%bv5_%bv5_%enum iop2: #b01000, tuple#%bv12_%bv5_%bv5_%enum iop1: #b00010, tuple#%bv12_%bv5_%bv5_%enum iop3: iop::zADDI(EnumMember.member:0), tuple#%bv12_%bv5_%bv5_%enum iop0: [#b00, #xff, #b00]}))"
+    ]
+  },
+  {
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/independent_topic_review_20261030/float/fadd-boxed-normal/config.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "25",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=F_BIN_RM_TYPE_S"
+    ],
+    "exit": 0,
+    "seconds": 8.283062000002246,
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "6908d3b561c5b9b215856aa7f876ddef387848922e76ac9145506442eb7509f0",
+    "gen": 24,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zF_BIN_RM_TYPE_S"
+    },
+    "returns": [
+      "Retire_Success(())"
+    ]
+  },
+  {
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/independent_topic_review_20261030/float/bf16-vl0/config.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "25",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=VFWMACCBF16_VF"
+    ],
+    "exit": 0,
+    "seconds": 6.885193007008638,
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "664ee76481ce5630514b88a21a5b5102e797053dbac6ffafd56d38ec353b6913",
+    "gen": 6,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zVFWMACCBF16_VF"
+    },
+    "returns": [
+      "Illegal_Instruction(())",
+      "Retire_Success(())"
+    ]
+  },
+  {
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/independent_topic_review_20261030/float/bf16-vl1/config.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "25",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=VFWMACCBF16_VF"
+    ],
+    "exit": 0,
+    "seconds": 4.622914980049245,
+    "binary_sha256": "e9fd5a0bba97c736e88f2bb06f3d46c542de0f10744b9d644b38731ffa279204",
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "574cff99572f86721bf185f548c98f53d514685890ca7759b505ae6e408dfc25",
+    "gen": 6,
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zVFWMACCBF16_VF"
+    },
+    "returns": [
+      "Illegal_Instruction(())",
+      "Retire_Success(())"
+    ]
+  }
+]

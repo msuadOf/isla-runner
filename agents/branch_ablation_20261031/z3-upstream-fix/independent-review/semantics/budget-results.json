@@ -1,0 +1,44 @@
+[
+  {
+    "budget": 10000,
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 10000,
+    "binary": "patched",
+    "exit": 0,
+    "stdout": "unknown\n(:reason-unknown \"max. resource limit exceeded\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 30000,
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 30000,
+    "binary": "patched",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 100000,
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 100000,
+    "binary": "patched",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  }
+]

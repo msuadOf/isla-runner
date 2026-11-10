@@ -1,0 +1,15 @@
+{
+  "commit": "4e6105c2830a4b6ebaef1a7b340e6dea602bafa2",
+  "base": "8fbb275aba0472e862e289c7af1331b3bd5d512c",
+  "branch": "fix/default-finite-enum-preamble",
+  "files": [
+    "src/tactic/portfolio/default_tactic.cpp",
+    "src/test/fpa.cpp"
+  ],
+  "hashes": {
+    "z3": "4a59670951074abeeb682c9b2d37cc0cc07dfe57635c7c1b4a4caf70de133def",
+    "libz3.so": "e0a6d403bea00d34ee9073d499ec18fb12eaf82ba82dab9f247d7a5f182181f5",
+    "test-z3": "a43452a52a8f667bb06a100b915b63b5469376f1927d7bc292aae2a939aa5749"
+  },
+  "fpa_exit": 0
+}

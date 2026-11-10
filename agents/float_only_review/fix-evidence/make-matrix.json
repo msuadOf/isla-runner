@@ -1,0 +1,161 @@
+[
+  {
+    "label": "default",
+    "command": [
+      "make",
+      "solve-MRET",
+      "solve-fd-nonmem",
+      "FD_NONMEM_RV64=FCVT_S_BF16 FLI_S FLEQ_S",
+      "IR_FILE=./rv64d.ir",
+      "THREADS=1",
+      "ITRACE=1",
+      "OUTER_TIMEOUT=60s",
+      "SOLVE_TIMEOUT=50s",
+      "SMT_TIMEOUT=20s",
+      "TASTIC=qfaufbv"
+    ],
+    "exit": 0,
+    "seconds": 40.2349056340754,
+    "ir_sha256": "aea104c88a3c90f5e3030365d38dbcbc97a058dcfaf22b77b6717bffae59b544",
+    "cases": {
+      "MRET": {
+        "gen": 4,
+        "encoded": 4,
+        "returns": {
+          "Retire_Success(())": 3,
+          "Illegal_Instruction(())": 1
+        }
+      },
+      "FCVT_S_BF16": {
+        "gen": 39,
+        "encoded": 39,
+        "returns": {
+          "Illegal_Instruction(())": 3,
+          "Retire_Success(())": 36
+        }
+      },
+      "FLI_S": {
+        "gen": 32,
+        "encoded": 32,
+        "returns": {
+          "Retire_Success(())": 32
+        }
+      },
+      "FLEQ_S": {
+        "gen": 16,
+        "encoded": 16,
+        "returns": {
+          "Retire_Success(())": 16
+        }
+      }
+    }
+  },
+  {
+    "label": "v128",
+    "command": [
+      "make",
+      "solve-MRET",
+      "solve-fd-nonmem",
+      "FD_NONMEM_RV64=FLEQ_S",
+      "IR_FILE=./ir/rv64d_v128_e64.ir",
+      "THREADS=1",
+      "ITRACE=1",
+      "OUTER_TIMEOUT=60s",
+      "SOLVE_TIMEOUT=50s",
+      "SMT_TIMEOUT=20s",
+      "TASTIC=qfaufbv"
+    ],
+    "exit": 0,
+    "seconds": 8.13604499399662,
+    "ir_sha256": "d1fff976f4f04d0baf29ec9b9de51105ca8d7bcc252759f6fb5405191563329d",
+    "cases": {
+      "MRET": {
+        "gen": 4,
+        "encoded": 4,
+        "returns": {
+          "Retire_Success(())": 3,
+          "Illegal_Instruction(())": 1
+        }
+      },
+      "FLEQ_S": {
+        "gen": 16,
+        "encoded": 16,
+        "returns": {
+          "Retire_Success(())": 16
+        }
+      }
+    }
+  },
+  {
+    "label": "v256",
+    "command": [
+      "make",
+      "solve-MRET",
+      "solve-fd-nonmem",
+      "FD_NONMEM_RV64=FLEQ_S",
+      "IR_FILE=./ir/rv64d_v256_e64.ir",
+      "THREADS=1",
+      "ITRACE=1",
+      "OUTER_TIMEOUT=60s",
+      "SOLVE_TIMEOUT=50s",
+      "SMT_TIMEOUT=20s",
+      "TASTIC=qfaufbv"
+    ],
+    "exit": 0,
+    "seconds": 7.98363857390359,
+    "ir_sha256": "2498a77d98d4ce8c071834632606d98b3ec4b3085f3573ddb3c9cda6bfa2e2ed",
+    "cases": {
+      "MRET": {
+        "gen": 4,
+        "encoded": 4,
+        "returns": {
+          "Retire_Success(())": 3,
+          "Illegal_Instruction(())": 1
+        }
+      },
+      "FLEQ_S": {
+        "gen": 16,
+        "encoded": 16,
+        "returns": {
+          "Retire_Success(())": 16
+        }
+      }
+    }
+  },
+  {
+    "label": "v512-historical",
+    "command": [
+      "make",
+      "solve-MRET",
+      "solve-fd-nonmem",
+      "FD_NONMEM_RV64=FLEQ_S",
+      "IR_FILE=./ir/rv64d_v512_e64.ir",
+      "THREADS=1",
+      "ITRACE=1",
+      "OUTER_TIMEOUT=60s",
+      "SOLVE_TIMEOUT=50s",
+      "SMT_TIMEOUT=20s",
+      "TASTIC=qfaufbv"
+    ],
+    "exit": 0,
+    "seconds": 8.28184658009559,
+    "ir_sha256": "2498a77d98d4ce8c071834632606d98b3ec4b3085f3573ddb3c9cda6bfa2e2ed",
+    "cases": {
+      "MRET": {
+        "gen": 4,
+        "encoded": 4,
+        "returns": {
+          "Retire_Success(())": 3,
+          "Illegal_Instruction(())": 1
+        }
+      },
+      "FLEQ_S": {
+        "gen": 16,
+        "encoded": 16,
+        "returns": {
+          "Retire_Success(())": 16
+        }
+      }
+    }
+  }
+]

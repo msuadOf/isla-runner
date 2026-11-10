@@ -1,0 +1,72 @@
+[
+  {
+    "cardinality": 6,
+    "variables": 256,
+    "cost": 1536,
+    "guard_allows": true,
+    "default_ms": 60.03019801573828,
+    "qffp_ms": 39.09788699820638,
+    "difference_ms": 20.9323110175319,
+    "ratio": 1.535382155523959
+  },
+  {
+    "cardinality": 128,
+    "variables": 32,
+    "cost": 4096,
+    "guard_allows": true,
+    "default_ms": 54.86148502677679,
+    "qffp_ms": 34.5881039975211,
+    "difference_ms": 20.273381029255688,
+    "ratio": 1.5861373907835092
+  },
+  {
+    "cardinality": 128,
+    "variables": 64,
+    "cost": 8192,
+    "guard_allows": false,
+    "default_ms": 37.43671899428591,
+    "qffp_ms": 34.04498100280762,
+    "difference_ms": 3.391737991478294,
+    "ratio": 1.0996251985336278
+  },
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "cost": 131072,
+    "guard_allows": false,
+    "default_ms": 48.05791995022446,
+    "qffp_ms": 45.61835899949074,
+    "difference_ms": 2.4395609507337213,
+    "ratio": 1.0534776130540109
+  },
+  {
+    "cardinality": 1000,
+    "variables": 100,
+    "cost": 100000,
+    "guard_allows": false,
+    "default_ms": 43.91965799732134,
+    "qffp_ms": 41.7031500255689,
+    "difference_ms": 2.216507971752435,
+    "ratio": 1.0531496534528797
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "cost": 262144,
+    "guard_allows": false,
+    "default_ms": 48.84325701277703,
+    "qffp_ms": 46.342110028490424,
+    "difference_ms": 2.5011469842866063,
+    "ratio": 1.0539713660588381
+  },
+  {
+    "cardinality": 5000,
+    "variables": 10,
+    "cost": 50000,
+    "guard_allows": false,
+    "default_ms": 58.008775988128036,
+    "qffp_ms": 55.00597500940785,
+    "difference_ms": 3.002800978720188,
+    "ratio": 1.0545904509138617
+  }
+]

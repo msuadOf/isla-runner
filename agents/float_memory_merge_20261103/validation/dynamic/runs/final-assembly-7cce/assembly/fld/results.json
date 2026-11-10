@@ -1,0 +1,143 @@
+{
+  "simulation": false,
+  "source": "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-union-7cce/union/fld/output/rv64_zLOAD_FP.json",
+  "sha256": "e0b71bef8702aaedee6855e7199a4379fb6ee58a4685ecda8fb6594bb58c9b86",
+  "gen": 1,
+  "illegal": 0,
+  "clang_mnemonic_rejections": 0,
+  "checks": [
+    {
+      "index": 0,
+      "driver": "gcc",
+      "kind": "mnemonic",
+      "text": "fld f3, 0x0(x1)",
+      "expected": "87b10000",
+      "actual": "87b10000",
+      "exit": 0,
+      "stderr": "",
+      "command": [
+        "/usr/bin/riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-gcc-mnemonic.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-gcc-mnemonic.o"
+      ],
+      "expected_rejection": false,
+      "pass_": true
+    },
+    {
+      "index": 0,
+      "driver": "gcc",
+      "kind": "insn",
+      "text": ".insn 4, 0x0000b187",
+      "expected": "87b10000",
+      "actual": "87b10000",
+      "exit": 0,
+      "stderr": "",
+      "command": [
+        "/usr/bin/riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-gcc-insn.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-gcc-insn.o"
+      ],
+      "expected_rejection": false,
+      "pass_": true
+    },
+    {
+      "index": 0,
+      "driver": "gcc",
+      "kind": "binary",
+      "text": ".byte 0b10000111, 0b10110001, 0b00000000, 0b00000000",
+      "expected": "87b10000",
+      "actual": "87b10000",
+      "exit": 0,
+      "stderr": "",
+      "command": [
+        "/usr/bin/riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-gcc-binary.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-gcc-binary.o"
+      ],
+      "expected_rejection": false,
+      "pass_": true
+    },
+    {
+      "index": 0,
+      "driver": "clang",
+      "kind": "mnemonic",
+      "text": "fld f3, 0x0(x1)",
+      "expected": "87b10000",
+      "actual": "87b10000",
+      "exit": 0,
+      "stderr": "",
+      "command": [
+        "/home/linuxbrew/.linuxbrew/bin/clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-clang-mnemonic.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-clang-mnemonic.o"
+      ],
+      "expected_rejection": false,
+      "pass_": true
+    },
+    {
+      "index": 0,
+      "driver": "clang",
+      "kind": "insn",
+      "text": ".insn 4, 0x0000b187",
+      "expected": "87b10000",
+      "actual": "87b10000",
+      "exit": 0,
+      "stderr": "",
+      "command": [
+        "/home/linuxbrew/.linuxbrew/bin/clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-clang-insn.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-clang-insn.o"
+      ],
+      "expected_rejection": false,
+      "pass_": true
+    },
+    {
+      "index": 0,
+      "driver": "clang",
+      "kind": "binary",
+      "text": ".byte 0b10000111, 0b10110001, 0b00000000, 0b00000000",
+      "expected": "87b10000",
+      "actual": "87b10000",
+      "exit": 0,
+      "stderr": "",
+      "command": [
+        "/home/linuxbrew/.linuxbrew/bin/clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-clang-binary.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/float_memory_merge_20261103/validation/dynamic/runs/final-assembly-7cce/assembly/fld/0-clang-binary.o"
+      ],
+      "expected_rejection": false,
+      "pass_": true
+    }
+  ],
+  "all_pass": true
+}

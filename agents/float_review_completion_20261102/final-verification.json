@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "isla-lib/src/executor.rs": "ccef81f00e205ab90af9b2abef12d4ddf08948ea305b2c52064b3a629d08e263",
+    "src/isarch/exec.rs": "824a7a711ffb0e9d5e8a883d5039d9160a6553b0f39222337afaf632804782d8",
+    "src/isarch/mod.rs": "10524bc5551eaf30d5f1f73b8edb7b65b150d3cc119c9ab86fce77f45907a031",
+    "src/isarch/representation.rs": "9bb59afe7a44a057b41ff77950944a0ee488bc1ef5f499a99ab93dc18f55ee96",
+    "README.md": "cc4cc9c7c1617ceca756313a61833dc356451345fb3d64dfa7e0237ccae6d972"
+  },
+  "binaries": {
+    "root": {
+      "sha256": "ce338b4cd6aee05f7d73789334443ff12a4eafea423f07eb2071da74cabff7df",
+      "version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613\n",
+      "ldd": "\tlinux-vdso.so.1 (0x0000729c4627f000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000729c43800000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000729c45dd2000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000729c43400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000729c46281000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000729c43000000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000729c436da000)\n"
+    },
+    "runner-float": {
+      "sha256": "36c01b03636d70b91c7c16c8e83859846b43f019dce4124dadce205cc19c13c2",
+      "version": "v0.2.0/z3-5.3.4.0 1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b 1fd1d3613\n",
+      "ldd": "\tlinux-vdso.so.1 (0x0000750696943000)\n\tlibz3.so.5.3 => /home/baiyifan/.local/opt/z3-official-1fd1d3613/lib/libz3.so.5.3 (0x0000750693e00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007506968e6000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000750693a00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000750696945000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000750693600000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000750693cda000)\n"
+    }
+  },
+  "make_smoke": {
+    "json_sha256": "0b183c9e55a68faa11e3d189596e6e171b2b1f5a9ab3ca4268f9ed15312c33c1",
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zC_ADDI4SPN"
+    },
+    "rd": 8,
+    "immediate": 4,
+    "expected": 11,
+    "actual": 11
+  }
+}

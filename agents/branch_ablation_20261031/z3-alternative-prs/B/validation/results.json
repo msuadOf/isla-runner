@@ -1,0 +1,2080 @@
+[
+  {
+    "name": "card1-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "80",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04466674599098042,
+    "exit": 0,
+    "stdout": "sat\n((e C0)\n (x (_ NaN 8 24)))\n",
+    "stderr": "(simplifier :num-exprs 5 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 5 :num-asts 184 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 5 :num-asts 184 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(fpa2bv :num-exprs 11 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 11 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 11 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(ackermannize_bv :num-exprs 11 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.33)\n(bit-blast :num-exprs 58 :num-asts 274 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 56 :num-asts 272 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 56)\n(smt.propagate-values :num-exprs 56)\n(smt.nnf-cnf :num-exprs 56)\n(smt.reduce-asserted :num-exprs 56)\n(smt.maximizing-bv-sharing :num-exprs 56)\n(smt.reduce-asserted :num-exprs 56)\n(smt.flatten-clauses :num-exprs 56)\n(smt.simplifier-done :num-exprs 56)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/9       0/0     0    0   18.90)\n(smt.stats    0      0     22      1     1/0/9       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 286 :time 0.00 :before-memory 18.33 :after-memory 18.42)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card1-exclude-all",
+    "command": [
+      "taskset",
+      "-c",
+      "81",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.05124229798093438,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 6 :num-asts 185 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 6 :num-asts 185 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 6 :num-asts 185 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(fpa2bv :num-exprs 12 :num-asts 204 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 12 :num-asts 204 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 12 :num-asts 204 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(ackermannize_bv :num-exprs 12 :num-asts 204 :time 0.00 :before-memory 18.23 :after-memory 18.33)\n(bit-blast :num-exprs 59 :num-asts 275 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 57 :num-asts 273 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 57)\n(smt.propagate-values :num-exprs 57)\n(smt.nnf-cnf :num-exprs 57)\n(smt.reduce-asserted :num-exprs 57)\n(smt.maximizing-bv-sharing :num-exprs 57)\n(smt.reduce-asserted :num-exprs 57)\n(smt.flatten-clauses :num-exprs 57)\n(smt.simplifier-done :num-exprs 57)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/9       0/0     0    0   18.90)\n(smt :num-exprs 1 :num-asts 280 :time 0.00 :before-memory 18.33 :after-memory 18.46)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card1-pigeonhole",
+    "command": [
+      "taskset",
+      "-c",
+      "82",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04411568999057636,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 6 :num-asts 189 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 6 :num-asts 189 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 6 :num-asts 189 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(fpa2bv :num-exprs 12 :num-asts 208 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 12 :num-asts 208 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 12 :num-asts 208 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(ackermannize_bv :num-exprs 12 :num-asts 208 :time 0.00 :before-memory 18.23 :after-memory 18.33)\n(bit-blast :num-exprs 59 :num-asts 279 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 57 :num-asts 277 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 57)\n(smt.propagate-values :num-exprs 57)\n(smt.nnf-cnf :num-exprs 57)\n(smt.reduce-asserted :num-exprs 57)\n(smt.maximizing-bv-sharing :num-exprs 57)\n(smt.reduce-asserted :num-exprs 57)\n(smt.flatten-clauses :num-exprs 57)\n(smt.simplifier-done :num-exprs 57)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/9       0/0     0    0   18.90)\n(smt :num-exprs 1 :num-asts 284 :time 0.00 :before-memory 18.33 :after-memory 18.46)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card1-model-0",
+    "command": [
+      "taskset",
+      "-c",
+      "83",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.05300396599341184,
+    "exit": 0,
+    "stdout": "sat\n((e C0))\n",
+    "stderr": "(simplifier :num-exprs 2 :num-asts 180 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 2 :num-asts 180 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 2 :num-asts 180 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(fpa2bv :num-exprs 8 :num-asts 199 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 8 :num-asts 199 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 8 :num-asts 199 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(ackermannize_bv :num-exprs 8 :num-asts 199 :time 0.00 :before-memory 18.23 :after-memory 18.33)\n(bit-blast :num-exprs 55 :num-asts 270 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 53 :num-asts 268 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(ast-table :prev-capacity 532480 :capacity 532480 :size 267)\n(sat-status\n  :inconsistent    false\n  :vars            32\n  :elim-vars       0\n  :lits            23\n  :assigned        8\n  :binary-clauses  0\n  :ternary-clauses 0\n  :clauses         1\n  :del-clause      0\n  :avg-clause-size 23.00\n  :memory          18.45)\n(sat.solver)\n(sat.stats   :conflicts  :restarts     :learned/bin    :gc          :time)\n(sat.stats          :decisions   :clauses/bin :units       :memory       )\n(sat.stats      0      0    0     1/0     0/0   8       0    18.45   0.00)\n(sat.stats      0     23    0     1/0     0/0   8       0    18.45   0.00)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card3-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "84",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.049966812948696315,
+    "exit": 0,
+    "stdout": "sat\n((e C2)\n (x (_ NaN 8 24)))\n",
+    "stderr": "(simplifier :num-exprs 5 :num-asts 188 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 5 :num-asts 188 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 5 :num-asts 188 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 11 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 11 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 11 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 11 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 58 :num-asts 278 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 56 :num-asts 276 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 56)\n(smt.propagate-values :num-exprs 56)\n(smt.nnf-cnf :num-exprs 56)\n(smt.reduce-asserted :num-exprs 56)\n(smt.maximizing-bv-sharing :num-exprs 56)\n(smt.reduce-asserted :num-exprs 56)\n(smt.flatten-clauses :num-exprs 56)\n(smt.simplifier-done :num-exprs 56)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/9       0/0     0    0   18.90)\n(smt.stats    0      1     23      1     1/0/10       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 290 :time 0.00 :before-memory 18.33 :after-memory 18.42)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card3-exclude-all",
+    "command": [
+      "taskset",
+      "-c",
+      "85",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04573909495957196,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 12 :num-asts 195 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 12 :num-asts 195 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 12 :num-asts 195 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 18 :num-asts 214 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 214 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 18 :num-asts 214 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 18 :num-asts 214 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 65 :num-asts 285 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 63 :num-asts 283 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 63)\n(smt.propagate-values :num-exprs 63)\n(smt.nnf-cnf :num-exprs 63)\n(smt.reduce-asserted :num-exprs 63)\n(smt.maximizing-bv-sharing :num-exprs 63)\n(smt.reduce-asserted :num-exprs 63)\n(smt.flatten-clauses :num-exprs 63)\n(smt.simplifier-done :num-exprs 63)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/11       0/0     0    0   18.90)\n(smt :num-exprs 1 :num-asts 290 :time 0.00 :before-memory 18.33 :after-memory 18.37)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card3-pigeonhole",
+    "command": [
+      "taskset",
+      "-c",
+      "86",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04535816499264911,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 194 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 194 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 13 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 13 :num-asts 213 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 13 :num-asts 213 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(ackermannize_bv :num-exprs 13 :num-asts 213 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(bit-blast :num-exprs 60 :num-asts 284 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 58 :num-asts 282 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 58)\n(smt.propagate-values :num-exprs 58)\n(smt.nnf-cnf :num-exprs 58)\n(smt.reduce-asserted :num-exprs 58)\n(smt.maximizing-bv-sharing :num-exprs 58)\n(smt.reduce-asserted :num-exprs 58)\n(smt.flatten-clauses :num-exprs 58)\n(smt.simplifier-done :num-exprs 58)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    10/8/9       0/0     0    0   18.90)\n(smt :num-exprs 1 :num-asts 290 :time 0.00 :before-memory 18.34 :after-memory 18.38)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card3-model-0",
+    "command": [
+      "taskset",
+      "-c",
+      "87",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.045886078965850174,
+    "exit": 0,
+    "stdout": "sat\n((e C0))\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 62 :num-asts 282 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 60 :num-asts 280 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 60)\n(smt.propagate-values :num-exprs 60)\n(smt.nnf-cnf :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.maximizing-bv-sharing :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.flatten-clauses :num-exprs 60)\n(smt.simplifier-done :num-exprs 60)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/10       0/0     0    0   18.90)\n(smt.stats    0      0     23      1     1/0/10       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.42)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card3-model-1",
+    "command": [
+      "taskset",
+      "-c",
+      "88",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03619553201133385,
+    "exit": 0,
+    "stdout": "sat\n((e C1))\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 62 :num-asts 282 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 60 :num-asts 280 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 60)\n(smt.propagate-values :num-exprs 60)\n(smt.nnf-cnf :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.maximizing-bv-sharing :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.flatten-clauses :num-exprs 60)\n(smt.simplifier-done :num-exprs 60)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/10       0/0     0    0   18.90)\n(smt.stats    0      1     25      1     1/0/11       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.42)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card3-model-2",
+    "command": [
+      "taskset",
+      "-c",
+      "89",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03521099395584315,
+    "exit": 0,
+    "stdout": "sat\n((e C2))\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 15 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 62 :num-asts 282 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 60 :num-asts 280 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 60)\n(smt.propagate-values :num-exprs 60)\n(smt.nnf-cnf :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.maximizing-bv-sharing :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.flatten-clauses :num-exprs 60)\n(smt.simplifier-done :num-exprs 60)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/10       0/0     0    0   18.90)\n(smt.stats    0      2     48      1     1/0/13       0/0     2    0   18.99)\n(smt :num-exprs 0 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.42)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "90",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.036015737045090646,
+    "exit": 0,
+    "stdout": "sat\n((e C5)\n (x (_ NaN 8 24)))\n",
+    "stderr": "(simplifier :num-exprs 5 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 5 :num-asts 194 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 5 :num-asts 194 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 11 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 11 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 11 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 11 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 58 :num-asts 284 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 56 :num-asts 282 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 56)\n(smt.propagate-values :num-exprs 56)\n(smt.nnf-cnf :num-exprs 56)\n(smt.reduce-asserted :num-exprs 56)\n(smt.maximizing-bv-sharing :num-exprs 56)\n(smt.reduce-asserted :num-exprs 56)\n(smt.flatten-clauses :num-exprs 56)\n(smt.simplifier-done :num-exprs 56)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/9       0/0     0    0   18.90)\n(smt.stats    0      1     23      1     1/0/10       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 296 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-exclude-all",
+    "command": [
+      "taskset",
+      "-c",
+      "91",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03356841899221763,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 21 :num-asts 210 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 21 :num-asts 210 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 21 :num-asts 210 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 27 :num-asts 229 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 27 :num-asts 229 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 27 :num-asts 229 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 27 :num-asts 229 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 74 :num-asts 300 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 72 :num-asts 298 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 72)\n(smt.propagate-values :num-exprs 72)\n(smt.nnf-cnf :num-exprs 72)\n(smt.reduce-asserted :num-exprs 72)\n(smt.maximizing-bv-sharing :num-exprs 72)\n(smt.reduce-asserted :num-exprs 72)\n(smt.flatten-clauses :num-exprs 72)\n(smt.simplifier-done :num-exprs 72)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/14       0/0     0    0   18.91)\n(smt :num-exprs 1 :num-asts 305 :time 0.00 :before-memory 18.33 :after-memory 18.38)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-pigeonhole",
+    "command": [
+      "taskset",
+      "-c",
+      "92",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04328645800705999,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 10 :num-asts 206 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 206 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 10 :num-asts 206 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 16 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(propagate-values :num-exprs 16 :num-asts 225 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 16 :num-asts 225 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(ackermannize_bv :num-exprs 16 :num-asts 225 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(bit-blast :num-exprs 63 :num-asts 296 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 61 :num-asts 294 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 61)\n(smt.propagate-values :num-exprs 61)\n(smt.nnf-cnf :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.maximizing-bv-sharing :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.flatten-clauses :num-exprs 61)\n(smt.simplifier-done :num-exprs 61)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units   :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0    25/23/9       0/0     0    0   19.00)\n(smt.stats    0    101    164    353    24/23/31     101/64     1    1   19.00)\n(smt.stats    1    203    322   1339    24/23/31     203/103     1    1   19.10)\n(smt.stats    2    314    450   2960    24/23/33     306/108     2    7   19.10)\n(smt.stats    3    425    576   4484    24/23/36     393/101     3   28   19.10)\n(smt :num-exprs 1 :num-asts 302 :time 0.01 :before-memory 18.33 :after-memory 18.51)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-model-0",
+    "command": [
+      "taskset",
+      "-c",
+      "93",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.038108623994048685,
+    "exit": 0,
+    "stdout": "sat\n((e C0))\n",
+    "stderr": "(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 71 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 69 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 69)\n(smt.propagate-values :num-exprs 69)\n(smt.nnf-cnf :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.maximizing-bv-sharing :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.flatten-clauses :num-exprs 69)\n(smt.simplifier-done :num-exprs 69)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/13       0/0     0    0   18.91)\n(smt.stats    0      1     24      1     1/0/14       0/0     1    0   19.00)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-model-1",
+    "command": [
+      "taskset",
+      "-c",
+      "94",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03527190594468266,
+    "exit": 0,
+    "stdout": "sat\n((e C1))\n",
+    "stderr": "(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 71 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 69 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 69)\n(smt.propagate-values :num-exprs 69)\n(smt.nnf-cnf :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.maximizing-bv-sharing :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.flatten-clauses :num-exprs 69)\n(smt.simplifier-done :num-exprs 69)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/13       0/0     0    0   18.91)\n(smt.stats    0      2     48      1     1/0/15       0/0     2    0   19.00)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-model-2",
+    "command": [
+      "taskset",
+      "-c",
+      "95",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03366527101024985,
+    "exit": 0,
+    "stdout": "sat\n((e C2))\n",
+    "stderr": "(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 71 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 69 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 69)\n(smt.propagate-values :num-exprs 69)\n(smt.nnf-cnf :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.maximizing-bv-sharing :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.flatten-clauses :num-exprs 69)\n(smt.simplifier-done :num-exprs 69)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/13       0/0     0    0   18.91)\n(smt.stats    0      3     72      1     1/0/16       0/0     3    0   19.00)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-model-3",
+    "command": [
+      "taskset",
+      "-c",
+      "96",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.028526489972136915,
+    "exit": 0,
+    "stdout": "sat\n((e C3))\n",
+    "stderr": "(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 71 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 69 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 69)\n(smt.propagate-values :num-exprs 69)\n(smt.nnf-cnf :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.maximizing-bv-sharing :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.flatten-clauses :num-exprs 69)\n(smt.simplifier-done :num-exprs 69)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/13       0/0     0    0   18.91)\n(smt.stats    0      0     23      1     1/0/13       0/0     1    0   19.00)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-model-4",
+    "command": [
+      "taskset",
+      "-c",
+      "97",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02925756899639964,
+    "exit": 0,
+    "stdout": "sat\n((e C4))\n",
+    "stderr": "(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 71 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 69 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 69)\n(smt.propagate-values :num-exprs 69)\n(smt.nnf-cnf :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.maximizing-bv-sharing :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.flatten-clauses :num-exprs 69)\n(smt.simplifier-done :num-exprs 69)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/13       0/0     0    0   18.91)\n(smt.stats    0      4     96      1     1/0/17       0/0     4    0   19.00)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "card6-model-5",
+    "command": [
+      "taskset",
+      "-c",
+      "98",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.029364752990659326,
+    "exit": 0,
+    "stdout": "sat\n((e C5))\n",
+    "stderr": "(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 18 :num-asts 207 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 24 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 71 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 69 :num-asts 295 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 69)\n(smt.propagate-values :num-exprs 69)\n(smt.nnf-cnf :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.maximizing-bv-sharing :num-exprs 69)\n(smt.reduce-asserted :num-exprs 69)\n(smt.flatten-clauses :num-exprs 69)\n(smt.simplifier-done :num-exprs 69)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/13       0/0     0    0   18.91)\n(smt.stats    0      5    119      1     1/0/19       0/0     5    0   19.00)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "multiple-enums",
+    "command": [
+      "taskset",
+      "-c",
+      "99",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.027760618017055094,
+    "exit": 0,
+    "stdout": "sat\n((e B)\n (d V)\n (x (_ NaN 8 24)))\n",
+    "stderr": "(simplifier :num-exprs 10 :num-asts 208 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 208 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 10 :num-asts 208 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 16 :num-asts 227 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 16 :num-asts 227 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 16 :num-asts 227 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 16 :num-asts 227 :time 0.00 :before-memory 18.24 :after-memory 18.34)\n(bit-blast :num-exprs 63 :num-asts 298 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 61 :num-asts 296 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 61)\n(smt.propagate-values :num-exprs 61)\n(smt.nnf-cnf :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.maximizing-bv-sharing :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.flatten-clauses :num-exprs 61)\n(smt.simplifier-done :num-exprs 61)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/10       0/0     0    0   18.90)\n(smt.stats    0      2     27      1     1/0/12       0/0     1    0   19.00)\n(smt :num-exprs 0 :num-asts 312 :time 0.00 :before-memory 18.34 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "enum-ite",
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.034558565996121615,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 10 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 198 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 198 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 13 :num-asts 217 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 13 :num-asts 217 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 13 :num-asts 217 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 13 :num-asts 217 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 60 :num-asts 288 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 58 :num-asts 286 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 58)\n(smt.propagate-values :num-exprs 58)\n(smt.nnf-cnf :num-exprs 58)\n(smt.reduce-asserted :num-exprs 58)\n(smt.maximizing-bv-sharing :num-exprs 58)\n(smt.reduce-asserted :num-exprs 58)\n(smt.flatten-clauses :num-exprs 58)\n(smt.simplifier-done :num-exprs 58)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/10       0/0     0    0   18.90)\n(smt.stats    0      1     24      1     1/0/11       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 300 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "enum-uf-return",
+    "command": [
+      "taskset",
+      "-c",
+      "101",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03444399300497025,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 20)\n(ctx-simplify :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 192 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     2)\n(lia2card :num-exprs 7 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 7 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 7)\n(smt.propagate-values :num-exprs 7)\n(smt.nnf-cnf :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.maximizing-bv-sharing :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.flatten-clauses :num-exprs 7)\n(smt.simplifier-done :num-exprs 7)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/7       0/0     0    0   18.80)\n(smt.stats    0      1      2      4    10/10/91       0/0     1    8   18.80)\n(smt :num-exprs 0 :num-asts 248 :time 0.00 :before-memory 18.14 :after-memory 18.27)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "enum-uf-arg",
+    "command": [
+      "taskset",
+      "-c",
+      "102",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.033656040963251144,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 16)\n(ctx-simplify :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 7)\n(smt.propagate-values :num-exprs 7)\n(smt.nnf-cnf :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.maximizing-bv-sharing :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.flatten-clauses :num-exprs 7)\n(smt.simplifier-done :num-exprs 7)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/8       0/0     0    0   18.80)\n(smt.stats    0      1      2      4    10/10/92       0/0     1    8   18.80)\n(smt :num-exprs 0 :num-asts 247 :time 0.00 :before-memory 18.14 :after-memory 18.27)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "enum-recognizer",
+    "command": [
+      "taskset",
+      "-c",
+      "103",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.038150325999595225,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 16)\n(ctx-simplify :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 7 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 7)\n(smt.propagate-values :num-exprs 7)\n(smt.nnf-cnf :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.maximizing-bv-sharing :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.flatten-clauses :num-exprs 7)\n(smt.simplifier-done :num-exprs 7)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/8       0/0     0    0   18.80)\n(smt.stats    0      1      1      4    10/10/92       0/0     1    8   18.80)\n(smt :num-exprs 0 :num-asts 247 :time 0.00 :before-memory 18.14 :after-memory 18.26)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "enum-array",
+    "command": [
+      "taskset",
+      "-c",
+      "104",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04586556903086603,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 10 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 10 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 22)\n(ctx-simplify :num-exprs 10 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 8 :num-asts 199 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     2)\n(lia2card :num-exprs 8 :num-asts 199 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 6 :num-asts 203 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:elim-unconstrained 1)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 6)\n(smt.propagate-values :num-exprs 6)\n(smt.nnf-cnf :num-exprs 6)\n(smt.reduce-asserted :num-exprs 6)\n(smt.maximizing-bv-sharing :num-exprs 6)\n(smt.reduce-asserted :num-exprs 6)\n(smt.flatten-clauses :num-exprs 6)\n(smt.simplifier-done :num-exprs 6)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/7       0/0     0    0   18.80)\n(smt.stats    0      1      2      4    10/10/91       0/0     1    8   18.80)\n(smt :num-exprs 0 :num-asts 257 :time 0.00 :before-memory 18.14 :after-memory 18.26)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "fp-array",
+    "command": [
+      "taskset",
+      "-c",
+      "105",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03866446000756696,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 9 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 22)\n(ctx-simplify :num-exprs 9 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     2)\n(lia2card :num-exprs 7 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 6 :num-asts 201 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:elim-unconstrained 1)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 6)\n(smt.propagate-values :num-exprs 6)\n(smt.nnf-cnf :num-exprs 6)\n(smt.reduce-asserted :num-exprs 6)\n(smt.maximizing-bv-sharing :num-exprs 6)\n(smt.reduce-asserted :num-exprs 6)\n(smt.flatten-clauses :num-exprs 6)\n(smt.simplifier-done :num-exprs 6)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/7       0/0     0    0   18.80)\n(smt.stats    0      1      2      4    10/10/91       0/0     1    8   18.80)\n(smt :num-exprs 0 :num-asts 255 :time 0.00 :before-memory 18.14 :after-memory 18.26)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "adt-selector",
+    "command": [
+      "taskset",
+      "-c",
+      "106",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.037458056991454214,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 9 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 20)\n(ctx-simplify :num-exprs 9 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 199 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     2)\n(lia2card :num-exprs 7 :num-asts 199 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 6 :num-asts 202 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:elim-unconstrained 1)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 6)\n(smt.propagate-values :num-exprs 6)\n(smt.nnf-cnf :num-exprs 6)\n(smt.reduce-asserted :num-exprs 6)\n(smt.maximizing-bv-sharing :num-exprs 6)\n(smt.reduce-asserted :num-exprs 6)\n(smt.flatten-clauses :num-exprs 6)\n(smt.simplifier-done :num-exprs 6)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/7       0/0     0    0   18.80)\n(smt.stats    0      1      2      4    10/10/91       0/0     1    8   18.80)\n(smt :num-exprs 0 :num-asts 256 :time 0.00 :before-memory 18.14 :after-memory 18.26)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "quantifier",
+    "command": [
+      "taskset",
+      "-c",
+      "107",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04350426304154098,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 12)\n(ctx-simplify :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 15 :num-asts 197 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 15)\n(smt.propagate-values :num-exprs 15)\n(smt.nnf-cnf :num-exprs 15)\n(smt.reduce-asserted :num-exprs 15)\n(smt.reduced 15)\n(smt.lift-ite :num-exprs 15)\n(smt.refine-injectivity :num-exprs 15)\n(smt.reduced 15)\n(smt.cheap-fourier-motzkin :num-exprs 15)\n(smt.pattern-inference :num-exprs 15)\n(smt.maximizing-bv-sharing :num-exprs 15)\n(smt.reduce-asserted :num-exprs 15)\n(smt.flatten-clauses :num-exprs 15)\n(smt.simplifier-done :num-exprs 15)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/8       0/0     0    0   18.92)\n(smt.stats    0      1      2      4    10/10/92       0/0     1    8   18.92)\n(smt.mbqi)\n(smt.simplify-begin :num-exprs 10)\n(smt.propagate-values :num-exprs 10)\n(smt.nnf-cnf :num-exprs 10)\n(smt.reduce-asserted :num-exprs 10)\n(smt.reduced 10)\n(smt.lift-ite :num-exprs 10)\n(smt.maximizing-bv-sharing :num-exprs 10)\n(smt.reduce-asserted :num-exprs 10)\n(smt.flatten-clauses :num-exprs 10)\n(smt.simplifier-done :num-exprs 10)\n(smt.delete-inactive-clauses  :num-deleted-clauses 0)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/0       0/0     0    0   19.64)\n(smt :num-exprs 0 :num-asts 253 :time 0.00 :before-memory 18.14 :after-memory 18.33)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-conversion",
+    "command": [
+      "taskset",
+      "-c",
+      "108",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.039144922979176044,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 10 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 198 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 10 :num-asts 198 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 310 :num-asts 582 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(propagate-values :num-exprs 312 :num-asts 522 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(simplifier :num-exprs 396 :num-asts 560 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(ackermannize_bv :num-exprs 396 :num-asts 560 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(bit-blast :num-exprs 480 :num-asts 879 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 583 :num-asts 953 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 556)\n(smt.propagate-values :num-exprs 373)\n(smt :num-exprs 1 :num-asts 701 :time 0.00 :before-memory 18.43 :after-memory 18.48)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-free",
+    "command": [
+      "taskset",
+      "-c",
+      "109",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03960618597920984,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 195 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 13 :num-asts 202 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(propagate-values :num-exprs 13 :num-asts 202 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 407 :num-asts 691 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 20 :num-asts 258 :time 0.00 :before-memory 18.33 :after-memory 18.64)\n(simplifier :num-exprs 20 :num-asts 258 :time 0.00 :before-memory 18.64 :after-memory 18.64)\n(ackermannize_bv :num-exprs 20 :num-asts 262 :time 0.00 :before-memory 18.64 :after-memory 18.64)\n(bit-blast :num-exprs 66 :num-asts 333 :time 0.00 :before-memory 18.64 :after-memory 18.64)\n(simplifier :num-exprs 64 :num-asts 331 :time 0.00 :before-memory 18.64 :after-memory 18.64)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 64)\n(smt.propagate-values :num-exprs 64)\n(smt.nnf-cnf :num-exprs 64)\n(smt.reduce-asserted :num-exprs 64)\n(smt.maximizing-bv-sharing :num-exprs 64)\n(smt.reduce-asserted :num-exprs 64)\n(smt.flatten-clauses :num-exprs 64)\n(smt.simplifier-done :num-exprs 64)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     4/2/10       0/0     0    0   19.23)\n(smt.stats    0      1     24      1     4/3/14       0/0     1    1   19.23)\n(smt :num-exprs 0 :num-asts 342 :time 0.00 :before-memory 18.64 :after-memory 18.70)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "integer",
+    "command": [
+      "taskset",
+      "-c",
+      "110",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03942164097679779,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 20)\n(ctx-simplify :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(solve-eqs :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(lia2card :num-exprs 10 :num-asts 196 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(elim-uncnstr :num-exprs 7 :num-asts 206 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(:elim-unconstrained 2)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 7)\n(smt.propagate-values :num-exprs 7)\n(smt.nnf-cnf :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.maximizing-bv-sharing :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.flatten-clauses :num-exprs 7)\n(smt.simplifier-done :num-exprs 7)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0    13/6/8       0/0     0    0   18.84)\n(smt.stats    0      1      2      4    10/10/92       0/0     1    8   18.84)\n(smt :num-exprs 0 :num-asts 258 :time 0.00 :before-memory 18.24 :after-memory 18.31)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "pure-bv",
+    "command": [
+      "taskset",
+      "-c",
+      "111",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.03953098400961608,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 5 :num-asts 193 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 5 :num-asts 195 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 5 :num-asts 195 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(solve-eqs :num-exprs 5 :num-asts 195 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(elim-uncnstr :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(:elim-unconstrained 3)\n(bv-divrem-bounds :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(reduce-bv-size :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(max-bv-sharing :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(ackermannize_bv :num-exprs 1 :num-asts 210 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(bv1-blast :num-exprs 1 :num-asts 208 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 1)\n(smt.propagate-values :num-exprs 1)\n(smt.reduce-asserted :num-exprs 1)\n(smt.maximizing-bv-sharing :num-exprs 1)\n(smt.reduce-asserted :num-exprs 1)\n(smt.flatten-clauses :num-exprs 1)\n(smt.simplifier-done :num-exprs 1)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.73)\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.73)\n(smt :num-exprs 0 :num-asts 208 :time 0.00 :before-memory 18.33 :after-memory 18.50)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "pure-fp",
+    "command": [
+      "taskset",
+      "-c",
+      "80",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.034347459964919835,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 2 :num-asts 176 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 2 :num-asts 176 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 2 :num-asts 176 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(fpa2bv :num-exprs 8 :num-asts 195 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 8 :num-asts 195 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 8 :num-asts 195 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(ackermannize_bv :num-exprs 8 :num-asts 195 :time 0.00 :before-memory 18.23 :after-memory 18.33)\n(bit-blast :num-exprs 55 :num-asts 266 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 53 :num-asts 264 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(ast-table :prev-capacity 532480 :capacity 532480 :size 263)\n(sat-status\n  :inconsistent    false\n  :vars            32\n  :elim-vars       0\n  :lits            23\n  :assigned        8\n  :binary-clauses  0\n  :ternary-clauses 0\n  :clauses         1\n  :del-clause      0\n  :avg-clause-size 23.00\n  :memory          18.45)\n(sat.solver)\n(sat.stats   :conflicts  :restarts     :learned/bin    :gc          :time)\n(sat.stats          :decisions   :clauses/bin :units       :memory       )\n(sat.stats      0      0    0     1/0     0/0   8       0    18.45   0.00)\n(sat.stats      0     23    0     1/0     0/0   8       0    18.45   0.00)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "pure-enum",
+    "command": [
+      "taskset",
+      "-c",
+      "81",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.028071385982912034,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 8)\n(ctx-simplify :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 4 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 4)\n(smt.propagate-values :num-exprs 4)\n(smt.nnf-cnf :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.maximizing-bv-sharing :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.flatten-clauses :num-exprs 4)\n(smt.simplifier-done :num-exprs 4)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.71)\n(smt.stats    0      1      2      0     0/0/2       0/0     0    0   18.71)\n(smt :num-exprs 0 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.21)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "unused-enum-decl",
+    "command": [
+      "taskset",
+      "-c",
+      "82",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.032728275982663035,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 2 :num-asts 184 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 2 :num-asts 184 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 2 :num-asts 184 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(fpa2bv :num-exprs 8 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(propagate-values :num-exprs 8 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 8 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(ackermannize_bv :num-exprs 8 :num-asts 203 :time 0.00 :before-memory 18.23 :after-memory 18.33)\n(bit-blast :num-exprs 55 :num-asts 274 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 53 :num-asts 272 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(ast-table :prev-capacity 532480 :capacity 532480 :size 271)\n(sat-status\n  :inconsistent    false\n  :vars            32\n  :elim-vars       0\n  :lits            23\n  :assigned        8\n  :binary-clauses  0\n  :ternary-clauses 0\n  :clauses         1\n  :del-clause      0\n  :avg-clause-size 23.00\n  :memory          18.45)\n(sat.solver)\n(sat.stats   :conflicts  :restarts     :learned/bin    :gc          :time)\n(sat.stats          :decisions   :clauses/bin :units       :memory       )\n(sat.stats      0      0    0     1/0     0/0   8       0    18.45   0.00)\n(sat.stats      0     23    0     1/0     0/0   8       0    18.45   0.00)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "uninterpreted-sort",
+    "command": [
+      "taskset",
+      "-c",
+      "83",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02203173900488764,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 8)\n(ctx-simplify :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 4 :num-asts 181 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 4)\n(smt.propagate-values :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.maximizing-bv-sharing :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.flatten-clauses :num-exprs 4)\n(smt.simplifier-done :num-exprs 4)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.51)\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.51)\n(smt :num-exprs 0 :num-asts 185 :time 0.00 :before-memory 18.14 :after-memory 18.28)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RNE",
+    "command": [
+      "taskset",
+      "-c",
+      "84",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.027145871019456536,
+    "exit": 0,
+    "stdout": "sat\n(((fp.to_ieee_bv y) #x3f800000))\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 16 :num-asts 228 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 16 :num-asts 228 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 61 :num-asts 319 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 61 :num-asts 319 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 61)\n(smt.propagate-values :num-exprs 61)\n(smt.nnf-cnf :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.maximizing-bv-sharing :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.flatten-clauses :num-exprs 61)\n(smt.simplifier-done :num-exprs 61)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RNE-contradict",
+    "command": [
+      "taskset",
+      "-c",
+      "85",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.024763704976066947,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 209 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 209 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 209 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RNA",
+    "command": [
+      "taskset",
+      "-c",
+      "86",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.026703777955845,
+    "exit": 0,
+    "stdout": "sat\n(((fp.to_ieee_bv y) #x3f800001))\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 27 :num-asts 239 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 27 :num-asts 239 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 230 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 230 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 60 :num-asts 323 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 60 :num-asts 323 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 60)\n(smt.propagate-values :num-exprs 60)\n(smt.nnf-cnf :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.maximizing-bv-sharing :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.flatten-clauses :num-exprs 60)\n(smt.simplifier-done :num-exprs 60)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 315 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RNA-contradict",
+    "command": [
+      "taskset",
+      "-c",
+      "87",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.022834821022115648,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 211 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RTP",
+    "command": [
+      "taskset",
+      "-c",
+      "88",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02990627702092752,
+    "exit": 0,
+    "stdout": "sat\n(((fp.to_ieee_bv y) #x3f800001))\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 27 :num-asts 239 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 27 :num-asts 239 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 230 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 230 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 60 :num-asts 323 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 60 :num-asts 323 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 60)\n(smt.propagate-values :num-exprs 60)\n(smt.nnf-cnf :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.maximizing-bv-sharing :num-exprs 60)\n(smt.reduce-asserted :num-exprs 60)\n(smt.flatten-clauses :num-exprs 60)\n(smt.simplifier-done :num-exprs 60)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 315 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RTP-contradict",
+    "command": [
+      "taskset",
+      "-c",
+      "89",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.026664487028028816,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 211 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 211 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RTN",
+    "command": [
+      "taskset",
+      "-c",
+      "90",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.029636679973918945,
+    "exit": 0,
+    "stdout": "sat\n(((fp.to_ieee_bv y) #x3f800000))\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 16 :num-asts 228 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 16 :num-asts 228 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 61 :num-asts 319 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 61 :num-asts 319 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 61)\n(smt.propagate-values :num-exprs 61)\n(smt.nnf-cnf :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.maximizing-bv-sharing :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.flatten-clauses :num-exprs 61)\n(smt.simplifier-done :num-exprs 61)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RTN-contradict",
+    "command": [
+      "taskset",
+      "-c",
+      "91",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.026972936000674963,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 209 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 209 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 209 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RTZ",
+    "command": [
+      "taskset",
+      "-c",
+      "92",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.028933841036632657,
+    "exit": 0,
+    "stdout": "sat\n(((fp.to_ieee_bv y) #x3f800000))\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 16 :num-asts 228 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 16 :num-asts 228 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 225 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 61 :num-asts 319 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 61 :num-asts 319 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 61)\n(smt.propagate-values :num-exprs 61)\n(smt.nnf-cnf :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.maximizing-bv-sharing :num-exprs 61)\n(smt.reduce-asserted :num-exprs 61)\n(smt.flatten-clauses :num-exprs 61)\n(smt.simplifier-done :num-exprs 61)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 310 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "round-RTZ-contradict",
+    "command": [
+      "taskset",
+      "-c",
+      "93",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02823725203052163,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 209 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 209 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 209 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "sqrt-7fc00000",
+    "command": [
+      "taskset",
+      "-c",
+      "94",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.04458561399951577,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "sqrt-7f800001",
+    "command": [
+      "taskset",
+      "-c",
+      "95",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.026357029972132295,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "sqrt-ff800000",
+    "command": [
+      "taskset",
+      "-c",
+      "96",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02350713004125282,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "sqrt-80000000",
+    "command": [
+      "taskset",
+      "-c",
+      "97",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.025839745008852333,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 14 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 14 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 226 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 67 :num-asts 326 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 67 :num-asts 326 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 67)\n(smt.propagate-values :num-exprs 67)\n(smt.nnf-cnf :num-exprs 67)\n(smt.reduce-asserted :num-exprs 67)\n(smt.maximizing-bv-sharing :num-exprs 67)\n(smt.reduce-asserted :num-exprs 67)\n(smt.flatten-clauses :num-exprs 67)\n(smt.simplifier-done :num-exprs 67)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 311 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "sqrt-bf800000",
+    "command": [
+      "taskset",
+      "-c",
+      "98",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.021727370971348137,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 1 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "sqrt-00000001",
+    "command": [
+      "taskset",
+      "-c",
+      "99",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.026666147983632982,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 7 :num-asts 204 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 27 :num-asts 239 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 27 :num-asts 239 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 232 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 232 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 67 :num-asts 332 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 67 :num-asts 332 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 67)\n(smt.propagate-values :num-exprs 67)\n(smt.nnf-cnf :num-exprs 67)\n(smt.reduce-asserted :num-exprs 67)\n(smt.maximizing-bv-sharing :num-exprs 67)\n(smt.reduce-asserted :num-exprs 67)\n(smt.flatten-clauses :num-exprs 67)\n(smt.simplifier-done :num-exprs 67)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/33       0/0     0    0   18.92)\n(smt.stats    0      1      2      0     0/0/34       0/0     0    0   18.92)\n(smt :num-exprs 0 :num-asts 317 :time 0.00 :before-memory 18.33 :after-memory 18.44)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "core",
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02509798400569707,
+    "exit": 0,
+    "stdout": "unsat\n(bad)\n",
+    "stderr": "(simplifier :num-exprs 1 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "proof",
+    "command": [
+      "taskset",
+      "-c",
+      "101",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.024890929053071886,
+    "exit": 0,
+    "stdout": "unsat\n((proof\n(let (($x25 (= e A)))\n(let ((@x31 (asserted $x25)))\n(let (($x26 (not $x25)))\n(let ((@x27 (asserted $x26)))\n(unit-resolution @x27 @x31 false)))))))\n\n",
+    "stderr": "(simplifier :num-exprs 1 :num-asts 201 :time 0.00 :before-memory 18.15 :after-memory 18.15)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "incremental-assumptions",
+    "command": [
+      "taskset",
+      "-c",
+      "102",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.027206231956370175,
+    "exit": 0,
+    "stdout": "sat\nunsat\nsat\nunsat\nsat\n((e B)\n (b false)\n (x (_ NaN 8 24)))\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 194 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 8 :num-asts 194 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(fpa2bv :num-exprs 14 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(propagate-values :num-exprs 14 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 14 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(ackermannize_bv :num-exprs 14 :num-asts 213 :time 0.00 :before-memory 18.24 :after-memory 18.33)\n(bit-blast :num-exprs 61 :num-asts 284 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 59 :num-asts 282 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 59)\n(smt.propagate-values :num-exprs 59)\n(smt.nnf-cnf :num-exprs 59)\n(smt.reduce-asserted :num-exprs 59)\n(smt.maximizing-bv-sharing :num-exprs 59)\n(smt.reduce-asserted :num-exprs 59)\n(smt.flatten-clauses :num-exprs 59)\n(smt.simplifier-done :num-exprs 59)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units  :simplify   :memory)\n(smt.stats        :conflicts    :propagations     :lemmas      :deletions   )\n(smt.stats    0      0      0      0     1/0/10       0/0     0    0   18.90)\n(smt.stats    0      1     25      1     1/0/11       0/0     1    0   18.99)\n(smt :num-exprs 0 :num-asts 297 :time 0.00 :before-memory 18.33 :after-memory 18.42)\n(smt.simplify-begin :num-exprs 9)\n(smt.propagate-values :num-exprs 8)\n(smt.nnf-cnf :num-exprs 8)\n(smt.reduce-asserted :num-exprs 8)\n(smt.maximizing-bv-sharing :num-exprs 8)\n(smt.reduce-asserted :num-exprs 8)\n(smt.flatten-clauses :num-exprs 8)\n(smt.simplifier-done :num-exprs 8)\n(smt.delete-inactive-clauses  :num-deleted-clauses 0)\n(smt.searching)\n(smt.stats :restarts     :decisions  :clauses/bin/units    :simplify   :memory)\n(smt.stats        :conflicts    :propagations      :lemmas      :deletions   )\n(smt.stats    0      1      0      4    18/10/91       0/0     0    0   18.33)\n(smt.stats    0      2      2      4    18/10/91       0/0     2    0   18.33)\n(smt.searching)\n(smt.stats    0      2      2      4    18/10/91       0/0     2    0   18.33)\n(smt.stats    0      3      4      4    10/10/92       0/0     3    8   18.33)\n",
+    "expected": [
+      "sat",
+      "unsat",
+      "sat",
+      "unsat",
+      "sat"
+    ],
+    "statuses": [
+      "sat",
+      "unsat",
+      "sat",
+      "unsat",
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-array-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "103",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.024493907985743135,
+    "exit": 0,
+    "stdout": "sat\n(\n  (define-fun mode () Mode\n    A)\n  (define-fun addr () (_ BitVec 64)\n    #x0000000000000000)\n  (define-fun mem () (Array (_ BitVec 64) (_ BitVec 32))\n    ((as const (Array (_ BitVec 64) (_ BitVec 32))) #x00000000))\n  (define-fun x () (_ FloatingPoint 8 24)\n    (_ NaN 8 24))\n)\n((mode A)\n (addr #x0000000000000000))\n",
+    "stderr": "(simplifier :num-exprs 0 :num-asts 194 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-array-unsat",
+    "command": [
+      "taskset",
+      "-c",
+      "104",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02787889097817242,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 1 :num-asts 195 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-bitvector-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "105",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02768853696761653,
+    "exit": 0,
+    "stdout": "sat\n(\n  (define-fun addr () (_ BitVec 64)\n    #xffffffffffffffff)\n  (define-fun mode () Mode\n    A)\n  (define-fun mem () (Array (_ BitVec 64) (_ BitVec 32))\n    ((as const (Array (_ BitVec 64) (_ BitVec 32))) #x00000000))\n  (define-fun x () (_ FloatingPoint 8 24)\n    (_ NaN 8 24))\n)\n((mode A)\n (addr #xffffffffffffffff))\n",
+    "stderr": "(simplifier :num-exprs 3 :num-asts 196 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 3 :num-asts 198 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 3 :num-asts 198 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(solve-eqs :num-exprs 0 :num-asts 198 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     1)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-bitvector-unsat",
+    "command": [
+      "taskset",
+      "-c",
+      "106",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.026995157008059323,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 1 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-enum-array-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "107",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.028010085050482303,
+    "exit": 0,
+    "stdout": "sat\n(\n  (define-fun emem () (Array (_ BitVec 64) Mode)\n    ((as const (Array (_ BitVec 64) Mode)) B))\n  (define-fun addr () (_ BitVec 64)\n    #x0000000000000000)\n  (define-fun mode () Mode\n    B)\n  (define-fun mem () (Array (_ BitVec 64) (_ BitVec 32))\n    ((as const (Array (_ BitVec 64) (_ BitVec 32))) #x00000000))\n  (define-fun x () (_ FloatingPoint 8 24)\n    (_ NaN 8 24))\n)\n((mode B)\n (addr #x0000000000000000))\n",
+    "stderr": "(simplifier :num-exprs 8 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 8 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 8 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 18)\n(ctx-simplify :num-exprs 8 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 8 :num-asts 198 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 6 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     2)\n(lia2card :num-exprs 6 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 4 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:elim-unconstrained 1)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 4)\n(smt.propagate-values :num-exprs 4)\n(smt.nnf-cnf :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.maximizing-bv-sharing :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.flatten-clauses :num-exprs 4)\n(smt.simplifier-done :num-exprs 4)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.71)\n(smt.stats    0      1      2      0     0/0/2       0/0     0    0   18.71)\n(smt :num-exprs 0 :num-asts 218 :time 0.00 :before-memory 18.14 :after-memory 18.21)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-enum-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "108",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.028898559045046568,
+    "exit": 0,
+    "stdout": "sat\n(\n  (define-fun mode () Mode\n    B)\n  (define-fun addr () (_ BitVec 64)\n    #x0000000000000000)\n  (define-fun mem () (Array (_ BitVec 64) (_ BitVec 32))\n    ((as const (Array (_ BitVec 64) (_ BitVec 32))) #x00000000))\n  (define-fun x () (_ FloatingPoint 8 24)\n    (_ NaN 8 24))\n)\n((mode B)\n (addr #x0000000000000000))\n",
+    "stderr": "(simplifier :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 8)\n(ctx-simplify :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 4 :num-asts 191 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 4)\n(smt.propagate-values :num-exprs 4)\n(smt.nnf-cnf :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.maximizing-bv-sharing :num-exprs 4)\n(smt.reduce-asserted :num-exprs 4)\n(smt.flatten-clauses :num-exprs 4)\n(smt.simplifier-done :num-exprs 4)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/1       0/0     0    0   18.71)\n(smt.stats    0      1      2      0     0/0/2       0/0     0    0   18.71)\n(smt :num-exprs 0 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.21)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-enum-unsat",
+    "command": [
+      "taskset",
+      "-c",
+      "109",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.028414577012881637,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 10)\n(ctx-simplify :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 5 :num-asts 190 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 5)\n(smt.propagate-values :num-exprs 5)\n(smt.nnf-cnf :num-exprs 5)\n(smt.reduce-asserted :num-exprs 5)\n(smt.maximizing-bv-sharing :num-exprs 5)\n(smt.reduce-asserted :num-exprs 5)\n(smt.flatten-clauses :num-exprs 5)\n(smt.simplifier-done :num-exprs 5)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     9/8/1       0/0     0    0   18.71)\n(smt :num-exprs 1 :num-asts 199 :time 0.00 :before-memory 18.14 :after-memory 18.28)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-1",
+    "command": [
+      "taskset",
+      "-c",
+      "110",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 12.526613735011779,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 916 :num-asts 1276 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 1000 :num-asts 1415 :time 0.00 :before-memory 18.43 :after-memory 18.53)\n(propagate-values :num-exprs 985 :num-asts 1415 :time 0.00 :before-memory 18.53 :after-memory 18.53)\n(fpa2bv :num-exprs 5244 :num-asts 5904 :time 0.00 :before-memory 18.53 :after-memory 18.73)\n(propagate-values :num-exprs 5244 :num-asts 5892 :time 0.00 :before-memory 18.82 :after-memory 18.82)\n(simplifier :num-exprs 14701 :num-asts 22614 :time 0.02 :before-memory 18.82 :after-memory 20.14)\n(ackermannize_bv :num-exprs 14701 :num-asts 18970 :time 0.00 :before-memory 19.76 :after-memory 20.06)\n(bit-blast :num-exprs 294552 :num-asts 286630 :time 0.14 :before-memory 20.06 :after-memory 56.42)\n(simplifier :num-exprs 2842802 :num-asts 539533 :time 0.26 :before-memory 56.42 :after-memory 125.96)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2842802)\n(smt.propagate-values :num-exprs 2842802)\n(smt.nnf-cnf :num-exprs 2842802)\n(smt.reduce-asserted :num-exprs 2842802)\n(smt.maximizing-bv-sharing :num-exprs 2842802)\n(smt.reduce-asserted :num-exprs 2842802)\n(smt.flatten-clauses :num-exprs 2842921)\n(smt.simplifier-done :num-exprs 2842921)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3091580/2734449/7       0/0     0    0  320.17)\n(smt.stats    0    101   2446  81966 3091580/2734449/9      99/7     1    0  323.37)\n(smt.stats    1    202   3782 368999 3091580/2734449/10     199/20     1    0  324.58)\n(smt.stats    2    244  10077 677638 3091580/2734449/14     238/21     1    0  325.87)\n(smt :num-exprs 0 :num-asts 23505 :time 11.99 :before-memory 120.63 :after-memory 110.93)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-10",
+    "command": [
+      "taskset",
+      "-c",
+      "111",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 32.0566985749756,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 889 :num-asts 1223 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 965 :num-asts 1349 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(propagate-values :num-exprs 962 :num-asts 1349 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(fpa2bv :num-exprs 5172 :num-asts 5786 :time 0.00 :before-memory 18.44 :after-memory 18.74)\n(propagate-values :num-exprs 5172 :num-asts 5775 :time 0.00 :before-memory 18.74 :after-memory 18.74)\n(simplifier :num-exprs 14694 :num-asts 21192 :time 0.03 :before-memory 18.74 :after-memory 20.09)\n(ackermannize_bv :num-exprs 14694 :num-asts 18891 :time 0.00 :before-memory 19.69 :after-memory 19.99)\n(bit-blast :num-exprs 295252 :num-asts 287262 :time 0.14 :before-memory 19.99 :after-memory 56.42)\n(simplifier :num-exprs 2852180 :num-asts 540870 :time 0.26 :before-memory 56.41 :after-memory 126.08)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2852180)\n(smt.propagate-values :num-exprs 2852180)\n(smt.nnf-cnf :num-exprs 2852180)\n(smt.reduce-asserted :num-exprs 2852180)\n(smt.maximizing-bv-sharing :num-exprs 2852180)\n(smt.reduce-asserted :num-exprs 2852180)\n(smt.flatten-clauses :num-exprs 2852299)\n(smt.simplifier-done :num-exprs 2852299)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3101821/2743485/4       0/0     0    0  320.67)\n(smt.stats    0    101   2182 986592 3101821/2743485/6      99/2     1    0  324.54)\n(smt.stats    1    202   3528 1106044 3101821/2743485/6     200/16     1    0  325.09)\n(smt.stats    2    313   4777 1296402 3101821/2743485/6     311/21     1    0  325.23)\n(smt.stats    3    414   5627 1425967 3101821/2743485/6     412/28     1    0  325.29)\n(smt.stats    4    525   5922 1493384 3101821/2743485/6     523/40     1    0  325.34)\n(smt.stats    5    859   6696 1776146 3101821/2743485/6     857/55     1    0  326.03)\n(smt.stats :restarts  :decisions   :clauses/bin/units              :simplify  :memory)\n(smt.stats      :conflicts :propagations                :lemmas         :deletions   )\n(smt.stats    6    981   7690 1985034 3101821/2743485/6     979/68     1    0  326.17)\n(smt.stats    7   1115   8246 2085282 3101821/2743485/6    1113/75     1    0  326.25)\n(smt.stats    8   1144  17965 2553301 3101821/2743485/9    1140/79     2    0  327.70)\n(smt :num-exprs 0 :num-asts 23426 :time 31.49 :before-memory 120.74 :after-memory 111.00)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-11",
+    "command": [
+      "taskset",
+      "-c",
+      "80",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 60.20554191496922,
+    "exit": 0,
+    "stdout": "unknown\n",
+    "stderr": "(simplifier :num-exprs 893 :num-asts 1228 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 969 :num-asts 1354 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 963 :num-asts 1354 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(fpa2bv :num-exprs 5173 :num-asts 5788 :time 0.00 :before-memory 18.43 :after-memory 18.74)\n(propagate-values :num-exprs 5173 :num-asts 5777 :time 0.00 :before-memory 18.74 :after-memory 18.83)\n(simplifier :num-exprs 14637 :num-asts 21128 :time 0.03 :before-memory 18.83 :after-memory 20.10)\n(ackermannize_bv :num-exprs 14637 :num-asts 18830 :time 0.00 :before-memory 19.71 :after-memory 20.01)\n(bit-blast :num-exprs 294605 :num-asts 286652 :time 0.23 :before-memory 20.01 :after-memory 56.41)\n(simplifier :num-exprs 2851017 :num-asts 539972 :time 0.46 :before-memory 56.41 :after-memory 126.04)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2851017)\n(smt.propagate-values :num-exprs 2851017)\n(smt.nnf-cnf :num-exprs 2851017)\n(smt.reduce-asserted :num-exprs 2851017)\n(smt.maximizing-bv-sharing :num-exprs 2851017)\n(smt.reduce-asserted :num-exprs 2851017)\n(smt.flatten-clauses :num-exprs 2851136)\n(smt.simplifier-done :num-exprs 2851136)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3100363/2742519/4       0/0     0    0  320.35)\n(smt.stats    0    101   3021 197716 3100363/2742519/11      98/6     1    0  324.08)\n(smt.stats    1    202   3910 285309 3100363/2742519/11     199/10     1    0  324.45)\n(smt.stats    2    313   4901 338675 3100363/2742519/11     310/40     1    0  324.51)\n(smt.stats    3    414   7804 470421 3100363/2742519/11     411/61     1    0  324.90)\n(smt.stats    4    525   8852 800405 3100363/2742519/11     522/73     1    0  325.40)\n(smt.stats    5    647  10298 1512723 3100363/2742519/11     644/77     1    0  325.54)\n(smt.stats :restarts :decisions    :clauses/bin/units               :simplify  :memory)\n(smt.stats      :conflicts :propagations                 :lemmas         :deletions   )\n(smt.stats    6    748  10942 2003675 3100363/2742519/11     745/85     1    0  325.65)\n(smt.stats    7    981  12130 2361185 3100363/2742519/11     978/90     1    0  325.70)\n(smt.stats    8   1115  13124 2647995 3100349/2742519/12    1110/95     2   15  325.76)\n(smt :num-exprs 2851017 :num-asts 281525 :time 59.20 :before-memory 120.72 :after-memory 129.39)\n(tactic-exception \"canceled\")\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "unknown"
+    ],
+    "pass": false
+  },
+  {
+    "name": "real-flags-dump-12",
+    "command": [
+      "taskset",
+      "-c",
+      "81",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 14.532298703037668,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 908 :num-asts 1261 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 992 :num-asts 1401 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 983 :num-asts 1401 :time 0.00 :before-memory 18.43 :after-memory 18.53)\n(fpa2bv :num-exprs 5242 :num-asts 5893 :time 0.00 :before-memory 18.53 :after-memory 18.72)\n(propagate-values :num-exprs 5242 :num-asts 5881 :time 0.00 :before-memory 18.83 :after-memory 18.83)\n(simplifier :num-exprs 14756 :num-asts 21322 :time 0.04 :before-memory 18.83 :after-memory 20.13)\n(ackermannize_bv :num-exprs 14756 :num-asts 19014 :time 0.00 :before-memory 19.74 :after-memory 20.04)\n(bit-blast :num-exprs 295500 :num-asts 287561 :time 0.24 :before-memory 20.04 :after-memory 56.44)\n(simplifier :num-exprs 2852231 :num-asts 541249 :time 0.45 :before-memory 56.44 :after-memory 126.06)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2852231)\n(smt.propagate-values :num-exprs 2852231)\n(smt.nnf-cnf :num-exprs 2852231)\n(smt.reduce-asserted :num-exprs 2852231)\n(smt.maximizing-bv-sharing :num-exprs 2852231)\n(smt.reduce-asserted :num-exprs 2852231)\n(smt.flatten-clauses :num-exprs 2852350)\n(smt.simplifier-done :num-exprs 2852350)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3102165/2743425/4       0/0     0    0  320.75)\n(smt.stats    0     86   8499 457358 3102165/2743425/12      80/17     1    0  328.09)\n(smt :num-exprs 0 :num-asts 23549 :time 13.57 :before-memory 120.78 :after-memory 111.00)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-2",
+    "command": [
+      "taskset",
+      "-c",
+      "82",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 28.93407479400048,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 909 :num-asts 1253 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 985 :num-asts 1379 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 985 :num-asts 1379 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(fpa2bv :num-exprs 5186 :num-asts 5804 :time 0.00 :before-memory 18.43 :after-memory 18.73)\n(propagate-values :num-exprs 5186 :num-asts 5793 :time 0.00 :before-memory 18.73 :after-memory 18.82)\n(simplifier :num-exprs 14697 :num-asts 21198 :time 0.03 :before-memory 18.82 :after-memory 20.09)\n(ackermannize_bv :num-exprs 14697 :num-asts 18889 :time 0.00 :before-memory 19.70 :after-memory 20.00)\n(bit-blast :num-exprs 295001 :num-asts 287026 :time 0.23 :before-memory 20.00 :after-memory 56.40)\n(simplifier :num-exprs 2851814 :num-asts 540414 :time 0.46 :before-memory 56.40 :after-memory 125.98)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2851814)\n(smt.propagate-values :num-exprs 2851814)\n(smt.nnf-cnf :num-exprs 2851814)\n(smt.reduce-asserted :num-exprs 2851814)\n(smt.maximizing-bv-sharing :num-exprs 2851814)\n(smt.reduce-asserted :num-exprs 2851814)\n(smt.flatten-clauses :num-exprs 2851933)\n(smt.simplifier-done :num-exprs 2851933)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3101291/2743173/4       0/0     0    0  320.53)\n(smt.stats    0    101   2311 276685 3101291/2743173/6      99/8     1    0  324.65)\n(smt.stats    1   1216   3644 1335400 3101291/2743173/6    1214/19     1    0  326.01)\n(smt.stats    2   1449   8473 1962732 3101291/2743173/7    1446/34     1    0  327.80)\n(smt.stats    3   1505  14750 2364651 3101291/2743173/14    1496/38     1    0  328.81)\n(smt :num-exprs 0 :num-asts 23423 :time 27.98 :before-memory 120.72 :after-memory 111.05)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-3",
+    "command": [
+      "taskset",
+      "-c",
+      "83",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 30.27092714101309,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 911 :num-asts 1264 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 995 :num-asts 1404 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 983 :num-asts 1404 :time 0.00 :before-memory 18.43 :after-memory 18.53)\n(fpa2bv :num-exprs 5241 :num-asts 5895 :time 0.00 :before-memory 18.53 :after-memory 18.73)\n(propagate-values :num-exprs 5241 :num-asts 5883 :time 0.00 :before-memory 18.83 :after-memory 18.83)\n(simplifier :num-exprs 14755 :num-asts 21323 :time 0.02 :before-memory 18.83 :after-memory 20.13)\n(ackermannize_bv :num-exprs 14755 :num-asts 19015 :time 0.00 :before-memory 19.74 :after-memory 20.04)\n(bit-blast :num-exprs 295501 :num-asts 287563 :time 0.23 :before-memory 20.04 :after-memory 56.44)\n(simplifier :num-exprs 2852233 :num-asts 541253 :time 0.46 :before-memory 56.44 :after-memory 126.06)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2852233)\n(smt.propagate-values :num-exprs 2852233)\n(smt.nnf-cnf :num-exprs 2852233)\n(smt.reduce-asserted :num-exprs 2852233)\n(smt.maximizing-bv-sharing :num-exprs 2852233)\n(smt.reduce-asserted :num-exprs 2852233)\n(smt.flatten-clauses :num-exprs 2852352)\n(smt.simplifier-done :num-exprs 2852352)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3102172/2743427/4       0/0     0    0  320.41)\n(smt.stats    0    101   2310  78136 3102172/2743427/7      98/2     1    0  324.06)\n(smt.stats    1    202   3260 200501 3102172/2743427/8     198/14     1    0  324.41)\n(smt.stats    2    313   5789 1264932 3102172/2743427/9     308/24     1    0  325.08)\n(smt.stats    3    414   6019 1296957 3102172/2743427/9     409/26     1    0  325.10)\n(smt.stats    4    610  14745 2180317 3102172/2743427/12     603/35     1    0  327.47)\n(smt :num-exprs 0 :num-asts 23550 :time 29.33 :before-memory 120.78 :after-memory 111.02)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-4",
+    "command": [
+      "taskset",
+      "-c",
+      "84",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 28.327938702015672,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 919 :num-asts 1280 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 1003 :num-asts 1419 :time 0.00 :before-memory 18.43 :after-memory 18.54)\n(propagate-values :num-exprs 985 :num-asts 1419 :time 0.00 :before-memory 18.54 :after-memory 18.54)\n(fpa2bv :num-exprs 5243 :num-asts 5907 :time 0.00 :before-memory 18.54 :after-memory 18.74)\n(propagate-values :num-exprs 5243 :num-asts 5895 :time 0.00 :before-memory 18.83 :after-memory 18.83)\n(simplifier :num-exprs 14700 :num-asts 22594 :time 0.03 :before-memory 18.83 :after-memory 20.14)\n(ackermannize_bv :num-exprs 14700 :num-asts 18972 :time 0.00 :before-memory 19.75 :after-memory 20.05)\n(bit-blast :num-exprs 294552 :num-asts 286632 :time 0.24 :before-memory 20.05 :after-memory 56.42)\n(simplifier :num-exprs 2842804 :num-asts 539537 :time 0.46 :before-memory 56.42 :after-memory 125.90)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2842804)\n(smt.propagate-values :num-exprs 2842804)\n(smt.nnf-cnf :num-exprs 2842804)\n(smt.reduce-asserted :num-exprs 2842804)\n(smt.maximizing-bv-sharing :num-exprs 2842804)\n(smt.reduce-asserted :num-exprs 2842804)\n(smt.flatten-clauses :num-exprs 2842923)\n(smt.simplifier-done :num-exprs 2842923)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3091584/2734452/7       0/0     0    0  320.26)\n(smt.stats    0    101   2555 178787 3091584/2734452/10      98/10     1    0  322.06)\n(smt.stats    1    202   3526 212610 3091584/2734452/11     198/21     1    0  322.11)\n(smt.stats    2    313   4473 425328 3091584/2734452/377     306/37     1    0  322.49)\n(smt.stats    3    414   4673 529408 3091584/2734452/377     407/39     1    0  322.53)\n(smt.stats    4    423  10826 826246 3091584/2734452/380     414/39     1    0  325.65)\n(smt :num-exprs 0 :num-asts 23507 :time 27.41 :before-memory 120.63 :after-memory 110.95)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-5",
+    "command": [
+      "taskset",
+      "-c",
+      "85",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 50.34613184799673,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 902 :num-asts 1237 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 978 :num-asts 1363 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 963 :num-asts 1363 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(fpa2bv :num-exprs 5165 :num-asts 5791 :time 0.00 :before-memory 18.43 :after-memory 18.73)\n(propagate-values :num-exprs 5165 :num-asts 5780 :time 0.00 :before-memory 18.73 :after-memory 18.84)\n(simplifier :num-exprs 14677 :num-asts 21187 :time 0.03 :before-memory 18.84 :after-memory 20.11)\n(ackermannize_bv :num-exprs 14677 :num-asts 18878 :time 0.00 :before-memory 19.72 :after-memory 20.02)\n(bit-blast :num-exprs 294967 :num-asts 286991 :time 0.24 :before-memory 20.02 :after-memory 56.43)\n(simplifier :num-exprs 2851802 :num-asts 540400 :time 0.46 :before-memory 56.42 :after-memory 126.01)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2851802)\n(smt.propagate-values :num-exprs 2851802)\n(smt.nnf-cnf :num-exprs 2851802)\n(smt.reduce-asserted :num-exprs 2851802)\n(smt.maximizing-bv-sharing :num-exprs 2851802)\n(smt.reduce-asserted :num-exprs 2851802)\n(smt.flatten-clauses :num-exprs 2851921)\n(smt.simplifier-done :num-exprs 2851921)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3101294/2743180/4       0/0     0    0  320.32)\n(smt.stats    0    101   3375 186517 3101294/2743180/6      99/15     1    0  325.15)\n(smt.stats    1    414   6368 421563 3101294/2743180/6     412/83     1    0  325.23)\n(smt.stats    2    525  14125 1047272 3101294/2743180/376     517/105     1    0  327.75)\n(smt.stats    3    802  18293 1543237 3101294/2743180/377     793/112     1    0  328.18)\n(smt :num-exprs 0 :num-asts 23412 :time 49.41 :before-memory 120.74 :after-memory 111.06)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-6",
+    "command": [
+      "taskset",
+      "-c",
+      "86",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 45.10972840699833,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 898 :num-asts 1238 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(simplifier :num-exprs 974 :num-asts 1364 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 965 :num-asts 1364 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(fpa2bv :num-exprs 5174 :num-asts 5798 :time 0.00 :before-memory 18.43 :after-memory 18.73)\n(propagate-values :num-exprs 5174 :num-asts 5787 :time 0.00 :before-memory 18.73 :after-memory 18.84)\n(simplifier :num-exprs 14695 :num-asts 21203 :time 0.03 :before-memory 18.84 :after-memory 20.11)\n(ackermannize_bv :num-exprs 14695 :num-asts 18902 :time 0.00 :before-memory 19.72 :after-memory 20.02)\n(bit-blast :num-exprs 295257 :num-asts 287275 :time 0.24 :before-memory 20.02 :after-memory 56.44)\n(simplifier :num-exprs 2852172 :num-asts 540872 :time 0.47 :before-memory 56.43 :after-memory 126.08)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2852172)\n(smt.propagate-values :num-exprs 2852172)\n(smt.nnf-cnf :num-exprs 2852172)\n(smt.reduce-asserted :num-exprs 2852172)\n(smt.maximizing-bv-sharing :num-exprs 2852172)\n(smt.reduce-asserted :num-exprs 2852172)\n(smt.flatten-clauses :num-exprs 2852291)\n(smt.simplifier-done :num-exprs 2852291)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3101800/2743470/7       0/0     0    0  320.36)\n(smt.stats    0    101   2430 187666 3101800/2743470/10      98/10     1    0  324.87)\n(smt.stats    1    202   6054 508512 3101800/2743470/644     194/32     1    0  326.14)\n(smt.stats    2    414   9391 610579 3101800/2743470/644     406/92     1    0  326.27)\n(smt.stats    3    525  12187 918045 3101800/2743470/1009     515/100     1    0  327.36)\n(smt.stats    4    592  16488 1131503 3101800/2743470/1011     581/105     1    0  327.57)\n(smt :num-exprs 0 :num-asts 23437 :time 44.16 :before-memory 120.76 :after-memory 111.08)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-7",
+    "command": [
+      "taskset",
+      "-c",
+      "87",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 60.21518801600905,
+    "exit": 0,
+    "stdout": "unknown\n",
+    "stderr": "(simplifier :num-exprs 901 :num-asts 1244 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 977 :num-asts 1369 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 965 :num-asts 1369 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(fpa2bv :num-exprs 5175 :num-asts 5800 :time 0.00 :before-memory 18.43 :after-memory 18.74)\n(propagate-values :num-exprs 5175 :num-asts 5789 :time 0.00 :before-memory 18.74 :after-memory 18.84)\n(simplifier :num-exprs 14639 :num-asts 21140 :time 0.03 :before-memory 18.84 :after-memory 20.11)\n(ackermannize_bv :num-exprs 14639 :num-asts 18841 :time 0.00 :before-memory 19.72 :after-memory 20.02)\n(bit-blast :num-exprs 294600 :num-asts 286658 :time 0.22 :before-memory 20.02 :after-memory 56.41)\n(simplifier :num-exprs 2851005 :num-asts 539973 :time 0.46 :before-memory 56.41 :after-memory 126.02)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2851005)\n(smt.propagate-values :num-exprs 2851005)\n(smt.nnf-cnf :num-exprs 2851005)\n(smt.reduce-asserted :num-exprs 2851005)\n(smt.maximizing-bv-sharing :num-exprs 2851005)\n(smt.reduce-asserted :num-exprs 2851005)\n(smt.flatten-clauses :num-exprs 2851124)\n(smt.simplifier-done :num-exprs 2851124)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3100342/2742522/7       0/0     0    0  320.58)\n(smt.stats    0    101   1046 208430 3100342/2742522/9      99/4     1    0  323.05)\n(smt.stats    1    202   1638 362076 3100342/2742522/9     200/8     1    0  323.12)\n(smt.stats    2    313   2347 435004 3100342/2742522/9     311/23     1    0  323.12)\n(smt.stats    3    414   2918 514464 3100342/2742522/10     411/24     1    0  323.34)\n(smt.stats    4    981   5747 940043 3100342/2742522/11     977/54     1    0  323.81)\n(smt.stats    5   1216   7214 1036958 3100342/2742522/11    1212/57     1    0  323.91)\n(smt.stats :restarts  :decisions   :clauses/bin/units               :simplify  :memory)\n(smt.stats     :conflicts  :propagations                :lemmas          :deletions   )\n(smt.stats    6   1730   9549 1485199 3100342/2742522/11    1726/74     1    0  324.03)\n(smt.stats    7   1831   9682 1512608 3100342/2742522/11    1827/74     1    0  324.04)\n(smt.stats    8   1942  11133 1743413 3100342/2742522/11    1938/83     1    0  324.49)\n(smt :num-exprs 2851005 :num-asts 281525 :time 59.24 :before-memory 120.69 :after-memory 129.39)\n(tactic-exception \"canceled\")\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "unknown"
+    ],
+    "pass": false
+  },
+  {
+    "name": "real-flags-dump-8",
+    "command": [
+      "taskset",
+      "-c",
+      "88",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 18.963717152015306,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 917 :num-asts 1278 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(simplifier :num-exprs 1001 :num-asts 1418 :time 0.00 :before-memory 18.43 :after-memory 18.53)\n(propagate-values :num-exprs 986 :num-asts 1418 :time 0.00 :before-memory 18.53 :after-memory 18.53)\n(fpa2bv :num-exprs 5245 :num-asts 5907 :time 0.00 :before-memory 18.53 :after-memory 18.73)\n(propagate-values :num-exprs 5245 :num-asts 5895 :time 0.00 :before-memory 18.82 :after-memory 18.82)\n(simplifier :num-exprs 14703 :num-asts 22619 :time 0.03 :before-memory 18.82 :after-memory 20.15)\n(ackermannize_bv :num-exprs 14703 :num-asts 18974 :time 0.00 :before-memory 19.76 :after-memory 20.06)\n(bit-blast :num-exprs 294564 :num-asts 286643 :time 0.19 :before-memory 20.06 :after-memory 56.42)\n(simplifier :num-exprs 2842813 :num-asts 539546 :time 0.36 :before-memory 56.42 :after-memory 125.96)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2842813)\n(smt.propagate-values :num-exprs 2842813)\n(smt.nnf-cnf :num-exprs 2842813)\n(smt.reduce-asserted :num-exprs 2842813)\n(smt.maximizing-bv-sharing :num-exprs 2842813)\n(smt.reduce-asserted :num-exprs 2842813)\n(smt.flatten-clauses :num-exprs 2842932)\n(smt.simplifier-done :num-exprs 2842932)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3091598/2734441/7       0/0     0    0  320.13)\n(smt.stats    0    101   3212 101685 3091598/2734441/10      98/23     1    0  323.23)\n(smt.stats    1    202   3436 310143 3091598/2734441/10     199/28     1    0  323.58)\n(smt.stats    2    816  12079 1242119 3091598/2734441/13     811/34     1    0  326.57)\n(smt :num-exprs 0 :num-asts 23509 :time 18.22 :before-memory 120.63 :after-memory 110.97)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-flags-dump-9",
+    "command": [
+      "taskset",
+      "-c",
+      "89",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 17.27610033500241,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 920 :num-asts 1282 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(simplifier :num-exprs 1004 :num-asts 1422 :time 0.00 :before-memory 18.43 :after-memory 18.54)\n(propagate-values :num-exprs 986 :num-asts 1422 :time 0.00 :before-memory 18.54 :after-memory 18.54)\n(fpa2bv :num-exprs 5244 :num-asts 5910 :time 0.00 :before-memory 18.54 :after-memory 18.74)\n(propagate-values :num-exprs 5244 :num-asts 5898 :time 0.00 :before-memory 18.83 :after-memory 18.83)\n(simplifier :num-exprs 14701 :num-asts 22633 :time 0.02 :before-memory 18.83 :after-memory 20.14)\n(ackermannize_bv :num-exprs 14701 :num-asts 18975 :time 0.00 :before-memory 19.75 :after-memory 20.05)\n(bit-blast :num-exprs 294563 :num-asts 286643 :time 0.19 :before-memory 20.05 :after-memory 56.42)\n(simplifier :num-exprs 2842812 :num-asts 539545 :time 0.36 :before-memory 56.42 :after-memory 125.90)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 2842812)\n(smt.propagate-values :num-exprs 2842812)\n(smt.nnf-cnf :num-exprs 2842812)\n(smt.reduce-asserted :num-exprs 2842812)\n(smt.maximizing-bv-sharing :num-exprs 2842812)\n(smt.reduce-asserted :num-exprs 2842812)\n(smt.flatten-clauses :num-exprs 2842931)\n(smt.simplifier-done :num-exprs 2842931)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units           :simplify  :memory)\n(smt.stats        :conflicts    :propagations            :lemmas      :deletions   )\n(smt.stats    0      0      0      0 3091595/2734442/7       0/0     0    0  320.13)\n(smt.stats    0     90  12543 531746 3091595/2734442/19      83/14     1    0  326.50)\n(smt :num-exprs 0 :num-asts 23510 :time 16.54 :before-memory 120.63 :after-memory 110.95)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-fp-array-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "90",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 25.76876267697662,
+    "exit": 0,
+    "stdout": "sat\n(\n  (define-fun mem () (Array (_ BitVec 64) (_ BitVec 32))\n    ((as const (Array (_ BitVec 64) (_ BitVec 32))) #xdf800702))\n  (define-fun addr () (_ BitVec 64)\n    #x0000000000000000)\n  (define-fun x () (_ FloatingPoint 8 24)\n    (fp #b1 #xbf #b00000000000011100000010))\n  (define-fun mode () Mode\n    A)\n)\n((mode A)\n (addr #x0000000000000000))\n",
+    "stderr": "(simplifier :num-exprs 9 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 9 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 20)\n(ctx-simplify :num-exprs 9 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 9 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 202 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:solve-eqs-elim-vars 1\n :solve-eqs-steps     4)\n(lia2card :num-exprs 7 :num-asts 202 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 5 :num-asts 207 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(:elim-unconstrained 1)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 5)\n(smt.propagate-values :num-exprs 5)\n(smt.reduce-asserted :num-exprs 5)\n(smt.maximizing-bv-sharing :num-exprs 5)\n(smt.reduce-asserted :num-exprs 5)\n(smt.flatten-clauses :num-exprs 5)\n(smt.simplifier-done :num-exprs 5)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units         :simplify   :memory)\n(smt.stats        :conflicts    :propagations          :lemmas      :deletions   )\n(smt.stats    0      0      0      0 136784/22130/13       0/0     0    0   44.40)\n(smt.stats    0    101   2015 120052 137918/22189/334      64/0     1    6   47.33)\n(smt.stats    1    202   5241 381760 137380/22202/355     131/0     2   30   48.05)\n(smt.stats    2    313  13134 903227 137809/22211/378     210/1     5   30   49.49)\n(smt.stats    3    414  13992 1063383 138235/22218/380     303/1     5   30   49.59)\n(smt.stats    4    525  14722 1222420 138432/22229/383     400/1     6   35   49.93)\n(smt.stats    5    652  33251 3753316 139413/22235/485     418/2    18   38   50.12)\n(smt.stats :restarts :decisions    :clauses/bin/units           :simplify    :memory)\n(smt.stats      :conflicts :propagations               :lemmas       :deletions    )\n(smt.stats    6    757  56678 5912680 139114/22241/570     437/2    29   40   50.22)\n(smt.stats    7    890  89318 8841236 138396/22241/688     452/2    43   40   50.31)\n(smt.stats    8   1014  92988 9152910 137958/22255/700     549/3    45   45   50.41)\n(smt.stats    9   1157  98220 9869131 137490/22263/734     650/3    48   45   52.22)\n(smt.stats   10   1268 123621 12099036 137751/22265/828     665/3    59   45   52.32)\n(smt.stats   11   1387 158795 14412066 139129/22266/921     690/3    69   45   52.42)\n(smt.stats :restarts :decisions     :clauses/bin/units           :simplify    :memory)\n(smt.stats     :conflicts  :propagations                :lemmas       :deletions    )\n(smt.stats   12   1509 164513 14773261 138595/22286/935     778/3    71   45   52.51)\n(smt.stats   13   1644 171221 15707698 138042/22298/957     875/4    75   69   52.51)\n(smt.stats   14   1807 220670 19095945 138752/22298/1102     893/4    91   69   52.71)\n(smt.stats   15   1908 271652 20978583 139823/22298/1182     914/4   100   69   52.80)\n(smt.stats   16   2019 273168 21152481 138116/22301/1186    1018/4   101   69   52.99)\n(smt.stats   17   2141 276608 21523795 137914/22311/1192    1124/4   102   69   53.09)\n(smt.stats   18   2276 280832 22685614 138779/22321/1220    1221/4   108   69   53.09)\n(smt.stats   19   2423 292394 24158320 139011/22327/1269    1313/4   114   69   53.19)\n(smt.stats   20   2588 303298 24757762 137861/22340/1287    1447/4   117   69   53.29)\n(smt.stats   21   2689 304673 24999571 138880/22346/1295    1534/4   118   71   53.38)\n(smt.stats   22   2800 305513 25176047 137702/22351/1302    1633/4   119   73   53.38)\n(smt.stats   23   2870 334698 26338157 138989/22351/1351    1654/4   124   73   53.48)\n(smt :num-exprs 0 :num-asts 891 :time 25.74 :before-memory 18.14 :after-memory 24.88)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-fp-array-unsat",
+    "command": [
+      "taskset",
+      "-c",
+      "91",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02663926698733121,
+    "exit": 0,
+    "stdout": "unsat\n",
+    "stderr": "(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 11 :num-asts 204 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 1 :num-asts 206 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n",
+    "expected": [
+      "unsat"
+    ],
+    "statuses": [
+      "unsat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-1",
+    "command": [
+      "taskset",
+      "-c",
+      "92",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.22400286799529567,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 418 :num-asts 723 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 482 :num-asts 813 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 482 :num-asts 813 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 1363 :num-asts 1833 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(propagate-values :num-exprs 1363 :num-asts 1833 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11980 :num-asts 18854 :time 0.02 :before-memory 18.43 :after-memory 19.53)\n(ackermannize_bv :num-exprs 11980 :num-asts 14030 :time 0.00 :before-memory 19.38 :after-memory 19.54)\n(bit-blast :num-exprs 16298 :num-asts 31017 :time 0.03 :before-memory 19.54 :after-memory 20.39)\n(simplifier :num-exprs 25846 :num-asts 39923 :time 0.01 :before-memory 20.29 :after-memory 21.01)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25846)\n(smt.propagate-values :num-exprs 25846)\n(smt.nnf-cnf :num-exprs 25846)\n(smt.reduce-asserted :num-exprs 25846)\n(smt.maximizing-bv-sharing :num-exprs 25846)\n(smt.reduce-asserted :num-exprs 25846)\n(smt.flatten-clauses :num-exprs 25941)\n(smt.simplifier-done :num-exprs 25941)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39911/17158/2       0/0     0    0   26.48)\n(smt.stats    0     51   2433  22056 39911/17158/88      49/2     1    0   27.76)\n(smt :num-exprs 0 :num-asts 18548 :time 0.13 :before-memory 20.71 :after-memory 21.27)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-10",
+    "command": [
+      "taskset",
+      "-c",
+      "93",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.38874467700952664,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 421 :num-asts 732 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 485 :num-asts 822 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(propagate-values :num-exprs 467 :num-asts 822 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(fpa2bv :num-exprs 1353 :num-asts 1845 :time 0.00 :before-memory 18.34 :after-memory 18.44)\n(propagate-values :num-exprs 1353 :num-asts 1845 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(simplifier :num-exprs 11976 :num-asts 18945 :time 0.02 :before-memory 18.44 :after-memory 19.55)\n(ackermannize_bv :num-exprs 11976 :num-asts 14050 :time 0.00 :before-memory 19.39 :after-memory 19.55)\n(bit-blast :num-exprs 16555 :num-asts 31400 :time 0.04 :before-memory 19.55 :after-memory 20.33)\n(simplifier :num-exprs 26178 :num-asts 40559 :time 0.01 :before-memory 20.33 :after-memory 21.16)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 26178)\n(smt.propagate-values :num-exprs 26178)\n(smt.nnf-cnf :num-exprs 26178)\n(smt.reduce-asserted :num-exprs 26178)\n(smt.maximizing-bv-sharing :num-exprs 26178)\n(smt.reduce-asserted :num-exprs 26178)\n(smt.flatten-clauses :num-exprs 26273)\n(smt.simplifier-done :num-exprs 26273)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 40390/17426/7       0/0     0    0   26.60)\n(smt.stats    0     62   4250  16948 40390/17426/9      60/11     1    0   27.98)\n(smt :num-exprs 0 :num-asts 18697 :time 0.28 :before-memory 20.74 :after-memory 21.32)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-11",
+    "command": [
+      "taskset",
+      "-c",
+      "94",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.2457898209686391,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 398 :num-asts 693 :time 0.00 :before-memory 18.23 :after-memory 18.23)\n(simplifier :num-exprs 462 :num-asts 783 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 459 :num-asts 783 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 1348 :num-asts 1815 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(propagate-values :num-exprs 1348 :num-asts 1815 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11977 :num-asts 18846 :time 0.02 :before-memory 18.43 :after-memory 19.51)\n(ackermannize_bv :num-exprs 11977 :num-asts 14035 :time 0.00 :before-memory 19.36 :after-memory 19.52)\n(bit-blast :num-exprs 16548 :num-asts 31189 :time 0.03 :before-memory 19.52 :after-memory 20.40)\n(simplifier :num-exprs 26196 :num-asts 40350 :time 0.01 :before-memory 20.29 :after-memory 21.13)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 26196)\n(smt.propagate-values :num-exprs 26196)\n(smt.nnf-cnf :num-exprs 26196)\n(smt.reduce-asserted :num-exprs 26196)\n(smt.maximizing-bv-sharing :num-exprs 26196)\n(smt.reduce-asserted :num-exprs 26196)\n(smt.flatten-clauses :num-exprs 26291)\n(smt.simplifier-done :num-exprs 26291)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 40418/17453/2       0/0     0    0   26.49)\n(smt.stats    0    101    237  76647 40418/17453/3     100/2     1    0   26.70)\n(smt.stats    1    152   2356  87971 40418/17453/3     151/6     2    0   27.87)\n(smt :num-exprs 0 :num-asts 18488 :time 0.16 :before-memory 20.72 :after-memory 21.31)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-12",
+    "command": [
+      "taskset",
+      "-c",
+      "95",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.23854146100347862,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 406 :num-asts 705 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 470 :num-asts 795 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(propagate-values :num-exprs 464 :num-asts 795 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(fpa2bv :num-exprs 1347 :num-asts 1819 :time 0.00 :before-memory 18.34 :after-memory 18.44)\n(propagate-values :num-exprs 1347 :num-asts 1819 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(simplifier :num-exprs 11937 :num-asts 18904 :time 0.02 :before-memory 18.44 :after-memory 19.54)\n(ackermannize_bv :num-exprs 11937 :num-asts 13983 :time 0.00 :before-memory 19.39 :after-memory 19.55)\n(bit-blast :num-exprs 16020 :num-asts 30769 :time 0.03 :before-memory 19.55 :after-memory 20.32)\n(simplifier :num-exprs 25322 :num-asts 39288 :time 0.00 :before-memory 20.32 :after-memory 21.01)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25322)\n(smt.propagate-values :num-exprs 25322)\n(smt.nnf-cnf :num-exprs 25322)\n(smt.reduce-asserted :num-exprs 25322)\n(smt.maximizing-bv-sharing :num-exprs 25322)\n(smt.reduce-asserted :num-exprs 25322)\n(smt.flatten-clauses :num-exprs 25417)\n(smt.simplifier-done :num-exprs 25417)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39161/16734/2       0/0     0    0   26.42)\n(smt.stats    0     74   3003  28923 39161/16734/3      73/4     1    0   27.88)\n(smt :num-exprs 0 :num-asts 18565 :time 0.15 :before-memory 20.68 :after-memory 21.34)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-13",
+    "command": [
+      "taskset",
+      "-c",
+      "96",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.2260114750242792,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 409 :num-asts 708 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 473 :num-asts 798 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(propagate-values :num-exprs 464 :num-asts 798 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(fpa2bv :num-exprs 1354 :num-asts 1831 :time 0.00 :before-memory 18.34 :after-memory 18.44)\n(propagate-values :num-exprs 1354 :num-asts 1831 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(simplifier :num-exprs 11937 :num-asts 18917 :time 0.02 :before-memory 18.44 :after-memory 19.54)\n(ackermannize_bv :num-exprs 11937 :num-asts 13995 :time 0.00 :before-memory 19.38 :after-memory 19.54)\n(bit-blast :num-exprs 16020 :num-asts 30781 :time 0.03 :before-memory 19.54 :after-memory 20.32)\n(simplifier :num-exprs 25322 :num-asts 39300 :time 0.00 :before-memory 20.32 :after-memory 21.03)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25322)\n(smt.propagate-values :num-exprs 25322)\n(smt.nnf-cnf :num-exprs 25322)\n(smt.reduce-asserted :num-exprs 25322)\n(smt.maximizing-bv-sharing :num-exprs 25322)\n(smt.reduce-asserted :num-exprs 25322)\n(smt.flatten-clauses :num-exprs 25417)\n(smt.simplifier-done :num-exprs 25417)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39161/16734/2       0/0     0    0   26.42)\n(smt.stats    0     33   2677  15420 39161/16734/3      32/3     1    0   27.89)\n(smt :num-exprs 0 :num-asts 18577 :time 0.14 :before-memory 20.68 :after-memory 21.34)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-2",
+    "command": [
+      "taskset",
+      "-c",
+      "97",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.20203688100446016,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 407 :num-asts 702 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 471 :num-asts 792 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 459 :num-asts 792 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 1346 :num-asts 1821 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(propagate-values :num-exprs 1346 :num-asts 1821 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11970 :num-asts 18847 :time 0.02 :before-memory 18.43 :after-memory 19.53)\n(ackermannize_bv :num-exprs 11970 :num-asts 14033 :time 0.00 :before-memory 19.38 :after-memory 19.54)\n(bit-blast :num-exprs 16547 :num-asts 31186 :time 0.03 :before-memory 19.54 :after-memory 20.41)\n(simplifier :num-exprs 26170 :num-asts 40345 :time 0.00 :before-memory 20.30 :after-memory 21.13)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 26170)\n(smt.propagate-values :num-exprs 26170)\n(smt.nnf-cnf :num-exprs 26170)\n(smt.reduce-asserted :num-exprs 26170)\n(smt.maximizing-bv-sharing :num-exprs 26170)\n(smt.reduce-asserted :num-exprs 26170)\n(smt.flatten-clauses :num-exprs 26265)\n(smt.simplifier-done :num-exprs 26265)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 40390/17426/2       0/0     0    0   26.49)\n(smt.stats    0    101    362  43885 40390/17426/2     101/6     1    0   26.69)\n(smt.stats    1    104   2394  50125 40390/17426/2     104/6     1    0   27.88)\n(smt :num-exprs 0 :num-asts 18486 :time 0.12 :before-memory 20.72 :after-memory 21.31)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-3",
+    "command": [
+      "taskset",
+      "-c",
+      "98",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.3647082530078478,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 415 :num-asts 721 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 479 :num-asts 811 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(propagate-values :num-exprs 464 :num-asts 811 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(fpa2bv :num-exprs 1356 :num-asts 1846 :time 0.00 :before-memory 18.34 :after-memory 18.44)\n(propagate-values :num-exprs 1356 :num-asts 1846 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(simplifier :num-exprs 11937 :num-asts 18926 :time 0.02 :before-memory 18.44 :after-memory 19.52)\n(ackermannize_bv :num-exprs 11937 :num-asts 14006 :time 0.00 :before-memory 19.38 :after-memory 19.54)\n(bit-blast :num-exprs 16037 :num-asts 30738 :time 0.03 :before-memory 19.54 :after-memory 20.31)\n(simplifier :num-exprs 25341 :num-asts 39259 :time 0.00 :before-memory 20.31 :after-memory 21.02)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25341)\n(smt.propagate-values :num-exprs 25341)\n(smt.nnf-cnf :num-exprs 25341)\n(smt.reduce-asserted :num-exprs 25341)\n(smt.maximizing-bv-sharing :num-exprs 25341)\n(smt.reduce-asserted :num-exprs 25341)\n(smt.flatten-clauses :num-exprs 25427)\n(smt.simplifier-done :num-exprs 25427)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39200/16740/5       0/0     0    0   26.43)\n(smt.stats    0    101   2164  41387 39200/16740/6     100/0     1    0   27.82)\n(smt.stats    1    132   4272  49856 39200/16740/6     131/1     1    0   27.92)\n(smt :num-exprs 0 :num-asts 18524 :time 0.29 :before-memory 20.69 :after-memory 21.34)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-4",
+    "command": [
+      "taskset",
+      "-c",
+      "99",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.37803459097631276,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 438 :num-asts 747 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 502 :num-asts 837 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 469 :num-asts 837 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(fpa2bv :num-exprs 1356 :num-asts 1862 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(propagate-values :num-exprs 1356 :num-asts 1862 :time 0.00 :before-memory 18.52 :after-memory 18.52)\n(simplifier :num-exprs 11978 :num-asts 18961 :time 0.02 :before-memory 18.52 :after-memory 19.57)\n(ackermannize_bv :num-exprs 11978 :num-asts 14066 :time 0.00 :before-memory 19.42 :after-memory 19.57)\n(bit-blast :num-exprs 16573 :num-asts 31428 :time 0.04 :before-memory 19.57 :after-memory 20.33)\n(simplifier :num-exprs 26194 :num-asts 40584 :time 0.01 :before-memory 20.33 :after-memory 21.16)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 26194)\n(smt.propagate-values :num-exprs 26194)\n(smt.nnf-cnf :num-exprs 26194)\n(smt.reduce-asserted :num-exprs 26194)\n(smt.maximizing-bv-sharing :num-exprs 26194)\n(smt.reduce-asserted :num-exprs 26194)\n(smt.flatten-clauses :num-exprs 26280)\n(smt.simplifier-done :num-exprs 26280)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 40431/17434/5       0/0     0    0   26.61)\n(smt.stats    0     13   4091   9799 40431/17434/36      11/4     1    0   27.99)\n(smt :num-exprs 0 :num-asts 18713 :time 0.29 :before-memory 20.75 :after-memory 21.33)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-5",
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.3777516539557837,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 406 :num-asts 707 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 470 :num-asts 797 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(propagate-values :num-exprs 464 :num-asts 797 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(fpa2bv :num-exprs 1348 :num-asts 1823 :time 0.00 :before-memory 18.34 :after-memory 18.44)\n(propagate-values :num-exprs 1348 :num-asts 1823 :time 0.00 :before-memory 18.44 :after-memory 18.44)\n(simplifier :num-exprs 11937 :num-asts 18907 :time 0.02 :before-memory 18.44 :after-memory 19.55)\n(ackermannize_bv :num-exprs 11937 :num-asts 13986 :time 0.00 :before-memory 19.39 :after-memory 19.55)\n(bit-blast :num-exprs 16036 :num-asts 30782 :time 0.03 :before-memory 19.55 :after-memory 20.32)\n(simplifier :num-exprs 25340 :num-asts 39303 :time 0.00 :before-memory 20.32 :after-memory 21.01)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25340)\n(smt.propagate-values :num-exprs 25340)\n(smt.nnf-cnf :num-exprs 25340)\n(smt.reduce-asserted :num-exprs 25340)\n(smt.maximizing-bv-sharing :num-exprs 25340)\n(smt.reduce-asserted :num-exprs 25340)\n(smt.flatten-clauses :num-exprs 25426)\n(smt.simplifier-done :num-exprs 25426)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39200/16740/4       0/0     0    0   26.43)\n(smt.stats    0    101   2351  50698 39200/16740/6      99/0     1    0   27.81)\n(smt.stats    1    142   4512  69935 39200/16740/6     140/1     1    0   27.91)\n(smt :num-exprs 0 :num-asts 18568 :time 0.29 :before-memory 20.69 :after-memory 21.34)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-6",
+    "command": [
+      "taskset",
+      "-c",
+      "101",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.1889381090295501,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 410 :num-asts 705 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 474 :num-asts 795 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 459 :num-asts 795 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 1341 :num-asts 1818 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(propagate-values :num-exprs 1341 :num-asts 1818 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11961 :num-asts 18847 :time 0.01 :before-memory 18.43 :after-memory 19.52)\n(ackermannize_bv :num-exprs 11961 :num-asts 14021 :time 0.00 :before-memory 19.37 :after-memory 19.53)\n(bit-blast :num-exprs 16264 :num-asts 30919 :time 0.03 :before-memory 19.53 :after-memory 20.31)\n(simplifier :num-exprs 25826 :num-asts 39839 :time 0.00 :before-memory 20.31 :after-memory 21.01)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25826)\n(smt.propagate-values :num-exprs 25826)\n(smt.nnf-cnf :num-exprs 25826)\n(smt.reduce-asserted :num-exprs 25826)\n(smt.maximizing-bv-sharing :num-exprs 25826)\n(smt.reduce-asserted :num-exprs 25826)\n(smt.flatten-clauses :num-exprs 25921)\n(smt.simplifier-done :num-exprs 25921)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39904/17158/2       0/0     0    0   26.47)\n(smt.stats    0    101    249  51410 39904/17158/3     100/10     1    0   26.56)\n(smt.stats    1    190   2406  69643 39904/17158/3     189/13     1    0   27.74)\n(smt :num-exprs 0 :num-asts 18474 :time 0.12 :before-memory 20.70 :after-memory 21.28)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-7",
+    "command": [
+      "taskset",
+      "-c",
+      "102",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.39159172703512013,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 409 :num-asts 711 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 473 :num-asts 801 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 464 :num-asts 801 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 1353 :num-asts 1832 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(propagate-values :num-exprs 1353 :num-asts 1832 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11981 :num-asts 18859 :time 0.02 :before-memory 18.43 :after-memory 19.53)\n(ackermannize_bv :num-exprs 11981 :num-asts 14049 :time 0.00 :before-memory 19.38 :after-memory 19.54)\n(bit-blast :num-exprs 16571 :num-asts 31282 :time 0.03 :before-memory 19.54 :after-memory 20.41)\n(simplifier :num-exprs 26219 :num-asts 40442 :time 0.00 :before-memory 20.31 :after-memory 21.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 26219)\n(smt.propagate-values :num-exprs 26219)\n(smt.nnf-cnf :num-exprs 26219)\n(smt.reduce-asserted :num-exprs 26219)\n(smt.maximizing-bv-sharing :num-exprs 26219)\n(smt.reduce-asserted :num-exprs 26219)\n(smt.flatten-clauses :num-exprs 26305)\n(smt.simplifier-done :num-exprs 26305)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 40458/17460/5       0/0     0    0   26.52)\n(smt.stats    0    101   2366  24663 40458/17460/7      99/5     1    0   27.82)\n(smt.stats    1    116   4484  31728 40458/17460/7     114/5     1    0   27.92)\n(smt :num-exprs 0 :num-asts 18567 :time 0.31 :before-memory 20.74 :after-memory 21.32)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-8",
+    "command": [
+      "taskset",
+      "-c",
+      "103",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.20617166598094627,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 411 :num-asts 714 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 475 :num-asts 804 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(propagate-values :num-exprs 463 :num-asts 804 :time 0.00 :before-memory 18.33 :after-memory 18.33)\n(fpa2bv :num-exprs 1347 :num-asts 1828 :time 0.00 :before-memory 18.33 :after-memory 18.43)\n(propagate-values :num-exprs 1347 :num-asts 1828 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11937 :num-asts 18826 :time 0.02 :before-memory 18.43 :after-memory 19.52)\n(ackermannize_bv :num-exprs 11937 :num-asts 13991 :time 0.00 :before-memory 19.37 :after-memory 19.53)\n(bit-blast :num-exprs 16020 :num-asts 30712 :time 0.03 :before-memory 19.53 :after-memory 20.32)\n(simplifier :num-exprs 25324 :num-asts 39233 :time 0.00 :before-memory 20.32 :after-memory 21.03)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25324)\n(smt.propagate-values :num-exprs 25324)\n(smt.nnf-cnf :num-exprs 25324)\n(smt.reduce-asserted :num-exprs 25324)\n(smt.maximizing-bv-sharing :num-exprs 25324)\n(smt.reduce-asserted :num-exprs 25324)\n(smt.flatten-clauses :num-exprs 25419)\n(smt.simplifier-done :num-exprs 25419)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39160/16733/5       0/0     0    0   26.36)\n(smt.stats    0     93   2462  51321 39160/16733/7      91/0     1    0   27.72)\n(smt :num-exprs 0 :num-asts 18509 :time 0.13 :before-memory 20.69 :after-memory 21.34)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-nan-dump-9",
+    "command": [
+      "taskset",
+      "-c",
+      "104",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.3211960890330374,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": "(simplifier :num-exprs 418 :num-asts 728 :time 0.00 :before-memory 18.24 :after-memory 18.24)\n(simplifier :num-exprs 482 :num-asts 818 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(propagate-values :num-exprs 467 :num-asts 818 :time 0.00 :before-memory 18.34 :after-memory 18.34)\n(fpa2bv :num-exprs 1357 :num-asts 1848 :time 0.00 :before-memory 18.34 :after-memory 18.43)\n(propagate-values :num-exprs 1357 :num-asts 1848 :time 0.00 :before-memory 18.43 :after-memory 18.43)\n(simplifier :num-exprs 11939 :num-asts 18928 :time 0.01 :before-memory 18.43 :after-memory 19.55)\n(ackermannize_bv :num-exprs 11939 :num-asts 14008 :time 0.00 :before-memory 19.39 :after-memory 19.55)\n(bit-blast :num-exprs 16024 :num-asts 30860 :time 0.02 :before-memory 19.55 :after-memory 20.32)\n(simplifier :num-exprs 25328 :num-asts 39381 :time 0.00 :before-memory 20.32 :after-memory 21.04)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 25328)\n(smt.propagate-values :num-exprs 25328)\n(smt.nnf-cnf :num-exprs 25328)\n(smt.reduce-asserted :num-exprs 25328)\n(smt.maximizing-bv-sharing :num-exprs 25328)\n(smt.reduce-asserted :num-exprs 25328)\n(smt.flatten-clauses :num-exprs 25423)\n(smt.simplifier-done :num-exprs 25423)\n(smt.searching)\n(smt.stats :restarts     :decisions :clauses/bin/units       :simplify   :memory)\n(smt.stats        :conflicts    :propagations        :lemmas      :deletions   )\n(smt.stats    0      0      0      0 39160/16733/7       0/0     0    0   26.37)\n(smt.stats    0     39   4228  14959 39160/16733/8      38/7     1    0   27.85)\n(smt :num-exprs 0 :num-asts 18655 :time 0.25 :before-memory 20.69 :after-memory 21.35)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  },
+  {
+    "name": "real-record-sat",
+    "command": [
+      "taskset",
+      "-c",
+      "105",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+      "-t:60000",
+      "-in",
+      "-v:10"
+    ],
+    "wall_s": 0.02077261498197913,
+    "exit": 0,
+    "stdout": "sat\n(\n  (define-fun p () Pair\n    (mk #x07 B))\n  (define-fun mem () (Array (_ BitVec 64) (_ BitVec 32))\n    ((as const (Array (_ BitVec 64) (_ BitVec 32))) #x00000000))\n  (define-fun mode () Mode\n    A)\n  (define-fun addr () (_ BitVec 64)\n    #x0000000000000000)\n  (define-fun x () (_ FloatingPoint 8 24)\n    (_ NaN 8 24))\n)\n((mode A)\n (addr #x0000000000000000))\n",
+    "stderr": "(simplifier :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(propagate-values :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(ctx-simplify :num-steps 16)\n(ctx-simplify :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(simplifier :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(solve-eqs :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(lia2card :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(elim-uncnstr :num-exprs 7 :num-asts 200 :time 0.00 :before-memory 18.14 :after-memory 18.14)\n(smt.tactic start)\n(smt.simplify-begin :num-exprs 7)\n(smt.propagate-values :num-exprs 7)\n(smt.nnf-cnf :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.maximizing-bv-sharing :num-exprs 7)\n(smt.reduce-asserted :num-exprs 7)\n(smt.flatten-clauses :num-exprs 7)\n(smt.simplifier-done :num-exprs 7)\n(smt.searching)\n(smt.stats :restarts     :decisions   :clauses/bin/units :simplify   :memory)\n(smt.stats        :conflicts    :propagations    :lemmas      :deletions   )\n(smt.stats    0      0      0      0     0/0/2       0/0     0    0   18.71)\n(smt.stats    0      1      1      0     0/0/21       0/0     0    0   18.71)\n(smt :num-exprs 0 :num-asts 224 :time 0.00 :before-memory 18.14 :after-memory 18.22)\n",
+    "expected": [
+      "sat"
+    ],
+    "statuses": [
+      "sat"
+    ],
+    "pass": true
+  }
+]

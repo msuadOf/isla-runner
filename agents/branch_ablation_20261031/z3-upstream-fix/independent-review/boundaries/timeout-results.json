@@ -1,0 +1,44 @@
+[
+  {
+    "binary": "baseline",
+    "repeat": 0,
+    "stdout": "sat\n",
+    "stderr": "",
+    "rc": 0
+  },
+  {
+    "binary": "patched",
+    "repeat": 0,
+    "stdout": "unknown\n",
+    "stderr": "",
+    "rc": 0
+  },
+  {
+    "binary": "baseline",
+    "repeat": 1,
+    "stdout": "sat\n",
+    "stderr": "",
+    "rc": 0
+  },
+  {
+    "binary": "patched",
+    "repeat": 1,
+    "stdout": "unknown\n",
+    "stderr": "",
+    "rc": 0
+  },
+  {
+    "binary": "baseline",
+    "repeat": 2,
+    "stdout": "sat\n",
+    "stderr": "",
+    "rc": 0
+  },
+  {
+    "binary": "patched",
+    "repeat": 2,
+    "stdout": "unknown\n",
+    "stderr": "",
+    "rc": 0
+  }
+]

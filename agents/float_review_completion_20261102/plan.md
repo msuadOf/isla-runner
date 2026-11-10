@@ -1,0 +1,7 @@
+# 浮点review剩余项并行修复
+
+用户授权重新受控消融，并用subagent完成不重叠的汇编三表示、ExecuteAs和数据条件核账。性能实验另见agents/branch_ablation_official_z3_20261102；冻结修复前正式Release+官方Z3，不混入本议题代码。三名同提供方native agent本轮完成：assembly独占新representation模块并交接线patch；executeas独占exec.rs/其fixture；data-conditions只写自己证据目录，主agent汇总、接线及同步runner-float；ExecuteAs agent修复API后独占根target完成构建/单测，主agent随后构建runner及最终make验收。无agent子代理或新checkout，根isla已有未提交CLI/Make/newZ3前缀改动须保留。
+
+汇编必须同时保留助记符/精确位串与字节/.insn，不删除非法路径；GCC/Clang双工具链实证。ExecuteAs优先复用LocalFrame.new_call保留同一帧状态/内存/预算与SMT checkpoint，只有载荷最终返回才输出后态；旧0x1fe0,x2=7时x8应1027作红绿例。数据核账跳过主消融，区分当前同版本与历史证据，补静态RM/估算指令/BF16/多lane异常义务。
+
+主agent最终review生产diff、编译、单测与真实IR回归（含assembly合同/BF16边界）、再同步对应float独立检出。不得自动改memory旧实现或Sail控制流，不改IR/模型/gitlink，不提交/推送，除非用户另行要求。

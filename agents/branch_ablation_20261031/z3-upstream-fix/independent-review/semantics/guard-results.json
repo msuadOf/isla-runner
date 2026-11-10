@@ -1,0 +1,30 @@
+[
+  {
+    "option": "produce-proofs",
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "option": "produce-proofs",
+    "binary": "patched",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "option": "produce-unsat-cores",
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "option": "produce-unsat-cores",
+    "binary": "patched",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  }
+]

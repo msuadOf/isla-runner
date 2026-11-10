@@ -1,0 +1,17 @@
+{
+  "upstream_revision": "6ef1c356b86d3ad8e58c889bed49bdb99becbc70",
+  "library_sha256": "d7a3c26fc007cd0586644dcbacb86715904844c55296c1c8dba4b634ec20eb36",
+  "source_binary_sha256": "9ae1b1d600a92af6f6b6b00120f26b60ba4f1b53ff177220db02acce2a83e0f5",
+  "isolated_binary_sha256": "a6c09ab29f06a6140bb340a3ba940784e641668fd6c30a564109ac2994ac301f",
+  "method": "independent copy of the current debug Isla; only its libz3 dependency is changed",
+  "fork_main": "d5aa015a24e266578164157d7b0268c2babf3008",
+  "source_hashes": {
+    "src/tactic/fpa/qffp_tactic.cpp": "111db8fb02dd20421c41526119556308cabf29ac26f8d6d45f554e2a6da9b826",
+    "src/tactic/fpa/qffp_tactic.h": "4f5f682855c76d804a32b2f5f57bd3ecf66df8cebab15d82833c9889212076aa",
+    "src/tactic/portfolio/default_tactic.cpp": "d1c59cca361c9e820187983cd60c4f93405893f68eeb7b14232945ce2e27e371",
+    "src/test/fpa.cpp": "107c98cf52c718b9e479e293beac5c332e0470b940a7fb567f484bb1b698de0c"
+  },
+  "api_checks": 18,
+  "model_evaluations": 64,
+  "source_exactly_upstream_pr": true
+}

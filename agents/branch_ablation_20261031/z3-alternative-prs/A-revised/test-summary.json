@@ -1,0 +1,9 @@
+{
+  "variant": "A-revised",
+  "binary_sha256": "daaad0a603c923701f0c79f3604c46b1bc132854459d71b315e78753e492842b",
+  "query_count": 90,
+  "query_pass": 90,
+  "api_checks": 18,
+  "model_evaluations": 64,
+  "api_pass": true
+}

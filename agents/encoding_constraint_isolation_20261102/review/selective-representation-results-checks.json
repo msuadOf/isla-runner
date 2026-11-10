@@ -1,0 +1,40 @@
+{
+  "batch": "selective",
+  "source_commit": "cf1aa1431d5f2d05584c78c0e7c84862a9a9b1fa",
+  "semantic_requested": false,
+  "representation_requested": true,
+  "semantic_jobs": 0,
+  "semantic_gen": 0,
+  "semantic_assertions_repeated": 0,
+  "initial_values_verified": 0,
+  "representation_jobs": [
+    {
+      "job": "bf16-vl0",
+      "gen": 6,
+      "checks": 36,
+      "json_sha256": "dfcb1e3c6685248cfcc0b9fa6822d6b5f82e37e2fa0d9fd6d71069c0163d5321"
+    },
+    {
+      "job": "bf16-vl1",
+      "gen": 6,
+      "checks": 36,
+      "json_sha256": "5be10e5e037701d0246e70f03efe984a14fab3439ac982e9464a39ac1a5c8ab9"
+    },
+    {
+      "job": "c-addi4spn",
+      "gen": 1,
+      "checks": 6,
+      "json_sha256": "c10f6502a2ffca9bf1d3d6ccb5bedfdfbd6298e133cdb7b8f6afcb46109a24c4"
+    },
+    {
+      "job": "make-smoke",
+      "gen": 8,
+      "checks": 48,
+      "json_sha256": "6f1bfccd82a60a4f1e5f4af48c0f3e62f104100eaaf886675df9cee0611e48f4"
+    }
+  ],
+  "toolchain_checks": 126,
+  "expected_illegal_clang_rejections": 4,
+  "semantic_rows": [],
+  "pass": true
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "batch": "000-015",
+    "count": 16,
+    "first": "add_h_dyn_frm0",
+    "last": "add_s_rmm_frm0",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.294
+  },
+  {
+    "batch": "016-031",
+    "count": 16,
+    "first": "add_d_dyn_frm0",
+    "last": "madd_s_dyn_frm3",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.307
+  },
+  {
+    "batch": "032-047",
+    "count": 16,
+    "first": "madd_s_dyn_frm4",
+    "last": "sqrt_h_dyn_frm3",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.33
+  },
+  {
+    "batch": "048-063",
+    "count": 16,
+    "first": "sqrt_h_dyn_frm4",
+    "last": "sqrt_d_dyn_frm3",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.403
+  },
+  {
+    "batch": "064-079",
+    "count": 16,
+    "first": "sqrt_d_dyn_frm4",
+    "last": "fx_s_rdn_frm3",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.798
+  },
+  {
+    "batch": "080-095",
+    "count": 16,
+    "first": "fx_s_rup_frm4",
+    "last": "xf_s_dyn_frm1",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.927
+  },
+  {
+    "batch": "096-111",
+    "count": 16,
+    "first": "xf_s_dyn_frm2",
+    "last": "round_h_dyn_frm1",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.706
+  },
+  {
+    "batch": "112-127",
+    "count": 16,
+    "first": "round_h_dyn_frm2",
+    "last": "round_d_dyn_frm1",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 7.645
+  },
+  {
+    "batch": "128-143",
+    "count": 16,
+    "first": "round_d_dyn_frm2",
+    "last": "roundnx_s_rne_frm1",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 7.505
+  },
+  {
+    "batch": "144-159",
+    "count": 16,
+    "first": "roundnx_s_rtz_frm2",
+    "last": "ff_h_from_d_dyn_frm0",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 7.762
+  },
+  {
+    "batch": "160-168",
+    "count": 9,
+    "first": "ff_h_from_d_dyn_frm1",
+    "last": "ff_s_from_d_dyn_frm4",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.935
+  }
+]

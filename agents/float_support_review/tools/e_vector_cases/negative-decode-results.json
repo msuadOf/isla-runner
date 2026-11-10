@@ -1,0 +1,90 @@
+[
+  {
+    "name": "f_bin_rm_type_s_encoded_rm5",
+    "clause": "F_BIN_RM_TYPE_S",
+    "word": "0x20d1d3",
+    "decoded_ctor": "ILLEGAL",
+    "decoded_payload": "0x20d1d3",
+    "registers": {
+      "f3": "0x123456789abcdef0",
+      "fcsr": "0x1",
+      "mstatus": "0x6600"
+    },
+    "expected": {
+      "fcsr": "0x1",
+      "mstatus": "0x6600",
+      "f3": "0x123456789abcdef0"
+    },
+    "decode_paths": 2,
+    "sat": true,
+    "difference_unsat": true,
+    "structural_ok": true,
+    "elapsed_ms": 72
+  },
+  {
+    "name": "f_bin_rm_type_s_encoded_rm6",
+    "clause": "F_BIN_RM_TYPE_S",
+    "word": "0x20e1d3",
+    "decoded_ctor": "ILLEGAL",
+    "decoded_payload": "0x20e1d3",
+    "registers": {
+      "f3": "0x123456789abcdef0",
+      "mstatus": "0x6600",
+      "fcsr": "0x1"
+    },
+    "expected": {
+      "fcsr": "0x1",
+      "mstatus": "0x6600",
+      "f3": "0x123456789abcdef0"
+    },
+    "decode_paths": 2,
+    "sat": true,
+    "difference_unsat": true,
+    "structural_ok": true,
+    "elapsed_ms": 72
+  },
+  {
+    "name": "f_un_rm_xf_type_s_encoded_rm5",
+    "clause": "F_UN_RM_XF_TYPE_S",
+    "word": "0xd000d1d3",
+    "decoded_ctor": "ILLEGAL",
+    "decoded_payload": "0xd000d1d3",
+    "registers": {
+      "f3": "0x123456789abcdef0",
+      "fcsr": "0x1",
+      "mstatus": "0x6600"
+    },
+    "expected": {
+      "mstatus": "0x6600",
+      "f3": "0x123456789abcdef0",
+      "fcsr": "0x1"
+    },
+    "decode_paths": 2,
+    "sat": true,
+    "difference_unsat": true,
+    "structural_ok": true,
+    "elapsed_ms": 71
+  },
+  {
+    "name": "f_un_rm_xf_type_s_encoded_rm6",
+    "clause": "F_UN_RM_XF_TYPE_S",
+    "word": "0xd000e1d3",
+    "decoded_ctor": "ILLEGAL",
+    "decoded_payload": "0xd000e1d3",
+    "registers": {
+      "mstatus": "0x6600",
+      "f3": "0x123456789abcdef0",
+      "fcsr": "0x1"
+    },
+    "expected": {
+      "f3": "0x123456789abcdef0",
+      "mstatus": "0x6600",
+      "fcsr": "0x1"
+    },
+    "decode_paths": 2,
+    "sat": true,
+    "difference_unsat": true,
+    "structural_ok": true,
+    "elapsed_ms": 74
+  }
+]

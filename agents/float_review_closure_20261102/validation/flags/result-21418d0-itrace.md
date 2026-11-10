@@ -1,0 +1,9 @@
+# `21418d0` 的 flags helper 定向复验
+
+模型 `21418d0b0d4942fae20061ed580ee04aff4a8a61`、Isla `42000be47596ec088623881d03c0eadc5cf0ba27` 的五个逻辑 IR 各执行 60 组具体 `zaccrue_fflags` 初态，合计 **300/300 通过**。每组真实 IR 执行自然完成一条路径，完整 FCSR/mstatus 后态与独立普通 Sail 状态 oracle 一致。五份日志均有 qffp 下的 seed17 拦截记录，实际独立 probe binary SHA-256 仍为 `ded63f435d89cfd84bac858f9eed8d382084c70c2c296c550bf3db98e606c7dd`。本项不生成指令 JSON，不计入完整 Clause 验收。
+
+封存 [inputs](../inputs.model-21418d0-itrace.json) SHA-256 `44641223d4541b042a337c9adab6ac902f34d3af82f3835213f28b39cc247b19`；正式 isarch SHA-256 `acda0dceb259205fe0c43a3785484ffcafbef26b3194de3b9f67ad38eccbcf7d` 仅作来源绑定，此项执行独立 probe。新 IR SHA-256：RV64 V128/default `5514e98ee5566dbbcfa4f6dbafa9dbb1851c72dce4b52ca0c0a95a1c7fafff4a`、V256 `11b797025387cd9dc48a6334d67e5780ce0656c4e64391bcda619345da97cf64`、V512 `c847d0d4ef1d78ae9f80f67d4c1833717d9166c43be04921a1e7187511a0e1a9`、RV32 `6e024d9a1ccae23bd0acb629ef661ac2a82976d3500bc8787692eaffc42fa368`。默认与 V128 为同字节 alias。配置与官方 Z3/seed 库 SHA、CPU15、完整命令及逐日志哈希见 [result.json](runs/model-21418d0-itrace/result.json)，该文件 SHA-256 为 `9b823e4f2d2c1948e8c28889bd912ffb453cdeed062b787cd116f54eaadcd1df`。
+
+既有 [探针说明](README.md)的 old flags 已含本次异常位、首次/多位新增、FS Initial/Clean/Dirty、SD 和其他 mstatus 哨兵矩阵未改。`run.py` 只把新模型完整提交加入精确允许集合，当前 SHA-256 `f7ed5424e8bd42f7a5f0b704af44ed4951795ae8822375de6d866caf960e74d3`，独立 Sol 已复签此版本门差异；Rust probe、oracle 和 Cargo 配置未变。新 dry-run 退出 0，见 [清单](dry-run.model-21418d0-itrace.json)。五个逻辑入口的新旧 probe 输出日志 SHA-256 分别相同；旧批次 [8ad5e8e 结果](result.md)保留原证据，新批次仍用实际新 IR 独立执行。独立 Sol 已在 [新版结果审查](../../review/acceptance/model214-results-review.md)中复算 300 项并限定签收，无阻断。
+
+本次直接调用 helper，因此不把指令写目标 FPR 产生的 Dirty 误算作 flags changed 的作用。实际 IR 中 `fflags` 后 `fcsr` 两次 callback 仅签静态调用合同；普通版本在 changed 真臂另有 mstatus callback。Ext_F 人工初态固定值不代表全指令域或 Zfinx 配置，完整 Clause 与符号输入域另验。

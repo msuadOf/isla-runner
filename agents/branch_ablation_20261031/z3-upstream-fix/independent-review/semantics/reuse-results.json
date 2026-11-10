@@ -1,0 +1,20 @@
+[
+  {
+    "step": "low-budget",
+    "status": 0
+  },
+  {
+    "step": 0,
+    "status": 1,
+    "all_original_assertions_true": true
+  },
+  {
+    "step": 1,
+    "status": -1
+  },
+  {
+    "step": 2,
+    "status": 1,
+    "all_original_assertions_true": true
+  }
+]

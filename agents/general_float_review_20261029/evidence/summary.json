@@ -1,0 +1,62 @@
+{
+  "base": "7b7337b0dea0c4105644436a606dbec5ae9b3fea",
+  "general": "ef882f01e0208de13fd2224fc83b30e13acee261",
+  "float": "be1296bbe66ca03a3c17c17ad7b9039a9cefc9c9",
+  "uncommitted_resolved_merge_tree": "6323cdba70521f79c72d73cd477669f8e771f939",
+  "merge_conflicts": [
+    "isla-lib/src/primop/float.rs",
+    "src/isarch/exec.rs"
+  ],
+  "resolution": "复用09fe582+be1296b既有候选这两文件；其余自动合并（包括新增初态配置）",
+  "diagnostic_compat_patch_sha256": "cb916d523c6ebb4c9ebf8f876453573fdcbe954714c22a357dd50cff89ac5b31",
+  "checks": {
+    "isla_lib_filtered": 267,
+    "isla_lib_skipped": 3,
+    "integration": 20,
+    "isla": 94,
+    "isarch": 25,
+    "float_helpers": 1615,
+    "float_state": 180,
+    "float_guard": 20,
+    "float_runner_build_before_patch": 101,
+    "float_runner_after_patch": 0
+  },
+  "smoke": {
+    "v128": {
+      "MRET": 4,
+      "ITYPE": 32,
+      "C_ADDI": 1,
+      "VSETIVLI": 12,
+      "FLEQ_S": 16,
+      "FCVT_S_BF16": 63,
+      "FLI_S": 32
+    },
+    "v256": {
+      "MRET": 4,
+      "VSETIVLI": 12
+    },
+    "FS1_VS0_FLEQ_S": 16
+  },
+  "limitations": [
+    "未全77 clause/全模型分支/硬件验收",
+    "未过滤核心测试仍有既有enum checkpoint错误",
+    "runner通过依赖隔离候选4行兼容补丁，正式分支未改",
+    "C_ADDI仍为带Sym的ExecuteAs，未递归执行/重放"
+  ],
+  "file_hashes": {
+    "rv64d.ir": "aea104c88a3c90f5e3030365d38dbcbc97a058dcfaf22b77b6717bffae59b544",
+    "ir/rv64d_v256_e64.ir": "2498a77d98d4ce8c071834632606d98b3ec4b3085f3573ddb3c9cda6bfa2e2ed",
+    "configs/riscv64_difftest.toml": "71fb63e105331a0f329261c636e55446af42ba0367c96e45c9b49cb60332ad2d",
+    "configs/riscv64_difftest_fd.toml": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "target/release/isarch": "ea4dbdbce22d5fbd2bb180be3c0a56381edaab6bb9eb382ec8af6cb3c2a63ea7",
+    "fs1-vs0.toml": "91fbd1b78b1ac3c788852090a593944e837e2f91dcdcd6d93e1391c94a447791"
+  },
+  "commands": [
+    "LD_LIBRARY_PATH=<Brew Z3>/lib cargo test -p isla --lib --quiet -- --test-threads=1",
+    "LD_LIBRARY_PATH=<Brew Z3>/lib cargo test -p isla-lib --lib --tests --quiet -- --test-threads=1 --skip get_single_member_enum_const_after_checkpoint_replay --skip get_multi_member_enum_const_after_checkpoint_replay --skip get_struct_with_enum_field_after_checkpoint_replay",
+    "cargo test --bin isarch --quiet",
+    "make solve-MRET solve-ITYPE solve-C_ADDI solve-VSETIVLI solve-FLEQ_S solve-FCVT_S_BF16 solve-FLI_S THREADS=1 SOLVE_TIMEOUT=45 OUTER_TIMEOUT=60s TASTIC=qfaufbv",
+    "make solve-MRET solve-VSETIVLI THREADS=1 SOLVE_TIMEOUT=45 OUTER_TIMEOUT=60s TASTIC=qfaufbv IR_FILE=./ir/rv64d_v256_e64.ir",
+    "LD_LIBRARY_PATH=<Brew Z3>/lib python3 test/float_ir/run.py --output <float-regression-compat>"
+  ]
+}

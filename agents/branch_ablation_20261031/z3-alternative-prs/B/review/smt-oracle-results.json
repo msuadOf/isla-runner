@@ -1,0 +1,164 @@
+[
+  {
+    "name": "domain_free",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_all_six",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "domain_pigeonhole",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "enum_FP_coupling",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "rm_five",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "rm_free",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "nan_smt_equal",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "nan_ieee_unequal",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "real_free",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "real_to_fp",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "to_real_unspecified",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "enum_ite",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "enum_uf",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "enum_recognizer",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "FP_uf",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "array",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "ADT",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "quantifier",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "int",
+    "expected": "sat",
+    "answer": "sat",
+    "ok": true
+  },
+  {
+    "name": "domain_1",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_2",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_3",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_5",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_7",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_9",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_17",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  },
+  {
+    "name": "domain_65",
+    "expected": "unsat",
+    "answer": "unsat",
+    "ok": true
+  }
+]

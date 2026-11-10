@@ -1,0 +1,71 @@
+[
+  {
+    "name": "api-nan",
+    "command": [
+      "timeout",
+      "65s",
+      "python3",
+      "agents/branch_ablation_20261031/z3-upstream-fix/api-validation.py",
+      "agents/branch_ablation_20261031/solver-diagnosis/nan-qffp/query.smt2"
+    ],
+    "exit": 1,
+    "wall_s": 0.20637722400715575
+  },
+  {
+    "name": "api-flags",
+    "command": [
+      "timeout",
+      "65s",
+      "python3",
+      "agents/branch_ablation_20261031/z3-upstream-fix/api-validation.py",
+      "agents/branch_ablation_20261031/solver-diagnosis/flags-qffp/query.smt2"
+    ],
+    "exit": 1,
+    "wall_s": 0.20642561599379405
+  },
+  {
+    "name": "fpa",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/test-z3",
+      "fpa"
+    ],
+    "exit": 0,
+    "wall_s": 0.824496949033346
+  },
+  {
+    "name": "check_assumptions",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/test-z3",
+      "check_assumptions"
+    ],
+    "exit": 0,
+    "wall_s": 0.01719344296725467
+  },
+  {
+    "name": "bit_vector",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/test-z3",
+      "bit_vector"
+    ],
+    "exit": 0,
+    "wall_s": 0.005208900023717433
+  },
+  {
+    "name": "get_consequences",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/test-z3",
+      "get_consequences"
+    ],
+    "exit": 0,
+    "wall_s": 0.04618235200177878
+  },
+  {
+    "name": "model_evaluator",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/test-z3",
+      "model_evaluator"
+    ],
+    "exit": 0,
+    "wall_s": 0.017272475000936538
+  }
+]

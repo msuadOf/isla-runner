@@ -1,0 +1,44 @@
+[
+  {
+    "budget": 10000,
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 10000,
+    "binary": "guarded",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 30000,
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 30000,
+    "binary": "guarded",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 100000,
+    "binary": "baseline",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "budget": 100000,
+    "binary": "guarded",
+    "exit": 0,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  }
+]

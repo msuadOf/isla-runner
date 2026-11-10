@@ -1,0 +1,47 @@
+[
+  {
+    "batch": "000-007",
+    "count": 8,
+    "first": "fcvtmod_zero",
+    "last": "fcvtmod_infinity",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.566
+  },
+  {
+    "batch": "008-015",
+    "count": 8,
+    "first": "fcvtmod_huge",
+    "last": "feq_d_snan",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.68
+  },
+  {
+    "batch": "016-023",
+    "count": 8,
+    "first": "flt_d_qnan",
+    "last": "flt_h_qnan",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.519
+  },
+  {
+    "batch": "024-031",
+    "count": 8,
+    "first": "fleq_s_qnan",
+    "last": "fadd_h_unboxed",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.621
+  },
+  {
+    "batch": "032-038",
+    "count": 7,
+    "first": "fclass_h_unboxed",
+    "last": "fminm_s_unboxed",
+    "exit_code": 0,
+    "status": "PASS",
+    "elapsed_seconds": 6.649
+  }
+]

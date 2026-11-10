@@ -1,0 +1,37 @@
+{
+  "status": "INPUTS_ONLY",
+  "count": 17586,
+  "profiles": {
+    "smoke": 83,
+    "f16": 3039,
+    "f32_arithmetic": 570,
+    "f32_conversion": 3730,
+    "f32_boundary": 1134,
+    "f64": 807,
+    "exception_base": 2520,
+    "conversion_base": 2652,
+    "arithmetic_boundary": 1350,
+    "conversion_boundary": 1701
+  },
+  "source_sha256": {
+    "f16": "a362086ff293937ca18775797518f000cc4954066fbf9dc6545a1a7aa0fb107a",
+    "f32_arithmetic": "50b8408a8b41c10c750baa215e3e41c88c3ccc771c1d7abf9f89fcaea12dd63d",
+    "f32_conversion": "bfbc8d800471d0ad45e6ff59568f32d5c7b6065746d304d251828a290e4523f7",
+    "f32_boundary": "fbcb448f270e21b8450daa0c7b7fb1432898ef98f1c793278b513d1731522fc5",
+    "f64": "d8998e071264b77225ebfb6248aa82512a279bb2728957cc7975a0d918d7b9e1",
+    "exception_base": "3705356801ac2cd37a408b37eef6ef4b34cd26f721d017c949ef35969e1a5e54",
+    "conversion_base": "26bf61d9fd9b690e278ec23bc8d8e69f666f1d20f1dd23b89d601b359d87fb7a",
+    "arithmetic_boundary": "3c7303e5e6cdfb96af6a0276d5b742e62dc4864f0768c85d5f75b3c3d5c23d10",
+    "conversion_boundary": "336ebc7c75f9ec5c08edbb5a2592be90e69211aaa2e80e07f5fb3cce46f2b8ea"
+  },
+  "smoke_input_sha256": "f31a5600ed2ca63f5063b8d393985da528dae4171b143287eb735ef1ae9ca8e4",
+  "oracle_binary_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "generator_sha256": "29572f69def135c74850525d25a01b97374b04d9b7d9e5f594553e08eefbbf4c",
+  "full_inputs_sha256": "b70eff9b00b0ea3956652d027012c3b941c436c200313c26375362948a289048",
+  "compressed_inputs_sha256": "3a70179086dbc1793076a2a50e0a5fa47e35e86cbf80113b2110b546f7912216",
+  "generated_sha256": {
+    "f32_conversion.txt": "bb7a9466a3b747524651337e49d6988a2b6011f68803189df14f1b35ecc69276",
+    "f32_boundary.txt": "5712b32201d4a1a3777e5768e974fb78f2f087dbbeb394909607378f271f6f38",
+    "f64.txt": "266dd79febd745f30d84914d1532b096c8bf57062b33fe8e0776bdc160651855"
+  }
+}

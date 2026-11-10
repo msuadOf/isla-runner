@@ -1,0 +1,402 @@
+[
+  {
+    "name": "fleq_d",
+    "clause": "FLEQ_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.757,
+    "stderr": "fleq_d.stderr"
+  },
+  {
+    "name": "fltq_d",
+    "clause": "FLTQ_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.687,
+    "stderr": "fltq_d.stderr"
+  },
+  {
+    "name": "fli_d",
+    "clause": "FLI_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.777,
+    "stderr": "fli_d.stderr"
+  },
+  {
+    "name": "fminm_d_nan",
+    "clause": "FMINM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.623,
+    "stderr": "fminm_d_nan.stderr"
+  },
+  {
+    "name": "fmaxm_d_nan",
+    "clause": "FMAXM_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.675,
+    "stderr": "fmaxm_d_nan.stderr"
+  },
+  {
+    "name": "fround_d",
+    "clause": "FROUND_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.534,
+    "stderr": "fround_d.stderr"
+  },
+  {
+    "name": "froundnx_d",
+    "clause": "FROUNDNX_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.72,
+    "stderr": "froundnx_d.stderr"
+  },
+  {
+    "name": "fleq_h",
+    "clause": "FLEQ_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.724,
+    "stderr": "fleq_h.stderr"
+  },
+  {
+    "name": "fltq_h",
+    "clause": "FLTQ_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.633,
+    "stderr": "fltq_h.stderr"
+  },
+  {
+    "name": "fli_h",
+    "clause": "FLI_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.781,
+    "stderr": "fli_h.stderr"
+  },
+  {
+    "name": "fminm_h_nan",
+    "clause": "FMINM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.721,
+    "stderr": "fminm_h_nan.stderr"
+  },
+  {
+    "name": "fmaxm_h_nan",
+    "clause": "FMAXM_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.678,
+    "stderr": "fmaxm_h_nan.stderr"
+  },
+  {
+    "name": "fround_h",
+    "clause": "FROUND_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.654,
+    "stderr": "fround_h.stderr"
+  },
+  {
+    "name": "froundnx_h",
+    "clause": "FROUNDNX_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.575,
+    "stderr": "froundnx_h.stderr"
+  },
+  {
+    "name": "fleq_s",
+    "clause": "FLEQ_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.563,
+    "stderr": "fleq_s.stderr"
+  },
+  {
+    "name": "fltq_s",
+    "clause": "FLTQ_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.646,
+    "stderr": "fltq_s.stderr"
+  },
+  {
+    "name": "fli_s",
+    "clause": "FLI_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.71,
+    "stderr": "fli_s.stderr"
+  },
+  {
+    "name": "fminm_s_nan",
+    "clause": "FMINM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.383,
+    "stderr": "fminm_s_nan.stderr"
+  },
+  {
+    "name": "fmaxm_s_nan",
+    "clause": "FMAXM_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.689,
+    "stderr": "fmaxm_s_nan.stderr"
+  },
+  {
+    "name": "fround_s",
+    "clause": "FROUND_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.676,
+    "stderr": "fround_s.stderr"
+  },
+  {
+    "name": "froundnx_s",
+    "clause": "FROUNDNX_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.77,
+    "stderr": "froundnx_s.stderr"
+  },
+  {
+    "name": "fcvtmod_w_d_wrap",
+    "clause": "FCVTMOD_W_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.785,
+    "stderr": "fcvtmod_w_d_wrap.stderr"
+  },
+  {
+    "name": "fsgnj_d",
+    "clause": "F_BIN_F_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.801,
+    "stderr": "fsgnj_d.stderr"
+  },
+  {
+    "name": "feq_d",
+    "clause": "F_BIN_X_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.76,
+    "stderr": "feq_d.stderr"
+  },
+  {
+    "name": "fmadd_d",
+    "clause": "F_MADD_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.769,
+    "stderr": "fmadd_d.stderr"
+  },
+  {
+    "name": "fsqrt_d",
+    "clause": "F_UN_RM_FF_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.989,
+    "stderr": "fsqrt_d.stderr"
+  },
+  {
+    "name": "fcvt_w_d",
+    "clause": "F_UN_RM_FX_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.658,
+    "stderr": "fcvt_w_d.stderr"
+  },
+  {
+    "name": "fcvt_d_w",
+    "clause": "F_UN_RM_XF_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.636,
+    "stderr": "fcvt_d_w.stderr"
+  },
+  {
+    "name": "fclass_d",
+    "clause": "F_UN_X_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.85,
+    "stderr": "fclass_d.stderr"
+  },
+  {
+    "name": "fmv_d_x",
+    "clause": "F_UN_F_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.735,
+    "stderr": "fmv_d_x.stderr"
+  },
+  {
+    "name": "fmv_x_d",
+    "clause": "F_UN_X_TYPE_D",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.699,
+    "stderr": "fmv_x_d.stderr"
+  },
+  {
+    "name": "fsgnj_h",
+    "clause": "F_BIN_F_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.633,
+    "stderr": "fsgnj_h.stderr"
+  },
+  {
+    "name": "feq_h",
+    "clause": "F_BIN_X_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.679,
+    "stderr": "feq_h.stderr"
+  },
+  {
+    "name": "fadd_h",
+    "clause": "F_BIN_RM_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.741,
+    "stderr": "fadd_h.stderr"
+  },
+  {
+    "name": "fmadd_h",
+    "clause": "F_MADD_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.736,
+    "stderr": "fmadd_h.stderr"
+  },
+  {
+    "name": "fsqrt_h",
+    "clause": "F_UN_RM_FF_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.637,
+    "stderr": "fsqrt_h.stderr"
+  },
+  {
+    "name": "fcvt_w_h",
+    "clause": "F_UN_RM_FX_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.687,
+    "stderr": "fcvt_w_h.stderr"
+  },
+  {
+    "name": "fcvt_h_w",
+    "clause": "F_UN_RM_XF_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.694,
+    "stderr": "fcvt_h_w.stderr"
+  },
+  {
+    "name": "fclass_h",
+    "clause": "F_UN_X_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.542,
+    "stderr": "fclass_h.stderr"
+  },
+  {
+    "name": "fmv_h_x",
+    "clause": "F_UN_F_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.741,
+    "stderr": "fmv_h_x.stderr"
+  },
+  {
+    "name": "fmv_x_h",
+    "clause": "F_UN_X_TYPE_H",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.473,
+    "stderr": "fmv_x_h.stderr"
+  },
+  {
+    "name": "fsgnj_s",
+    "clause": "F_BIN_TYPE_F_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.595,
+    "stderr": "fsgnj_s.stderr"
+  },
+  {
+    "name": "feq_s",
+    "clause": "F_BIN_TYPE_X_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.521,
+    "stderr": "feq_s.stderr"
+  },
+  {
+    "name": "fmadd_s",
+    "clause": "F_MADD_TYPE_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.635,
+    "stderr": "fmadd_s.stderr"
+  },
+  {
+    "name": "fsqrt_s",
+    "clause": "F_UN_RM_FF_TYPE_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.54,
+    "stderr": "fsqrt_s.stderr"
+  },
+  {
+    "name": "fcvt_w_s",
+    "clause": "F_UN_RM_FX_TYPE_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.572,
+    "stderr": "fcvt_w_s.stderr"
+  },
+  {
+    "name": "fcvt_s_w",
+    "clause": "F_UN_RM_XF_TYPE_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.648,
+    "stderr": "fcvt_s_w.stderr"
+  },
+  {
+    "name": "fclass_s",
+    "clause": "F_UN_TYPE_X_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.471,
+    "stderr": "fclass_s.stderr"
+  },
+  {
+    "name": "fmv_s_x",
+    "clause": "F_UN_TYPE_F_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.548,
+    "stderr": "fmv_s_x.stderr"
+  },
+  {
+    "name": "fmv_x_w",
+    "clause": "F_UN_TYPE_X_S",
+    "status": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 5.483,
+    "stderr": "fmv_x_w.stderr"
+  }
+]

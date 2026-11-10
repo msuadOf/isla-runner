@@ -1,0 +1,96 @@
+{
+  "source_commit": "1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b",
+  "upstream": "https://github.com/Z3Prover/z3.git",
+  "ref": "master",
+  "source_clean": true,
+  "version_source": "5.3.4.0",
+  "configure_command": "cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DZ3_BUILD_EXECUTABLE=ON -DZ3_BUILD_TEST_EXECUTABLES=ON -DZ3_BUILD_PYTHON_BINDINGS=OFF -DZ3_ENABLE_EXAMPLE_TARGETS=OFF -DCMAKE_INSTALL_LIBDIR=lib -DCMAKE_INSTALL_RPATH=$ORIGIN/../lib",
+  "build_command": "cmake --build .tmp/z3-official-20261102/build --target shell libz3 test-z3 -j 24",
+  "source_hashes": {
+    "src/tactic/fpa/qffp_tactic.cpp": "111db8fb02dd20421c41526119556308cabf29ac26f8d6d45f554e2a6da9b826",
+    "src/tactic/fpa/qffp_tactic.h": "4f5f682855c76d804a32b2f5f57bd3ecf66df8cebab15d82833c9889212076aa",
+    "src/tactic/portfolio/default_tactic.cpp": "d1c59cca361c9e820187983cd60c4f93405893f68eeb7b14232945ce2e27e371",
+    "src/test/fpa.cpp": "107c98cf52c718b9e479e293beac5c332e0470b940a7fb567f484bb1b698de0c"
+  },
+  "same_as_local_maintainer_route": {
+    "src/tactic/fpa/qffp_tactic.cpp": true,
+    "src/tactic/fpa/qffp_tactic.h": true,
+    "src/tactic/portfolio/default_tactic.cpp": true,
+    "src/test/fpa.cpp": true
+  },
+  "prefix": ".tmp/z3-official-20261102/install",
+  "compiler": "c++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "cmake": "cmake version 4.2.3",
+  "build_status": "complete",
+  "binary_sha256": "8a1320ca51743aee8090948e8b4e5fd1fcbd01302fdc7caecb527064435b5801",
+  "library_sha256": "899cbc70affab963044e975c814fd549a605b5d7bef31b0fd65fb01421bf9970",
+  "queries": [
+    {
+      "name": "enum-fp-minimal",
+      "command": [
+        "/data1/baiyifan/workplace/isla-runner/.tmp/z3-official-20261102/install/bin/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "exit": 0,
+      "wall_s": 0.5309303210233338,
+      "source_sha256": "99a91dd6a02520d7c864a7a3e71b9c1fff16cf7df8a4fff3e606bfc0c7e5a75d"
+    },
+    {
+      "name": "real-flags-11",
+      "command": [
+        "/data1/baiyifan/workplace/isla-runner/.tmp/z3-official-20261102/install/bin/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "exit": 0,
+      "wall_s": 8.334518991003279,
+      "source_sha256": "4ba8332822288e7e39d6f32a974aedf3285c100eefe4935bcf64a17bd7e863f0"
+    }
+  ],
+  "api_checks": 18,
+  "model_evaluations": 64,
+  "isla_original_sha256": "9ae1b1d600a92af6f6b6b00120f26b60ba4f1b53ff177220db02acce2a83e0f5",
+  "isla_copy_sha256": "22712eddd32e63c8dac645668f5a7892c34acadbb93bca1a7d6fc03bb873f4b5",
+  "isla_ir_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+  "isla_config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+  "isla_runtime": {
+    "name": "isla-FLEQ_S",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/agents/z3_official_build_20261102/isarch-official-z3",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/ir/rv64d_v128_e64.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/.worktree/runner-float/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--tastic",
+      "default",
+      "--smt-timeout",
+      "7200",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "exit": 0,
+    "wall_s": 17.13209523499245
+  },
+  "isla_summary": {
+    "sampled-paths": 0,
+    "errors": 0,
+    "execution-timeouts": 0,
+    "smt-timeouts": 0,
+    "unfinished-paths": 0,
+    "assertion-filtered-paths": 0,
+    "omitted-cases": 0,
+    "model-query-timeouts": 0,
+    "encoding-filtered-paths": 0,
+    "pending-batches": 0,
+    "status": "finished",
+    "model-coverage": "not-measured",
+    "target-clause": "zFLEQ_S"
+  },
+  "isla_generated": 10,
+  "validation": "PASS within documented scope; official Release built, not globally installed",
+  "install_prefix": ".tmp/z3-official-20261102/install",
+  "source_clean_after_build": true
+}

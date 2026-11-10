@@ -1,0 +1,9 @@
+{
+  "simulation": false,
+  "source": "agents/explicit_branch_restore_20261102/make-smoke/output/rv64_zFMINM_S.json",
+  "sha256": "fbd99c3488be9f09ebeac631acbc0ea756b673845e8ebbcd82fed581b461c2f2",
+  "gen": 12,
+  "illegal": 0,
+  "clang_mnemonic_rejections": 0,
+  "all_pass": true
+}

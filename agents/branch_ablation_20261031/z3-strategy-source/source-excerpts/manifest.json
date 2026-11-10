@@ -1,0 +1,17 @@
+{
+  "tag": "z3-4.16.0",
+  "url": "https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.16.0.tar.gz",
+  "tar_sha256": "c68c3e5e4810b16126b8cb4c47eee85c1ac3e24a81914c8e371b40de9dd33ac7",
+  "files": {
+    "src/tactic/fpa/qffp_tactic.cpp": "1962df28332a5bae58d1a0b83f2d2183a6cb636bab226f385f2ba84fe828f868",
+    "src/tactic/portfolio/default_tactic.cpp": "5b6e5931e0ed4a5998726e1df934d126660edc670252801e3ce664f629f1aa23",
+    "src/tactic/smtlogics/qfaufbv_tactic.cpp": "0d6798da258167f57e87be377982b301f469fb5a53478637950930debf06cee3",
+    "src/tactic/smtlogics/smt_tactic.cpp": "99808686bfab2825b6399cb1c49f57c7d3e3d8268b50f9f55580c87feaa47c28",
+    "src/tactic/bv/dt2bv_tactic.cpp": "cbe9ba6e786fe6938a023eed8f6bf034cdf657ac007b6955132b930aa06a9d6d",
+    "src/tactic/fpa/fpa2bv_tactic.cpp": "5f4c4eacfe8b533f720aa4b80bc8e32a371dd14043609258c040ef888ab8d3c3",
+    "src/smt/theory_fpa.cpp": "dd3255595ae1c18668ab76abcf7a186decd9e3447679c11ca441d29f5bfe97d2",
+    "src/tactic/tactic.cpp": "480ca2e4fa1202bd74ac3da348bec28ebec370b455a6a5729f49d188b899db12",
+    "src/tactic/tactic.h": "2ecb2b6637d25c52c503e9bc6d072ffea3998d68fac6882b46f4b86ddc0e3489",
+    "src/tactic/probe.cpp": "9f8c86d7d002f136ad8ef3a6673eb4e10bbc3b7b2fcb70db4c345ac0ccf891fe"
+  }
+}

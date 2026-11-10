@@ -1,0 +1,218 @@
+[
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "strategy": "default",
+    "repeat": 0,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.6069450760260224,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "strategy": "qffp",
+    "repeat": 0,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.04597043799003586,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "strategy": "qffp",
+    "repeat": 1,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.04527927696472034,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "strategy": "default",
+    "repeat": 1,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.4908572020358406,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "strategy": "default",
+    "repeat": 2,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.4642762099974789,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 512,
+    "variables": 256,
+    "strategy": "qffp",
+    "repeat": 2,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.04226608597673476,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "strategy": "default",
+    "repeat": 0,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.892064779996872,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "strategy": "qffp",
+    "repeat": 0,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.04503764002583921,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "strategy": "qffp",
+    "repeat": 1,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.04671390098519623,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "strategy": "default",
+    "repeat": 1,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.8964307650458068,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "strategy": "default",
+    "repeat": 2,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.9011641000397503,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "cardinality": 1024,
+    "variables": 256,
+    "strategy": "qffp",
+    "repeat": 2,
+    "command": [
+      "taskset",
+      "-c",
+      "100",
+      "/data1/baiyifan/workplace/isla-runner/.tmp/z3-enum-fp-default/build/z3",
+      "-t:60000",
+      "-in"
+    ],
+    "wall_s": 0.04002442897763103,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  }
+]

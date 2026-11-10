@@ -1,0 +1,82 @@
+[
+  {
+    "case": "lambda-under-or",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "statuses": [
+      "unsat"
+    ]
+  },
+  {
+    "case": "lambda-under-or",
+    "solver": "revised-A",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "statuses": [
+      "unsat"
+    ]
+  },
+  {
+    "case": "quantifier-independent-enum",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "statuses": [
+      "unsat"
+    ]
+  },
+  {
+    "case": "quantifier-independent-enum",
+    "solver": "revised-A",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "statuses": [
+      "unsat"
+    ]
+  },
+  {
+    "case": "lambda-nested-quantifier",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "statuses": [
+      "unsat"
+    ]
+  },
+  {
+    "case": "lambda-nested-quantifier",
+    "solver": "revised-A",
+    "expected": "unsat",
+    "exit": 0,
+    "stdout": "unsat\n",
+    "statuses": [
+      "unsat"
+    ]
+  },
+  {
+    "case": "fp-enum-budget",
+    "solver": "base",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "unknown\n",
+    "statuses": [
+      "unknown"
+    ]
+  },
+  {
+    "case": "fp-enum-budget",
+    "solver": "revised-A",
+    "expected": "sat",
+    "exit": 0,
+    "stdout": "sat\n",
+    "statuses": [
+      "sat"
+    ]
+  }
+]

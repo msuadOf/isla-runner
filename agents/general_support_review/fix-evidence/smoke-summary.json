@@ -1,0 +1,42 @@
+{
+  "final-v128": {
+    "exit": 0,
+    "gen": 4,
+    "retvals": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "pre_state_fields": 101,
+    "vector_width": "128"
+  },
+  "final-v256": {
+    "exit": 0,
+    "gen": 4,
+    "retvals": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "pre_state_fields": 101,
+    "vector_width": "256"
+  },
+  "combined-v128": {
+    "exit": 0,
+    "gen": 4,
+    "retvals": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "pre_state_fields": 102,
+    "vector_width": "128"
+  },
+  "combined-v256": {
+    "exit": 0,
+    "gen": 4,
+    "retvals": {
+      "Retire_Success(())": 3,
+      "Illegal_Instruction(())": 1
+    },
+    "pre_state_fields": 102,
+    "vector_width": "256"
+  }
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "name": "plain",
+    "status": 1,
+    "evaluations": [
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "name": "not-p",
+    "status": 1,
+    "evaluations": [
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "name": "p",
+    "status": 1,
+    "evaluations": [
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      },
+      {
+        "ok": true,
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "name": "push-contradiction",
+    "status": -1
+  },
+  {
+    "name": "pop-restored",
+    "status": 1
+  }
+]

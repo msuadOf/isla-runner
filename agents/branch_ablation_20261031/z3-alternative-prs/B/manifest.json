@@ -1,0 +1,17 @@
+{
+  "commit": "ae64857b47ed6123c034c825e4b4dcb930e75b81",
+  "base": "8fbb275aba0472e862e289c7af1331b3bd5d512c",
+  "branch": "fix/default-fp-enum-direct",
+  "files": [
+    "src/tactic/fpa/qffp_tactic.cpp",
+    "src/tactic/fpa/qffp_tactic.h",
+    "src/tactic/portfolio/default_tactic.cpp",
+    "src/test/fpa.cpp"
+  ],
+  "hashes": {
+    "z3": "a881ecaad2ddcce34ded275ce007eb49b5d0975f94dedb14555b034bef0d4663",
+    "libz3.so": "160392cb9bfd6e55ed0065762880f8f21d6d90e40d235b4e6ece475b629b4880",
+    "test-z3": "c4b3625474f5ccfa3b2c6dab2b52628f6cafb58ca8f7c577c2f793611b5e8284"
+  },
+  "fpa_exit": 0
+}

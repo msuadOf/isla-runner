@@ -1,0 +1,50 @@
+[
+  {
+    "enum": false,
+    "strategy": "default",
+    "wall_seconds": 0.110315540980082,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "enum": false,
+    "strategy": "qffp",
+    "wall_seconds": 0.11003032297594473,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "enum": false,
+    "strategy": "(then dt2bv default)",
+    "wall_seconds": 0.11008369503542781,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "enum": true,
+    "strategy": "default",
+    "wall_seconds": 6.616567369026598,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "enum": true,
+    "strategy": "qffp",
+    "wall_seconds": 0.21108078199904412,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "enum": true,
+    "strategy": "(then dt2bv default)",
+    "wall_seconds": 0.3116977379540913,
+    "exit": 0,
+    "stdout": "sat\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,1978 @@
+{
+  "updated_utc": "2026-11-01T05:15:32.805923+00:00",
+  "completed": 40,
+  "total": 40,
+  "all_pass": true,
+  "cases": {
+    "enum-6-64": {
+      "A": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.20021679397905245,
+          0.027978810016065836,
+          0.027603544003795832,
+          0.02701626397902146,
+          0.026501424959860742
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.027603544003795832,
+        "mean_s": 0.061863367387559265,
+        "range_s": [
+          0.026501424959860742,
+          0.20021679397905245
+        ]
+      },
+      "B": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.02134025900159031,
+          0.019745422003325075,
+          0.02316461899317801,
+          0.020356111985165626,
+          0.020776538993231952
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.020776538993231952,
+        "mean_s": 0.021076590195298193,
+        "range_s": [
+          0.019745422003325075,
+          0.02316461899317801
+        ]
+      },
+      "complete": true,
+      "B_over_A_median_ratio": 0.7526765037987484
+    },
+    "enum-6-256": {
+      "A": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.20496172300772741,
+          0.03223407198674977,
+          0.030351169989444315,
+          0.030571833020076156,
+          0.029568727011792362
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.030571833020076156,
+        "mean_s": 0.065537505003158,
+        "range_s": [
+          0.029568727011792362,
+          0.20496172300772741
+        ]
+      },
+      "B": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.024853217997588217,
+          0.023592215962707996,
+          0.023109417990781367,
+          0.021672473987564445,
+          0.024363450007513165
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.023592215962707996,
+        "mean_s": 0.02351815518923104,
+        "range_s": [
+          0.021672473987564445,
+          0.024853217997588217
+        ]
+      },
+      "complete": true,
+      "B_over_A_median_ratio": 0.7716977895049758
+    },
+    "enum-6-512": {
+      "A": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.21063324803253636,
+          0.035948783974163234,
+          0.0352313409675844,
+          0.035389594035223126,
+          0.03395931998966262
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.035389594035223126,
+        "mean_s": 0.07023245739983394,
+        "range_s": [
+          0.03395931998966262,
+          0.21063324803253636
+        ]
+      },
+      "B": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.0274548219749704,
+          0.026103757962118834,
+          0.026434404018800706,
+          0.025452678033616394,
+          0.026089217979460955
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.026103757962118834,
+        "mean_s": 0.026306975993793457,
+        "range_s": [
+          0.025452678033616394,
+          0.0274548219749704
+        ]
+      },
+      "complete": true,
+      "B_over_A_median_ratio": 0.7376111163111355
+    },
+    "enum-6-1024": {
+      "A": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.21748844295507297,
+          0.04550336400279775,
+          0.0453027609619312,
+          0.04492098500486463,
+          0.04666537401499227
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.04550336400279775,
+        "mean_s": 0.07997618538793176,
+        "range_s": [
+          0.04492098500486463,
+          0.21748844295507297
+        ]
+      },
+      "B": {
+        "completed": 5,
+        "passed": 5,
+        "wall_s": [
+          0.03338800003984943,
+          0.0326797790476121,
+          0.03335329098626971,
+          0.03226990200346336,
+          0.032830151030793786
+        ],
+        "statuses": [
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ],
+          [
+            "sat"
+          ]
+        ],
+        "median_s": 0.032830151030793786,
+        "mean_s": 0.03290422462159768,
+        "range_s": [
+          0.03226990200346336,
+          0.03338800003984943
+        ]
+      },
+      "complete": true,
+      "B_over_A_median_ratio": 0.7214884382784368
+    }
+  },
+  "runs": [
+    {
+      "case": "enum-6-64",
+      "variant": "A",
+      "round": 1,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-1-A/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.216622+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.20021679397905245,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.416893+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.02,
+      "max_rss_kib": 43296
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "A",
+      "round": 1,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-1-A/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.217113+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.20496172300772741,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.422123+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.02,
+      "max_rss_kib": 44168
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "A",
+      "round": 1,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-1-A/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.217394+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.21063324803253636,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.428058+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.02,
+      "sys_s": 0.01,
+      "max_rss_kib": 45212
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "A",
+      "round": 1,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-1-A/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.218238+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.21748844295507297,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.435782+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.02,
+      "sys_s": 0.02,
+      "max_rss_kib": 46236
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "B",
+      "round": 1,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-1-B/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.419417+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.02134025900159031,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.440769+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39036
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "B",
+      "round": 1,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-1-B/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.424768+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.024853217997588217,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.449639+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39032
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "B",
+      "round": 1,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-1-B/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.430921+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.0274548219749704,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.458390+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 40128
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "B",
+      "round": 2,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-2-B/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.442743+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.019745422003325075,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.462501+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39040
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "B",
+      "round": 1,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-1-B/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.438315+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.03338800003984943,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.471715+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 40092
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "B",
+      "round": 2,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-2-B/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.451625+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.023592215962707996,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.475236+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39056
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "B",
+      "round": 2,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-2-B/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.460782+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.026103757962118834,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.486903+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 39060
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "A",
+      "round": 2,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-2-A/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.464488+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.027978810016065836,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.492478+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 43104
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "B",
+      "round": 2,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-2-B/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.473868+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.0326797790476121,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.506559+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 41100
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "A",
+      "round": 2,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-2-A/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.477874+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.03223407198674977,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.510121+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.02,
+      "max_rss_kib": 44160
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "A",
+      "round": 3,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-3-A/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.494961+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.027603544003795832,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.522595+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 43132
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "A",
+      "round": 2,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-2-A/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.489718+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.035948783974163234,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.525682+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 45236
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "A",
+      "round": 3,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-3-A/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.512404+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.030351169989444315,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.542768+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 44220
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "B",
+      "round": 3,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-3-B/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.524940+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.02316461899317801,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.548116+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39068
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "A",
+      "round": 2,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-2-A/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.508743+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.04550336400279775,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.554258+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.02,
+      "sys_s": 0.01,
+      "max_rss_kib": 46188
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "A",
+      "round": 3,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-3-A/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.528685+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.0352313409675844,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.563936+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.02,
+      "max_rss_kib": 45212
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "B",
+      "round": 3,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-3-B/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.545065+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.023109417990781367,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.568188+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39060
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "B",
+      "round": 4,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-4-B/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.550522+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.020356111985165626,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.570891+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 38032
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "B",
+      "round": 4,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-4-B/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.569983+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.021672473987564445,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.591670+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39044
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "B",
+      "round": 3,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-3-B/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.566847+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.026434404018800706,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.593295+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 40096
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "A",
+      "round": 4,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-4-A/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.573584+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.02701626397902146,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.600612+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 43188
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "A",
+      "round": 3,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-3-A/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.556457+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.0453027609619312,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.601771+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.02,
+      "sys_s": 0.01,
+      "max_rss_kib": 46372
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "B",
+      "round": 4,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-4-B/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.596038+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.025452678033616394,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.621507+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 40060
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "A",
+      "round": 4,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-4-A/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.594666+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.030571833020076156,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.625255+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 44380
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "A",
+      "round": 5,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-5-A/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.603669+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.026501424959860742,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.630184+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.02,
+      "max_rss_kib": 43184
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "B",
+      "round": 3,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-3-B/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.605232+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.03335329098626971,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.638600+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 41144
+    },
+    {
+      "case": "enum-6-64",
+      "variant": "B",
+      "round": 5,
+      "cpu": 33,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-64/round-5-B/time.json",
+        "taskset",
+        "-c",
+        "33",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.632745+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "c196991b7ff4dd3cf69a9f6fbc7f7d851ccfe64017f27caa4ee1ce56fa73fde9",
+      "wall_s": 0.020776538993231952,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.653534+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39016
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "A",
+      "round": 5,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-5-A/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.627190+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.029568727011792362,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.656772+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 44156
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "A",
+      "round": 4,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-4-A/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.623878+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.035389594035223126,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.659280+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 45144
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "B",
+      "round": 4,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-4-B/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.640878+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.03226990200346336,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.673160+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 41076
+    },
+    {
+      "case": "enum-6-256",
+      "variant": "B",
+      "round": 5,
+      "cpu": 47,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-256/round-5-B/time.json",
+        "taskset",
+        "-c",
+        "47",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.659470+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "26f078d60b29eca5f487ecf84230256171cae951bcd8edea649f0c7f14be5863",
+      "wall_s": 0.024363450007513165,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.683848+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.0,
+      "sys_s": 0.01,
+      "max_rss_kib": 39068
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "A",
+      "round": 5,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-5-A/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.661508+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.03395931998966262,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.695478+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 45220
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "A",
+      "round": 4,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-4-A/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.675583+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.04492098500486463,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.720517+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.02,
+      "sys_s": 0.02,
+      "max_rss_kib": 46228
+    },
+    {
+      "case": "enum-6-512",
+      "variant": "B",
+      "round": 5,
+      "cpu": 49,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-512/round-5-B/time.json",
+        "taskset",
+        "-c",
+        "49",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.697160+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "7e2c0e0c7832a2d13843126ac5567a31cd3b5face3492a6702b6f5ef1d831f4b",
+      "wall_s": 0.026089217979460955,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.723262+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 40068
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "A",
+      "round": 5,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-5-A/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/A-revised/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.723219+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.04666537401499227,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.769899+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.02,
+      "sys_s": 0.01,
+      "max_rss_kib": 46228
+    },
+    {
+      "case": "enum-6-1024",
+      "variant": "B",
+      "round": 5,
+      "cpu": 52,
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "{\"user_s\":%U,\"sys_s\":%S,\"max_rss_kib\":%M}",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/public-reproduction-smoke/enum-6-1024/round-5-B/time.json",
+        "taskset",
+        "-c",
+        "52",
+        "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_20261031/z3-alternative-prs/B/z3",
+        "-t:7200000",
+        "-in"
+      ],
+      "started_utc": "2026-11-01T05:15:32.772490+00:00",
+      "load_start": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "query_sha256": "1bb102d244e2e739f312700bb1733298ca03a19514defb4e3d368e68687a21f5",
+      "wall_s": 0.032830151030793786,
+      "exit": 0,
+      "external_timeout": false,
+      "ended_utc": "2026-11-01T05:15:32.805331+00:00",
+      "load_end": [
+        17.12890625,
+        20.00390625,
+        35.3837890625
+      ],
+      "statuses": [
+        "sat"
+      ],
+      "pass": true,
+      "user_s": 0.01,
+      "sys_s": 0.01,
+      "max_rss_kib": 40100
+    }
+  ]
+}

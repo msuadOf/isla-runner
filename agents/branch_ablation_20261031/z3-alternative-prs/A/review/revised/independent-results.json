@@ -1,0 +1,320 @@
+[
+  {
+    "case": "lambda-array-true",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.11562805302673951,
+    "stdout": "unsat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-array-true",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.09824832802405581,
+    "stdout": "unsat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-equal",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.09478310000849888,
+    "stdout": "unsat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-equal",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.09188914700644091,
+    "stdout": "unsat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-distinct",
+    "solver": "base",
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.09746607602573931,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "case": "lambda-distinct",
+    "solver": "A",
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.09100380202289671,
+    "stdout": "sat\n(:reason-unknown \"\")\n",
+    "stderr": ""
+  },
+  {
+    "case": "forall-domain",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.07913522404851392,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "forall-domain",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.10858926200307906,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "exists-nested",
+    "solver": "base",
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.10470336198341101,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "exists-nested",
+    "solver": "A",
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.08174931799294427,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "uf-arg",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.09524745203088969,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "uf-arg",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.10447860497515649,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "array-range",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.0779610100435093,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "array-range",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.0854155330453068,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "adt-selector",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.07536398601951078,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "adt-selector",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.0970725939841941,
+    "stdout": "unsat\n",
+    "stderr": ""
+  },
+  {
+    "case": "core",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.0780158819979988,
+    "stdout": "unsat\n(finite)\n",
+    "stderr": ""
+  },
+  {
+    "case": "core",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.06516626599477604,
+    "stdout": "unsat\n(finite)\n",
+    "stderr": ""
+  },
+  {
+    "case": "proof",
+    "solver": "base",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.06139840901596472,
+    "stdout": "unsat\n((proof\n(let (($x88 ((_ is C ) x)))\n(let (($x80 ((_ is B ) x)))\n(let (($x81 (not $x80)))\n(let (($x38 (= x B)))\n(let (($x39 (not $x38)))\n(let (($x40 (= x C)))\n(let (($x41 (not $x40)))\n(let (($x36 (= x A)))\n(let (($x37 (not $x36)))\n(let (($x48 (and $x37 $x39 $x41 (not (= A B)) (not (= A C)) (not (= B C)))))\n(let (($x27 (and (distinct x A B C) true)))\n(let ((@x28 (asserted $x27)))\n(let ((@x76 (unit-resolution (def-axiom (or (not $x27) $x48)) (mp @x28 (rewrite (= $x27 $x27)) $x27) $x48)))\n(let ((@x86 (unit-resolution ((_ th-lemma datatype) (or $x38 $x81)) (unit-resolution (def-axiom (or (not $x48) $x39)) @x76 $x39) (hypothesis $x80) false)))\n(let (($x49 ((_ is A ) x)))\n(let (($x72 (not $x49)))\n(let ((@x78 (unit-resolution ((_ th-lemma datatype) (or $x36 $x72)) (hypothesis $x49) (unit-resolution (def-axiom (or (not $x48) $x37)) @x76 $x37) false)))\n(unit-resolution ((_ th-lemma datatype) (or $x40 (not $x88))) (unit-resolution (def-axiom (or (not $x48) $x41)) @x76 $x41) ((_ th-lemma datatype) (lemma @x78 $x72) (lemma @x86 $x81) $x88) false))))))))))))))))))))\n\n",
+    "stderr": ""
+  },
+  {
+    "case": "proof",
+    "solver": "A",
+    "expected": "unsat",
+    "exit": 0,
+    "seconds": 0.07558373297797516,
+    "stdout": "unsat\n((proof\n(let (($x88 ((_ is C ) x)))\n(let (($x80 ((_ is B ) x)))\n(let (($x81 (not $x80)))\n(let (($x38 (= x B)))\n(let (($x39 (not $x38)))\n(let (($x40 (= x C)))\n(let (($x41 (not $x40)))\n(let (($x36 (= x A)))\n(let (($x37 (not $x36)))\n(let (($x48 (and $x37 $x39 $x41 (not (= A B)) (not (= A C)) (not (= B C)))))\n(let (($x27 (and (distinct x A B C) true)))\n(let ((@x28 (asserted $x27)))\n(let ((@x76 (unit-resolution (def-axiom (or (not $x27) $x48)) (mp @x28 (rewrite (= $x27 $x27)) $x27) $x48)))\n(let ((@x86 (unit-resolution ((_ th-lemma datatype) (or $x38 $x81)) (unit-resolution (def-axiom (or (not $x48) $x39)) @x76 $x39) (hypothesis $x80) false)))\n(let (($x49 ((_ is A ) x)))\n(let (($x72 (not $x49)))\n(let ((@x78 (unit-resolution ((_ th-lemma datatype) (or $x36 $x72)) (hypothesis $x49) (unit-resolution (def-axiom (or (not $x48) $x37)) @x76 $x37) false)))\n(unit-resolution ((_ th-lemma datatype) (or $x40 (not $x88))) (unit-resolution (def-axiom (or (not $x48) $x41)) @x76 $x41) ((_ th-lemma datatype) (lemma @x78 $x72) (lemma @x86 $x81) $x88) false))))))))))))))))))))\n\n",
+    "stderr": ""
+  },
+  {
+    "case": "incremental",
+    "solver": "base",
+    "expected": "sat unsat sat",
+    "exit": 0,
+    "seconds": 0.07186063699191436,
+    "stdout": "sat\nunsat\nsat\n((x B))\n",
+    "stderr": ""
+  },
+  {
+    "case": "incremental",
+    "solver": "A",
+    "expected": "sat unsat sat",
+    "exit": 0,
+    "seconds": 0.07933323999168351,
+    "stdout": "sat\nunsat\nsat\n((x B))\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-1024-32",
+    "solver": "base",
+    "rep": 0,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.09748321701772511,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-1024-32",
+    "solver": "base",
+    "rep": 1,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.1108615180128254,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-1024-32",
+    "solver": "base",
+    "rep": 2,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.08926367299864069,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-1024-32",
+    "solver": "A",
+    "rep": 0,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.36958883702754974,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-1024-32",
+    "solver": "A",
+    "rep": 1,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.2809873830410652,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-1024-32",
+    "solver": "A",
+    "rep": 2,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.29269919701619074,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-8192-32",
+    "solver": "base",
+    "rep": 0,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.23327991500264034,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-8192-32",
+    "solver": "base",
+    "rep": 1,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.199811052007135,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-8192-32",
+    "solver": "base",
+    "rep": 2,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 0.21655806904891506,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-8192-32",
+    "solver": "A",
+    "rep": 0,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 1.7108003430184908,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-8192-32",
+    "solver": "A",
+    "rep": 1,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 2.526658941002097,
+    "stdout": "sat\n",
+    "stderr": ""
+  },
+  {
+    "case": "wide-8192-32",
+    "solver": "A",
+    "rep": 2,
+    "expected": "sat",
+    "exit": 0,
+    "seconds": 2.3994054140057415,
+    "stdout": "sat\n",
+    "stderr": ""
+  }
+]

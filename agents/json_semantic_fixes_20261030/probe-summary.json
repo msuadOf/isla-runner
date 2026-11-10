@@ -1,0 +1,840 @@
+[
+  {
+    "name": "float-FLEQ_S",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 3.573,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-FLEQ_S/output/rv64_zFLEQ_S.json",
+      "sha256": "baed7e0386048f97bc57ebd85ea2a33f34d37bde2a21925034be1175c346842a",
+      "count": 4,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 4
+    }
+  },
+  {
+    "name": "float-FLI_S",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FLI_S"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 4.274,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-FLI_S/output/rv64_zFLI_S.json",
+      "sha256": "c0281b4dc8ad0b89bea2e16acbbb57371afebedfd088fd700975ce68b4875994",
+      "count": 32,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 32
+    }
+  },
+  {
+    "name": "float-FLI_H",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FLI_H"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 5.324,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-FLI_H/output/rv64_zFLI_H.json",
+      "sha256": "3842b3dc09d0f36371cb49962086cb09c2f974876571b81f788a7cc92d3fd58c",
+      "count": 32,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 32
+    }
+  },
+  {
+    "name": "float-FLI_D",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FLI_D"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 4.372,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-FLI_D/output/rv64_zFLI_D.json",
+      "sha256": "1d26868044b328d29a36f8cd703637dcd567b4445113578bdc87d1d52a6d9eae",
+      "count": 32,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 32
+    }
+  },
+  {
+    "name": "float-FCVT_BF16_S",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FCVT_BF16_S"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 2.819,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-FCVT_BF16_S/output/rv64_zFCVT_BF16_S.json",
+      "sha256": "62b5e3f627d300ce968fb9c64a8d545ee1b8b33fa3d054036621cf3a769079ab",
+      "count": 13,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Illegal_Instruction",
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 13
+    }
+  },
+  {
+    "name": "float-FCVT_S_BF16",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=FCVT_S_BF16"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 3.77,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-FCVT_S_BF16/output/rv64_zFCVT_S_BF16.json",
+      "sha256": "74b09edda10eee6c56d9a7cd655d858bcc8fa7cdc1455b88908547c94f1fc8dd",
+      "count": 23,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Illegal_Instruction",
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 23
+    }
+  },
+  {
+    "name": "float-VFMVFS",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest_fd.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=VFMVFS"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 4.121,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-VFMVFS/output/rv64_zVFMVFS.json",
+      "sha256": "88f77e51f2b87c7b19b694dc9cd27308744aa1c1b36ed0c076e2b69dde55679f",
+      "count": 6,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Illegal_Instruction",
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 6
+    }
+  },
+  {
+    "name": "memory-store-fixed",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x0020b023",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "x2=0x1122334455667788",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000000}",
+      "solve-state",
+      "--clause=STORE"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.116,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-store-fixed/output/rv64_zSTORE.json",
+      "sha256": "c1b2ddc6f46cead52151871ca3e87e27133bedc41863cd61c3b7fa6d2d05ff72",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 1,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-load-fixed",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x0000b103",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "x2=0x1122334455667788",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000000}",
+      "solve-state",
+      "--clause=LOAD"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.066,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-load-fixed/output/rv64_zLOAD.json",
+      "sha256": "fb44464b779e01a7a5280a043220dc54b2031a6d522f17bd74568ad92fa3a0fe",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 1,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-vstart-zero",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x02008087",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000600}",
+      "--prestate",
+      "vtype={bits=0x0000000000000000}",
+      "--prestate",
+      "vl=0x0000000000000001",
+      "--prestate",
+      "vstart=0x0000000000000000",
+      "solve-state",
+      "--clause=VLSEGTYPE"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.066,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-vstart-zero/output/rv64_zVLSEGTYPE.json",
+      "sha256": "fceb9ce37b9b0901ae301b9890e100bcf9c294d1898c923f65a31b16790c6aca",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 1,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-vstart-oob",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x02008087",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000600}",
+      "--prestate",
+      "vtype={bits=0x0000000000000000}",
+      "--prestate",
+      "vl=0x0000000000000001",
+      "--prestate",
+      "vstart=0xffffffffffffffff",
+      "solve-state",
+      "--clause=VLSEGTYPE"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.123,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-vstart-oob/output/rv64_zVLSEGTYPE.json",
+      "sha256": "df48e5b9bf564af67ee0ad7d67ef0fd30b853c20f0ae3c909b99cb83aa45fa5c",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-vd31-nf2",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x22008f87",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000600}",
+      "--prestate",
+      "vtype={bits=0x0000000000000000}",
+      "--prestate",
+      "vl=0x0000000000000001",
+      "--prestate",
+      "vstart=0x0000000000000000",
+      "solve-state",
+      "--clause=VLSEGTYPE"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.066,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-vd31-nf2/output/rv64_zVLSEGTYPE.json",
+      "sha256": "0e3f370baf2250544ea78a4cbd0fd571d729d612f61fd182650fa55273b9cf60",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Illegal_Instruction"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "float-MRET-unlimited",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=MRET"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.267,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "71fb63e105331a0f329261c636e55446af42ba0367c96e45c9b49cb60332ad2d",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-MRET-unlimited/output/rv64_zMRET.json",
+      "sha256": "0c3997c930692d849277751029308517ab9d2733a703af153ccff4d8fd8c6c90",
+      "count": 4,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Illegal_Instruction",
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 4
+    }
+  },
+  {
+    "name": "float-MRET-sampled",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/.worktree/isla-initial-state-20261029/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--execution-limits-config",
+      "/data1/baiyifan/workplace/isla-runner/agents/json_semantic_fixes_20261030/sampled.toml",
+      "solve-state",
+      "--clause=MRET"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.069,
+    "ir_sha256": "855deccc66c96d57f16a0a91a4279e8488b16ab3a2a9eeccc605ebce082c389b",
+    "config_sha256": "71fb63e105331a0f329261c636e55446af42ba0367c96e45c9b49cb60332ad2d",
+    "binary_sha256": "8561fadc175216464eda7628adcfdd7494f3fd20d8e9d6dcead98f1561f3a02a",
+    "json": {
+      "path": "probes/float-MRET-sampled/output/rv64_zMRET.json",
+      "sha256": "ea7663fa7d139fac0ec40a5e58502eb0d5da45615f39f06f5ab2293c93236d24",
+      "count": 1,
+      "keys": [
+        "summary",
+        "gen",
+        "state-domain",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 1
+    }
+  },
+  {
+    "name": "memory-MRET-unlimited",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "solve-state",
+      "--clause=MRET"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.217,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "9a315cbcc83837a4a245a03a5f8d4c9c88d69622ffe1abb47777cb761b909fc2",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-MRET-unlimited/output/rv64_zMRET.json",
+      "sha256": "8e4e768f52b1e938dbc1a7b4d187b44d02384d313fddd4dde0c3179127c73028",
+      "count": 4,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Illegal_Instruction",
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-MRET-sampled",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--execution-limits-config",
+      "/data1/baiyifan/workplace/isla-runner/agents/json_semantic_fixes_20261030/sampled.toml",
+      "solve-state",
+      "--clause=MRET"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.116,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "9a315cbcc83837a4a245a03a5f8d4c9c88d69622ffe1abb47777cb761b909fc2",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-MRET-sampled/output/rv64_zMRET.json",
+      "sha256": "e2e35fb032ab9971720445c209fff7626fd28deaf1108b5f3eb5780c72639f1b",
+      "count": 0,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [],
+      "items_with_memory_events": 0,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-c-ld-fixed",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x6088",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000000}",
+      "--prestate",
+      "x9=0x0000000080000000",
+      "solve-state",
+      "--clause=C_LD"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.072,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-c-ld-fixed/output/rv64_zC_LD.json",
+      "sha256": "5262af0f6e8dd3aa67e0ed59ba050a6a77930822d841e053a5856ae6349bb8fd",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 1,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-amoadd-fixed",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_difftest_mem_excluded_pma.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x0030b12f",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000000}",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "x3=0x0000000000000001",
+      "solve-state",
+      "--clause=AMO"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.067,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "397b69c2e3355702e7e5c09f88604d57b419d947aec06f45ece33f2863a0e486",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-amoadd-fixed/output/rv64_zAMO.json",
+      "sha256": "10448e1c0923bc67a0b3cd37e74927a5cd35b73c8f45d6752fe2df1795d5fab3",
+      "count": 1,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 1,
+      "items_with_complete_state": 0
+    }
+  },
+  {
+    "name": "memory-sc-coverage",
+    "command": [
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/target/release/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/rv64d.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/isla/.worktrees/memory-consistency/configs/riscv64_memory_coverage.toml",
+      "-T",
+      "1",
+      "--timeout",
+      "30",
+      "--tastic",
+      "qfaufbv",
+      "--instruction-bits",
+      "0x1820b1af",
+      "--prestate",
+      "x1=0x0000000080000000",
+      "--prestate",
+      "x2=0x1122334455667788",
+      "--prestate",
+      "cur_privilege=Machine",
+      "--prestate",
+      "mstatus={bits=0x0000000a00000000}",
+      "solve-state",
+      "--clause=STORECON"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.121,
+    "ir_sha256": "c65b26c8518042c67bfcb48c9feaf2a13a6eb7d741bc01ae8688d78c4370e5d9",
+    "config_sha256": "e363d63b198b2772db9f77ad3421da11a7c6ef2236bd4abd6fec4b0002691ba0",
+    "binary_sha256": "e9042614e39f7145b3afb110eba7e7ded4af264793b7d00a8bc4b73eeed0e8e8",
+    "json": {
+      "path": "probes/memory-sc-coverage/output/rv64_zSTORECON.json",
+      "sha256": "d921076325d573f65df11a912baadabb9ba8faf6b2d9f5985be0925e1d49ff9e",
+      "count": 2,
+      "keys": [
+        "summary",
+        "diagnostics",
+        "gen",
+        "provenance"
+      ],
+      "return_classes": [
+        "Retire_Success"
+      ],
+      "items_with_memory_events": 1,
+      "items_with_complete_state": 0
+    }
+  }
+]

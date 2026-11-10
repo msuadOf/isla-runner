@@ -1,0 +1,278 @@
+{
+  "baseline_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+  "function_count": 2053,
+  "workloads": {
+    "flags-compare": {
+      "clause": "FLEQ_S",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "B_source": "agents/branch_ablation_20261031/flags/B/ir/rv64d_flags_if.ir",
+      "B_source_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "config_source": "isla/configs/riscv64_difftest_fd.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zaccrue_fflags"
+      ],
+      "expected_changed_functions": [
+        "zaccrue_fflags"
+      ],
+      "pass": true
+    },
+    "flags-arithmetic": {
+      "clause": "F_BIN_RM_TYPE_S",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "B_source": "agents/branch_ablation_20261031/flags/B/ir/rv64d_flags_if.ir",
+      "B_source_sha256": "c450a442df9c4407d527c5f528fb92b43f3d835633abd15bdb503b7a66360f09",
+      "config_source": "isla/configs/riscv64_difftest_fd.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zaccrue_fflags"
+      ],
+      "expected_changed_functions": [
+        "zaccrue_fflags"
+      ],
+      "pass": true
+    },
+    "minmax": {
+      "clause": "F_BIN_TYPE_F_S",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "33563af6c675db0040077b0e339345ce11c1e45fdb657c3340120a19f2a41c3b",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "B_source": "agents/branch_ablation_20261031/minmax/B/ir/rv64d_minmax_if.ir",
+      "B_source_sha256": "33563af6c675db0040077b0e339345ce11c1e45fdb657c3340120a19f2a41c3b",
+      "config_source": "isla/configs/riscv64_difftest_fd.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zfp_max_pure",
+        "zfp_min_pure"
+      ],
+      "expected_changed_functions": [
+        "zfp_max_pure",
+        "zfp_min_pure"
+      ],
+      "pass": true
+    },
+    "minm": {
+      "clause": "FMINM_S",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "4dbec681f26b59470b510012e731e979089a5b88810b381383366cd0f0a313ad",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "B_source": "agents/branch_ablation_20261031/minmax/C/ir/rv64d_minmaxm_nan_if.ir",
+      "B_source_sha256": "4dbec681f26b59470b510012e731e979089a5b88810b381383366cd0f0a313ad",
+      "config_source": "isla/configs/riscv64_difftest_fd.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zfp_maxm_pure",
+        "zfp_minm_pure"
+      ],
+      "expected_changed_functions": [
+        "zfp_maxm_pure",
+        "zfp_minm_pure"
+      ],
+      "pass": true
+    },
+    "maxm": {
+      "clause": "FMAXM_S",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "4dbec681f26b59470b510012e731e979089a5b88810b381383366cd0f0a313ad",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "B_source": "agents/branch_ablation_20261031/minmax/C/ir/rv64d_minmaxm_nan_if.ir",
+      "B_source_sha256": "4dbec681f26b59470b510012e731e979089a5b88810b381383366cd0f0a313ad",
+      "config_source": "isla/configs/riscv64_difftest_fd.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zfp_maxm_pure",
+        "zfp_minm_pure"
+      ],
+      "expected_changed_functions": [
+        "zfp_maxm_pure",
+        "zfp_minm_pure"
+      ],
+      "pass": true
+    },
+    "mask": {
+      "clause": "FVVTYPE",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "f7f4c0738b9546e2b28dd8a11995410f481c86781a97b6c7731d605852f425fa",
+      "config_sha256": "22213b4fe0be2211833548b25bafbf066b67e84c1c97f6f4778b4db29a0a608e",
+      "B_source": "agents/branch_ablation_20261031/mask_reduction/mask/B/ir/rv64d_mask_B.ir",
+      "B_source_sha256": "f7f4c0738b9546e2b28dd8a11995410f481c86781a97b6c7731d605852f425fa",
+      "config_source": "agents/branch_ablation_20261031/mask_reduction/mask/A/initial.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zexecute"
+      ],
+      "expected_changed_functions": [
+        "zexecute"
+      ],
+      "pass": true
+    },
+    "reduction": {
+      "clause": "RFVVTYPE",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "c6dbeef1376e5b544f1e697bbc8b2a3e289bdbea507b3ed0d472c23731a45de6",
+      "config_sha256": "22213b4fe0be2211833548b25bafbf066b67e84c1c97f6f4778b4db29a0a608e",
+      "B_source": "agents/branch_ablation_20261031/mask_reduction/reduction/B/ir/rv64d_reduction_B.ir",
+      "B_source_sha256": "c6dbeef1376e5b544f1e697bbc8b2a3e289bdbea507b3ed0d472c23731a45de6",
+      "config_source": "agents/branch_ablation_20261031/mask_reduction/reduction/A/initial.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zexecute"
+      ],
+      "expected_changed_functions": [
+        "zexecute"
+      ],
+      "pass": true
+    },
+    "nan": {
+      "clause": "F_UN_RM_FF_TYPE_S",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "a9d62f68cc723c3d1c5df4fb70400bc05e83fb92fb0d8a842ddea59dd744c1b9",
+      "config_sha256": "20851fdbd5120066b5a0275d3780c255edb715b233fb31a2529b8e110ef723d0",
+      "B_source": "agents/branch_ablation_20261031/classification/nan_f32_if/ir/rv64d.ir",
+      "B_source_sha256": "a9d62f68cc723c3d1c5df4fb70400bc05e83fb92fb0d8a842ddea59dd744c1b9",
+      "config_source": "agents/branch_ablation_20261031/classification/nan/initial.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zriscv_f32_symbolic_bits"
+      ],
+      "expected_changed_functions": [
+        "zriscv_f32_symbolic_bits"
+      ],
+      "pass": true
+    },
+    "sat": {
+      "clause": "VFUNARY0",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+      "config_sha256": "da35c576ca2a247660bbaba43f66989ea227498e92211adbeb1547ca7308326f",
+      "B_source": "agents/branch_ablation_20261031/classification/sat_f16_i16_if/ir/rv64d.ir",
+      "B_source_sha256": "d29e971b0872c7d11135cb3f96e036cfe6ee0ee93d61c8338a44520b9d3246bf",
+      "config_source": "agents/branch_ablation_20261031/classification/sat/initial.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zriscv_f16ToI16_pure"
+      ],
+      "expected_changed_functions": [
+        "zriscv_f16ToI16_pure"
+      ],
+      "pass": true
+    },
+    "class": {
+      "clause": "VFUNARY1",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "4a2a51300354c3618f764e530de25aad54be40781c41275d96292254dcb5ba7d",
+      "config_sha256": "f8db454645ce83708d1a437bf28408a5bc4ad689681662ebea4fcf65d8fd4e5f",
+      "B_source": "agents/branch_ablation_20261031/classification/class_if/ir/rv64d.ir",
+      "B_source_sha256": "4a2a51300354c3618f764e530de25aad54be40781c41275d96292254dcb5ba7d",
+      "config_source": "agents/branch_ablation_20261031/classification/class64/initial.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zfp_class_onehot_pure"
+      ],
+      "expected_changed_functions": [
+        "zfp_class_onehot_pure"
+      ],
+      "pass": true
+    },
+    "guard-valid": {
+      "clause": "FVVTYPE",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "d5313246a566f4e357a00d7f72611d442b5f51705526024db4fdd8f5760eec28",
+      "config_sha256": "0a7f2cbe2ecdebd238cfc4a183761e094403399282203ec3e6afeab7774e64e0",
+      "B_source": "agents/branch_ablation_20261031/guards/B_valid/ir/rv64d_guard_B_valid.ir",
+      "B_source_sha256": "d5313246a566f4e357a00d7f72611d442b5f51705526024db4fdd8f5760eec28",
+      "config_source": "agents/branch_ablation_20261031/guards/context_vl1.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zvalid_fp_op"
+      ],
+      "expected_changed_functions": [
+        "zvalid_fp_op"
+      ],
+      "pass": true
+    },
+    "guard-normal": {
+      "clause": "FVVTYPE",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a",
+      "config_sha256": "0a7f2cbe2ecdebd238cfc4a183761e094403399282203ec3e6afeab7774e64e0",
+      "B_source": "agents/branch_ablation_20261031/guards/B_normal/ir/rv64d_guard_B_normal.ir",
+      "B_source_sha256": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a",
+      "config_source": "agents/branch_ablation_20261031/guards/context_vl1.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zillegal_fp_normal"
+      ],
+      "expected_changed_functions": [
+        "zillegal_fp_normal"
+      ],
+      "pass": true
+    },
+    "guard-reduction": {
+      "clause": "RFVVTYPE",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "35cbec05f0a733c043997c16e018904a444638c4301775884bceacadc20ef74b",
+      "config_sha256": "01db8882657e331f19129c362e6ac3633ba9b41741704925d30a0a405fb72095",
+      "B_source": "agents/branch_ablation_20261031/guards/B_reduction/ir/rv64d_guard_B_reduction.ir",
+      "B_source_sha256": "35cbec05f0a733c043997c16e018904a444638c4301775884bceacadc20ef74b",
+      "config_source": "agents/branch_ablation_20261031/guards/context_reduction.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zillegal_fp_reduction"
+      ],
+      "expected_changed_functions": [
+        "zillegal_fp_reduction"
+      ],
+      "pass": true
+    },
+    "guard-normal-wide": {
+      "clause": "FVVTYPE",
+      "A_sha256": "10bea88ca9bc2938cc9f8d303fc3f851c0a256a31ef894bd84d5c7e2e8142bbf",
+      "B_sha256": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a",
+      "config_sha256": "2987e8ca7577d3ee9eb0804eb7a44fb71ea0340481b430c75fed58f6c16268c8",
+      "B_source": "agents/branch_ablation_20261031/guards/B_normal/ir/rv64d_guard_B_normal.ir",
+      "B_source_sha256": "2a40e9dfbf360fe10f40d6b461590bb360835ad488d46f69dcf9c0663e6e6c8a",
+      "config_source": "agents/branch_ablation_20261031/guards/context.toml",
+      "A_function_count": 2053,
+      "B_function_count": 2053,
+      "preamble_equal": true,
+      "changed_after_source_location_and_formal_alpha_normalization": [
+        "zillegal_fp_normal"
+      ],
+      "expected_changed_functions": [
+        "zillegal_fp_normal"
+      ],
+      "pass": true
+    }
+  }
+}

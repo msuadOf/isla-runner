@@ -1,0 +1,28 @@
+{
+  "base": "09fe5821142cfefb6760d93310337aa9fce68353",
+  "branch": "feat/initial-state-toml-20261029",
+  "committed": true,
+  "patch_sha256": "b619e79ed300340977c47aae24389f9f4c3b0a1d6a3cb0960aae177d959537e5",
+  "ir_sha256": "6fc39efd0f72b0ee8eae247d9965e680b6874f9954334c20d748b42c0987792c",
+  "config_sha256": "620bbf33450f524f832f594c6b7b4190801b44112ad37e43d21bf8a1a0f44eb6",
+  "tests": {
+    "isla_lib_filtered": {
+      "passed": 279,
+      "filtered": 3
+    },
+    "isla": 89,
+    "isarch": 25
+  },
+  "smoke": {
+    "cases": 4,
+    "assertions": "PASS",
+    "command": "make solve-MRET ISA_CONFIG=<evidence/smoke.toml> THREADS=2 SOLVE_TIMEOUT=45 OUTER_TIMEOUT=60s",
+    "exit": 0
+  },
+  "limitation": "未过滤的 isla-lib 全量测试因 enum checkpoint 测试的 Z3 enumeration sort name 重复错误退出；09fe582 上定向复现。首次系统 Z3 下另见浮点测试失败，使用 make 指定的 Brew Z3 后消失。未做全指令或硬件测试。",
+  "commit": "8948cc4543c60cb1716c90b642b3a96b30983127",
+  "merged_into": "refactor/general-support-20261007",
+  "merge": "fast-forward",
+  "preserved_stash": "e9cb22e412870e39d533bbc7dfbb5dd12a7dc4fd",
+  "dirty_general_preservation": "增删内容与未跟踪文件哈希一致；未将dirty工作区视为已验证提交树"
+}

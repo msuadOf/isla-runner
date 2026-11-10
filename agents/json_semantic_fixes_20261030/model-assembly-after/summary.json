@@ -1,0 +1,49 @@
+{
+  "toolchains": {
+    "gcc": {
+      "command": [
+        "riscv64-unknown-elf-gcc",
+        "-march=rv64gcv_zfh_zfa",
+        "-Wa,-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/json_semantic_fixes_20261030/model-assembly-after/actual.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/json_semantic_fixes_20261030/model-assembly-after/gcc.o"
+      ],
+      "exit": 0,
+      "bytes_match": true,
+      "version": "riscv64-unknown-elf-gcc (14.2.0+19) 14.2.0"
+    },
+    "clang": {
+      "command": [
+        "clang",
+        "--target=riscv64-unknown-elf",
+        "-march=rv64gcv_zfh_zfa_zfbfmin_zvfbfmin_zvfbfwma",
+        "-mabi=lp64d",
+        "-c",
+        "/data1/baiyifan/workplace/isla-runner/agents/json_semantic_fixes_20261030/model-assembly-after/actual.s",
+        "-o",
+        "/data1/baiyifan/workplace/isla-runner/agents/json_semantic_fixes_20261030/model-assembly-after/clang.o"
+      ],
+      "exit": 0,
+      "bytes_match": true,
+      "version": "Homebrew clang version 22.1.8"
+    }
+  },
+  "cases": 116,
+  "sail_forward": 116,
+  "sail_fli_roundtrip": 32,
+  "failures": [],
+  "source_sha256": {
+    "zfa": "8d85e93d64de2caa02f294f2e1744281a3a6bcfa4f1d984eddbe71c8f15de8d2",
+    "scalar": "f402b41a2b553fe2a28d697b9afc78d981de813013d5f1aa4bef724c831418eb",
+    "rounding": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d",
+    "types": "27f8138a53154ade9f4ce2ea3c0cd146b5f57d1d03a72b5d61f293eccc242590",
+    "convert": "423cdaefa37ae4b6ccc227b70ecf45d6380f099a8c88d18ad436fcc8ccb729b6",
+    "macc": "d60ea577c6b042b118e565174f5d06b53f98645be2e48c0e3c7e97b8030a91d5",
+    "fregs": "dc8bdf1c20e4aa0522e77c5b7e48b2c24fb2913f18a50a3be258243bc9513851",
+    "vregs": "6682f5ce387359c4d5a6873cf877e2f001231b4f38917b8721c89cdfd81f17d9",
+    "mask": "e1401308d1ead856e38d053eda625bb094b8814f380d2a2b6832b6125d8515a9"
+  }
+}

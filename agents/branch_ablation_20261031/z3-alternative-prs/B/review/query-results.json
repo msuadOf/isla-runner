@@ -1,0 +1,191 @@
+[
+  {
+    "name": "domain_free",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.035121686989441514
+  },
+  {
+    "name": "domain_all_six",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.03524758096318692
+  },
+  {
+    "name": "domain_pigeonhole",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.036957958014681935
+  },
+  {
+    "name": "enum_FP_coupling",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.03169695002725348
+  },
+  {
+    "name": "rm_five",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.028941252967342734
+  },
+  {
+    "name": "rm_free",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.029261501971632242
+  },
+  {
+    "name": "nan_smt_equal",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.016103763016872108
+  },
+  {
+    "name": "nan_ieee_unequal",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.016402589972130954
+  },
+  {
+    "name": "real_free",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.016376240004319698
+  },
+  {
+    "name": "real_to_fp",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.014741013990715146
+  },
+  {
+    "name": "to_real_unspecified",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.016764800995588303
+  },
+  {
+    "name": "enum_ite",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.10122081398731098
+  },
+  {
+    "name": "enum_uf",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.016376249957829714
+  },
+  {
+    "name": "enum_recognizer",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.03472361498279497
+  },
+  {
+    "name": "FP_uf",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.015782622969709337
+  },
+  {
+    "name": "array",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.015449183993041515
+  },
+  {
+    "name": "ADT",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.01484886702382937
+  },
+  {
+    "name": "quantifier",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.014005013974383473
+  },
+  {
+    "name": "int",
+    "expected": "sat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.25751452503027394
+  },
+  {
+    "name": "domain_1",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.01716404198668897
+  },
+  {
+    "name": "domain_2",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.01613026298582554
+  },
+  {
+    "name": "domain_3",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.01588790595997125
+  },
+  {
+    "name": "domain_5",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.016527035040780902
+  },
+  {
+    "name": "domain_7",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.015682419994845986
+  },
+  {
+    "name": "domain_9",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.015377592004369944
+  },
+  {
+    "name": "domain_17",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.01569531101267785
+  },
+  {
+    "name": "domain_65",
+    "expected": "unsat",
+    "ok": true,
+    "exit": 0,
+    "seconds": 0.018159210972953588
+  }
+]

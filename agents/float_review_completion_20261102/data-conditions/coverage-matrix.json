@@ -1,0 +1,460 @@
+{
+  "schema": 1,
+  "model_commit": "9c339044b07e235fe48d5bc585cbd3975ceeba5a",
+  "current_official_z3": "1fd1d3613c1f34c4dff36cba3209b2234f6c6d2b",
+  "method": "static source audit, existing JSON extraction and6 bounded directed complete-Clause probes; no production changes",
+  "not_a_coverage_percentage": true,
+  "obligations": [
+    {
+      "id": "rm-static-reserved",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/FD/fext_insts.sail",
+        "line": 31,
+        "anchor": "mapping encdec_rounding_mode",
+        "sha256": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d"
+      },
+      "predicate": "raw instruction rm in {5,6}; no rounding_mode AST constructor exists",
+      "current_status": "not-covered-by-constructor-entry",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)",
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)"
+      ],
+      "gap": "Historical decode probes cover only selected instructions; no new current raw-decode evidence.",
+      "minimal_next_validation": "Use raw-word ext_decode for every RM-bearing encoding family, hold other fields legal; expect ILLEGAL(raw), no execute state change.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "rm-dynamic-reserved",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/FD/fext_insts.sail",
+        "line": 51,
+        "anchor": "function select_instr_or_fcsr_rm",
+        "sha256": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d"
+      },
+      "predicate": "instr_rm=DYN and FRM in {5,6,7} versus FRM0..4",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)",
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)",
+        "agents/nan_unbox_branch_restore_20261031/report.md (model 9c339044; old Z3)"
+      ],
+      "gap": "FADD/FROUND and selected vector/BF16 negative examples do not close every RM-bearing op.",
+      "minimal_next_validation": "Per operation family, raw-decode then execute DYN with FRM0..7; record Illegal and full state preservation for5..7.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "rm-static-priority",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/FD/fext_insts.sail",
+        "line": 63,
+        "anchor": "else Some(instr_rm)",
+        "sha256": "e16fe90e212c0b655c3daa53429cad5b6210641d2c84404812aa9c1c0416e66d"
+      },
+      "predicate": "instr_rm in0..4 ignores FRM, including reserved FRM",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "Five legal dynamic modes and static-priority examples only selected operations.",
+      "minimal_next_validation": "For same fixed operands needing rounding, static rm0..4 with FRM5/6/7, compare output against independent exact-rounding oracle.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "quiet-vs-signaling-compare",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 79,
+        "anchor": "function ieee_eq32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "quiet compare NV iff effective source sNaN; signaling compare NV iff any NaN",
+      "current_status": "current-directed-partial",
+      "evidence": [
+        "agents/isla_official_z3_switch_20261102/float-cli-default-FLEQ/output/rv64_zFLEQ_S.json (9c339044 IR; official Z3 1fd1d3613)",
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)",
+        "agents/float_review_completion_20261102/data-conditions/directed-checks.json (official Z3 1fd1d3613; model9c339044; bounded directed probes)"
+      ],
+      "gap": "Current directed probes confirm rs1-only sNaN->NV and qNaN->noNV; rs2-only still not emitted after swapping FPR groups; H/D and other compares unverified.",
+      "minimal_next_validation": "For EQ/LT/LE/LTQ/LEQ per format, one boxed qNaN/sNaN source at a time, other1.0, both positions, old flags0; check bool and NV.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "boxing-per-source",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/FD/fdext_regs.sail",
+        "line": 49,
+        "anchor": "function nan_unbox",
+        "sha256": "5cc769261a4716a4238c3446a36bbba9692a5ac74fe2a9615ca0c3d5eb5c1fa2"
+      },
+      "predicate": "high bits all ones versus invalid boxing; valid boxing does not imply finite data",
+      "current_status": "current-directed-partial",
+      "evidence": [
+        "agents/nan_unbox_branch_restore_20261031/report.md (model 9c339044; old Z3)",
+        "agents/isla_official_z3_switch_20261102/float-cli-default-FLEQ/output/rv64_zFLEQ_S.json (9c339044 IR; official Z3 1fd1d3613)"
+      ],
+      "gap": "S two-source boxing combinations covered; H and BF16 per-call-family/operand roles remain incomplete; D is same-width at FLEN64.",
+      "minimal_next_validation": "Keep restored if; map each operand role separately, valid-box finite/qNaN/sNaN vs malformed high bits; do not count low sNaN as sNaN after invalid boxing.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "invalid-add-sub",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 132,
+        "anchor": "function ieee_add32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "sNaN OR infinity sign conflict; add opposite signs, sub same signs",
+      "current_status": "historical-helper-current-instruction-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "No current per-op/per-format JSON condition witness ledger.",
+      "minimal_next_validation": "FADD inf+-inf, FSUB inf-inf, finite control; sNaN separately; check canonical NaN/NV and old flags retention.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "invalid-mul",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 457,
+        "anchor": "function ieee_mul32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "sNaN OR (zero and inf in either source order)",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "Historical vector sample/operation helper not all current scalar/vector wrappers.",
+      "minimal_next_validation": "Both +/-zero*+/-inf source orders, qNaN control, each format; old flags0 and unrelated NX.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "invalid-div-and-dz",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 478,
+        "anchor": "function ieee_div32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "NV for0/0,inf/inf,sNaN; DZ for finite nonzero / zero",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "NV and DZ causes must be distinguished; a SAT flags query alone is not a witness for each.",
+      "minimal_next_validation": "0/0,inf/inf,1/0,0/1,inf/0,qNaN/0; check five flags separately, each H/S/D.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "invalid-sqrt",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 502,
+        "anchor": "function ieee_sqrt32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "sNaN or negative nonzero non-NaN; -0 is valid",
+      "current_status": "historical-helper-current-instruction-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "NaN-result normalization ablation does not itself close negative-zero/negative-qNaN distinction.",
+      "minimal_next_validation": "sqrt(-0),sqrt(-1),sqrt(-inf),sqrt(negative-qNaN),sqrt(sNaN),sqrt(+1); observe full FPR/flags per format.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "invalid-fma",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 520,
+        "anchor": "function ieee_fma32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "sNaN in any of3roles OR0*inf OR infinite product cancels opposite-sign c",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)",
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "BF16/source helper coverage is not all signed FMA instruction variants and operand roles.",
+      "minimal_next_validation": "FMADD/FMSUB/FNMADD/FNMSUB, isolate every invalid cause and a finite control; verify sign transforms, all3operand positions, H/S/D.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "of-uf-nx-boundaries",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 93,
+        "anchor": "function ieee_f32_rounded_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "OF direction/midpoint; UF=inexact&&tiny after rounding; exact excludes NX",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)",
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)"
+      ],
+      "gap": "Historical OF/UF examples not current per-op/per-RM boundaries; old pre-set flags can hide failures.",
+      "minimal_next_validation": "Exact subnormal vs tiny-inexact rounding-to-normal; overflow midpoint neighbors under5RM, positive/negative; independent oracle, old flags0.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "round-exact-control",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 803,
+        "anchor": "function ieee_round32_exceptions",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "raise_inexact && finite && rounded != input; sNaN invalid independent",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-scalar.md (d012 IR historical)"
+      ],
+      "gap": "FROUND vs FROUNDNX, integral/NaN/Inf negative cases not all current wrappers.",
+      "minimal_next_validation": "Same raw input and RM for FROUND/FROUNDNX; fractional vs integral +/-0/qNaN/sNaN/Inf, compare NX only when applicable.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "recip7-table-normalization",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/V/vext_fp_utils_insts.sail",
+        "line": 676,
+        "anchor": "function recip7",
+        "sha256": "3bfca870da36823d50cd896b3203e00f682aa79f580f9175b51948e1d2bf1bd0"
+      },
+      "predicate": "subnormal normalization; lookup index; abnormal overflow selection",
+      "current_status": "current-directed-partial",
+      "evidence": [
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_review_completion_20261102/data-conditions/directed-checks.json (official Z3 1fd1d3613; model9c339044; bounded directed probes)"
+      ],
+      "gap": "Current SEW32/vl1 normal1.0 and subnormal0x00400000 active-lane integration observed, flags0 and independent relative-error bound checked; SEW16/64, full lookup indexes and exact independent table oracle remain unverified.",
+      "minimal_next_validation": "VFUNARY1 REC7 SEW16/32/64: positive normal1.0 and lookup-index boundary neighbors, min/max subnormal, +/-0/Inf/qNaN/sNaN; five RM for abnormal cases.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "rsqrt7-table-normalization",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/V/vext_fp_utils_insts.sail",
+        "line": 585,
+        "anchor": "function rsqrt7",
+        "sha256": "3bfca870da36823d50cd896b3203e00f682aa79f580f9175b51948e1d2bf1bd0"
+      },
+      "predicate": "normal/subnormal path; exponent parity/index; negative input, zero, NaN classes",
+      "current_status": "current-directed-partial",
+      "evidence": [
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_review_completion_20261102/data-conditions/directed-checks.json (official Z3 1fd1d3613; model9c339044; bounded directed probes)"
+      ],
+      "gap": "Current SEW32/vl1 normal1.0 and subnormal0x00400000 active-lane integration observed, flags0 and independent relative-error bound checked; SEW16/64, full lookup indexes and exact independent table oracle remain unverified.",
+      "minimal_next_validation": "VFUNARY1 RSQRT7 per SEW:1.0/2.0 exponent parity, tiny subnormal, negative normal/subnormal,-0,+Inf,qNaN/sNaN; then lane state/flags check.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "bf16-source-role-exceptions",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/bfloat16/zvfbfwma_insts.sail",
+        "line": 154,
+        "anchor": "let (rs1_fflags, rs1_val)",
+        "sha256": "d60ea577c6b042b118e565174f5d06b53f98645be2e48c0e3c7e97b8030a91d5"
+      },
+      "predicate": "scalar BF16 conversion flags vs vector BF16 conversion vs f32 accumulator sNaN; only active lanes accrue",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)"
+      ],
+      "gap": "Generic mask ablation is not all three source-role tests; disjointBF16 operand widths cannot use f16 classifier.",
+      "minimal_next_validation": "At SEW16 legal LMUL, isolate scalar/vs2/accumulator sNaN and qNaN, same input active vs no-active/vl0/prestart, old flags0; compare complete dest group.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "bf16-fused-range",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/bfloat16/zvfbfwma_insts.sail",
+        "line": 55,
+        "anchor": "let (op_flags, elem) = riscv_f32MulAdd",
+        "sha256": "d60ea577c6b042b118e565174f5d06b53f98645be2e48c0e3c7e97b8030a91d5"
+      },
+      "predicate": "fused result differs from MUL->ADD on exponent range overflow/underflow",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)"
+      ],
+      "gap": "Historical 56cc/d012 evidence not current model9c339044; ordinary finite BF16 product is often exact, weak fused test.",
+      "minimal_next_validation": "BF16a=b0x5f80,c0xff7fffff and a=b0x1780,c1.0; fiveRM,VV/VF, compare fused result/flags against independent FMA oracle.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "vector-layout-full-state",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/V/vext_utils_insts.sail",
+        "line": 300,
+        "anchor": "function init_masked_result_default",
+        "sha256": "e1401308d1ead856e38d053eda625bb094b8814f380d2a2b6832b6125d8515a9"
+      },
+      "predicate": "vstart<vl,=vl,>vl; vta/vma; full EMUL destination groups and aliasing",
+      "current_status": "historical-directed-current-unverified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)"
+      ],
+      "gap": "A small-vl mask ablation cannot close all LMUL,prestart,tail or operand overlap contracts.",
+      "minimal_next_validation": "Reuse finite directed cases across mf2/m1/m2/m4 layouts, legal source/dest overlap edges; sentinel full dest group/tail; check unchanged inputs and vstart.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "multi-lane-exception-union",
+      "scope": "vector H/S/D and BF16 separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/bfloat16/zvfbfwma_insts.sail",
+        "line": 58,
+        "anchor": "combined_flags = combined_flags | ite",
+        "sha256": "d60ea577c6b042b118e565174f5d06b53f98645be2e48c0e3c7e97b8030a91d5"
+      },
+      "predicate": "different active lanes contribute different exception bits; inactive exception lane contributes none",
+      "current_status": "no-current-complete-witness-identified",
+      "evidence": [
+        "agents/float_support_review/solve-audit-vector.md (d012 IR historical)",
+        "agents/float_support_review/solve-fix-bf16-coverage.md (56cc69/1dcc candidate historical)"
+      ],
+      "gap": "Single-lane/mask control does not prove mixed NV|OF|NX aggregation; pre-set bits may hide failures.",
+      "minimal_next_validation": "Use two/three lanes with disjoint independently-predicted flags, old flags0; activate each separately and together, then mask one; full dest/fcsr check.",
+      "owner": "data-conditions"
+    },
+    {
+      "id": "flags-update",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/FD/fdext_regs.sail",
+        "line": 542,
+        "anchor": "function accrue_fflags",
+        "sha256": "5cc769261a4716a4238c3446a36bbba9692a5ac74fe2a9615ca0c3d5eb5c1fa2"
+      },
+      "predicate": "flags changed / unchanged state update",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment or infer closure before new result.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    },
+    {
+      "id": "classification",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 22,
+        "anchor": "function ieee_is_nan",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "all float classes",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment or infer closure before new result.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    },
+    {
+      "id": "nan-canonicalization",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 22,
+        "anchor": "function ieee_is_nan",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "NaN result vs non-NaN",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment or infer closure before new result.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    },
+    {
+      "id": "conversion-saturation",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/core/ieee_fp_exceptions.sail",
+        "line": 732,
+        "anchor": "function ieee_fp_to_int_core",
+        "sha256": "2fb810384cd5f099b234e92391f769ddfbbd02258e06906e78bd13c37d4e0bb4"
+      },
+      "predicate": "invalid/in-range integer conversion",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment or infer closure before new result.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    },
+    {
+      "id": "minmax",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/V/vext_fp_utils_insts.sail",
+        "line": 16,
+        "anchor": "function valid_fp_op",
+        "sha256": "3bfca870da36823d50cd896b3203e00f682aa79f580f9175b51948e1d2bf1bd0"
+      },
+      "predicate": "min/max and minm/maxm result selection",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    },
+    {
+      "id": "mask-reduction",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/V/vext_fp_utils_insts.sail",
+        "line": 16,
+        "anchor": "function valid_fp_op",
+        "sha256": "3bfca870da36823d50cd896b3203e00f682aa79f580f9175b51948e1d2bf1bd0"
+      },
+      "predicate": "active mask/lane/reduction choices",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    },
+    {
+      "id": "legal-guards",
+      "scope": "H/S/D separately",
+      "source": {
+        "file": "sail-riscv/model/extensions/V/vext_fp_utils_insts.sail",
+        "line": 16,
+        "anchor": "function valid_fp_op",
+        "sha256": "3bfca870da36823d50cd896b3203e00f682aa79f580f9175b51948e1d2bf1bd0"
+      },
+      "predicate": "valid_fp_op/normal/reduction legal guards",
+      "current_status": "owned-by-current-ablation",
+      "evidence": [],
+      "gap": "Do not repeat experiment.",
+      "minimal_next_validation": "Link main experiment results after completion.",
+      "owner": "main-ablation"
+    }
+  ]
+}

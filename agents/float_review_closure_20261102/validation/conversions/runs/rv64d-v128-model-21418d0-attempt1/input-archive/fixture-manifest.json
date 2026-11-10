@@ -1,0 +1,113 @@
+{
+  "oracle_binary_sha256": "0bb63bc72889502ef6a36cb739589745987a0788eb73d57e0570815a3c228bc6",
+  "oracle_source_sha256": "c5067c9f3714012fff65b78257b8cf0449762ecf9f9635f84a4de08deb4c44b6",
+  "source_cases": {
+    "agents/float_support_review/tools/e_nonmem/inputs/vfnunary0-sew8.json": "d931155046e06f450c96babe6cc1cf6b72ba5f4ab8f9185038fe125e9d153100",
+    "agents/float_support_review/tools/e_scalar_cases/enum-ops.json": "998349b62616662ae99f52dcbbca1969947a143ad5c1bde0b678f88125670cb1",
+    "agents/float_support_review/tools/e_scalar_cases/scalar-cases.json": "2a2f27170a6879bae543277c08beca3e754831165acfec1f7ed517bfed8c7412",
+    "agents/float_support_review/tools/e_vector_cases/expanded-cases.json": "bdcbe69ca2e869d108879485c7424bbe9e135d80553de9d71b2d97c9898eb2f3"
+  },
+  "counts": {
+    "helpers": 819,
+    "scalar": 282,
+    "vector": 183
+  },
+  "reachability": [
+    {
+      "helper": "riscv_f16ToI16_pure",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f16ToI8_pure",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f32ToI16_pure",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f16ToUi16_pure",
+      "finite_positive_overflow_input_exists": false,
+      "reason": "source exponent range"
+    },
+    {
+      "helper": "riscv_f16ToUi8_pure",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f32ToUi16_pure",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f16ToI32",
+      "finite_positive_overflow_input_exists": false,
+      "reason": "source exponent range"
+    },
+    {
+      "helper": "riscv_f16ToI64",
+      "finite_positive_overflow_input_exists": false,
+      "reason": "source exponent range"
+    },
+    {
+      "helper": "riscv_f16ToUi32",
+      "finite_positive_overflow_input_exists": false,
+      "reason": "source exponent range"
+    },
+    {
+      "helper": "riscv_f16ToUi64",
+      "finite_positive_overflow_input_exists": false,
+      "reason": "source exponent range"
+    },
+    {
+      "helper": "riscv_f32ToI32",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f32ToI64",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f32ToUi32",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f32ToUi64",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f64ToI32",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f64ToI64",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f64ToUi32",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    },
+    {
+      "helper": "riscv_f64ToUi64",
+      "finite_positive_overflow_input_exists": true,
+      "reason": "power-of-two threshold is finite"
+    }
+  ],
+  "output_sha256": {
+    "helpers.tsv": "3512ca8c609d6fecc2072345a35cda23ec4eee6d9f385b4f6f2b5746d7583eaf",
+    "oracle-rows.json": "e546a84067ace4b2ff0db4fe7794cdd35ec6e414360330bae7cf4f5308082836",
+    "scalar-cases.json": "2dfea5b620da7562b893347e19e9d719b5e3d8b314c0ed155ca655d15f389e65",
+    "vector-cases.json": "bf295aed5758529a8847ed13ede9da086039b240014ab5aa853f503accb9b0b4"
+  }
+}

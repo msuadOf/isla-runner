@@ -1,0 +1,100 @@
+[
+  {
+    "name": "fleq-rhs-snan",
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "7200s",
+      "taskset",
+      "-c",
+      "35",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_completion_20261102/data-conditions/directed-rhs/fleq-rhs-snan/config.toml",
+      "-T",
+      "1",
+      "--smt-timeout",
+      "7200s",
+      "--tastic",
+      "qffp",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "config_sha256": "c791fe393a0557174217b5ccadb9756da7a3778b12b37b77fe7aec6c6c91a618",
+    "status": "completed",
+    "started_epoch": 1793558287.4535518,
+    "exit": 0,
+    "wall_s": 1.9255680819624104,
+    "json_files": [
+      "agents/float_review_completion_20261102/data-conditions/directed-rhs/fleq-rhs-snan/output/rv64_zFLEQ_S.json"
+    ],
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zFLEQ_S"
+    },
+    "gen": 4
+  },
+  {
+    "name": "fleq-rhs-qnan",
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "7200s",
+      "taskset",
+      "-c",
+      "33",
+      "/data1/baiyifan/workplace/isla-runner/agents/branch_ablation_official_z3_20261102/bin/isarch",
+      "-A",
+      "/data1/baiyifan/workplace/isla-runner/isla/ir/rv64d_v128_e64.ir",
+      "-C",
+      "/data1/baiyifan/workplace/isla-runner/agents/float_review_completion_20261102/data-conditions/directed-rhs/fleq-rhs-qnan/config.toml",
+      "-T",
+      "1",
+      "--smt-timeout",
+      "7200s",
+      "--tastic",
+      "qffp",
+      "solve-state",
+      "--clause=FLEQ_S"
+    ],
+    "config_sha256": "e069885c4528c9e4315cdd33555c58677da65240c44b649eb53643d94909661e",
+    "status": "completed",
+    "started_epoch": 1793558287.4528868,
+    "exit": 0,
+    "wall_s": 1.9224510110216215,
+    "json_files": [
+      "agents/float_review_completion_20261102/data-conditions/directed-rhs/fleq-rhs-qnan/output/rv64_zFLEQ_S.json"
+    ],
+    "summary": {
+      "sampled-paths": 0,
+      "errors": 0,
+      "execution-timeouts": 0,
+      "smt-timeouts": 0,
+      "unfinished-paths": 0,
+      "assertion-filtered-paths": 0,
+      "omitted-cases": 0,
+      "model-query-timeouts": 0,
+      "encoding-filtered-paths": 0,
+      "pending-batches": 0,
+      "status": "finished",
+      "model-coverage": "not-measured",
+      "target-clause": "zFLEQ_S"
+    },
+    "gen": 4
+  }
+]

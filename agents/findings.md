@@ -2205,3 +2205,26 @@ runner的origin/feat/p0-replay@ffcc98e1对当前保留主线仍有24个独有提
 候选7885b24d（基线849900a6）确认：freeze/unfreeze之外，LocalFrame::clone与new_call也是路径内存复制入口。仅改前两者不能隔离有状态读取；Atomic计数回归实际复现读取2而非预期1。四个入口统一使用Memory::fork_for_frame后，自定义区域和数组回调的隔离回归通过。默认不共享未知回调，SeqMemory与ImmutablePageTables显式确认纯读取；前者实际帧共享后写入隔离测试通过。Clone仍须独立复制路径私有状态，错误共享Atomic/Mutex无法靠trait自动识别。原主线因.git只读尚未更新，旧“冻结仍克隆容器”的事实仍适用于849900a6；候选实现与限制见[专题](cow_local_frame_20261109/report.md)。
 
 MMU旧预算实验已于2026-11-09停止并只归档Markdown与处理后数据；历史415/3181仍是触限下界，手写模板后处理不构成语义接纳。现行路径合并与fuzz方向见[最终报告](mmu_symbolic_experiment/final-report.md)。
+
+
+## 2026-11-10 缓存版 solve-state 的写出入口与无限制执行
+
+核查对象为 `.worktree/isla-path-cache-20261110/` 的 `feat/isarch-path-cache@a38c5e02` 加未提交缓存实现，源码证据已冻结于 `.worktree/pathmerge-cache-all-20261110/evidence/`。
+
+- `src/isarch/exec.rs:2746` 在普通 solve-state 收尾分支调用 `path_cache::analyze/save`，不要求 fuzz 模式。ORCB、RORI 实际写出双格式缓存，manifest 和 JSON 条目数核对通过；两项求解随后均报告译码回环 Poison，不能将“缓存写出成功”写成“完整探索成功”。
+- `src/isarch_main.rs:571-608` 只在显式 `--execution-limits-config` 时加载独立限制文件；`--path-merging` 仅向默认内存配置设置 `path_merging=true`。ISA 无限制段时，没有 fork、循环或深度预算。`isla-lib/src/config.rs:2766-2795` 只读取指定配置文本，不递归 include。
+- 本轮三份 ISA 配置经 TOML 解析均无 execution_limits 和配置 include，driver 清理限制环境变量并记录核查来源；日志首行是 driver 核查记录，不是 isarch 的原生生效限制报告。
+
+该事实只适用于冻结版本；新的 221 项实测进度见 [专题状态](pathmerge_cache_all_clauses_20261110/status.md)。
+
+
+## 2026-11-10 两分支合并前审查的通用库边界
+
+审查范围为 Isla `daf61c04` 到 `feat/loop-region-merge@9a6cd0ac`、`fix/isarch-quick-failures@9a4f5c91`，加本轮各自工作树的修复；不是对历史全部实现的复审。
+
+- 区域分析对象缓存依赖 M1 开关。默认旧分析与循环死端/槽位活跃性分析必须分别缓存，否则共用 `SharedState` 的调用会复用不同配置的区域边界。本轮按 `(function, region_loop_analysis)` 区分。
+- 嵌套区域合并后再次读取未写的寄存器，即使足迹已有同一 `(register, accessor)`，仍须 OR 当前读取条件；只去重事件会遗漏足迹条件。写后内部读仍按既定整寄存器口径处理。
+- 通用库的 `platform_read_mem` 等跨架构原语不能作为注册 RISC-V 专属平台熵接口的理由。isarch 可通过现有 `extern` 与 `const_primops` 动态 `Reset` 接入，每次声明自由 16 位值，并标记 `WritesState`；模型已有函数体保持原实现。
+- `encoding_paths` 会在完整初态约束下验证候选。其空结果也可能来自初态自身不可满足，不能直接推出本配置不适用；应先验证初态可满足，再解释空编码域，Unknown/Error 必须保留错误。
+
+修复与验证结论见 [审查记录](isla_premerge_review_20261110/review.md)，动态结果以该记录最终状态为准。未跑 isarch 长时实测。

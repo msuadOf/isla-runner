@@ -1,0 +1,84 @@
+[
+  {
+    "name": "vf_lmul4_exact",
+    "clause": "VFWMACCBF16_VF",
+    "word": "0xee80d857",
+    "decoded_ctor": "VFWMACCBF16_VF",
+    "reencoded": "0xee80d857",
+    "execute_result": "Retire_Success",
+    "expected_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x1",
+      "vr16": "0x40000000",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x1",
+      "3": "0x10",
+      "0": "0x1",
+      "1": "0x8"
+    },
+    "expected_fields": {
+      "1": "0x8",
+      "3": "0x10",
+      "2": "0x1",
+      "0": "0x1"
+    },
+    "expected": {
+      "fcsr": "0x1",
+      "vr16": "0x40000000",
+      "mstatus": "0x8000000000006600",
+      "vstart": "0x0"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 69,
+    "structural_ok": true
+  },
+  {
+    "name": "vf_lmul4_active_snan",
+    "clause": "VFWMACCBF16_VF",
+    "word": "0xee80d857",
+    "decoded_ctor": "VFWMACCBF16_VF",
+    "reencoded": "0xee80d857",
+    "execute_result": "Retire_Success",
+    "expected_result": "Retire_Success",
+    "registers": {
+      "fcsr": "0x11",
+      "mstatus": "0x8000000000006600",
+      "vr16": "0x7fc00000",
+      "vstart": "0x0"
+    },
+    "calls": [],
+    "decode_paths": 2,
+    "encode_paths": 1,
+    "execute_paths": 1,
+    "decoded_fields": {
+      "2": "0x1",
+      "1": "0x8",
+      "0": "0x1",
+      "3": "0x10"
+    },
+    "expected_fields": {
+      "1": "0x8",
+      "2": "0x1",
+      "0": "0x1",
+      "3": "0x10"
+    },
+    "expected": {
+      "vr16": "0x7fc00000",
+      "fcsr": "0x11",
+      "vstart": "0x0",
+      "mstatus": "0x8000000000006600"
+    },
+    "sat": true,
+    "difference_unsat": true,
+    "elapsed_ms": 68,
+    "structural_ok": true
+  }
+]
