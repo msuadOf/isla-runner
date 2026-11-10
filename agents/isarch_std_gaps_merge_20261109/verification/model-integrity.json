@@ -1,0 +1,56 @@
+{
+  "model_commit": "cbb4766f95370c405bf9070e459045ce5aaa281e",
+  "x0_preserved": true,
+  "both_parents_preserved": true,
+  "vvtype_budget_changes": [
+    {
+      "index": 0,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_arith_insts.sail",
+      "start_line": 181
+    },
+    {
+      "index": 1,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_arith_insts.sail",
+      "start_line": 190
+    },
+    {
+      "index": 2,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_utils_insts.sail",
+      "start_line": 620
+    },
+    {
+      "index": 3,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_utils_insts.sail",
+      "start_line": 71
+    },
+    {
+      "index": 4,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_arith_insts.sail",
+      "start_line": 65
+    },
+    {
+      "index": 5,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_arith_insts.sail",
+      "start_line": 121
+    },
+    {
+      "index": 6,
+      "old_budget": 1,
+      "new_budget": 0,
+      "file": "extensions/V/vext_arith_insts.sail",
+      "start_line": 131
+    }
+  ]
+}

@@ -13,8 +13,6 @@
 原工作区与备份保留。候选提交、bundle、精确命令与日志位于 `.worktree/isarch-std-gaps-merge-20261109/`；实际原仓库导入状态见其中 `finalize-result.json`。
 
 [方案](plan.md)、[验证摘要](verification/summary.json)、[向量探针](run_vector_probes.py)、[原生认证](verification/reconfirm.json)。
-
-
 交付候选：模型cbb4766f、Isla79d0e335、runner fb9916b9。三个bundle和收尾脚本已生成；真实预检通过，隔离三仓实际快进/删除及脏源工作树保全通过。原仓实际--apply因.git只读在写入前停止；终核原分支、HEAD、索引、未提交代码及worktree注册不变。详见[交付说明](../../.worktree/isarch-std-gaps-merge-20261109/README.md)。
 
 

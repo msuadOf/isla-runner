@@ -1,0 +1,28 @@
+[execution_limits]
+strict = false
+path_merging = true
+on_limit_reached = "truncate"
+
+[execution_limits.merge_enumeration]
+enabled = true
+mode = "samples"
+class_cap = 1
+path_cap = 1000000
+sample_stride = 1
+enumeration_threads = 16
+
+[[execution_limits.branch_region_limits]]
+file = "sys/vmem_tlb.sail"
+start_line = 1
+start_column = 0
+end_line = 65535
+end_column = 0
+max_forks_per_branch = 4096
+
+[[execution_limits.branch_region_limits]]
+file = "sys/vmem_ptw.sail"
+start_line = 1
+start_column = 0
+end_line = 65535
+end_column = 0
+max_forks_per_branch = 4096

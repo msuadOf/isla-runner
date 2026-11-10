@@ -2228,3 +2228,15 @@ MMU旧预算实验已于2026-11-09停止并只归档Markdown与处理后数据�
 - `encoding_paths` 会在完整初态约束下验证候选。其空结果也可能来自初态自身不可满足，不能直接推出本配置不适用；应先验证初态可满足，再解释空编码域，Unknown/Error 必须保留错误。
 
 修复与验证结论见 [审查记录](isla_premerge_review_20261110/review.md)，动态结果以该记录最终状态为准。未跑 isarch 长时实测。
+
+
+## 2026-11-09 isarch 整合核对
+
+- Isla `a8b610dd` 的提交历史包含 `78b04e3d`、`d824ec21` 和 `ff975203`；直接以其建分支可完整保留 path merge 和 fuzz。
+- `feat/p0-replay@ffcc98e1` 的动态 prestate 未提交改动涉及三个核心脚本和三个测试文件；迁移时连同未改的 `paging_smt.py` 及四组现有回归测试导入。
+- `paging_fuzz.py` 没有 `--smoke` 参数；可执行 smoke 入口为 `difftest-xiangshan/smoke/isarch-fuzz/run.py`，使用同一 Isla 的 pt_decode，避免依赖旧 worktree 的绝对路径。
+
+
+## 2026-11-09 std-gaps新组合已实测
+
+模型cbb4766f完整合并7d7e76f3并保留34903a1e的x0及分页历史。双模式严格类型检查通过，新v128 IR下的组界、vstart非陷阱及全寄存器早退清零定向22项通过，原生fuzz20/20成员认证与20次变异/判定通过。VVTYPE七处预算1→0沿用源提交，workaround校验为79配置/130区域/22锚点，不代表全覆盖。[证据](isarch_std_gaps_merge_20261109/status.md)。

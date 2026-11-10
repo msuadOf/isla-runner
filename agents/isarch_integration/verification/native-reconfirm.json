@@ -1,0 +1,186 @@
+{
+  "certified": true,
+  "corpus_entries": 20,
+  "entries": [
+    {
+      "sample_id": 0,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 1,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 2,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 3,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 4,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 5,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 6,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 7,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 8,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 9,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 10,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 11,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 12,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 13,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 14,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 15,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 16,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 17,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 18,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    },
+    {
+      "sample_id": 19,
+      "accepted_paths": 1,
+      "path_same": true,
+      "state_same": true,
+      "guard_unique": true,
+      "post_unique": true,
+      "class_rank_same": true
+    }
+  ]
+}

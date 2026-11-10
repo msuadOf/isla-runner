@@ -3,6 +3,8 @@
 
 - 2026-11-10 [221 个 clause 的路径合并与写缓存实测](pathmerge_cache_all_clauses_20261110/status.md)：主轮继续运行；新增第二轮等待脚本，环境错误补跑、Poison 改 default，主轮收尾后自动接续，保留两轮记录。
 
+- 2026-11-09 [isarch 整合](isarch_integration/status.md)：方案 B，独立候选整合与实测。
+
 - 2026-11-09 三仓及各工作树暂存区外文件审计与清理完成。审查 52 个实际 Git 工作目录，按内容比对恢复 79 份未暂存工作文件，删除 4,538 个确认无用的旧副本、编译缓存与字节码；未运行测试、未计算哈希。保留独有实现及历史证据，详见 [审计报告](../.worktree/unstaged-cleanup-20261109/audit.md)、[专题状态](unstaged_cleanup_20261109/status.md)。
 
 - 2026-11-09 Isla 仓库历史大体积 RISC-V IR 文件彻底移除完成。使用 `git-filter-repo` 清理 `isarch`、`feat/linearize-tri-strategy-grafted`、`feat/witness-randomization` 及 tag `allai`，仓库 packed 大小从 101MB 缩减至 29MB，已强制推送到 GitHub 远端；主仓 `isarch` 子模块 gitlink 已同步更新推送到远端；各工作树已暂存 IR 残留亦已清理完毕，详见 [专题状态](push_index_cleanup_20261109/status.md)。
@@ -175,7 +177,7 @@
 - 2026-11-09 std-gaps与isarch的[六提交核对及合并影响](historical_branch_cleanup_20261109/std-gaps-analysis.md)：已证明无Git文本冲突、x0保留；方案B按指定范围仅迁分页补丁，剩余向量变更须精确候选验收。
 
 
-- 2026-11-09 用户授权[std-gaps正式合入isarch](isarch_std_gaps_merge_20261109/status.md)，独立候选实施与实测。
+- 2026-11-09 [std-gaps完整合入isarch](isarch_std_gaps_merge_20261109/status.md)：候选整合与限定实测完成，含新IR和向量边界验证。
 
 
 - 2026-11-09 [origin远程历史分支清理](origin_branch_cleanup_20261109/status.md)：10条指定分支，网络受限，准备提交租约保护的外部脚本。

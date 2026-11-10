@@ -1,0 +1,758 @@
+#!/usr/bin/env python3
+"""P0 重放：历史 E0、E1/E2 探针，以及 v2 平台绑定与原址具体化。"""
+from __future__ import annotations
+
+import argparse
+import copy
+import hashlib
+import importlib.util
+import json
+import logging
+import os
+from pathlib import Path
+import re
+import signal
+import subprocess
+import time
+
+import pipeline
+
+PPN_MASK = ((1 << 44) - 1) << 10
+RAM_LIMIT = 1 << 43
+FAILURE_REASONS = ("unexpected_trap", "missing_trap", "rd", "mepc", "cause", "tval", "memory")
+
+
+def integer(value):
+    return int(value, 0) if isinstance(value, str) else value
+
+
+def validate_address(address, scenario):
+    """地址域只来自场景；未指定时允许整个 RV64 地址空间。"""
+    if type(address) is not int or not 0 <= address < 1 << 64:
+        raise ValueError("R1: VA 超出 RV64 地址域")
+    for key in ("va", "va_values"):
+        if key in scenario:
+            values = scenario[key]
+            if not isinstance(values, (list, tuple)):
+                values = [values]
+            if address not in [integer(v) for v in values]:
+                raise ValueError("R1: VA 不在场景地址列表内")
+    domain = scenario.get("va_domain", {})
+    if not isinstance(domain, dict) or set(domain) - {"base", "size", "mask", "value"}:
+        raise ValueError("R1: 无效的场景地址域字段")
+    if (('base' in domain) != ('size' in domain)
+            or ('mask' in domain) != ('value' in domain)):
+        raise ValueError("R1: 场景地址域必须成对指定 base/size 或 mask/value")
+    if "base" in domain or "size" in domain:
+        base, size = integer(domain["base"]), integer(domain["size"])
+        if not 0 <= base < base + size <= 1 << 64:
+            raise ValueError("R1: 无效的场景地址域")
+        if not base <= address < base + size:
+            raise ValueError("R1: VA 不在场景地址域内")
+    if "mask" in domain or "value" in domain:
+        mask, value = integer(domain["mask"]), integer(domain["value"])
+        if not (0 <= mask < 1 << 64 and 0 <= value < 1 << 64) or value & ~mask:
+            raise ValueError("R1: 无效的场景地址掩码")
+        if address & mask != value:
+            raise ValueError("R1: VA 不满足场景地址掩码")
+
+
+def instruction_binding(sample, decoder=None):
+    """解析 ld/sd 操作数并编码；构造子存在时以严格解码为准。"""
+    ctor = sample["pre_registers"].get("$instruction")
+    if decoder is not None:
+        access, offset, base = decoder.decode_instruction(sample)
+    if ctor is not None:
+        if decoder is None:
+            raise ValueError("构造子指令必须先通过 decoder 绑定")
+        fields = decoder.struct_value(ctor["value"])
+        name = decoder.LOAD_FIELDS[2] if access == "load" else decoder.STORE_FIELDS[1]
+        register = decoder.bit_value(fields[name], 5)
+    else:
+        match = re.fullmatch(
+            r"(ld|sd)\s+x([0-9]|[12][0-9]|3[01]),\s*([+-]?(?:0x[0-9a-fA-F]+|[0-9]+))\(x([0-9]|[12][0-9]|3[01])\)",
+            sample["isa_state"]["$instruction"])
+        if match is None:
+            raise ValueError("无法解析 ld/sd 指令")
+        mnemonic, register, immediate, base_text = match.groups()
+        access = "load" if mnemonic == "ld" else "store"
+        register, base = int(register), int(base_text)
+        offset = int(immediate, 16 if "0x" in immediate else 10)
+    if not -2048 <= offset <= 2047:
+        raise ValueError("ld/sd 立即数超出有符号 12 位范围")
+    imm = offset & 4095
+    word = (base << 15) | (3 << 12)
+    word |= ((imm << 20) | (register << 7) | 0x03 if access == "load" else
+             ((imm >> 5) << 25) | (register << 20) | ((imm & 31) << 7) | 0x23)
+    return dict(access=access, offset=offset, base=base, register=register, word=word,
+                assembly=f"{'ld' if access == 'load' else 'sd'} x{register}, {offset}(x{base})")
+
+
+def register_value(registers, index, decoder):
+    return 0 if index == 0 else decoder.bit_value(registers[f"x{index}"], 64)
+
+
+def symbolic_address_template(template):
+    """移除旧生成命令中的地址前态，改由 check-samples 输入绑定。"""
+    command = []
+    index = 0
+    while index < len(template):
+        if template[index] == '--prestate':
+            value = template[index+1]
+            if re.fullmatch(r'(?:x(?:[0-9]|[12][0-9]|3[01])|satp)=.*', value):
+                index += 2
+                continue
+        command.append(template[index])
+        index += 1
+    return command
+
+
+def sha256(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def platform_hashes(profile, schema_version=2):
+    """按 lock 版本计算哈希；v2 仅记录 isarch 身份，v1 保留历史算法。"""
+    if schema_version not in (1, 2):
+        raise ValueError(f"R0: 不支持的 lock schema_version: {schema_version}")
+    def digest(value):
+        return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"),
+                                         ensure_ascii=False).encode()).hexdigest()
+    generation = {key: profile[key] for key in ("regions", "harness", "isa", "csr_init", "ir", "isla")}
+    if schema_version == 2:
+        generation["isla"] = {key: value for key, value in profile["isla"].items()
+                              if key != "isarch_sha256"}
+    return digest(generation), digest(profile["env"])
+
+
+def create_platform_lock(profile, files):
+    gen, env = platform_hashes(profile)
+    lock = {"schema_version": 2, "platform_gen_sha256": gen, "platform_env_sha256": env,
+            **{name + "_sha256": sha256(path) for name, path in files.items()}}
+    lock["config_toml_sha256"] = lock.pop("config_sha256")
+    verify_platform_lock(profile, lock, files)
+    return lock
+
+
+def verify_platform_lock(profile, lock, files):
+    gen, env = platform_hashes(profile, lock["schema_version"])
+    if (gen, env) != (lock["platform_gen_sha256"], lock["platform_env_sha256"]):
+        raise ValueError("R0: 平台描述与 lock 不符")
+    for name, path in files.items():
+        key = "config_toml_sha256" if name == "config" else name + "_sha256"
+        actual = sha256(path)
+        if name == "isarch":
+            if actual != lock.get(key) or actual != profile["isla"].get(key):
+                logging.getLogger(__name__).warning(
+                    "isarch 实物哈希与记录不符（仅记录，不影响 corpus 条目的有效性）：实际=%s，lock=%s，profile=%s",
+                    actual, lock.get(key), profile["isla"].get(key))
+            continue
+        if actual != lock[key]:
+            raise ValueError(f"R0: {name} 实物哈希与 lock 不符")
+        section = "ir" if name == "ir" else "env" if name in {"emu", "nemu"} else "isla"
+        if key not in profile[section] or actual != profile[section][key]:
+            raise ValueError(f"R0: {name} 实物哈希与平台描述不符")
+
+
+def platform_case(sample, decoder, profile, source_gen_sha256):
+    """v2 原址转换：期望取 Isla，填具体初值和诱饵后交给 E3。"""
+    # 旧调用方只传来源哈希；识别历史算法，保留旧样本的绑定和记录。
+    if (source_gen_sha256 != platform_hashes(profile)[0]
+            and source_gen_sha256 != platform_hashes(profile, schema_version=1)[0]):
+        raise ValueError("R0: 样本生成侧哈希不符")
+    decoder.exact(sample, decoder.SAMPLE_FIELDS, "samples v1")
+    if sample["schema_version"] != 1:
+        raise ValueError("R1: 仅支持 samples v1")
+    registers = sample["pre_registers"]
+    # 在解码前拒绝 M/虚拟特权级，避免将范围错误混成解码错误。
+    scenario = profile["isla"].get("scenario", {})
+    if not isinstance(scenario, dict):
+        scenario = {}
+    allowed = scenario.get("privilege_domain", [scenario.get("privilege", "Supervisor")])
+    privilege = registers["cur_privilege"]["enum"]
+    status = decoder.bit_value(registers["mstatus"]["struct"]["bits"], 64)
+    if privilege not in {"User", "Supervisor"} or privilege not in allowed:
+        raise ValueError("R1: 特权级不在场景允许的 U/S 域内")
+    if "mstatus_mask" in scenario:
+        mask = int(scenario["mstatus_mask"], 0)
+        value = int(scenario["mstatus_value"], 0)
+        if status & mask != value:
+            raise ValueError("R1: mstatus 不满足场景位约束")
+    elif "mstatus" in scenario and status != scenario["mstatus"]:
+        raise ValueError("R1: mstatus 与固定场景不符")
+    if status & (1 << 17):
+        raise ValueError("R1: 本入口仅回放 MPRV=0 的 U/S 前态")
+    if any(item != {"ctor": "None<RTLB_Entry>", "value": {"unit": True}}
+           for item in registers["tlb"]["vector"]):
+        raise ValueError("R5: 非空 TLB")
+    decoded = decoder.decode_sample(sample, decoder.Config(profile["isa"]["svrsw60t59b"], False, False))
+    access = decoded["access"]
+    instruction = instruction_binding(sample, decoder)
+    validate_address(decoder.effective_address(sample), scenario)
+    if (decoded["mode"] not in {"Sv39", "Sv48"}
+            or decoded["va"] != decoder.effective_address(sample)
+            or ("access" in scenario and access != scenario["access"])
+            or ("satp_modes" in scenario and decoded["satp_mode"] not in
+                [{8: "Sv39", 9: "Sv48"}.get(m) for m in scenario["satp_modes"]])
+            or ("instructions" in scenario and instruction["word"] not in
+                [integer(word) for word in scenario["instructions"]])):
+        raise ValueError("R1: 指令或 SATP 不满足场景约束")
+    for entry in decoded["entries"]:
+        if entry["role"] == "data":
+            continue
+        # 新模型已补齐标准语义；保留原 PTE，分歧交给重放结果分类。
+        if profile["isa"].get("standard_paging", False):
+            continue
+        f = entry["fields"]
+        if entry["role"] == "pointer" and int(entry["value"], 16) & 0xd0:
+            raise ValueError("R7: 指针 U/A/D 非零")
+        if (entry["level"] == 0 and f["V"] and f["N"] and f["PPN"] & 15 == 8
+                and (f["R"] or f["X"]) and not (f["W"] and not f["R"])
+                and not (f["PBMT"] or f["RSW_60t59b"] or f["reserved"])):
+            raise ValueError("R4: 构成 64K NAPOT")
+        # 高 PPN 与页异常同存的优先级未签收；只检查实际读到的 PTE。
+        if (f["V"] and f["PPN"] >= 1 << 36
+                and decoded["exception_type"] in {"E_Load_Page_Fault", "E_SAMO_Page_Fault"}):
+            raise ValueError("R8: 高 PPN 与页异常优先级待查")
+    def ram(address):
+        return any(r["kind"] == "ram" and r["base"] <= address
+                   and address + 8 <= r["base"] + r["size"] for r in profile["regions"]) and address >= 0x80100000
+    termination = decoded["termination"]
+    if termination is not None:
+        address = termination["paddr"]
+        if not any(r["kind"] == "hole" and r["base"] <= address
+                   and address + 8 <= r["base"] + r["size"] for r in profile["regions"]):
+            raise ValueError("R9: AF 目标不在 hole")
+    pre = decoder.memory_bytes(sample["pre_memory"], allow_unknown=True)
+    post = decoder.memory_bytes(sample["post_memory"])
+    if set(pre) != set(post) or any(not ram(a) for a in {a & ~7 for a in pre}):
+        raise ValueError("R9: 样本内存不全在可重放 DRAM")
+    filled = {a: post[a] ^ 255 if value is None else value for a, value in pre.items()}
+    expected_memory = dict(post)
+    # 每个实际 PTE 旁边放一个未访问槽，检查初始化和错误寻址；不改原 PTE。
+    for entry in decoded["entries"]:
+        if entry["role"] == "data":
+            continue
+        address = (entry["paddr"] & ~0xfff) | ((entry["paddr"] + 8) & 0xfff)
+        if ram(address) and not any(address + i in pre for i in range(8)):
+            value = 0xa55aa55aa55aa55a
+            for i in range(8):
+                filled[address+i] = expected_memory[address+i] = (value >> (8*i)) & 255
+    derived = copy.deepcopy(sample)
+    derived["pre_memory"] = [{"address": a, "value": v, "bytes": 1} for a, v in sorted(filled.items())]
+    # check-samples 的后态是实际触碰足迹；诱饵留在前态和 harness 回读表。
+    derived["post_memory"] = copy.deepcopy(sample["post_memory"])
+    writes = [{"address": a, "value": decoder.read_word(filled, a),
+               "expected_value": decoder.read_word(expected_memory, a), "role": "sample_or_decoy"}
+              for a in sorted({a & ~7 for a in filled})]
+    cause = {None: 0, "E_Load_Page_Fault": 13, "E_SAMO_Page_Fault": 15,
+             "E_Load_Access_Fault": 5, "E_SAMO_Access_Fault": 7,
+             "E_Load_Addr_Align": 4, "E_SAMO_Addr_Align": 6}[decoded["exception_type"]]
+    return {"sample": derived, "decoded": decoded, "writes": writes, "entry_mode": "mprv", "access": access,
+            "instruction": instruction,
+            "prestate_context": {"privilege": privilege, "effective_privilege": decoded["effective_privilege"],
+                                 "sum": decoded["sum"], "mxr": decoded["mxr"],
+                                 "mprv": False, "mpp": (status >> 11) & 3},
+            "platform_gen_sha256": source_gen_sha256, "platform_env_sha256": platform_hashes(profile)[1],
+            "expected": {"cause": cause, "tval": decoded["va"] if cause else 0,
+                         "rd": register_value(sample["post_registers"], instruction["register"], decoder)
+                         if access == "load" else None}}
+
+
+def load_decoder(directory, standard_paging=False):
+    path = Path(directory).resolve() / "pt_decode.py"
+    spec = importlib.util.spec_from_file_location("e0_pt_decode", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if standard_paging:
+        module.classify_pte = lambda value, level, config: classify_standard_pte(module, value, level, config)
+    return module, {"path": str(path), "sha256": sha256(path)}
+
+
+def classify_standard_pte(decoder, value, level, config):
+    """ecfg3：沿用严格解码足迹，补齐 NAPOT 与非叶保留位分类；PBMTE 固定0。"""
+    if level > 4:
+        raise ValueError("level 超过 Sv57 上限")
+    f = decoder.decode_pte(value)
+    invalid = [(not f["V"], "v_zero"), (f["W"] and not f["R"], "write_without_read"),
+               (f["PBMT"], "pbmt_disabled"),
+               (f["RSW_60t59b"] and not config.svrsw60t59b, "rsw60t59b_disabled"),
+               (f["reserved"], "reserved_nonzero")]
+    nonleaf = not (f["X"] or f["W"] or f["R"])
+    invalid += [(nonleaf and (f["U"] or f["A"] or f["D"] or f["N"] or f["PBMT"]), "nonleaf_reserved"),
+                (f["N"] and (level != 0 or f["PPN"] & 15 != 8), "n_reserved")]
+    for condition, reason in invalid:
+        if condition:
+            return dict(role="invalid", kind="invalid_"+reason, fields=f,
+                        failure_reason=reason, page_size=None)
+    if nonleaf:
+        return dict(role="pointer", kind="pointer", fields=f,
+                    failure_reason="pointer_at_level0" if level == 0 else None, page_size=None)
+    permissions = "".join(c.lower() if f[c] else "-" for c in "RWX")
+    return dict(role="leaf", kind=f"leaf_{permissions}_u{f['U']}" + ("_napot64k" if f["N"] else ""),
+                fields=f, failure_reason="superpage_misaligned" if f["PPN"] & ((1 << (9*level))-1) else None,
+                page_size=65536 if f["N"] else 1 << (12+9*level))
+
+
+def decode(sample, decoder):
+    decoder.exact(sample, decoder.SAMPLE_FIELDS, "samples v1")
+    if sample["schema_version"] != 1:
+        raise ValueError("R1: 仅支持 samples v1")
+    tlb = sample["pre_registers"]["tlb"]["vector"]
+    if any(item != {"ctor": "None<RTLB_Entry>", "value": {"unit": True}} for item in tlb):
+        raise ValueError("R5: 非空 TLB")
+    decoded = decoder.decode_sample(sample, decoder.Config(True, False, False))
+    instruction = instruction_binding(sample, decoder)
+    if (decoded["mode"] != "Sv39" or instruction["access"] != "load"
+            or decoded["va"] != decoder.effective_address(sample)):
+        raise ValueError("E0 要求 Sv39 ld 与样本有效地址一致")
+    return decoded
+
+
+def predict(sample, decoder, profile="xs"):
+    """Sail 使用严格解码；xs 在规范化后的实际内存上独立遍历。"""
+    if profile == "sail":
+        d = decode(sample, decoder)
+        cause = {None: 0, "E_Load_Page_Fault": 13, "E_Load_Access_Fault": 5,
+                 "E_Load_Addr_Align": 4}[d["exception_type"]]
+        rd = None if cause else (decoder.read_word(decoder.memory_bytes(sample["pre_memory"]), d["paddr_if_success"])
+                                 if instruction_binding(sample, decoder)["register"] else 0)
+        return {"cause": cause, "tval": d["va"] if cause else 0,
+                "rd": rd}
+    if profile != "xs":
+        raise ValueError(f"未知预测配置 {profile}")
+    memory = decoder.memory_bytes(sample["pre_memory"])
+    registers = sample["pre_registers"]
+    status = decoder.bit_value(registers["mstatus"]["struct"]["bits"], 64)
+    privilege = registers["cur_privilege"]["enum"]
+    if privilege not in {"User", "Supervisor"} or status & (1 << 17):
+        raise ValueError("E0 要求原样本有效权限为 U/S，MPRV=0")
+    va = decoder.effective_address(sample)
+    table = (decoder.bit_value(registers["satp"], 64) & ((1 << 44)-1)) << 12
+    cause, rd = 0, None
+    for level in (2, 1, 0):
+        address = table + ((va >> (12+9*level)) & 511)*8
+        if not 0x80000000 <= address < RAM_LIMIT:
+            cause = 5
+            break
+        value = decoder.read_word(memory, address)
+        f = decoder.decode_pte(value)
+        # E0 的高 PPN 代表没有同时触发 PF；不推断多错误优先级。
+        invalid = decoder.classify_pte(value, level, decoder.Config(False, False, False))
+        if invalid["failure_reason"]:
+            cause = 13
+            break
+        if f["PPN"] >= 1 << 36 and f["V"]:
+            cause = 5
+            break
+        if invalid["role"] == "pointer":
+            if value & 0xd0:
+                cause = 13
+                break
+            table = f["PPN"] << 12
+            continue
+        if ((privilege == "User" and not f["U"])
+                or (privilege == "Supervisor" and f["U"] and not status & (1 << 18))
+                or not (f["R"] or (f["X"] and status & (1 << 19))) or not f["A"]):
+            cause = 13
+            break
+        size = 1 << (12+9*level)
+        physical = ((f["PPN"] << 12) & ~(size-1)) | (va & (size-1))
+        if not 0x80000000 <= physical < RAM_LIMIT:
+            cause = 5
+        else:
+            rd = decoder.read_word(memory, physical)
+            if instruction_binding(sample, decoder)["register"] == 0:
+                rd = 0
+        break
+    else:
+        raise ValueError("内部不变量：遍历没有终点")
+    return {"cause": cause, "tval": va if cause else 0, "rd": rd}
+
+
+def relocate_sample(sample, decoder):
+    decoded = decode(sample, decoder)
+    derived = copy.deepcopy(sample)
+    memory = decoder.memory_bytes(sample["pre_memory"])
+    root = decoded["root_paddr"]
+    blocks = []
+    ram_cursor, fault_cursor = 1 << 32, 1 << 44
+    occupied = {a & ~4095 for a in memory}
+
+    def relocate(address, size=4096):
+        nonlocal ram_cursor, fault_cursor
+        base = address & ~(size-1)
+        for old, new, span in blocks:
+            if old <= address < old+span:
+                if base < old or base+size > old+span:
+                    raise ValueError("E0 不支持嵌套搬迁块扩大")
+                return new+address-old
+        ram = decoder.pma_permitted(sample["pre_registers"], address, "load")
+        if ram is None:
+            raise ValueError("R1: 缺少样本 PMA")
+        if address >= RAM_LIMIT or (ram and address >= 0x80100000):
+            new = base
+        else:
+            if base <= root < base+size:
+                raise ValueError("R2: 根表落在搬迁块")
+            cursor = ram_cursor if ram else fault_cursor
+            new = (cursor+size-1) & ~(size-1)
+            while (any(new <= page < new+size for page in occupied)
+                   or any(new < other+span and other < new+size for old, other, span in blocks)):
+                new += size
+            if ram:
+                ram_cursor = new+size
+            else:
+                fault_cursor = new+size
+        if any(new < other+span and other < new+size for old, other, span in blocks):
+            raise ValueError("R6: 重定位目标重叠")
+        blocks.append((base, new, size))
+        return new+address-base
+
+    # 大块先登记，保证同一超级页内 PTE/数据采用同一个映射。
+    for entry in decoded["entries"]:
+        if entry["role"] == "leaf" and entry["level"] > 0:
+            relocate(entry["fields"]["PPN"] << 12, entry["page_size"])
+    replacements = {}
+    writes = []
+    for entry in decoded["entries"]:
+        value = int(entry["value"], 16)
+        address = relocate(entry["paddr"])
+        if entry["role"] != "data":
+            value &= ~(3 << 59)
+            f = decoder.decode_pte(value)
+            pointer = not (f["R"] or f["W"] or f["X"])
+            if pointer:
+                value &= ~0xd0
+            # invalid 项保留 PPN；它不产生后继访问。
+            if entry["role"] != "invalid":
+                size = 4096 if pointer else 1 << (12+9*entry["level"])
+                ppn = f["PPN"]
+                new_base = relocate((ppn << 12) & ~(size-1), size)
+                new_ppn = (new_base >> 12) | (ppn & ((1 << (9*entry["level"]))-1) if not pointer else 0)
+                value = (value & ~PPN_MASK) | (new_ppn << 10)
+            for i in range(8):
+                replacements[entry["paddr"]+i] = (value >> (8*i)) & 255
+        writes.append({"address": address, "value": value, "role": entry["role"]})
+    for name in ("pre_memory", "post_memory"):
+        for cell in derived[name]:
+            old = cell["address"]
+            if old in replacements:
+                if decoder.read_word(decoder.memory_bytes(sample[name]), old & ~7) != decoder.read_word(memory, old & ~7):
+                    raise ValueError("E0 要求 PTE 不写回")
+                cell["value"] = replacements[old]
+            cell["address"] = relocate(old)
+    if len({w["address"] for w in writes}) != len(writes):
+        raise ValueError("R6: 初始化写入重叠")
+    expected = predict(derived, decoder)
+    return {"sample": derived, "decoded": decoded, "writes": writes,
+            "instruction": instruction_binding(derived, decoder),
+            "mapping": [{"old": old, "new": new, "bytes": size} for old, new, size in blocks],
+            "expected": expected, "sail_expected": predict(sample, decoder, "sail")}
+
+
+def directed_probe_case(sample, decoder, entry_mode="mprv"):
+    """E1/E2：保持原地址和 PTE；期望只取 Isla，拒绝未对齐的平台特性。"""
+    decoder.exact(sample, decoder.SAMPLE_FIELDS, "samples v1")
+    if sample["schema_version"] != 1 or entry_mode not in {"mprv", "s"}:
+        raise ValueError("定向探针要求 samples v1 与 mprv/s 入口")
+    registers = sample["pre_registers"]
+    if any(item != {"ctor": "None<RTLB_Entry>", "value": {"unit": True}}
+           for item in registers["tlb"]["vector"]):
+        raise ValueError("R5: 非空 TLB")
+    decoded = decoder.decode_sample(sample, decoder.Config(True, False, False))
+    access = decoded["access"]
+    instruction = instruction_binding(sample, decoder)
+    if (decoded["mode"] != "Sv39" or decoded["va"] != decoder.effective_address(sample)
+            or registers["cur_privilege"]["enum"] != "Supervisor"
+            or decoder.bit_value(registers["mstatus"]["struct"]["bits"], 64) & (1 << 17)):
+        raise ValueError("定向探针只支持 Sv39 S 态 ld/sd")
+    for entry in decoded["entries"]:
+        if entry["role"] == "data":
+            continue
+        f = entry["fields"]
+        if f["RSW_60t59b"]:
+            raise ValueError("配置未对齐：Svrsw60t59b")
+        if entry["role"] == "pointer" and int(entry["value"], 16) & 0xd0:
+            raise ValueError("R7: 指针 U/A/D 非零")
+        if f["N"] or f["PBMT"] or f["reserved"] or f["PPN"] >= 1 << 36:
+            raise ValueError("定向探针排除扩展位、保留位与高 PPN")
+    if decoded["exception_type"] not in {None, "E_Load_Page_Fault", "E_SAMO_Page_Fault"}:
+        raise ValueError("定向探针排除 PMA 不一致的 AF")
+    pre = decoder.memory_bytes(sample["pre_memory"], allow_unknown=True)
+    post = decoder.memory_bytes(sample["post_memory"])
+    if set(pre) != set(post) or any(not 0x80100000 <= a < RAM_LIMIT for a in pre):
+        raise ValueError("R9: 定向探针内存必须全部在 DRAM")
+    filled = {a: post[a] ^ 255 if value is None else value for a, value in pre.items()}
+    writes = []
+    for address in sorted({a & ~7 for a in pre}):
+        writes.append({"address": address, "value": decoder.read_word(filled, address),
+                       "expected_value": decoder.read_word(post, address), "role": "sample"})
+    # 真 S 态的取指映射绑定样本 SATP 根表，并检查其与样本的占用冲突。
+    if entry_mode == "s":
+        address = decoded["root_paddr"] + 2 * 8
+        if any(address+i in pre for i in range(8)) or decoded["vpn"][-1] == 2:
+            raise ValueError("R6: S 态取指映射与样本重叠")
+        value = ((0x80000000 >> 12) << 10) | 0xcb
+        writes.append({"address": address, "value": value, "expected_value": value, "role": "harness_fetch"})
+    cause = {None: 0, "E_Load_Page_Fault": 13, "E_SAMO_Page_Fault": 15}[decoded["exception_type"]]
+    rd = None
+    if access == "load":
+        rd = register_value(sample["post_registers"], instruction["register"], decoder)
+    return {"sample": copy.deepcopy(sample), "decoded": decoded, "writes": writes,
+            "entry_mode": entry_mode, "access": access, "directed_probe": True, "instruction": instruction,
+            "expected": {"cause": cause, "tval": decoded["va"] if cause else 0, "rd": rd}}
+
+
+def paging_assembly(case):
+    sample, expected = case["sample"], case["expected"]
+    registers = sample["pre_registers"]
+    status = int(registers["mstatus"]["struct"]["bits"]["bits"], 2)
+    privilege = {"User": 0, "Supervisor": 1}[registers["cur_privilege"]["enum"]]
+    status = (status & ~((3 << 11) | (1 << 3))) | (1 << 17) | (privilege << 11)
+    real_s = case.get("entry_mode") == "s"
+    if real_s:
+        status &= ~(1 << 17)
+    instruction = case.get("instruction") or instruction_binding(sample)
+    access = instruction["access"]
+    # 先保存结果，避免 rd 与退出检查使用的 t0/s0/s1/s2 等寄存器重合。
+    saved_rd = "x30" if instruction["register"] == 31 else "x31"
+    capture = [f"    mv {saved_rd}, x{instruction['register']}"] if access == "load" else []
+    envcfg = int(registers["menvcfg"]["struct"]["bits"]["bits"], 2)
+    if envcfg != 0:
+        raise ValueError("E0 要求 menvcfg=0")
+    lines = [".section .text.init", ".globl _start", ".option norvc", ".option norelax", "_start:",
+             "    li t0, 0x20008", "    csrc mstatus, t0",
+             "    csrw satp, zero", "    csrw medeleg, zero", "    csrw mideleg, zero",
+             "    csrw mie, zero", "    csrw mcause, zero", "    csrw mtval, zero", "    csrw mepc, zero",
+             "    csrw 0x30a, zero", "    la t0, trap_handler", "    csrw mtvec, t0",
+             *pipeline.pmp_open_setup()]
+    for word in case["writes"]:
+        if not 0x80100000 <= word["address"] < RAM_LIMIT:
+            raise ValueError("初始化地址不在 XiangShan DRAM")
+        lines += [f"    li t0, {word['address']:#x}", f"    li t1, {word['value']:#x}", "    sd t1, 0(t0)"]
+    lines += ["    fence rw, rw", f"    li t0, {int(registers['satp']['bits'], 2):#x}", "    csrw satp, t0",
+              "    sfence.vma x0, x0", f"    li t0, {status:#x}", "    csrw mstatus, t0"]
+    if real_s:
+        lines += ["    la t0, s_entry", "    csrw mepc, t0", "    mret", "s_entry:"]
+    for index in range(1, 32):
+        key = f"x{index}"
+        if key in registers:
+            lines.append(f"    li {key}, {int(registers[key]['bits'], 2):#x}")
+    lines += ["payload_ins:", "    " + instruction["assembly"], *capture]
+    if real_s:
+        lines += ["s_return:", "    ecall", "    j fail_missing_trap"]
+    else:
+        lines += ["    li t0, 0x20000", "    csrc mstatus, t0",
+                  "    csrr s0, mcause", "    csrr s1, mtval", "    csrr s2, mepc"]
+    if expected["cause"]:
+        lines += ["    j fail_missing_trap"]
+    else:
+        lines += ["    j check_result"]
+    lines += [".balign 4", "trap_handler:", *capture, "    li t0, 0x20000", "    csrc mstatus, t0",
+              "    csrr s0, mcause", "    csrr s1, mtval", "    csrr s2, mepc"]
+    if not expected["cause"]:
+        if real_s:
+            lines += ["    la t0, s_return", "    bne s2, t0, fail_unexpected_trap",
+                      "    li t0, 9", "    bne s0, t0, fail_cause", "    bnez s1, fail_tval",
+                      "    j check_result"]
+        else:
+            lines += ["    j fail_unexpected_trap"]
+    else:
+        lines += ["    la t0, payload_ins", "    bne s2, t0, fail_mepc",
+                  f"    li t0, {expected['cause']}", "    bne s0, t0, fail_cause",
+                  f"    li t0, {expected['tval']:#x}", "    bne s1, t0, fail_tval", "    j check_result"]
+    lines += ["check_result:"]
+    if expected["rd"] is not None:
+        lines += [f"    li t0, {expected['rd']:#x}", f"    bne {saved_rd}, t0, fail_rd"]
+    lines += ["check_memory:"]
+    for word in case["writes"]:
+        lines += [f"    li t0, {word['address']:#x}", "    ld t2, 0(t0)",
+                  f"    li t1, {word.get('expected_value', word['value']):#x}", "    bne t2, t1, fail_memory"]
+    lines += ["good_trap:", "    li a0, 0", "good_trap_ins:", "    .4byte 0x0005006b"]
+    for reason in FAILURE_REASONS:
+        lines += [f"fail_{reason}:", "    li a0, 1", f"fail_{reason}_trap:", "    .4byte 0x0005006b", f"    j fail_{reason}"]
+    return "\n".join(lines)+"\n"
+
+
+def check_exit_layout(disassembly, symbols):
+    """核对链接后的出口：GOOD 只能从完整内存检查块顺序落入。"""
+    instructions = []
+    for line in disassembly.splitlines():
+        match = re.match(r"\s*([0-9a-f]+):\s+([0-9a-f]{8})\s+(.+)", line)
+        if match:
+            instructions.append((int(match[1], 16), int(match[2], 16), match[3]))
+    words = {pc: word for pc, word, asm in instructions}
+    failure_symbols = {f"fail_{reason}_trap" for reason in FAILURE_REASONS}
+    if {name for name in symbols if re.fullmatch(r"fail_.+_trap", name)
+        and name not in {f"fail_{reason}" for reason in FAILURE_REASONS}} != failure_symbols:
+        raise ValueError("出口静态检查：失败桩符号集合错误")
+    trap_addresses = {symbols[name] for name in failure_symbols | {"good_trap_ins"}}
+    if len(trap_addresses) != len(FAILURE_REASONS)+1:
+        raise ValueError("出口静态检查：失败桩符号地址不唯一")
+    if {pc for pc, word, asm in instructions if word & 0x7f == 0x6b} != trap_addresses:
+        raise ValueError("出口静态检查：存在未登记的 XSTrap 或出口缺失")
+    for name in failure_symbols:
+        if words.get(symbols[name]-4) != 0x00100513 or words.get(symbols[name]) != 0x0005006b:
+            raise ValueError("出口静态检查：失败桩编码错误")
+    check, good, trap = (symbols[name] for name in ("check_memory", "good_trap", "good_trap_ins"))
+    if not check < good or trap != good+4 or words.get(good) != 0x00000513 or words.get(trap) != 0x0005006b:
+        raise ValueError("出口静态检查：GOOD 桩布局错误")
+    failure_entries = {symbols[f"fail_{reason}"] for reason in FAILURE_REASONS}
+    for pc, word, asm in instructions:
+        opcode = word & 0x7f
+        if opcode == 0x67:
+            raise ValueError("出口静态检查：不允许间接跳转")
+        if opcode in (0x63, 0x6f):
+            target = re.search(r"\b([0-9a-f]+)\s+<", asm)
+            if target is None:
+                raise ValueError("出口静态检查：跳转目标不可解析")
+            destination = int(target[1], 16)
+            if check < destination <= trap:
+                raise ValueError("出口静态检查：跳转绕过内存检查")
+            if check <= pc < good and (opcode != 0x63 or destination not in failure_entries):
+                raise ValueError("出口静态检查：内存检查块不能顺序落入 GOOD")
+    if good-4 not in words or words[good-4] & 0x7f != 0x63:
+        raise ValueError("出口静态检查：GOOD 前缺少内存检查")
+
+
+def build_case(case, output, compiler="riscv64-unknown-elf-gcc"):
+    output = Path(output).resolve()
+    output.mkdir(parents=True, exist_ok=True)
+    assembly, elf, linker = output/"program.S", output/"program.elf", output/"xiangshan.ld"
+    assembly.write_text(paging_assembly(case))
+    linker.write_text(pipeline.LINKER)
+    command = [compiler, "-nostdlib", "-nostartfiles", "-static", "-fno-pic", "-march=rv64gc", "-mabi=lp64d",
+               "-Wl,-T,"+str(linker), "-Wl,-e,_start", "-o", str(elf), str(assembly)]
+    compiled = subprocess.run(command, capture_output=True, text=True)
+    (output/"build.log").write_text(compiled.stdout+compiled.stderr)
+    compiled.check_returncode()
+    ranges = pipeline.elf_alloc_ranges(elf)
+    if not ranges or any(start < 0x80000000 or end > 0x80100000 for start, end in ranges):
+        raise ValueError("R6: ELF 超出代码窗口")
+    plan = {"pre": case["sample"]["pre_memory"], "post": case["sample"]["post_memory"], "events": []}
+    if pipeline.memory_overlaps_ranges(plan, ranges):
+        raise ValueError("R6: ELF 与样本内存重叠")
+    nm = subprocess.run([compiler.removesuffix("gcc")+"nm", "-n", str(elf)], capture_output=True, text=True, check=True)
+    (output/"symbols.txt").write_text(nm.stdout)
+    symbols = {}
+    for line in nm.stdout.splitlines():
+        parts = line.split()
+        if len(parts) == 3:
+            if parts[2] in symbols:
+                raise ValueError("出口静态检查：重复符号")
+            symbols[parts[2]] = int(parts[0], 16)
+    objdump = subprocess.run([compiler.removesuffix("gcc")+"objdump", "-d", "-M", "no-aliases", str(elf)],
+                             capture_output=True, text=True, check=True)
+    (output/"objdump.txt").write_text(objdump.stdout)
+    check_exit_layout(objdump.stdout, symbols)
+    if symbols["trap_handler"] % 4:
+        raise ValueError("handler 未按 4 字节对齐")
+    result = {**case, "elf": str(elf), "elf_sha256": sha256(elf), "build_command": command, "symbols": symbols}
+    (output/"case.json").write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n")
+    return result
+
+
+def classify_log(log, returncode, symbols, *, elf_sha256=None, expected_elf_sha256=None):
+    text = re.sub(r"\x1b\[[0-9;]*m", "", log)
+    l2 = bool(re.search(r"L2TLB resp test[^\n]*failed", text))
+    hits = re.findall(r"HIT (?:GOOD|BAD) TRAP", text)
+    good, bad = "HIT GOOD TRAP" in hits, "HIT BAD TRAP" in hits
+    match = re.search(r"HIT (?:GOOD|BAD) TRAP at pc\s*=\s*(0x[0-9a-fA-F]+)", text)
+    pc = int(match[1], 16) if match else None
+    names = [name for name, address in symbols.items() if address == pc]
+    symbol = names[0] if len(names) == 1 else None
+    failure = re.fullmatch(r"fail_(.+)_trap", symbol) if symbol is not None else None
+    reason = failure[1] if failure else None
+    false_good = good and failure is not None
+    hash_matches = elf_sha256 is not None and elf_sha256 == expected_elf_sha256
+    limit = bool(re.search(r"EXCEEDING (?:CYCLE|INSTR|CYCLE/INSTR) LIMIT", text))
+    agree = (hash_matches and returncode == 0 and len(hits) == 1 and good and not bad
+             and pc == symbols.get("good_trap_ins") and pc is not None
+             and symbol == "good_trap_ins" and not l2 and "ABORT" not in text and not limit)
+    bucket = ("timeout" if returncode is None else "limit" if limit else
+              "other-failure" if not hash_matches else
+              "xs!=expected" if len(hits) == 1 and failure else
+              "framework-abort" if l2 else "xs!=nemu" if "ABORT" in text else
+              "agree" if agree else "other-failure")
+    return {"agree": agree, "bucket": bucket, "good_trap": good, "bad_trap": bad,
+            "abort": "ABORT" in text, "trap_pc": pc, "trap_symbol": symbol,
+            "bad_pc": pc if bad else None, "bad_symbol": symbol if bad else None,
+            "false_good": false_good, "l2tlb_failed": l2, "reason": reason,
+            "hit_count": len(hits), "elf_hash_matches": hash_matches, "limit": limit}
+
+
+def run_probe(case, emulator, diff_so, timeout=600):
+    """沿用 run_case 的命令与进程组止损；E0 保留完整日志且超时不重跑。"""
+    if not 0 < timeout <= 600:
+        raise ValueError("单次 emu 超时上限是 600 秒")
+    directory = Path(case["elf"]).parent
+    if sha256(case["elf"]) != case["elf_sha256"]:
+        raise ValueError("R0: 运行 ELF 哈希与 case.json 不一致")
+    command = [str(Path(emulator).resolve()), "-i", case["elf"], "--diff", str(Path(diff_so).resolve())]
+    started = time.monotonic()
+    # pipeline.run_case 会丢弃 GOOD 的完整日志，且超时后自动重跑，不能用于 E0 取证。
+    with (directory/"difftest.log").open("w") as log:
+        proc = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, cwd=directory, start_new_session=True)
+        try:
+            returncode = proc.wait(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            os.killpg(proc.pid, signal.SIGKILL)
+            proc.wait()
+            returncode = None
+    log = (directory/"difftest.log").read_text(errors="replace")
+    result = {"id": directory.name, "command": command, "returncode": returncode,
+              "elapsed": round(time.monotonic()-started, 3), "log": str(directory/"difftest.log"),
+              "elf_sha256": sha256(case["elf"]), "expected_elf_sha256": case["elf_sha256"],
+              **classify_log(log, returncode, case["symbols"], elf_sha256=sha256(case["elf"]),
+                             expected_elf_sha256=case["elf_sha256"])}
+    (directory/"result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n")
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest="action", required=True)
+    convert = sub.add_parser("convert")
+    convert.add_argument("--input", type=Path, required=True)
+    convert.add_argument("--sample-id", type=int, required=True)
+    convert.add_argument("--pt-decode-dir", type=Path, required=True)
+    convert.add_argument("--output", type=Path, required=True)
+    build = sub.add_parser("build")
+    build.add_argument("--case", type=Path, required=True)
+    build.add_argument("--output", type=Path, required=True)
+    build.add_argument("--compiler", default="riscv64-unknown-elf-gcc")
+    run = sub.add_parser("run")
+    run.add_argument("--case", type=Path, required=True)
+    run.add_argument("--emu", default=os.environ.get("XIANGSHAN_EMU"), required="XIANGSHAN_EMU" not in os.environ)
+    run.add_argument("--diff", default=os.environ.get("XIANGSHAN_DIFF_SO"), required="XIANGSHAN_DIFF_SO" not in os.environ)
+    run.add_argument("--timeout", type=int, default=600)
+    classify = sub.add_parser("classify")
+    classify.add_argument("--case", type=Path, required=True)
+    classify.add_argument("--log", type=Path, required=True)
+    classify.add_argument("--returncode", type=int, required=True)
+    args = parser.parse_args()
+    if args.action == "convert":
+        decoder, provenance = load_decoder(args.pt_decode_dir)
+        selected = [json.loads(line) for line in args.input.open() if json.loads(line)["sample_id"] == args.sample_id]
+        if len(selected) != 1:
+            raise ValueError("sample_id 必须恰好匹配一条")
+        case = relocate_sample(selected[0], decoder)
+        case["pt_decode"] = provenance
+        case["source"] = {"path": str(args.input.resolve()), "sha256": sha256(args.input), "sample_id": args.sample_id}
+        args.output.mkdir(parents=True, exist_ok=True)
+        (args.output/"converted.json").write_text(json.dumps(case, ensure_ascii=False, indent=2)+"\n")
+        (args.output/"derived.jsonl").write_text(json.dumps(case["sample"], ensure_ascii=False)+"\n")
+    else:
+        case = json.loads(args.case.read_text())
+        if args.action == "build":
+            build_case(case, args.output, args.compiler)
+        elif args.action == "run":
+            print(json.dumps(run_probe(case, args.emu, args.diff, args.timeout), ensure_ascii=False))
+        else:
+            print(json.dumps(classify_log(args.log.read_text(), args.returncode, case["symbols"],
+                elf_sha256=sha256(case["elf"]), expected_elf_sha256=case["elf_sha256"]), ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-09",
+  "model_commit": "34903a1e127780cccaaf157992a5c07ce0662210",
+  "isla_base": "a8b610dd",
+  "runner_base": "38801d0c",
+  "python": {
+    "passed": 153,
+    "subtests_passed": 210,
+    "exit_code": 0
+  },
+  "path_merging": {
+    "passed": 6,
+    "exit_code": 0
+  },
+  "executor": {
+    "passed": 396,
+    "ignored": 5,
+    "exit_code": 0
+  },
+  "native": {
+    "exit_code": 0,
+    "corpus_certified": 20,
+    "mutants_generated": 20,
+    "mutants_judged": 20,
+    "threads": 32
+  },
+  "original_git_metadata": "read-only; original branches unchanged",
+  "ir_sha256": "3d4de1379301ddb188114e250a511daed2dc7f6af14b360605de96799a4d2f2e"
+}

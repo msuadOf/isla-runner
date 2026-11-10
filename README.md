@@ -67,5 +67,8 @@ workaround 配置直接位于 `sail-riscv/configs/isla/workarounds/`，`make sol
 
 在 `isla/` 中运行 solve 时，每个任务独立管理其 timeout 进程组，Ctrl-C 会清理该任务。手动停止使用 `make solve-kill SOLVE_PID=<监督进程PID>`；PID 可从运行中的 `solve_process.py run` 命令确认，不再按进程名全局清理。退出详情写入 `output/process/`。
 
-
 仅浮点分支 `feat/float-only-20261008` 的多 IR 兼容性、FPR 状态修复及持久回归入口见[交付记录](agents/float_only_review/fix.md)；该记录对应独立工作树，不改变当前 `isla/` 的未提交状态。
+
+## isarch 整合入口
+
+统一候选保留 Isla 全部 path merge 与原生 fuzz，模型包含 x0、Svnapot 和 Svpbmt 修复。动态 prestate 重放与 smoke 入口见 [isarch fuzz smoke](difftest-xiangshan/smoke/isarch-fuzz/README.md)；本轮进展与限制见 [整合状态](agents/isarch_integration/status.md)。

@@ -1,5 +1,7 @@
 # TODOs — 当前协作状态
 
+**isarch 方案 B 整合（2026-11-09，候选已实施／限定实测通过，原分支收尾阻塞）**：Python 153/210、path_merging 6、executor 396/5 ignored、原生 fuzz 20/20 认证及 20 次变异均退出 0。原 Git 元数据只读，候选已保存，原分支未清理。[状态](../agents/isarch_integration/status.md)。
+
 **两分支合并前审查（2026-11-10）**：loop-region-merge 与 isarch-quick-failures 限相对 `daf61c04` 审查及当轮修复完成；带修复后可合并，无新增失败，顶层仍有原有缺 IR 七项失败；合并树待验证。[状态](../agents/isla_premerge_review_20261110/status.md)。
 
 **路径合并与缓存实测（2026-11-10，主轮运行／第二轮等待）**：只测名单 221 项，双并发、T32/2h、无限制预算；主轮 PID 2128518 保持运行。新增独立第二轮：环境错误按原 tactic 补跑，指定 Poison 错误改 default；等待主轮完全收尾后再启动，其他错误／partial／超时不补跑。当前候选四项，名单随主轮更新；五项规则测试通过，最终汇总合并两轮。[状态](../agents/pathmerge_cache_all_clauses_20261110/status.md)。
@@ -452,3 +454,6 @@ Isla `cf1aa14`、模型 `6202e23`：辅助编码仅保留指令字段原断言�
 
 
 - 2026-11-09 [暂存区外审计与清理](../agents/unstaged_cleanup_20261109/status.md)：52个工作目录审计完成：恢复79份未暂存文件、删除4538个文件；独有实现和历史证据保留。未测试，未计算或比对哈希。
+
+
+**std-gaps合入isarch（2026-11-09，候选实施与限定实测通过）**：模型cbb4766f；双模式严格类型、v128 IR重生、path merge6、executor396/5忽略、Python153/210子测试、向量22、原生fuzz20认证/20变异均exit0。原仓库导入待沙箱外执行。[状态](../agents/isarch_std_gaps_merge_20261109/status.md)。
