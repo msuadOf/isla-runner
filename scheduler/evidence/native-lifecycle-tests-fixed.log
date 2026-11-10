@@ -1,0 +1,10 @@
+test_cached_loader_executes_real_elf (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_cached_loader_executes_real_elf) ... ok
+test_closed_stdin_cancels_and_repeated_start_does_not_run_again (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_closed_stdin_cancels_and_repeated_start_does_not_run_again) ... ok
+test_expired_lease_cleans_supervisor_and_records_exit (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_expired_lease_cleans_supervisor_and_records_exit) ... ok
+test_node_owner_rejects_second_controller (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_node_owner_rejects_second_controller) ... ok
+test_worker_rejects_manifest_path_escape (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_worker_rejects_manifest_path_escape) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.002s
+
+OK

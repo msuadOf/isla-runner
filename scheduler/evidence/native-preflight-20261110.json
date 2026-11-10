@@ -1,0 +1,16 @@
+{
+  "public-Super-Server": {
+    "ready": true,
+    "cpus": 128,
+    "machine": "x86_64",
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+    "kernel": "7.0.0-42-generic",
+    "base": "/data1/baiyifan/workplace/isla-runner/scheduler/runtime/native"
+  },
+  "public-4090server": {
+    "error": "worker 连接结束 (255)：socket: Operation not permitted\r\nssh: connect to host 192.168.221.161 port 22: failure\r\n"
+  },
+  "preston": {
+    "error": "worker 连接结束 (255)：socket: Operation not permitted\r\nssh: connect to host 192.168.103.89 port 22: failure\r\n"
+  }
+}

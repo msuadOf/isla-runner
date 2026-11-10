@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-11-10T07:12:50.858889+00:00",
+  "checks": [
+    {
+      "name": "preflight",
+      "command": [
+        "/home/baiyifan/miniconda3/bin/python3",
+        "scheduler/scripts/deploy_cluster.py",
+        "--check"
+      ],
+      "exit_code": 1,
+      "result": "BLOCKED",
+      "log": "evidence/preflight.log"
+    },
+    {
+      "name": "deploy",
+      "command": [
+        "/home/baiyifan/miniconda3/bin/python3",
+        "scheduler/scripts/deploy_cluster.py"
+      ],
+      "exit_code": 1,
+      "result": "BLOCKED",
+      "log": "evidence/deploy.log"
+    },
+    {
+      "name": "e2e",
+      "command": [
+        "bash",
+        "scheduler/scripts/test_cluster.sh",
+        "--timeout",
+        "3"
+      ],
+      "exit_code": 1,
+      "result": "BLOCKED",
+      "log": "evidence/e2e.log"
+    },
+    {
+      "name": "python-syntax-and-embedded-scripts",
+      "result": "PASS"
+    },
+    {
+      "name": "offline-tests",
+      "command": [
+        "/home/baiyifan/miniconda3/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scheduler/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "evidence/offline-tests.log"
+    },
+    {
+      "name": "shell-syntax",
+      "command": [
+        "bash",
+        "-n",
+        "scheduler/scripts/test_cluster.sh"
+      ],
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "evidence/shell-syntax.log"
+    },
+    {
+      "name": "shellcheck",
+      "command": [
+        "shellcheck",
+        "scheduler/scripts/test_cluster.sh"
+      ],
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "evidence/shellcheck.log"
+    },
+    {
+      "name": "render",
+      "command": [
+        "/home/baiyifan/miniconda3/bin/python3",
+        "scheduler/scripts/deploy_cluster.py",
+        "--render-only"
+      ],
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "evidence/render.log"
+    }
+  ]
+}

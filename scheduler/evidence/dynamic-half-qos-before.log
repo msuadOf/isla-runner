@@ -1,0 +1,192 @@
+test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) ... 
+  test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=16) ... ERROR
+  test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=32) ... ERROR
+  test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=64) ... ERROR
+  test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=1) ... ERROR
+  test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=3) ... ERROR
+  test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=5) ... ERROR
+test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) ... 
+  test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) (legacy=1) ... FAIL
+  test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) (legacy=16) ... FAIL
+  test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) (legacy=128) ... FAIL
+test_native_config_without_stop_free_cores (scheduler.tests.test_qos.QoSTests.test_native_config_without_stop_free_cores) ... ERROR
+test_offline_oversized_and_external (scheduler.tests.test_qos.QoSTests.test_offline_oversized_and_external) ... ERROR
+test_same_free_capacity_adapts_to_light_and_heavy_tasks (scheduler.tests.test_qos.QoSTests.test_same_free_capacity_adapts_to_light_and_heavy_tasks) ... ERROR
+test_small_jobs_and_exact_threshold (scheduler.tests.test_qos.QoSTests.test_small_jobs_and_exact_threshold) ... ERROR
+test_smooth_four_to_one (scheduler.tests.test_qos.QoSTests.test_smooth_four_to_one) ... ERROR
+test_threshold_spill_wait_release (scheduler.tests.test_qos.QoSTests.test_threshold_spill_wait_release) ... ERROR
+test_unsuccessful_probes_do_not_change_credits (scheduler.tests.test_qos.QoSTests.test_unsuccessful_probes_do_not_change_credits) ... ok
+
+======================================================================
+ERROR: test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=16)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 69, in test_dynamic_half_threshold_boundary_spill_and_wait
+    self.assertEqual(qos.reserve('at-boundary', cores), 'high')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=32)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 69, in test_dynamic_half_threshold_boundary_spill_and_wait
+    self.assertEqual(qos.reserve('at-boundary', cores), 'high')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=64)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 69, in test_dynamic_half_threshold_boundary_spill_and_wait
+    self.assertEqual(qos.reserve('at-boundary', cores), 'high')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 69, in test_dynamic_half_threshold_boundary_spill_and_wait
+    self.assertEqual(qos.reserve('at-boundary', cores), 'high')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 69, in test_dynamic_half_threshold_boundary_spill_and_wait
+    self.assertEqual(qos.reserve('at-boundary', cores), 'high')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_dynamic_half_threshold_boundary_spill_and_wait (scheduler.tests.test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) (cores=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 69, in test_dynamic_half_threshold_boundary_spill_and_wait
+    self.assertEqual(qos.reserve('at-boundary', cores), 'high')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_native_config_without_stop_free_cores (scheduler.tests.test_qos.QoSTests.test_native_config_without_stop_free_cores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 113, in test_native_config_without_stop_free_cores
+    config = load_config(path)
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/common.py", line 42, in load_config
+    raise ValueError(f'{name}.{key} 必须为正整数')
+ValueError: node.stop_free_cores 必须为正整数
+
+======================================================================
+ERROR: test_offline_oversized_and_external (scheduler.tests.test_qos.QoSTests.test_offline_oversized_and_external)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 51, in test_offline_oversized_and_external
+    self.assertEqual(qos.reserve('spill', 32), '4090')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_same_free_capacity_adapts_to_light_and_heavy_tasks (scheduler.tests.test_qos.QoSTests.test_same_free_capacity_adapts_to_light_and_heavy_tasks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 84, in test_same_free_capacity_adapts_to_light_and_heavy_tasks
+    self.assertIsNone(qos.reserve('heavy-64', 64))
+                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_small_jobs_and_exact_threshold (scheduler.tests.test_qos.QoSTests.test_small_jobs_and_exact_threshold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 41, in test_small_jobs_and_exact_threshold
+    self.assertEqual(qos.reserve('first', 16), 'preston')
+                     ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_smooth_four_to_one (scheduler.tests.test_qos.QoSTests.test_smooth_four_to_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 20, in test_smooth_four_to_one
+    selected.append(qos.reserve(str(i), 1))
+                    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+ERROR: test_threshold_spill_wait_release (scheduler.tests.test_qos.QoSTests.test_threshold_spill_wait_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 28, in test_threshold_spill_wait_release
+    selected = [qos.reserve(str(i), 32) for i in range(8)]
+                ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/qos.py", line 13, in reserve
+    and n['cpus'] - n['external'] - n['reserved'] >= min(cores, n['stop_free_cores'])]
+                                                                ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'stop_free_cores'
+
+======================================================================
+FAIL: test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) (legacy=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 97, in test_legacy_stop_free_cores_does_not_affect_admission
+    self.assertIsNone(qos.reserve('heavy', 64))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'node' is not None
+
+======================================================================
+FAIL: test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) (legacy=16)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 98, in test_legacy_stop_free_cores_does_not_affect_admission
+    self.assertEqual(qos.reserve('light', 16), 'node')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'node'
+
+======================================================================
+FAIL: test_legacy_stop_free_cores_does_not_affect_admission (scheduler.tests.test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) (legacy=128)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_qos.py", line 98, in test_legacy_stop_free_cores_does_not_affect_admission
+    self.assertEqual(qos.reserve('light', 16), 'node')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'node'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.016s
+
+FAILED (failures=3, errors=12)

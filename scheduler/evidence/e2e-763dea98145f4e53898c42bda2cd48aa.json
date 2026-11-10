@@ -1,0 +1,7 @@
+{
+  "result": "FAIL",
+  "started_unix": 1794294470.3974917,
+  "cases": [],
+  "error": "condor_status 未满足 nodes.conf；最后广告：[]；错误：sudo: The \"no new privileges\" flag is set, which prevents sudo from running as root.\nsudo: If sudo is running in a container, you may need to adjust the container configuration to disable the flag.",
+  "finished_unix": 1794294474.4056485
+}

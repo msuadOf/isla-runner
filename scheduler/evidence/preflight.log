@@ -1,0 +1,16 @@
+{
+  "public-Super-Server": {
+    "hostname": "public-Super-Server",
+    "os": "Ubuntu 26.04.1 LTS",
+    "cpus": 128,
+    "architecture": "x86_64",
+    "docker": "/usr/bin/docker",
+    "sudo_ok": false,
+    "sudo_error": "sudo: The \"no new privileges\" flag is set, which prevents sudo from running as root.\nsudo: If sudo is running in a container, you may need to adjust the container configuration to disable the flag."
+  },
+  "public-4090server": {
+    "error": "CalledProcessError",
+    "detail": "socket: Operation not permitted\r\nssh: connect to host 192.168.221.161 port 22: failure\r\n"
+  }
+}
+错误：预检未通过，详见 scheduler/evidence/preflight.json

@@ -1,0 +1,7 @@
+{
+  "result": "FAIL",
+  "started_unix": 1794293402.6629622,
+  "cases": [],
+  "error": "condor_status 未满足 nodes.conf；最后广告：[]",
+  "finished_unix": 1794293412.6857648
+}

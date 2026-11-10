@@ -1,0 +1,12 @@
+command: make -C isla -f scripts/run.mk -n -o build-isarch solve-MRET SOLVE_TOTAL=1 THREADS=32
+make: Entering directory '/data1/baiyifan/workplace/isla-runner/isla'
+mkdir -p output/log output/trace outputs && echo 0 > output/.solve_progress_counter
+mkdir -p output/log output/trace outputs
+n=$(flock output/.solve_progress_counter sh -c 'v=$(cat output/.solve_progress_counter 2>/dev/null || echo 0); v=$((v+1)); echo $v > output/.solve_progress_counter; echo $v'); \
+echo "[$n/1] solve-MRET"; \
+RUST_BACKTRACE=1 exec /usr/bin/python3 scripts/solve_process.py run --clause "MRET" -- timeout --signal=TERM --kill-after=10s 60m ./target/release/isarch \
+	-A ./rv64d.ir -C ./configs/riscv64_difftest.toml  --verbose --debug=fmlgcsra --probe-all --trace-all     -T 32 --timeout 55m --smt-timeout 1m --tastic qfaufbv   solve-state --clause=MRET \
+	> output/log/MRET.log 2>&1
+make: Leaving directory '/data1/baiyifan/workplace/isla-runner/isla'
+
+exit: 0

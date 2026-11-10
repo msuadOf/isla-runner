@@ -1,0 +1,51 @@
+test_cached_loader_executes_real_elf (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_cached_loader_executes_real_elf) ... FAIL
+test_closed_stdin_cancels_and_repeated_start_does_not_run_again (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_closed_stdin_cancels_and_repeated_start_does_not_run_again) ... FAIL
+test_expired_lease_cleans_supervisor_and_records_exit (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_expired_lease_cleans_supervisor_and_records_exit) ... FAIL
+test_node_owner_rejects_second_controller (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_node_owner_rejects_second_controller) ... ok
+test_worker_rejects_manifest_path_escape (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_worker_rejects_manifest_path_escape) ... ok
+
+======================================================================
+FAIL: test_cached_loader_executes_real_elf (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_cached_loader_executes_real_elf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_native_lifecycle.py", line 97, in test_cached_loader_executes_real_elf
+    result = self.collect(transport.start(self.node, request))
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_native_lifecycle.py", line 62, in collect
+    self.assertEqual(child.wait(timeout=5), 0, child.stderr.read().decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -6 != 0 : Fatal Python error: _enter_buffered_busy: could not acquire lock for <_io.BufferedReader name='<stdin>'> at interpreter shutdown, possibly due to daemon threads
+Python runtime state: finalizing (tstate=0x000000000097bdb0)
+
+Current thread 0x000070f31bcbb780 (most recent call first):
+  <no Python frame>
+
+
+======================================================================
+FAIL: test_closed_stdin_cancels_and_repeated_start_does_not_run_again (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_closed_stdin_cancels_and_repeated_start_does_not_run_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_native_lifecycle.py", line 89, in test_closed_stdin_cancels_and_repeated_start_does_not_run_again
+    self.assertEqual(result['return_code'], 143)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 125 != 143
+
+======================================================================
+FAIL: test_expired_lease_cleans_supervisor_and_records_exit (scheduler.tests.test_native_lifecycle.WorkerLifecycleTests.test_expired_lease_cleans_supervisor_and_records_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_native_lifecycle.py", line 75, in test_expired_lease_cleans_supervisor_and_records_exit
+    result = self.collect(transport.start(self.node, request))
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_native_lifecycle.py", line 62, in collect
+    self.assertEqual(child.wait(timeout=5), 0, child.stderr.read().decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -6 != 0 : Fatal Python error: _enter_buffered_busy: could not acquire lock for <_io.BufferedReader name='<stdin>'> at interpreter shutdown, possibly due to daemon threads
+Python runtime state: finalizing (tstate=0x000000000097bdb0)
+
+Current thread 0x0000784dba651780 (most recent call first):
+  <no Python frame>
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.049s
+
+FAILED (failures=3)

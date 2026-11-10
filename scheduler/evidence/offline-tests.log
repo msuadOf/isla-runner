@@ -1,0 +1,14 @@
+test_all_transfers_complete_work (test_scheduler.SchedulerTests.test_all_transfers_complete_work) ... ok
+test_archive_traversal_and_links_rejected (test_scheduler.SchedulerTests.test_archive_traversal_and_links_rejected) ... ok
+test_configs_and_requirements (test_scheduler.SchedulerTests.test_configs_and_requirements) ... ok
+test_elf_dependency_bundle_executes (test_scheduler.SchedulerTests.test_elf_dependency_bundle_executes) ... ok
+test_failure_preserves_exit_and_logs (test_scheduler.SchedulerTests.test_failure_preserves_exit_and_logs) ... ok
+test_none_returns_no_task_data (test_scheduler.SchedulerTests.test_none_returns_no_task_data) ... ok
+test_retry_keeps_separate_attempts (test_scheduler.SchedulerTests.test_retry_keeps_separate_attempts) ... ok
+test_summary_limits_and_retention (test_scheduler.SchedulerTests.test_summary_limits_and_retention) ... ok
+test_symlink_input_rejected (test_scheduler.SchedulerTests.test_symlink_input_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.804s
+
+OK

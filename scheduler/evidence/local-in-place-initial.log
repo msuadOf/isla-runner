@@ -1,0 +1,45 @@
+test_local_dispatch_skips_transport_and_keeps_reservation_until_completion (scheduler.tests.test_local_execution.LocalDispatchTests.test_local_dispatch_skips_transport_and_keeps_reservation_until_completion) ... ERROR
+test_prepare_does_not_create_or_read_cache_or_runtime (scheduler.tests.test_local_execution.LocalDispatchTests.test_prepare_does_not_create_or_read_cache_or_runtime) ... ERROR
+
+======================================================================
+ERROR: test_local_dispatch_skips_transport_and_keeps_reservation_until_completion (scheduler.tests.test_local_execution.LocalDispatchTests.test_local_dispatch_skips_transport_and_keeps_reservation_until_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_local_execution.py", line 41, in test_local_dispatch_skips_transport_and_keeps_reservation_until_completion
+    manifest = self.controller.prepare(self.request)
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/controller.py", line 92, in prepare
+    manifest = sniff(request['argv'], request['cwd'], self.workspace, request.get('log_path'))
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/inputs.py", line 55, in sniff
+    effective[binary_index] = add(argv[binary_index])
+                              ~~~^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/inputs.py", line 43, in add
+    source = (cwd / name).resolve(strict=True)
+  File "/home/baiyifan/miniconda3/lib/python3.13/pathlib/_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 454, in realpath
+FileNotFoundError: [Errno 2] No such file or directory: '/data1/baiyifan/workplace/isla-runner/scheduler/runtime/tmpc3585s3m/isla/target'
+
+======================================================================
+ERROR: test_prepare_does_not_create_or_read_cache_or_runtime (scheduler.tests.test_local_execution.LocalDispatchTests.test_prepare_does_not_create_or_read_cache_or_runtime)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_local_execution.py", line 34, in test_prepare_does_not_create_or_read_cache_or_runtime
+    manifest = self.controller.prepare(self.request)
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/controller.py", line 92, in prepare
+    manifest = sniff(request['argv'], request['cwd'], self.workspace, request.get('log_path'))
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/inputs.py", line 55, in sniff
+    effective[binary_index] = add(argv[binary_index])
+                              ~~~^^^^^^^^^^^^^^^^^^^^
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/native/inputs.py", line 43, in add
+    source = (cwd / name).resolve(strict=True)
+  File "/home/baiyifan/miniconda3/lib/python3.13/pathlib/_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 454, in realpath
+FileNotFoundError: [Errno 2] No such file or directory: '/data1/baiyifan/workplace/isla-runner/scheduler/runtime/tmpiij84qqr/isla/target'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.054s
+
+FAILED (errors=2)

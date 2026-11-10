@@ -1,0 +1,2 @@
+错误：condor_status 未满足 nodes.conf；最后广告：[]；错误：sudo: The "no new privileges" flag is set, which prevents sudo from running as root.
+sudo: If sudo is running in a container, you may need to adjust the container configuration to disable the flag.

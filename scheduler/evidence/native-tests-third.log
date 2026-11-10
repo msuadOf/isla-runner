@@ -1,0 +1,50 @@
+test_ctime_detects_same_size_preserved_mtime (test_cache.CacheTests.test_ctime_detects_same_size_preserved_mtime) ... ok
+test_single_flight_and_immutable_copy (test_cache.CacheTests.test_single_flight_and_immutable_copy) ... ok
+test_worker_cache_concurrent_transfer_once_and_incremental_toml (test_cache.CacheTests.test_worker_cache_concurrent_transfer_once_and_incremental_toml) ... ok
+test_make_argv_and_shell_overrides (test_dual_mode_compatibility.DualModeTests.test_make_argv_and_shell_overrides) ... ok
+test_native_management_target_is_not_intercepted (test_dual_mode_compatibility.DualModeTests.test_native_management_target_is_not_intercepted) ... ok
+test_original_make_stays_local_and_has_no_scheduler_state (test_dual_mode_compatibility.DualModeTests.test_original_make_stays_local_and_has_no_scheduler_state) ... ok
+test_unknown_recipe_is_rejected_before_execution (test_dual_mode_compatibility.DualModeTests.test_unknown_recipe_is_rejected_before_execution) ... ok
+test_worker_code_preserved_and_make_fails (test_dual_mode_compatibility.DualModeTests.test_worker_code_preserved_and_make_fails) ... ok
+test_wrapped_parallel_jobs_inputs_progress_results_and_retained_output (test_dual_mode_compatibility.DualModeTests.test_wrapped_parallel_jobs_inputs_progress_results_and_retained_output) ... ok
+test_wrapper_sigterm_cancels_only_this_run (test_dual_mode_compatibility.DualModeTests.test_wrapper_sigterm_cancels_only_this_run) ... ok
+test_external_file_is_relocated (test_inputs_sniff.InputTests.test_external_file_is_relocated) ... ok
+test_long_equals_and_output_not_uploaded (test_inputs_sniff.InputTests.test_long_equals_and_output_not_uploaded) ... ok
+test_missing_threads_missing_input_and_absolute_output_rejected (test_inputs_sniff.InputTests.test_missing_threads_missing_input_and_absolute_output_rejected) ... ok
+test_real_argv_roles_paths_and_limits (test_inputs_sniff.InputTests.test_real_argv_roles_paths_and_limits) ... ok
+test_list_summary_fetch_delete (test_native_data.DataTests.test_list_summary_fetch_delete) ... ok
+test_mock_ssh_uses_remote_home_and_transfers_binary_once (test_native_data.DataTests.test_mock_ssh_uses_remote_home_and_transfers_binary_once) ... ok
+test_refuse_active_delete_and_path_escape (test_native_data.DataTests.test_refuse_active_delete_and_path_escape) ... ok
+test_remote_command_quotes_source_and_has_no_container_commands (test_native_data.DataTests.test_remote_command_quotes_source_and_has_no_container_commands) ... ok
+test_offline_oversized_and_external (test_qos.QoSTests.test_offline_oversized_and_external) ... ok
+test_small_jobs_and_exact_threshold (test_qos.QoSTests.test_small_jobs_and_exact_threshold) ... ok
+test_smooth_four_to_one (test_qos.QoSTests.test_smooth_four_to_one) ... ok
+test_threshold_spill_wait_release (test_qos.QoSTests.test_threshold_spill_wait_release) ... ok
+test_unsuccessful_probes_do_not_change_credits (test_qos.QoSTests.test_unsuccessful_probes_do_not_change_credits) ... ok
+test_all_transfers_complete_work (test_scheduler.SchedulerTests.test_all_transfers_complete_work) ... ok
+test_archive_traversal_and_links_rejected (test_scheduler.SchedulerTests.test_archive_traversal_and_links_rejected) ... ok
+test_configs_and_requirements (test_scheduler.SchedulerTests.test_configs_and_requirements) ... ok
+test_custom_paths_initialized_and_mounted (test_scheduler.SchedulerTests.test_custom_paths_initialized_and_mounted) ... ok
+test_defaults_and_legacy_alias (test_scheduler.SchedulerTests.test_defaults_and_legacy_alias) ... ok
+test_elf_dependency_bundle_executes (test_scheduler.SchedulerTests.test_elf_dependency_bundle_executes) ... ok
+test_existing_paths_accept_alias_but_require_migration_on_change (test_scheduler.SchedulerTests.test_existing_paths_accept_alias_but_require_migration_on_change) ... ok
+test_failure_preserves_exit_and_logs (test_scheduler.SchedulerTests.test_failure_preserves_exit_and_logs) ... ok
+test_invalid_work_dirs_rejected (test_scheduler.SchedulerTests.test_invalid_work_dirs_rejected) ... ok
+test_load_custom_work_dirs (test_scheduler.SchedulerTests.test_load_custom_work_dirs) ... ok
+test_local_runtime_resolution (test_scheduler.SchedulerTests.test_local_runtime_resolution) ... ok
+test_manage_data_uses_node_work_dir (test_scheduler.SchedulerTests.test_manage_data_uses_node_work_dir) ... ok
+test_manage_fetch_uses_manager_work_dir (test_scheduler.SchedulerTests.test_manage_fetch_uses_manager_work_dir) ... ok
+test_none_returns_no_task_data (test_scheduler.SchedulerTests.test_none_returns_no_task_data) ... ok
+test_preston_resources_and_rendering (test_scheduler.SchedulerTests.test_preston_resources_and_rendering) ... ok
+test_remote_runtime_resolution (test_scheduler.SchedulerTests.test_remote_runtime_resolution) ... ok
+test_render_only_uses_manager_work_dir (test_scheduler.SchedulerTests.test_render_only_uses_manager_work_dir) ... ok
+test_resolved_system_directory_rejected (test_scheduler.SchedulerTests.test_resolved_system_directory_rejected) ... ok
+test_retry_keeps_separate_attempts (test_scheduler.SchedulerTests.test_retry_keeps_separate_attempts) ... ok
+test_submit_uses_manager_work_dir (test_scheduler.SchedulerTests.test_submit_uses_manager_work_dir) ... ok
+test_summary_limits_and_retention (test_scheduler.SchedulerTests.test_summary_limits_and_retention) ... ok
+test_symlink_input_rejected (test_scheduler.SchedulerTests.test_symlink_input_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 12.898s
+
+OK
