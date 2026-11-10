@@ -1,0 +1,31 @@
+{
+  "suspicions": [
+    {"id": "S1", "file": "xiangshan/src/main/scala/xiangshan/backend/fu/NewCSR/CSREvents/TrapEntryMEvent.scala", "line": 74,
+     "claim": "软件 ebreak 触发 EX_BP 后 emu 把 mtval 写成 ebreak 的 PC(tvalFillPc 含 isFetchBkpt),而参考模型(NEMU)按惯例写 0;执行 ebreak 进入 M-mode trap 后 DiffTest 比对 mtval 将出现 PC vs 0 的 CSR 分歧。"},
+    {"id": "S2", "file": "xiangshan/src/main/scala/xiangshan/mem/pipeline/AtomicsUnit.scala", "line": 313,
+     "claim": "AMO/LR/SC 落在 PMA 判定为 MMIO(pmp.mmio)或 PBMT.NC/IO 的区域时,emu 一律在 s_pm 阶段置 load/storeAccessFault;若参考模型允许对 MMIO 执行 AMO(或对 NC 区域允许 AMO),则对 CLINT/MMIO 地址执行 amoadd.d 会产生 trap 与否的行为分歧(mcause=5/7 vs 正常写回)。"},
+    {"id": "S3", "file": "xiangshan/src/main/scala/xiangshan/mem/pipeline/NewLoadUnit.scala", "line": 671,
+     "claim": "非对齐 load 的尾段(unalignTail)以 size=Q、readWholeBank=true 整 16B bank 访问,PMP/PMA 检查按 16B 粒度进行;当一条 sb/lh 的尾段只需 1-2 字节、而同一 16B bank 内其余字节落在 PMP 无 R 权限(或 MMIO)区域时,emu 会误报 loadAccessFault(#5),而参考模型只访问真实字节不产生异常。可用 pmpaddr 在 16B bank 中间划界构造。"},
+    {"id": "S4", "file": "xiangshan/src/main/scala/xiangshan/mem/pipeline/AtomicsUnit.scala", "line": 262,
+     "claim": "AMO 同时非对齐且 TLB/PMP 报异常时,exceptionVec 同时置 loadAddrMisaligned/storeAddrMisaligned 与 page/access fault,最终 mcause 由 TrapHandleModule 的静态优先级表裁决;若该优先级与参考模型的裁决顺序不同(例如对齐异常 vs access fault 的先后),非对齐 AMO 打到无权限区域将出现 mcause 分歧(#4 vs #5/#7)。"},
+    {"id": "S5", "file": "xiangshan/src/main/scala/xiangshan/mem/MemBlock.scala", "line": 1388,
+     "claim": "AMO 的 PMP 检查直接复用 load 单元 0 的 pmp_check(0).resp,源码注释 'TODO: complete amo's pmp support';在 M-mode 配置 pmpcfg 使目标区域仅 R 无 W(或仅 W 无 R,L=1)后执行 amoadd:预期 storeAccessFault(#7),若 checker 沿用 load 端命令语义则可能错判为可通过或报 loadAccessFault(#5)。"},
+    {"id": "S6", "file": "xiangshan/src/main/scala/xiangshan/backend/fu/PMP.scala", "line": 1,
+     "claim": "pmpcfg/pmpaddr 经 CSR distribute_csr 分发到 PMPChecker 存在寄存/时序路径;csrw pmpcfg0 收紧权限后紧跟的同地址 load/store 若仍用旧权限判定,将与参考模型(写后立即生效)产生 access fault 与否的分歧;反向(先拒绝后放行)同理。"},
+    {"id": "S7", "file": "xiangshan/src/main/scala/xiangshan/backend/fu/Fence.scala", "line": 70,
+     "claim": "fence.i 的 FSM 只等待 sbuffer.sbIsEmpty 与 icache flush,不等待 Uncache buffer 中尚未发出的 MMIO/NC store(它们不经过 sbuffer);序列 '向 MMIO/NC 地址 store;fence.i;跳转执行新指令' 时 store 可能尚未上总线,若该 MMIO 同时映射为可执行/可读存储,后续 load/fetch 读到旧值,与参考模型顺序执行结果分歧。"},
+    {"id": "S8", "file": "xiangshan/src/main/scala/xiangshan/backend/rob/ExceptionGen.scala", "line": 141,
+     "claim": "同一 robIdx 两次异常写回合并时 exceptionVec 用 mux2 整体替换(非按位或),非向量场景 isVecUpdate=!vstartEn 恒真,后到的写回会整体覆盖先前记录的异常位;若一条指令先记录 misaligned/trigger、replay 后只回报部分异常位,先前异常位被丢失,导致 mcause/mtval 与参考模型分歧。"},
+    {"id": "S9", "file": "xiangshan/src/main/scala/xiangshan/mem/pipeline/NewLoadUnit.scala", "line": 934,
+     "claim": "非对齐 load 到 MMIO 区域报 loadAccessFault(afUnalignMMIO)、到 PBMT.NC 区域报 loadAddrMisaligned(am),两类区域的非对齐访问 trap 编号不同(#5 vs #4);若参考模型对两类非缓存区域统一处理(例如都报 #4 或都放行拆分),对 NC/MMIO 边界的非对齐 lb/sb 将出现 mcause 分歧。bare M-mode 下 PMA 边界(如 DRAM 末端接 MMIO)可直接构造。"},
+    {"id": "S10", "file": "xiangshan/src/main/scala/xiangshan/cache/dcache/Uncache.scala", "line": 274,
+     "claim": "NC(PBMT.NC)访问在 Uncache buffer 中可合并,合并条件 continueAndAlign 只认 8 种固定 mask 形状;对 NC 区域两条相邻子字访问(如 off2 的 lh + off4 的 lw)若合并 mask 命中 assert(legal) 之外的组合或合并后 Get 的 lgSize 与地址对齐不满足,可能触发错误访问或断言;且 NC load 合并后一次总线读同时满足两条 load,若设备有读副作用则与逐条访问的参考模型结果分歧。"},
+    {"id": "S11", "file": "xiangshan/src/main/scala/xiangshan/backend/fu/NewCSR/CSREvents/TrapEntryMEvent.scala", "line": 87,
+     "claim": "mtval 的 Mux1H 无 default 兜底覆盖所有异常类别:当单条指令同时被判为 mem 异常与 illegal(如非法压缩指令+访存异常组合)时 Mux1H 多位为真可能产生意外拼接值;可测 '非对齐访存 + 同指令编码非法' 场景下 mtval 是访存地址还是指令编码,与参考模型裁决比对。"},
+    {"id": "S12", "file": "xiangshan/src/main/scala/xiangshan/backend/fu/NewCSR/TrapHandleModule.scala", "line": 97,
+     "claim": "mtvec Vectored 模式跳转偏移取 interruptNO(5,0) 截断到 6 位,且 adjustinterruptNO 只把 VS 中断映射为 HS 中断;对 cause>=64 的本地/自定义中断(若 MinimalConfig 存在)vectored 偏移回绕,mepc 落到错误向量入口;可用 CSR 触发的非标准中断(如 ipi 位)在 vectored mtvec 下比对跳转 PC。"}
+  ],
+  "max_variants": 4,
+  "max_sweeps": 1,
+  "filterlist_file": null
+}

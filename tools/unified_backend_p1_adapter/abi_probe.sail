@@ -1,0 +1,11 @@
+val round_nearest_ties_to_even = pure {c: "round_nearest_ties_to_even", cpp: "sail_round_nearest_ties_to_even"} : unit -> float_rounding_mode
+val fp32_from_ieee = pure {c: "fp32_from_ieee", cpp: "sail_fp32_from_ieee"} : bitvector(32, dec) -> float32
+val fp32_add = pure {c: "fp_add", cpp: "sail_fp32_add"} : (float_rounding_mode, float32, float32) -> float32
+val fp32_to_ieee = pure {c: "fp32_to_ieee", cpp: "sail_fp32_to_ieee"} : float32 -> bitvector(32, dec)
+val fp128_from_ieee = pure {c: "fp128_from_ieee", cpp: "sail_fp128_from_ieee"} : bitvector(128, dec) -> float128
+val fp128_add = pure {c: "fp_add", cpp: "sail_fp128_add"} : (float_rounding_mode, float128, float128) -> float128
+val fp32_from_signed = pure {c: "fp32_from_signed", cpp: "sail_fp32_from_signed"} : forall 'n, 'n > 0. (float_rounding_mode, bitvector('n, dec)) -> float32
+function probe_add(a : bitvector(32, dec), b : bitvector(32, dec)) -> bitvector(32, dec) = fp32_to_ieee(fp32_add(round_nearest_ties_to_even(), fp32_from_ieee(a), fp32_from_ieee(b)))
+function probe_128(a : bitvector(128, dec), b : bitvector(128, dec)) -> float128 = fp128_add(round_nearest_ties_to_even(), fp128_from_ieee(a), fp128_from_ieee(b))
+function probe_i32(a : bitvector(32, dec)) -> float32 = fp32_from_signed(round_nearest_ties_to_even(), a)
+function probe_i64(a : bitvector(64, dec)) -> float32 = fp32_from_signed(round_nearest_ties_to_even(), a)
