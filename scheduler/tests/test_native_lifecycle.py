@@ -1,5 +1,7 @@
 """真实进程验证租约、重复 START、共享节点互斥与缓存 ELF 运行库。"""
 import base64
+import fcntl
+import time
 import json
 import os
 from pathlib import Path
@@ -136,3 +138,61 @@ class WorkerLifecycleTests(unittest.TestCase):
         finally:
             child.communicate()
         self.assertFalse((self.base / 'node/native/jobs' / request['job_id'] / 'outside').exists())
+
+    def test_short_lease_heartbeat_keeps_task_alive_until_explicit_cancel(self):
+        request = self.request()
+        started = time.monotonic()
+        result = transport.execute(self.node, request, lambda: time.monotonic() - started > .7,
+                                   lambda message: None)
+        self.assertEqual(result['return_code'], 143)
+        self.assertGreaterEqual(time.monotonic() - started, .7)
+        self.assertTrue(result['execution_confirmed'])
+
+    def test_blocked_log_reader_does_not_prevent_eof_cleanup(self):
+        self.program.write_text('#!/usr/bin/env python3\nimport time\nprint("x"*100000,flush=True)\ntime.sleep(15)\n')
+        request = self.request()
+        request['lease_seconds'] = 5
+        child = transport.start(self.node, request)
+        fcntl.fcntl(child.stdout.fileno(), fcntl.F_SETPIPE_SZ, 4096)
+        try:
+            event = transport.response(child)
+            self.assertEqual(event['state'], 'RUNNING')
+            child.stdin.close()
+            child.wait(timeout=7)
+            result = json.loads((Path(event['attempt']) / 'result.json').read_text())
+            self.assertEqual(result['return_code'], 143)
+            self.assertTrue(result['execution_confirmed'])
+        finally:
+            transport.close(child)
+
+    def test_owner_rejects_start_intent_without_running_record(self):
+        attempt = self.base / 'node/native/jobs' / ('a' * 32) / ('attempt-' + 'b' * 32)
+        attempt.mkdir(parents=True)
+        (attempt / 'task.json').write_text('{}')
+        child = transport.start(self.node, {'action': 'owner'})
+        try:
+            with self.assertRaises(RuntimeError):
+                transport.response(child)
+        finally:
+            transport.close(child)
+
+    def test_cancel_cleans_descendants_that_ignore_term(self):
+        from scheduler.native.common import process_identity
+        grandchild = (
+            'import os,signal,time; from pathlib import Path; '
+            'signal.signal(signal.SIGTERM,signal.SIG_IGN); '
+            'Path("output/grandchild.pid").write_text(str(os.getpid())); time.sleep(20)')
+        self.program.write_text('#!/usr/bin/env python3\nimport signal,subprocess,sys,time\n'
+                                'signal.signal(signal.SIGTERM,signal.SIG_IGN)\n'
+                                + 'subprocess.Popen([sys.executable,"-c",' + repr(grandchild) + '])\n'
+                                + 'time.sleep(20)\n')
+        request = self.request()
+        request['lease_seconds'] = 5
+        paths = []
+        def event(message):
+            if message.get('state') == 'RUNNING':
+                paths.append(Path(message['attempt']) / 'work/root/isla/output/grandchild.pid')
+        result = transport.execute(self.node, request, lambda: bool(paths and paths[0].exists()), event)
+        self.assertEqual(result['return_code'], 143)
+        self.assertTrue(result['execution_confirmed'])
+        self.assertIsNone(process_identity(int(paths[0].read_text())))

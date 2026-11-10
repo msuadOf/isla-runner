@@ -15,7 +15,7 @@ make -f scripts/run.mk solve
 
 分布式入口也接受 `solve-memory`、`solve-fd-float`、`solve-fd-nonmem` 和单个 `solve-<clause>`。本地由原程序检查输入，远端分发前检查输入；目前工作区默认 `isla/rv64d.ir` 缺失，实际运行须准备 IR 或传入有效的 `IR_FILE=...`。
 
-本轮本地及模拟验证见 [RESULTS.md](RESULTS.md)。两个远端的真实 SSH 连接被当前会话网络沙箱禁止，尚未完成三节点真实 Isla 求解验收。
+本轮本地及模拟验证见 [RESULTS.md](RESULTS.md)，全面评审与修复见 [REVIEW.md](REVIEW.md)。两个远端的真实 SSH 连接被当前会话网络沙箱禁止，尚未完成三节点真实 Isla 求解验收。
 
 ## 环境与节点
 
@@ -58,9 +58,9 @@ threshold = max(1, cores // 2)
 
 入口启动本轮 controller，再在用户 Makefile 后附加一个含 `-include scheduler/integration/solve.mk` 的 Makefile。只有 `solve-%` 使用适配 shell；编译和 `solve-pre`、`solve-kill` 等管理目标使用原 shell。原始 `mkdir`、`flock` 和 `[n/TOTAL]` 在主控执行；进度表示 recipe 已启动，不表示远端完成。proxy 一直等待真实退出证据，把任务退出码交给 Make；GNU Make 自身遇到任务失败通常返回 2。
 
-适配器使用标准库 `shlex` 检查当前 recipe 的有限语法，再由 Bash 执行原文本并在 `exec` 函数处转交真实 argv。它接受当前计数器、进度、`RUST_BACKTRACE=1 exec python3 scripts/solve_process.py run` 和日志重定向结构。改成直接 isarch、`command exec`、其他监督器、动态 shell 参数或额外本地命令会被拒绝；显式 `SHELL`、`.SHELLFLAGS` 覆盖和 `--eval` 也会被拒绝。它不是通用 Bash 解析器。
+适配器使用标准库 `shlex` 检查当前 recipe 的有限语法，再由 Bash 执行原文本并在 `exec` 函数处转交真实 argv。它接受当前计数器、进度、`RUST_BACKTRACE=1 exec python3 scripts/solve_process.py run` 和日志重定向结构。改成直接 isarch、`command exec`、其他监督器、动态 shell 参数或额外本地命令会被拒绝；显式 `SHELL`、`.SHELLFLAGS` 的各种赋值覆盖、`--eval`、从 stdin 读取 Makefile，以及 Make 参数内层的 `--` 也会被拒绝；继承 MAKEFLAGS/GNUMAKEFLAGS 的隐藏目录/文件参数同样拒绝。入口命令自身分隔 Make 参数的 `--` 正常使用。它不是通用 Bash 解析器。
 
-排队时只识别原 cwd、监督命令和 `-T`，不读取输入内容或创建缓存。选中远端节点后，才从真实 argv 自动获取 isarch、IR、ISA 配置、workaround、编码片段配置、样本输入与输出参数。支持长参数的 `--key=value`，保留路径中的空格。少量 TOML 配置目录自动镜像；workaround 的 `file="...sail"` 是 IR 源位置，不会上传整个模型源码。已核实的 TOML 输出字段只建立输出位置。工作区外文件映射到 `_external/`；输出须位于 attempt 内。未知文件接口仍需增加角色识别，目录输入与未确认的配置 include 语义不在当前支持范围内。
+排队时只识别原 cwd、监督命令和 `-T`，不读取输入内容或创建缓存。选中远端节点后，才从真实 argv 自动获取 isarch、IR、ISA 配置、workaround、编码片段配置、样本输入与输出参数。支持长参数的 `--key=value`，保留路径中的空格。少量 TOML 配置目录自动镜像；workaround 的 `file="...sail"` 是 IR 源位置，不会上传整个模型源码。只解释本任务实际使用 TOML 的已核实输出字段，未使用配置仍可镜像，但不影响本任务输出判定。配置符号链接保留逻辑目录名，冻结实际内容；输入和可写输出目录冲突会被拒绝。工作区外文件映射到 `_external/`；输出须位于 attempt 内。未知文件接口仍需增加角色识别，目录输入与未确认的配置 include 语义不在当前支持范围内。
 
 远端输入按设备、inode、size、mtime、ctime 检查；变化时复制并校验内容，发布不可变对象。源工作文件不硬链接进缓存。本轮首次准备远端任务时发现的文件版本固定，后续运行感知修改。本地直接读取原文件，行为与原生 Make 相同。各节点以文件锁合并并发传输，只接收缺失对象；小 TOML 改动不会重传 IR 或二进制。这里的增量单位是文件版本，未实现同一大文件内部的 rsync 差量。
 
@@ -82,7 +82,7 @@ jobs/<job-id>/attempt-<id>/result.json         # 退出证据、索引和尾部
 
 本地任务的 `output/log/<clause>.log` 是完整原生日志，直接实时写入，没有调度器首部、截断或尾部重放。本地结果已在原 cwd，无需 fetch；其调度证据见 run/jobs 下的 `result.json`。
 
-远端任务在主控原有的 `output/log/<clause>.log` 接收最多 1 MiB 实时片段（每任务约 4 KiB/s）及最终 64 KiB 尾部，并标明两者可能重叠。它不是完整远端日志。完整 JSON、trace、样本和 SMT dump 留在节点；自动回传监督器 process JSON、状态行、退出码及产物路径/大小。主控不伪造本地监督器 PID，不给大 JSON 写空占位文件。日志配额按任务控制，当前没有额外的全 run 带宽整形。
+远端任务在主控原有的 `output/log/<clause>.log` 接收最多 1 MiB 实时片段（每任务约 4 KiB/s）及最终 64 KiB 尾部，并标明两者可能重叠。它不是完整远端日志。完整 JSON、trace、样本和 SMT dump 留在节点；自动回传监督器 process JSON、状态行、退出码及产物路径/大小。主控不伪造本地监督器 PID，不给大 JSON 写空占位文件。日志配额按任务控制，当前没有额外的全 run 带宽整形。日志通道停止读取不会阻塞 worker 的取消处理；已确认退出但尾部存储失败时单独记 retrieval=pending，仍释放 CPU。
 
 ```bash
 python3 scheduler/scripts/manage_data.py --node preston list
@@ -93,7 +93,7 @@ python3 scheduler/scripts/manage_data.py --node preston --job-id <job-id> delete
 
 `fetch` 默认保存到 `scheduler/runtime/native/retrieved/`，也可指定 `--destination <archive.tar.gz>`。归档保留完整结果；其中输入符号链接引用节点缓存，不是可搬移的输入包。取数不会重新求解，删除拒绝未确认结束的 attempt。
 
-Ctrl-C/TERM 只取消本轮任务。本地 proxy 直接启动原监督器，继承原日志文件与完整环境；收到取消或检测到主控退出时，把 TERM 交给原监督器清理 timeout 和后代。收取本地证据时按本次 clause 和 supervisor PID 精确读取 process JSON，保留历史状态行，不将同目录其他任务或旧结果计入完成证据。远端仍由 worker 监督，控制通道 EOF 或 60 秒租约失效也会触发清理。断线时短暂重连读取最终证据；无法确认则记录 UNKNOWN、返回 125、保留预约并隔离节点，不自动重跑。下一轮发现旧 attempt 未确认结束会拒绝该节点，须先查看节点 result.json 与进程证据。SQLite 用于留存与核查，目前不提供主控崩溃后的自动续跑。
+Ctrl-C/TERM 只取消本轮任务。本地 proxy 直接启动原监督器，继承原日志文件与完整环境；收到取消或检测到主控退出时，把 TERM 交给原监督器清理 timeout 和后代。proxy 意外退出时，controller 按保存的进程启动身份接管取消；主控异常退出时，包装入口结束本轮 Make，避免 proxy 等待 zombie 主控。部分主控 Python 缺少 pidfd 接口，接管助手使用原监督器同样要求的 `/usr/bin/python3` 验证身份并发信号。收取本地证据时按本次 clause 和 supervisor PID 精确读取 process JSON，保留历史状态行，不将同目录其他任务或旧结果计入完成证据。远端仍由 worker 监督，控制通道 EOF 或 60 秒租约失效也会触发清理。断线时短暂重连读取最终证据；无法确认则记录 UNKNOWN、返回 125、保留预约并隔离节点，不自动重跑。下一轮发现旧 attempt 未确认结束会拒绝该节点，须先查看节点 result.json 与进程证据。本地未确认任务另记录在 `<work_dir>/native/local-unknown/`，核实任务已结束后再人工处理该记录。SQLite 用于留存与核查，目前不提供主控崩溃后的自动续跑。
 
 同一 cwd 有 Make 运行锁；每节点还持有主控独占锁，防止多个 controller 重复计算同一份容量。因此当前不同工作树也不能同时共享同一节点。此限制不影响单轮多机调度。原生模式不会申请这些锁。
 

@@ -1,0 +1,95 @@
+test_ctime_detects_same_size_preserved_mtime (test_cache.CacheTests.test_ctime_detects_same_size_preserved_mtime) ... ok
+test_single_flight_and_immutable_copy (test_cache.CacheTests.test_single_flight_and_immutable_copy) ... ok
+test_worker_cache_concurrent_transfer_once_and_incremental_toml (test_cache.CacheTests.test_worker_cache_concurrent_transfer_once_and_incremental_toml) ... ok
+test_capacity_waiting_jobs_complete_and_release_all_cores (test_dual_mode_compatibility.DualModeTests.test_capacity_waiting_jobs_complete_and_release_all_cores) ... ok
+test_controller_or_proxy_death_does_not_leave_local_task_running (test_dual_mode_compatibility.DualModeTests.test_controller_or_proxy_death_does_not_leave_local_task_running) ... 
+  test_controller_or_proxy_death_does_not_leave_local_task_running (test_dual_mode_compatibility.DualModeTests.test_controller_or_proxy_death_does_not_leave_local_task_running) (target='proxy') ... FAIL
+test_make_argv_and_shell_overrides (test_dual_mode_compatibility.DualModeTests.test_make_argv_and_shell_overrides) ... ok
+test_mock_ssh_end_to_end_and_next_run_only_transfers_changed_toml (test_dual_mode_compatibility.DualModeTests.test_mock_ssh_end_to_end_and_next_run_only_transfers_changed_toml) ... ok
+test_native_management_target_is_not_intercepted (test_dual_mode_compatibility.DualModeTests.test_native_management_target_is_not_intercepted) ... ok
+test_original_make_stays_local_and_has_no_scheduler_state (test_dual_mode_compatibility.DualModeTests.test_original_make_stays_local_and_has_no_scheduler_state) ... ok
+test_unknown_recipe_is_rejected_before_execution (test_dual_mode_compatibility.DualModeTests.test_unknown_recipe_is_rejected_before_execution) ... ok
+test_worker_code_preserved_and_make_fails (test_dual_mode_compatibility.DualModeTests.test_worker_code_preserved_and_make_fails) ... ok
+test_wrapped_parallel_jobs_inputs_progress_results_and_retained_output (test_dual_mode_compatibility.DualModeTests.test_wrapped_parallel_jobs_inputs_progress_results_and_retained_output) ... ok
+test_wrapper_sigterm_cancels_only_this_run (test_dual_mode_compatibility.DualModeTests.test_wrapper_sigterm_cancels_only_this_run) ... ok
+test_config_symlink_keeps_its_logical_tree_path (test_inputs_sniff.InputTests.test_config_symlink_keeps_its_logical_tree_path) ... ok
+test_declared_threads_are_used_as_cpu_request (test_inputs_sniff.InputTests.test_declared_threads_are_used_as_cpu_request) ... ok
+test_external_file_is_relocated (test_inputs_sniff.InputTests.test_external_file_is_relocated) ... ok
+test_file_value_is_not_reparsed_as_a_thread_option (test_inputs_sniff.InputTests.test_file_value_is_not_reparsed_as_a_thread_option) ... ok
+test_long_equals_and_output_not_uploaded (test_inputs_sniff.InputTests.test_long_equals_and_output_not_uploaded) ... ok
+test_missing_threads_missing_input_and_absolute_output_rejected (test_inputs_sniff.InputTests.test_missing_threads_missing_input_and_absolute_output_rejected) ... ok
+test_nonfile_values_are_not_rewritten_as_inputs (test_inputs_sniff.InputTests.test_nonfile_values_are_not_rewritten_as_inputs) ... ok
+test_real_argv_roles_paths_and_limits (test_inputs_sniff.InputTests.test_real_argv_roles_paths_and_limits) ... ok
+test_unknown_missing_path_and_writable_input_conflict_are_rejected (test_inputs_sniff.InputTests.test_unknown_missing_path_and_writable_input_conflict_are_rejected) ... ok
+test_unused_mirrored_toml_does_not_change_task_output_roles (test_inputs_sniff.InputTests.test_unused_mirrored_toml_does_not_change_task_output_roles) ... ok
+test_local_dispatch_skips_transport_and_keeps_reservation_until_completion (test_local_execution.LocalDispatchTests.test_local_dispatch_skips_transport_and_keeps_reservation_until_completion) ... ok
+test_prepare_does_not_create_or_read_cache_or_runtime (test_local_execution.LocalDispatchTests.test_prepare_does_not_create_or_read_cache_or_runtime) ... ok
+test_list_summary_fetch_delete (test_native_data.DataTests.test_list_summary_fetch_delete) ... ok
+test_mock_ssh_uses_remote_home_and_transfers_binary_once (test_native_data.DataTests.test_mock_ssh_uses_remote_home_and_transfers_binary_once) ... ok
+test_refuse_active_delete_and_path_escape (test_native_data.DataTests.test_refuse_active_delete_and_path_escape) ... ok
+test_remote_command_quotes_source_and_has_no_container_commands (test_native_data.DataTests.test_remote_command_quotes_source_and_has_no_container_commands) ... ok
+test_blocked_log_reader_does_not_prevent_eof_cleanup (test_native_lifecycle.WorkerLifecycleTests.test_blocked_log_reader_does_not_prevent_eof_cleanup) ... ok
+test_cached_loader_executes_real_elf (test_native_lifecycle.WorkerLifecycleTests.test_cached_loader_executes_real_elf) ... ok
+test_closed_stdin_cancels_and_repeated_start_does_not_run_again (test_native_lifecycle.WorkerLifecycleTests.test_closed_stdin_cancels_and_repeated_start_does_not_run_again) ... ok
+test_expired_lease_cleans_supervisor_and_records_exit (test_native_lifecycle.WorkerLifecycleTests.test_expired_lease_cleans_supervisor_and_records_exit) ... ok
+test_missing_supervisor_evidence_stays_unconfirmed (test_native_lifecycle.WorkerLifecycleTests.test_missing_supervisor_evidence_stays_unconfirmed) ... ok
+test_node_owner_rejects_second_controller (test_native_lifecycle.WorkerLifecycleTests.test_node_owner_rejects_second_controller) ... ok
+test_owner_rejects_start_intent_without_running_record (test_native_lifecycle.WorkerLifecycleTests.test_owner_rejects_start_intent_without_running_record) ... ok
+test_short_lease_heartbeat_keeps_task_alive_until_explicit_cancel (test_native_lifecycle.WorkerLifecycleTests.test_short_lease_heartbeat_keeps_task_alive_until_explicit_cancel) ... ok
+test_worker_rejects_manifest_path_escape (test_native_lifecycle.WorkerLifecycleTests.test_worker_rejects_manifest_path_escape) ... ok
+test_dynamic_half_threshold_boundary_spill_and_wait (test_qos.QoSTests.test_dynamic_half_threshold_boundary_spill_and_wait) ... ok
+test_legacy_stop_free_cores_does_not_affect_admission (test_qos.QoSTests.test_legacy_stop_free_cores_does_not_affect_admission) ... ok
+test_native_config_without_stop_free_cores (test_qos.QoSTests.test_native_config_without_stop_free_cores) ... ok
+test_offline_oversized_and_external (test_qos.QoSTests.test_offline_oversized_and_external) ... ok
+test_same_free_capacity_adapts_to_light_and_heavy_tasks (test_qos.QoSTests.test_same_free_capacity_adapts_to_light_and_heavy_tasks) ... ok
+test_small_jobs_and_exact_threshold (test_qos.QoSTests.test_small_jobs_and_exact_threshold) ... ok
+test_smooth_four_to_one (test_qos.QoSTests.test_smooth_four_to_one) ... ok
+test_threshold_spill_wait_release (test_qos.QoSTests.test_threshold_spill_wait_release) ... ok
+test_unsuccessful_probes_do_not_change_credits (test_qos.QoSTests.test_unsuccessful_probes_do_not_change_credits) ... ok
+test_invalid_job_id_is_rejected_before_opening_transport (test_review_regressions.ReviewBoundaryTests.test_invalid_job_id_is_rejected_before_opening_transport) ... ok
+test_make_context_rejects_shell_variants_and_stdin_makefiles (test_review_regressions.ReviewBoundaryTests.test_make_context_rejects_shell_variants_and_stdin_makefiles) ... ok
+test_worker_diagnostics_cannot_fill_stderr_pipe (test_review_regressions.ReviewBoundaryTests.test_worker_diagnostics_cannot_fill_stderr_pipe) ... ok
+test_zombie_controller_is_not_reported_alive (test_review_regressions.ReviewBoundaryTests.test_zombie_controller_is_not_reported_alive) ... ok
+test_confirmed_result_releases_even_if_tail_retrieval_fails (test_review_regressions.ReviewControllerTests.test_confirmed_result_releases_even_if_tail_retrieval_fails) ... ok
+test_freezing_inputs_does_not_hold_scheduler_transaction_lock (test_review_regressions.ReviewControllerTests.test_freezing_inputs_does_not_hold_scheduler_transaction_lock) ... ok
+test_local_exception_finishes_request_instead_of_hanging_proxy (test_review_regressions.ReviewControllerTests.test_local_exception_finishes_request_instead_of_hanging_proxy) ... ok
+test_local_uncertain_exception_keeps_reservation_and_blocks_reuse (test_review_regressions.ReviewControllerTests.test_local_uncertain_exception_keeps_reservation_and_blocks_reuse) ... ok
+test_malformed_request_becomes_failed_job (test_review_regressions.ReviewControllerTests.test_malformed_request_becomes_failed_job) ... ok
+test_preflight_launch_error_only_marks_that_node_offline (test_review_regressions.ReviewControllerTests.test_preflight_launch_error_only_marks_that_node_offline) ... ok
+test_staging_failure_releases_and_requeues_without_duplicate_execution (test_review_regressions.ReviewControllerTests.test_staging_failure_releases_and_requeues_without_duplicate_execution) ... ok
+test_all_transfers_complete_work (test_scheduler.SchedulerTests.test_all_transfers_complete_work) ... ok
+test_archive_traversal_and_links_rejected (test_scheduler.SchedulerTests.test_archive_traversal_and_links_rejected) ... ok
+test_configs_and_requirements (test_scheduler.SchedulerTests.test_configs_and_requirements) ... ok
+test_custom_paths_initialized_and_mounted (test_scheduler.SchedulerTests.test_custom_paths_initialized_and_mounted) ... ok
+test_defaults_and_legacy_alias (test_scheduler.SchedulerTests.test_defaults_and_legacy_alias) ... ok
+test_elf_dependency_bundle_executes (test_scheduler.SchedulerTests.test_elf_dependency_bundle_executes) ... ok
+test_existing_paths_accept_alias_but_require_migration_on_change (test_scheduler.SchedulerTests.test_existing_paths_accept_alias_but_require_migration_on_change) ... ok
+test_failure_preserves_exit_and_logs (test_scheduler.SchedulerTests.test_failure_preserves_exit_and_logs) ... ok
+test_invalid_work_dirs_rejected (test_scheduler.SchedulerTests.test_invalid_work_dirs_rejected) ... ok
+test_load_custom_work_dirs (test_scheduler.SchedulerTests.test_load_custom_work_dirs) ... ok
+test_local_runtime_resolution (test_scheduler.SchedulerTests.test_local_runtime_resolution) ... ok
+test_manage_data_uses_node_work_dir (test_scheduler.SchedulerTests.test_manage_data_uses_node_work_dir) ... ok
+test_manage_fetch_uses_manager_work_dir (test_scheduler.SchedulerTests.test_manage_fetch_uses_manager_work_dir) ... ok
+test_none_returns_no_task_data (test_scheduler.SchedulerTests.test_none_returns_no_task_data) ... ok
+test_preston_resources_and_rendering (test_scheduler.SchedulerTests.test_preston_resources_and_rendering) ... ok
+test_remote_runtime_resolution (test_scheduler.SchedulerTests.test_remote_runtime_resolution) ... ok
+test_render_only_uses_manager_work_dir (test_scheduler.SchedulerTests.test_render_only_uses_manager_work_dir) ... ok
+test_resolved_system_directory_rejected (test_scheduler.SchedulerTests.test_resolved_system_directory_rejected) ... ok
+test_retry_keeps_separate_attempts (test_scheduler.SchedulerTests.test_retry_keeps_separate_attempts) ... ok
+test_submit_uses_manager_work_dir (test_scheduler.SchedulerTests.test_submit_uses_manager_work_dir) ... ok
+test_summary_limits_and_retention (test_scheduler.SchedulerTests.test_summary_limits_and_retention) ... ok
+test_symlink_input_rejected (test_scheduler.SchedulerTests.test_symlink_input_rejected) ... ok
+
+======================================================================
+FAIL: test_controller_or_proxy_death_does_not_leave_local_task_running (test_dual_mode_compatibility.DualModeTests.test_controller_or_proxy_death_does_not_leave_local_task_running) (target='proxy')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/baiyifan/workplace/isla-runner/scheduler/tests/test_dual_mode_compatibility.py", line 287, in test_controller_or_proxy_death_does_not_leave_local_task_running
+    self.assertIsNone(process_identity(supervisor))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '51604271' is not None
+
+----------------------------------------------------------------------
+Ran 80 tests in 21.157s
+
+FAILED (failures=1)

@@ -16,7 +16,7 @@ import unittest
 from unittest.mock import patch
 
 from scheduler.integration.make_shell import validate
-from scheduler.native.common import ROOT, SCHEDULER
+from scheduler.native.common import ROOT, SCHEDULER, process_identity
 from scheduler.scripts.make_solve import make_context
 
 
@@ -255,3 +255,59 @@ work_dir={json.dumps(str(self.base / 'node'))}
                        'echo bad; ./target/release/isarch', 'mkdir -p output; touch marker'):
             with self.subTest(recipe=recipe), self.assertRaises(ValueError):
                 validate(recipe, 'solve-OK')
+
+    def test_controller_or_proxy_death_does_not_leave_local_task_running(self):
+        for target in ('controller', 'proxy'):
+            with self.subTest(target=target):
+                process = subprocess.Popen(self.wrapped('SLOW'), env=self.env, stdout=subprocess.PIPE,
+                                           stderr=subprocess.PIPE, text=True)
+                first = process.stderr.readline()
+                self.assertTrue(first.startswith('scheduler run: '), first)
+                run = Path(first.split(': ', 1)[1].strip())
+                self.run_dirs.append(run)
+                supervisor = None
+                try:
+                    deadline = time.monotonic() + 10
+                    while time.monotonic() < deadline:
+                        records = list((run / 'jobs').glob('*/local-running.json'))
+                        if records:
+                            info = json.loads(records[0].read_text())
+                            supervisor = info['supervisor_pid']
+                            if Path(f'/proc/{supervisor}/task/{supervisor}/children').read_text().strip():
+                                break
+                        time.sleep(.03)
+                    self.assertIsNotNone(supervisor)
+                    if target == 'controller':
+                        victim = json.loads((run / 'ready.json').read_text())['pid']
+                    else:
+                        victim = json.loads(next((run / 'requests').glob('*.json')).read_text())['proxy_pid']
+                    os.kill(victim, signal.SIGKILL)
+                    output, error = process.communicate(timeout=35)
+                    self.assertEqual(process.returncode, 125 if target == 'controller' else 2, error)
+                    self.assertIsNone(process_identity(supervisor))
+                    if target == 'proxy':
+                        result = json.loads(next((run / 'jobs').glob('*/result.json')).read_text())
+                        self.assertTrue(result['execution_confirmed'])
+                        self.assertTrue(result['cancelled'])
+                        self.assertEqual(json.loads((run / 'status.json').read_text())['nodes'][0]['reserved'], 0)
+                finally:
+                    if process.poll() is None:
+                        process.terminate()
+                        process.communicate(timeout=35)
+
+    def test_cancel_before_make_starts_does_not_launch_recipe(self):
+        process = subprocess.Popen(self.wrapped('SLOW'), env=self.env, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE, text=True)
+        try:
+            first = process.stderr.readline()
+            self.assertTrue(first.startswith('scheduler run: '), first)
+            run = Path(first.split(': ', 1)[1].strip())
+            self.run_dirs.append(run)
+            process.send_signal(signal.SIGTERM)
+            output, error = process.communicate(timeout=30)
+            self.assertEqual(process.returncode, 143, error)
+            self.assertFalse(list((run / 'requests').glob('*.json')))
+        finally:
+            if process.poll() is None:
+                process.terminate()
+                process.communicate(timeout=35)

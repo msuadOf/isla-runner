@@ -100,6 +100,8 @@ def condor_main():
 
 def main():
     import sys
+    if '--backend' in sys.argv and sys.argv.index('--backend') + 1 >= len(sys.argv):
+        raise ValueError('--backend 缺少值')
     if '--backend' in sys.argv and sys.argv[sys.argv.index('--backend') + 1] == 'condor':
         index = sys.argv.index('--backend')
         del sys.argv[index:index + 2]

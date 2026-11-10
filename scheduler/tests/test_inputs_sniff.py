@@ -65,3 +65,46 @@ class InputTests(unittest.TestCase):
                      self.argv + ['--trace-output=/tmp/unisolated']):
             with self.subTest(argv=argv), self.assertRaises((ValueError, FileNotFoundError)):
                 sniff(argv, self.cwd, self.root)
+
+    def test_nonfile_values_are_not_rewritten_as_inputs(self):
+        (self.cwd / 'default').write_text('unrelated')
+        result = sniff(self.argv + ['--tastic', 'default'], self.cwd, self.root)
+        self.assertNotIn('isla/default', result['files'])
+        self.assertEqual(result['effective_argv'][-1], 'default')
+
+    def test_file_value_is_not_reparsed_as_a_thread_option(self):
+        (self.cwd / '-T64').write_text('name="configuration"')
+        argv = self.argv.copy()
+        argv[13] = '-T64'
+        result = sniff(argv, self.cwd, self.root)
+        self.assertEqual(result['cores'], 32)
+
+    def test_config_symlink_keeps_its_logical_tree_path(self):
+        actual = self.root / 'actual.toml'
+        actual.write_text('name="linked"')
+        config = self.cwd / 'configs/isa.toml'
+        config.unlink()
+        config.symlink_to(actual)
+        result = sniff(self.argv, self.cwd, self.root)
+        self.assertIn('isla/configs/isa.toml', result['files'])
+        self.assertEqual(result['files']['isla/configs/isa.toml'], str(actual))
+        self.assertEqual(result['effective_argv'][13], 'configs/isa.toml')
+
+    def test_unused_mirrored_toml_does_not_change_task_output_roles(self):
+        (self.cwd / 'configs/unused.toml').write_text(
+            '[[execution_limits.merge_enumeration.outputs]]\npath="/unused/absolute.json"\n')
+        result = sniff(self.argv, self.cwd, self.root)
+        self.assertNotIn('/unused/absolute.json', result['outputs'])
+
+    def test_unknown_missing_path_and_writable_input_conflict_are_rejected(self):
+        (self.cwd / 'output').mkdir()
+        (self.cwd / 'output/input.ir').write_text('IR')
+        for argv in (self.argv + ['--extra-input', './missing.ir'],
+                     self.argv + ['--arch', 'output/input.ir']):
+            with self.subTest(argv=argv), self.assertRaises(ValueError):
+                sniff(argv, self.cwd, self.root)
+
+    def test_optional_nonfile_flag_does_not_require_a_value(self):
+        result = sniff(self.argv + ['--witness-randomization'], self.cwd, self.root)
+        self.assertEqual(result['effective_argv'][-1], '--witness-randomization')
+        self.assertEqual(result['cores'], 32)

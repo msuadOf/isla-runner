@@ -18,10 +18,11 @@ import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scheduler.native.cache import Cache
-from scheduler.native.common import ENVIRONMENT, atomic_json, load_config
+from scheduler.native.common import ENVIRONMENT, atomic_json, load_config, process_identity
 from scheduler.native.inputs import describe, runtime_files, sniff
 from scheduler.native.qos import QoS
 from scheduler.native import transport
+from scheduler.native.local import recover
 
 
 class Controller:
@@ -33,6 +34,7 @@ class Controller:
         self.cache = None
         self.qos = QoS(config['nodes'])
         self.lock = threading.RLock()
+        self.freeze_lock = threading.Lock()
         self.changed = threading.Event()
         self.jobs = {}
         self.owners = []
@@ -59,6 +61,10 @@ class Controller:
         with self.lock:
             if release:
                 self.qos.release(job['job_id'])
+            if not release and result.get('local'):
+                node = self.qos.nodes[job['node']]
+                if node.get('work_dir'):
+                    atomic_json(Path(node['work_dir']) / 'native/local-unknown' / (job['job_id'] + '.json'), result)
             state = 'UNKNOWN' if not release else 'CANCELLED' if result.get('cancelled') else (
                 'SUCCEEDED' if result['return_code'] == 0 else 'FAILED')
             self.state(job, state, return_code=result['return_code'])
@@ -66,8 +72,9 @@ class Controller:
             self.changed.set()
 
     def preflight(self, node):
-        child = transport.start(node, {'action': 'owner'})
+        child = None
         try:
+            child = transport.start(node, {'action': 'owner'})
             with selectors.DefaultSelector() as ready:
                 ready.register(child.stdout, selectors.EVENT_READ)
                 if not ready.select(20):
@@ -80,8 +87,8 @@ class Controller:
                 self.owners.append((node['name'], child))
             return node['name'], report
         except Exception as error:
-            child.kill()
-            child.communicate()
+            if child is not None:
+                transport.close(child)
             self.qos.nodes[node['name']]['online'] = False
             return node['name'], {'error': str(error)}
 
@@ -105,7 +112,7 @@ class Controller:
                        if k in ENVIRONMENT}
         manifest['environment'] = environment
         binary = (Path(request['cwd']) / request['argv'][manifest['binary_index']]).resolve()
-        with self.lock:
+        with self.freeze_lock:
             if self.cache is None:
                 self.cache = Cache(self.run.parent.parent / 'cache' / self.workspace_id)
             runtime_key = str(binary)
@@ -144,14 +151,13 @@ class Controller:
             manifest = job['manifest']
             try:
                 pid = manifest['proxy_pid']
-                identity = Path(f'/proc/{pid}/stat').read_text().rsplit(') ', 1)[1].split()[19]
-                alive = identity == manifest['proxy_start']
+                alive = process_identity(pid) == manifest['proxy_start']
             except (KeyError, FileNotFoundError, ProcessLookupError):
                 alive = False
             if not alive:
                 self.qos.nodes[job['node']]['online'] = False
-                self.finish(job, dict(return_code=125, local=True, job_id=job['job_id'],
-                            infrastructure_error='本地 proxy 已退出，监督器状态须核对'), release=False)
+                result = recover(dict(job_id=job['job_id'], node=job['node'], manifest=manifest), directory)
+                self.finish(job, result, release=result.get('execution_confirmed', False))
                 return
             time.sleep(.05)
         result = json.loads((directory / 'local-result.json').read_text())
@@ -164,7 +170,13 @@ class Controller:
     def perform(self, job):
         node = self.qos.nodes[job['node']]
         if node.get('local'):
-            self.perform_local(job)
+            try:
+                self.perform_local(job)
+            except Exception as error:
+                directory = self.run / 'jobs' / job['job_id']
+                node['online'] = False
+                self.finish(job, dict(return_code=125, local=True, infrastructure_error=str(error)),
+                            release=not (directory / 'local.json').exists())
             return
         try:
             manifest = self.prepare_remote(job['manifest'])
@@ -175,7 +187,8 @@ class Controller:
         started = False
         try:
             self.state(job, 'STAGING')
-            sync = transport.stage(node, self.workspace_id, manifest['generation'], manifest['entries'])
+            sync = transport.stage(node, self.workspace_id, manifest['generation'], manifest['entries'],
+                                   cancelled=lambda: self.cancelled(job))
             self.state(job, 'STARTING', transferred_bytes=sync['transferred_bytes'])
             if self.cancelled(job):
                 self.finish(job, {'return_code': 130, 'cancelled': True, 'job_id': job['job_id']})
@@ -195,14 +208,14 @@ class Controller:
                                        lease_seconds=self.config.get('native', {}).get('lease_seconds', 60)),
                                        lambda: self.cancelled(job), event)
             self.state(job, 'COLLECTING')
-            (directory / 'tail.log').write_bytes(base64.b64decode(result.pop('tail', '')))
-            confirmed = result.get('execution_confirmed', False)
-            if not confirmed:
-                node['online'] = False
-            self.finish(job, result, release=confirmed)
+            self.collect_result(job, result)
+            return
         except Exception as error:
+            if not started and self.cancelled(job):
+                self.finish(job, dict(return_code=130, cancelled=True, job_id=job['job_id']))
+                return
             node['online'] = False
-            if not started and not self.cancelled(job):
+            if not started:
                 # staging 尚未启动监督器，可安全溢出到其他健康节点。
                 with self.lock:
                     self.qos.release(job['job_id'])
@@ -214,9 +227,7 @@ class Controller:
                     try:
                         result = transport.inspect(node, job['job_id'], job['attempt_id'])
                         if result is not None:
-                            directory = self.run / 'jobs' / job['job_id']
-                            (directory / 'tail.log').write_bytes(base64.b64decode(result.pop('tail', '')))
-                            self.finish(job, result, release=result.get('execution_confirmed', False))
+                            self.collect_result(job, result)
                             return
                     except Exception:
                         break
@@ -225,16 +236,30 @@ class Controller:
                               'infrastructure_error': str(error), 'remote_state': 'unknown' if started else 'not_started',
                               'node': node['name'], 'attempt_id': job['attempt_id']}, release=not started)
 
+    def collect_result(self, job, result):
+        confirmed = result.get('execution_confirmed', False)
+        with self.lock:
+            if confirmed:
+                self.qos.release(job['job_id'])
+            else:
+                self.qos.nodes[job['node']]['online'] = False
+        directory = self.run / 'jobs' / job['job_id']
+        try:
+            (directory / 'tail.log').write_bytes(base64.b64decode(result.pop('tail', '')))
+        except (OSError, ValueError) as error:
+            result.update(retrieval='pending', retrieval_error=str(error))
+        self.finish(job, result, release=confirmed)
+
     def ingest(self):
         for path in sorted((self.run / 'requests').glob('*.json')):
             job_id = path.stem
             if job_id in self.jobs:
                 continue
-            request = json.loads(path.read_text())
             job = {'job_id': job_id, 'attempt_id': uuid.uuid4().hex, 'submitted': time.time()}
             self.jobs[job_id] = job
             self.state(job, 'PREPARING')
             try:
+                request = json.loads(path.read_text())
                 manifest = self.prepare(request)
                 job['manifest'] = manifest
                 if not self.qos.possible(manifest['cores']):
@@ -289,6 +314,11 @@ class Controller:
         return 0
 
     def close(self):
+        self.stopping = True
+        self.changed.set()
+        (self.run / 'stop').touch()
+        for thread in self.threads:
+            thread.join(timeout=40)
         for name, child in self.owners:
             try:
                 child.stdin.write(b'{"close":true}\n')
@@ -299,8 +329,7 @@ class Controller:
                 child.kill()
                 child.wait()
             finally:
-                child.stdout.close()
-                child.stderr.close()
+                transport.close(child)
         self.db.close()
 
 
@@ -313,7 +342,6 @@ def main():
     controller = Controller(args.run, load_config(args.config), args.workspace)
     def stop(number, frame):
         controller.stopping = True
-        controller.changed.set()
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
     try:

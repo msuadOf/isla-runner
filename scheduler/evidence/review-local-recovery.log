@@ -1,0 +1,6 @@
+test_controller_or_proxy_death_does_not_leave_local_task_running (scheduler.tests.test_dual_mode_compatibility.DualModeTests.test_controller_or_proxy_death_does_not_leave_local_task_running) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.078s
+
+OK

@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import signal
+import shlex
 import subprocess
 import sys
 import time
@@ -22,8 +23,11 @@ def make_context(argv, cwd):
     i = 0
     while i < len(argv):
         value = argv[i]
-        if value.startswith(('SHELL=', '.SHELLFLAGS=', 'SCHEDULER_', '--eval')):
+        variable = value.split('=', 1)[0].rstrip(':+?!').strip()
+        if variable in ('SHELL', '.SHELLFLAGS') or variable.startswith('SCHEDULER_') or value.startswith(('--eval', '-E')):
             raise ValueError('不支持显式 SHELL/.SHELLFLAGS/接入变量覆盖或 --eval')
+        if value == '--':
+            raise ValueError('包装入口不支持 Make 参数中的 --；目标与赋值请直接传入')
         if value in ('-C', '--directory'):
             i += 1
             cwd = (cwd / argv[i]).resolve(strict=True)
@@ -38,6 +42,8 @@ def make_context(argv, cwd):
                 raise ValueError('不支持从 stdin 加载 Makefile')
         elif value.startswith(('-f', '--file=', '--makefile=')):
             has_file = True
+            if value in ('-f-', '--file=-', '--makefile=-'):
+                raise ValueError('不支持从 stdin 加载 Makefile')
         i += 1
     return cwd, has_file
 
@@ -53,8 +59,12 @@ def main():
         argv = argv[1:]
     cwd, has_file = make_context(argv, Path.cwd())
     cwd.relative_to(Path(args.workspace).resolve())
-    if any(x.startswith(('SHELL=', '.SHELLFLAGS=')) for x in os.environ.get('MAKEFLAGS', '').split()):
-        raise ValueError('MAKEFLAGS 中含不兼容的 shell 覆盖')
+    for key in ('MAKEFLAGS', 'GNUMAKEFLAGS'):
+        inherited = shlex.split(os.environ.get(key, ''))
+        inherited = [x for x in inherited if x != '--']
+        inherited_cwd, inherited_file = make_context(inherited, Path.cwd())
+        if inherited_file or inherited_cwd != Path.cwd().resolve():
+            raise ValueError(f'{key} 中不支持隐藏的 -C/-f 参数')
     config = load_config(args.config)
     native = SCHEDULER / 'runtime/native'
     locks = native / 'locks'
@@ -68,7 +78,6 @@ def main():
             fcntl.flock(lock, fcntl.LOCK_EX)
         run = native / 'runs' / uuid.uuid4().hex
         run.mkdir(parents=True)
-        print('scheduler run: ' + str(run), file=sys.stderr, flush=True)
         attach = run / 'attach.mk'
         include = str(SCHEDULER / 'integration/solve.mk').replace(' ', '\\ ')
         attach.write_text('-include ' + include + '\n')
@@ -80,26 +89,35 @@ def main():
         argv = [*argv, '-f', str(attach), 'SCHEDULER_SHELL=' + str(SCHEDULER / 'integration/make_shell.py')]
         atomic_json(run / 'invocation.json', {'argv': argv, 'cwd': str(cwd), 'workspace': args.workspace,
                                               'config': config, 'started': time.time()})
-        with (run / 'controller.log').open('wb') as log:
-            controller = subprocess.Popen([sys.executable, str(SCHEDULER / 'native/controller.py'),
-                            '--run', str(run), '--config', str(Path(args.config).resolve()),
-                            '--workspace', str(Path(args.workspace).resolve())], stdout=log, stderr=log,
-                            start_new_session=True)
         make = None
+        controller = None
         received = []
         def cancel(number, frame):
             received.append(number)
             (run / 'stop').touch()
             if make is not None and make.poll() is None:
-                os.killpg(make.pid, number)
+                try:
+                    os.killpg(make.pid, number)
+                except ProcessLookupError:
+                    pass
         previous = {s: signal.signal(s, cancel) for s in (signal.SIGINT, signal.SIGTERM)}
         code = 125
         try:
+            print('scheduler run: ' + str(run), file=sys.stderr, flush=True)
+            with (run / 'controller.log').open('wb') as log:
+                controller = subprocess.Popen([sys.executable, str(SCHEDULER / 'native/controller.py'),
+                                '--run', str(run), '--config', str(Path(args.config).resolve()),
+                                '--workspace', str(Path(args.workspace).resolve())], stdout=log, stderr=log,
+                                start_new_session=True)
             deadline = time.monotonic() + 35
             while not (run / 'ready.json').exists():
-                if controller.poll() is not None or time.monotonic() >= deadline or received:
+                if received:
+                    return 128 + received[0]
+                if controller.poll() is not None or time.monotonic() >= deadline:
                     raise RuntimeError('controller 启动失败，详见 ' + str(run / 'controller.log'))
                 time.sleep(.05)
+            if received:
+                return 128 + received[0]
             ready = json.loads((run / 'ready.json').read_text())
             if 'error' in ready:
                 raise RuntimeError(ready['error'] + '，详见 ' + str(run / 'preflight.json'))
@@ -108,20 +126,48 @@ def main():
                     print(f'scheduler：节点 {name} 未接单：{report["error"].strip()}', file=sys.stderr, flush=True)
             env = dict(os.environ, ISLA_SCHEDULER_RUN=str(run))
             make = subprocess.Popen(['make', *argv], env=env, start_new_session=True)
-            code = make.wait()
-            code = code if code >= 0 else 128 - code
+            controller_failed = False
+            while make.poll() is None:
+                if controller.poll() is not None or received:
+                    controller_failed = not received
+                    (run / 'stop').touch()
+                    try:
+                        os.killpg(make.pid, signal.SIGTERM)
+                    except ProcessLookupError:
+                        pass
+                    try:
+                        make.wait(timeout=35)
+                    except subprocess.TimeoutExpired:
+                        os.killpg(make.pid, signal.SIGKILL)
+                        make.wait()
+                    break
+                time.sleep(.05)
+            code = make.returncode
+            code = 125 if controller_failed else code if code >= 0 else 128 - code
         finally:
             (run / 'stop').touch()
             if make is not None and make.poll() is None:
-                os.killpg(make.pid, signal.SIGTERM)
-                make.wait()
-            try:
-                controller.wait(timeout=100)
-            except subprocess.TimeoutExpired:
-                controller.terminate()
-                controller.wait(timeout=10)
+                try:
+                    os.killpg(make.pid, signal.SIGTERM)
+                except ProcessLookupError:
+                    pass
+                try:
+                    make.wait(timeout=35)
+                except subprocess.TimeoutExpired:
+                    os.killpg(make.pid, signal.SIGKILL)
+                    make.wait()
+            if controller is not None:
+                try:
+                    controller.wait(timeout=100)
+                except subprocess.TimeoutExpired:
+                    controller.terminate()
+                    try:
+                        controller.wait(timeout=35)
+                    except subprocess.TimeoutExpired:
+                        controller.kill()
+                        controller.wait()
             atomic_json(run / 'ended.json', {'make_return_code': code,
-                                             'controller_return_code': controller.returncode})
+                                             'controller_return_code': controller.returncode if controller is not None else None})
             for sig, handler in previous.items():
                 signal.signal(sig, handler)
         return 128 + received[0] if received else code

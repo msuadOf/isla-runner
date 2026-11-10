@@ -2,7 +2,7 @@
 import argparse
 import json
 from pathlib import Path
-import subprocess
+import re
 import uuid
 
 from scheduler.native.common import SCHEDULER, load_config
@@ -18,6 +18,8 @@ def main(argv=None):
     parser.add_argument('--destination')
     parser.add_argument('action', choices=['list', 'summary', 'fetch', 'delete'])
     args = parser.parse_args(argv)
+    if args.action != 'list' and not re.fullmatch(r'[a-f0-9]{32}', args.job_id or ''):
+        raise ValueError('summary/fetch/delete 必须提供 32 位 --job-id')
     config = load_config(args.config)
     node = next((n for n in config['nodes'] if n['name'] == args.node), None)
     if node is None:
@@ -37,7 +39,7 @@ def main(argv=None):
                         output.write(chunk)
                 child.stdin.close()
                 if child.wait() != 0:
-                    raise RuntimeError(child.stderr.read().decode(errors='replace'))
+                    raise RuntimeError(transport.errors(child))
                 partial.replace(target)
             finally:
                 partial.unlink(missing_ok=True)
@@ -46,12 +48,7 @@ def main(argv=None):
             result = transport.response(child)
             child.stdin.close()
             if child.wait() != 0:
-                raise RuntimeError(child.stderr.read().decode(errors='replace'))
+                raise RuntimeError(transport.errors(child))
             print(json.dumps(result, ensure_ascii=False, indent=2))
     finally:
-        if child.poll() is None:
-            child.kill()
-            child.wait()
-        for stream in (child.stdin, child.stdout, child.stderr):
-            if not stream.closed:
-                stream.close()
+        transport.close(child)

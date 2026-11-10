@@ -1,8 +1,12 @@
 # 原生 Make / SSH 调度状态
 
-2026-11-10：用户要求的 Make 接点、自动输入、文件版本缓存、静态 QoS、SSH worker、阻塞 proxy、日志尾部、完成证据及取数工具已实现。本地与模拟测试 **60/60 PASS**；真实三节点 Isla 求解尚未验收。逐次结果见 [RESULTS.md](RESULTS.md)。
+2026-11-10：用户要求的 Make 接点、自动输入、文件版本缓存、静态 QoS、SSH worker、阻塞 proxy、日志尾部、完成证据及取数工具已实现。本地与模拟测试 **86/86 PASS**；真实三节点 Isla 求解尚未验收。逐次结果见 [RESULTS.md](RESULTS.md)。
 
 所有本轮修改位于 `scheduler/`。保留原有 Condor 实现与历史证据，未修改 `isla/`、模型仓、根目录状态文件或其他工作树。按用户目录限制，代码发现与状态在本目录记录。
+
+## 全面评审修复
+
+2026-11-10：本轮集中审查并修复生命周期、IO 阻塞、调度锁、异常资源释放、输入角色与路径边界问题；26 项新增回归与原 60 项均通过。详细发现与证据见 [REVIEW.md](REVIEW.md)。local 仍直接在原 cwd 运行，QoS 半数公式保持不变。主控异常退出会结束本轮 Make；proxy 意外死亡时由 controller 按保存的启动身份接管原监督器。无法取得结束证据的本地任务会留下 local-unknown 记录，下一轮拒绝接管该节点。
 
 ## 动态半数阈值修订
 
@@ -36,8 +40,8 @@
 - 当前 `run.mk` 的 `solve-%` recipe 分两次调用 shell：本地 mkdir，然后原子计数、打印进度及 exec。适配器分别核对这两类命令，无需复制 clause 清单或超时规则。
 - `solve-pre`、`solve-kill` 也匹配 `solve-%`，须恢复原 shell；private 阻止 shell 接点沿依赖传播给 build-isarch。
 - 原监督器创建独立 timeout session；只杀 proxy、SSH 或 worker 进程组不能保证 timeout 后代结束。本地 proxy 与远端 worker 均把 TERM 交给原监督器，并取得其完成证据。
-- 取消若早于监督器安装信号处理，会缺少退出证据。worker 等到监督器已启动 timeout 子进程再发送 TERM；启动异常仍按基础设施失败处理。
-- worker 使用单一事件循环读取控制通道，避免守护线程阻塞 stdin 造成 Python 退出错误。
+- 取消若早于监督器安装信号处理，会缺少退出证据。本地 proxy、接管助手和远端 worker 等到监督器已启动 timeout 子进程再发送 TERM；启动异常仍按基础设施失败处理。
+- worker 和 execute transport 均使用单一 IO 循环，控制通道不由阻塞心跳线程持有；worker 日志输出有截止时间，停止读取日志不会阻止租约清理。
 - 单纯观察 supervisor 已退出不足以归还 CPU；缺少匹配的 process JSON 时保持 UNKNOWN 并保留预约；远端下一轮 owner 和 delete 同样拒绝把它当成已确认完成。
 - 同一文件名的内容变化通过 ctime 与内容校验识别，已发布缓存不会随源文件原地修改。内容摘要只作缓存身份与传输校验，不判定导出数据的语义有效性。
 

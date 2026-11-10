@@ -1,5 +1,25 @@
 # 实施与验证状态
 
+## 2026-11-10：scheduler 全面评审与当轮修复
+
+**发现真实问题并已修复，全套 86/86 PASS，退出 0，33.013 秒。** 执行命令：`python3 -m unittest discover -s scheduler/tests -v`；完整证据见 [review-tests-final.log](evidence/review-tests-final.log)。`git diff --check -- scheduler` 通过。本轮新增 26 项回归，连同原 60 项全部通过；其中原有 Condor 22 项用于旧入口兼容检查。受测对象为交付基线 a4cbabf6 上的本轮 scheduler 工作区修复，主控 Python 3.13.9。本轮所有写入仅在 scheduler/。
+
+评审发现、影响、修复位置与适用范围集中记录在 [REVIEW.md](REVIEW.md)。主要修复：主控退出后的 Make/proxy 等待、本地 proxy 死亡后的监督器接管、输入冻结占调度锁、日志/控制管道阻塞、取消 staging 的错误记账、已完成任务取尾部失败导致资源继续占用、输入角色与配置链接映射、输出/缓存边界及取数/启动互斥。
+
+| 验证 | 结果 | 证据范围 |
+| --- | --- | --- |
+| 主控和 proxy 异常退出 | PASS，真实子进程 | 两种故障均结束本地监督器；主控故障返回 125；proxy 故障使 Make 非零，controller 取得清理证据、释放预约 |
+| 启动期取消、传输等待取消 | PASS | Make 尚未启动时 TERM 返回 143，未提交 recipe；stage single-flight 等待可取消；启动前取消记 CANCELLED、释放预约且不隔离健康节点 |
+| 堵塞与短租约 | PASS | 大 stderr 不填满 pipe；控制 IO 无阻塞心跳线程；短租约保持到明确取消；日志小管道停读后 worker 仍处理 EOF 并落退出证据 |
+| 后代清理 | PASS，真实进程 | 取消任务时，对忽略 TERM 的子孙进程由原监督器及 timeout 的 kill-after 完成回收，结果有匹配退出证据 |
+| 资源释放与异常状态 | PASS | 冻结 IO 不占调度锁；本地线程异常、单节点启动失败、坏请求均有明确结果；尾部存储失败标记 retrieval=pending，确认结束的任务释放 CPU；未知状态继续保留预约 |
+| 输入与输出角色 | PASS | 普通 flag 值不被文件误写，文件参数值不二次解析为线程声明；保留链接的逻辑配置路径；忽略未使用 TOML 输出；拒绝缺失未知输入、输出/缓存冲突及越界 |
+| 双模、QoS 与远端数据 | PASS | 本地原地产物和完整日志、动态半数门槛/权重/等待/幂等释放、模拟 SSH 缓存、重复 START、list/summary/fetch/delete 与缓存 ELF 回归通过 |
+
+修复过程中实测到 Conda Python 没有 pidfd_open；本地接管取消改用系统 Python 的 pidfd 身份核验助手后，故障用例和完整测试通过。此前失败保留在评审详细记录与回归初始日志中。
+
+本轮未运行真实三节点 Isla 求解，未对原网络沙箱阻断结论作成功迁移，也未修改模型、IR 或在途实验。历史 PASS 仍只适用于下文各自版本，现行结果以本节和 REVIEW 为准。
+
 ## 2026-11-10：按任务声明线程数使用动态半数阈值
 
 **实现完成，全套测试 PASS，60/60，退出 0，14.378 秒。** 命令：`python3 -m unittest discover -s scheduler/tests -v`。证据：[dynamic-half-qos-tests.log](evidence/dynamic-half-qos-tests.log)。受测对象为本轮 `scheduler/` 工作区源码与已移除 stop_free_cores 的 nodes.conf，Python 3.13.9；38 项原生测试与 22 项旧后端测试全部通过。所有修改均限于 scheduler/，未改动 Isla、模型仓、根目录状态文件或其他工作树。

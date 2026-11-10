@@ -12,6 +12,40 @@ OUTPUTS = {'--itrace', '--trace-output', '--timeout-smt-dir', '--check-samples-r
            '--check-samples-judge'}
 
 
+NONFILES = {'--timeout', '--smt-timeout', '--tastic', '--clause', '--debug',
+            '--timeout-smt-output', '--instruction-bits', '--witness-randomization'}
+VALUES = INPUTS | OUTPUTS | (NONFILES - {'--witness-randomization'}) | {'-T', '--threads'}
+
+
+def options(argv, start):
+    """每个值只消费一次，避免把文件名或普通参数值再次识别成选项。"""
+    i = start
+    while i < len(argv):
+        token = argv[i]
+        if token == '--':
+            return
+        key, sep, value = token.partition('=')
+        index = i
+        if not sep and token[:2] in ('-A', '-C', '-T') and len(token) > 2:
+            key, value, sep = token[:2], token[2:], 'short'
+        if not sep and key in VALUES:
+            if i + 1 >= len(argv):
+                raise ValueError(f'{key} 缺少值')
+            index = i + 1
+            value = argv[index]
+            i += 1
+        elif not sep and key.startswith('--') and i + 1 < len(argv) and not argv[i + 1].startswith('-'):
+            index = i + 1
+            value = argv[index]
+            i += 1
+        yield index, key, value, sep
+        i += 1
+
+
+def rewritten(key, value, sep):
+    return key + ('=' if sep == '=' else '') + value if sep else value
+
+
 def describe(argv, cwd):
     """仅识别监督器、CPU 与原 cwd；不读输入内容，也不重定位路径。"""
     cwd = Path(cwd).resolve()
@@ -33,16 +67,11 @@ def describe(argv, cwd):
     if not re.fullmatch(r'[A-Za-z0-9_]+', clause):
         raise ValueError('clause 必须是安全名称')
     cores = None
-    for index in range(binary_index + 1, len(argv)):
-        token = argv[index]
-        if token in ('-T', '--threads'):
-            if index + 1 >= len(argv):
-                raise ValueError(f'{token} 缺少值')
-            cores = int(argv[index + 1])
-        elif token.startswith('--threads='):
-            cores = int(token.split('=', 1)[1])
-        elif token.startswith('-T') and token != '-T':
-            cores = int(token[2:])
+    for index, key, value, sep in options(argv, binary_index + 1):
+        if key in ('-T', '--threads'):
+            if cores is not None:
+                raise ValueError('重复的线程数声明，无法唯一确定 CPU 请求')
+            cores = int(value)
     if cores is None or cores <= 0:
         raise ValueError('缺少有效的 -T/--threads；无法预约 CPU')
     return dict(original_argv=list(argv), cwd=str(cwd), cores=cores, clause=clause, binary_index=binary_index)
@@ -59,13 +88,15 @@ def sniff(argv, cwd, workspace, log_path=None):
     outputs = ['output', 'outputs']
     output_directories = ['output', 'outputs']
     required = set()
+    config_sources = set()
 
     def add(name):
-        source = (cwd / name).resolve(strict=True)
+        absolute = Path(os.path.abspath(cwd / name))
+        source = absolute.resolve(strict=True)
         if not source.is_file():
             raise ValueError(f'不支持目录输入：{name}')
-        if source.is_relative_to(workspace):
-            logical = source.relative_to(workspace).as_posix()
+        if absolute.is_relative_to(workspace):
+            logical = absolute.relative_to(workspace).as_posix()
         else:
             parent = hashlib.sha256(str(source.parent).encode()).hexdigest()[:20]
             logical = f'_external/{parent}/{source.name}'
@@ -74,41 +105,30 @@ def sniff(argv, cwd, workspace, log_path=None):
 
     effective[1] = add(argv[1])
     effective[binary_index] = add(argv[binary_index])
-    cores = None
-    i = binary_index + 1
-    while i < len(argv):
-        token = argv[i]
-        key, sep, value = token.partition('=')
-        if key in INPUTS | OUTPUTS | {'-T', '--threads'}:
-            if not sep:
-                if i + 1 >= len(argv):
-                    raise ValueError(f'{key} 缺少值')
-                value = argv[i + 1]
-            target_index = i if sep else i + 1
-            if key in INPUTS:
-                required.add(key)
-                mapped = add(value)
-                effective[target_index] = key + '=' + mapped if sep else mapped
-            elif key in OUTPUTS:
-                path = Path(value)
-                if path.is_absolute() or '..' in path.parts:
-                    raise ValueError(f'输出必须在 attempt 的 cwd 内：{key}={value}')
-                outputs.append(value)
-                if key == '--timeout-smt-dir':
-                    output_directories.append(value)
-            else:
-                cores = int(value)
-            i += 1 if sep else 2
-        elif token.startswith('-T') and token != '-T':
-            cores = int(token[2:])
-            i += 1
-        else:
-            # 新的普通 flag 直接透传；存在的文件值自动纳入，目录不猜测。
-            if not token.startswith('-') and (cwd / token).is_file():
-                effective[i] = add(token)
-            elif sep and key.startswith('--') and (cwd / value).is_file():
-                effective[i] = key + '=' + add(value)
-            i += 1
+    cores = description['cores']
+    for index, key, value, sep in options(argv, binary_index + 1):
+        if key in INPUTS:
+            required.add(key)
+            mapped = add(value)
+            effective[index] = rewritten(key, mapped, sep)
+            if key in ('-C', '--config', '--execution-limits-config', '--encoding-slices-config'):
+                config_sources.add(str((cwd / value).resolve(strict=True)))
+        elif key in OUTPUTS:
+            path = Path(value)
+            if not value or path.is_absolute() or '..' in path.parts:
+                raise ValueError(f'输出必须在 attempt 的 cwd 内：{key}={value}')
+            outputs.append(value)
+            if key == '--timeout-smt-dir':
+                output_directories.append(value)
+        elif key not in NONFILES | {'-T', '--threads'}:
+            candidate = value if key.startswith('-') else key
+            if candidate and (cwd / candidate).is_file():
+                mapped = add(candidate)
+                effective[index] = rewritten(key, mapped, sep) if key.startswith('-') else mapped
+            elif candidate and key.startswith('-') and (cwd / candidate).is_dir():
+                raise ValueError(f'不支持目录输入：{key} {candidate}')
+            elif candidate and key.startswith('-') and ('/' in candidate or Path(candidate).suffix in ('.toml', '.ir', '.irx', '.json')):
+                raise ValueError(f'未知参数的文件角色或路径无法确认：{key} {candidate}')
     if not required.intersection({'-A', '--arch'}) or not required.intersection({'-C', '--config'}):
         raise ValueError('缺少模型 IR 或 ISA 配置参数')
     if cores is None or cores <= 0:
@@ -118,7 +138,7 @@ def sniff(argv, cwd, workspace, log_path=None):
             for path in sorted(directory.rglob('*.toml')):
                 add(str(path))
     # 只解释已核实的输出字段；workaround.file 是 IR 源位置，不能当输入。
-    for source in list(files.values()):
+    for source in sorted(config_sources):
         if Path(source).suffix == '.toml':
             with open(source, 'rb') as stream:
                 config = tomllib.load(stream)
@@ -129,7 +149,14 @@ def sniff(argv, cwd, workspace, log_path=None):
                     raise ValueError(f'无法重定位 TOML 输出：{source}: {value}')
                 outputs.append(value)
     if log_path:
+        if Path(log_path).is_absolute() or '..' in Path(log_path).parts:
+            raise ValueError('日志输出越界')
         outputs.append(log_path)
+    for logical in files:
+        for output in outputs:
+            destination = Path(cwd_relative) / output
+            if Path(logical) == destination or destination in Path(logical).parents:
+                raise ValueError(f'输入与可写输出目录冲突：{logical}')
     return dict(original_argv=list(argv), effective_argv=effective, cwd=cwd_relative,
                 files=files, outputs=outputs, output_directories=output_directories, cores=cores, clause=clause,
                 binary_index=binary_index)
@@ -140,7 +167,7 @@ def runtime_files(binary):
     with Path(binary).open('rb') as stream:
         if stream.read(4) != b'\x7fELF':
             return {}, None
-    result = subprocess.run(['ldd', str(binary)], capture_output=True, text=True, check=False)
+    result = subprocess.run(['ldd', str(binary)], capture_output=True, text=True, check=False, timeout=30)
     if 'statically linked' in result.stdout or 'not a dynamic executable' in result.stderr:
         return {}, None
     if result.returncode or 'not found' in result.stdout:

@@ -61,7 +61,7 @@ work_dir={json.dumps(str(self.base / 'node'))}
         for action in ('delete', 'fetch', 'summary'):
             with self.subTest(action=action), self.assertRaises(RuntimeError):
                 self.call(action)
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(ValueError):
             data.main(['--config', str(self.config), '--node', 'test', '--job-id', '../escape', 'delete'])
         self.assertTrue(self.attempt.exists())
 

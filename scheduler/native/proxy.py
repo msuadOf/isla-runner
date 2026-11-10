@@ -9,7 +9,7 @@ import time
 import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from scheduler.native.common import ENVIRONMENT, atomic_json
+from scheduler.native.common import ENVIRONMENT, atomic_json, process_identity
 from scheduler.native.local import run as run_local
 
 
@@ -41,15 +41,11 @@ def main():
     offset = 0
     remote_header = False
     local_started = False
+    controller_pid = json.loads((run / 'ready.json').read_text())['pid']
+    controller_start = process_identity(controller_pid)
     def controller_alive():
-        if (run / 'ended.json').exists():
-            return False
-        pid = json.loads((run / 'ready.json').read_text())['pid']
-        try:
-            os.kill(pid, 0)
-        except ProcessLookupError:
-            return False
-        return True
+        return (not (run / 'ended.json').exists() and controller_start is not None
+                and process_identity(controller_pid) == controller_start)
     while True:
         if not local_started and (directory / 'local.json').exists():
             task = json.loads((directory / 'local.json').read_text())
@@ -85,15 +81,8 @@ def main():
             if result.get('infrastructure_error'):
                 print('[scheduler] ' + result['infrastructure_error'], file=sys.stderr, flush=True)
             return 128 + cancelled[0] if cancelled else result['return_code']
-        if (run / 'ended.json').exists():
-            print('[scheduler] 主控已退出，远端状态须核对', file=sys.stderr)
-            return 125
-        # 主控意外死亡时，proxy 不永久等待；worker 的 EOF/租约负责取消。
-        pid = json.loads((run / 'ready.json').read_text())['pid']
-        try:
-            os.kill(pid, 0)
-        except ProcessLookupError:
-            print('[scheduler] 主控失联，远端状态须核对', file=sys.stderr)
+        if not controller_alive():
+            print('[scheduler] 主控失联，任务状态须核对', file=sys.stderr)
             return 125
         time.sleep(.05)
 

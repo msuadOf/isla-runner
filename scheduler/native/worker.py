@@ -47,12 +47,23 @@ def read_bytes(size):
 
 def emit(value):
     global DISCONNECTED
-    try:
-        print(json.dumps(value, ensure_ascii=False), flush=True)
-    except BrokenPipeError:
-        DISCONNECTED = True
-        # 仍完成定向清理并写 result.json；断线不能让 worker 提前遗留监督器。
-        sys.stdout = open(os.devnull, 'w')
+    if DISCONNECTED:
+        return
+    payload = memoryview((json.dumps(value, ensure_ascii=False) + '\n').encode())
+    deadline = time.monotonic() + 2
+    while payload:
+        try:
+            # 日志管道拥塞不得阻塞控制消息和租约清理。
+            if not select.select([], [1], [], max(0, deadline - time.monotonic()))[1]:
+                DISCONNECTED = True
+                return
+            written = os.write(1, payload)
+            payload = payload[written:]
+        except BlockingIOError:
+            continue
+        except BrokenPipeError:
+            DISCONNECTED = True
+            return
 
 
 def save(path, value):
@@ -63,7 +74,8 @@ def save(path, value):
 
 def safe(root, name):
     path = root / name
-    if Path(name).is_absolute() or '..' in Path(name).parts:
+    if (Path(name).is_absolute() or '..' in Path(name).parts
+            or not path.resolve().is_relative_to(root.resolve())):
         raise ValueError('路径越界')
     return path
 
@@ -83,6 +95,10 @@ def stage(base, request):
         missing = []
         for key, entry in unique.items():
             target = object_path(cache, key)
+            if (type(entry['size']) is not int or entry['size'] < 0
+                    or entry['mode'] != (0o555 if key.endswith('-x') else 0o444)
+                    or target.is_symlink()):
+                raise ValueError('非法缓存对象元数据')
             if target.is_file() and target.stat().st_size == entry['size']:
                 continue
             if request.get('local') and entry.get('source'):
@@ -135,9 +151,10 @@ def stage(base, request):
 def owner(base, request):
     with (base / 'owner.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        unfinished = [str(p.parent) for p in (base / 'jobs').glob('*/attempt-*/running.json')
+        unfinished = [str(p.parent) for p in (base / 'jobs').glob('*/attempt-*/task.json')
                       if not (p.parent / 'result.json').is_file()
                       or not json.loads((p.parent / 'result.json').read_text()).get('execution_confirmed', False)]
+        unfinished += [str(p) for p in (base / 'local-unknown').glob('*.json')]
         if unfinished:
             raise RuntimeError('存在未确认的旧 attempt，须先取回证据：' + ', '.join(unfinished[:5]))
         cpus = min(os.cpu_count() or 1, len(os.sched_getaffinity(0)))
@@ -153,7 +170,7 @@ def owner(base, request):
                 break
         deadline = time.monotonic() + 75
         while time.monotonic() < deadline:
-            pending = [p for p in (base / 'jobs').glob('*/attempt-*/running.json')
+            pending = [p for p in (base / 'jobs').glob('*/attempt-*/task.json')
                        if not (p.parent / 'result.json').exists()]
             if not pending:
                 return
@@ -164,9 +181,10 @@ def execute(base, request):
     global ACTIVE_CHILD
     job = safe(base / 'jobs', request['job_id'])
     attempt = safe(job, 'attempt-' + request['attempt_id'])
-    job.mkdir(parents=True, exist_ok=True)
-    with (job / 'start.lock').open('a') as lock:
+    (base / 'jobs').mkdir(parents=True, exist_ok=True)
+    with safe(base / 'jobs', request['job_id'] + '.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
+        job.mkdir(exist_ok=True)
         if attempt.exists():
             if (attempt / 'result.json').exists():
                 emit({'result': json.loads((attempt / 'result.json').read_text())})
@@ -195,7 +213,6 @@ def execute(base, request):
             output.mkdir(parents=True, exist_ok=True)
         else:
             output.parent.mkdir(parents=True, exist_ok=True)
-    save(attempt / 'task.json', request)
     command = list(manifest['effective_argv'])
     loader = manifest.get('loader')
     if loader:
@@ -206,16 +223,25 @@ def execute(base, request):
     # 使用远端已预检的 timeout/Python，保留全部业务参数。
     command[0] = sys.executable
     (work / 'tmp').mkdir()
-    with (work / 'stdout.log').open('wb') as log:
-        child = subprocess.Popen(command, cwd=cwd, stdout=log, stderr=subprocess.STDOUT,
-                                 env=dict(os.environ, **manifest['environment'], TMPDIR=str(work / 'tmp')))
+    control = {'last': time.monotonic(), 'cancel': False}
+    signal.signal(signal.SIGTERM, lambda number, frame: control.update(cancel=True))
+    signal.signal(signal.SIGINT, lambda number, frame: control.update(cancel=True))
+    save(attempt / 'task.json', request)
+    try:
+        with (work / 'stdout.log').open('wb') as log:
+            child = subprocess.Popen(command, cwd=cwd, stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT,
+                                     env=dict(os.environ, **manifest['environment'], TMPDIR=str(work / 'tmp')))
+    except OSError as error:
+        result = dict(job_id=request['job_id'], attempt_id=request['attempt_id'], node=request['node'],
+                      attempt=str(attempt), return_code=125, execution_confirmed=True,
+                      infrastructure_error=str(error), retrieval='complete')
+        save(attempt / 'result.json', result)
+        emit({'result': result})
+        return
     ACTIVE_CHILD = child
     save(attempt / 'running.json', {'supervisor_pid': child.pid, 'worker_pid': os.getpid(),
                                    'started': time.time(), 'effective_argv': command})
     emit({'state': 'RUNNING', 'attempt': str(attempt), 'pid': child.pid})
-    control = {'last': time.monotonic(), 'cancel': False}
-    signal.signal(signal.SIGTERM, lambda number, frame: control.update(cancel=True))
-    signal.signal(signal.SIGINT, lambda number, frame: control.update(cancel=True))
     # 同一事件循环读取控制通道，避免守护线程在 Python 退出时持有 stdin 锁。
     global PENDING
     controls, PENDING = PENDING, b''
@@ -245,7 +271,10 @@ def execute(base, request):
             except FileNotFoundError:
                 supervisor_ready = False
             if not stopping and (supervisor_ready or time.monotonic() - started > 2):
-                child.terminate()  # 原监督器负责其另建 session 的 timeout 与后代。
+                try:
+                    child.terminate()  # 原监督器负责其另建 session 的 timeout 与后代。
+                except ProcessLookupError:
+                    pass
                 stopping = True
         if time.monotonic() >= next_log and sent < 1024 * 1024:
             with (work / 'stdout.log').open('rb') as stream:
@@ -269,8 +298,9 @@ def execute(base, request):
         stream.seek(max(0, (work / 'stdout.log').stat().st_size - 65536))
         tail = stream.read(65536)
     evidence = {}
-    for path in sorted((cwd / 'output/process').glob('*.json')):
-        if path.stat().st_size <= 1024 * 1024:
+    clause = manifest.get('clause') or command[command.index('--clause') + 1]
+    for path in [(cwd / 'output/process' / f'{clause}-{child.pid}.json')]:
+        if path.is_file() and path.stat().st_size <= 1024 * 1024:
             evidence[path.name] = json.loads(path.read_text())
     statuses = {p.name: p.read_text()[:65536] for p in (cwd / 'output').glob('status.*.log')}
     artifacts = []
@@ -283,7 +313,10 @@ def execute(base, request):
               'cancelled': stopping, 'elapsed_seconds': time.monotonic() - started,
               'tail': base64.b64encode(tail).decode(), 'evidence': evidence, 'statuses': statuses,
               'artifacts': artifacts, 'effective_argv': command, 'retrieval': 'complete',
-              'execution_confirmed': len(evidence) == 1 and next(iter(evidence.values())).get('return_code') == code}
+              'execution_confirmed': len(evidence) == 1
+                  and next(iter(evidence.values())).get('return_code') == code
+                  and next(iter(evidence.values())).get('supervisor_pid') == child.pid
+                  and next(iter(evidence.values())).get('cwd') == str(cwd)}
     if not result['execution_confirmed']:
         result['infrastructure_error'] = '监督器退出证据缺失或不一致，不能确认后代结束'
         result['remote_state'] = 'unknown'
@@ -295,35 +328,35 @@ def execute(base, request):
 def data(base, request):
     if request['action'] == 'list':
         emit([{'job_id': p.name, 'attempts': [a.name for a in sorted(p.glob('attempt-*'))]}
-              for p in sorted((base / 'jobs').iterdir())] if (base / 'jobs').exists() else [])
+              for p in sorted((base / 'jobs').iterdir()) if p.is_dir()] if (base / 'jobs').exists() else [])
         return
     job_id = request['job_id']
     if len(job_id) != 32 or any(c not in '0123456789abcdef' for c in job_id):
         raise ValueError('非法 job-id')
-    job = safe(base / 'jobs', job_id)
-    attempts = sorted(job.glob('attempt-*'))
-    if not attempts or any(not (p / 'result.json').is_file() for p in attempts):
-        raise RuntimeError('任务不存在或 attempt 未确认结束')
-    if request['action'] == 'summary':
-        emit([json.loads((p / 'result.json').read_text()) for p in attempts])
-    elif request['action'] == 'delete':
-        if any(not json.loads((p / 'result.json').read_text()).get('execution_confirmed', False) for p in attempts):
-            raise RuntimeError('执行退出证据未确认，拒绝删除')
-        # start 与 delete 使用同一锁，活动任务无 result 时拒绝删除。
-        with (job / 'start.lock').open('a') as lock:
-            fcntl.flock(lock, fcntl.LOCK_EX)
-            if any(not (p / 'result.json').is_file() for p in job.glob('attempt-*')):
-                raise RuntimeError('存在活动 attempt')
+    (base / 'jobs').mkdir(parents=True, exist_ok=True)
+    with (base / 'jobs' / (job_id + '.lock')).open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        job = safe(base / 'jobs', job_id)
+        attempts = sorted(job.glob('attempt-*'))
+        if not attempts or any(not (p / 'result.json').is_file() for p in attempts):
+            raise RuntimeError('任务不存在或 attempt 未确认结束')
+        if request['action'] == 'summary':
+            emit([json.loads((p / 'result.json').read_text()) for p in attempts])
+        elif request['action'] == 'delete':
+            if any(not json.loads((p / 'result.json').read_text()).get('execution_confirmed', False) for p in attempts):
+                raise RuntimeError('执行退出证据未确认，拒绝删除')
             shutil.rmtree(job)
-        emit({'deleted': job_id})
-    elif request['action'] == 'fetch':
-        with tarfile.open(fileobj=sys.stdout.buffer, mode='w|gz', dereference=False) as archive:
-            archive.add(job, arcname=job_id)
-    else:
-        raise ValueError('未知数据操作')
+            emit({'deleted': job_id})
+        elif request['action'] == 'fetch':
+            os.set_blocking(1, True)
+            with tarfile.open(fileobj=sys.stdout.buffer, mode='w|gz', dereference=False) as archive:
+                archive.add(job, arcname=job_id)
+        else:
+            raise ValueError('未知数据操作')
 
 
 def main():
+    os.set_blocking(1, False)
     request = json.loads(read_line())
     base = Path(request['work_dir']).expanduser().resolve() / 'native'
     base.mkdir(parents=True, exist_ok=True)
@@ -352,5 +385,8 @@ if __name__ == '__main__':
         raise SystemExit(125)
     finally:
         if ACTIVE_CHILD is not None and ACTIVE_CHILD.poll() is None:
-            ACTIVE_CHILD.terminate()
+            try:
+                ACTIVE_CHILD.terminate()
+            except ProcessLookupError:
+                pass
             ACTIVE_CHILD.wait(timeout=30)
